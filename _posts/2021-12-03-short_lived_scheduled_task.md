@@ -1,7 +1,6 @@
 ---
 title: "Short Lived Scheduled Task"
-excerpt: "Scheduled Task
-"
+excerpt: "Scheduled Task"
 categories:
   - Endpoint
 last_modified_at: 2021-12-03
@@ -19,78 +18,27 @@ tags:
 
 
 
-[Try in Splunk Security Cloud](https://www.splunk.com/en_us/products/cyber-security.html){: .btn .btn--success}
+[Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
 
 #### Description
 
 The following analytic leverages Windows Security EventCode 4698, `A scheduled task was created` and Windows Security EventCode 4699, `A scheduled task was deleted` to identify scheduled tasks created and deleted in less than 30 seconds. This behavior may represent a lateral movement attack abusing the Task Scheduler to obtain code execution. Red Teams and adversaries alike may abuse the Task Scheduler for lateral movement and remote code execution.
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-
+- **Datamodel**: 
 - **Last Updated**: 2021-12-03
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 6fa31414-546e-11ec-adfa-acde48001122
 
 
-#### Annotations
+#### [ATT&CK](https://attack.mitre.org/)
 
-<details>
-  <summary>ATT&CK</summary>
-
-<div markdown="1">
-
-
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1053.005](https://attack.mitre.org/techniques/T1053/005/) | Scheduled Task | Execution, Persistence, Privilege Escalation |
 
-</div>
-</details>
-
-
-<details>
-  <summary>Kill Chain Phase</summary>
-
-<div markdown="1">
-
-* Exploitation
-
-
-</div>
-</details>
-
-
-<details>
-  <summary>NIST</summary>
-
-<div markdown="1">
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CIS20</summary>
-
-<div markdown="1">
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CVE</summary>
-
-<div markdown="1">
-
-
-</div>
-</details>
-
-#### Search 
+#### Search
 
 ```
  `wineventlog_security` EventCode=4698 OR EventCode=4699 
@@ -102,12 +50,12 @@ The following analytic leverages Windows Security EventCode 4698, `A scheduled t
 | `short_lived_scheduled_task_filter` 
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-* [wineventlog_security](https://github.com/splunk/security_content/blob/develop/macros/wineventlog_security.yml)
+#### Associated Analytic Story
+* [Active Directory Lateral Movement](/stories/active_directory_lateral_movement)
 
-> :information_source:
-> **short_lived_scheduled_task_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+To successfully implement this search, you need to be ingesting Windows Security Event Logs with 4698 EventCode enabled. The Windows TA is also required.
 
 #### Required field
 * _time
@@ -119,16 +67,12 @@ The SPL above uses the following Macros:
 * Command
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting Windows Security Event Logs with 4698 EventCode enabled. The Windows TA is also required.
+#### Kill Chain Phase
+* Exploitation
+
 
 #### Known False Positives
 Although uncommon, legitimate applications may create and delete a Scheduled Task within 30 seconds. Filter as needed.
-
-#### Associated Analytic story
-* [Active Directory Lateral Movement](/stories/active_directory_lateral_movement)
-
-
 
 
 #### RBA
@@ -138,8 +82,7 @@ Although uncommon, legitimate applications may create and delete a Scheduled Tas
 | 81.0 | 90 | 90 | A windows scheduled task was created and deleted in 30 seconds on $ComputerName$ |
 
 
-> :information_source:
-> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author. 
+
 
 #### Reference
 
@@ -149,9 +92,8 @@ Although uncommon, legitimate applications may create and delete a Scheduled Tas
 
 
 #### Test Dataset
-Replay any dataset to Splunk Enterprise by using our [replay.py](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
+Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
-
 
 * [https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/lateral_movement/windows-security.log](https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1053.005/lateral_movement/windows-security.log)
 

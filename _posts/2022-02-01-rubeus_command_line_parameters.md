@@ -1,11 +1,6 @@
 ---
 title: "Rubeus Command Line Parameters"
-excerpt: "Use Alternate Authentication Material
-, Pass the Ticket
-, Steal or Forge Kerberos Tickets
-, Kerberoasting
-, AS-REP Roasting
-"
+excerpt: "Use Alternate Authentication Material, Pass the Ticket, Steal or Forge Kerberos Tickets, Kerberoasting, AS-REP Roasting"
 categories:
   - Endpoint
 last_modified_at: 2022-02-01
@@ -13,16 +8,16 @@ toc: true
 toc_label: ""
 tags:
   - Use Alternate Authentication Material
+  - Defense Evasion
+  - Lateral Movement
   - Pass the Ticket
+  - Defense Evasion
+  - Lateral Movement
   - Steal or Forge Kerberos Tickets
+  - Credential Access
   - Kerberoasting
+  - Credential Access
   - AS-REP Roasting
-  - Defense Evasion
-  - Lateral Movement
-  - Defense Evasion
-  - Lateral Movement
-  - Credential Access
-  - Credential Access
   - Credential Access
   - Splunk Enterprise
   - Splunk Enterprise Security
@@ -32,13 +27,13 @@ tags:
 
 
 
-[Try in Splunk Security Cloud](https://www.splunk.com/en_us/products/cyber-security.html){: .btn .btn--success}
+[Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
 
 #### Description
 
 Rubeus is a C# toolset for raw Kerberos interaction and abuses. It is heavily adapted from Benjamin Delpys Kekeo project and Vincent LE TOUXs MakeMeEnterpriseAdmin project. This analytic looks for the use of Rubeus command line arguments utilized in common Kerberos attacks like exporting and importing tickets, forging silver and golden tickets, requesting a TGT or TGS, kerberoasting, password spraying, etc. Red teams and adversaries alike use Rubeus for Kerberos attacks within Active Directory networks. Defenders should be aware that adversaries may customize the source code of Rubeus and modify the command line parameters. This would effectively bypass this analytic.
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-02-01
@@ -46,16 +41,10 @@ Rubeus is a C# toolset for raw Kerberos interaction and abuses. It is heavily ad
 - **ID**: cca37478-8377-11ec-b59a-acde48001122
 
 
-#### Annotations
+#### [ATT&CK](https://attack.mitre.org/)
 
-<details>
-  <summary>ATT&CK</summary>
-
-<div markdown="1">
-
-
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1550](https://attack.mitre.org/techniques/T1550/) | Use Alternate Authentication Material | Defense Evasion, Lateral Movement |
 
 | [T1550.003](https://attack.mitre.org/techniques/T1550/003/) | Pass the Ticket | Defense Evasion, Lateral Movement |
@@ -66,52 +55,7 @@ Rubeus is a C# toolset for raw Kerberos interaction and abuses. It is heavily ad
 
 | [T1558.004](https://attack.mitre.org/techniques/T1558/004/) | AS-REP Roasting | Credential Access |
 
-</div>
-</details>
-
-
-<details>
-  <summary>Kill Chain Phase</summary>
-
-<div markdown="1">
-
-* Exploitation
-
-
-</div>
-</details>
-
-
-<details>
-  <summary>NIST</summary>
-
-<div markdown="1">
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CIS20</summary>
-
-<div markdown="1">
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CVE</summary>
-
-<div markdown="1">
-
-
-</div>
-</details>
-
-#### Search 
+#### Search
 
 ```
 
@@ -122,13 +66,12 @@ Rubeus is a C# toolset for raw Kerberos interaction and abuses. It is heavily ad
 | `rubeus_command_line_parameters_filter`
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
-* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+#### Associated Analytic Story
+* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
 
-> :information_source:
-> **rubeus_command_line_parameters_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 
 #### Required field
 * _time
@@ -142,16 +85,12 @@ The SPL above uses the following Macros:
 * Processes.parent_process_name
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
+#### Kill Chain Phase
+* Exploitation
+
 
 #### Known False Positives
 Although unlikely, legitimate applications may use the same command line parameters as Rubeus. Filter as needed.
-
-#### Associated Analytic story
-* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
-
-
 
 
 #### RBA
@@ -161,22 +100,20 @@ Although unlikely, legitimate applications may use the same command line paramet
 | 36.0 | 60 | 60 | Rubeus command line parameters were used on $dest$ |
 
 
-> :information_source:
-> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author. 
+
 
 #### Reference
 
 * [https://github.com/GhostPack/Rubeus](https://github.com/GhostPack/Rubeus)
-* [http://www.harmj0y.net/blog/redteaming/from-kekeo-to-rubeus/](http://www.harmj0y.net/blog/redteaming/from-kekeo-to-rubeus/)
+* [https://web.archive.org/web/20210725005734/http://www.harmj0y.net/blog/redteaming/from-kekeo-to-rubeus/](https://web.archive.org/web/20210725005734/http://www.harmj0y.net/blog/redteaming/from-kekeo-to-rubeus/)
 * [https://attack.mitre.org/techniques/T1550/003/](https://attack.mitre.org/techniques/T1550/003/)
 * [https://en.hackndo.com/kerberos-silver-golden-tickets/](https://en.hackndo.com/kerberos-silver-golden-tickets/)
 
 
 
 #### Test Dataset
-Replay any dataset to Splunk Enterprise by using our [replay.py](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
+Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
-
 
 * [https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1550.003/rubeus/windows-sysmon.log](https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1550.003/rubeus/windows-sysmon.log)
 

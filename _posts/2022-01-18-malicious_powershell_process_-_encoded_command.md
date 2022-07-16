@@ -1,7 +1,6 @@
 ---
 title: "Malicious PowerShell Process - Encoded Command"
-excerpt: "Obfuscated Files or Information
-"
+excerpt: "Obfuscated Files or Information"
 categories:
   - Endpoint
 last_modified_at: 2022-01-18
@@ -18,7 +17,7 @@ tags:
 
 
 
-[Try in Splunk Security Cloud](https://www.splunk.com/en_us/products/cyber-security.html){: .btn .btn--success}
+[Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
 
 #### Description
 
@@ -27,7 +26,7 @@ The analytic identifies all variations of EncodedCommand, as PowerShell allows t
 During triage, review parallel events to determine legitimacy. Tune as needed based on admin scripts in use. \
 Alternatively, may use regex per matching here https://regexr.com/662ov.
 
-- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: Hunting
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-01-18
@@ -35,73 +34,13 @@ Alternatively, may use regex per matching here https://regexr.com/662ov.
 - **ID**: c4db14d9-7909-48b4-a054-aa14d89dbb19
 
 
-#### Annotations
+#### [ATT&CK](https://attack.mitre.org/)
 
-<details>
-  <summary>ATT&CK</summary>
-
-<div markdown="1">
-
-
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1027](https://attack.mitre.org/techniques/T1027/) | Obfuscated Files or Information | Defense Evasion |
 
-</div>
-</details>
-
-
-<details>
-  <summary>Kill Chain Phase</summary>
-
-<div markdown="1">
-
-* Command & Control
-* Actions on Objectives
-
-
-</div>
-</details>
-
-
-<details>
-  <summary>NIST</summary>
-
-<div markdown="1">
-
-* PR.PT
-* DE.CM
-* PR.IP
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CIS20</summary>
-
-<div markdown="1">
-
-* CIS 3
-* CIS 7
-* CIS 8
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CVE</summary>
-
-<div markdown="1">
-
-
-</div>
-</details>
-
-#### Search 
+#### Search
 
 ```
 
@@ -111,20 +50,21 @@ Alternatively, may use regex per matching here https://regexr.com/662ov.
 | `security_content_ctime(lastTime)` 
 | where match(process,"(?i)[\-
 |\/
-|
-|
-|]e(nc*o*d*e*d*c*o*m*m*a*n*d*)*\s+[^-]") 
+|–
+|—
+|―]e(nc*o*d*e*d*c*o*m*m*a*n*d*)*\s+[^-]") 
 | `malicious_powershell_process___encoded_command_filter`
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-* [process_powershell](https://github.com/splunk/security_content/blob/develop/macros/process_powershell.yml)
-* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
-* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+#### Associated Analytic Story
+* [Hermetic Wiper](/stories/hermetic_wiper)
+* [Malicious PowerShell](/stories/malicious_powershell)
+* [NOBELIUM Group](/stories/nobelium_group)
+* [WhisperGate](/stories/whispergate)
 
-> :information_source:
-> **malicious_powershell_process_-_encoded_command_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
 #### Required field
 * _time
@@ -136,19 +76,13 @@ The SPL above uses the following Macros:
 * Processes.process_id
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
+#### Kill Chain Phase
+* Command &amp; Control
+* Actions on Objectives
+
 
 #### Known False Positives
-System administrators may use this option, but it's not common.
-
-#### Associated Analytic story
-* [Hermetic Wiper](/stories/hermetic_wiper)
-* [Malicious PowerShell](/stories/malicious_powershell)
-* [NOBELIUM Group](/stories/nobelium_group)
-* [WhisperGate](/stories/whispergate)
-
-
+System administrators may use this option, but it&#39;s not common.
 
 
 #### RBA
@@ -158,8 +92,7 @@ System administrators may use this option, but it's not common.
 | 35.0 | 70 | 50 | Powershell.exe running potentially malicious encodede commands on $dest$ |
 
 
-> :information_source:
-> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author. 
+
 
 #### Reference
 
@@ -172,12 +105,11 @@ System administrators may use this option, but it's not common.
 
 
 #### Test Dataset
-Replay any dataset to Splunk Enterprise by using our [replay.py](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
+Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
-
 
 * [https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1027/atomic_red_team/windows-sysmon.log](https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1027/atomic_red_team/windows-sysmon.log)
 
 
 
-[*source*](https://github.com/splunk/security_content/tree/develop/detections/endpoint/malicious_powershell_process___encoded_command.yml) \| *version*: **7**
+[*source*](https://github.com/splunk/security_content/tree/develop/detections/endpoint/malicious_powershell_process_-_encoded_command.yml) \| *version*: **7**

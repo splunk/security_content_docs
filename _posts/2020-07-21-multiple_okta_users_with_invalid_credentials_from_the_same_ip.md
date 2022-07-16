@@ -1,8 +1,6 @@
 ---
 title: "Multiple Okta Users With Invalid Credentials From The Same IP"
-excerpt: "Valid Accounts
-, Default Accounts
-"
+excerpt: "Valid Accounts, Default Accounts"
 categories:
   - Application
 last_modified_at: 2020-07-21
@@ -10,102 +8,47 @@ toc: true
 toc_label: ""
 tags:
   - Valid Accounts
+  - Defense Evasion
+  - Persistence
+  - Privilege Escalation
+  - Initial Access
   - Default Accounts
   - Defense Evasion
-  - Initial Access
   - Persistence
   - Privilege Escalation
-  - Defense Evasion
   - Initial Access
-  - Persistence
-  - Privilege Escalation
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
 ---
 
-### :warning: WARNING THIS IS A EXPERIMENTAL analytic
-We have not been able to test, simulate, or build datasets for this object. Use at your own risk. This analytic is **NOT** supported.
+### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
-[Try in Splunk Security Cloud](https://www.splunk.com/en_us/products/cyber-security.html){: .btn .btn--success}
+[Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
 
 #### Description
 
 This search detects Okta login failures due to bad credentials for multiple users originating from the same ip address.
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-
+- **Datamodel**: 
 - **Last Updated**: 2020-07-21
 - **Author**: Rico Valdez, Splunk
 - **ID**: 19cba45f-cad3-4032-8911-0c09e0444552
 
 
-#### Annotations
+#### [ATT&CK](https://attack.mitre.org/)
 
-<details>
-  <summary>ATT&CK</summary>
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
+| [T1078](https://attack.mitre.org/techniques/T1078/) | Valid Accounts | Defense Evasion, Persistence, Privilege Escalation, Initial Access |
 
-<div markdown="1">
+| [T1078.001](https://attack.mitre.org/techniques/T1078/001/) | Default Accounts | Defense Evasion, Persistence, Privilege Escalation, Initial Access |
 
-
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
-| [T1078](https://attack.mitre.org/techniques/T1078/) | Valid Accounts | Defense Evasion, Initial Access, Persistence, Privilege Escalation |
-
-| [T1078.001](https://attack.mitre.org/techniques/T1078/001/) | Default Accounts | Defense Evasion, Initial Access, Persistence, Privilege Escalation |
-
-</div>
-</details>
-
-
-<details>
-  <summary>Kill Chain Phase</summary>
-
-<div markdown="1">
-
-* Exploitation
-
-
-</div>
-</details>
-
-
-<details>
-  <summary>NIST</summary>
-
-<div markdown="1">
-
-* DE.CM
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CIS20</summary>
-
-<div markdown="1">
-
-* CIS 16
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CVE</summary>
-
-<div markdown="1">
-
-
-</div>
-</details>
-
-#### Search 
+#### Search
 
 ```
 `okta` outcome.reason=INVALID_CREDENTIALS 
@@ -117,13 +60,12 @@ This search detects Okta login failures due to bad credentials for multiple user
 | `multiple_okta_users_with_invalid_credentials_from_the_same_ip_filter` 
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-* [okta](https://github.com/splunk/security_content/blob/develop/macros/okta.yml)
-* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+#### Associated Analytic Story
+* [Suspicious Okta Activity](/stories/suspicious_okta_activity)
 
-> :information_source:
-> **multiple_okta_users_with_invalid_credentials_from_the_same_ip_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+This search is specific to Okta and requires Okta logs are being ingested in your Splunk deployment.
 
 #### Required field
 * _time
@@ -136,16 +78,12 @@ The SPL above uses the following Macros:
 * displayMessage
 
 
-#### How To Implement
-This search is specific to Okta and requires Okta logs are being ingested in your Splunk deployment.
+#### Kill Chain Phase
+* Exploitation
+
 
 #### Known False Positives
 A single public IP address servicing multiple legitmate users may trigger this search. In addition, the threshold of 5 distinct users may be too low for your needs. You may modify the included filter macro `multiple_okta_users_with_invalid_credentials_from_the_same_ip_filter` to raise the threshold or except specific IP adresses from triggering this search.
-
-#### Associated Analytic story
-* [Suspicious Okta Activity](/stories/suspicious_okta_activity)
-
-
 
 
 #### RBA
@@ -155,15 +93,15 @@ A single public IP address servicing multiple legitmate users may trigger this s
 | 25.0 | 50 | 50 | tbd |
 
 
-> :information_source:
-> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author. 
+
 
 #### Reference
 
 
 #### Test Dataset
-Replay any dataset to Splunk Enterprise by using our [replay.py](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
+Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
+
 
 
 

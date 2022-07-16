@@ -22,7 +22,7 @@ tags:
 
 The following query identifies Microsoft Background Intelligent Transfer Service utility `bitsadmin.exe` scheduling a BITS job to persist on an endpoint. The query identifies the parameters used to create, resume or add a file to a BITS job. Typically seen combined in a oneliner or ran in sequence. If identified, review the BITS job created and capture any files written to disk. It is possible for BITS to be used to upload files and this may require further network data analysis to identify. You can use `bitsadmin /list /verbose` to list out the jobs during investigation.
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2022-02-15
@@ -32,8 +32,8 @@ The following query identifies Microsoft Background Intelligent Transfer Service
 
 #### [ATT&CK](https://attack.mitre.org/)
 
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1197](https://attack.mitre.org/techniques/T1197/) | BITS Jobs | Defense Evasion, Persistence |
 
 #### Search
@@ -49,10 +49,13 @@ The following query identifies Microsoft Background Intelligent Transfer Service
 | into write_ssa_detected_events();
 ```
 
-#### Macros
-The SPL above uses the following Macros:
+#### Associated Analytic Story
+* [BITS Jobs](/stories/bits_jobs)
+* [Living Off The Land](/stories/living_off_the_land)
 
-Note that `windows_bits_job_persistence_filter` is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
 #### Required field
 * _time
@@ -65,20 +68,12 @@ Note that `windows_bits_job_persistence_filter` is a empty macro by default. It 
 * cmd_line
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
-
-#### Known False Positives
-Limited false positives will be present. Typically, applications will use `BitsAdmin.exe`. Any filtering should be done based on command-line arguments (legitimate applications) or parent process.
-
-#### Associated Analytic story
-* [BITS Jobs](/stories/bits_jobs)
-* [Living Off The Land](/stories/living_off_the_land)
-
-
 #### Kill Chain Phase
 * Exploitation
 
+
+#### Known False Positives
+Limited false positives will be present. Typically, applications will use `BitsAdmin.exe`. Any filtering should be done based on command-line arguments (legitimate applications) or parent process.
 
 
 #### RBA
@@ -87,8 +82,6 @@ Limited false positives will be present. Typically, applications will use `BitsA
 | ----------- | ----------- |--------------|--------------|
 | 56.0 | 70 | 80 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest$ by user $dest_user_id$ attempting to persist using BITS. |
 
-
-Note that risk score is calculated base on the following formula: `(Impact * Confidence)/100`
 
 
 

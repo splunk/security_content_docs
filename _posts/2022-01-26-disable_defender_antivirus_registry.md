@@ -1,8 +1,6 @@
 ---
 title: "Disable Defender AntiVirus Registry"
-excerpt: "Disable or Modify Tools
-, Impair Defenses
-"
+excerpt: "Disable or Modify Tools, Impair Defenses"
 categories:
   - Endpoint
 last_modified_at: 2022-01-26
@@ -10,8 +8,8 @@ toc: true
 toc_label: ""
 tags:
   - Disable or Modify Tools
-  - Impair Defenses
   - Defense Evasion
+  - Impair Defenses
   - Defense Evasion
   - Splunk Enterprise
   - Splunk Enterprise Security
@@ -21,80 +19,29 @@ tags:
 
 
 
-[Try in Splunk Security Cloud](https://www.splunk.com/en_us/products/cyber-security.html){: .btn .btn--success}
+[Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
 
 #### Description
 
 This particular behavior is typically executed when an adversaries or malware gains access to an endpoint and beings to perform execution and to evade detections. Usually, a batch (.bat) will be executed and multiple registry and scheduled task modifications will occur. During triage, review parallel processes and identify any further file modifications. Endpoint should be isolated.
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)- **Datasource**: [Splunk Add-on for Sysmon](https://splunkbase.splunk.com/app/5709)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-01-26
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: aa4f695a-3024-11ec-9987-acde48001122
 
 
-#### Annotations
+#### [ATT&CK](https://attack.mitre.org/)
 
-<details>
-  <summary>ATT&CK</summary>
-
-<div markdown="1">
-
-
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1562.001](https://attack.mitre.org/techniques/T1562/001/) | Disable or Modify Tools | Defense Evasion |
 
 | [T1562](https://attack.mitre.org/techniques/T1562/) | Impair Defenses | Defense Evasion |
 
-</div>
-</details>
-
-
-<details>
-  <summary>Kill Chain Phase</summary>
-
-<div markdown="1">
-
-* Exploitation
-
-
-</div>
-</details>
-
-
-<details>
-  <summary>NIST</summary>
-
-<div markdown="1">
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CIS20</summary>
-
-<div markdown="1">
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CVE</summary>
-
-<div markdown="1">
-
-
-</div>
-</details>
-
-#### Search 
+#### Search
 
 ```
 
@@ -110,12 +57,13 @@ This particular behavior is typically executed when an adversaries or malware ga
 | `disable_defender_antivirus_registry_filter`
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+#### Associated Analytic Story
+* [IceID](/stories/iceid)
+* [Windows Registry Abuse](/stories/windows_registry_abuse)
 
-> :information_source:
-> **disable_defender_antivirus_registry_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the registry value name, registry path, and registry value data from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 
 #### Required field
 * _time
@@ -127,17 +75,12 @@ The SPL above uses the following Macros:
 * Registry.registry_value_data
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the registry value name, registry path, and registry value data from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
+#### Kill Chain Phase
+* Exploitation
+
 
 #### Known False Positives
 admin or user may choose to disable windows defender product
-
-#### Associated Analytic story
-* [IceID](/stories/iceid)
-* [Windows Registry Abuse](/stories/windows_registry_abuse)
-
-
 
 
 #### RBA
@@ -147,8 +90,7 @@ admin or user may choose to disable windows defender product
 | 49.0 | 70 | 70 | modified/added/deleted registry entry $registry_path$ in $dest$ |
 
 
-> :information_source:
-> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author. 
+
 
 #### Reference
 
@@ -157,9 +99,8 @@ admin or user may choose to disable windows defender product
 
 
 #### Test Dataset
-Replay any dataset to Splunk Enterprise by using our [replay.py](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
+Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
-
 
 * [https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/malware/icedid/disable_av/sysmon.log](https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/malware/icedid/disable_av/sysmon.log)
 

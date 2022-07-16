@@ -1,7 +1,6 @@
 ---
 title: "SQL Injection with Long URLs"
-excerpt: "Exploit Public-Facing Application
-"
+excerpt: "Exploit Public-Facing Application"
 categories:
   - Web
 last_modified_at: 2022-03-28
@@ -16,17 +15,17 @@ tags:
   - Web
 ---
 
-### :warning: WARNING THIS IS A EXPERIMENTAL analytic
-We have not been able to test, simulate, or build datasets for this object. Use at your own risk. This analytic is **NOT** supported.
+### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
-[Try in Splunk Security Cloud](https://www.splunk.com/en_us/products/cyber-security.html){: .btn .btn--success}
+[Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
 
 #### Description
 
 This search looks for long URLs that have several SQL commands visible within them.
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web)
 - **Last Updated**: 2022-03-28
@@ -34,74 +33,13 @@ This search looks for long URLs that have several SQL commands visible within th
 - **ID**: e0aad4cf-0790-423b-8328-7564d0d938f9
 
 
-#### Annotations
+#### [ATT&CK](https://attack.mitre.org/)
 
-<details>
-  <summary>ATT&CK</summary>
-
-<div markdown="1">
-
-
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1190](https://attack.mitre.org/techniques/T1190/) | Exploit Public-Facing Application | Initial Access |
 
-</div>
-</details>
-
-
-<details>
-  <summary>Kill Chain Phase</summary>
-
-<div markdown="1">
-
-* Delivery
-
-
-</div>
-</details>
-
-
-<details>
-  <summary>NIST</summary>
-
-<div markdown="1">
-
-* PR.DS
-* ID.RA
-* PR.PT
-* PR.IP
-* DE.CM
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CIS20</summary>
-
-<div markdown="1">
-
-* CIS 4
-* CIS 13
-* CIS 18
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CVE</summary>
-
-<div markdown="1">
-
-
-</div>
-</details>
-
-#### Search 
+#### Search
 
 ```
 
@@ -113,12 +51,12 @@ This search looks for long URLs that have several SQL commands visible within th
 | `sql_injection_with_long_urls_filter`
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+#### Associated Analytic Story
+* [SQL Injection](/stories/sql_injection)
 
-> :information_source:
-> **sql_injection_with_long_urls_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+To successfully implement this search, you need to be monitoring network communications to your web servers or ingesting your HTTP logs and populating the Web data model. You must also identify your web servers in the Enterprise Security assets table.
 
 #### Required field
 * _time
@@ -131,16 +69,12 @@ The SPL above uses the following Macros:
 * Web.http_user_agent
 
 
-#### How To Implement
-To successfully implement this search, you need to be monitoring network communications to your web servers or ingesting your HTTP logs and populating the Web data model. You must also identify your web servers in the Enterprise Security assets table.
+#### Kill Chain Phase
+* Delivery
+
 
 #### Known False Positives
-It's possible that legitimate traffic will have long URLs or long user agent strings and that common SQL commands may be found within the URL. Please investigate as appropriate.
-
-#### Associated Analytic story
-* [SQL Injection](/stories/sql_injection)
-
-
+It&#39;s possible that legitimate traffic will have long URLs or long user agent strings and that common SQL commands may be found within the URL. Please investigate as appropriate.
 
 
 #### RBA
@@ -150,15 +84,15 @@ It's possible that legitimate traffic will have long URLs or long user agent str
 | 25.0 | 50 | 50 | SQL injection attempt with url $url$ detected on $dest$ |
 
 
-> :information_source:
-> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author. 
+
 
 #### Reference
 
 
 #### Test Dataset
-Replay any dataset to Splunk Enterprise by using our [replay.py](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
+Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
+
 
 
 

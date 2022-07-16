@@ -7,7 +7,6 @@ tags:
   - Response
   - Splunk SOAR
   - AWS IAM
-  - Cloud
 ---
 
 [Try in Splunk SOAR](https://www.splunk.com/en_us/software/splunk-security-orchestration-and-automation.html){: .btn .btn--success}
@@ -33,6 +32,7 @@ This playbook works with the community playbook aws_find_inactive_users using th
 ![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/aws_disable_user_accounts.png)
 
 #### Required field
+* aws_username
 
 
 #### Reference

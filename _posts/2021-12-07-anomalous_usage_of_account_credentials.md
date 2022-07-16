@@ -26,7 +26,7 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This is an anomaly generating detection looking for multiple interactive logins within a specific time period. An insider threat may attempt to steal colleagues credentials in low tech, undetectable methods, in order to gain access to additional information or to hide their own behavior. This should capture their attempted use of those credentials on a workstation.
 
-- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: Anomaly
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2021-12-07
@@ -36,8 +36,8 @@ This is an anomaly generating detection looking for multiple interactive logins 
 
 #### [ATT&CK](https://attack.mitre.org/)
 
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1078.002](https://attack.mitre.org/techniques/T1078/002/) | Domain Accounts | Defense Evasion, Persistence, Privilege Escalation, Initial Access |
 
 #### Search
@@ -56,29 +56,23 @@ This is an anomaly generating detection looking for multiple interactive logins 
 | into write_ssa_detected_events();
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-
-Note that `anomalous_usage_of_account_credentials_filter` is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
-
-#### Required field
-* _time
+#### Associated Analytic Story
+* [Insider Threat](/stories/insider_threat)
 
 
 #### How To Implement
 To successfully implement this detection, you need to be ingesting logon events from workstations.
 
-#### Known False Positives
-Shared workstations can cause false positives
-
-#### Associated Analytic story
-* [Insider Threat](/stories/insider_threat)
+#### Required field
+* _time
 
 
 #### Kill Chain Phase
-* Privilege Escalation
-* Lateral Movement
+* Exploitation
 
+
+#### Known False Positives
+Shared workstations can cause false positives
 
 
 #### RBA
@@ -87,8 +81,6 @@ Shared workstations can cause false positives
 | ----------- | ----------- |--------------|--------------|
 | 6.0 | 20 | 30 | Multiple interactive logins detected on $device$ |
 
-
-Note that risk score is calculated base on the following formula: `(Impact * Confidence)/100`
 
 
 

@@ -21,7 +21,7 @@ tags:
 
 This search is to detect potential DNS exfiltration using nslookup application. This technique are seen in couple of malware and APT group to exfiltrated collected data in a infected machine or infected network. This detection is looking for unique use of nslookup where it tries to use specific record type, TXT, A, AAAA, that are commonly used by attacker and also the retry parameter which is designed to query C2 DNS multiple tries.
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2021-12-07
@@ -31,8 +31,8 @@ This search is to detect potential DNS exfiltration using nslookup application. 
 
 #### [ATT&CK](https://attack.mitre.org/)
 
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1048](https://attack.mitre.org/techniques/T1048/) | Exfiltration Over Alternative Protocol | Exfiltration |
 
 #### Search
@@ -48,10 +48,15 @@ This search is to detect potential DNS exfiltration using nslookup application. 
 | into write_ssa_detected_events();
 ```
 
-#### Macros
-The SPL above uses the following Macros:
+#### Associated Analytic Story
+* [Suspicious DNS Traffic](/stories/suspicious_dns_traffic)
+* [Dynamic DNS](/stories/dynamic_dns)
+* [Data Exfiltration](/stories/data_exfiltration)
+* [Command and Control](/stories/command_and_control)
 
-Note that `dns_exfiltration_using_nslookup_app_filter` is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint_Processess` datamodel.
 
 #### Required field
 * _time
@@ -64,22 +69,12 @@ Note that `dns_exfiltration_using_nslookup_app_filter` is a empty macro by defau
 * cmd_line
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint_Processess` datamodel.
-
-#### Known False Positives
-It is possible for some legitimate administrative utilities to use similar cmd_line parameters. Filter as needed.
-
-#### Associated Analytic story
-* [Suspicious DNS Traffic](/stories/suspicious_dns_traffic)
-* [Dynamic DNS](/stories/dynamic_dns)
-* [Command and Control](/stories/command_and_control)
-* [Data Exfiltration](/stories/data_exfiltration)
-
-
 #### Kill Chain Phase
 * Exploitation
 
+
+#### Known False Positives
+It is possible for some legitimate administrative utilities to use similar cmd_line parameters. Filter as needed.
 
 
 #### RBA
@@ -89,14 +84,12 @@ It is possible for some legitimate administrative utilities to use similar cmd_l
 | 72.0 | 90 | 80 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest_device_id$ by user $dest_user_id$ performing activity related to DNS exfiltration. |
 
 
-Note that risk score is calculated base on the following formula: `(Impact * Confidence)/100`
-
 
 
 #### Reference
 
-* [https://www.fireeye.com/blog/threat-research/2017/03/fin7_spear_phishing.html](https://www.fireeye.com/blog/threat-research/2017/03/fin7_spear_phishing.html)
-* [https://www.varonis.com/blog/dns-tunneling/](https://www.varonis.com/blog/dns-tunneling/)
+* [https://www.mandiant.com/resources/fin7-spear-phishing-campaign-targets-personnel-involved-sec-filings](https://www.mandiant.com/resources/fin7-spear-phishing-campaign-targets-personnel-involved-sec-filings)
+* [https://www.varonis.com/blog/dns-tunneling](https://www.varonis.com/blog/dns-tunneling)
 * [https://www.microsoft.com/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/](https://www.microsoft.com/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/)
 
 

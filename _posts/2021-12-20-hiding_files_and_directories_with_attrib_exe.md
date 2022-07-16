@@ -23,7 +23,7 @@ tags:
 
 Attackers leverage an existing Windows binary, attrib.exe, to mark specific as hidden by using specific flags so that the victim does not see the file.  The search looks for specific command-line arguments to detect the use of attrib.exe to hide files.
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2021-12-20
@@ -33,8 +33,8 @@ Attackers leverage an existing Windows binary, attrib.exe, to mark specific as h
 
 #### [ATT&CK](https://attack.mitre.org/)
 
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1222.001](https://attack.mitre.org/techniques/T1222/001/) | Windows File and Directory Permissions Modification | Defense Evasion |
 
 | [T1222](https://attack.mitre.org/techniques/T1222/) | File and Directory Permissions Modification | Defense Evasion |
@@ -50,30 +50,25 @@ Attackers leverage an existing Windows binary, attrib.exe, to mark specific as h
 | into write_ssa_detected_events();
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-
-Note that `hiding_files_and_directories_with_attrib_exe_filter` is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
-
-#### Required field
-* _time
-
-
-#### How To Implement
-You must be ingesting data that records process activity from your hosts to populate the Endpoint data model in the Processes node. You must also be ingesting logs with both the process name and command line from your endpoints. The command-line arguments are mapped to the &#34;process&#34; field in the Endpoint data model.
-
-#### Known False Positives
-Some applications and users may legitimately use attrib.exe to interact with the files. 
-
-#### Associated Analytic story
+#### Associated Analytic Story
 * [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics)
 * [Windows Persistence Techniques](/stories/windows_persistence_techniques)
 * [Information Sabotage](/stories/information_sabotage)
 
 
+#### How To Implement
+You must be ingesting data that records process activity from your hosts to populate the Endpoint data model in the Processes node. You must also be ingesting logs with both the process name and command line from your endpoints. The command-line arguments are mapped to the &#34;process&#34; field in the Endpoint data model.
+
+#### Required field
+* _time
+
+
 #### Kill Chain Phase
 * Exploitation
 
+
+#### Known False Positives
+Some applications and users may legitimately use attrib.exe to interact with the files. 
 
 
 #### RBA
@@ -82,8 +77,6 @@ Some applications and users may legitimately use attrib.exe to interact with the
 | ----------- | ----------- |--------------|--------------|
 | 72.0 | 80 | 90 | Attrib.exe with +h flag to hide files on $dest$ executed by $user$ is detected. |
 
-
-Note that risk score is calculated base on the following formula: `(Impact * Confidence)/100`
 
 
 

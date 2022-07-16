@@ -25,7 +25,7 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 Insider might conduct information collection before data exfiltration, and unusual volume of data download from internal server is an indicator of such potential threat. This detection evaluates the total bytes downloaded from internal servers at specific time window per entity level, and then flagged these that are higher than 99.999% percentile as an anamaly. A behavior will be reported as long as the downloaded byte volume is unusual even though that operation is benign, which causes false positive. It is therefore advised to adjust threshold and time window based on detection performance whenever necessary. It should be noted that seasonality is not modeled in the current approach.
 
-- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: Anomaly
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 - **Last Updated**: 2022-01-17
@@ -35,8 +35,8 @@ Insider might conduct information collection before data exfiltration, and unusu
 
 #### [ATT&CK](https://attack.mitre.org/)
 
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1213](https://attack.mitre.org/techniques/T1213/) | Data from Information Repositories | Collection |
 
 | [T1039](https://attack.mitre.org/techniques/T1039/) | Data from Network Shared Drive | Collection |
@@ -69,10 +69,12 @@ Insider might conduct information collection before data exfiltration, and unusu
 | into write_ssa_detected_events();
 ```
 
-#### Macros
-The SPL above uses the following Macros:
+#### Associated Analytic Story
+* [Insider Threat](/stories/insider_threat)
 
-Note that `unusual_volume_of_data_download_from_internal_server_per_entity_filter` is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+Ingest PAN traffic logs
 
 #### Required field
 * _time
@@ -81,19 +83,12 @@ Note that `unusual_volume_of_data_download_from_internal_server_per_entity_filte
 * src_device_ips
 
 
-#### How To Implement
-Ingest PAN traffic logs
-
-#### Known False Positives
-Benign large volume data download might be flagged as (false) positive.
-
-#### Associated Analytic story
-* [Insider Threat](/stories/insider_threat)
-
-
 #### Kill Chain Phase
 * Weaponization
 
+
+#### Known False Positives
+Benign large volume data download might be flagged as (false) positive.
 
 
 #### RBA
@@ -102,8 +97,6 @@ Benign large volume data download might be flagged as (false) positive.
 | ----------- | ----------- |--------------|--------------|
 | 25.0 | 50 | 50 | $src_device_ip downloaded unusually amount of data from internal server within one day |
 
-
-Note that risk score is calculated base on the following formula: `(Impact * Confidence)/100`
 
 
 

@@ -12,7 +12,7 @@ tags:
   - Steal or Forge Kerberos Tickets
   - Credential Access
   - Splunk Behavioral Analytics
-  - Certificates
+  - Endpoint_Processes
 ---
 
 ### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
@@ -25,9 +25,9 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search detects a potential kerberoasting attack via service principal name requests
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Behavioral Analytics
-- **Datamodel**: [Certificates](https://docs.splunk.com/Documentation/CIM/latest/User/Certificates)
+- **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2020-10-21
 - **Author**: Xiao Lin, Splunk
 - **ID**: dabdd6d7-3e10-42be-8711-4e124f7a3850
@@ -35,8 +35,8 @@ This search detects a potential kerberoasting attack via service principal name 
 
 #### [ATT&CK](https://attack.mitre.org/)
 
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1558.003](https://attack.mitre.org/techniques/T1558/003/) | Kerberoasting | Credential Access |
 
 | [T1558](https://attack.mitre.org/techniques/T1558/) | Steal or Forge Kerberos Tickets | Credential Access |
@@ -56,10 +56,12 @@ This search detects a potential kerberoasting attack via service principal name 
 | into write_ssa_detected_events();
 ```
 
-#### Macros
-The SPL above uses the following Macros:
+#### Associated Analytic Story
+* [Credential Dumping](/stories/credential_dumping)
 
-Note that `detect_kerberoasting_filter` is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+The test data is converted from Windows Security Event logs generated from Attach Range simulation and used in SPL search and extended to SPL2
 
 #### Required field
 * service_name
@@ -70,19 +72,12 @@ Note that `detect_kerberoasting_filter` is a empty macro by default. It allows t
 * ticket_options
 
 
-#### How To Implement
-The test data is converted from Windows Security Event logs generated from Attach Range simulation and used in SPL search and extended to SPL2
-
-#### Known False Positives
-Older systems that support kerberos RC4 by default NetApp may generate false positives
-
-#### Associated Analytic story
-* [Credential Dumping](/stories/credential_dumping)
-
-
 #### Kill Chain Phase
 * Actions on Objectives
 
+
+#### Known False Positives
+Older systems that support kerberos RC4 by default NetApp may generate false positives
 
 
 #### RBA
@@ -91,8 +86,6 @@ Older systems that support kerberos RC4 by default NetApp may generate false pos
 | ----------- | ----------- |--------------|--------------|
 | 14.0 | 70 | 20 | Kerberoasting malware is potentially applying stolen credentials. Operation is performed at the device $dest_device_id$, by the account $dest_user_id$ via command $cmd_line$ |
 
-
-Note that risk score is calculated base on the following formula: `(Impact * Confidence)/100`
 
 
 

@@ -1,6 +1,6 @@
 ---
 title: "Windows MSHTA Child Process"
-excerpt: "Mshta, Signed Binary Proxy Execution"
+excerpt: "Mshta, System Binary Proxy Execution"
 categories:
   - Endpoint
 last_modified_at: 2022-02-23
@@ -9,7 +9,7 @@ toc_label: ""
 tags:
   - Mshta
   - Defense Evasion
-  - Signed Binary Proxy Execution
+  - System Binary Proxy Execution
   - Defense Evasion
   - Splunk Behavioral Analytics
   - Endpoint_Processes
@@ -23,7 +23,7 @@ tags:
 
 The following analytic identifies child processes spawning from  &#34;mshta.exe&#34;. The search will return the first time and last time these command-line arguments were used for these executions, as well as the target system, the user, parent process &#34;mshta.exe&#34; and its child process.
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2022-02-23
@@ -33,28 +33,31 @@ The following analytic identifies child processes spawning from  &#34;mshta.exe&
 
 #### [ATT&CK](https://attack.mitre.org/)
 
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1218.005](https://attack.mitre.org/techniques/T1218/005/) | Mshta | Defense Evasion |
 
-| [T1218](https://attack.mitre.org/techniques/T1218/) | Signed Binary Proxy Execution | Defense Evasion |
+| [T1218](https://attack.mitre.org/techniques/T1218/) | System Binary Proxy Execution | Defense Evasion |
 
 #### Search
 
 ```
 
 | from read_ssa_enriched_events() 
-| eval timestamp=parse_long(ucast(map_get(input_event, "_time"), "string", null)), cmd_line=lower(ucast(map_get(input_event, "process"), "string", null)), process_name=lower(ucast(map_get(input_event, "process_name"), "string", null)), process_path=ucast(map_get(input_event, "process_path"), "string", null), parent_process_name=ucast(map_get(input_event, "parent_process_name"), "string", null), event_id=ucast(map_get(input_event, "event_id"), "string", null) 
+| eval timestamp=parse_long(ucast(map_get(input_event, "_time"), "string", null)), cmd_line=lower(ucast(map_get(input_event, "process"), "string", null)), process_name=lower(ucast(map_get(input_event, "process_name"), "string", null)), process_path=ucast(map_get(input_event, "process_path"), "string", null), parent_process_name=lower(ucast(map_get(input_event, "parent_process_name"), "string", null)), event_id=ucast(map_get(input_event, "event_id"), "string", null) 
 | where cmd_line IS NOT NULL AND process_name IS NOT NULL AND parent_process_name IS NOT NULL 
-| where parent_process_name="mshta.exe" AND process_name="powershell.exe" OR process_name="cmd.exe" OR process_name="scrcons.exe" OR process_name="colorcpl.exe" OR process_name="msbuild.exe" OR process_name="microsoft.workflow.compiler.exe" OR process_name="searchprotocolhost.exe" OR process_name="cscript.exe"  OR process_name="wscript.exe" 
+| where like(parent_process_name, "%\\\\mshta.exe") AND (process_name="powershell.exe" OR process_name="cmd.exe" OR process_name="scrcons.exe" OR process_name="colorcpl.exe" OR process_name="msbuild.exe" OR process_name="microsoft.workflow.compiler.exe" OR process_name="searchprotocolhost.exe" OR process_name="cscript.exe"  OR process_name="wscript.exe") 
 | eval start_time=timestamp, end_time=timestamp, entities=mvappend(ucast(map_get(input_event, "dest_user_id"), "string", null), ucast(map_get(input_event, "dest_device_id"), "string", null)), body=create_map(["event_id", event_id, "cmd_line", cmd_line, "process_name", process_name, "parent_process_name", parent_process_name, "process_path", process_path]) 
 | into write_ssa_detected_events();
 ```
 
-#### Macros
-The SPL above uses the following Macros:
+#### Associated Analytic Story
+* [Suspicious MSHTA Activity](/stories/suspicious_mshta_activity)
+* [Living Off The Land](/stories/living_off_the_land)
 
-Note that `windows_mshta_child_process_filter` is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 
 #### Required field
 * _time
@@ -67,20 +70,12 @@ Note that `windows_mshta_child_process_filter` is a empty macro by default. It a
 * cmd_line
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
-
-#### Known False Positives
-Although unlikely, some legitimate applications may exhibit this behavior, triggering a false positive.
-
-#### Associated Analytic story
-* [Suspicious MSHTA Activity](/stories/suspicious_mshta_activity)
-* [Living Off The Land](/stories/living_off_the_land)
-
-
 #### Kill Chain Phase
 * Exploitation
 
+
+#### Known False Positives
+Although unlikely, some legitimate applications may exhibit this behavior, triggering a false positive.
 
 
 #### RBA
@@ -89,8 +84,6 @@ Although unlikely, some legitimate applications may exhibit this behavior, trigg
 | ----------- | ----------- |--------------|--------------|
 | 80.0 | 80 | 100 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest_device_id$ by user $dest_user_id$ attempting to access a remote destination to download an additional payload. |
 
-
-Note that risk score is calculated base on the following formula: `(Impact * Confidence)/100`
 
 
 
@@ -109,4 +102,4 @@ Alternatively you can replay a dataset into a [Splunk Attack Range](https://gith
 
 
 
-[*source*](https://github.com/splunk/security_content/tree/develop/detections/endpoint/windows_mshta_child_process.yml) \| *version*: **1**
+[*source*](https://github.com/splunk/security_content/tree/develop/detections/endpoint/windows_mshta_child_process.yml) \| *version*: **2**

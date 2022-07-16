@@ -1,7 +1,6 @@
 ---
 title: "Splunk protocol impersonation weak encryption selfsigned"
-excerpt: "Digital Certificates
-"
+excerpt: "Digital Certificates"
 categories:
   - Application
 last_modified_at: 2022-05-26
@@ -18,88 +17,27 @@ tags:
 
 
 
-[Try in Splunk Security Cloud](https://www.splunk.com/en_us/products/cyber-security.html){: .btn .btn--success}
+[Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
 
 #### Description
 
 On June 14th 2022, Splunk released vulnerability advisory addresing Python TLS validation which was not set before Splunk version 9. This search displays events showing WARNING of using Splunk issued default selfsigned certificates.
 
-- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: Hunting
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-
+- **Datamodel**: 
 - **Last Updated**: 2022-05-26
 - **Author**: Rod Soto, Splunk
 - **ID**: c76c7a2e-df49-414a-bb36-dce2683770de
 
 
-#### Annotations
+#### [ATT&CK](https://attack.mitre.org/)
 
-<details>
-  <summary>ATT&CK</summary>
-
-<div markdown="1">
-
-
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1588.004](https://attack.mitre.org/techniques/T1588/004/) | Digital Certificates | Resource Development |
 
-</div>
-</details>
-
-
-<details>
-  <summary>Kill Chain Phase</summary>
-
-<div markdown="1">
-
-* Exploitation
-
-
-</div>
-</details>
-
-
-<details>
-  <summary>NIST</summary>
-
-<div markdown="1">
-
-* DE.CM
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CIS20</summary>
-
-<div markdown="1">
-
-* CIS 3
-* CIS 5
-* CIS 16
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CVE</summary>
-
-<div markdown="1">
-| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
-| ----------- | ----------- | -------------- |
-| [CVE-2022-32152](https://nvd.nist.gov/vuln/detail/CVE-2022-32152) | Splunk Enterprise peers in Splunk Enterprise versions before 9.0 and Splunk Cloud Platform versions before 8.2.2203 did not validate the TLS certificates during Splunk-to-Splunk communications by default. Splunk peer communications configured properly with valid certificates were not vulnerable. However, an attacker with administrator credentials could add a peer without a valid certificate and connections from misconfigured nodes without valid certificates did not fail by default. For Splunk Enterprise, update to Splunk Enterprise version 9.0 and Configure TLS host name validation for Splunk-to-Splunk communications (https://docs.splunk.com/Documentation/Splunk/9.0.0/Security/EnableTLSCertHostnameValidation) to enable the remediation. | None |
-
-
-
-</div>
-</details>
-
-#### Search 
+#### Search
 
 ```
 `splunkd` certificate event_message="X509 certificate* should not be used*" 
@@ -107,12 +45,12 @@ On June 14th 2022, Splunk released vulnerability advisory addresing Python TLS v
 | `splunk_protocol_impersonation_weak_encryption_selfsigned_filter`
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-* [splunkd](https://github.com/splunk/security_content/blob/develop/macros/splunkd.yml)
+#### Associated Analytic Story
+* [Splunk Vulnerabilities](/stories/splunk_vulnerabilities)
 
-> :information_source:
-> **splunk_protocol_impersonation_weak_encryption_selfsigned_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+Must upgrade to Splunk version 9 and Configure TLS in order to apply this search. Splunk SOAR customers can find a SOAR workbook that walks an analyst through the process of running these hunting searches in the references list of this detection. In order to use this workbook, a user will need to run a curl command to post the file to their SOAR instance such as &#34;curl -u username:password https://soar.instance.name/rest/rest/workbook_template -d @splunk_psa_0622.json&#34;. A user should then create an empty container or case, attach the workbook, and begin working through the tasks.
 
 #### Required field
 * host
@@ -120,16 +58,12 @@ The SPL above uses the following Macros:
 * event_message
 
 
-#### How To Implement
-Must upgrade to Splunk version 9 and Configure TLS in order to apply this search. Splunk SOAR customers can find a SOAR workbook that walks an analyst through the process of running these hunting searches in the references list of this detection. In order to use this workbook, a user will need to run a curl command to post the file to their SOAR instance such as "curl -u username:password https://soar.instance.name/rest/rest/workbook_template -d @splunk_psa_0622.json". A user should then create an empty container or case, attach the workbook, and begin working through the tasks.
+#### Kill Chain Phase
+* Exploitation
+
 
 #### Known False Positives
 This searches finds self signed certificates issued by Splunk which are not recommended from Splunk version 9 forward.
-
-#### Associated Analytic story
-* [Splunk Vulnerabilities](/stories/splunk_vulnerabilities)
-
-
 
 
 #### RBA
@@ -139,8 +73,14 @@ This searches finds self signed certificates issued by Splunk which are not reco
 | 40.0 | 50 | 80 | Splunk default issued certificate at $host$ |
 
 
-> :information_source:
-> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author. 
+
+#### CVE
+
+| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
+| ----------- | ----------- | -------------- |
+| [CVE-2022-32152](https://nvd.nist.gov/vuln/detail/CVE-2022-32152) | Splunk Enterprise peers in Splunk Enterprise versions before 9.0 and Splunk Cloud Platform versions before 8.2.2203 did not validate the TLS certificates during Splunk-to-Splunk communications by default. Splunk peer communications configured properly with valid certificates were not vulnerable. However, an attacker with administrator credentials could add a peer without a valid certificate and connections from misconfigured nodes without valid certificates did not fail by default. For Splunk Enterprise, update to Splunk Enterprise version 9.0 and Configure TLS host name validation for Splunk-to-Splunk communications (https://docs.splunk.com/Documentation/Splunk/9.0.0/Security/EnableTLSCertHostnameValidation) to enable the remediation. | 6.5 |
+
+
 
 #### Reference
 
@@ -151,9 +91,8 @@ This searches finds self signed certificates issued by Splunk which are not reco
 
 
 #### Test Dataset
-Replay any dataset to Splunk Enterprise by using our [replay.py](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
+Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
-
 
 * [https://raw.githubusercontent.com/splunk/attack_data/master/datasets/attack_techniques/T1558.004/splunk_protocol_impersonation_weak_encryption_selfsigned.txt](https://raw.githubusercontent.com/splunk/attack_data/master/datasets/attack_techniques/T1558.004/splunk_protocol_impersonation_weak_encryption_selfsigned.txt)
 

@@ -299,6 +299,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
+  x86_64-darwin-21
 
 DEPENDENCIES
   activesupport (>= 4.1.11)

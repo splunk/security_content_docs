@@ -1,9 +1,6 @@
 ---
 title: "Linux High Frequency Of File Deletion In Boot Folder"
-excerpt: "Data Destruction
-, File Deletion
-, Indicator Removal on Host
-"
+excerpt: "Data Destruction, File Deletion, Indicator Removal on Host"
 categories:
   - Endpoint
 last_modified_at: 2022-04-22
@@ -11,10 +8,10 @@ toc: true
 toc_label: ""
 tags:
   - Data Destruction
-  - File Deletion
-  - Indicator Removal on Host
   - Impact
+  - File Deletion
   - Defense Evasion
+  - Indicator Removal on Host
   - Defense Evasion
   - Splunk Enterprise
   - Splunk Enterprise Security
@@ -24,13 +21,13 @@ tags:
 
 
 
-[Try in Splunk Security Cloud](https://www.splunk.com/en_us/products/cyber-security.html){: .btn .btn--success}
+[Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
 
 #### Description
 
 This analytic is to detect a high frequency of file deletion relative to process name and process id /boot/ folder. These events was seen in industroyer2 wiper malware where it tries to delete all files in a critical directory in linux directory. This detection already contains some filter that might cause false positive during our testing.
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-04-22
@@ -38,74 +35,17 @@ This analytic is to detect a high frequency of file deletion relative to process
 - **ID**: e27fbc5d-0445-4c4a-bc39-87f060d5c602
 
 
-#### Annotations
+#### [ATT&CK](https://attack.mitre.org/)
 
-<details>
-  <summary>ATT&CK</summary>
-
-<div markdown="1">
-
-
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1485](https://attack.mitre.org/techniques/T1485/) | Data Destruction | Impact |
 
 | [T1070.004](https://attack.mitre.org/techniques/T1070/004/) | File Deletion | Defense Evasion |
 
 | [T1070](https://attack.mitre.org/techniques/T1070/) | Indicator Removal on Host | Defense Evasion |
 
-</div>
-</details>
-
-
-<details>
-  <summary>Kill Chain Phase</summary>
-
-<div markdown="1">
-
-* Exploitation
-
-
-</div>
-</details>
-
-
-<details>
-  <summary>NIST</summary>
-
-<div markdown="1">
-
-* DE.CM
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CIS20</summary>
-
-<div markdown="1">
-
-* CIS 3
-* CIS 5
-* CIS 16
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CVE</summary>
-
-<div markdown="1">
-
-
-</div>
-</details>
-
-#### Search 
+#### Search
 
 ```
 
@@ -122,12 +62,13 @@ This analytic is to detect a high frequency of file deletion relative to process
 | `linux_high_frequency_of_file_deletion_in_boot_folder_filter`
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+#### Associated Analytic Story
+* [Industroyer2](/stories/industroyer2)
+* [Data Destruction](/stories/data_destruction)
 
-> :information_source:
-> **linux_high_frequency_of_file_deletion_in_boot_folder_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 
 #### Required field
 * _time
@@ -148,17 +89,12 @@ The SPL above uses the following Macros:
 * Processes.parent_process_id
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
+#### Kill Chain Phase
+* Exploitation
+
 
 #### Known False Positives
 linux package installer/uninstaller may cause this event. Please update you filter macro to remove false positives.
-
-#### Associated Analytic story
-* [Industroyer2](/stories/industroyer2)
-* [Data Destruction](/stories/data_destruction)
-
-
 
 
 #### RBA
@@ -168,8 +104,7 @@ linux package installer/uninstaller may cause this event. Please update you filt
 | 80.0 | 100 | 80 | a $process_name$ deleting multiple files in /boot/ folder in $dest$ |
 
 
-> :information_source:
-> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author. 
+
 
 #### Reference
 
@@ -179,9 +114,8 @@ linux package installer/uninstaller may cause this event. Please update you filt
 
 
 #### Test Dataset
-Replay any dataset to Splunk Enterprise by using our [replay.py](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
+Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
-
 
 * [https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/rm_boot_dir/sysmon_linux.log](https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1485/rm_boot_dir/sysmon_linux.log)
 

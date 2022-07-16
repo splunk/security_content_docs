@@ -27,7 +27,7 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This analytic is built to detect a suspicious modification of the Windows registry related to UAC bypass. This technique is to modify the registry in this detection, create a registry value with the path of the payload and run WSreset.exe to bypass User Account Control.
 
-- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: Anomaly
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Registry](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointRegistry)
 - **Last Updated**: 2022-02-18
@@ -37,8 +37,8 @@ This analytic is built to detect a suspicious modification of the Windows regist
 
 #### [ATT&CK](https://attack.mitre.org/)
 
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1548.002](https://attack.mitre.org/techniques/T1548/002/) | Bypass User Account Control | Privilege Escalation, Defense Evasion |
 
 | [T1548](https://attack.mitre.org/techniques/T1548/) | Abuse Elevation Control Mechanism | Privilege Escalation, Defense Evasion |
@@ -56,10 +56,13 @@ This analytic is built to detect a suspicious modification of the Windows regist
 | into write_ssa_detected_events(); 
 ```
 
-#### Macros
-The SPL above uses the following Macros:
+#### Associated Analytic Story
+* [Living Off The Land](/stories/living_off_the_land)
+* [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics)
 
-Note that `windows_wsreset_uac_bypass_filter` is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint_Registry` datamodel.
 
 #### Required field
 * _time
@@ -72,30 +75,20 @@ Note that `windows_wsreset_uac_bypass_filter` is a empty macro by default. It al
 * process_guid
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint_Registry` datamodel.
+#### Kill Chain Phase
+* Exploitation
+
 
 #### Known False Positives
 Unknown at this point in time.
-
-#### Associated Analytic story
-* [Living Off The Land](/stories/living_off_the_land)
-* [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics)
-
-
-#### Kill Chain Phase
-* Privilege Escalation
-
 
 
 #### RBA
 
 | Risk Score  | Impact      | Confidence   | Message      |
 | ----------- | ----------- |--------------|--------------|
-| 63.0 | 70 | 90 | None |
+| 63.0 | 70 | 90 | tbd |
 
-
-Note that risk score is calculated base on the following formula: `(Impact * Confidence)/100`
 
 
 

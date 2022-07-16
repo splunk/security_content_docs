@@ -1,10 +1,6 @@
 ---
 title: "Wscript Or Cscript Suspicious Child Process"
-excerpt: "Process Injection
-, Create or Modify System Process
-, Parent PID Spoofing
-, Access Token Manipulation
-"
+excerpt: "Process Injection, Create or Modify System Process, Parent PID Spoofing, Access Token Manipulation"
 categories:
   - Endpoint
 last_modified_at: 2021-10-06
@@ -12,15 +8,15 @@ toc: true
 toc_label: ""
 tags:
   - Process Injection
-  - Create or Modify System Process
-  - Parent PID Spoofing
-  - Access Token Manipulation
   - Defense Evasion
   - Privilege Escalation
+  - Create or Modify System Process
   - Persistence
   - Privilege Escalation
+  - Parent PID Spoofing
   - Defense Evasion
   - Privilege Escalation
+  - Access Token Manipulation
   - Defense Evasion
   - Privilege Escalation
   - Splunk Enterprise
@@ -31,30 +27,24 @@ tags:
 
 
 
-[Try in Splunk Security Cloud](https://www.splunk.com/en_us/products/cyber-security.html){: .btn .btn--success}
+[Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
 
 #### Description
 
 This analytic identifies a suspicious spawned process by WScript or CScript process. This technique was a common technique used by adversaries and malware to execute different LOLBIN, other scripts like PowerShell or spawn a suspended process to inject its code as a defense evasion. This TTP may detect some normal script that using several application tool that are in the list of the child process it detects but a good pivot and indicator that a script is may execute suspicious code.
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)- **Datasource**: [Splunk Add-on for Sysmon](https://splunkbase.splunk.com/app/5709)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-10-06
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 1f35e1da-267b-11ec-90a9-acde48001122
 
 
-#### Annotations
+#### [ATT&CK](https://attack.mitre.org/)
 
-<details>
-  <summary>ATT&CK</summary>
-
-<div markdown="1">
-
-
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1055](https://attack.mitre.org/techniques/T1055/) | Process Injection | Defense Evasion, Privilege Escalation |
 
 | [T1543](https://attack.mitre.org/techniques/T1543/) | Create or Modify System Process | Persistence, Privilege Escalation |
@@ -63,52 +53,7 @@ This analytic identifies a suspicious spawned process by WScript or CScript proc
 
 | [T1134](https://attack.mitre.org/techniques/T1134/) | Access Token Manipulation | Defense Evasion, Privilege Escalation |
 
-</div>
-</details>
-
-
-<details>
-  <summary>Kill Chain Phase</summary>
-
-<div markdown="1">
-
-* Exploitation
-
-
-</div>
-</details>
-
-
-<details>
-  <summary>NIST</summary>
-
-<div markdown="1">
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CIS20</summary>
-
-<div markdown="1">
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CVE</summary>
-
-<div markdown="1">
-
-
-</div>
-</details>
-
-#### Search 
+#### Search
 
 ```
 
@@ -119,13 +64,15 @@ This analytic identifies a suspicious spawned process by WScript or CScript proc
 | `wscript_or_cscript_suspicious_child_process_filter`
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
-* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+#### Associated Analytic Story
+* [FIN7](/stories/fin7)
+* [Remcos](/stories/remcos)
+* [Unusual Processes](/stories/unusual_processes)
+* [WhisperGate](/stories/whispergate)
 
-> :information_source:
-> **wscript_or_cscript_suspicious_child_process_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 
 #### Required field
 * _time
@@ -142,19 +89,12 @@ The SPL above uses the following Macros:
 * Processes.parent_process_id
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
+#### Kill Chain Phase
+* Exploitation
+
 
 #### Known False Positives
 Administrators may create vbs or js script that use several tool as part of its execution. Filter as needed.
-
-#### Associated Analytic story
-* [FIN7](/stories/fin7)
-* [Remcos](/stories/remcos)
-* [Unusual Processes](/stories/unusual_processes)
-* [WhisperGate](/stories/whispergate)
-
-
 
 
 #### RBA
@@ -164,8 +104,7 @@ Administrators may create vbs or js script that use several tool as part of its 
 | 49.0 | 70 | 70 | wscript or cscript parent process spawned $process_name$ in $dest$ |
 
 
-> :information_source:
-> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author. 
+
 
 #### Reference
 
@@ -175,9 +114,8 @@ Administrators may create vbs or js script that use several tool as part of its 
 
 
 #### Test Dataset
-Replay any dataset to Splunk Enterprise by using our [replay.py](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
+Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
-
 
 * [https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.005/vbs_wscript/sysmon.log](https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.005/vbs_wscript/sysmon.log)
 

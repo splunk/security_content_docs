@@ -1,8 +1,6 @@
 ---
 title: "Registry Keys Used For Privilege Escalation"
-excerpt: "Image File Execution Options Injection
-, Event Triggered Execution
-"
+excerpt: "Image File Execution Options Injection, Event Triggered Execution"
 categories:
   - Endpoint
 last_modified_at: 2022-01-26
@@ -10,97 +8,42 @@ toc: true
 toc_label: ""
 tags:
   - Image File Execution Options Injection
+  - Privilege Escalation
+  - Persistence
   - Event Triggered Execution
-  - Persistence
   - Privilege Escalation
   - Persistence
-  - Privilege Escalation
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
+  - Endpoint
 ---
 
 
 
-[Try in Splunk Security Cloud](https://www.splunk.com/en_us/products/cyber-security.html){: .btn .btn--success}
+[Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
 
 #### Description
 
-This search looks for modifications to registry keys that can be used to elevate privileges. The registry keys under "Image File Execution Options" are used to intercept calls to an executable and can be used to attach malicious binaries to benign system binaries.
+This search looks for modifications to registry keys that can be used to elevate privileges. The registry keys under &#34;Image File Execution Options&#34; are used to intercept calls to an executable and can be used to attach malicious binaries to benign system binaries.
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-01-26
 - **Author**: David Dorsey, Teoderick Contreras, Splunk
 - **ID**: c9f4b923-f8af-4155-b697-1354f5bcbc5e
 
 
-#### Annotations
+#### [ATT&CK](https://attack.mitre.org/)
 
-<details>
-  <summary>ATT&CK</summary>
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
+| [T1546.012](https://attack.mitre.org/techniques/T1546/012/) | Image File Execution Options Injection | Privilege Escalation, Persistence |
 
-<div markdown="1">
+| [T1546](https://attack.mitre.org/techniques/T1546/) | Event Triggered Execution | Privilege Escalation, Persistence |
 
-
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
-| [T1546.012](https://attack.mitre.org/techniques/T1546/012/) | Image File Execution Options Injection | Persistence, Privilege Escalation |
-
-| [T1546](https://attack.mitre.org/techniques/T1546/) | Event Triggered Execution | Persistence, Privilege Escalation |
-
-</div>
-</details>
-
-
-<details>
-  <summary>Kill Chain Phase</summary>
-
-<div markdown="1">
-
-* Actions on Objectives
-
-
-</div>
-</details>
-
-
-<details>
-  <summary>NIST</summary>
-
-<div markdown="1">
-
-* PR.PT
-* DE.CM
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CIS20</summary>
-
-<div markdown="1">
-
-* CIS 8
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CVE</summary>
-
-<div markdown="1">
-
-
-</div>
-</details>
-
-#### Search 
+#### Search
 
 ```
 
@@ -116,12 +59,16 @@ This search looks for modifications to registry keys that can be used to elevate
 | `registry_keys_used_for_privilege_escalation_filter`
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+#### Associated Analytic Story
+* [Windows Privilege Escalation](/stories/windows_privilege_escalation)
+* [Suspicious Windows Registry Activities](/stories/suspicious_windows_registry_activities)
+* [Cloud Federated Credential Abuse](/stories/cloud_federated_credential_abuse)
+* [Windows Registry Abuse](/stories/windows_registry_abuse)
+* [Hermetic Wiper](/stories/hermetic_wiper)
 
-> :information_source:
-> **registry_keys_used_for_privilege_escalation_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+To successfully implement this search, you must be ingesting data that records registry activity from your hosts to populate the endpoint data model in the registry node. This is typically populated via endpoint detection-and-response product, such as Carbon Black, or endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the registry.
 
 #### Required field
 * _time
@@ -131,20 +78,12 @@ The SPL above uses the following Macros:
 * Registry.user
 
 
-#### How To Implement
-To successfully implement this search, you must be ingesting data that records registry activity from your hosts to populate the endpoint data model in the registry node. This is typically populated via endpoint detection-and-response product, such as Carbon Black, or endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the registry.
+#### Kill Chain Phase
+* Actions on Objectives
+
 
 #### Known False Positives
 There are many legitimate applications that must execute upon system startup and will use these registry keys to accomplish that task.
-
-#### Associated Analytic story
-* [Windows Privilege Escalation](/stories/windows_privilege_escalation)
-* [Suspicious Windows Registry Activities](/stories/suspicious_windows_registry_activities)
-* [Cloud Federated Credential Abuse](/stories/cloud_federated_credential_abuse)
-* [Windows Registry Abuse](/stories/windows_registry_abuse)
-* [Hermetic Wiper](/stories/hermetic_wiper)
-
-
 
 
 #### RBA
@@ -154,8 +93,7 @@ There are many legitimate applications that must execute upon system startup and
 | 76.0 | 80 | 95 | A registry activity in $registry_path$ related to privilege escalation in host $dest$ |
 
 
-> :information_source:
-> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author. 
+
 
 #### Reference
 
@@ -164,9 +102,8 @@ There are many legitimate applications that must execute upon system startup and
 
 
 #### Test Dataset
-Replay any dataset to Splunk Enterprise by using our [replay.py](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
+Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
-
 
 * [https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.012/atomic_red_team/windows-sysmon.log](https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.012/atomic_red_team/windows-sysmon.log)
 

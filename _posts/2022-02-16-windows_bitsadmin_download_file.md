@@ -11,7 +11,7 @@ tags:
   - Defense Evasion
   - Persistence
   - Ingress Tool Transfer
-  - Command & Control
+  - Command And Control
   - Splunk Behavioral Analytics
   - Endpoint_Processes
 ---
@@ -24,7 +24,7 @@ tags:
 
 The following query identifies Microsoft Background Intelligent Transfer Service utility `bitsadmin.exe` using the `transfer` parameter to download a remote object. In addition, look for `download` or `upload` on the command-line, the switches are not required to perform a transfer. Capture any files downloaded. Review the reputation of the IP or domain used. Typically once executed, a follow on command will be used to execute the dropped file. Note that the network connection or file modification events related will not spawn or create from `bitsadmin.exe`, but the artifacts will appear in a parallel process of `svchost.exe` with a command-line similar to `svchost.exe -k netsvcs -s BITS`. It&#39;s important to review all parallel and child processes to capture any behaviors and artifacts. In some suspicious and malicious instances, BITS jobs will be created. You can use `bitsadmin /list /verbose` to list out the jobs during investigation.
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2022-02-16
@@ -34,8 +34,8 @@ The following query identifies Microsoft Background Intelligent Transfer Service
 
 #### [ATT&CK](https://attack.mitre.org/)
 
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1197](https://attack.mitre.org/techniques/T1197/) | BITS Jobs | Defense Evasion, Persistence |
 
 | [T1105](https://attack.mitre.org/techniques/T1105/) | Ingress Tool Transfer | Command And Control |
@@ -53,10 +53,15 @@ The following query identifies Microsoft Background Intelligent Transfer Service
 | into write_ssa_detected_events();
 ```
 
-#### Macros
-The SPL above uses the following Macros:
+#### Associated Analytic Story
+* [Ingress Tool Transfer](/stories/ingress_tool_transfer)
+* [BITS Jobs](/stories/bits_jobs)
+* [DarkSide Ransomware](/stories/darkside_ransomware)
+* [Living Off The Land](/stories/living_off_the_land)
 
-Note that `windows_bitsadmin_download_file_filter` is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
 #### Required field
 * _time
@@ -69,22 +74,12 @@ Note that `windows_bitsadmin_download_file_filter` is a empty macro by default. 
 * cmd_line
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
-
-#### Known False Positives
-Limited false positives, however it may be required to filter based on parent process name or network connection.
-
-#### Associated Analytic story
-* [Ingress Tool Transfer](/stories/ingress_tool_transfer)
-* [BITS Jobs](/stories/bits_jobs)
-* [DarkSide Ransomware](/stories/darkside_ransomware)
-* [Living Off The Land](/stories/living_off_the_land)
-
-
 #### Kill Chain Phase
 * Exploitation
 
+
+#### Known False Positives
+Limited false positives, however it may be required to filter based on parent process name or network connection.
 
 
 #### RBA
@@ -93,8 +88,6 @@ Limited false positives, however it may be required to filter based on parent pr
 | ----------- | ----------- |--------------|--------------|
 | 49.0 | 70 | 70 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest$ by user $dest_user_id$ attempting to download a file. |
 
-
-Note that risk score is calculated base on the following formula: `(Impact * Confidence)/100`
 
 
 

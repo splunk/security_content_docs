@@ -13,81 +13,24 @@ tags:
   - Email
 ---
 
-### :warning: WARNING THIS IS A EXPERIMENTAL analytic
-We have not been able to test, simulate, or build datasets for this object. Use at your own risk. This analytic is **NOT** supported.
+### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
-[Try in Splunk Security Cloud](https://www.splunk.com/en_us/products/cyber-security.html){: .btn .btn--success}
+[Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
 
 #### Description
 
 This search looks for emails claiming to be sent from a domain similar to one that you want to have monitored for abuse.
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Email](https://docs.splunk.com/Documentation/CIM/latest/User/Email)
 - **Last Updated**: 2018-01-05
 - **Author**: David Dorsey, Splunk
 - **ID**: b2ea1f38-3a3e-4b8a-9cf1-82760d86a6b8
 
-
-#### Annotations
-
-<details>
-  <summary>ATT&CK</summary>
-
-<div markdown="1">
-
-</div>
-</details>
-
-
-<details>
-  <summary>Kill Chain Phase</summary>
-
-<div markdown="1">
-
-* Delivery
-
-
-</div>
-</details>
-
-
-<details>
-  <summary>NIST</summary>
-
-<div markdown="1">
-
-* PR.IP
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CIS20</summary>
-
-<div markdown="1">
-
-* CIS 7
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CVE</summary>
-
-<div markdown="1">
-
-
-</div>
-</details>
-
-#### Search 
+#### Search
 
 ```
 
@@ -103,18 +46,13 @@ This search looks for emails claiming to be sent from a domain similar to one th
 | `monitor_email_for_brand_abuse_filter`
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
-* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+#### Associated Analytic Story
+* [Brand Monitoring](/stories/brand_monitoring)
+* [Suspicious Emails](/stories/suspicious_emails)
 
-> :information_source:
-> **monitor_email_for_brand_abuse_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
-#### Lookups
-The SPL above uses the following Lookups:
-
-* [brandMonitoring_lookup](https://github.com/splunk/security_content/blob/develop/lookups/brandMonitoring_lookup.yml) with [data](https://github.com/splunk/security_content/tree/develop/lookups/brandMonitoring_lookup.csv)
+#### How To Implement
+You need to ingest email header data. Specifically the sender&#39;s address (src_user) must be populated.  You also need to have run the search &#34;ESCU - DNSTwist Domain Names&#34;, which creates the permutations of the domain that will be checked for.
 
 #### Required field
 * _time
@@ -123,17 +61,12 @@ The SPL above uses the following Lookups:
 * All_Email.message_id
 
 
-#### How To Implement
-You need to ingest email header data. Specifically the sender's address (src_user) must be populated.  You also need to have run the search "ESCU - DNSTwist Domain Names", which creates the permutations of the domain that will be checked for.
+#### Kill Chain Phase
+* Delivery
+
 
 #### Known False Positives
 None at this time
-
-#### Associated Analytic story
-* [Brand Monitoring](/stories/brand_monitoring)
-* [Suspicious Emails](/stories/suspicious_emails)
-
-
 
 
 #### RBA
@@ -143,15 +76,15 @@ None at this time
 | 25.0 | 50 | 50 | tbd |
 
 
-> :information_source:
-> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author. 
+
 
 #### Reference
 
 
 #### Test Dataset
-Replay any dataset to Splunk Enterprise by using our [replay.py](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
+Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
+
 
 
 

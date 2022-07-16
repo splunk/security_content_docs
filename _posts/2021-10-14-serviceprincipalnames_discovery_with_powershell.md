@@ -1,7 +1,6 @@
 ---
 title: "ServicePrincipalNames Discovery with PowerShell"
-excerpt: "Kerberoasting
-"
+excerpt: "Kerberoasting"
 categories:
   - Endpoint
 last_modified_at: 2021-10-14
@@ -17,7 +16,7 @@ tags:
 
 
 
-[Try in Splunk Security Cloud](https://www.splunk.com/en_us/products/cyber-security.html){: .btn .btn--success}
+[Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
 
 #### Description
 
@@ -27,72 +26,21 @@ A service principal name (SPN) is a unique identifier of a service instance. SPN
 The following analytic identifies the use of KerberosRequestorSecurityToken class within the script block. Using .NET System.IdentityModel.Tokens.KerberosRequestorSecurityToken class in PowerShell is the equivelant of using setspn.exe. \
 During triage, review parallel processes for further suspicious activity.
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-
+- **Datamodel**: 
 - **Last Updated**: 2021-10-14
 - **Author**: Michael Haag, Splunk
 - **ID**: 13243068-2d38-11ec-8908-acde48001122
 
 
-#### Annotations
+#### [ATT&CK](https://attack.mitre.org/)
 
-<details>
-  <summary>ATT&CK</summary>
-
-<div markdown="1">
-
-
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1558.003](https://attack.mitre.org/techniques/T1558/003/) | Kerberoasting | Credential Access |
 
-</div>
-</details>
-
-
-<details>
-  <summary>Kill Chain Phase</summary>
-
-<div markdown="1">
-
-* Exploitation
-
-
-</div>
-</details>
-
-
-<details>
-  <summary>NIST</summary>
-
-<div markdown="1">
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CIS20</summary>
-
-<div markdown="1">
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CVE</summary>
-
-<div markdown="1">
-
-
-</div>
-</details>
-
-#### Search 
+#### Search
 
 ```
 `powershell` EventCode=4104 Message="*KerberosRequestorSecurityToken*" 
@@ -102,13 +50,13 @@ During triage, review parallel processes for further suspicious activity.
 | `serviceprincipalnames_discovery_with_powershell_filter`
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
-* [powershell](https://github.com/splunk/security_content/blob/develop/macros/powershell.yml)
+#### Associated Analytic Story
+* [Active Directory Discovery](/stories/active_directory_discovery)
+* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
 
-> :information_source:
-> **serviceprincipalnames_discovery_with_powershell_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+To successfully implement this analytic, you will need to enable PowerShell Script Block Logging on some or all endpoints. Additional setup here https://docs.splunk.com/Documentation/UBA/5.0.4.1/GetDataIn/AddPowerShell#Configure_module_logging_for_PowerShell.
 
 #### Required field
 * _time
@@ -125,17 +73,12 @@ The SPL above uses the following Macros:
 * Processes.parent_process_id
 
 
-#### How To Implement
-To successfully implement this analytic, you will need to enable PowerShell Script Block Logging on some or all endpoints. Additional setup here https://docs.splunk.com/Documentation/UBA/5.0.4.1/GetDataIn/AddPowerShell#Configure_module_logging_for_PowerShell.
+#### Kill Chain Phase
+* Exploitation
+
 
 #### Known False Positives
 False positives should be limited, however filter as needed.
-
-#### Associated Analytic story
-* [Active Directory Discovery](/stories/active_directory_discovery)
-* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
-
-
 
 
 #### RBA
@@ -145,8 +88,7 @@ False positives should be limited, however filter as needed.
 | 80.0 | 80 | 100 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest$ by user $user$ attempting to identify service principle names. |
 
 
-> :information_source:
-> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author. 
+
 
 #### Reference
 
@@ -156,7 +98,7 @@ False positives should be limited, however filter as needed.
 * [https://strontic.github.io/xcyclopedia/library/setspn.exe-5C184D581524245DAD7A0A02B51FD2C2.html](https://strontic.github.io/xcyclopedia/library/setspn.exe-5C184D581524245DAD7A0A02B51FD2C2.html)
 * [https://attack.mitre.org/techniques/T1558/003/](https://attack.mitre.org/techniques/T1558/003/)
 * [https://social.technet.microsoft.com/wiki/contents/articles/717.service-principal-names-spn-setspn-syntax.aspx](https://social.technet.microsoft.com/wiki/contents/articles/717.service-principal-names-spn-setspn-syntax.aspx)
-* [https://www.harmj0y.net/blog/powershell/kerberoasting-without-mimikatz/](https://www.harmj0y.net/blog/powershell/kerberoasting-without-mimikatz/)
+* [https://web.archive.org/web/20220212163642/https://www.harmj0y.net/blog/powershell/kerberoasting-without-mimikatz/](https://web.archive.org/web/20220212163642/https://www.harmj0y.net/blog/powershell/kerberoasting-without-mimikatz/)
 * [https://blog.zsec.uk/paving-2-da-wholeset/](https://blog.zsec.uk/paving-2-da-wholeset/)
 * [https://msitpros.com/?p=3113](https://msitpros.com/?p=3113)
 * [https://adsecurity.org/?p=3466](https://adsecurity.org/?p=3466)
@@ -168,9 +110,8 @@ False positives should be limited, however filter as needed.
 
 
 #### Test Dataset
-Replay any dataset to Splunk Enterprise by using our [replay.py](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
+Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
-
 
 * [https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1558.003/atomic_red_team/windows-powershell_kerberos.log](https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1558.003/atomic_red_team/windows-powershell_kerberos.log)
 

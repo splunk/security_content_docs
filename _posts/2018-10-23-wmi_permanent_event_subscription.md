@@ -1,7 +1,6 @@
 ---
 title: "WMI Permanent Event Subscription"
-excerpt: "Windows Management Instrumentation
-"
+excerpt: "Windows Management Instrumentation"
 categories:
   - Endpoint
 last_modified_at: 2018-10-23
@@ -15,90 +14,31 @@ tags:
   - Splunk Cloud
 ---
 
-### :warning: WARNING THIS IS A EXPERIMENTAL analytic
-We have not been able to test, simulate, or build datasets for this object. Use at your own risk. This analytic is **NOT** supported.
+### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
-[Try in Splunk Security Cloud](https://www.splunk.com/en_us/products/cyber-security.html){: .btn .btn--success}
+[Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
 
 #### Description
 
 This search looks for the creation of WMI permanent event subscriptions.
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-
+- **Datamodel**: 
 - **Last Updated**: 2018-10-23
 - **Author**: Rico Valdez, Splunk
 - **ID**: 71bfdb13-f200-4c6c-b2c9-a2e07adf437d
 
 
-#### Annotations
+#### [ATT&CK](https://attack.mitre.org/)
 
-<details>
-  <summary>ATT&CK</summary>
-
-<div markdown="1">
-
-
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1047](https://attack.mitre.org/techniques/T1047/) | Windows Management Instrumentation | Execution |
 
-</div>
-</details>
-
-
-<details>
-  <summary>Kill Chain Phase</summary>
-
-<div markdown="1">
-
-* Actions on Objectives
-
-
-</div>
-</details>
-
-
-<details>
-  <summary>NIST</summary>
-
-<div markdown="1">
-
-* PR.PT
-* PR.AT
-* PR.AC
-* PR.IP
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CIS20</summary>
-
-<div markdown="1">
-
-* CIS 3
-* CIS 5
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CVE</summary>
-
-<div markdown="1">
-
-
-</div>
-</details>
-
-#### Search 
+#### Search
 
 ```
 `wmi` EventCode=5861 Binding 
@@ -112,13 +52,12 @@ This search looks for the creation of WMI permanent event subscriptions.
 | `wmi_permanent_event_subscription_filter`
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-* [wmi](https://github.com/splunk/security_content/blob/develop/macros/wmi.yml)
-* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+#### Associated Analytic Story
+* [Suspicious WMI Use](/stories/suspicious_wmi_use)
 
-> :information_source:
-> **wmi_permanent_event_subscription_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+To successfully implement this search, you must be ingesting the Windows WMI activity logs. This can be done by adding a stanza to inputs.conf on the system generating logs with a title of [WinEventLog://Microsoft-Windows-WMI-Activity/Operational].
 
 #### Required field
 * _time
@@ -128,16 +67,12 @@ The SPL above uses the following Macros:
 * ComputerName
 
 
-#### How To Implement
-To successfully implement this search, you must be ingesting the Windows WMI activity logs. This can be done by adding a stanza to inputs.conf on the system generating logs with a title of [WinEventLog://Microsoft-Windows-WMI-Activity/Operational].
+#### Kill Chain Phase
+* Actions on Objectives
+
 
 #### Known False Positives
 Although unlikely, administrators may use event subscriptions for legitimate purposes.
-
-#### Associated Analytic story
-* [Suspicious WMI Use](/stories/suspicious_wmi_use)
-
-
 
 
 #### RBA
@@ -147,15 +82,15 @@ Although unlikely, administrators may use event subscriptions for legitimate pur
 | 25.0 | 50 | 50 | tbd |
 
 
-> :information_source:
-> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author. 
+
 
 #### Reference
 
 
 #### Test Dataset
-Replay any dataset to Splunk Enterprise by using our [replay.py](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
+Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
+
 
 
 

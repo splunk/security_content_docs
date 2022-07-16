@@ -1,8 +1,6 @@
 ---
 title: "Registry Keys Used For Persistence"
-excerpt: "Registry Run Keys / Startup Folder
-, Boot or Logon Autostart Execution
-"
+excerpt: "Registry Run Keys / Startup Folder, Boot or Logon Autostart Execution"
 categories:
   - Endpoint
 last_modified_at: 2022-01-26
@@ -10,9 +8,9 @@ toc: true
 toc_label: ""
 tags:
   - Registry Run Keys / Startup Folder
-  - Boot or Logon Autostart Execution
   - Persistence
   - Privilege Escalation
+  - Boot or Logon Autostart Execution
   - Persistence
   - Privilege Escalation
   - Splunk Enterprise
@@ -23,86 +21,29 @@ tags:
 
 
 
-[Try in Splunk Security Cloud](https://www.splunk.com/en_us/products/cyber-security.html){: .btn .btn--success}
+[Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
 
 #### Description
 
 The search looks for modifications to registry keys that can be used to launch an application or service at system startup.
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)- **Datasource**: [Splunk Add-on for Sysmon](https://splunkbase.splunk.com/app/5709)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-01-26
 - **Author**: Jose Hernandez, David Dorsey, Teoderick Contreras, Rod Soto, Splunk
 - **ID**: f5f6af30-7aa7-4295-bfe9-07fe87c01a4b
 
 
-#### Annotations
+#### [ATT&CK](https://attack.mitre.org/)
 
-<details>
-  <summary>ATT&CK</summary>
-
-<div markdown="1">
-
-
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1547.001](https://attack.mitre.org/techniques/T1547/001/) | Registry Run Keys / Startup Folder | Persistence, Privilege Escalation |
 
 | [T1547](https://attack.mitre.org/techniques/T1547/) | Boot or Logon Autostart Execution | Persistence, Privilege Escalation |
 
-</div>
-</details>
-
-
-<details>
-  <summary>Kill Chain Phase</summary>
-
-<div markdown="1">
-
-* Actions on Objectives
-
-
-</div>
-</details>
-
-
-<details>
-  <summary>NIST</summary>
-
-<div markdown="1">
-
-* PR.PT
-* DE.CM
-* DE.AE
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CIS20</summary>
-
-<div markdown="1">
-
-* CIS 8
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CVE</summary>
-
-<div markdown="1">
-
-
-</div>
-</details>
-
-#### Search 
+#### Search
 
 ```
 
@@ -118,28 +59,7 @@ The search looks for modifications to registry keys that can be used to launch a
 | `registry_keys_used_for_persistence_filter`
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
-
-> :information_source:
-> **registry_keys_used_for_persistence_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
-
-#### Required field
-* _time
-* Registry.registry_key_name
-* Registry.registry_path
-* Registry.dest
-* Registry.user
-
-
-#### How To Implement
-To successfully implement this search, you must be ingesting data that records registry activity from your hosts to populate the endpoint data model in the registry node. This is typically populated via endpoint detection-and-response product, such as Carbon Black or endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the registry.
-
-#### Known False Positives
-There are many legitimate applications that must execute on system startup and will use these registry keys to accomplish that task.
-
-#### Associated Analytic story
+#### Associated Analytic Story
 * [Suspicious Windows Registry Activities](/stories/suspicious_windows_registry_activities)
 * [Suspicious MSHTA Activity](/stories/suspicious_mshta_activity)
 * [DHS Report TA18-074A](/stories/dhs_report_ta18-074a)
@@ -150,8 +70,26 @@ There are many legitimate applications that must execute on system startup and w
 * [IcedID](/stories/icedid)
 * [Remcos](/stories/remcos)
 * [Windows Registry Abuse](/stories/windows_registry_abuse)
+* [Azorult](/stories/azorult)
 
 
+#### How To Implement
+To successfully implement this search, you must be ingesting data that records registry activity from your hosts to populate the endpoint data model in the registry node. This is typically populated via endpoint detection-and-response product, such as Carbon Black or endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the registry.
+
+#### Required field
+* _time
+* Registry.registry_key_name
+* Registry.registry_path
+* Registry.dest
+* Registry.user
+
+
+#### Kill Chain Phase
+* Actions on Objectives
+
+
+#### Known False Positives
+There are many legitimate applications that must execute on system startup and will use these registry keys to accomplish that task.
 
 
 #### RBA
@@ -161,16 +99,14 @@ There are many legitimate applications that must execute on system startup and w
 | 76.0 | 80 | 95 | A registry activity in $registry_path$ related to persistence in host $dest$ |
 
 
-> :information_source:
-> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author. 
+
 
 #### Reference
 
 
 #### Test Dataset
-Replay any dataset to Splunk Enterprise by using our [replay.py](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
+Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
-
 
 * [https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.001/atomic_red_team/windows-sysmon.log](https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.001/atomic_red_team/windows-sysmon.log)
 * [https://raw.githubusercontent.com/splunk/attack_data/master/datasets/attack_techniques/T1547.001/atomic_red_team/t1547001-runonce.log](https://raw.githubusercontent.com/splunk/attack_data/master/datasets/attack_techniques/T1547.001/atomic_red_team/t1547001-runonce.log)

@@ -1,6 +1,6 @@
 ---
 title: "Windows MSHTA Inline HTA Execution"
-excerpt: "Mshta, Signed Binary Proxy Execution"
+excerpt: "Mshta, System Binary Proxy Execution"
 categories:
   - Endpoint
 last_modified_at: 2022-02-23
@@ -9,7 +9,7 @@ toc_label: ""
 tags:
   - Mshta
   - Defense Evasion
-  - Signed Binary Proxy Execution
+  - System Binary Proxy Execution
   - Defense Evasion
   - Splunk Behavioral Analytics
   - Endpoint_Processes
@@ -23,7 +23,7 @@ tags:
 
 The following analytic identifies &#34;mshta.exe&#34; execution with inline protocol handlers. &#34;JavaScript&#34;, &#34;VBScript&#34;, and &#34;About&#34; are the only supported options when invoking HTA content directly on the command-line. The search will return the first time and last time these command-line arguments were used for these executions, as well as the target system, the user, process &#34;mshta.exe&#34; and its parent process.
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2022-02-23
@@ -33,11 +33,11 @@ The following analytic identifies &#34;mshta.exe&#34; execution with inline prot
 
 #### [ATT&CK](https://attack.mitre.org/)
 
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1218.005](https://attack.mitre.org/techniques/T1218/005/) | Mshta | Defense Evasion |
 
-| [T1218](https://attack.mitre.org/techniques/T1218/) | Signed Binary Proxy Execution | Defense Evasion |
+| [T1218](https://attack.mitre.org/techniques/T1218/) | System Binary Proxy Execution | Defense Evasion |
 
 #### Search
 
@@ -51,10 +51,13 @@ The following analytic identifies &#34;mshta.exe&#34; execution with inline prot
 | into write_ssa_detected_events();
 ```
 
-#### Macros
-The SPL above uses the following Macros:
+#### Associated Analytic Story
+* [Suspicious MSHTA Activity](/stories/suspicious_mshta_activity)
+* [Living Off The Land](/stories/living_off_the_land)
 
-Note that `windows_mshta_inline_hta_execution_filter` is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
 #### Required field
 * _time
@@ -67,20 +70,12 @@ Note that `windows_mshta_inline_hta_execution_filter` is a empty macro by defaul
 * cmd_line
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
-
-#### Known False Positives
-Although unlikely, some legitimate applications may exhibit this behavior, triggering a false positive.
-
-#### Associated Analytic story
-* [Suspicious MSHTA Activity](/stories/suspicious_mshta_activity)
-* [Living Off The Land](/stories/living_off_the_land)
-
-
 #### Kill Chain Phase
 * Exploitation
 
+
+#### Known False Positives
+Although unlikely, some legitimate applications may exhibit this behavior, triggering a false positive.
 
 
 #### RBA
@@ -89,8 +84,6 @@ Although unlikely, some legitimate applications may exhibit this behavior, trigg
 | ----------- | ----------- |--------------|--------------|
 | 80.0 | 80 | 100 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest_device_id$ by user $dest_user_id$ executing with inline HTA, indicative of defense evasion. |
 
-
-Note that risk score is calculated base on the following formula: `(Impact * Confidence)/100`
 
 
 

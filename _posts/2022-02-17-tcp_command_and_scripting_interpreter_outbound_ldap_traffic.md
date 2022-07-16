@@ -13,6 +13,8 @@ tags:
   - Endpoint_Processes
 ---
 
+### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -21,7 +23,7 @@ tags:
 
 Malicious actors often abuse misconfigured LDAP servers or applications that use the LDAP servers in organizations. Outbound LDAP traffic should not be allowed outbound through your perimeter firewall. This search will help determine if you have any LDAP connections to IP addresses outside of private (RFC1918) address space.
 
-- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: Anomaly
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2022-02-17
@@ -31,8 +33,8 @@ Malicious actors often abuse misconfigured LDAP servers or applications that use
 
 #### [ATT&CK](https://attack.mitre.org/)
 
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1059](https://attack.mitre.org/techniques/T1059/) | Command and Scripting Interpreter | Execution |
 
 #### Search
@@ -47,10 +49,12 @@ Malicious actors often abuse misconfigured LDAP servers or applications that use
 | into write_ssa_detected_events();
 ```
 
-#### Macros
-The SPL above uses the following Macros:
+#### Associated Analytic Story
+* [Log4Shell CVE-2021-44228](/stories/log4shell_cve-2021-44228)
 
-Note that `tcp_command_and_scripting_interpreter_outbound_ldap_traffic_filter` is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+To successfully implement this search you need to be ingesting information on network traffic, specifically data that populates the Network_Traffic datamodel. To develop this analytic we used specifically Zeek/Bro conn.log and PAN Traffic events.
 
 #### Required field
 * _time
@@ -63,19 +67,12 @@ Note that `tcp_command_and_scripting_interpreter_outbound_ldap_traffic_filter` i
 * cmd_line
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on network traffic, specifically data that populates the Network_Traffic datamodel. To develop this analytic we used specifically Zeek/Bro conn.log and PAN Traffic events.
+#### Kill Chain Phase
+* Exploitation
+
 
 #### Known False Positives
 Unknown at this moment. Outbound LDAP traffic should not be allowed outbound through your perimeter firewall. Please check those servers to verify if the activity is legitimate.
-
-#### Associated Analytic story
-* [Log4Shell CVE-2021-44228](/stories/log4shell_cve-2021-44228)
-
-
-#### Kill Chain Phase
-* Execution
-
 
 
 #### RBA
@@ -84,8 +81,6 @@ Unknown at this moment. Outbound LDAP traffic should not be allowed outbound thr
 | ----------- | ----------- |--------------|--------------|
 | 35.0 | 50 | 70 | An outbound LDAP connection from $src_ip$ in your infrastructure connecting to dest ip $dest_ip$ |
 
-
-Note that risk score is calculated base on the following formula: `(Impact * Confidence)/100`
 
 
 
@@ -105,4 +100,4 @@ Alternatively you can replay a dataset into a [Splunk Attack Range](https://gith
 
 
 
-[*source*](https://github.com/splunk/security_content/tree/develop/detections/network/tcp_command_and_scripting_interpreter_outbound_ldap_traffic.yml) \| *version*: **1**
+[*source*](https://github.com/splunk/security_content/tree/develop/detections/experimental/network/tcp_command_and_scripting_interpreter_outbound_ldap_traffic.yml) \| *version*: **1**

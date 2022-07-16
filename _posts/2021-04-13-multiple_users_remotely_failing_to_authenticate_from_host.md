@@ -1,8 +1,6 @@
 ---
 title: "Multiple Users Remotely Failing To Authenticate From Host"
-excerpt: "Password Spraying
-, Brute Force
-"
+excerpt: "Password Spraying, Brute Force"
 categories:
   - Endpoint
 last_modified_at: 2021-04-13
@@ -10,8 +8,8 @@ toc: true
 toc_label: ""
 tags:
   - Password Spraying
-  - Brute Force
   - Credential Access
+  - Brute Force
   - Credential Access
   - Splunk Enterprise
   - Splunk Enterprise Security
@@ -20,7 +18,7 @@ tags:
 
 
 
-[Try in Splunk Security Cloud](https://www.splunk.com/en_us/products/cyber-security.html){: .btn .btn--success}
+[Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
 
 #### Description
 
@@ -29,74 +27,23 @@ The detection calculates the standard deviation for each host and leverages the 
 This detection will trigger on the host that is the target of the password spraying attack. This could be a domain controller as well as a member server or workstation.\
 The analytics returned fields allow analysts to investigate the event further by providing fields like source process name, source account and attempted user accounts.
 
-- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: Anomaly
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-
+- **Datamodel**: 
 - **Last Updated**: 2021-04-13
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 80f9d53e-9ca1-11eb-b0d6-acde48001122
 
 
-#### Annotations
+#### [ATT&CK](https://attack.mitre.org/)
 
-<details>
-  <summary>ATT&CK</summary>
-
-<div markdown="1">
-
-
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1110.003](https://attack.mitre.org/techniques/T1110/003/) | Password Spraying | Credential Access |
 
 | [T1110](https://attack.mitre.org/techniques/T1110/) | Brute Force | Credential Access |
 
-</div>
-</details>
-
-
-<details>
-  <summary>Kill Chain Phase</summary>
-
-<div markdown="1">
-
-* Exploitation
-
-
-</div>
-</details>
-
-
-<details>
-  <summary>NIST</summary>
-
-<div markdown="1">
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CIS20</summary>
-
-<div markdown="1">
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CVE</summary>
-
-<div markdown="1">
-
-
-</div>
-</details>
-
-#### Search 
+#### Search
 
 ```
  `wineventlog_security` EventCode=4625 Logon_Type=3 Source_Network_Address!="-" 
@@ -110,12 +57,12 @@ The analytics returned fields allow analysts to investigate the event further by
 | `multiple_users_remotely_failing_to_authenticate_from_host_filter` 
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-* [wineventlog_security](https://github.com/splunk/security_content/blob/develop/macros/wineventlog_security.yml)
+#### Associated Analytic Story
+* [Active Directory Password Spraying](/stories/active_directory_password_spraying)
 
-> :information_source:
-> **multiple_users_remotely_failing_to_authenticate_from_host_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+To successfully implement this search, you need to be ingesting Windows Event Logs from domain controllers as as well as member servers and workstations. The Advanced Security Audit policy setting `Audit Logon` within `Logon/Logoff` needs to be enabled.
 
 #### Required field
 * _time
@@ -127,16 +74,12 @@ The SPL above uses the following Macros:
 * Source_Network_Address
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting Windows Event Logs from domain controllers as as well as member servers and workstations. The Advanced Security Audit policy setting `Audit Logon` within `Logon/Logoff` needs to be enabled.
+#### Kill Chain Phase
+* Exploitation
+
 
 #### Known False Positives
 A host failing to authenticate with multiple valid users against a remote host is not a common behavior for legitimate systems. Possible false positive scenarios include but are not limited to vulnerability scanners, remote administration tools, missconfigyred systems, etc.
-
-#### Associated Analytic story
-* [Active Directory Password Spraying](/stories/active_directory_password_spraying)
-
-
 
 
 #### RBA
@@ -146,8 +89,7 @@ A host failing to authenticate with multiple valid users against a remote host i
 | 49.0 | 70 | 70 | Potential password spraying attack on $ComputerName$ |
 
 
-> :information_source:
-> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author. 
+
 
 #### Reference
 
@@ -159,9 +101,8 @@ A host failing to authenticate with multiple valid users against a remote host i
 
 
 #### Test Dataset
-Replay any dataset to Splunk Enterprise by using our [replay.py](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
+Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
-
 
 * [https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110.003/purplesharp_remote_spray/windows-security.log](https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1110.003/purplesharp_remote_spray/windows-security.log)
 

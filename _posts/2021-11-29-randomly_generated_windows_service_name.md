@@ -1,8 +1,6 @@
 ---
 title: "Randomly Generated Windows Service Name"
-excerpt: "Create or Modify System Process
-, Windows Service
-"
+excerpt: "Create or Modify System Process, Windows Service"
 categories:
   - Endpoint
 last_modified_at: 2021-11-29
@@ -10,9 +8,9 @@ toc: true
 toc_label: ""
 tags:
   - Create or Modify System Process
-  - Windows Service
   - Persistence
   - Privilege Escalation
+  - Windows Service
   - Persistence
   - Privilege Escalation
   - Splunk Enterprise
@@ -20,84 +18,33 @@ tags:
   - Splunk Cloud
 ---
 
-### :warning: WARNING THIS IS A EXPERIMENTAL analytic
-We have not been able to test, simulate, or build datasets for this object. Use at your own risk. This analytic is **NOT** supported.
+### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
-[Try in Splunk Security Cloud](https://www.splunk.com/en_us/products/cyber-security.html){: .btn .btn--success}
+[Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
 
 #### Description
 
-The following hunting analytic leverages Event ID 7045, `A new service was installed in the system`, to identify the installation of a Windows Service with a suspicious, high entropy, Service Name. To achieve this, this analytic also leverages the `ut_shannon` function from the URL ToolBox Splunk application. Red teams and adversaries alike may abuse the Service Control Manager to create and start a remote Windows Service and obtain remote code execution. To achieve this goal, some tools like Metasploit, Cobalt Strike and Impacket, typically create a Windows Service with a random service name on the victim host. This hunting analytic may help defenders identify Windows Services installed as part of a lateral movement attack. The entropy threshold `ut_shannon > 3` should be customized by users. The Service_File_Name field can be used to determine if the Windows Service has malicious intent or not.
+The following hunting analytic leverages Event ID 7045, `A new service was installed in the system`, to identify the installation of a Windows Service with a suspicious, high entropy, Service Name. To achieve this, this analytic also leverages the `ut_shannon` function from the URL ToolBox Splunk application. Red teams and adversaries alike may abuse the Service Control Manager to create and start a remote Windows Service and obtain remote code execution. To achieve this goal, some tools like Metasploit, Cobalt Strike and Impacket, typically create a Windows Service with a random service name on the victim host. This hunting analytic may help defenders identify Windows Services installed as part of a lateral movement attack. The entropy threshold `ut_shannon &gt; 3` should be customized by users. The Service_File_Name field can be used to determine if the Windows Service has malicious intent or not.
 
-- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: Hunting
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-
+- **Datamodel**: 
 - **Last Updated**: 2021-11-29
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 2032a95a-5165-11ec-a2c3-3e22fbd008af
 
 
-#### Annotations
+#### [ATT&CK](https://attack.mitre.org/)
 
-<details>
-  <summary>ATT&CK</summary>
-
-<div markdown="1">
-
-
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1543](https://attack.mitre.org/techniques/T1543/) | Create or Modify System Process | Persistence, Privilege Escalation |
 
 | [T1543.003](https://attack.mitre.org/techniques/T1543/003/) | Windows Service | Persistence, Privilege Escalation |
 
-</div>
-</details>
-
-
-<details>
-  <summary>Kill Chain Phase</summary>
-
-<div markdown="1">
-
-* Exploitation
-
-
-</div>
-</details>
-
-
-<details>
-  <summary>NIST</summary>
-
-<div markdown="1">
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CIS20</summary>
-
-<div markdown="1">
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CVE</summary>
-
-<div markdown="1">
-
-
-</div>
-</details>
-
-#### Search 
+#### Search
 
 ```
  `wineventlog_system` EventCode=7045 
@@ -107,12 +54,12 @@ The following hunting analytic leverages Event ID 7045, `A new service was insta
 | `randomly_generated_windows_service_name_filter` 
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-* [wineventlog_system](https://github.com/splunk/security_content/blob/develop/macros/wineventlog_system.yml)
+#### Associated Analytic Story
+* [Active Directory Lateral Movement](/stories/active_directory_lateral_movement)
 
-> :information_source:
-> **randomly_generated_windows_service_name_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the Service name, Service File Name Service Start type, and Service Type from your endpoints. The Windows TA as well as the URL ToolBox application are also required.
 
 #### Required field
 * _time
@@ -124,16 +71,12 @@ The SPL above uses the following Macros:
 * Service_Start_Type
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the Service name, Service File Name Service Start type, and Service Type from your endpoints. The Windows TA as well as the URL ToolBox application are also required.
+#### Kill Chain Phase
+* Exploitation
+
 
 #### Known False Positives
 Legitimate applications may use random Windows Service names.
-
-#### Associated Analytic story
-* [Active Directory Lateral Movement](/stories/active_directory_lateral_movement)
-
-
 
 
 #### RBA
@@ -143,8 +86,7 @@ Legitimate applications may use random Windows Service names.
 | 45.0 | 90 | 50 | A Windows Service with a suspicious service name was installed on $ComputerName$ |
 
 
-> :information_source:
-> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author. 
+
 
 #### Reference
 
@@ -153,8 +95,9 @@ Legitimate applications may use random Windows Service names.
 
 
 #### Test Dataset
-Replay any dataset to Splunk Enterprise by using our [replay.py](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
+Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
+
 
 
 

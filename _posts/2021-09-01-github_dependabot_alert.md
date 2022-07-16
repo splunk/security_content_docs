@@ -1,8 +1,6 @@
 ---
 title: "GitHub Dependabot Alert"
-excerpt: "Compromise Software Dependencies and Development Tools
-, Supply Chain Compromise
-"
+excerpt: "Compromise Software Dependencies and Development Tools, Supply Chain Compromise"
 categories:
   - Cloud
 last_modified_at: 2021-09-01
@@ -10,8 +8,8 @@ toc: true
 toc_label: ""
 tags:
   - Compromise Software Dependencies and Development Tools
-  - Supply Chain Compromise
   - Initial Access
+  - Supply Chain Compromise
   - Initial Access
   - Splunk Enterprise
   - Splunk Enterprise Security
@@ -20,86 +18,29 @@ tags:
 
 
 
-[Try in Splunk Security Cloud](https://www.splunk.com/en_us/products/cyber-security.html){: .btn .btn--success}
+[Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
 
 #### Description
 
 This search looks for Dependabot Alerts in Github logs.
 
-- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: Anomaly
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-
+- **Datamodel**: 
 - **Last Updated**: 2021-09-01
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: 05032b04-4469-4034-9df7-05f607d75cba
 
 
-#### Annotations
+#### [ATT&CK](https://attack.mitre.org/)
 
-<details>
-  <summary>ATT&CK</summary>
-
-<div markdown="1">
-
-
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1195.001](https://attack.mitre.org/techniques/T1195/001/) | Compromise Software Dependencies and Development Tools | Initial Access |
 
 | [T1195](https://attack.mitre.org/techniques/T1195/) | Supply Chain Compromise | Initial Access |
 
-</div>
-</details>
-
-
-<details>
-  <summary>Kill Chain Phase</summary>
-
-<div markdown="1">
-
-* Actions on Objectives
-
-
-</div>
-</details>
-
-
-<details>
-  <summary>NIST</summary>
-
-<div markdown="1">
-
-* PR.DS
-* PR.AC
-* DE.CM
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CIS20</summary>
-
-<div markdown="1">
-
-* CIS 13
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CVE</summary>
-
-<div markdown="1">
-
-
-</div>
-</details>
-
-#### Search 
+#### Search
 
 ```
 `github` alert.id=* action=create 
@@ -111,13 +52,12 @@ This search looks for Dependabot Alerts in Github logs.
 | `github_dependabot_alert_filter`
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-* [github](https://github.com/splunk/security_content/blob/develop/macros/github.yml)
-* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+#### Associated Analytic Story
+* [Dev Sec Ops](/stories/dev_sec_ops)
 
-> :information_source:
-> **github_dependabot_alert_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+You must index GitHub logs. You can follow the url in reference to onboard GitHub logs.
 
 #### Required field
 * _time
@@ -134,16 +74,12 @@ The SPL above uses the following Macros:
 * alert.severity
 
 
-#### How To Implement
-You must index GitHub logs. You can follow the url in reference to onboard GitHub logs.
+#### Kill Chain Phase
+* Actions on Objectives
+
 
 #### Known False Positives
 unknown
-
-#### Associated Analytic story
-* [Dev Sec Ops](/stories/dev_sec_ops)
-
-
 
 
 #### RBA
@@ -153,8 +89,7 @@ unknown
 | 27.0 | 30 | 90 | Vulnerabilities found in packages used by GitHub repository $repository$ |
 
 
-> :information_source:
-> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author. 
+
 
 #### Reference
 
@@ -163,9 +98,8 @@ unknown
 
 
 #### Test Dataset
-Replay any dataset to Splunk Enterprise by using our [replay.py](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
+Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
-
 
 * [https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1195.001/github_security_advisor_alert/github_security_advisor_alert.json](https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1195.001/github_security_advisor_alert/github_security_advisor_alert.json)
 

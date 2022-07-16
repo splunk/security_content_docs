@@ -10,6 +10,7 @@ import datetime
 from stix2 import FileSystemSource
 from stix2 import Filter
 from pycvesearch import CVESearch
+from tqdm import tqdm
 
 CVESSEARCH_API_URL = 'https://cve.circl.lu'
 
@@ -23,7 +24,7 @@ def get_cve_enrichment_new(cve_id):
     return cve_enriched
 
 def get_all_techniques(projects_path):
-    path_cti = path.join(projects_path,'cti/enterprise-attack')
+    path_cti = path.join(projects_path,'enterprise-attack')
     fs = FileSystemSource(path_cti)
     all_techniques = get_techniques(fs)
     return all_techniques
@@ -57,13 +58,14 @@ def get_mitre_enrichment_new(attack, mitre_attack_id):
 
 def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, sorted_detections, messages, VERBOSE):
     manifest_files = []
-    for root, dirs, files in walk(REPO_PATH + '/stories'):
+    for root, dirs, files in walk(REPO_PATH + 'stories'):
         for file in files:
             if file.endswith(".yml") and root == './stories':
                 manifest_files.append((path.join(root, file)))
 
     stories = []
-    for manifest_file in manifest_files:
+    
+    for manifest_file in tqdm(manifest_files):
         story_yaml = dict()
         if VERBOSE:
             print("processing manifest {0}".format(manifest_file))
@@ -230,13 +232,13 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, messag
     types = ["endpoint", "application", "cloud", "network", "web", "experimental"]
     manifest_files = []
     for t in types:
-        for root, dirs, files in walk(REPO_PATH + '/detections/' + t):
+        for root, dirs, files in walk(REPO_PATH + 'detections/' + t):
             for file in files:
                 if file.endswith(".yml"):
                     manifest_files.append((path.join(root, file)))
 
     detections = []
-    for manifest_file in manifest_files:
+    for manifest_file in tqdm(manifest_files):
         detection_yaml = dict()
         if VERBOSE:
             print("processing manifest {0}".format(manifest_file))
@@ -306,13 +308,13 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, messag
 
 def generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detections, messages, VERBOSE):
     manifest_files = []
-    for root, dirs, files in walk(REPO_PATH + '/playbooks/'):
+    for root, dirs, files in walk(REPO_PATH + 'playbooks/'):
         for file in files:
             if file.endswith(".yml"):
                 manifest_files.append((path.join(root, file)))
 
     playbooks = []
-    for manifest_file in manifest_files:
+    for manifest_file in tqdm(manifest_files):
         detection_yaml = dict()
         if VERBOSE:
             print("processing manifest {0}".format(manifest_file))
@@ -373,22 +375,28 @@ if __name__ == "__main__":
     # grab arguments
     parser = argparse.ArgumentParser(description="Generates documentation from Splunk Security Content", epilog="""
     This generates documention in the form of jekyll site research.splunk.com from Splunk Security Content yamls. """)
-    parser.add_argument("-p", "--path", required=True, default='security_content/', help="path to security_content repo")
-    parser.add_argument("-o", "--output", required=True, default='.', help="path to the output directory for the docs")
+    parser.add_argument("-security_content_path", "--spath", required=False, default='security_content/', help="path to security_content repo")
+    parser.add_argument("-cti_path", "--cpath", required=False, default='cti/', help="path to cti repo")
+    parser.add_argument("-o", "--output", required=False, default='.', help="path to the output directory for the docs")
     parser.add_argument("-v", "--verbose", required=False, default=False, action='store_true', help="prints verbose output")
 
 
     # parse them
     args = parser.parse_args()
-    REPO_PATH = args.path
+    REPO_PATH = args.spath
+    CTI_PATH = args.cpath
     OUTPUT_DIR = args.output
     VERBOSE = args.verbose
 
-    TEMPLATE_PATH = path.join(REPO_PATH, 'bin/jinja2_templates')
+    if not (path.isdir(REPO_PATH) or path.isdir(REPO_PATH)):
+        print("error: {0} is not a directory".format(REPO_PATH))
+        sys.exit(1)
+
+    TEMPLATE_PATH = path.join('bin/jinja2_templates')
 
     if VERBOSE:
         print("getting mitre enrichment data from cti")
-    techniques = get_all_techniques(REPO_PATH)
+    techniques = get_all_techniques(CTI_PATH)
 
     if VERBOSE:
         print("wiping the {0}/_posts/* folder".format(OUTPUT_DIR))

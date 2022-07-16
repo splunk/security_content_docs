@@ -1,7 +1,6 @@
 ---
 title: "Windows Driver Load Non-Standard Path"
-excerpt: "Rootkit
-"
+excerpt: "Rootkit"
 categories:
   - Endpoint
 last_modified_at: 2022-04-04
@@ -18,13 +17,13 @@ tags:
 
 
 
-[Try in Splunk Security Cloud](https://www.splunk.com/en_us/products/cyber-security.html){: .btn .btn--success}
+[Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
 
 #### Description
 
 The following analytic uses Windows EventCode 7045 to identify new Kernel Mode Drivers being loaded in Windows from a non-standard path. Note that, adversaries may move malicious or vulnerable drivers into these paths and load up. The idea is that this analytic provides visibility into drivers loading in non-standard file paths.
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-04-04
@@ -32,70 +31,13 @@ The following analytic uses Windows EventCode 7045 to identify new Kernel Mode D
 - **ID**: 9216ef3d-066a-4958-8f27-c84589465e62
 
 
-#### Annotations
+#### [ATT&CK](https://attack.mitre.org/)
 
-<details>
-  <summary>ATT&CK</summary>
-
-<div markdown="1">
-
-
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1014](https://attack.mitre.org/techniques/T1014/) | Rootkit | Defense Evasion |
 
-</div>
-</details>
-
-
-<details>
-  <summary>Kill Chain Phase</summary>
-
-<div markdown="1">
-
-* Installation
-
-
-</div>
-</details>
-
-
-<details>
-  <summary>NIST</summary>
-
-<div markdown="1">
-
-* DE.CM
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CIS20</summary>
-
-<div markdown="1">
-
-* CIS 3
-* CIS 5
-* CIS 16
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CVE</summary>
-
-<div markdown="1">
-
-
-</div>
-</details>
-
-#### Search 
+#### Search
 
 ```
 `wineventlog_system` EventCode=7045 Service_Type="kernel mode driver" NOT (Service_File_Name IN ("*\\Windows\\*", "*\\Program File*", "*\\systemroot\\*","%SystemRoot%*", "system32\*")) 
@@ -105,13 +47,12 @@ The following analytic uses Windows EventCode 7045 to identify new Kernel Mode D
 | `windows_driver_load_non_standard_path_filter`
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-* [wineventlog_system](https://github.com/splunk/security_content/blob/develop/macros/wineventlog_system.yml)
-* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+#### Associated Analytic Story
+* [Windows Drivers](/stories/windows_drivers)
 
-> :information_source:
-> **windows_driver_load_non-standard_path_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+To implement this analytic, the Windows EventCode 7045 will need to be logged. The Windows TA for Splunk is also recommended.
 
 #### Required field
 * ComputerName
@@ -122,16 +63,12 @@ The SPL above uses the following Macros:
 * Service_Type
 
 
-#### How To Implement
-To implement this analytic, the Windows EventCode 7045 will need to be logged. The Windows TA for Splunk is also recommended.
+#### Kill Chain Phase
+* Installation
+
 
 #### Known False Positives
 False positives may be present based on legitimate third party applications needing to install drivers. Filter, or allow list known good drivers consistently being installed in these paths.
-
-#### Associated Analytic story
-* [Windows Drivers](/stories/windows_drivers)
-
-
 
 
 #### RBA
@@ -141,8 +78,7 @@ False positives may be present based on legitimate third party applications need
 | 36.0 | 60 | 60 | A kernel mode driver was loaded from a non-standard path on $ComputerName$. |
 
 
-> :information_source:
-> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author. 
+
 
 #### Reference
 
@@ -153,12 +89,11 @@ False positives may be present based on legitimate third party applications need
 
 
 #### Test Dataset
-Replay any dataset to Splunk Enterprise by using our [replay.py](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
+Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
-
 
 * [https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1068/drivers/7045_kerneldrivers.log](https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1068/drivers/7045_kerneldrivers.log)
 
 
 
-[*source*](https://github.com/splunk/security_content/tree/develop/detections/endpoint/windows_driver_load_non_standard_path.yml) \| *version*: **1**
+[*source*](https://github.com/splunk/security_content/tree/develop/detections/endpoint/windows_driver_load_non-standard_path.yml) \| *version*: **1**

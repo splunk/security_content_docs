@@ -1,7 +1,6 @@
 ---
 title: "Splunk DoS via Malformed S2S Request"
-excerpt: "Network Denial of Service
-"
+excerpt: "Network Denial of Service"
 categories:
   - Application
 last_modified_at: 2022-03-24
@@ -18,88 +17,27 @@ tags:
 
 
 
-[Try in Splunk Security Cloud](https://www.splunk.com/en_us/products/cyber-security.html){: .btn .btn--success}
+[Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
 
 #### Description
 
 On March 24th, 2022, Splunk published a security advisory for a possible Denial of Service stemming from the lack of validation in a specific key-value field in the Splunk-to-Splunk (S2S) protocol. This detection will alert on attempted exploitation in patched versions of Splunk.
 
-- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
+- **Type**: TTP
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-
+- **Datamodel**: 
 - **Last Updated**: 2022-03-24
 - **Author**: Lou Stella, Splunk
 - **ID**: fc246e56-953b-40c1-8634-868f9e474cbd
 
 
-#### Annotations
+#### [ATT&CK](https://attack.mitre.org/)
 
-<details>
-  <summary>ATT&CK</summary>
-
-<div markdown="1">
-
-
-| ID             | Technique        |  Tactic             |
-| -------------- | ---------------- |-------------------- |
+| ID          | Technique   | Tactic         |
+| ----------- | ----------- |--------------- |
 | [T1498](https://attack.mitre.org/techniques/T1498/) | Network Denial of Service | Impact |
 
-</div>
-</details>
-
-
-<details>
-  <summary>Kill Chain Phase</summary>
-
-<div markdown="1">
-
-* Exploitation
-
-
-</div>
-</details>
-
-
-<details>
-  <summary>NIST</summary>
-
-<div markdown="1">
-
-* DE.CM
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CIS20</summary>
-
-<div markdown="1">
-
-* CIS 3
-* CIS 5
-* CIS 16
-
-
-
-</div>
-</details>
-
-<details>
-  <summary>CVE</summary>
-
-<div markdown="1">
-| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
-| ----------- | ----------- | -------------- |
-| [CVE-2021-3422](https://nvd.nist.gov/vuln/detail/CVE-2021-3422) | The lack of validation of a key-value field in the Splunk-to-Splunk protocol results in a denial-of-service in Splunk Enterprise instances configured to index Universal Forwarder traffic. The vulnerability impacts Splunk Enterprise versions before 7.3.9, 8.0 versions before 8.0.9, and 8.1 versions before 8.1.3. It does not impact Universal Forwarders. When Splunk forwarding is secured using TLS or a Token, the attack requires compromising the certificate or token, or both. Implementation of either or both reduces the severity to Medium. | 4.3 |
-
-
-
-</div>
-</details>
-
-#### Search 
+#### Search
 
 ```
 `splunkd` log_level="ERROR" component="TcpInputProc" thread_name="FwdDataReceiverThread" "Invalid _meta atom" 
@@ -107,12 +45,12 @@ On March 24th, 2022, Splunk published a security advisory for a possible Denial 
 | `splunk_dos_via_malformed_s2s_request_filter`
 ```
 
-#### Macros
-The SPL above uses the following Macros:
-* [splunkd](https://github.com/splunk/security_content/blob/develop/macros/splunkd.yml)
+#### Associated Analytic Story
+* [Splunk Vulnerabilities](/stories/splunk_vulnerabilities)
 
-> :information_source:
-> **splunk_dos_via_malformed_s2s_request_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+#### How To Implement
+This detection does not require you to ingest any new data. The detection does require the ability to search the _internal index. This detection will only find attempted exploitation on versions of Splunk already patched for CVE-2021-3422.
 
 #### Required field
 * host
@@ -122,16 +60,12 @@ The SPL above uses the following Macros:
 * thread_name
 
 
-#### How To Implement
-This detection does not require you to ingest any new data. The detection does require the ability to search the _internal index. This detection will only find attempted exploitation on versions of Splunk already patched for CVE-2021-3422.
+#### Kill Chain Phase
+* Exploitation
+
 
 #### Known False Positives
 None.
-
-#### Associated Analytic story
-* [Splunk Vulnerabilities](/stories/splunk_vulnerabilities)
-
-
 
 
 #### RBA
@@ -141,8 +75,14 @@ None.
 | 50.0 | 50 | 100 | An attempt to exploit CVE-2021-3422 was detected from $src$ against $host$ |
 
 
-> :information_source:
-> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author. 
+
+#### CVE
+
+| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
+| ----------- | ----------- | -------------- |
+| [CVE-2021-3422](https://nvd.nist.gov/vuln/detail/CVE-2021-3422) | The lack of validation of a key-value field in the Splunk-to-Splunk protocol results in a denial-of-service in Splunk Enterprise instances configured to index Universal Forwarder traffic. The vulnerability impacts Splunk Enterprise versions before 7.3.9, 8.0 versions before 8.0.9, and 8.1 versions before 8.1.3. It does not impact Universal Forwarders. When Splunk forwarding is secured using TLS or a Token, the attack requires compromising the certificate or token, or both. Implementation of either or both reduces the severity to Medium. | 4.3 |
+
+
 
 #### Reference
 
@@ -151,9 +91,8 @@ None.
 
 
 #### Test Dataset
-Replay any dataset to Splunk Enterprise by using our [replay.py](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
+Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
-
 
 * [https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1498/splunk_indexer_dos/splunkd.log](https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1498/splunk_indexer_dos/splunkd.log)
 

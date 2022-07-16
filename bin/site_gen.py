@@ -373,8 +373,8 @@ if __name__ == "__main__":
     # grab arguments
     parser = argparse.ArgumentParser(description="Generates documentation from Splunk Security Content", epilog="""
     This generates documention in the form of jekyll site research.splunk.com from Splunk Security Content yamls. """)
-    parser.add_argument("-p", "--path", required=True, help="path to security_content repo")
-    parser.add_argument("-o", "--output", required=True, help="path to the output directory for the docs")
+    parser.add_argument("-p", "--path", required=True, default='security_content/', help="path to security_content repo")
+    parser.add_argument("-o", "--output", required=True, default='.', help="path to the output directory for the docs")
     parser.add_argument("-v", "--verbose", required=False, default=False, action='store_true', help="prints verbose output")
 
 

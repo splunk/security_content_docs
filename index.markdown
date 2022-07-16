@@ -46,7 +46,7 @@ This project gives you access to our repository of Analytic Stories that are sec
 ## [Detection Coverage](https://mitremap.splunkresearch.com/) 🗺
 Below is a snapshot in time of what technique we currently have some detection coverage for. The darker the shade of blue the more detections we have for this particular technique.
 
-[![](mitre-map/coverage.png)](https://mitremap.splunkresearch.com/)
+[![](https://github.com/splunk/security_content/blob/develop/docs/mitre-map/coverage.png?raw=true)](https://mitremap.splunkresearch.com/)
 
 ## Questions? 📞
 Please use the [GitHub issue tracker](https://github.com/splunk/attack_range/issues) to submit bugs or request features.

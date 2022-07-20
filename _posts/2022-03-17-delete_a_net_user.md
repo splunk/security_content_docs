@@ -103,6 +103,9 @@ This analytic will detect a suspicious net.exe/net1.exe command-line to delete a
 | into write_ssa_detected_events();
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **delete_a_net_user_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

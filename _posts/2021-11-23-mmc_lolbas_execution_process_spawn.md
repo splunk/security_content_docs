@@ -1,6 +1,6 @@
 ---
 title: "Mmc LOLBAS Execution Process Spawn"
-excerpt: "Remote Services, Distributed Component Object Model"
+excerpt: "Remote Services, Distributed Component Object Model, MMC"
 categories:
   - Endpoint
 last_modified_at: 2021-11-23
@@ -11,6 +11,8 @@ tags:
   - Lateral Movement
   - Distributed Component Object Model
   - Lateral Movement
+  - MMC
+  - Defense Evasion
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
@@ -45,6 +47,8 @@ The following analytic identifies `mmc.exe` spawning a LOLBAS execution process.
 | [T1021](https://attack.mitre.org/techniques/T1021/) | Remote Services | Lateral Movement |
 
 | [T1021.003](https://attack.mitre.org/techniques/T1021/003/) | Distributed Component Object Model | Lateral Movement |
+
+| [T1218.014](https://attack.mitre.org/techniques/T1218/014/) | MMC | Defense Evasion |
 
 </div>
 </details>
@@ -103,6 +107,11 @@ The following analytic identifies `mmc.exe` spawning a LOLBAS execution process.
 | `mmc_lolbas_execution_process_spawn_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+
 > :information_source:
 > **mmc_lolbas_execution_process_spawn_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
@@ -141,7 +150,7 @@ Legitimate applications may trigger this behavior, filter as needed.
 
 | Risk Score  | Impact      | Confidence   | Message      |
 | ----------- | ----------- |--------------|--------------|
-| 54.0 | 90 | 60 | Mmc.exe spawned a LOLBAS process on $dest |
+| 54.0 | 90 | 60 | Mmc.exe spawned a LOLBAS process on $dest$. |
 
 
 > :information_source:

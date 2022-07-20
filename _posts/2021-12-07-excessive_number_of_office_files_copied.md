@@ -104,6 +104,9 @@ This detection detects a high amount of office file copied. This can be an indic
 | into write_ssa_detected_events();
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **excessive_number_of_office_files_copied_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

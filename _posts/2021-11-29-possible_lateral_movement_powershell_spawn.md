@@ -1,6 +1,6 @@
 ---
 title: "Possible Lateral Movement PowerShell Spawn"
-excerpt: "Remote Services, Distributed Component Object Model, Windows Remote Management, Windows Management Instrumentation, Scheduled Task, Windows Service, PowerShell"
+excerpt: "Remote Services, Distributed Component Object Model, Windows Remote Management, Windows Management Instrumentation, Scheduled Task, Windows Service, PowerShell, MMC"
 categories:
   - Endpoint
 last_modified_at: 2021-11-29
@@ -24,6 +24,8 @@ tags:
   - Privilege Escalation
   - PowerShell
   - Execution
+  - MMC
+  - Defense Evasion
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
@@ -68,6 +70,8 @@ The following analytic assists with identifying a PowerShell process spawned as 
 | [T1543.003](https://attack.mitre.org/techniques/T1543/003/) | Windows Service | Persistence, Privilege Escalation |
 
 | [T1059.001](https://attack.mitre.org/techniques/T1059/001/) | PowerShell | Execution |
+
+| [T1218.014](https://attack.mitre.org/techniques/T1218/014/) | MMC | Defense Evasion |
 
 </div>
 </details>
@@ -125,6 +129,11 @@ The following analytic assists with identifying a PowerShell process spawned as 
 | `security_content_ctime(lastTime)` 
 | `possible_lateral_movement_powershell_spawn_filter`
 ```
+
+#### Macros
+The SPL above uses the following Macros:
+* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
 
 > :information_source:
 > **possible_lateral_movement_powershell_spawn_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.

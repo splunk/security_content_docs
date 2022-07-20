@@ -1,6 +1,6 @@
 ---
 title: "UAC Bypass MMC Load Unsigned Dll"
-excerpt: "Bypass User Account Control, Abuse Elevation Control Mechanism"
+excerpt: "Bypass User Account Control, Abuse Elevation Control Mechanism, MMC"
 categories:
   - Endpoint
 last_modified_at: 2021-07-12
@@ -12,6 +12,8 @@ tags:
   - Defense Evasion
   - Abuse Elevation Control Mechanism
   - Privilege Escalation
+  - Defense Evasion
+  - MMC
   - Defense Evasion
   - Splunk Enterprise
   - Splunk Enterprise Security
@@ -47,6 +49,8 @@ This search is to detect a suspicious loaded unsigned dll by MMC.exe application
 | [T1548.002](https://attack.mitre.org/techniques/T1548/002/) | Bypass User Account Control | Privilege Escalation, Defense Evasion |
 
 | [T1548](https://attack.mitre.org/techniques/T1548/) | Abuse Elevation Control Mechanism | Privilege Escalation, Defense Evasion |
+
+| [T1218.014](https://attack.mitre.org/techniques/T1218/014/) | MMC | Defense Evasion |
 
 </div>
 </details>
@@ -103,6 +107,11 @@ This search is to detect a suspicious loaded unsigned dll by MMC.exe application
 | `security_content_ctime(lastTime)` 
 | `uac_bypass_mmc_load_unsigned_dll_filter`
 ```
+
+#### Macros
+The SPL above uses the following Macros:
+* [sysmon](https://github.com/splunk/security_content/blob/develop/macros/sysmon.yml)
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
 
 > :information_source:
 > **uac_bypass_mmc_load_unsigned_dll_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.

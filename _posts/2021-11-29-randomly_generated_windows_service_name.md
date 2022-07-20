@@ -105,6 +105,10 @@ The following hunting analytic leverages Event ID 7045, `A new service was insta
 | `randomly_generated_windows_service_name_filter` 
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [wineventlog_system](https://github.com/splunk/security_content/blob/develop/macros/wineventlog_system.yml)
+
 > :information_source:
 > **randomly_generated_windows_service_name_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

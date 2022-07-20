@@ -111,6 +111,10 @@ The following analytic identifies the server side template injection related to 
 | `vmware_workspace_one_freemarker_server_side_template_injection_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+
 > :information_source:
 > **vmware_workspace_one_freemarker_server-side_template_injection_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

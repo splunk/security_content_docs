@@ -108,6 +108,10 @@ On June 14th, 2022, Splunk released a security advisory relating to the authenti
 | `splunk_process_injection_forwarder_bundle_downloads_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [splunkd](https://github.com/splunk/security_content/blob/develop/macros/splunkd.yml)
+
 > :information_source:
 > **splunk_process_injection_forwarder_bundle_downloads_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

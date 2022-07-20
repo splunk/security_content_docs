@@ -100,6 +100,10 @@ This search provides detection of suspicious use of sts:AssumeRole. These tokens
 | `aws_detect_sts_assume_role_abuse_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [cloudtrail](https://github.com/splunk/security_content/blob/develop/macros/cloudtrail.yml)
+
 > :information_source:
 > **aws_detect_sts_assume_role_abuse_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

@@ -100,6 +100,9 @@ The following query identifies Microsoft Background Intelligent Transfer Service
 | into write_ssa_detected_events();
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **windows_bits_job_persistence_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

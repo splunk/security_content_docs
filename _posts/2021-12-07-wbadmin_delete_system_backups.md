@@ -104,6 +104,9 @@ This search looks for flags passed to wbadmin.exe (Windows Backup Administrator 
 | into write_ssa_detected_events();
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **wbadmin_delete_system_backups_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

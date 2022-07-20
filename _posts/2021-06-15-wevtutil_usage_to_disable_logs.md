@@ -109,6 +109,9 @@ This search is to detect execution of wevtutil.exe to disable logs. This techniq
 | into write_ssa_detected_events();
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **wevtutil_usage_to_disable_logs_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

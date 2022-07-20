@@ -103,6 +103,12 @@ This analytic is to detect a possible abuse of verclsid to execute malicious fil
 | `verclsid_clsid_execution_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [process_verclsid](https://github.com/splunk/security_content/blob/develop/macros/process_verclsid.yml)
+* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+
 > :information_source:
 > **verclsid_clsid_execution_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

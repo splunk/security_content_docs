@@ -105,6 +105,10 @@ The following analytic identifies a Java user agent performing a GET request for
 | `java_class_file_download_by_java_user_agent_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+
 > :information_source:
 > **java_class_file_download_by_java_user_agent_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

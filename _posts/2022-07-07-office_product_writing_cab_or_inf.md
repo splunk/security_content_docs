@@ -115,6 +115,10 @@ The following analytic identifies behavior related to CVE-2021-40444. Whereas th
 | `office_product_writing_cab_or_inf_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+
 > :information_source:
 > **office_product_writing_cab_or_inf_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

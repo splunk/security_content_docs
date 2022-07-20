@@ -72,6 +72,7 @@ exclude:
   - bin
   - venv 
   - security_content
+  - vendor
 
 # Plugins (previously gems:)
 plugins:

@@ -109,6 +109,9 @@ The following analytic identifies the use of `reg.exe` attempting to export Wind
 | into write_ssa_detected_events(); 
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **attempted_credential_dump_from_registry_via_reg_exe_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

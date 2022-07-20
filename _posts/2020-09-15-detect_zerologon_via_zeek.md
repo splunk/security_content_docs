@@ -110,6 +110,10 @@ This search detects attempts to run exploits for the Zerologon CVE-2020-1472 vul
 | search `detect_zerologon_via_zeek_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [zeek_rpc](https://github.com/splunk/security_content/blob/develop/macros/zeek_rpc.yml)
+
 > :information_source:
 > **detect_zerologon_via_zeek_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

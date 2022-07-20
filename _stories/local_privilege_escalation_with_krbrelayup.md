@@ -30,11 +30,11 @@ In October 2021, James Forshaw from Googles Project Zero released a research  bl
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Windows Computer Account Created by Computer Account](/endpoint/windows_computer_account_created_by_computer_account/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets) | TTP |
-| [Windows Computer Account Requesting Kerberos Ticket](/endpoint/windows_computer_account_requesting_kerberos_ticket/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets) | TTP |
-| [Windows Computer Account With SPN](/endpoint/windows_computer_account_with_spn/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets) | TTP |
-| [Windows Kerberos Local Successful Logon](/endpoint/windows_kerberos_local_successful_logon/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets) | TTP |
-| [Windows KrbRelayUp Service Creation](/endpoint/windows_krbrelayup_service_creation/) | [Windows Service](/tags/#windows-service) | TTP |
+| [Windows Computer Account Created by Computer Account](/endpoint/windows_computer_account_created_by_computer_account/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Computer Account Requesting Kerberos Ticket](/endpoint/windows_computer_account_requesting_kerberos_ticket/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Computer Account With SPN](/endpoint/windows_computer_account_with_spn/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Kerberos Local Successful Logon](/endpoint/windows_kerberos_local_successful_logon/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows KrbRelayUp Service Creation](/endpoint/windows_krbrelayup_service_creation/) | [Windows Service](/tags/#windows-service) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

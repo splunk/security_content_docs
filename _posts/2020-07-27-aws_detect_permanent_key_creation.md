@@ -102,6 +102,10 @@ This search provides detection of accounts creating permanent keys. Permanent ke
 |`aws_detect_permanent_key_creation_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [aws_cloudwatchlogs_eks](https://github.com/splunk/security_content/blob/develop/macros/aws_cloudwatchlogs_eks.yml)
+
 > :information_source:
 > **aws_detect_permanent_key_creation_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

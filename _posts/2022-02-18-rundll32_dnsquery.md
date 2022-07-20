@@ -102,6 +102,11 @@ This search is to detect a suspicious rundll32.exe process having a http connect
 | `rundll32_dnsquery_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [sysmon](https://github.com/splunk/security_content/blob/develop/macros/sysmon.yml)
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+
 > :information_source:
 > **rundll32_dnsquery_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

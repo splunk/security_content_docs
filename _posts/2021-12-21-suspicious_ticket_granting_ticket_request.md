@@ -110,6 +110,10 @@ As part of the sAMAccountName Spoofing (CVE-2021-42278) and Domain Controller Im
 |`suspicious_ticket_granting_ticket_request_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [wineventlog_security](https://github.com/splunk/security_content/blob/develop/macros/wineventlog_security.yml)
+
 > :information_source:
 > **suspicious_ticket_granting_ticket_request_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

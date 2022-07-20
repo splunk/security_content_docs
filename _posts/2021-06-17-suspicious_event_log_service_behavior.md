@@ -111,6 +111,11 @@ The following analytic utilizes Windows Event ID 1100 to identify when Windows e
 | `suspicious_event_log_service_behavior_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [wineventlog_security](https://github.com/splunk/security_content/blob/develop/macros/wineventlog_security.yml)
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+
 > :information_source:
 > **suspicious_event_log_service_behavior_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

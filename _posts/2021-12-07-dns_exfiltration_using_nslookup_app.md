@@ -99,6 +99,9 @@ This search is to detect potential DNS exfiltration using nslookup application. 
 | into write_ssa_detected_events();
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **dns_exfiltration_using_nslookup_app_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

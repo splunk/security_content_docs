@@ -30,7 +30,7 @@ Various legacy protocols operate by default in the clear, without the protection
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Protocols passing authentication in cleartext](/network/protocols_passing_authentication_in_cleartext/) |  | TTP |
+| [Protocols passing authentication in cleartext](/network/protocols_passing_authentication_in_cleartext/) |  | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

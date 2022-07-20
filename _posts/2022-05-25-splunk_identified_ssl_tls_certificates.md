@@ -110,6 +110,9 @@ tag IN (ssl, tls, certificate) ssl_issuer_common_name=*splunk*
 | `splunk_identified_ssl_tls_certificates_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **splunk_identified_ssl_tls_certificates_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

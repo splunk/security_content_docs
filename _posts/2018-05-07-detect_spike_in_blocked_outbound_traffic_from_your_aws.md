@@ -109,6 +109,10 @@ This search will detect spike in blocked outbound network connections originatin
 | `detect_spike_in_blocked_outbound_traffic_from_your_aws_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [cloudwatchlogs_vpcflow](https://github.com/splunk/security_content/blob/develop/macros/cloudwatchlogs_vpcflow.yml)
+
 > :information_source:
 > **detect_spike_in_blocked_outbound_traffic_from_your_aws_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

@@ -126,6 +126,9 @@ This search will detect a spike in the number of API calls made to your cloud in
 | `abnormally_high_number_of_cloud_security_group_api_calls_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **abnormally_high_number_of_cloud_security_group_api_calls_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

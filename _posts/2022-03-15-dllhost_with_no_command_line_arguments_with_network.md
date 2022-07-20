@@ -106,6 +106,11 @@ The following analytic identifies DLLHost.exe with no command line arguments wit
 | `dllhost_with_no_command_line_arguments_with_network_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+
 > :information_source:
 > **dllhost_with_no_command_line_arguments_with_network_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

@@ -120,6 +120,10 @@ This search looks at GCP Storage bucket-access logs and detects new or previousl
 | `detect_gcp_storage_access_from_a_new_ip_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [google_gcp_pubsub_message](https://github.com/splunk/security_content/blob/develop/macros/google_gcp_pubsub_message.yml)
+
 > :information_source:
 > **detect_gcp_storage_access_from_a_new_ip_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

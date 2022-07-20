@@ -105,6 +105,9 @@ Adversaries may use one of the three methods based on the remote destination and
 | into write_ssa_detected_events();
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **windows_curl_upload_to_remote_destination_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

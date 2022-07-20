@@ -29,7 +29,7 @@ Kubernetes is the most used container orchestration platform, this orchestration
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Kubernetes AWS detect suspicious kubectl calls](/cloud/kubernetes_aws_detect_suspicious_kubectl_calls/) |  | Hunting |
+| [Kubernetes AWS detect suspicious kubectl calls](/cloud/kubernetes_aws_detect_suspicious_kubectl_calls/) |  | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

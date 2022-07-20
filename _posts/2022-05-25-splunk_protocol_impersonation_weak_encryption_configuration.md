@@ -115,6 +115,9 @@ On June 14th, 2022, Splunk released a security advisory relating to TLS validati
 | `splunk_protocol_impersonation_weak_encryption_configuration_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **splunk_protocol_impersonation_weak_encryption_configuration_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

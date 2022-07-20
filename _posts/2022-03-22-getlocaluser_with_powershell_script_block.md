@@ -1,6 +1,6 @@
 ---
 title: "GetLocalUser with PowerShell Script Block"
-excerpt: "Account Discovery, Local Account"
+excerpt: "Account Discovery, Local Account, PowerShell"
 categories:
   - Endpoint
 last_modified_at: 2022-03-22
@@ -11,6 +11,8 @@ tags:
   - Discovery
   - Local Account
   - Discovery
+  - PowerShell
+  - Execution
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
@@ -44,6 +46,8 @@ The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
 | [T1087](https://attack.mitre.org/techniques/T1087/) | Account Discovery | Discovery |
 
 | [T1087.001](https://attack.mitre.org/techniques/T1087/001/) | Local Account | Discovery |
+
+| [T1059.001](https://attack.mitre.org/techniques/T1059/001/) | PowerShell | Execution |
 
 </div>
 </details>
@@ -101,6 +105,11 @@ The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
 | `getlocaluser_with_powershell_script_block_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [powershell](https://github.com/splunk/security_content/blob/develop/macros/powershell.yml)
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+
 > :information_source:
 > **getlocaluser_with_powershell_script_block_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
@@ -109,6 +118,10 @@ The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
 #### Required fields
 List of fields required to use this analytic.
 * _time
+* EventCode
+* ScriptBlockText
+* Computer
+* UserID
 
 
 
@@ -119,6 +132,7 @@ Administrators or power users may use this PowerShell commandlet for troubleshoo
 
 #### Associated Analytic Story
 * [Active Directory Discovery](/stories/active_directory_discovery)
+* [Malicious PowerShell](/stories/malicious_powershell)
 
 
 
@@ -127,7 +141,7 @@ Administrators or power users may use this PowerShell commandlet for troubleshoo
 
 | Risk Score  | Impact      | Confidence   | Message      |
 | ----------- | ----------- |--------------|--------------|
-| 15.0 | 30 | 50 | Local user discovery enumeration using PowerShell on $dest$ by $user$ |
+| 15.0 | 30 | 50 | Local user discovery enumeration using PowerShell on $Computer$ by $user$ |
 
 
 > :information_source:
@@ -137,6 +151,7 @@ Administrators or power users may use this PowerShell commandlet for troubleshoo
 #### Reference
 
 * [https://attack.mitre.org/techniques/T1087/001/](https://attack.mitre.org/techniques/T1087/001/)
+* [https://www.splunk.com/en_us/blog/security/hunting-for-malicious-powershell-using-script-block-logging.html](https://www.splunk.com/en_us/blog/security/hunting-for-malicious-powershell-using-script-block-logging.html)
 
 
 

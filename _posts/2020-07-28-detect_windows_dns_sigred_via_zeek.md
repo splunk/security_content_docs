@@ -116,6 +116,10 @@ This search detects SIGRed via Zeek DNS and Zeek Conn data.
 | fields - count 
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+
 > :information_source:
 > **detect_windows_dns_sigred_via_zeek_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

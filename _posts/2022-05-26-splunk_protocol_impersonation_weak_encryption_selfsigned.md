@@ -107,6 +107,10 @@ On June 14th 2022, Splunk released vulnerability advisory addresing Python TLS v
 | `splunk_protocol_impersonation_weak_encryption_selfsigned_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [splunkd](https://github.com/splunk/security_content/blob/develop/macros/splunkd.yml)
+
 > :information_source:
 > **splunk_protocol_impersonation_weak_encryption_selfsigned_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

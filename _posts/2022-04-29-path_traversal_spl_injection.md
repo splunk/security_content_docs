@@ -106,6 +106,10 @@ On May 3rd, 2022, Splunk published a security advisory for a Path traversal in s
 | `path_traversal_spl_injection_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [path_traversal_spl_injection](https://github.com/splunk/security_content/blob/develop/macros/path_traversal_spl_injection.yml)
+
 > :information_source:
 > **path_traversal_spl_injection_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

@@ -107,6 +107,9 @@ The following analytic identifies &#34;mshta.exe&#34; execution with inline prot
 | into write_ssa_detected_events();
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **windows_mshta_inline_hta_execution_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

@@ -3,6 +3,7 @@ import yaml
 import argparse
 import sys
 import re
+import requests
 from os import path, walk, remove
 import json
 from jinja2 import Environment, FileSystemLoader
@@ -13,6 +14,7 @@ from pycvesearch import CVESearch
 from tqdm import tqdm
 
 CVESSEARCH_API_URL = 'https://cve.circl.lu'
+SPLUNKBASE_API_URL = "https://apps.splunk.com/api/apps/entriesbyid/"
 
 def get_cve_enrichment_new(cve_id):
     cve = CVESearch(CVESSEARCH_API_URL)
@@ -56,6 +58,139 @@ def get_mitre_enrichment_new(attack, mitre_attack_id):
             return mitre_attack
     return []
 
+def enrich_splunk_app(splunk_ta):   
+    appurl = SPLUNKBASE_API_URL + splunk_ta
+    splunk_app_enriched = dict()
+    
+    try:
+        content = requests_get_helper(appurl, force_cached_or_offline)
+        response_dict = xmltodict.parse(content)
+        
+        # check if list since data changes depending on answer
+        url, results = self._parse_splunkbase_response(response_dict)
+        # grab the app name
+        for i in results:
+            if i['@name'] == 'appName':
+                splunk_app_enriched['name'] = i['#text']
+        # grab out the splunkbase url  
+        if 'entriesbyid' in url:
+            content = requests_get_helper(url, force_cached_or_offline)
+            response_dict = xmltodict.parse(content)
+            
+            #print(json.dumps(response_dict, indent=2))
+            url, results = parse_splunkbase_response(response_dict)
+            # chop the url so we grab the splunkbase portion but not direct download
+            splunk_app_enriched['url'] = url.rsplit('/', 4)[0]
+    except requests.exceptions.ConnectionError as connErr:
+        print(f"There was a connErr for ta {splunk_ta}: {connErr}")
+        # there was a connection error lets just capture the name
+        splunk_app_enriched['name'] = splunk_ta
+        splunk_app_enriched['url'] = ''
+    except Exception as e:
+        print(f"There was an unknown error enriching the Splunk TA [{splunk_ta}]: {str(e)}")
+        splunk_app_enriched['name'] = splunk_ta
+        splunk_app_enriched['url'] = ''
+
+
+    return splunk_app_enriched
+
+def parse_splunkbase_response(response_dict):
+    if isinstance(response_dict['feed']['entry'], list):
+        url = response_dict['feed']['entry'][0]['link']['@href']
+        results = response_dict['feed']['entry'][0]['content']['s:dict']['s:key']
+    else:
+        url = response_dict['feed']['entry']['link']['@href']
+        results = response_dict['feed']['entry']['content']['s:dict']['s:key']
+    return url, results
+
+
+def addMacros(detection, REPO_PATH): 
+    # process macro yamls
+    manifest_files = []
+    for root, dirs, files in walk(REPO_PATH + 'macros'):
+        for file in files:
+            if file.endswith(".yml"):
+                manifest_files.append((path.join(root, file)))
+
+    macros = []
+    for manifest_file in manifest_files:
+        macro_yaml = dict()
+        with open(manifest_file, 'r') as stream:
+            try:
+                object = list(yaml.safe_load_all(stream))[0]
+            except yaml.YAMLError as exc:
+                print(exc)
+                print("Error reading {0}".format(manifest_file))
+                sys.exit(1)
+        macro_yaml = object
+
+
+        macros.append(macro_yaml)
+
+    # match those in the detection
+    macros_found = re.findall(r'`([^\s]+)`', detection['search'])
+    macros_filtered = set()
+    detection['macros'] = []
+
+    for macro in macros_found:
+        if not '_filter' in macro and not 'drop_dm_object_name' in macro:
+            start = macro.find('(')
+            if start != -1:
+                macros_filtered.add(macro[:start])
+            else:
+                macros_filtered.add(macro)
+
+    for macro_name in macros_filtered:
+        for macro in macros:
+            if macro_name == macro['name']:
+                detection['macros'].append(macro)
+
+    macro = dict()
+    name = detection['name'].replace(' ', '_').replace('-', '_').replace('.', '_').replace('/', '_').lower() + '_filter'
+    macro['name'] = name
+    macro['definition'] = 'search *'
+    macro['description'] = 'Update this macro to limit the output results to filter out false positives.'
+    detection['macros'].append(macro)
+
+    return detection
+
+
+def addLookups(detection, REPO_PATH):
+    # process lookup yamls
+    manifest_files = []
+    for root, dirs, files in walk(REPO_PATH + 'lookups'):
+        for file in files:
+            if file.endswith(".yml"):
+                manifest_files.append((path.join(root, file)))
+
+    lookups = []
+    for manifest_file in manifest_files:
+        lookup_yaml = dict()
+        with open(manifest_file, 'r') as stream:
+            try:
+                object = list(yaml.safe_load_all(stream))[0]
+            except yaml.YAMLError as exc:
+                print(exc)
+                print("Error reading {0}".format(manifest_file))
+                sys.exit(1)
+        lookup_yaml = object
+
+    lookups.append(lookup_yaml)
+    lookups_found = re.findall(r'lookup (?:update=true)?(?:append=t)?\s*([^\s]*)', detection['search'])
+    detection['lookups'] = []
+    for lookup_name in lookups_found:
+        for lookup in lookups:
+            if lookup['name'] == lookup_name:
+                detection['lookups'].append(lookup)
+    return detection
+
+def addSplunkApp(detection):
+    splunk_app_enrichment = []
+    if 'supported_tas' in detection['tags']:
+        for splunk_app in detection['tags']['supported_tas']:
+            splunk_app_enrichment.append(enrich_splunk_app(splunk_app))
+
+
 def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, sorted_detections, messages, VERBOSE):
     manifest_files = []
     for root, dirs, files in walk(REPO_PATH + 'stories'):
@@ -77,10 +212,7 @@ def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, sorted_de
                 print("Error reading {0}".format(manifest_file))
                 sys.exit(1)
         story_yaml = object
-
-
         stories.append(story_yaml)
-
     sorted_stories = sorted(stories, key=lambda i: i['name'])
 
     # enrich stories with information from detections: data_models, mitre_ids, kill_chain_phases
@@ -250,6 +382,12 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, messag
                 print("Error reading {0}".format(manifest_file))
                 sys.exit(1)
         detection_yaml = object
+
+        # add macros
+        detection_yaml = addMacros(detection_yaml, REPO_PATH)
+
+        # add lookups
+        detection_yaml = addLookups(detection_yaml, REPO_PATH)
 
         # enrich the mitre object
         mitre_attacks = []

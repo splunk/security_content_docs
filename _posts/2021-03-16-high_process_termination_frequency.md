@@ -100,6 +100,11 @@ This analytics are designed to indentify a high frequency of process termination
 | `high_process_termination_frequency_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [sysmon](https://github.com/splunk/security_content/blob/develop/macros/sysmon.yml)
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+
 > :information_source:
 > **high_process_termination_frequency_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

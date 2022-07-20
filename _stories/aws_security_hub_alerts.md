@@ -30,8 +30,8 @@ AWS Security Hub collects and consolidates findings from AWS security services e
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Detect Spike in AWS Security Hub Alerts for EC2 Instance](/cloud/detect_spike_in_aws_security_hub_alerts_for_ec2_instance/) |  | Anomaly |
-| [Detect Spike in AWS Security Hub Alerts for User](/cloud/detect_spike_in_aws_security_hub_alerts_for_user/) |  | Anomaly |
+| [Detect Spike in AWS Security Hub Alerts for EC2 Instance](/cloud/detect_spike_in_aws_security_hub_alerts_for_ec2_instance/) |  | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Spike in AWS Security Hub Alerts for User](/cloud/detect_spike_in_aws_security_hub_alerts_for_user/) |  | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

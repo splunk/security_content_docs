@@ -100,6 +100,10 @@ This search can help the detection of compromised accounts or internal users sha
 | `gdrive_suspicious_file_sharing_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [gsuite_drive](https://github.com/splunk/security_content/blob/develop/macros/gsuite_drive.yml)
+
 > :information_source:
 > **gdrive_suspicious_file_sharing_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

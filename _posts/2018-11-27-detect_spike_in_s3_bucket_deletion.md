@@ -121,6 +121,10 @@ This search detects users creating spikes in API activity related to deletion of
 | `detect_spike_in_s3_bucket_deletion_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [cloudtrail](https://github.com/splunk/security_content/blob/develop/macros/cloudtrail.yml)
+
 > :information_source:
 > **detect_spike_in_s3_bucket_deletion_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

@@ -101,6 +101,9 @@ This search looks for flags passed to bcdedit.exe modifications to the built-in 
 | into write_ssa_detected_events();
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **bcdedit_failure_recovery_modification_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

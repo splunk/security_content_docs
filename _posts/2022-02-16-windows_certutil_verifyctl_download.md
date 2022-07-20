@@ -104,6 +104,9 @@ Certutil.exe may download a file from a remote destination using `-VerifyCtl`. T
 | into write_ssa_detected_events();
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **windows_certutil_verifyctl_download_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

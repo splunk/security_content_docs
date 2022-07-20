@@ -107,6 +107,10 @@ The analytics returned fields allow analysts to investigate the event further by
 | `windows_invalid_users_failed_authentication_via_kerberos_filter` 
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [wineventlog_security](https://github.com/splunk/security_content/blob/develop/macros/wineventlog_security.yml)
+
 > :information_source:
 > **windows_invalid_users_failed_authentication_via_kerberos_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

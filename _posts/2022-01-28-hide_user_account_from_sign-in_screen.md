@@ -108,6 +108,10 @@ This analytic identifies a suspicious registry modification to hide a user accou
 | `hide_user_account_from_sign_in_screen_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+
 > :information_source:
 > **hide_user_account_from_sign-in_screen_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

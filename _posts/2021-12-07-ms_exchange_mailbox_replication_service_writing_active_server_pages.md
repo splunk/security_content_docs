@@ -113,6 +113,10 @@ The following query identifies suspicious .aspx created in 3 paths identified by
 | `ms_exchange_mailbox_replication_service_writing_active_server_pages_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+
 > :information_source:
 > **ms_exchange_mailbox_replication_service_writing_active_server_pages_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

@@ -107,6 +107,10 @@ On Splunk version 9 on Python3 client libraries verify server certificates by de
 | `splunk_protocol_impersonation_weak_encryption_simplerequest_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [splunk_python](https://github.com/splunk/security_content/blob/develop/macros/splunk_python.yml)
+
 > :information_source:
 > **splunk_protocol_impersonation_weak_encryption_simplerequest_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

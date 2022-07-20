@@ -31,8 +31,8 @@ An example of obfuscated files is `Certutil.exe` usage to encode a portable exec
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [CertUtil With Decode Argument](/endpoint/certutil_with_decode_argument/) | [Deobfuscate/Decode Files or Information](/tags/#deobfuscate/decode-files-or-information) | TTP |
-| [Windows CertUtil Decode File](/endpoint/windows_certutil_decode_file/) | [Deobfuscate/Decode Files or Information](/tags/#deobfuscate/decode-files-or-information) | TTP |
+| [CertUtil With Decode Argument](/endpoint/certutil_with_decode_argument/) | [Deobfuscate/Decode Files or Information](/tags/#deobfuscate/decode-files-or-information) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows CertUtil Decode File](/endpoint/windows_certutil_decode_file/) | [Deobfuscate/Decode Files or Information](/tags/#deobfuscate/decode-files-or-information) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

@@ -107,6 +107,10 @@ On March 24th, 2022, Splunk published a security advisory for a possible Denial 
 | `splunk_dos_via_malformed_s2s_request_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [splunkd](https://github.com/splunk/security_content/blob/develop/macros/splunkd.yml)
+
 > :information_source:
 > **splunk_dos_via_malformed_s2s_request_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

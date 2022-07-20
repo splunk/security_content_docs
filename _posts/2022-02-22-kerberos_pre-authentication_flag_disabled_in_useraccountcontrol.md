@@ -99,6 +99,10 @@ The following analytic leverages Windows Security Event 4738, `A user account wa
 | `kerberos_pre_authentication_flag_disabled_in_useraccountcontrol_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [wineventlog_security](https://github.com/splunk/security_content/blob/develop/macros/wineventlog_security.yml)
+
 > :information_source:
 > **kerberos_pre-authentication_flag_disabled_in_useraccountcontrol_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

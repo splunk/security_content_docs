@@ -101,6 +101,10 @@ This search provides detection of an user attaching itself to a different role t
 | `aws_detect_attach_to_role_policy_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [aws_cloudwatchlogs_eks](https://github.com/splunk/security_content/blob/develop/macros/aws_cloudwatchlogs_eks.yml)
+
 > :information_source:
 > **aws_detect_attach_to_role_policy_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

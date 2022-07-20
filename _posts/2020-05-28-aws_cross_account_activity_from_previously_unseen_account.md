@@ -102,6 +102,10 @@ This search looks for AssumeRole events where an IAM role in a different account
 | `aws_cross_account_activity_from_previously_unseen_account_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+
 > :information_source:
 > **aws_cross_account_activity_from_previously_unseen_account_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

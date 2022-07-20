@@ -107,6 +107,10 @@ This search will detect more than 5 login failures in Office365 Azure Active Dir
 | `high_number_of_login_failures_from_a_single_source_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [o365_management_activity](https://github.com/splunk/security_content/blob/develop/macros/o365_management_activity.yml)
+
 > :information_source:
 > **high_number_of_login_failures_from_a_single_source_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

@@ -106,6 +106,9 @@ The following analytic identifies memory dumping using comsvcs.dll with the mini
 | into write_ssa_detected_events();
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **windows_rundll32_comsvcs_memory_dump_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

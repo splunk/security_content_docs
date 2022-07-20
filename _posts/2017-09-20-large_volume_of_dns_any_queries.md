@@ -111,6 +111,10 @@ The search is used to identify attempts to use your DNS Infrastructure for DDoS 
 | `large_volume_of_dns_any_queries_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+
 > :information_source:
 > **large_volume_of_dns_any_queries_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

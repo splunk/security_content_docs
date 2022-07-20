@@ -106,6 +106,11 @@ This search is to detect a gsuite email contains suspicious subject having known
 | `gsuite_email_suspicious_subject_with_attachment_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [gsuite_gmail](https://github.com/splunk/security_content/blob/develop/macros/gsuite_gmail.yml)
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+
 > :information_source:
 > **gsuite_email_suspicious_subject_with_attachment_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

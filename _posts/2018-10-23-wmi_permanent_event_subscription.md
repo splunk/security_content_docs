@@ -111,6 +111,11 @@ This search looks for the creation of WMI permanent event subscriptions.
 | `wmi_permanent_event_subscription_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [wmi](https://github.com/splunk/security_content/blob/develop/macros/wmi.yml)
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+
 > :information_source:
 > **wmi_permanent_event_subscription_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

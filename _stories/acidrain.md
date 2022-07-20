@@ -30,10 +30,10 @@ Adversaries may use this technique to maximize the impact on the target organiza
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Linux Deletion Of Cron Jobs](/endpoint/linux_deletion_of_cron_jobs/) | [Data Destruction](/tags/#data-destruction), [File Deletion](/tags/#file-deletion), [Indicator Removal on Host](/tags/#indicator-removal-on-host) | Anomaly |
-| [Linux Deletion Of Init Daemon Script](/endpoint/linux_deletion_of_init_daemon_script/) | [Data Destruction](/tags/#data-destruction), [File Deletion](/tags/#file-deletion), [Indicator Removal on Host](/tags/#indicator-removal-on-host) | TTP |
-| [Linux Deletion Of Services](/endpoint/linux_deletion_of_services/) | [Data Destruction](/tags/#data-destruction), [File Deletion](/tags/#file-deletion), [Indicator Removal on Host](/tags/#indicator-removal-on-host) | TTP |
-| [Linux High Frequency Of File Deletion In Etc Folder](/endpoint/linux_high_frequency_of_file_deletion_in_etc_folder/) | [Data Destruction](/tags/#data-destruction), [File Deletion](/tags/#file-deletion), [Indicator Removal on Host](/tags/#indicator-removal-on-host) | Anomaly |
+| [Linux Deletion Of Cron Jobs](/endpoint/linux_deletion_of_cron_jobs/) | [Data Destruction](/tags/#data-destruction), [File Deletion](/tags/#file-deletion), [Indicator Removal on Host](/tags/#indicator-removal-on-host) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Linux Deletion Of Init Daemon Script](/endpoint/linux_deletion_of_init_daemon_script/) | [Data Destruction](/tags/#data-destruction), [File Deletion](/tags/#file-deletion), [Indicator Removal on Host](/tags/#indicator-removal-on-host) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Linux Deletion Of Services](/endpoint/linux_deletion_of_services/) | [Data Destruction](/tags/#data-destruction), [File Deletion](/tags/#file-deletion), [Indicator Removal on Host](/tags/#indicator-removal-on-host) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Linux High Frequency Of File Deletion In Etc Folder](/endpoint/linux_high_frequency_of_file_deletion_in_etc_folder/) | [Data Destruction](/tags/#data-destruction), [File Deletion](/tags/#file-deletion), [Indicator Removal on Host](/tags/#indicator-removal-on-host) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

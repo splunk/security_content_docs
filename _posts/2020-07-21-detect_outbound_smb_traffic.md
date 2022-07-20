@@ -110,6 +110,11 @@ This search looks for outbound SMB connections made by hosts within your network
 | `detect_outbound_smb_traffic_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+
 > :information_source:
 > **detect_outbound_smb_traffic_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

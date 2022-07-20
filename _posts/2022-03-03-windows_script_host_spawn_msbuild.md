@@ -107,6 +107,9 @@ This analytic is to detect a suspicious child process of MSBuild spawned by Wind
 | into write_ssa_detected_events();
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **windows_script_host_spawn_msbuild_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

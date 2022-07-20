@@ -17,7 +17,6 @@ sidebar:
 | [AWS User Monitoring](/stories/aws_user_monitoring/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Discovery](/tags/#discovery) |
 | [Cloud Cryptomining](/stories/cloud_cryptomining/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |
 | [Cloud Federated Credential Abuse](/stories/cloud_federated_credential_abuse/) | [Image File Execution Options Injection](/tags/#image-file-execution-options-injection), [Event Triggered Execution](/tags/#event-triggered-execution) | [Privilege Escalation](/tags/#privilege-escalation) |
-| [Container Implantation Monitoring and Investigation](/stories/container_implantation_monitoring_and_investigation/) | [Implant Internal Image](/tags/#implant-internal-image) | [Persistence](/tags/#persistence) |
 | [Dev Sec Ops](/stories/dev_sec_ops/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Discovery](/tags/#discovery) |
 | [GCP Cross Account Activity](/stories/gcp_cross_account_activity/) | [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Kubernetes Scanning Activity](/stories/kubernetes_scanning_activity/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Discovery](/tags/#discovery) |

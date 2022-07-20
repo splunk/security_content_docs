@@ -108,6 +108,11 @@ This analytic will identify suspicious system event of services that was modifie
 | `windows_event_for_service_disabled_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+* [wineventlog_system](https://github.com/splunk/security_content/blob/develop/macros/wineventlog_system.yml)
+
 > :information_source:
 > **windows_event_for_service_disabled_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

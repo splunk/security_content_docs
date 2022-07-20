@@ -108,6 +108,11 @@ This analytic is to look for suspicious raw access read to drive where the maste
 | `windows_raw_access_to_master_boot_record_drive_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [sysmon](https://github.com/splunk/security_content/blob/develop/macros/sysmon.yml)
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+
 > :information_source:
 > **windows_raw_access_to_master_boot_record_drive_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

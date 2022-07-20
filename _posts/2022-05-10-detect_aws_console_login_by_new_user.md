@@ -99,6 +99,10 @@ This search looks for AWS CloudTrail events wherein a console login event by a u
 | `detect_aws_console_login_by_new_user_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+
 > :information_source:
 > **detect_aws_console_login_by_new_user_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

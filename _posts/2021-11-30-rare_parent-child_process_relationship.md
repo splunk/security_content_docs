@@ -126,6 +126,9 @@ An attacker may use LOLBAS tools spawned from vulnerable applications not typica
 | into write_ssa_detected_events();
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **rare_parent-child_process_relationship_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

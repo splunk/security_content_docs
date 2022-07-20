@@ -101,6 +101,10 @@ Find EC2 instances being created with previously unseen instance types.
 | `cloud_compute_instance_created_with_previously_unseen_instance_type_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+
 > :information_source:
 > **cloud_compute_instance_created_with_previously_unseen_instance_type_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

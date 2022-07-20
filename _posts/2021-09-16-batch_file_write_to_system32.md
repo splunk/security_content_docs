@@ -112,6 +112,10 @@ The search looks for a batch file (.bat) written to the Windows system directory
 | `batch_file_write_to_system32_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+
 > :information_source:
 > **batch_file_write_to_system32_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

@@ -102,6 +102,11 @@ The following analytic identifies suspicious PowerShell command to allow inbound
 | `allow_inbound_traffic_in_firewall_rule_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [powershell](https://github.com/splunk/security_content/blob/develop/macros/powershell.yml)
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+
 > :information_source:
 > **allow_inbound_traffic_in_firewall_rule_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

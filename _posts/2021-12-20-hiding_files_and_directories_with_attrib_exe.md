@@ -107,6 +107,9 @@ Attackers leverage an existing Windows binary, attrib.exe, to mark specific as h
 | into write_ssa_detected_events();
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **hiding_files_and_directories_with_attrib_exe_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

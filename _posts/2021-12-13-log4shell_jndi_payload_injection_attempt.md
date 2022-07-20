@@ -116,6 +116,9 @@ CVE-2021-44228 Log4Shell payloads can be injected via various methods, but on of
 | `log4shell_jndi_payload_injection_attempt_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **log4shell_jndi_payload_injection_attempt_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

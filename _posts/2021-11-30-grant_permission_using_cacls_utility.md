@@ -103,6 +103,9 @@ The following analytic identifies the use of `cacls.exe`, `icacls.exe` or `xcacl
 | into write_ssa_detected_events();
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **grant_permission_using_cacls_utility_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

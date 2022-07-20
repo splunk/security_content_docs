@@ -34,9 +34,9 @@ Once a phishing message has been detected, the next steps are to answer the foll
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Email Attachments With Lots Of Spaces](/application/email_attachments_with_lots_of_spaces/) |  | Anomaly |
-| [Monitor Email For Brand Abuse](/application/monitor_email_for_brand_abuse/) |  | TTP |
-| [Suspicious Email Attachment Extensions](/application/suspicious_email_attachment_extensions/) | [Spearphishing Attachment](/tags/#spearphishing-attachment), [Phishing](/tags/#phishing) | Anomaly |
+| [Email Attachments With Lots Of Spaces](/application/email_attachments_with_lots_of_spaces/) |  | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Monitor Email For Brand Abuse](/application/monitor_email_for_brand_abuse/) |  | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Suspicious Email Attachment Extensions](/application/suspicious_email_attachment_extensions/) | [Spearphishing Attachment](/tags/#spearphishing-attachment), [Phishing](/tags/#phishing) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

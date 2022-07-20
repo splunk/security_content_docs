@@ -100,6 +100,10 @@ This search provides detection of suspicious use of sts:GetSessionToken. These t
 | `aws_detect_sts_get_session_token_abuse_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [aws_cloudwatchlogs_eks](https://github.com/splunk/security_content/blob/develop/macros/aws_cloudwatchlogs_eks.yml)
+
 > :information_source:
 > **aws_detect_sts_get_session_token_abuse_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

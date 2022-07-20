@@ -113,6 +113,9 @@ This search will check the TLS validation is properly configured on the search h
 | `splunk_digital_certificates_infrastructure_version_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **splunk_digital_certificates_infrastructure_version_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

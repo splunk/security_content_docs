@@ -112,6 +112,9 @@ This is an anomaly generating detection looking for multiple interactive logins 
 | into write_ssa_detected_events();
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **anomalous_usage_of_account_credentials_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

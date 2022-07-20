@@ -30,10 +30,10 @@ Double zero destructor enumerates domain controllers, delete registry hives and 
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Executables Or Script Creation In Suspicious Path](/endpoint/executables_or_script_creation_in_suspicious_path/) | [Masquerading](/tags/#masquerading) | TTP |
-| [Suspicious Process File Path](/endpoint/suspicious_process_file_path/) | [Create or Modify System Process](/tags/#create-or-modify-system-process) | TTP |
-| [Windows Deleted Registry By A Non Critical Process File Path](/endpoint/windows_deleted_registry_by_a_non_critical_process_file_path/) | [Modify Registry](/tags/#modify-registry) | Anomaly |
-| [Windows Terminating Lsass Process](/endpoint/windows_terminating_lsass_process/) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) | Anomaly |
+| [Executables Or Script Creation In Suspicious Path](/endpoint/executables_or_script_creation_in_suspicious_path/) | [Masquerading](/tags/#masquerading) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Suspicious Process File Path](/endpoint/suspicious_process_file_path/) | [Create or Modify System Process](/tags/#create-or-modify-system-process) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Deleted Registry By A Non Critical Process File Path](/endpoint/windows_deleted_registry_by_a_non_critical_process_file_path/) | [Modify Registry](/tags/#modify-registry) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Terminating Lsass Process](/endpoint/windows_terminating_lsass_process/) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

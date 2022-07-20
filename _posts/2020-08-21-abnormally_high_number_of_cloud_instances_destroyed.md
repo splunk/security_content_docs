@@ -126,6 +126,9 @@ This search finds for the number successfully destroyed cloud instances for ever
 | `abnormally_high_number_of_cloud_instances_destroyed_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **abnormally_high_number_of_cloud_instances_destroyed_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

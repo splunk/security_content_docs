@@ -99,6 +99,10 @@ This search provides information of unauthenticated requests via user agent, and
 | `gcp_kubernetes_cluster_pod_scan_detection_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [google_gcp_pubsub_message](https://github.com/splunk/security_content/blob/develop/macros/google_gcp_pubsub_message.yml)
+
 > :information_source:
 > **gcp_kubernetes_cluster_pod_scan_detection_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

@@ -228,6 +228,9 @@ Finally, a simple table is created to show the scoring and the _raw field. Sort 
 | `hunting_for_log4shell_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **hunting_for_log4shell_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

@@ -31,7 +31,7 @@ This Analytic Story includes searches that will help you monitor your GCP Audit 
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [GCP Detect gcploit framework](/cloud/gcp_detect_gcploit_framework/) | [Valid Accounts](/tags/#valid-accounts) | TTP |
+| [GCP Detect gcploit framework](/cloud/gcp_detect_gcploit_framework/) | [Valid Accounts](/tags/#valid-accounts) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

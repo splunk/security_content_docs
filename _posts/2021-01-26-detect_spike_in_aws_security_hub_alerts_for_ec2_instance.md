@@ -96,6 +96,10 @@ This search looks for a spike in number of of AWS security Hub alerts for an EC2
 | `detect_spike_in_aws_security_hub_alerts_for_ec2_instance_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [aws_securityhub_finding](https://github.com/splunk/security_content/blob/develop/macros/aws_securityhub_finding.yml)
+
 > :information_source:
 > **detect_spike_in_aws_security_hub_alerts_for_ec2_instance_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

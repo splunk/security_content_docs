@@ -104,6 +104,9 @@ CertUtil.exe may be used to `encode` and `decode` a file, including PE and scrip
 | into write_ssa_detected_events();
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **windows_certutil_decode_file_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

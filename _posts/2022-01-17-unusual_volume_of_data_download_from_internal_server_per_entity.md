@@ -124,6 +124,9 @@ Insider might conduct information collection before data exfiltration, and unusu
 | into write_ssa_detected_events();
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **unusual_volume_of_data_download_from_internal_server_per_entity_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

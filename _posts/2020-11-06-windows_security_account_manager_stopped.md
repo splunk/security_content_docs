@@ -104,6 +104,11 @@ The search looks for a Windows Security Account Manager (SAM) was stopped via co
 | `windows_security_account_manager_stopped_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+
 > :information_source:
 > **windows_security_account_manager_stopped_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

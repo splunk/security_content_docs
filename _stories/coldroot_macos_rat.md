@@ -32,8 +32,8 @@ Searches in this Analytic Story leverage the capabilities of OSquery to address 
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [MacOS - Re-opened Applications](/endpoint/macos_-_re-opened_applications/) |  | TTP |
-| [Processes Tapping Keyboard Events](/endpoint/processes_tapping_keyboard_events/) |  | TTP |
+| [MacOS - Re-opened Applications](/endpoint/macos_-_re-opened_applications/) |  | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Processes Tapping Keyboard Events](/endpoint/processes_tapping_keyboard_events/) |  | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

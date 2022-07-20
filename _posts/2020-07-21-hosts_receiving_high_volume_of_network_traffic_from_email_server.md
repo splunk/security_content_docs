@@ -115,6 +115,10 @@ This search looks for an increase of data transfers from your email server to yo
 | `hosts_receiving_high_volume_of_network_traffic_from_email_server_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+
 > :information_source:
 > **hosts_receiving_high_volume_of_network_traffic_from_email_server_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

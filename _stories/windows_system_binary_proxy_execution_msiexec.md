@@ -30,11 +30,11 @@ Adversaries may abuse msiexec.exe to launch local or network accessible MSI file
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Windows MSIExec DLLRegisterServer](/endpoint/windows_msiexec_dllregisterserver/) | [Msiexec](/tags/#msiexec) | TTP |
-| [Windows MSIExec Remote Download](/endpoint/windows_msiexec_remote_download/) | [Msiexec](/tags/#msiexec) | TTP |
-| [Windows MSIExec Spawn Discovery Command](/endpoint/windows_msiexec_spawn_discovery_command/) | [Msiexec](/tags/#msiexec) | TTP |
-| [Windows MSIExec Unregister DLLRegisterServer](/endpoint/windows_msiexec_unregister_dllregisterserver/) | [Msiexec](/tags/#msiexec) | TTP |
-| [Windows MSIExec With Network Connections](/endpoint/windows_msiexec_with_network_connections/) | [Msiexec](/tags/#msiexec) | TTP |
+| [Windows MSIExec DLLRegisterServer](/endpoint/windows_msiexec_dllregisterserver/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows MSIExec Remote Download](/endpoint/windows_msiexec_remote_download/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows MSIExec Spawn Discovery Command](/endpoint/windows_msiexec_spawn_discovery_command/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows MSIExec Unregister DLLRegisterServer](/endpoint/windows_msiexec_unregister_dllregisterserver/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows MSIExec With Network Connections](/endpoint/windows_msiexec_with_network_connections/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

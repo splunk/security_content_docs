@@ -117,6 +117,9 @@ This search looks for command-line arguments that use a `/c` parameter to execut
 | into write_ssa_detected_events();
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+
 > :information_source:
 > **first_time_seen_command_line_argument_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

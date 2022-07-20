@@ -32,7 +32,7 @@ Microsoft releases updates for Windows systems on a monthly cadence. They should
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [No Windows Updates in a time frame](/application/no_windows_updates_in_a_time_frame/) |  | Hunting |
+| [No Windows Updates in a time frame](/application/no_windows_updates_in_a_time_frame/) |  | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

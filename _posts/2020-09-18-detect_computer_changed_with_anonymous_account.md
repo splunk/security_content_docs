@@ -109,6 +109,10 @@ This search looks for Event Code 4742 (Computer Change) or EventCode 4624 (An ac
 | `detect_computer_changed_with_anonymous_account_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [wineventlog_security](https://github.com/splunk/security_content/blob/develop/macros/wineventlog_security.yml)
+
 > :information_source:
 > **detect_computer_changed_with_anonymous_account_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

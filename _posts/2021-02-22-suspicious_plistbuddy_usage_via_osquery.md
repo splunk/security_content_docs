@@ -109,6 +109,10 @@ Upon triage, capture the property list file being written to disk and review for
 |  `suspicious_plistbuddy_usage_via_osquery_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [osquery_process](https://github.com/splunk/security_content/blob/develop/macros/osquery_process.yml)
+
 > :information_source:
 > **suspicious_plistbuddy_usage_via_osquery_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

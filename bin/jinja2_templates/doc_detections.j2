@@ -151,7 +151,7 @@ The SPL above uses the following Macros:
 #### Lookups
 The SPL above uses the following Lookups:
 
-{% for lookup in object.lookups -%}
+{% for lookup in detection.lookups -%}
 * [{{lookup.name}}](https://github.com/splunk/security_content/blob/develop/lookups/{{lookup.name}}.yml) with [data](https://github.com/splunk/security_content/tree/develop/lookups/{{lookup.name}}.csv)
 {% endfor %}
 {% endif -%}

@@ -117,6 +117,10 @@ This search looks for registry activity associated with modifications to the reg
 | `monitor_registry_keys_for_print_monitors_filter`
 ```
 
+#### Macros
+The SPL above uses the following Macros:
+* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+
 > :information_source:
 > **monitor_registry_keys_for_print_monitors_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 

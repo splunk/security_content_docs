@@ -25,13 +25,18 @@ tags:
 
 This search looks for executions of cmd.exe spawned by a process that is often abused by attackers and that does not typically launch cmd.exe.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2020-11-10
 - **Author**: Bhavin Patel, Splunk
 - **ID**: dcfd6b40-42f9-469d-a433-2e53f7486664
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,57 @@ This search looks for executions of cmd.exe spawned by a process that is often a
 | [T1059](https://attack.mitre.org/techniques/T1059/) | Command and Scripting Interpreter | Execution |
 
 | [T1059.003](https://attack.mitre.org/techniques/T1059/003/) | Windows Command Shell | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -53,17 +109,13 @@ This search looks for executions of cmd.exe spawned by a process that is often a
 | `detect_prohibited_applications_spawning_cmd_exe_filter`
 ```
 
-#### Associated Analytic Story
-* [Suspicious Command-Line Executions](/stories/suspicious_command-line_executions)
-* [Suspicious MSHTA Activity](/stories/suspicious_mshta_activity)
-* [Suspicious Zoom Child Processes](/stories/suspicious_zoom_child_processes)
-* [NOBELIUM Group](/stories/nobelium_group)
+> :information_source:
+> **detect_prohibited_applications_spawning_cmd_exe_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting data that records process activity from your hosts and populates the Endpoint data model with the resultant dataset. This search includes a lookup file, `prohibited_apps_launching_cmd.csv`, that contains a list of processes that should not be spawning cmd.exe. You can modify this lookup to better suit your environment. To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -78,12 +130,19 @@ You must be ingesting data that records process activity from your hosts and pop
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+You must be ingesting data that records process activity from your hosts and populates the Endpoint data model with the resultant dataset. This search includes a lookup file, `prohibited_apps_launching_cmd.csv`, that contains a list of processes that should not be spawning cmd.exe. You can modify this lookup to better suit your environment. To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 There are circumstances where an application may legitimately execute and interact with the Windows command-line interface. Investigate and modify the lookup file, as appropriate.
+
+#### Associated Analytic Story
+* [Suspicious Command-Line Executions](/stories/suspicious_command-line_executions)
+* [Suspicious MSHTA Activity](/stories/suspicious_mshta_activity)
+* [Suspicious Zoom Child Processes](/stories/suspicious_zoom_child_processes)
+* [NOBELIUM Group](/stories/nobelium_group)
+
+
 
 
 #### RBA
@@ -93,6 +152,8 @@ There are circumstances where an application may legitimately execute and intera
 | 80.0 | 80 | 100 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest$ by user $user$ running prohibited applications. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

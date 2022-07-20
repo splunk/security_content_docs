@@ -27,13 +27,18 @@ tags:
 
 This analytic is to detect a suspicious modification of the active setup registry for persistence and privilege escalation. This technique was seen in several malware (poisonIvy), adware and APT to gain persistence to the compromised machine upon boot up. This TTP is a good indicator to further check the process id that do the modification since modification of this registry is not commonly done. check the legitimacy of the file and process involve in this rules to check if it is a valid setup installer that creating or modifying this registry.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-01-26
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: f64579c0-203f-11ec-abcc-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,52 @@ This analytic is to detect a suspicious modification of the active setup registr
 | [T1547.014](https://attack.mitre.org/techniques/T1547/014/) | Active Setup | Persistence, Privilege Escalation |
 
 | [T1547](https://attack.mitre.org/techniques/T1547/) | Boot or Logon Autostart Execution | Persistence, Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -59,16 +110,13 @@ This analytic is to detect a suspicious modification of the active setup registr
 | `active_setup_registry_autostart_filter`
 ```
 
-#### Associated Analytic Story
-* [Windows Persistence Techniques](/stories/windows_persistence_techniques)
-* [Windows Privilege Escalation](/stories/windows_privilege_escalation)
-* [Hermetic Wiper](/stories/hermetic_wiper)
+> :information_source:
+> **active_setup_registry_autostart_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you must be ingesting data that records registry activity from your hosts to populate the endpoint data model in the registry node. This is typically populated via endpoint detection-and-response product, such as Carbon Black or endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the registry.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Registry.dest
 * Registry.user
@@ -77,12 +125,18 @@ To successfully implement this search, you must be ingesting data that records r
 * Registry.registry_value_name
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you must be ingesting data that records registry activity from your hosts to populate the endpoint data model in the registry node. This is typically populated via endpoint detection-and-response product, such as Carbon Black or endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the registry.
 #### Known False Positives
 Active setup installer may add or modify this registry.
+
+#### Associated Analytic Story
+* [Windows Persistence Techniques](/stories/windows_persistence_techniques)
+* [Windows Privilege Escalation](/stories/windows_privilege_escalation)
+* [Hermetic Wiper](/stories/hermetic_wiper)
+
+
 
 
 #### RBA
@@ -92,6 +146,8 @@ Active setup installer may add or modify this registry.
 | 64.0 | 80 | 80 | modified/added/deleted registry entry $Registry.registry_path$ in $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

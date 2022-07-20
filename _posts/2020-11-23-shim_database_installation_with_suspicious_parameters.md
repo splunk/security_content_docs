@@ -27,13 +27,18 @@ tags:
 
 This search detects the process execution and arguments required to silently create a shim database.  The sdbinst.exe application is used to install shim database files (.sdb). A shim is a small library which transparently intercepts an API, changes the parameters passed, handles the operation itself, or redirects the operation elsewhere.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2020-11-23
 - **Author**: David Dorsey, Splunk
 - **ID**: 404620de-46d8-48b6-90cc-8a8d7b0876a3
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,56 @@ This search detects the process execution and arguments required to silently cre
 | [T1546.011](https://attack.mitre.org/techniques/T1546/011/) | Application Shimming | Privilege Escalation, Persistence |
 
 | [T1546](https://attack.mitre.org/techniques/T1546/) | Event Triggered Execution | Privilege Escalation, Persistence |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -54,14 +109,13 @@ This search detects the process execution and arguments required to silently cre
 | `shim_database_installation_with_suspicious_parameters_filter`
 ```
 
-#### Associated Analytic Story
-* [Windows Persistence Techniques](/stories/windows_persistence_techniques)
+> :information_source:
+> **shim_database_installation_with_suspicious_parameters_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting data that records process activity from your hosts to populate the Endpoint data model in the Processes node. You must also be ingesting logs with both the process name and command line from your endpoints. The command-line arguments are mapped to the &#34;process&#34; field in the Endpoint data model.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.process_name
 * Processes.parent_process_name
@@ -69,12 +123,16 @@ You must be ingesting data that records process activity from your hosts to popu
 * Processes.user
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must be ingesting data that records process activity from your hosts to populate the Endpoint data model in the Processes node. You must also be ingesting logs with both the process name and command line from your endpoints. The command-line arguments are mapped to the &#34;process&#34; field in the Endpoint data model.
 #### Known False Positives
 None identified
+
+#### Associated Analytic Story
+* [Windows Persistence Techniques](/stories/windows_persistence_techniques)
+
+
 
 
 #### RBA
@@ -84,6 +142,8 @@ None identified
 | 63.0 | 70 | 90 | A process $process_name$ that possible create a shim db silently in host $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

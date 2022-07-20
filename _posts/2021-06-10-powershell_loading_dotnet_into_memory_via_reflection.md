@@ -26,13 +26,18 @@ The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
 This analytic identifies the use of PowerShell loading .net assembly via reflection. This is commonly found in malicious PowerShell usage, including Empire and Cobalt Strike. In addition, the `load(` value may be modifed by removing `(` and it will identify more events to review. \
 During triage, review parallel processes using an EDR product or 4688 events. It will be important to understand the timeline of events around this activity. Review the entire logged PowerShell script block.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-06-10
 - **Author**: Michael Haag, Splunk
 - **ID**: 85bc3f30-ca28-11eb-bd21-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -41,6 +46,52 @@ During triage, review parallel processes using an EDR product or 4688 events. It
 | [T1059](https://attack.mitre.org/techniques/T1059/) | Command and Scripting Interpreter | Execution |
 
 | [T1059.001](https://attack.mitre.org/techniques/T1059/001/) | PowerShell | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,15 +103,13 @@ During triage, review parallel processes using an EDR product or 4688 events. It
 | `powershell_loading_dotnet_into_memory_via_reflection_filter`
 ```
 
-#### Associated Analytic Story
-* [Hermetic Wiper](/stories/hermetic_wiper)
-* [Malicious PowerShell](/stories/malicious_powershell)
+> :information_source:
+> **powershell_loading_dotnet_into_memory_via_reflection_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this analytic, you will need to enable PowerShell Script Block Logging on some or all endpoints. Additional setup here https://docs.splunk.com/Documentation/UBA/5.0.4.1/GetDataIn/AddPowerShell#Configure_module_logging_for_PowerShell.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Message
 * OpCode
@@ -69,12 +118,17 @@ To successfully implement this analytic, you will need to enable PowerShell Scri
 * EventCode
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this analytic, you will need to enable PowerShell Script Block Logging on some or all endpoints. Additional setup here https://docs.splunk.com/Documentation/UBA/5.0.4.1/GetDataIn/AddPowerShell#Configure_module_logging_for_PowerShell.
 #### Known False Positives
 False positives should be limited as day to day scripts do not use this method.
+
+#### Associated Analytic Story
+* [Hermetic Wiper](/stories/hermetic_wiper)
+* [Malicious PowerShell](/stories/malicious_powershell)
+
+
 
 
 #### RBA
@@ -84,6 +138,8 @@ False positives should be limited as day to day scripts do not use this method.
 | 56.0 | 70 | 80 | A suspicious powershell script contains reflective class assembly  command in $Message$ to load .net code in memory with EventCode $EventCode$ in host $ComputerName$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

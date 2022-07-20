@@ -24,13 +24,18 @@ tags:
 
 This search is to detect a suspicious attachment file extension in Gsuite email that may related to spear phishing attack. This file type is commonly used by malware to lure user to click on it to execute malicious code to compromised targetted machine. But this search can also catch some normal files related to this file type that maybe send by employee or network admin.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-08-16
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 6d663014-fe92-11eb-ab07-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,52 @@ This search is to detect a suspicious attachment file extension in Gsuite email 
 | [T1566.001](https://attack.mitre.org/techniques/T1566/001/) | Spearphishing Attachment | Initial Access |
 
 | [T1566](https://attack.mitre.org/techniques/T1566/) | Phishing | Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,14 +103,13 @@ This search is to detect a suspicious attachment file extension in Gsuite email 
 | `gsuite_email_suspicious_attachment_filter`
 ```
 
-#### Associated Analytic Story
-* [Dev Sec Ops](/stories/dev_sec_ops)
+> :information_source:
+> **gsuite_email_suspicious_attachment_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs related to gsuite having the file attachment metadata like file type, file extension, source email, destination email, num of attachment and etc.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * attachment{}.file_extension_type
 * attachment{}.sha256
@@ -71,12 +121,16 @@ To successfully implement this search, you need to be ingesting logs related to 
 * source.address
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs related to gsuite having the file attachment metadata like file type, file extension, source email, destination email, num of attachment and etc.
 #### Known False Positives
 network admin and normal user may send this file attachment as part of their day to day work. having a good protocol in attaching this file type to an e-mail may reduce the risk of having a spear phishing attack.
+
+#### Associated Analytic Story
+* [Dev Sec Ops](/stories/dev_sec_ops)
+
+
 
 
 #### RBA
@@ -86,6 +140,8 @@ network admin and normal user may send this file attachment as part of their day
 | 49.0 | 70 | 70 | suspicious email from $source.address$ to $destination{}.address$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

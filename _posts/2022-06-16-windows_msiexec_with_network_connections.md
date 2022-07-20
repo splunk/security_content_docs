@@ -23,19 +23,76 @@ tags:
 
 The following analytic identifies MSIExec with any network connection over port 443 or 80. Typically, MSIExec does not perform network communication to the internet.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-06-16
 - **Author**: Michael Haag, Splunk
 - **ID**: 827409a1-5393-4d8d-8da4-bbb297c262a7
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1218.007](https://attack.mitre.org/techniques/T1218/007/) | Msiexec | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,14 +109,13 @@ The following analytic identifies MSIExec with any network connection over port 
 | `windows_msiexec_with_network_connections_filter`
 ```
 
-#### Associated Analytic Story
-* [Windows System Binary Proxy Execution MSIExec](/stories/windows_system_binary_proxy_execution_msiexec)
+> :information_source:
+> **windows_msiexec_with_network_connections_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product. Add parent process as a filter, filter known good processes. This may be voluminous due to the join on process_id. All_Traffic does not have process_guid, yet.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.process_id
 * Processes.process_name
@@ -73,12 +129,16 @@ To successfully implement this search you need to be ingesting information on pr
 * All_Traffic.dest_ip
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product. Add parent process as a filter, filter known good processes. This may be voluminous due to the join on process_id. All_Traffic does not have process_guid, yet.
 #### Known False Positives
 False positives will be present and filtering is required.
+
+#### Associated Analytic Story
+* [Windows System Binary Proxy Execution MSIExec](/stories/windows_system_binary_proxy_execution_msiexec)
+
+
 
 
 #### RBA
@@ -88,6 +148,8 @@ False positives will be present and filtering is required.
 | 35.0 | 70 | 50 | An instance of $process_name$ was identified on endpoint $dest$ contacting a remote destination. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

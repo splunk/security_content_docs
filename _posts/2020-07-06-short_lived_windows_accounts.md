@@ -25,13 +25,18 @@ tags:
 
 This search detects accounts that were created and deleted in a short time period.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change)
 - **Last Updated**: 2020-07-06
 - **Author**: David Dorsey, Splunk
 - **ID**: b25f6f62-0782-43c1-b403-083231ffd97d
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,56 @@ This search detects accounts that were created and deleted in a short time perio
 | [T1136.001](https://attack.mitre.org/techniques/T1136/001/) | Local Account | Persistence |
 
 | [T1136](https://attack.mitre.org/techniques/T1136/) | Create Account | Persistence |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.IP
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -55,26 +110,29 @@ This search detects accounts that were created and deleted in a short time perio
 | `short_lived_windows_accounts_filter`
 ```
 
-#### Associated Analytic Story
-* [Account Monitoring and Controls](/stories/account_monitoring_and_controls)
+> :information_source:
+> **short_lived_windows_accounts_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This search requires you to have enabled your Group Management Audit Logs in your Local Windows Security Policy and be ingesting those logs.  More information on how to enable them can be found here: http://whatevernetworks.com/auditing-group-membership-changes-in-active-directory/
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * All_Changes.result_id
 * All_Changes.user
 * All_Changes.dest
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+This search requires you to have enabled your Group Management Audit Logs in your Local Windows Security Policy and be ingesting those logs.  More information on how to enable them can be found here: http://whatevernetworks.com/auditing-group-membership-changes-in-active-directory/
 #### Known False Positives
 It is possible that an administrator created and deleted an account in a short time period.  Verifying activity with an administrator is advised.
+
+#### Associated Analytic Story
+* [Account Monitoring and Controls](/stories/account_monitoring_and_controls)
+
+
 
 
 #### RBA
@@ -84,6 +142,8 @@ It is possible that an administrator created and deleted an account in a short t
 | 63.0 | 70 | 90 | A user account created or delete shortly in host $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

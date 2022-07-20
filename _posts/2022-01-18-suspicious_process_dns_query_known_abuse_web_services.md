@@ -25,13 +25,18 @@ tags:
 
 This analytic detects a suspicious process making a DNS query via known, abused text-paste web services, VoIP, instant messaging, and digital distribution platforms used to download external files. This technique is abused by adversaries, malware actors, and red teams to download a malicious file on the target host. This is a good TTP indicator for possible initial access techniques. A user will experience false positives if the following instant messaging is allowed or common applications like telegram or discord are allowed in the corporate network.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-01-18
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 3cf0dc36-484d-11ec-a6bc-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,52 @@ This analytic detects a suspicious process making a DNS query via known, abused 
 | [T1059.005](https://attack.mitre.org/techniques/T1059/005/) | Visual Basic | Execution |
 
 | [T1059](https://attack.mitre.org/techniques/T1059/) | Command and Scripting Interpreter | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -51,15 +102,13 @@ This analytic detects a suspicious process making a DNS query via known, abused 
 | `suspicious_process_dns_query_known_abuse_web_services_filter`
 ```
 
-#### Associated Analytic Story
-* [Remcos](/stories/remcos)
-* [WhisperGate](/stories/whispergate)
+> :information_source:
+> **suspicious_process_dns_query_known_abuse_web_services_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This detection relies on sysmon logs with the Event ID 22, DNS Query. We suggest you run this detection at least once a day over the last 14 days.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Image
 * QueryName
@@ -69,12 +118,17 @@ This detection relies on sysmon logs with the Event ID 22, DNS Query. We suggest
 * Computer
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+This detection relies on sysmon logs with the Event ID 22, DNS Query. We suggest you run this detection at least once a day over the last 14 days.
 #### Known False Positives
 Noise and false positive can be seen if the following instant messaging is allowed to use within corporate network. In this case, a filter is needed.
+
+#### Associated Analytic Story
+* [Remcos](/stories/remcos)
+* [WhisperGate](/stories/whispergate)
+
+
 
 
 #### RBA
@@ -84,6 +138,8 @@ Noise and false positive can be seen if the following instant messaging is allow
 | 64.0 | 80 | 80 | suspicious process $process_name$ has a dns query in $QueryName$ on $Computer$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

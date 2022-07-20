@@ -24,13 +24,18 @@ tags:
 
 The following hunting analytic identifies all processes requesting access into Lsass.exe. his behavior may be related to credential dumping or applications requiring access to credentials. Triaging this event will require understanding the GrantedAccess from the SourceImage. In addition, whether the account is privileged or not. Review the process requesting permissions and review parallel processes.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2022-01-12
 - **Author**: Michael Haag, Splunk
 - **ID**: 1c6abb08-73d1-11ec-9ca0-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,55 @@ The following hunting analytic identifies all processes requesting access into L
 | [T1003.001](https://attack.mitre.org/techniques/T1003/001/) | LSASS Memory | Credential Access |
 
 | [T1003](https://attack.mitre.org/techniques/T1003/) | OS Credential Dumping | Credential Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.AE
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -51,14 +105,13 @@ The following hunting analytic identifies all processes requesting access into L
 | `windows_hunting_system_account_targeting_lsass_filter`
 ```
 
-#### Associated Analytic Story
-* [Credential Dumping](/stories/credential_dumping)
+> :information_source:
+> **windows_hunting_system_account_targeting_lsass_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Enabling EventCode 10 TargetProcess lsass.exe is required.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Computer
 * TargetImage
@@ -69,12 +122,16 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * TargetUser
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Enabling EventCode 10 TargetProcess lsass.exe is required.
 #### Known False Positives
 False positives will occur based on GrantedAccess and SourceUser, filter based on source image as needed.
+
+#### Associated Analytic Story
+* [Credential Dumping](/stories/credential_dumping)
+
+
 
 
 #### RBA
@@ -84,6 +141,8 @@ False positives will occur based on GrantedAccess and SourceUser, filter based o
 | 64.0 | 80 | 80 | A process, $SourceImage$, has loaded $ImageLoaded$ that are typically related to credential dumping on $dest$. Review for further details. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

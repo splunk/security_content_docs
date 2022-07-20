@@ -16,7 +16,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -26,13 +26,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search will detect more than 5 login failures in Office365 Azure Active Directory from a single source IP address. Please adjust the threshold value of 5 as suited for your environment.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-12-16
 - **Author**: Bhavin Patel, Splunk
 - **ID**: 7f398cfb-918d-41f4-8db8-2e2474e02222
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -41,6 +46,57 @@ This search will detect more than 5 login failures in Office365 Azure Active Dir
 | [T1110.001](https://attack.mitre.org/techniques/T1110/001/) | Password Guessing | Credential Access |
 
 | [T1110](https://attack.mitre.org/techniques/T1110/) | Brute Force | Credential Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.DP
+* DE.AE
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -51,14 +107,13 @@ This search will detect more than 5 login failures in Office365 Azure Active Dir
 | `high_number_of_login_failures_from_a_single_source_filter`
 ```
 
-#### Associated Analytic Story
-* [Office 365 Detections](/stories/office_365_detections)
+> :information_source:
+> **high_number_of_login_failures_from_a_single_source_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
 
-
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Operation
 * record_type
@@ -72,12 +127,16 @@ This search will detect more than 5 login failures in Office365 Azure Active Dir
 * record_type
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
+#### How To Implement
 
 #### Known False Positives
 unknown
+
+#### Associated Analytic Story
+* [Office 365 Detections](/stories/office_365_detections)
+
+
 
 
 #### RBA
@@ -87,6 +146,8 @@ unknown
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

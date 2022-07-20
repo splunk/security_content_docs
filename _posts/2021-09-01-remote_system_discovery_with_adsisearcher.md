@@ -22,19 +22,70 @@ tags:
 
 The following analytic utilizes PowerShell Script Block Logging (EventCode=4104) to identify the `[Adsisearcher]` type accelerator being used to query Active Directory for domain computers. Red Teams and adversaries may leverage `[Adsisearcher]` to enumerate domain computers for situational awareness and Active Directory Discovery.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-09-01
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 70803451-0047-4e12-9d63-77fa7eb8649c
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1018](https://attack.mitre.org/techniques/T1018/) | Remote System Discovery | Discovery |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Reconnaissance
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -45,14 +96,13 @@ The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
 | `remote_system_discovery_with_adsisearcher_filter`
 ```
 
-#### Associated Analytic Story
-* [Active Directory Discovery](/stories/active_directory_discovery)
+> :information_source:
+> **remote_system_discovery_with_adsisearcher_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this analytic, you will need to enable PowerShell Script Block Logging on some or all endpoints. Additional setup here https://docs.splunk.com/Documentation/UBA/5.0.4.1/GetDataIn/AddPowerShell#Configure_module_logging_for_PowerShell.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventCode
 * Message
@@ -60,12 +110,16 @@ To successfully implement this analytic, you will need to enable PowerShell Scri
 * User
 
 
-#### Kill Chain Phase
-* Reconnaissance
 
-
+#### How To Implement
+To successfully implement this analytic, you will need to enable PowerShell Script Block Logging on some or all endpoints. Additional setup here https://docs.splunk.com/Documentation/UBA/5.0.4.1/GetDataIn/AddPowerShell#Configure_module_logging_for_PowerShell.
 #### Known False Positives
 Administrators or power users may use Adsisearcher for troubleshooting.
+
+#### Associated Analytic Story
+* [Active Directory Discovery](/stories/active_directory_discovery)
+
+
 
 
 #### RBA
@@ -75,6 +129,8 @@ Administrators or power users may use Adsisearcher for troubleshooting.
 | 15.0 | 30 | 50 | Remote system discovery enumeration on $dest$ by $user$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

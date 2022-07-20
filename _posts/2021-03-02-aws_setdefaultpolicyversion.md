@@ -30,13 +30,18 @@ tags:
 
 This search looks for AWS CloudTrail events where a user has set a default policy versions. Attackers have been know to use this technique for Privilege Escalation in case the previous versions of the policy had permissions to access more resources than the current version of the policy
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-03-02
 - **Author**: Bhavin Patel, Splunk
 - **ID**: 2a9b80d3-6340-4345-11ad-212bf3d0dac4
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -45,6 +50,58 @@ This search looks for AWS CloudTrail events where a user has set a default polic
 | [T1078.004](https://attack.mitre.org/techniques/T1078/004/) | Cloud Accounts | Defense Evasion, Persistence, Privilege Escalation, Initial Access |
 
 | [T1078](https://attack.mitre.org/techniques/T1078/) | Valid Accounts | Defense Evasion, Persistence, Privilege Escalation, Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.DS
+* PR.AC
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 13
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -56,14 +113,13 @@ This search looks for AWS CloudTrail events where a user has set a default polic
 | `aws_setdefaultpolicyversion_filter`
 ```
 
-#### Associated Analytic Story
-* [AWS IAM Privilege Escalation](/stories/aws_iam_privilege_escalation)
+> :information_source:
+> **aws_setdefaultpolicyversion_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install splunk AWS add on and Splunk App for AWS. This search works with AWS CloudTrail logs.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * eventName
 * userAgent
@@ -72,12 +128,16 @@ You must install splunk AWS add on and Splunk App for AWS. This search works wit
 * eventSource
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must install splunk AWS add on and Splunk App for AWS. This search works with AWS CloudTrail logs.
 #### Known False Positives
 While this search has no known false positives, it is possible that an AWS admin has legitimately set a default policy to allow a user to access all resources. That said, AWS strongly advises against granting full control to all AWS resources
+
+#### Associated Analytic Story
+* [AWS IAM Privilege Escalation](/stories/aws_iam_privilege_escalation)
+
+
 
 
 #### RBA
@@ -87,6 +147,8 @@ While this search has no known false positives, it is possible that an AWS admin
 | 30.0 | 50 | 60 | From IP address $sourceIPAddress$, user agent $userAgent$ has trigged an event $eventName$ for updating the the default policy version |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

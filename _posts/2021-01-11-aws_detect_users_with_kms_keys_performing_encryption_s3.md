@@ -22,19 +22,70 @@ tags:
 
 This search provides detection of users with KMS keys performing encryption specifically against S3 buckets.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-01-11
 - **Author**: Rod Soto, Patrick Bareiss Splunk
 - **ID**: 884a5f59-eec7-4f4a-948b-dbde18225fdc
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1486](https://attack.mitre.org/techniques/T1486/) | Data Encrypted for Impact | Impact |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -47,14 +98,13 @@ This search provides detection of users with KMS keys performing encryption spec
 |`aws_detect_users_with_kms_keys_performing_encryption_s3_filter`
 ```
 
-#### Associated Analytic Story
-* [Ransomware Cloud](/stories/ransomware_cloud)
+> :information_source:
+> **aws_detect_users_with_kms_keys_performing_encryption_s3_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install splunk AWS add on and Splunk App for AWS. This search works with AWS CloudTrail logs
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * eventName
 * requestParameters.x-amz-server-side-encryption
@@ -65,12 +115,16 @@ You must install splunk AWS add on and Splunk App for AWS. This search works wit
 * region
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+You must install splunk AWS add on and Splunk App for AWS. This search works with AWS CloudTrail logs
 #### Known False Positives
 bucket with S3 encryption
+
+#### Associated Analytic Story
+* [Ransomware Cloud](/stories/ransomware_cloud)
+
+
 
 
 #### RBA
@@ -80,6 +134,8 @@ bucket with S3 encryption
 | 15.0 | 30 | 50 | User $user$ with KMS keys is performing encryption, against S3 buckets on these files $dest_file$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

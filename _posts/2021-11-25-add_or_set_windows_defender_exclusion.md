@@ -25,13 +25,18 @@ tags:
 
 This analytic will identify a suspicious process command-line related to Windows Defender exclusion feature. This command is abused by adversaries, malware authors and red teams to bypass Windows Defender Antivirus products by excluding folder path, file path, process and extensions. From its real time or schedule scan to execute their malicious code. This is a good indicator for defense evasion and to look further for events after this behavior.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-11-25
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 773b66fe-4dd9-11ec-8289-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,52 @@ This analytic will identify a suspicious process command-line related to Windows
 | [T1562.001](https://attack.mitre.org/techniques/T1562/001/) | Disable or Modify Tools | Defense Evasion |
 
 | [T1562](https://attack.mitre.org/techniques/T1562/) | Impair Defenses | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,16 +103,13 @@ This analytic will identify a suspicious process command-line related to Windows
 | `add_or_set_windows_defender_exclusion_filter`
 ```
 
-#### Associated Analytic Story
-* [Remcos](/stories/remcos)
-* [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics)
-* [WhisperGate](/stories/whispergate)
+> :information_source:
+> **add_or_set_windows_defender_exclusion_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Registry` node. Also make sure that this registry was included in your config files ex. sysmon config to be monitored.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -76,12 +124,18 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Registry` node. Also make sure that this registry was included in your config files ex. sysmon config to be monitored.
 #### Known False Positives
 Admin or user may choose to use this windows features. Filter as needed.
+
+#### Associated Analytic Story
+* [Remcos](/stories/remcos)
+* [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics)
+* [WhisperGate](/stories/whispergate)
+
+
 
 
 #### RBA
@@ -91,6 +145,8 @@ Admin or user may choose to use this windows features. Filter as needed.
 | 64.0 | 80 | 80 | exclusion command $process$ executed on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -24,13 +24,18 @@ tags:
 
 The following Hunting analytic assists with identifying suspicious PowerShell execution using Script Block Logging, or EventCode 4104. This analytic is not meant to be ran hourly, but occasionally to identify malicious or suspicious PowerShell. This analytic is a combination of work completed by Alex Teixeira and Splunk Threat Research Team.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-08-18
 - **Author**: Michael Haag, Splunk
 - **ID**: d6f2b006-0041-11ec-8885-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,52 @@ The following Hunting analytic assists with identifying suspicious PowerShell ex
 | [T1059](https://attack.mitre.org/techniques/T1059/) | Command and Scripting Interpreter | Execution |
 
 | [T1059.001](https://attack.mitre.org/techniques/T1059/001/) | PowerShell | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -224,25 +275,28 @@ The following Hunting analytic assists with identifying suspicious PowerShell ex
 | `powershell_4104_hunting_filter`
 ```
 
+> :information_source:
+> **powershell_4104_hunting_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+
+
+#### Required fields
+List of fields required to use this analytic.
+* _time
+* Message
+
+
+
+#### How To Implement
+The following Hunting analytic requires PowerShell operational logs to be imported. Modify the powershell macro as needed to match the sourcetype or add index. This analytic is specific to 4104, or PowerShell Script Block Logging.
+#### Known False Positives
+Limited false positives. May filter as needed.
+
 #### Associated Analytic Story
 * [Hermetic Wiper](/stories/hermetic_wiper)
 * [Malicious PowerShell](/stories/malicious_powershell)
 
 
-#### How To Implement
-The following Hunting analytic requires PowerShell operational logs to be imported. Modify the powershell macro as needed to match the sourcetype or add index. This analytic is specific to 4104, or PowerShell Script Block Logging.
-
-#### Required field
-* _time
-* Message
-
-
-#### Kill Chain Phase
-* Exploitation
-
-
-#### Known False Positives
-Limited false positives. May filter as needed.
 
 
 #### RBA
@@ -252,6 +306,8 @@ Limited false positives. May filter as needed.
 | 80.0 | 80 | 100 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest$ by user $user$ executing suspicious commands. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

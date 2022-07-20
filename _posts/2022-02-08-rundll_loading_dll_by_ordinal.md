@@ -25,13 +25,18 @@ tags:
 
 The following analytic identifies rundll32.exe loading an export function by ordinal value. Adversaries may abuse rundll32.exe to proxy execution of malicious code. Using rundll32.exe, vice executing directly, may avoid triggering security tools that may not monitor execution of the rundll32.exe process because of allowlists or false positives from normal operations. Utilizing ordinal values makes it a bit more complicated for analysts to understand the behavior until the DLL is reviewed.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-02-08
 - **Author**: Michael Haag, David Dorsey, Splunk
 - **ID**: 6c135f8d-5e60-454e-80b7-c56eed739833
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,57 @@ The following analytic identifies rundll32.exe loading an export function by ord
 | [T1218](https://attack.mitre.org/techniques/T1218/) | System Binary Proxy Execution | Defense Evasion |
 
 | [T1218.011](https://attack.mitre.org/techniques/T1218/011/) | Rundll32 | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Installation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -53,16 +109,13 @@ The following analytic identifies rundll32.exe loading an export function by ord
 | `rundll_loading_dll_by_ordinal_filter`
 ```
 
-#### Associated Analytic Story
-* [Unusual Processes](/stories/unusual_processes)
-* [Suspicious Rundll32 Activity](/stories/suspicious_rundll32_activity)
-* [Living Off The Land](/stories/living_off_the_land)
+> :information_source:
+> **rundll_loading_dll_by_ordinal_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -77,12 +130,18 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Installation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 False positives are possible with native utilities and third party applications. Filtering may be needed based on command-line, or add world writeable paths to restrict query.
+
+#### Associated Analytic Story
+* [Unusual Processes](/stories/unusual_processes)
+* [Suspicious Rundll32 Activity](/stories/suspicious_rundll32_activity)
+* [Living Off The Land](/stories/living_off_the_land)
+
+
 
 
 #### RBA
@@ -92,6 +151,8 @@ False positives are possible with native utilities and third party applications.
 | 49.0 | 70 | 70 | A rundll32 process $process_name$ with ordinal parameter like this process commandline $process$ on host $dest$. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

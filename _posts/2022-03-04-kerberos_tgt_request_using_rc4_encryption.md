@@ -23,19 +23,70 @@ tags:
 
 The following analytic leverages Event 4768, A Kerberos authentication ticket (TGT) was requested, to identify a TGT request with encryption type 0x17, or RC4-HMAC. This encryption type is no longer utilized by newer systems and could represent evidence of an OverPass The Hash attack. Similar to Pass The Hash, OverPass The Hash is a form of credential theft that allows adversaries to move laterally or consume resources in a target network. Leveraging this attack, an adversary who has stolen the NTLM hash of a valid domain account is able to authenticate to the Kerberos Distribution Center(KDC) on behalf of the legitimate account and obtain a Kerberos TGT ticket. Depending on the privileges of the compromised account, this ticket may be used to obtain unauthorized access to systems and other network resources.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2022-03-04
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 18916468-9c04-11ec-bdc6-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1550](https://attack.mitre.org/techniques/T1550/) | Use Alternate Authentication Material | Defense Evasion, Lateral Movement |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -44,14 +95,13 @@ The following analytic leverages Event 4768, A Kerberos authentication ticket (T
 | `kerberos_tgt_request_using_rc4_encryption_filter` 
 ```
 
-#### Associated Analytic Story
-* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
+> :information_source:
+> **kerberos_tgt_request_using_rc4_encryption_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting Domain Controller and Kerberos events. The Advanced Security Audit policy setting `Audit Kerberos Authentication Service` within `Account Logon` needs to be enabled.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventCode
 * Ticket_Encryption_Type
@@ -59,12 +109,16 @@ To successfully implement this search, you need to be ingesting Domain Controlle
 * Client_Address
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting Domain Controller and Kerberos events. The Advanced Security Audit policy setting `Audit Kerberos Authentication Service` within `Account Logon` needs to be enabled.
 #### Known False Positives
 Based on Microsoft documentation, legacy systems or applications will use RC4-HMAC as the default encryption for TGT requests. Specifically, systems before Windows Server 2008 and Windows Vista. Newer systems will use AES128 or AES256.
+
+#### Associated Analytic Story
+* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
+
+
 
 
 #### RBA
@@ -74,6 +128,8 @@ Based on Microsoft documentation, legacy systems or applications will use RC4-HM
 | 25.0 | 50 | 50 | A Kerberos TGT request with RC4 encryption was requested for $Account_Name$ from $Client_Address$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

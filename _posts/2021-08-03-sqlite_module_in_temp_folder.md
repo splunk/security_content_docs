@@ -23,19 +23,70 @@ tags:
 
 This search is to detect a suspicious file creation of sqlite3.dll in %temp% folder. This behavior was seen in IcedID malware where it download sqlite module to parse browser database like for chrome or firefox to stole browser information related to bank, credit card or credentials.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-08-03
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 0f216a38-f45f-11eb-b09c-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1005](https://attack.mitre.org/techniques/T1005/) | Data from Local System | Collection |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -47,14 +98,13 @@ This search is to detect a suspicious file creation of sqlite3.dll in %temp% fol
 | `sqlite_module_in_temp_folder_filter`
 ```
 
-#### Associated Analytic Story
-* [IcedID](/stories/icedid)
+> :information_source:
+> **sqlite_module_in_temp_folder_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * process_name
 * TargetFilename
@@ -63,12 +113,16 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Image
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 #### Known False Positives
 unknown
+
+#### Associated Analytic Story
+* [IcedID](/stories/icedid)
+
+
 
 
 #### RBA
@@ -78,6 +132,8 @@ unknown
 | 9.0 | 30 | 30 | process $SourceImage$ create a file $TargetImage$ in host $Computer$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

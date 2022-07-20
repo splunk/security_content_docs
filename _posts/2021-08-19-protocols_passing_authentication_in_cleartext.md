@@ -13,7 +13,7 @@ tags:
   - Network_Traffic
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -23,12 +23,72 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 The following analytic identifies cleartext protocols at risk of leaking sensitive information. Currently, this consists of legacy protocols such as telnet (port 23), POP3 (port 110), IMAP (port 143), and non-anonymous FTP (port 21) sessions. While some of these protocols may be used over SSL, they typically are found on different assigned ports in those instances.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 - **Last Updated**: 2021-08-19
 - **Author**: Rico Valdez, Splunk
 - **ID**: 6923cd64-17a0-453c-b945-81ac2d8c6db9
+
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Reconnaissance
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.AE
+* PR.AC
+* PR.DS
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 9
+* CIS 14
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -41,14 +101,13 @@ The following analytic identifies cleartext protocols at risk of leaking sensiti
 | `protocols_passing_authentication_in_cleartext_filter`
 ```
 
-#### Associated Analytic Story
-* [Use of Cleartext Protocols](/stories/use_of_cleartext_protocols)
+> :information_source:
+> **protocols_passing_authentication_in_cleartext_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This search requires you to be ingesting your network traffic, and populating the Network_Traffic data model. For more accurate result it&#39;s better to limit destination to organization private and public IP range, like All_Traffic.dest IN(192.168.0.0/16,172.16.0.0/12,10.0.0.0/8, x.x.x.x/22)
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * All_Traffic.transport
 * All_Traffic.dest_port
@@ -58,13 +117,16 @@ This search requires you to be ingesting your network traffic, and populating th
 * All_Traffic.action
 
 
-#### Kill Chain Phase
-* Reconnaissance
-* Actions on Objectives
 
-
+#### How To Implement
+This search requires you to be ingesting your network traffic, and populating the Network_Traffic data model. For more accurate result it&#39;s better to limit destination to organization private and public IP range, like All_Traffic.dest IN(192.168.0.0/16,172.16.0.0/12,10.0.0.0/8, x.x.x.x/22)
 #### Known False Positives
 Some networks may use kerberized FTP or telnet servers, however, this is rare.
+
+#### Associated Analytic Story
+* [Use of Cleartext Protocols](/stories/use_of_cleartext_protocols)
+
+
 
 
 #### RBA
@@ -74,6 +136,8 @@ Some networks may use kerberized FTP or telnet servers, however, this is rare.
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

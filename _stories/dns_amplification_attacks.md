@@ -8,7 +8,6 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Network_Resolution
-  - Actions on Objectives
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -32,7 +31,7 @@ The search in this story can help you to detect if attackers are abusing your co
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Large Volume of DNS ANY Queries](/network/large_volume_of_dns_any_queries/) | [Network Denial of Service](/tags/#network-denial-of-service), [Reflection Amplification](/tags/#reflection-amplification)| Anomaly |
+| [Large Volume of DNS ANY Queries](/network/large_volume_of_dns_any_queries/) | [Network Denial of Service](/tags/#network-denial-of-service), [Reflection Amplification](/tags/#reflection-amplification) | Anomaly |
 
 #### Reference
 

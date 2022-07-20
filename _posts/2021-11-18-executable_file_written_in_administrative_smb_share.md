@@ -24,13 +24,18 @@ tags:
 
 The following analytic identifies executable files (.exe or .dll) being written to Windows administrative SMB shares (Admin$, IPC$, C$). This represents suspicious behavior as its commonly used by tools like like PsExec/PaExec and others to stage service binaries before creating and starting a Windows service on remote endpoints. Red Teams and adversaries alike may abuse administrative shares for lateral movement and remote code execution. The Trickbot malware family also implements this behavior to try to infect other machines in the infected network.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-11-18
 - **Author**: Teoderick Contreras, Mauricio Velazco, Splunk
 - **ID**: f63c34fe-a435-11eb-935a-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,52 @@ The following analytic identifies executable files (.exe or .dll) being written 
 | [T1021](https://attack.mitre.org/techniques/T1021/) | Remote Services | Lateral Movement |
 
 | [T1021.002](https://attack.mitre.org/techniques/T1021/002/) | SMB/Windows Admin Shares | Lateral Movement |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -50,18 +101,13 @@ The following analytic identifies executable files (.exe or .dll) being written 
 | `executable_file_written_in_administrative_smb_share_filter`
 ```
 
-#### Associated Analytic Story
-* [Data Destruction](/stories/data_destruction)
-* [Active Directory Lateral Movement](/stories/active_directory_lateral_movement)
-* [Trickbot](/stories/trickbot)
-* [Hermetic Wiper](/stories/hermetic_wiper)
-* [Industroyer2](/stories/industroyer2)
+> :information_source:
+> **executable_file_written_in_administrative_smb_share_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting Windows Security Event Logs with 5145 EventCode enabled. The Windows TA is also required. Also enable the object Audit access success/failure in your group policy.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventCode
 * Share_Name
@@ -73,12 +119,20 @@ To successfully implement this search, you need to be ingesting Windows Security
 * Source_Address
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting Windows Security Event Logs with 5145 EventCode enabled. The Windows TA is also required. Also enable the object Audit access success/failure in your group policy.
 #### Known False Positives
 System Administrators may use looks like PsExec for troubleshooting or administrations tasks. However, this will typically come only from certain users and certain systems that can be added to an allow list.
+
+#### Associated Analytic Story
+* [Data Destruction](/stories/data_destruction)
+* [Active Directory Lateral Movement](/stories/active_directory_lateral_movement)
+* [Trickbot](/stories/trickbot)
+* [Hermetic Wiper](/stories/hermetic_wiper)
+* [Industroyer2](/stories/industroyer2)
+
+
 
 
 #### RBA
@@ -88,6 +142,8 @@ System Administrators may use looks like PsExec for troubleshooting or administr
 | 70.0 | 70 | 100 | $user$ dropped or created an executable file in known sensitive SMB share.  Share name=$Share_Name$, Target name=$Relative_Target_Name$, and Access mask=$Access_Mask$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

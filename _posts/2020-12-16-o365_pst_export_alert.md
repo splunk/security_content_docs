@@ -22,19 +22,70 @@ tags:
 
 This search detects when a user has performed an Ediscovery search or exported a PST file from the search. This PST file usually has sensitive information including email body content
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-12-16
 - **Author**: Rod Soto, Splunk
 - **ID**: 5f694cc4-a678-4a60-9410-bffca1b647dc
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1114](https://attack.mitre.org/techniques/T1114/) | Email Collection | Collection |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -46,15 +97,13 @@ This search detects when a user has performed an Ediscovery search or exported a
 | `o365_pst_export_alert_filter`
 ```
 
-#### Associated Analytic Story
-* [Office 365 Detections](/stories/office_365_detections)
-* [Data Exfiltration](/stories/data_exfiltration)
+> :information_source:
+> **o365_pst_export_alert_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install splunk Microsoft Office 365 add-on. This search works with o365:management:activity
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Category
 * Name
@@ -64,12 +113,17 @@ You must install splunk Microsoft Office 365 add-on. This search works with o365
 * Operation
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+You must install splunk Microsoft Office 365 add-on. This search works with o365:management:activity
 #### Known False Positives
 PST export can be done for legitimate purposes but due to the sensitive nature of its content it must be monitored.
+
+#### Associated Analytic Story
+* [Office 365 Detections](/stories/office_365_detections)
+* [Data Exfiltration](/stories/data_exfiltration)
+
+
 
 
 #### RBA
@@ -79,6 +133,8 @@ PST export can be done for legitimate purposes but due to the sensitive nature o
 | 48.0 | 80 | 60 | User $Source$ has exported a PST file from the search using this operation- $Operation$ with a severity of $Severity$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

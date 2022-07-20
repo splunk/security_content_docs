@@ -24,13 +24,18 @@ tags:
 
 This search looks for reading lsass memory consistent with credential dumping.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2019-12-03
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: 2c365e57-4414-4540-8dc0-73ab10729996
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,60 @@ This search looks for reading lsass memory consistent with credential dumping.
 | [T1003.001](https://attack.mitre.org/techniques/T1003/001/) | LSASS Memory | Credential Access |
 
 | [T1003](https://attack.mitre.org/techniques/T1003/) | OS Credential Dumping | Credential Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.IP
+* PR.AC
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -51,15 +110,13 @@ This search looks for reading lsass memory consistent with credential dumping.
 | `detect_credential_dumping_through_lsass_access_filter` 
 ```
 
-#### Associated Analytic Story
-* [Credential Dumping](/stories/credential_dumping)
-* [Detect Zerologon Attack](/stories/detect_zerologon_attack)
+> :information_source:
+> **detect_credential_dumping_through_lsass_access_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This search needs Sysmon Logs and a sysmon configuration, which includes EventCode 10 with lsass.exe. This search uses an input macro named `sysmon`. We strongly recommend that you specify your environment-specific configurations (index, source, sourcetype, etc.) for Windows Sysmon logs. Replace the macro definition with configurations for your Splunk environment. The search also uses a post-filter macro designed to filter out known false positives.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventCode
 * TargetImage
@@ -71,12 +128,17 @@ This search needs Sysmon Logs and a sysmon configuration, which includes EventCo
 * TargetProcessId
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+This search needs Sysmon Logs and a sysmon configuration, which includes EventCode 10 with lsass.exe. This search uses an input macro named `sysmon`. We strongly recommend that you specify your environment-specific configurations (index, source, sourcetype, etc.) for Windows Sysmon logs. Replace the macro definition with configurations for your Splunk environment. The search also uses a post-filter macro designed to filter out known false positives.
 #### Known False Positives
 The activity may be legitimate. Other tools can access lsass for legitimate reasons, and it&#39;s possible this event could be generated in those cases. In these cases, false positives should be fairly obvious and you may need to tweak the search to eliminate noise.
+
+#### Associated Analytic Story
+* [Credential Dumping](/stories/credential_dumping)
+* [Detect Zerologon Attack](/stories/detect_zerologon_attack)
+
+
 
 
 #### RBA
@@ -86,6 +148,8 @@ The activity may be legitimate. Other tools can access lsass for legitimate reas
 | 80.0 | 80 | 100 | The $source_image$ has attempted access to read $TargetImage$ was identified on endpoint $Computer$, this is indicative of credential dumping and should be investigated. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

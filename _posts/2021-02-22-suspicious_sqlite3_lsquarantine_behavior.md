@@ -15,7 +15,7 @@ tags:
   - Endpoint
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -25,19 +25,70 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 The following analytic identifies the use of a SQLite3 querying the MacOS preferences to identify the original URL the pkg was downloaded from. This particular behavior is common with MacOS adware-malicious software. Upon triage, review other processes in parallel for suspicious activity. Identify any recent package installations.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-02-22
 - **Author**: Michael Haag, Splunk
 - **ID**: e1997b2e-655f-4561-82fd-aeba8e1c1a86
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1074](https://attack.mitre.org/techniques/T1074/) | Data Staged | Collection |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -50,14 +101,13 @@ The following analytic identifies the use of a SQLite3 querying the MacOS prefer
 | `suspicious_sqlite3_lsquarantine_behavior_filter`
 ```
 
-#### Associated Analytic Story
-* [Silver Sparrow](/stories/silver_sparrow)
+> :information_source:
+> **suspicious_sqlite3_lsquarantine_behavior_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.process_name
 * Processes.process
@@ -68,12 +118,16 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node.
 #### Known False Positives
 Unknown.
+
+#### Associated Analytic Story
+* [Silver Sparrow](/stories/silver_sparrow)
+
+
 
 
 #### RBA
@@ -83,6 +137,8 @@ Unknown.
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

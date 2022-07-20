@@ -14,7 +14,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -24,19 +24,76 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search detects users creating spikes in API activity related to deletion of S3 buckets in your AWS environment. It will also update the cache file that factors in the latest data.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2018-11-27
 - **Author**: Bhavin Patel, Splunk
 - **ID**: e733a326-59d2-446d-b8db-14a17151aa68
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1530](https://attack.mitre.org/techniques/T1530/) | Data from Cloud Storage Object | Collection |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.DP
+* DE.CM
+* PR.AC
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 13
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -64,25 +121,28 @@ This search detects users creating spikes in API activity related to deletion of
 | `detect_spike_in_s3_bucket_deletion_filter`
 ```
 
-#### Associated Analytic Story
-* [Suspicious AWS S3 Activities](/stories/suspicious_aws_s3_activities)
+> :information_source:
+> **detect_spike_in_s3_bucket_deletion_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install the AWS App for Splunk (version 5.1.0 or later) and Splunk Add-on for AWS (version 4.4.0 or later), then configure your AWS CloudTrail inputs. You can modify `dataPointThreshold` and `deviationThreshold` to better fit your environment. The `dataPointThreshold` variable is the minimum number of data points required to have a statistically significant amount of data to determine. The `deviationThreshold` variable is the number of standard deviations away from the mean that the value must be to be considered a spike. This search works best when you run the &#34;Baseline of S3 Bucket deletion activity by ARN&#34; support search once to create a baseline of previously seen S3 bucket-deletion activity.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * eventName
 * userIdentity.arn
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must install the AWS App for Splunk (version 5.1.0 or later) and Splunk Add-on for AWS (version 4.4.0 or later), then configure your AWS CloudTrail inputs. You can modify `dataPointThreshold` and `deviationThreshold` to better fit your environment. The `dataPointThreshold` variable is the minimum number of data points required to have a statistically significant amount of data to determine. The `deviationThreshold` variable is the number of standard deviations away from the mean that the value must be to be considered a spike. This search works best when you run the &#34;Baseline of S3 Bucket deletion activity by ARN&#34; support search once to create a baseline of previously seen S3 bucket-deletion activity.
 #### Known False Positives
 Based on the values of`dataPointThreshold` and `deviationThreshold`, the false positive rate may vary. Please modify this according the your environment.
+
+#### Associated Analytic Story
+* [Suspicious AWS S3 Activities](/stories/suspicious_aws_s3_activities)
+
+
 
 
 #### RBA
@@ -92,6 +152,8 @@ Based on the values of`dataPointThreshold` and `deviationThreshold`, the false p
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

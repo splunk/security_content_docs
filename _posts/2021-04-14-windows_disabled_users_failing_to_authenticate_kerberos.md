@@ -27,13 +27,18 @@ The detection calculates the standard deviation for each host and leverages the 
 This detection will only trigger on domain controllers, not on member servers or workstations.\
 The analytics returned fields allow analysts to investigate the event further by providing fields like source ip and attempted user accounts.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-04-14
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 98f22d82-9d62-11eb-9fcf-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,52 @@ The analytics returned fields allow analysts to investigate the event further by
 | [T1110.003](https://attack.mitre.org/techniques/T1110/003/) | Password Spraying | Credential Access |
 
 | [T1110](https://attack.mitre.org/techniques/T1110/) | Brute Force | Credential Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -56,15 +107,13 @@ The analytics returned fields allow analysts to investigate the event further by
 | `windows_disabled_users_failing_to_authenticate_kerberos_filter` 
 ```
 
-#### Associated Analytic Story
-* [Active Directory Password Spraying](/stories/active_directory_password_spraying)
-* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
+> :information_source:
+> **windows_disabled_users_failing_to_authenticate_kerberos_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting Domain Controller and Kerberos events. The Advanced Security Audit policy setting `Audit Kerberos Authentication Service` within `Account Logon` needs to be enabled.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventCode
 * Result_Code
@@ -72,12 +121,17 @@ To successfully implement this search, you need to be ingesting Domain Controlle
 * Client_Address
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting Domain Controller and Kerberos events. The Advanced Security Audit policy setting `Audit Kerberos Authentication Service` within `Account Logon` needs to be enabled.
 #### Known False Positives
 A host failing to authenticate with multiple disabled domain users is not a common behavior for legitimate systems. Possible false positive scenarios include but are not limited to vulnerability scanners, multi-user systems missconfigured systems.
+
+#### Associated Analytic Story
+* [Active Directory Password Spraying](/stories/active_directory_password_spraying)
+* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
+
+
 
 
 #### RBA
@@ -87,6 +141,8 @@ A host failing to authenticate with multiple disabled domain users is not a comm
 | 49.0 | 70 | 70 | Potential Kerberos based password spraying attack from $Client_Address$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

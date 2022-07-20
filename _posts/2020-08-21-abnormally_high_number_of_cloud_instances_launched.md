@@ -23,7 +23,7 @@ tags:
   - Change
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -33,13 +33,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search finds for the number successfully created cloud instances for every 4 hour block. This is split up between weekdays and the weekend. It then applies the probability densitiy model previously created and alerts on any outliers.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change)
 - **Last Updated**: 2020-08-21
 - **Author**: David Dorsey, Splunk
 - **ID**: f2361e9f-3928-496c-a556-120cd4223a65
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -48,6 +53,57 @@ This search finds for the number successfully created cloud instances for every 
 | [T1078.004](https://attack.mitre.org/techniques/T1078/004/) | Cloud Accounts | Defense Evasion, Persistence, Privilege Escalation, Initial Access |
 
 | [T1078](https://attack.mitre.org/techniques/T1078/) | Valid Accounts | Defense Evasion, Persistence, Privilege Escalation, Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.DP
+* DE.AE
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 13
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -70,15 +126,13 @@ This search finds for the number successfully created cloud instances for every 
 | `abnormally_high_number_of_cloud_instances_launched_filter`
 ```
 
-#### Associated Analytic Story
-* [Cloud Cryptomining](/stories/cloud_cryptomining)
-* [Suspicious Cloud Instance Activities](/stories/suspicious_cloud_instance_activities)
+> :information_source:
+> **abnormally_high_number_of_cloud_instances_launched_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting your cloud infrastructure logs. You also must run the baseline search `Baseline Of Cloud Instances Launched` to create the probability density function.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * All_Changes.object_id
 * All_Changes.action
@@ -87,12 +141,17 @@ You must be ingesting your cloud infrastructure logs. You also must run the base
 * All_Changes.user
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must be ingesting your cloud infrastructure logs. You also must run the baseline search `Baseline Of Cloud Instances Launched` to create the probability density function.
 #### Known False Positives
 Many service accounts configured within an AWS infrastructure are known to exhibit this behavior. Please adjust the threshold values and filter out service accounts from the output. Always verify if this search alerted on a human user.
+
+#### Associated Analytic Story
+* [Cloud Cryptomining](/stories/cloud_cryptomining)
+* [Suspicious Cloud Instance Activities](/stories/suspicious_cloud_instance_activities)
+
+
 
 
 #### RBA
@@ -102,6 +161,8 @@ Many service accounts configured within an AWS infrastructure are known to exhib
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

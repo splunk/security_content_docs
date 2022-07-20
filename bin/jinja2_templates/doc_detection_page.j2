@@ -12,8 +12,8 @@ sidebar:
 | --------| --------- |------------|
 {%- for detection in detections -%}
 {% if detection.mitre_attacks %}
-| [{{ detection.name }}](/{{ detection.kind }}/{{ detection.name | lower | replace(' ', '_') }}/) | {% for attack in detection.mitre_attacks -%} [{{ attack.technique }}](/tags/#{{ attack.technique | lower | replace(" ", "-") }}){% if not loop.last -%}, {% endif -%}{%- endfor %} | {{ detection.type }} |
+| [{{ detection.name }}](/{{ detection.kind }}/{{ detection.name | lower | replace(' ', '_') }}/) | {% for attack in detection.mitre_attacks -%} [{{ attack.technique }}](/tags/#{{ attack.technique | lower | replace(" ", "-") }}){% if not loop.last -%}, {% endif -%}{%- endfor %} | [{{ detection.type }}](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 {%- else %}
-| [{{ detection.name }}]() | None | {{ detection.type }} |
+| [{{ detection.name }}]() | None | [{{ detection.type }}](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 {%- endif -%}
 {%- endfor -%}

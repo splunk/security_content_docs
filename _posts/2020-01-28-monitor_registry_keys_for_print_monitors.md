@@ -27,13 +27,18 @@ tags:
 
 This search looks for registry activity associated with modifications to the registry key `HKLM\SYSTEM\CurrentControlSet\Control\Print\Monitors`. In this scenario, an attacker can load an arbitrary .dll into the print-monitor registry by giving the full path name to the after.dll. The system will execute the .dll with elevated (SYSTEM) permissions and will persist after reboot.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2020-01-28
 - **Author**: Bhavin Patel, Teoderick Contreras, Splunk
 - **ID**: f5f6af30-7ba7-4295-bfe9-07de87c01bbc
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,59 @@ This search looks for registry activity associated with modifications to the reg
 | [T1547.010](https://attack.mitre.org/techniques/T1547/010/) | Port Monitors | Persistence, Privilege Escalation |
 
 | [T1547](https://attack.mitre.org/techniques/T1547/) | Boot or Logon Autostart Execution | Persistence, Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+* PR.AC
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+* CIS 5
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -59,16 +117,13 @@ This search looks for registry activity associated with modifications to the reg
 | `monitor_registry_keys_for_print_monitors_filter`
 ```
 
-#### Associated Analytic Story
-* [Suspicious Windows Registry Activities](/stories/suspicious_windows_registry_activities)
-* [Windows Persistence Techniques](/stories/windows_persistence_techniques)
-* [Windows Registry Abuse](/stories/windows_registry_abuse)
+> :information_source:
+> **monitor_registry_keys_for_print_monitors_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you must be ingesting data that records registry activity from your hosts to populate the endpoint data model in the registry node. This is typically populated via endpoint detection-and-response product, such as Carbon Black, or via other endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report registry modifications.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Registry.action
 * Registry.registry_path
@@ -78,12 +133,18 @@ To successfully implement this search, you must be ingesting data that records r
 * Registry.registry_value_name
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+To successfully implement this search, you must be ingesting data that records registry activity from your hosts to populate the endpoint data model in the registry node. This is typically populated via endpoint detection-and-response product, such as Carbon Black, or via other endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report registry modifications.
 #### Known False Positives
 You will encounter noise from legitimate print-monitor registry entries.
+
+#### Associated Analytic Story
+* [Suspicious Windows Registry Activities](/stories/suspicious_windows_registry_activities)
+* [Windows Persistence Techniques](/stories/windows_persistence_techniques)
+* [Windows Registry Abuse](/stories/windows_registry_abuse)
+
+
 
 
 #### RBA
@@ -93,6 +154,8 @@ You will encounter noise from legitimate print-monitor registry entries.
 | 64.0 | 80 | 80 | New print monitor added on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

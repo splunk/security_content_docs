@@ -25,13 +25,18 @@ tags:
 
 This search looks for a process launching an `*.lnk` file under `C:\User*` or `*\Local\Temp\*`. This is common behavior used by various spear phishing tools.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-08-26
 - **Author**: Jose Hernandez, Splunk
 - **ID**: 5d814af1-1041-47b5-a9ac-d754e82e9a26
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,59 @@ This search looks for a process launching an `*.lnk` file under `C:\User*` or `*
 | [T1566](https://attack.mitre.org/techniques/T1566/) | Phishing | Initial Access |
 
 | [T1566.002](https://attack.mitre.org/techniques/T1566/002/) | Spearphishing Link | Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Installation
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* ID.AM
+* PR.DS
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 7
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -59,14 +117,13 @@ This search looks for a process launching an `*.lnk` file under `C:\User*` or `*
 | `process_creating_lnk_file_in_suspicious_location_filter`
 ```
 
-#### Associated Analytic Story
-* [Spearphishing Attachments](/stories/spearphishing_attachments)
+> :information_source:
+> **process_creating_lnk_file_in_suspicious_location_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting data that records filesystem and process activity from your hosts to populate the Endpoint data model. This is typically populated via endpoint detection-and-response product, such as Carbon Black, or endpoint data sources, such as Sysmon.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Filesystem.file_name
 * Filesystem.file_path
@@ -77,13 +134,16 @@ You must be ingesting data that records filesystem and process activity from you
 * Filesystem.user
 
 
-#### Kill Chain Phase
-* Installation
-* Actions on Objectives
 
-
+#### How To Implement
+You must be ingesting data that records filesystem and process activity from your hosts to populate the Endpoint data model. This is typically populated via endpoint detection-and-response product, such as Carbon Black, or endpoint data sources, such as Sysmon.
 #### Known False Positives
 This detection should yield little or no false positive results. It is uncommon for LNK files to be executed from temporary or user directories.
+
+#### Associated Analytic Story
+* [Spearphishing Attachments](/stories/spearphishing_attachments)
+
+
 
 
 #### RBA
@@ -93,6 +153,8 @@ This detection should yield little or no false positive results. It is uncommon 
 | 63.0 | 70 | 90 | A process $process_name$ that launching .lnk file in $file_path$ in host $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

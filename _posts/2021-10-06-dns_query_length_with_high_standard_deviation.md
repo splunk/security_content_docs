@@ -25,13 +25,18 @@ tags:
 
 This search allows you to identify DNS requests and compute the standard deviation on the length of the names being resolved, then filter on two times the standard deviation to show you those queries that are unusually large for your environment.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution)
 - **Last Updated**: 2021-10-06
 - **Author**: Bhavin Patel, Splunk
 - **ID**: 1a67f15a-f4ff-4170-84e9-08cf6f75d6f5
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,59 @@ This search allows you to identify DNS requests and compute the standard deviati
 | [T1048.003](https://attack.mitre.org/techniques/T1048/003/) | Exfiltration Over Unencrypted Non-C2 Protocol | Exfiltration |
 
 | [T1048](https://attack.mitre.org/techniques/T1048/) | Exfiltration Over Alternative Protocol | Exfiltration |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Command &amp; Control
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.AE
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+* CIS 12
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -59,26 +117,29 @@ This search allows you to identify DNS requests and compute the standard deviati
 | `dns_query_length_with_high_standard_deviation_filter`
 ```
 
+> :information_source:
+> **dns_query_length_with_high_standard_deviation_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+
+
+#### Required fields
+List of fields required to use this analytic.
+* _time
+* DNS.query
+
+
+
+#### How To Implement
+To successfully implement this search, you will need to ensure that DNS data is populating the Network_Resolution data model.
+#### Known False Positives
+It&#39;s possible there can be long domain names that are legitimate.
+
 #### Associated Analytic Story
 * [Hidden Cobra Malware](/stories/hidden_cobra_malware)
 * [Suspicious DNS Traffic](/stories/suspicious_dns_traffic)
 * [Command and Control](/stories/command_and_control)
 
 
-#### How To Implement
-To successfully implement this search, you will need to ensure that DNS data is populating the Network_Resolution data model.
-
-#### Required field
-* _time
-* DNS.query
-
-
-#### Kill Chain Phase
-* Command &amp; Control
-
-
-#### Known False Positives
-It&#39;s possible there can be long domain names that are legitimate.
 
 
 #### RBA
@@ -88,6 +149,8 @@ It&#39;s possible there can be long domain names that are legitimate.
 | 56.0 | 70 | 80 | A dns query $query$ with 2 time standard deviation of name len of the dns query in host  $host$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

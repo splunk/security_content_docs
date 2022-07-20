@@ -27,13 +27,18 @@ tags:
 
 This analytic is to detect the execution of sdelete.exe application sysinternal tools. This tool is one of the most use tool of malware and adversaries to remove or clear their tracks and artifact in the targetted host. This tool is designed to delete securely a file in file system that remove the forensic evidence on the machine. A good TTP query to check why user execute this application which is not a common practice.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-10-06
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 31702fc0-2682-11ec-85c3-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -44,6 +49,52 @@ This analytic is to detect the execution of sdelete.exe application sysinternal 
 | [T1070.004](https://attack.mitre.org/techniques/T1070/004/) | File Deletion | Defense Evasion |
 
 | [T1070](https://attack.mitre.org/techniques/T1070/) | Indicator Removal on Host | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -56,14 +107,13 @@ This analytic is to detect the execution of sdelete.exe application sysinternal 
 | `sdelete_application_execution_filter`
 ```
 
-#### Associated Analytic Story
-* [Masquerading - Rename System Utilities](/stories/masquerading_-_rename_system_utilities)
+> :information_source:
+> **sdelete_application_execution_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -78,12 +128,16 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 user may execute and use this application
+
+#### Associated Analytic Story
+* [Masquerading - Rename System Utilities](/stories/masquerading_-_rename_system_utilities)
+
+
 
 
 #### RBA
@@ -93,6 +147,8 @@ user may execute and use this application
 | 49.0 | 70 | 70 | sdelete process $process_name$ executed in $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

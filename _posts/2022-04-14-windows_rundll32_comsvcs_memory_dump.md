@@ -23,13 +23,18 @@ tags:
 
 The following analytic identifies memory dumping using comsvcs.dll with the minidump function with `rundll32.exe`. This technique is common with adversaries who would like to dump the memory of lsass.exe.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2022-04-14
 - **Author**: Jose Hernandez, Michael Haag, Splunk
 - **ID**: 76bb9e35-f314-4c3d-a385-83c72a13ce4e
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -38,6 +43,57 @@ The following analytic identifies memory dumping using comsvcs.dll with the mini
 | [T1003.003](https://attack.mitre.org/techniques/T1003/003/) | NTDS | Credential Access |
 
 | [T1003](https://attack.mitre.org/techniques/T1003/) | OS Credential Dumping | Credential Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -50,15 +106,13 @@ The following analytic identifies memory dumping using comsvcs.dll with the mini
 | into write_ssa_detected_events();
 ```
 
-#### Associated Analytic Story
-* [Credential Dumping](/stories/credential_dumping)
-* [Suspicious Rundll32 Activity](/stories/suspicious_rundll32_activity)
+> :information_source:
+> **windows_rundll32_comsvcs_memory_dump_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting endpoint data that tracks process activity, including Windows command line logging. You can see how we test this with [Event Code 4688](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4688a) on the [attack_range](https://github.com/splunk/attack_range/blob/develop/ansible/roles/windows_common/tasks/windows-enable-4688-cmd-line-audit.yml).
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * process_name
 * _tenant
 * _time
@@ -66,12 +120,17 @@ You must be ingesting endpoint data that tracks process activity, including Wind
 * process
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must be ingesting endpoint data that tracks process activity, including Windows command line logging. You can see how we test this with [Event Code 4688](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4688a) on the [attack_range](https://github.com/splunk/attack_range/blob/develop/ansible/roles/windows_common/tasks/windows-enable-4688-cmd-line-audit.yml).
 #### Known False Positives
 False positives should be limited, filter as needed.
+
+#### Associated Analytic Story
+* [Credential Dumping](/stories/credential_dumping)
+* [Suspicious Rundll32 Activity](/stories/suspicious_rundll32_activity)
+
+
 
 
 #### RBA
@@ -81,6 +140,8 @@ False positives should be limited, filter as needed.
 | 40.0 | 40 | 100 | A dump of a process was attempted using comsvcs.dll with the minidump function on endpoint $dest_device_id$ by user $dest_device_user$. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

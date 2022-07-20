@@ -21,19 +21,70 @@ tags:
 
 This search is to detect potential DNS exfiltration using nslookup application. This technique are seen in couple of malware and APT group to exfiltrated collected data in a infected machine or infected network. This detection is looking for unique use of nslookup where it tries to use specific record type, TXT, A, AAAA, that are commonly used by attacker and also the retry parameter which is designed to query C2 DNS multiple tries.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2021-12-07
 - **Author**: Michael Haag, Splunk
 - **ID**: 2452e632-9e0d-11eb-34ba-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1048](https://attack.mitre.org/techniques/T1048/) | Exfiltration Over Alternative Protocol | Exfiltration |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -48,17 +99,13 @@ This search is to detect potential DNS exfiltration using nslookup application. 
 | into write_ssa_detected_events();
 ```
 
-#### Associated Analytic Story
-* [Suspicious DNS Traffic](/stories/suspicious_dns_traffic)
-* [Dynamic DNS](/stories/dynamic_dns)
-* [Data Exfiltration](/stories/data_exfiltration)
-* [Command and Control](/stories/command_and_control)
+> :information_source:
+> **dns_exfiltration_using_nslookup_app_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint_Processess` datamodel.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * dest_device_id
 * process_name
@@ -69,12 +116,19 @@ To successfully implement this search you need to be ingesting information on pr
 * cmd_line
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint_Processess` datamodel.
 #### Known False Positives
 It is possible for some legitimate administrative utilities to use similar cmd_line parameters. Filter as needed.
+
+#### Associated Analytic Story
+* [Suspicious DNS Traffic](/stories/suspicious_dns_traffic)
+* [Dynamic DNS](/stories/dynamic_dns)
+* [Data Exfiltration](/stories/data_exfiltration)
+* [Command and Control](/stories/command_and_control)
+
+
 
 
 #### RBA
@@ -84,6 +138,8 @@ It is possible for some legitimate administrative utilities to use similar cmd_l
 | 72.0 | 90 | 80 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest_device_id$ by user $dest_user_id$ performing activity related to DNS exfiltration. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

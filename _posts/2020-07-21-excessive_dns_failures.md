@@ -17,7 +17,7 @@ tags:
   - Network_Resolution
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -27,13 +27,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search identifies DNS query failures by counting the number of DNS responses that do not indicate success, and trigger on more than 50 occurrences.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution)
 - **Last Updated**: 2020-07-21
 - **Author**: Bhavin Patel, Splunk
 - **ID**: 104658f4-afdc-499e-9719-17243f9826f1
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,60 @@ This search identifies DNS query failures by counting the number of DNS response
 | [T1071.004](https://attack.mitre.org/techniques/T1071/004/) | DNS | Command And Control |
 
 | [T1071](https://attack.mitre.org/techniques/T1071/) | Application Layer Protocol | Command And Control |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Command &amp; Control
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.AE
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+* CIS 9
+* CIS 12
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -59,27 +118,30 @@ This search identifies DNS query failures by counting the number of DNS response
 | `excessive_dns_failures_filter`
 ```
 
-#### Associated Analytic Story
-* [Suspicious DNS Traffic](/stories/suspicious_dns_traffic)
-* [Command and Control](/stories/command_and_control)
+> :information_source:
+> **excessive_dns_failures_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you must ensure that DNS data is populating the Network_Resolution data model.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * DNS.query
 * DNS.reply_code
 * DNS.src
 
 
-#### Kill Chain Phase
-* Command &amp; Control
 
-
+#### How To Implement
+To successfully implement this search you must ensure that DNS data is populating the Network_Resolution data model.
 #### Known False Positives
 It is possible legitimate traffic can trigger this rule. Please investigate as appropriate. The threshold for generating an event can also be customized to better suit your environment.
+
+#### Associated Analytic Story
+* [Suspicious DNS Traffic](/stories/suspicious_dns_traffic)
+* [Command and Control](/stories/command_and_control)
+
+
 
 
 #### RBA
@@ -89,6 +151,8 @@ It is possible legitimate traffic can trigger this rule. Please investigate as a
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

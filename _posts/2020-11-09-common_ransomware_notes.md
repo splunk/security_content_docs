@@ -23,19 +23,75 @@ tags:
 
 The search looks for files created with names matching those typically used in ransomware notes that tell the victim how to get their data back.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2020-11-09
 - **Author**: David Dorsey, Splunk
 - **ID**: ada0f478-84a8-4641-a3f1-d82362d6bd71
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1485](https://attack.mitre.org/techniques/T1485/) | Data Destruction | Impact |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -49,17 +105,13 @@ The search looks for files created with names matching those typically used in r
 | `common_ransomware_notes_filter`
 ```
 
-#### Associated Analytic Story
-* [SamSam Ransomware](/stories/samsam_ransomware)
-* [Ransomware](/stories/ransomware)
-* [Ryuk Ransomware](/stories/ryuk_ransomware)
-* [Clop Ransomware](/stories/clop_ransomware)
+> :information_source:
+> **common_ransomware_notes_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting data that records file-system activity from your hosts to populate the Endpoint Filesystem data-model node. This is typically populated via endpoint detection-and-response product, such as Carbon Black, or via other endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report file-system reads and writes.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Filesystem.user
 * Filesystem.dest
@@ -67,12 +119,19 @@ You must be ingesting data that records file-system activity from your hosts to 
 * Filesystem.file_name
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must be ingesting data that records file-system activity from your hosts to populate the Endpoint Filesystem data-model node. This is typically populated via endpoint detection-and-response product, such as Carbon Black, or via other endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report file-system reads and writes.
 #### Known False Positives
 It&#39;s possible that a legitimate file could be created with the same name used by ransomware note files.
+
+#### Associated Analytic Story
+* [SamSam Ransomware](/stories/samsam_ransomware)
+* [Ransomware](/stories/ransomware)
+* [Ryuk Ransomware](/stories/ryuk_ransomware)
+* [Clop Ransomware](/stories/clop_ransomware)
+
+
 
 
 #### RBA
@@ -82,6 +141,8 @@ It&#39;s possible that a legitimate file could be created with the same name use
 | 90.0 | 90 | 100 | A file - $file_name$ was written to disk on endpoint $dest$ by user $user$, this is indicative of a known ransomware note file and should be reviewed immediately. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -15,7 +15,7 @@ tags:
   - Network_Traffic
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -25,19 +25,77 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks for network traffic defined by port and transport layer protocol in the Enterprise Security lookup table &#34;lookup_interesting_ports&#34;, that is marked as prohibited, and has an associated &#39;allow&#39; action in the Network_Traffic data model. This could be indicative of a misconfigured network device.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 - **Last Updated**: 2020-07-21
 - **Author**: Rico Valdez, Splunk
 - **ID**: ce5a0962-849f-4720-a678-753fe6674479
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1048](https://attack.mitre.org/techniques/T1048/) | Exfiltration Over Alternative Protocol | Exfiltration |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Delivery
+* Command &amp; Control
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.AE
+* PR.AC
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 9
+* CIS 12
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,16 +110,13 @@ This search looks for network traffic defined by port and transport layer protoc
 | `prohibited_network_traffic_allowed_filter`
 ```
 
-#### Associated Analytic Story
-* [Prohibited Traffic Allowed or Protocol Mismatch](/stories/prohibited_traffic_allowed_or_protocol_mismatch)
-* [Ransomware](/stories/ransomware)
-* [Command and Control](/stories/command_and_control)
+> :information_source:
+> **prohibited_network_traffic_allowed_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-In order to properly run this search, Splunk needs to ingest data from firewalls or other network control devices that mediate the traffic allowed into an environment. This is necessary so that the search can identify an &#39;action&#39; taken on the traffic of interest. The search requires the Network_Traffic data model be populated.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * All_Traffic.action
 * All_Traffic.src_ip
@@ -69,13 +124,18 @@ In order to properly run this search, Splunk needs to ingest data from firewalls
 * All_Traffic.dest_port
 
 
-#### Kill Chain Phase
-* Delivery
-* Command &amp; Control
 
-
+#### How To Implement
+In order to properly run this search, Splunk needs to ingest data from firewalls or other network control devices that mediate the traffic allowed into an environment. This is necessary so that the search can identify an &#39;action&#39; taken on the traffic of interest. The search requires the Network_Traffic data model be populated.
 #### Known False Positives
 None identified
+
+#### Associated Analytic Story
+* [Prohibited Traffic Allowed or Protocol Mismatch](/stories/prohibited_traffic_allowed_or_protocol_mismatch)
+* [Ransomware](/stories/ransomware)
+* [Command and Control](/stories/command_and_control)
+
+
 
 
 #### RBA
@@ -85,6 +145,8 @@ None identified
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

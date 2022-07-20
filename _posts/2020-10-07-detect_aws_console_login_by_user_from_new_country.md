@@ -23,19 +23,75 @@ tags:
 
 This search looks for AWS CloudTrail events wherein a console login event by a user was recorded within the last hour, then compares the event to a lookup file of previously seen users (by ARN values) who have logged into the console. The alert is fired if the user has logged into the console for the first time within the last hour
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication)
 - **Last Updated**: 2020-10-07
 - **Author**: Bhavin Patel, Splunk
 - **ID**: 67bd3def-c41c-4bf6-837b-ae196b4257c6
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1535](https://attack.mitre.org/techniques/T1535/) | Unused/Unsupported Cloud Regions | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.DP
+* DE.AE
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -58,27 +114,30 @@ This search looks for AWS CloudTrail events wherein a console login event by a u
 | `detect_aws_console_login_by_user_from_new_country_filter`
 ```
 
-#### Associated Analytic Story
-* [Suspicious AWS Login Activities](/stories/suspicious_aws_login_activities)
-* [Suspicious Cloud Authentication Activities](/stories/suspicious_cloud_authentication_activities)
+> :information_source:
+> **detect_aws_console_login_by_user_from_new_country_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install and configure the Splunk Add-on for AWS (version 5.1.0 or later) and Enterprise Security 6.2, which contains the required updates to the Authentication data model for cloud use cases. Run the `Previously Seen Users in AWS CloudTrail - Initial` support search only once to create a baseline of previously seen IAM users within the last 30 days. Run `Previously Seen Users in AWS CloudTrail - Update` hourly (or more frequently depending on how often you run the detection searches) to refresh the baselines. You can also provide additional filtering for this search by customizing the `detect_aws_console_login_by_user_from_new_country_filter` macro.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Authentication.signature
 * Authentication.user
 * Authentication.src
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must install and configure the Splunk Add-on for AWS (version 5.1.0 or later) and Enterprise Security 6.2, which contains the required updates to the Authentication data model for cloud use cases. Run the `Previously Seen Users in AWS CloudTrail - Initial` support search only once to create a baseline of previously seen IAM users within the last 30 days. Run `Previously Seen Users in AWS CloudTrail - Update` hourly (or more frequently depending on how often you run the detection searches) to refresh the baselines. You can also provide additional filtering for this search by customizing the `detect_aws_console_login_by_user_from_new_country_filter` macro.
 #### Known False Positives
 When a legitimate new user logins for the first time, this activity will be detected. Check how old the account is and verify that the user activity is legitimate.
+
+#### Associated Analytic Story
+* [Suspicious AWS Login Activities](/stories/suspicious_aws_login_activities)
+* [Suspicious Cloud Authentication Activities](/stories/suspicious_cloud_authentication_activities)
+
+
 
 
 #### RBA
@@ -88,6 +147,8 @@ When a legitimate new user logins for the first time, this activity will be dete
 | 42.0 | 70 | 60 | User $user$ is logging into the AWS console from Country $Country$ for the first time |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

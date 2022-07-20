@@ -60,11 +60,10 @@ def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, sorted_de
     manifest_files = []
     for root, dirs, files in walk(REPO_PATH + 'stories'):
         for file in files:
-            if file.endswith(".yml") and root == './stories':
+            if file.endswith(".yml") and 'security_content/stories/deprecated' != root:
                 manifest_files.append((path.join(root, file)))
 
     stories = []
-    
     for manifest_file in tqdm(manifest_files):
         story_yaml = dict()
         if VERBOSE:
@@ -411,8 +410,11 @@ if __name__ == "__main__":
         sys.exit(1)
 
     messages = []
+    print("processing detections")
     sorted_detections, messages = generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, techniques, messages, VERBOSE)
+    print("processing stories")
     sorted_stories, messages = generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, techniques, sorted_detections, messages, VERBOSE)
+    print("processing playbooks")
     sorted_playbooks, messages = generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detections, messages, VERBOSE)
     messages = generate_doc_index(OUTPUT_DIR, TEMPLATE_PATH, sorted_detections, sorted_stories, sorted_playbooks, messages, VERBOSE)
 

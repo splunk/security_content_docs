@@ -24,13 +24,18 @@ tags:
 
 This search detects the assignment of rights to accesss content from another mailbox. This is usually only assigned to a service account.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-12-15
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: b25d2973-303e-47c8-bacd-52b61604c6a7
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,57 @@ This search detects the assignment of rights to accesss content from another mai
 | [T1114.002](https://attack.mitre.org/techniques/T1114/002/) | Remote Email Collection | Collection |
 
 | [T1114](https://attack.mitre.org/techniques/T1114/) | Email Collection | Collection |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.DP
+* DE.AE
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -53,25 +109,28 @@ This search detects the assignment of rights to accesss content from another mai
 |`o365_suspicious_rights_delegation_filter`
 ```
 
-#### Associated Analytic Story
-* [Office 365 Detections](/stories/office_365_detections)
+> :information_source:
+> **o365_suspicious_rights_delegation_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install splunk Microsoft Office 365 add-on. This search works with o365:management:activity
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Operation
 * Parameters
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must install splunk Microsoft Office 365 add-on. This search works with o365:management:activity
 #### Known False Positives
 Service Accounts
+
+#### Associated Analytic Story
+* [Office 365 Detections](/stories/office_365_detections)
+
+
 
 
 #### RBA
@@ -81,6 +140,8 @@ Service Accounts
 | 48.0 | 80 | 60 | User $user$ has delegated suspicious rights $AccessRights$ to user $dest_user$ that allow access to sensitive |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

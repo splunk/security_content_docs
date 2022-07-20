@@ -27,13 +27,18 @@ tags:
 
 The following search identifies Eventvwr bypass by identifying the registry modification into a specific path that eventvwr.msc looks to (but is not valid) upon execution. A successful attack will include a suspicious command to be executed upon eventvwr.msc loading. Upon triage, review the parallel processes that have executed. Identify any additional registry modifications on the endpoint that may look suspicious. Remediate as necessary.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-01-28
 - **Author**: Michael Haag, Splunk
 - **ID**: 9cf8fe08-7ad8-11eb-9819-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,52 @@ The following search identifies Eventvwr bypass by identifying the registry modi
 | [T1548.002](https://attack.mitre.org/techniques/T1548/002/) | Bypass User Account Control | Privilege Escalation, Defense Evasion |
 
 | [T1548](https://attack.mitre.org/techniques/T1548/) | Abuse Elevation Control Mechanism | Privilege Escalation, Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -59,17 +110,13 @@ The following search identifies Eventvwr bypass by identifying the registry modi
 | `eventvwr_uac_bypass_filter`
 ```
 
-#### Associated Analytic Story
-* [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics)
-* [IcedID](/stories/icedid)
-* [Living Off The Land](/stories/living_off_the_land)
-* [Windows Registry Abuse](/stories/windows_registry_abuse)
+> :information_source:
+> **eventvwr_uac_bypass_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Registry` node.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Registry.registry_key_name
 * Registry.registry_path
@@ -78,12 +125,19 @@ To successfully implement this search you need to be ingesting information on pr
 * Registry.registry_value_name
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Registry` node.
 #### Known False Positives
 Some false positives may be present and will need to be filtered.
+
+#### Associated Analytic Story
+* [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics)
+* [IcedID](/stories/icedid)
+* [Living Off The Land](/stories/living_off_the_land)
+* [Windows Registry Abuse](/stories/windows_registry_abuse)
+
+
 
 
 #### RBA
@@ -93,6 +147,8 @@ Some false positives may be present and will need to be filtered.
 | 80.0 | 80 | 100 | Registry values were modified to bypass UAC using Event Viewer on $dest$ by $user$. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

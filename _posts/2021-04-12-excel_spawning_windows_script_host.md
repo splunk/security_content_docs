@@ -25,13 +25,18 @@ tags:
 
 The following detection identifies Microsoft Excel spawning Windows Script Host - `cscript.exe` or `wscript.exe`. Typically, this is not common behavior and not default with Excel.exe. Excel.exe will generally be found in the following path `C:\Program Files\Microsoft Office\root\Office16` (version will vary). `cscript.exe` or `wscript.exe` default location is `c:\windows\system32\` or c:windows\syswow64`. `cscript.exe` or `wscript.exe` spawning from Excel.exe is common for a spearphishing attachment and is actively used. Albeit, the command-line executed will most likely be obfuscated and captured via another detection. During triage, review parallel processes and identify any files that may have been written. Review the reputation of the remote destination and block accordingly.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-04-12
 - **Author**: Michael Haag, Splunk
 - **ID**: 57fe880a-9be3-11eb-9bf3-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,52 @@ The following detection identifies Microsoft Excel spawning Windows Script Host 
 | [T1003.002](https://attack.mitre.org/techniques/T1003/002/) | Security Account Manager | Credential Access |
 
 | [T1003](https://attack.mitre.org/techniques/T1003/) | OS Credential Dumping | Credential Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,14 +103,13 @@ The following detection identifies Microsoft Excel spawning Windows Script Host 
 | `excel_spawning_windows_script_host_filter`
 ```
 
-#### Associated Analytic Story
-* [Spearphishing Attachments](/stories/spearphishing_attachments)
+> :information_source:
+> **excel_spawning_windows_script_host_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * process_name
 * process_id
@@ -69,12 +119,16 @@ To successfully implement this search you need to be ingesting information on pr
 * parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node.
 #### Known False Positives
 False positives should be limited, but if any are present, filter as needed. In some instances, `cscript.exe` is used for legitimate business practices.
+
+#### Associated Analytic Story
+* [Spearphishing Attachments](/stories/spearphishing_attachments)
+
+
 
 
 #### RBA
@@ -84,6 +138,8 @@ False positives should be limited, but if any are present, filter as needed. In 
 | 80.0 | 80 | 100 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest$ by user $user$, indicating potential suspicious macro execution. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

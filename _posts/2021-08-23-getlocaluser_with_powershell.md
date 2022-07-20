@@ -25,13 +25,18 @@ tags:
 
 This analytic looks for the execution of `powershell.exe` with command-line arguments utilized to query for local users. The `Get-LocalUser` commandlet is used to return a list of all local users. Red Teams and adversaries may leverage this commandlet to enumerate users for situational awareness and Active Directory Discovery.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-08-23
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 85fae8fa-0427-11ec-8b78-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,52 @@ This analytic looks for the execution of `powershell.exe` with command-line argu
 | [T1087](https://attack.mitre.org/techniques/T1087/) | Account Discovery | Discovery |
 
 | [T1087.001](https://attack.mitre.org/techniques/T1087/001/) | Local Account | Discovery |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Reconnaissance
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,23 +103,26 @@ This analytic looks for the execution of `powershell.exe` with command-line argu
 | `getlocaluser_with_powershell_filter`
 ```
 
-#### Associated Analytic Story
-* [Active Directory Discovery](/stories/active_directory_discovery)
+> :information_source:
+> **getlocaluser_with_powershell_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+
+
+#### Required fields
+List of fields required to use this analytic.
+* _time
+
 
 
 #### How To Implement
 To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node.
-
-#### Required field
-* _time
-
-
-#### Kill Chain Phase
-* Reconnaissance
-
-
 #### Known False Positives
 Administrators or power users may use this PowerShell commandlet for troubleshooting.
+
+#### Associated Analytic Story
+* [Active Directory Discovery](/stories/active_directory_discovery)
+
+
 
 
 #### RBA
@@ -78,6 +132,8 @@ Administrators or power users may use this PowerShell commandlet for troubleshoo
 | 15.0 | 30 | 50 | Local user discovery enumeration using PowerShell on $dest$ by $user$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

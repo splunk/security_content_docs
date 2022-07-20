@@ -17,7 +17,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -27,19 +27,70 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search provides detection of an user attaching itself to a different role trust policy. This can be used for lateral movement and escalation of privileges.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-07-27
 - **Author**: Rod Soto, Splunk
 - **ID**: 88fc31dd-f331-448c-9856-d3d51dd5d3a1
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1078](https://attack.mitre.org/techniques/T1078/) | Valid Accounts | Defense Evasion, Persistence, Privilege Escalation, Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -50,24 +101,27 @@ This search provides detection of an user attaching itself to a different role t
 | `aws_detect_attach_to_role_policy_filter`
 ```
 
-#### Associated Analytic Story
-* [AWS Cross Account Activity](/stories/aws_cross_account_activity)
+> :information_source:
+> **aws_detect_attach_to_role_policy_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install splunk AWS add-on and Splunk App for AWS. This search works with cloudwatch logs
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * requestParameters.policyArn
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+You must install splunk AWS add-on and Splunk App for AWS. This search works with cloudwatch logs
 #### Known False Positives
 Attach to policy can create a lot of noise. This search can be adjusted to provide specific values to identify cases of abuse (i.e status=failure). The search can provide context for common users attaching themselves to higher privilege policies or even newly created policies.
+
+#### Associated Analytic Story
+* [AWS Cross Account Activity](/stories/aws_cross_account_activity)
+
+
 
 
 #### RBA
@@ -77,6 +131,8 @@ Attach to policy can create a lot of noise. This search can be adjusted to provi
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

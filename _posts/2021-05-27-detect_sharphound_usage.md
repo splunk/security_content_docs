@@ -35,13 +35,18 @@ tags:
 
 The following analytic identifies SharpHound binary usage by using the original filena,e. In addition to renaming the PE, other coverage is available to detect command-line arguments. This particular analytic looks for the original_file_name of `SharpHound.exe` and the process name. It is possible older instances of SharpHound.exe have different original filenames. Dependent upon the operator, the code may be re-compiled and the attributes removed or changed to anything else. During triage, review the metadata of the binary in question. Review parallel processes for suspicious behavior. Identify the source of this binary.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-05-27
 - **Author**: Michael Haag, Splunk
 - **ID**: dd04b29a-beed-11eb-87bc-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -61,6 +66,52 @@ The following analytic identifies SharpHound binary usage by using the original 
 
 | [T1069](https://attack.mitre.org/techniques/T1069/) | Permission Groups Discovery | Discovery |
 
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Reconnaissance
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
+
 #### Search
 
 ```
@@ -72,15 +123,13 @@ The following analytic identifies SharpHound binary usage by using the original 
 | `detect_sharphound_usage_filter`
 ```
 
-#### Associated Analytic Story
-* [Discovery Techniques](/stories/discovery_techniques)
-* [Ransomware](/stories/ransomware)
+> :information_source:
+> **detect_sharphound_usage_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -95,12 +144,17 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Reconnaissance
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 False positives should be limited as this is specific to a file attribute not used by anything else. Filter as needed.
+
+#### Associated Analytic Story
+* [Discovery Techniques](/stories/discovery_techniques)
+* [Ransomware](/stories/ransomware)
+
+
 
 
 #### RBA
@@ -110,6 +164,8 @@ False positives should be limited as this is specific to a file attribute not us
 | 24.0 | 30 | 80 | Potential SharpHound binary identified on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

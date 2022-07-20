@@ -23,19 +23,79 @@ tags:
 
 On May 3rd, 2022, Splunk published a security advisory for a Path traversal in search parameter that can potentiall allow SPL injection. An attacker can cause the application to load data from incorrect endpoints, urls leading to outcomes such as running arbitrary SPL queries.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2022-04-29
 - **Author**: Rod Soto, Splunk
 - **ID**: dfe55688-82ed-4d24-a21b-ed8f0e0fda99
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1083](https://attack.mitre.org/techniques/T1083/) | File and Directory Discovery | Discovery |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
+| ----------- | ----------- | -------------- |
+| [CVE-2022-26889](https://nvd.nist.gov/vuln/detail/CVE-2022-26889) | In Splunk Enterprise versions before 8.1.2, the uri path to load a relative resource within a web page is vulnerable to path traversal. It allows an attacker to potentially inject arbitrary content into the web page (e.g., HTML Injection, XSS) or bypass SPL safeguards for risky commands. The attack is browser-based. An attacker cannot exploit the attack at will and requires the attacker to initiate a request within the victim&#39;s browser (e.g., phishing). | 5.1 |
+
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -46,14 +106,13 @@ On May 3rd, 2022, Splunk published a security advisory for a Path traversal in s
 | `path_traversal_spl_injection_filter`
 ```
 
-#### Associated Analytic Story
-* [Splunk Vulnerabilities](/stories/splunk_vulnerabilities)
+> :information_source:
+> **path_traversal_spl_injection_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This detection does not require you to ingest any new data. The detection does require the ability to search the _internal index. This search will provide search UI requests with path traversal parameter (&#34;../../../../../../../../../&#34;) which shows exploitation attempts.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * status
 * clientip
 * method
@@ -61,12 +120,16 @@ This detection does not require you to ingest any new data. The detection does r
 * uri_query
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+This detection does not require you to ingest any new data. The detection does require the ability to search the _internal index. This search will provide search UI requests with path traversal parameter (&#34;../../../../../../../../../&#34;) which shows exploitation attempts.
 #### Known False Positives
 This search may find additional path traversal exploitation attempts.
+
+#### Associated Analytic Story
+* [Splunk Vulnerabilities](/stories/splunk_vulnerabilities)
+
+
 
 
 #### RBA
@@ -76,13 +139,8 @@ This search may find additional path traversal exploitation attempts.
 | 40.0 | 50 | 80 | Path traversal exploitation attempt from $clientip$ |
 
 
-
-#### CVE
-
-| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
-| ----------- | ----------- | -------------- |
-| [CVE-2022-26889](https://nvd.nist.gov/vuln/detail/CVE-2022-26889) | In Splunk Enterprise versions before 8.1.2, the uri path to load a relative resource within a web page is vulnerable to path traversal. It allows an attacker to potentially inject arbitrary content into the web page (e.g., HTML Injection, XSS) or bypass SPL safeguards for risky commands. The attack is browser-based. An attacker cannot exploit the attack at will and requires the attacker to initiate a request within the victim&#39;s browser (e.g., phishing). | 5.1 |
-
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

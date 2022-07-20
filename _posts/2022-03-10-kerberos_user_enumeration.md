@@ -24,13 +24,18 @@ tags:
 
 The following analytic leverages Event Id 4768, A Kerberos authentication ticket (TGT) was requested, to identify one source endpoint trying to obtain an unusual number Kerberos TGT ticket for non existing users. This behavior could represent an adversary abusing the Kerberos protocol to perform a user enumeration attack against an Active Directory environment. When Kerberos is sent a TGT request with no preauthentication for an invalid username, it responds with KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN or 0x6. Red teams and adversaries alike may abuse the Kerberos protocol to validate a list of users use them to perform further attacks.\ The detection calculates the standard deviation for each host and leverages the 3-sigma statistical rule to identify an unusual number requests. To customize this analytic, users can try different combinations of the `bucket` span time and the calculation of the `upperBound` field.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2022-03-10
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: d82d4af4-a0bd-11ec-9445-3e22fbd008af
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,52 @@ The following analytic leverages Event Id 4768, A Kerberos authentication ticket
 | [T1589](https://attack.mitre.org/techniques/T1589/) | Gather Victim Identity Information | Reconnaissance |
 
 | [T1589.002](https://attack.mitre.org/techniques/T1589/002/) | Email Addresses | Reconnaissance |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Reconnaissance
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -53,14 +104,13 @@ The following analytic leverages Event Id 4768, A Kerberos authentication ticket
 | `kerberos_user_enumeration_filter`
 ```
 
-#### Associated Analytic Story
-* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
+> :information_source:
+> **kerberos_user_enumeration_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting Domain Controller and Kerberos events. The Advanced Security Audit policy setting `Audit Kerberos Authentication Service` within `Account Logon` needs to be enabled.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventCode
 * Result_Code
@@ -68,12 +118,16 @@ To successfully implement this search, you need to be ingesting Domain Controlle
 * Client_Address
 
 
-#### Kill Chain Phase
-* Reconnaissance
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting Domain Controller and Kerberos events. The Advanced Security Audit policy setting `Audit Kerberos Authentication Service` within `Account Logon` needs to be enabled.
 #### Known False Positives
 Possible false positive scenarios include but are not limited to vulnerability scanners and missconfigured systems.
+
+#### Associated Analytic Story
+* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
+
+
 
 
 #### RBA
@@ -83,6 +137,8 @@ Possible false positive scenarios include but are not limited to vulnerability s
 | 24.0 | 30 | 80 | Potential Kerberos based user enumeration attack $Client_Address$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

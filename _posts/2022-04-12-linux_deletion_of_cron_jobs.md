@@ -27,13 +27,18 @@ tags:
 
 This analytic is to detect a deletion of cron job in a linux machine. This technique can be related to an attacker, threat actor or malware to disable scheduled cron jobs that might be related to security or to evade some detections. We also saw that this technique can be a good indicator for malware that is trying to wipe or delete several files on the compromised host like the acidrain malware. This anomaly detection can be a good pivot detection to look for process and user doing it why they doing. Take note that this event can be done by administrator so filtering on those possible false positive event is needed.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-04-12
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 3b132a71-9335-4f33-9932-00bb4f6ac7e8
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -44,6 +49,58 @@ This analytic is to detect a deletion of cron job in a linux machine. This techn
 | [T1070.004](https://attack.mitre.org/techniques/T1070/004/) | File Deletion | Defense Evasion |
 
 | [T1070](https://attack.mitre.org/techniques/T1070/) | Indicator Removal on Host | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -61,14 +118,13 @@ This analytic is to detect a deletion of cron job in a linux machine. This techn
 | `linux_deletion_of_cron_jobs_filter`
 ```
 
-#### Associated Analytic Story
-* [AcidRain](/stories/acidrain)
+> :information_source:
+> **linux_deletion_of_cron_jobs_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Filesystem.dest
 * Filesystem.file_create_time
@@ -87,12 +143,16 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 #### Known False Positives
 Administrator or network operator can execute this command. Please update the filter macros to remove false positives.
+
+#### Associated Analytic Story
+* [AcidRain](/stories/acidrain)
+
+
 
 
 #### RBA
@@ -102,6 +162,8 @@ Administrator or network operator can execute this command. Please update the fi
 | 49.0 | 70 | 70 | a $process_name$ deleting cron jobs in $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

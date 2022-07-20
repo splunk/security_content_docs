@@ -17,7 +17,7 @@ tags:
   - Network_Traffic
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -27,13 +27,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks for RDP application network traffic and filters any source/destination pair generating more than twice the standard deviation of the average traffic.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 - **Last Updated**: 2020-07-21
 - **Author**: Jose Hernandez, Splunk
 - **ID**: a98727cc-286b-4ff2-b898-41df64695923
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,61 @@ This search looks for RDP application network traffic and filters any source/des
 | [T1021.001](https://attack.mitre.org/techniques/T1021/001/) | Remote Desktop Protocol | Lateral Movement |
 
 | [T1021](https://attack.mitre.org/techniques/T1021/) | Remote Services | Lateral Movement |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Reconnaissance
+* Delivery
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.AE
+* PR.AC
+* PR.IP
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 12
+* CIS 9
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -55,15 +115,13 @@ This search looks for RDP application network traffic and filters any source/des
 | `remote_desktop_network_bruteforce_filter`
 ```
 
-#### Associated Analytic Story
-* [SamSam Ransomware](/stories/samsam_ransomware)
-* [Ryuk Ransomware](/stories/ryuk_ransomware)
+> :information_source:
+> **remote_desktop_network_bruteforce_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must ensure that your network traffic data is populating the Network_Traffic data model.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * All_Traffic.app
 * All_Traffic.src
@@ -71,13 +129,17 @@ You must ensure that your network traffic data is populating the Network_Traffic
 * All_Traffic.dest_port
 
 
-#### Kill Chain Phase
-* Reconnaissance
-* Delivery
 
-
+#### How To Implement
+You must ensure that your network traffic data is populating the Network_Traffic data model.
 #### Known False Positives
 RDP gateways may have unusually high amounts of traffic from all other hosts&#39; RDP applications in the network.
+
+#### Associated Analytic Story
+* [SamSam Ransomware](/stories/samsam_ransomware)
+* [Ryuk Ransomware](/stories/ryuk_ransomware)
+
+
 
 
 #### RBA
@@ -87,6 +149,8 @@ RDP gateways may have unusually high amounts of traffic from all other hosts&#39
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

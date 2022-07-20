@@ -31,13 +31,18 @@ tags:
 
 This analytic identifies a common behavior by Cobalt Strike and other frameworks where the adversary will escalate privileges, either via `jump` (Cobalt Strike PTH) or `getsystem`, using named-pipe impersonation. A suspicious event will look like `cmd.exe /c echo 4sgryt3436 &gt; \\.\Pipe\5erg53`.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-05-20
 - **Author**: Michael Haag, Splunk
 - **ID**: eb277ba0-b96b-11eb-b00e-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -51,6 +56,52 @@ This analytic identifies a common behavior by Cobalt Strike and other frameworks
 
 | [T1543](https://attack.mitre.org/techniques/T1543/) | Create or Modify System Process | Persistence, Privilege Escalation |
 
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
+
 #### Search
 
 ```
@@ -62,14 +113,13 @@ This analytic identifies a common behavior by Cobalt Strike and other frameworks
 | `cmd_echo_pipe___escalation_filter`
 ```
 
-#### Associated Analytic Story
-* [Cobalt Strike](/stories/cobalt_strike)
+> :information_source:
+> **cmd_echo_pipe_-_escalation_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -84,12 +134,16 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 Unknown. It is possible filtering may be required to ensure fidelity.
+
+#### Associated Analytic Story
+* [Cobalt Strike](/stories/cobalt_strike)
+
+
 
 
 #### RBA
@@ -99,6 +153,8 @@ Unknown. It is possible filtering may be required to ensure fidelity.
 | 64.0 | 80 | 80 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest$ by user $user$ potentially performing privilege escalation using named pipes related to Cobalt Strike and other frameworks. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -23,13 +23,18 @@ tags:
 
 This analytic is to detect a suspicious child process of MSBuild spawned by Windows Script Host - cscript or wscript. This behavior or event are commonly seen and used by malware or adversaries to execute malicious msbuild process using malicious script in the compromised host. During triage, review parallel processes and identify any file modifications. MSBuild may load a script from the same path without having command-line arguments.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2022-03-03
 - **Author**: Michael Haag, Splunk
 - **ID**: 92886f1c-9b11-11ec-848a-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -38,6 +43,57 @@ This analytic is to detect a suspicious child process of MSBuild spawned by Wind
 | [T1127.001](https://attack.mitre.org/techniques/T1127/001/) | MSBuild | Defense Evasion |
 
 | [T1127](https://attack.mitre.org/techniques/T1127/) | Trusted Developer Utilities Proxy Execution | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -51,15 +107,13 @@ This analytic is to detect a suspicious child process of MSBuild spawned by Wind
 | into write_ssa_detected_events();
 ```
 
-#### Associated Analytic Story
-* [Trusted Developer Utilities Proxy Execution MSBuild](/stories/trusted_developer_utilities_proxy_execution_msbuild)
-* [Living Off The Land](/stories/living_off_the_land)
+> :information_source:
+> **windows_script_host_spawn_msbuild_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * dest_device_id
 * process_name
@@ -70,12 +124,17 @@ To successfully implement this search you need to be ingesting information on pr
 * cmd_line
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 False positives should be limited as developers do not spawn MSBuild via a WSH.
+
+#### Associated Analytic Story
+* [Trusted Developer Utilities Proxy Execution MSBuild](/stories/trusted_developer_utilities_proxy_execution_msbuild)
+* [Living Off The Land](/stories/living_off_the_land)
+
+
 
 
 #### RBA
@@ -85,6 +144,8 @@ False positives should be limited as developers do not spawn MSBuild via a WSH.
 | 80.0 | 80 | 100 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest_device_id$ by user $dest_user_id$. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

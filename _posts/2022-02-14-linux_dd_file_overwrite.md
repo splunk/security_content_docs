@@ -23,19 +23,76 @@ tags:
 
 This analytic is to look for dd command to overwrite file. This technique was abused by adversaries or threat actor to destroy files or data on specific system or in a large number of host within network to interrupt host avilability, services and many more. This is also used to destroy data where it make the file irrecoverable by forensic techniques through overwriting files, data or local and remote drives.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-02-14
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 9b6aae5e-8d85-11ec-b2ae-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1485](https://attack.mitre.org/techniques/T1485/) | Data Destruction | Impact |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -48,15 +105,13 @@ This analytic is to look for dd command to overwrite file. This technique was ab
 | `linux_dd_file_overwrite_filter`
 ```
 
-#### Associated Analytic Story
-* [Data Destruction](/stories/data_destruction)
-* [Industroyer2](/stories/industroyer2)
+> :information_source:
+> **linux_dd_file_overwrite_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -67,12 +122,17 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 #### Known False Positives
 Administrator or network operator can execute this command. Please update the filter macros to remove false positives.
+
+#### Associated Analytic Story
+* [Data Destruction](/stories/data_destruction)
+* [Industroyer2](/stories/industroyer2)
+
+
 
 
 #### RBA
@@ -82,6 +142,8 @@ Administrator or network operator can execute this command. Please update the fi
 | 64.0 | 80 | 80 | A commandline $process$ executed on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

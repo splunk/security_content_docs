@@ -28,13 +28,18 @@ tags:
 
 The following analytic identifies a suspicious child process, `rundll32.exe`, with no command-line arguments being spawned from `spoolsv.exe`. This was identified during our testing of CVE-2021-34527 previously (CVE-2021-1675) or PrintNightmare. Typically, this is not normal behavior for `spoolsv.exe` to spawn a process. During triage, isolate the endpoint and review for source of exploitation. Capture any additional file modification events.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-07-01
 - **Author**: Mauricio Velazco, Michael Haag, Splunk
 - **ID**: 15d905f6-da6b-11eb-ab82-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -43,6 +48,57 @@ The following analytic identifies a suspicious child process, `rundll32.exe`, wi
 | [T1547.012](https://attack.mitre.org/techniques/T1547/012/) | Print Processors | Persistence, Privilege Escalation |
 
 | [T1547](https://attack.mitre.org/techniques/T1547/) | Boot or Logon Autostart Execution | Persistence, Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
+| ----------- | ----------- | -------------- |
+| [CVE-2021-34527](https://nvd.nist.gov/vuln/detail/CVE-2021-34527) | Windows Print Spooler Remote Code Execution Vulnerability | 9.0 |
+
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -55,14 +111,13 @@ The following analytic identifies a suspicious child process, `rundll32.exe`, wi
 | `spoolsv_spawning_rundll32_filter`
 ```
 
-#### Associated Analytic Story
-* [PrintNightmare CVE-2021-34527](/stories/printnightmare_cve-2021-34527)
+> :information_source:
+> **spoolsv_spawning_rundll32_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -77,12 +132,16 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 Limited false positives have been identified. There are limited instances where `rundll32.exe` may be spawned by a legitimate print driver.
+
+#### Associated Analytic Story
+* [PrintNightmare CVE-2021-34527](/stories/printnightmare_cve-2021-34527)
+
+
 
 
 #### RBA
@@ -92,13 +151,8 @@ Limited false positives have been identified. There are limited instances where 
 | 72.0 | 80 | 90 | $parent_process$ has spawned $process_name$ on endpoint $ComputerName$. This behavior is suspicious and related to PrintNightmare. |
 
 
-
-#### CVE
-
-| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
-| ----------- | ----------- | -------------- |
-| [CVE-2021-34527](https://nvd.nist.gov/vuln/detail/CVE-2021-34527) | Windows Print Spooler Remote Code Execution Vulnerability | 9.0 |
-
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

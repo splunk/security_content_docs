@@ -17,7 +17,7 @@ tags:
   - Network_Traffic
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -27,13 +27,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks for outbound SMB connections made by hosts within your network to the Internet. SMB traffic is used for Windows file-sharing activity. One of the techniques often used by attackers involves retrieving the credential hash using an SMB request made to a compromised server controlled by the threat actor.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 - **Last Updated**: 2020-07-21
 - **Author**: Bhavin Patel, Stuart Hopkins from Splunk
 - **ID**: 1bed7774-304a-4e8f-9d72-d80e45ff492b
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,57 @@ This search looks for outbound SMB connections made by hosts within your network
 | [T1071.002](https://attack.mitre.org/techniques/T1071/002/) | File Transfer Protocols | Command And Control |
 
 | [T1071](https://attack.mitre.org/techniques/T1071/) | Application Layer Protocol | Command And Control |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+* Command &amp; Control
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 12
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -54,16 +110,13 @@ This search looks for outbound SMB connections made by hosts within your network
 | `detect_outbound_smb_traffic_filter`
 ```
 
-#### Associated Analytic Story
-* [Hidden Cobra Malware](/stories/hidden_cobra_malware)
-* [DHS Report TA18-074A](/stories/dhs_report_ta18-074a)
-* [NOBELIUM Group](/stories/nobelium_group)
+> :information_source:
+> **detect_outbound_smb_traffic_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-In order to run this search effectively, we highly recommend that you leverage the Assets and Identity framework. It is important that you have good understanding of how your network segments are designed, and be able to distinguish internal from external address space. Add a category named `internal` to the CIDRs that host the companys assets in `assets_by_cidr.csv` lookup file, which is located in `$SPLUNK_HOME/etc/apps/SA-IdentityManagement/lookups/`. More information on updating this lookup can be found here: https://docs.splunk.com/Documentation/ES/5.0.0/Admin/Addassetandidentitydata. This search also requires you to be ingesting your network traffic and populating the Network_Traffic data model
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * All_Traffic.action
 * All_Traffic.app
@@ -74,13 +127,18 @@ In order to run this search effectively, we highly recommend that you leverage t
 * All_Traffic.src_ip
 
 
-#### Kill Chain Phase
-* Actions on Objectives
-* Command &amp; Control
 
-
+#### How To Implement
+In order to run this search effectively, we highly recommend that you leverage the Assets and Identity framework. It is important that you have good understanding of how your network segments are designed, and be able to distinguish internal from external address space. Add a category named `internal` to the CIDRs that host the companys assets in `assets_by_cidr.csv` lookup file, which is located in `$SPLUNK_HOME/etc/apps/SA-IdentityManagement/lookups/`. More information on updating this lookup can be found here: https://docs.splunk.com/Documentation/ES/5.0.0/Admin/Addassetandidentitydata. This search also requires you to be ingesting your network traffic and populating the Network_Traffic data model
 #### Known False Positives
 It is likely that the outbound Server Message Block (SMB) traffic is legitimate, if the company&#39;s internal networks are not well-defined in the Assets and Identity Framework. Categorize the internal CIDR blocks as `internal` in the lookup file to avoid creating notable events for traffic destined to those CIDR blocks. Any other network connection that is going out to the Internet should be investigated and blocked. Best practices suggest preventing external communications of all SMB versions and related protocols at the network boundary.
+
+#### Associated Analytic Story
+* [Hidden Cobra Malware](/stories/hidden_cobra_malware)
+* [DHS Report TA18-074A](/stories/dhs_report_ta18-074a)
+* [NOBELIUM Group](/stories/nobelium_group)
+
+
 
 
 #### RBA
@@ -90,6 +148,8 @@ It is likely that the outbound Server Message Block (SMB) traffic is legitimate,
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

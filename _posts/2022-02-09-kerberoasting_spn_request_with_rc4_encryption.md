@@ -24,13 +24,18 @@ tags:
 
 The following analytic leverages Kerberos Event 4769, A Kerberos service ticket was requested, to identify a potential kerberoasting attack against Active Directory networks. Kerberoasting allows an adversary to request kerberos tickets for domain accounts typically used as service accounts and attempt to crack them offline allowing them to obtain privileged access to the domain. This analytic looks for a specific combination of the Ticket_Options field based on common kerberoasting tools. Defenders should be aware that it may be possible for a Kerberoast attack to use different Ticket_Options.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2022-02-09
 - **Author**: Jose Hernandez, Patrick Bareiss, Mauricio Velazco, Splunk
 - **ID**: 5cc67381-44fa-4111-8a37-7a230943f027
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,57 @@ The following analytic leverages Kerberos Event 4769, A Kerberos service ticket 
 | [T1558](https://attack.mitre.org/techniques/T1558/) | Steal or Forge Kerberos Tickets | Credential Access |
 
 | [T1558.003](https://attack.mitre.org/techniques/T1558/003/) | Kerberoasting | Credential Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -50,16 +106,13 @@ The following analytic leverages Kerberos Event 4769, A Kerberos service ticket 
 | `kerberoasting_spn_request_with_rc4_encryption_filter`
 ```
 
-#### Associated Analytic Story
-* [Windows Privilege Escalation](/stories/windows_privilege_escalation)
-* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
-* [Hermetic Wiper](/stories/hermetic_wiper)
+> :information_source:
+> **kerberoasting_spn_request_with_rc4_encryption_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting Domain Controller and Kerberos events. The Advanced Security Audit policy setting `Audit Kerberos Authentication Service` within `Account Logon` needs to be enabled.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventCode
 * Ticket_Options
@@ -69,12 +122,18 @@ To successfully implement this search, you need to be ingesting Domain Controlle
 * service_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting Domain Controller and Kerberos events. The Advanced Security Audit policy setting `Audit Kerberos Authentication Service` within `Account Logon` needs to be enabled.
 #### Known False Positives
 Older systems that support kerberos RC4 by default like NetApp may generate false positives. Filter as needed
+
+#### Associated Analytic Story
+* [Windows Privilege Escalation](/stories/windows_privilege_escalation)
+* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
+* [Hermetic Wiper](/stories/hermetic_wiper)
+
+
 
 
 #### RBA
@@ -84,6 +143,8 @@ Older systems that support kerberos RC4 by default like NetApp may generate fals
 | 72.0 | 90 | 80 | Potential kerberoasting attack via service principal name requests detected on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

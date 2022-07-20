@@ -8,7 +8,6 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
-  - Reconnaissance
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -31,7 +30,7 @@ Adversaries may use the information from System Network Configuration Discovery 
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Linux System Network Discovery](/endpoint/linux_system_network_discovery/) | [System Network Configuration Discovery](/tags/#system-network-configuration-discovery)| Anomaly |
+| [Linux System Network Discovery](/endpoint/linux_system_network_discovery/) | [System Network Configuration Discovery](/tags/#system-network-configuration-discovery) | Anomaly |
 
 #### Reference
 

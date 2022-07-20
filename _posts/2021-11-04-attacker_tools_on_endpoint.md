@@ -29,13 +29,18 @@ tags:
 
 This search looks for execution of commonly used attacker tools on an endpoint.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-11-04
 - **Author**: Bhavin Patel, Splunk
 - **ID**: a51bfe1a-94f0-48cc-b4e4-16a110145893
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -48,6 +53,59 @@ This search looks for execution of commonly used attacker tools on an endpoint.
 | [T1003](https://attack.mitre.org/techniques/T1003/) | OS Credential Dumping | Credential Access |
 
 | [T1595](https://attack.mitre.org/techniques/T1595/) | Active Scanning | Reconnaissance |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Installation
+* Command &amp; Control
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* ID.AM
+* PR.DS
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 2
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -62,6 +120,25 @@ This search looks for execution of commonly used attacker tools on an endpoint.
 | `attacker_tools_on_endpoint_filter`
 ```
 
+> :information_source:
+> **attacker_tools_on_endpoint_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+
+
+#### Required fields
+List of fields required to use this analytic.
+* Processes.dest
+* Processes.user
+* Processes.process_name
+* Processes.parent_process
+
+
+
+#### How To Implement
+To successfully implement this search, you must be ingesting data that records process activity from your hosts to populate the endpoint data model in the processes node. This is typically populated via endpoint detection-and-response product, such as Carbon Black or endpoint data sources, such as Sysmon. The data used for this search is usually generated via logs that report process tracking in your Windows audit settings.
+#### Known False Positives
+Some administrator activity can be potentially triggered, please add those users to the filter macro.
+
 #### Associated Analytic Story
 * [Monitor for Unauthorized Software](/stories/monitor_for_unauthorized_software)
 * [XMRig](/stories/xmrig)
@@ -69,24 +146,6 @@ This search looks for execution of commonly used attacker tools on an endpoint.
 * [Unusual Processes](/stories/unusual_processes)
 
 
-#### How To Implement
-To successfully implement this search, you must be ingesting data that records process activity from your hosts to populate the endpoint data model in the processes node. This is typically populated via endpoint detection-and-response product, such as Carbon Black or endpoint data sources, such as Sysmon. The data used for this search is usually generated via logs that report process tracking in your Windows audit settings.
-
-#### Required field
-* Processes.dest
-* Processes.user
-* Processes.process_name
-* Processes.parent_process
-
-
-#### Kill Chain Phase
-* Installation
-* Command &amp; Control
-* Actions on Objectives
-
-
-#### Known False Positives
-Some administrator activity can be potentially triggered, please add those users to the filter macro.
 
 
 #### RBA
@@ -96,6 +155,8 @@ Some administrator activity can be potentially triggered, please add those users
 | 64.0 | 80 | 80 | An attacker tool $process_name$,listed in attacker_tools.csv is executed on host $dest$ by User $user$. This process $process_name$ is known to do- $description$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -23,19 +23,70 @@ tags:
 
 This analytic identifies potential adversaries that modify the security permission of a specific file or directory. This technique is commonly seen in APT tradecraft and coinminer scripts to evade detections and restrict access to their component files.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-05-04
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: b1b1e316-accc-11eb-a9b4-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1222](https://attack.mitre.org/techniques/T1222/) | File and Directory Permissions Modification | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -48,15 +99,13 @@ This analytic identifies potential adversaries that modify the security permissi
 | `icacls_grant_command_filter`
 ```
 
-#### Associated Analytic Story
-* [XMRig](/stories/xmrig)
-* [Ransomware](/stories/ransomware)
+> :information_source:
+> **icacls_grant_command_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Tune and filter known instances where renamed icacls.exe may be used.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.parent_process_name
 * Processes.process_name
@@ -66,12 +115,17 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Processes.process
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Tune and filter known instances where renamed icacls.exe may be used.
 #### Known False Positives
 Unknown. Filter as needed.
+
+#### Associated Analytic Story
+* [XMRig](/stories/xmrig)
+* [Ransomware](/stories/ransomware)
+
+
 
 
 #### RBA
@@ -81,6 +135,8 @@ Unknown. Filter as needed.
 | 49.0 | 70 | 70 | Process name $process_name$ with grant argument executed by $user$ to change security permission of a specific file or directory on host $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

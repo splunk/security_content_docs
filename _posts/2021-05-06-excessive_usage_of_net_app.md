@@ -23,19 +23,70 @@ tags:
 
 This analytic identifies excessive usage of `net.exe` or `net1.exe` within a bucket of time (1 minute). This behavior was seen in a Monero incident where the adversary attempts to create many users, delete and disable users as part of its malicious behavior.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-05-06
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 45e52536-ae42-11eb-b5c6-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1531](https://attack.mitre.org/techniques/T1531/) | Account Access Removal | Impact |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -49,16 +100,13 @@ This analytic identifies excessive usage of `net.exe` or `net1.exe` within a buc
 | `excessive_usage_of_net_app_filter`
 ```
 
-#### Associated Analytic Story
-* [XMRig](/stories/xmrig)
-* [Ransomware](/stories/ransomware)
-* [Azorult](/stories/azorult)
+> :information_source:
+> **excessive_usage_of_net_app_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -73,12 +121,18 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 unknown. Filter as needed. Modify the time span as needed.
+
+#### Associated Analytic Story
+* [XMRig](/stories/xmrig)
+* [Ransomware](/stories/ransomware)
+* [Azorult](/stories/azorult)
+
+
 
 
 #### RBA
@@ -88,6 +142,8 @@ unknown. Filter as needed. Modify the time span as needed.
 | 28.0 | 40 | 70 | Excessive usage of net1.exe or net.exe within 1m, with command line $process$ has been detected on $dest$ by $user$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

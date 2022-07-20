@@ -25,13 +25,18 @@ tags:
 
 This analytic will identify suspicious excessive number of system events of services that was modified from start to disabled. This technique is seen where the adversary attempts to disable security app services, other malware services oer serve as an destructive impact to complete the objective on the compromised system. One good example for this scenario is Olympic destroyer where it disable all active services in the compromised host as part of its destructive impact and defense evasion.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-02-23
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: c3f85976-94a5-11ec-9a58-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,58 @@ This analytic will identify suspicious excessive number of system events of serv
 | [T1562.001](https://attack.mitre.org/techniques/T1562/001/) | Disable or Modify Tools | Defense Evasion |
 
 | [T1562](https://attack.mitre.org/techniques/T1562/) | Impair Defenses | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,14 +109,13 @@ This analytic will identify suspicious excessive number of system events of serv
 | `windows_excessive_disabled_services_event_filter`
 ```
 
-#### Associated Analytic Story
-* [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics)
+> :information_source:
+> **windows_excessive_disabled_services_event_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the Service name, Service File Name Service Start type, and Service Type from your endpoints.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * ComputerName
 * EventCode
@@ -68,12 +124,16 @@ To successfully implement this search, you need to be ingesting logs with the Se
 * Sid
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the Service name, Service File Name Service Start type, and Service Type from your endpoints.
 #### Known False Positives
 Unknown
+
+#### Associated Analytic Story
+* [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics)
+
+
 
 
 #### RBA
@@ -83,6 +143,8 @@ Unknown
 | 81.0 | 90 | 90 | Service was disabled in $Computer$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

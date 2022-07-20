@@ -33,13 +33,18 @@ tags:
 
 Rubeus is a C# toolset for raw Kerberos interaction and abuses. It is heavily adapted from Benjamin Delpys Kekeo project and Vincent LE TOUXs MakeMeEnterpriseAdmin project. This analytic looks for the use of Rubeus command line arguments utilized in common Kerberos attacks like exporting and importing tickets, forging silver and golden tickets, requesting a TGT or TGS, kerberoasting, password spraying, etc. Red teams and adversaries alike use Rubeus for Kerberos attacks within Active Directory networks. Defenders should be aware that adversaries may customize the source code of Rubeus and modify the command line parameters. This would effectively bypass this analytic.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-02-01
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: cca37478-8377-11ec-b59a-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -55,6 +60,52 @@ Rubeus is a C# toolset for raw Kerberos interaction and abuses. It is heavily ad
 
 | [T1558.004](https://attack.mitre.org/techniques/T1558/004/) | AS-REP Roasting | Credential Access |
 
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
+
 #### Search
 
 ```
@@ -66,14 +117,13 @@ Rubeus is a C# toolset for raw Kerberos interaction and abuses. It is heavily ad
 | `rubeus_command_line_parameters_filter`
 ```
 
-#### Associated Analytic Story
-* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
+> :information_source:
+> **rubeus_command_line_parameters_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -85,12 +135,16 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Processes.parent_process_name
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 #### Known False Positives
 Although unlikely, legitimate applications may use the same command line parameters as Rubeus. Filter as needed.
+
+#### Associated Analytic Story
+* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
+
+
 
 
 #### RBA
@@ -100,6 +154,8 @@ Although unlikely, legitimate applications may use the same command line paramet
 | 36.0 | 60 | 60 | Rubeus command line parameters were used on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

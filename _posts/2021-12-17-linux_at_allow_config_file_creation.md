@@ -29,13 +29,18 @@ tags:
 
 The following analytic identifies a suspicious file creation of /etc/at.allow or /etc/at.deny. These 2 files are commonly abused by malware, adversaries or red teamers to persist on the targeted or compromised host. These config files can restrict or allow user to execute &#34;at&#34; application (another schedule task application in linux). attacker can create a user or add the compromised username to that config file to execute &#34;at&#34; to schedule it malicious code. This anomaly detection can be a good indicator to investigate further the entry in created config file and who created it to verify if it is a false positive.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-12-17
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 977b3082-5f3d-11ec-b954-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -44,6 +49,58 @@ The following analytic identifies a suspicious file creation of /etc/at.allow or
 | [T1053.003](https://attack.mitre.org/techniques/T1053/003/) | Cron | Execution, Persistence, Privilege Escalation |
 
 | [T1053](https://attack.mitre.org/techniques/T1053/) | Scheduled Task/Job | Execution, Persistence, Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -56,15 +113,13 @@ The following analytic identifies a suspicious file creation of /etc/at.allow or
 | `linux_at_allow_config_file_creation_filter`
 ```
 
-#### Associated Analytic Story
-* [Linux Privilege Escalation](/stories/linux_privilege_escalation)
-* [Linux Persistence Techniques](/stories/linux_persistence_techniques)
+> :information_source:
+> **linux_at_allow_config_file_creation_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the file name, file path, and process_guid executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Filesystem.dest
 * Filesystem.file_create_time
@@ -73,12 +128,17 @@ To successfully implement this search, you need to be ingesting logs with the fi
 * Filesystem.file_path
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the file name, file path, and process_guid executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 #### Known False Positives
 Administrator or network operator can create this file for automation purposes. Please update the filter macros to remove false positives.
+
+#### Associated Analytic Story
+* [Linux Privilege Escalation](/stories/linux_privilege_escalation)
+* [Linux Persistence Techniques](/stories/linux_persistence_techniques)
+
+
 
 
 #### RBA
@@ -88,6 +148,8 @@ Administrator or network operator can create this file for automation purposes. 
 | 25.0 | 50 | 50 | A file $file_name$ is created in $file_path$ on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

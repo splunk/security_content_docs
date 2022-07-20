@@ -27,13 +27,18 @@ tags:
 
 The following analytic identifies the use of PowerShell downloading a file using `DownloadString` method. This particular method is utilized in many different PowerShell frameworks to download files and output to disk. Identify the source (IP/domain) and destination file and triage appropriately. If AMSI logging or PowerShell transaction logs are available, review for further details of the implant.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-04-07
 - **Author**: Michael Haag, Splunk
 - **ID**: 4d015ef2-7adf-11eb-95da-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -44,6 +49,52 @@ The following analytic identifies the use of PowerShell downloading a file using
 | [T1059.001](https://attack.mitre.org/techniques/T1059/001/) | PowerShell | Execution |
 
 | [T1105](https://attack.mitre.org/techniques/T1105/) | Ingress Tool Transfer | Command And Control |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -56,17 +107,13 @@ The following analytic identifies the use of PowerShell downloading a file using
 | `any_powershell_downloadstring_filter`
 ```
 
-#### Associated Analytic Story
-* [Hermetic Wiper](/stories/hermetic_wiper)
-* [Malicious PowerShell](/stories/malicious_powershell)
-* [HAFNIUM Group](/stories/hafnium_group)
-* [Ingress Tool Transfer](/stories/ingress_tool_transfer)
+> :information_source:
+> **any_powershell_downloadstring_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -81,12 +128,19 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 False positives may be present and filtering will need to occur by parent process or command line argument. It may be required to modify this query to an EDR product for more granular coverage.
+
+#### Associated Analytic Story
+* [Hermetic Wiper](/stories/hermetic_wiper)
+* [Malicious PowerShell](/stories/malicious_powershell)
+* [HAFNIUM Group](/stories/hafnium_group)
+* [Ingress Tool Transfer](/stories/ingress_tool_transfer)
+
+
 
 
 #### RBA
@@ -96,6 +150,8 @@ False positives may be present and filtering will need to occur by parent proces
 | 56.0 | 80 | 70 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest$ by user $user$. This behavior identifies the use of DownloadString within PowerShell. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

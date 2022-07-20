@@ -23,19 +23,70 @@ tags:
 
 This analytic looks for the execution of `powershell.exe` leveraging the `Invoke-WmiMethod` commandlet complemented with arguments utilized to start a process on a remote endpoint by abusing WMI. Red Teams and adversaries alike may abuse WMI and `powershell.exe` for lateral movement and remote code execution.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-11-15
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 112638b4-4634-11ec-b9ab-3e22fbd008af
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1047](https://attack.mitre.org/techniques/T1047/) | Windows Management Instrumentation | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -48,14 +99,13 @@ This analytic looks for the execution of `powershell.exe` leveraging the `Invoke
 | `remote_process_instantiation_via_wmi_and_powershell_filter`
 ```
 
-#### Associated Analytic Story
-* [Active Directory Lateral Movement](/stories/active_directory_lateral_movement)
+> :information_source:
+> **remote_process_instantiation_via_wmi_and_powershell_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -70,12 +120,16 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints.
 #### Known False Positives
 Administrators may leverage WWMI and powershell.exe to start a process on remote systems, but this activity is usually limited to a small set of hosts or users.
+
+#### Associated Analytic Story
+* [Active Directory Lateral Movement](/stories/active_directory_lateral_movement)
+
+
 
 
 #### RBA
@@ -85,6 +139,8 @@ Administrators may leverage WWMI and powershell.exe to start a process on remote
 | 63.0 | 90 | 70 | A process was started on a remote endpoint from $dest by abusing WMI using PowerShell.exe |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

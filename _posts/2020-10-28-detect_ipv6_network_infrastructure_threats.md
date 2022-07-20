@@ -22,7 +22,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -32,13 +32,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 By enabling IPv6 First Hop Security as a Layer 2 Security measure on the organization&#39;s network devices, we will be able to detect various attacks such as packet forging in the Infrastructure.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-10-28
 - **Author**: Mikael Bjerkeland, Splunk
 - **ID**: c3be767e-7959-44c5-8976-0e9c12a91ad2
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -51,6 +56,60 @@ By enabling IPv6 First Hop Security as a Layer 2 Security measure on the organiz
 | [T1557](https://attack.mitre.org/techniques/T1557/) | Adversary-in-the-Middle | Credential Access, Collection |
 
 | [T1557.002](https://attack.mitre.org/techniques/T1557/002/) | ARP Cache Poisoning | Credential Access, Collection |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Reconnaissance
+* Delivery
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* ID.AM
+* PR.DS
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 1
+* CIS 11
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -65,14 +124,13 @@ By enabling IPv6 First Hop Security as a Layer 2 Security measure on the organiz
 | `detect_ipv6_network_infrastructure_threats_filter`
 ```
 
-#### Associated Analytic Story
-* [Router and Infrastructure Security](/stories/router_and_infrastructure_security)
+> :information_source:
+> **detect_ipv6_network_infrastructure_threats_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This search uses a standard SPL query on logs from Cisco Network devices. The network devices must be configured with one or more First Hop Security measures such as RA Guard, DHCP Guard and/or device tracking. See References for more information. The search also requires that the Cisco Networks Add-on for Splunk (https://splunkbase.splunk.com/app/1467) is used to parse the logs from the Cisco network devices.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * facility
 * mnemonic
@@ -86,14 +144,16 @@ This search uses a standard SPL query on logs from Cisco Network devices. The ne
 * action
 
 
-#### Kill Chain Phase
-* Reconnaissance
-* Delivery
-* Actions on Objectives
 
-
+#### How To Implement
+This search uses a standard SPL query on logs from Cisco Network devices. The network devices must be configured with one or more First Hop Security measures such as RA Guard, DHCP Guard and/or device tracking. See References for more information. The search also requires that the Cisco Networks Add-on for Splunk (https://splunkbase.splunk.com/app/1467) is used to parse the logs from the Cisco network devices.
 #### Known False Positives
 None currently known
+
+#### Associated Analytic Story
+* [Router and Infrastructure Security](/stories/router_and_infrastructure_security)
+
+
 
 
 #### RBA
@@ -103,6 +163,8 @@ None currently known
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

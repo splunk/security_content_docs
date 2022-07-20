@@ -24,13 +24,18 @@ tags:
 
 This search correlations detections by repository and risk_score
 
-- **Type**: Correlation
+- **Type**: [Correlation](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-09-06
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: 8da9fdd9-6a1b-4ae0-8a34-8c25e6be9687
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,58 @@ This search correlations detections by repository and risk_score
 | [T1204.003](https://attack.mitre.org/techniques/T1204/003/) | Malicious Image | Execution |
 
 | [T1204](https://attack.mitre.org/techniques/T1204/) | User Execution | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.DS
+* PR.AC
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 13
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -51,23 +108,26 @@ This search correlations detections by repository and risk_score
 | `correlation_by_repository_and_risk_filter`
 ```
 
-#### Associated Analytic Story
-* [Dev Sec Ops](/stories/dev_sec_ops)
+> :information_source:
+> **correlation_by_repository_and_risk_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+
+
+#### Required fields
+List of fields required to use this analytic.
+* _time
+
 
 
 #### How To Implement
 For Dev Sec Ops POC
-
-#### Required field
-* _time
-
-
-#### Kill Chain Phase
-* Actions on Objectives
-
-
 #### Known False Positives
 unknown
+
+#### Associated Analytic Story
+* [Dev Sec Ops](/stories/dev_sec_ops)
+
+
 
 
 #### RBA
@@ -77,6 +137,8 @@ unknown
 | 70.0 | 70 | 100 | Correlation triggered for user $user$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

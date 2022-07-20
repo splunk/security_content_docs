@@ -26,19 +26,79 @@ The analytic identifies all variations of EncodedCommand, as PowerShell allows t
 During triage, review parallel events to determine legitimacy. Tune as needed based on admin scripts in use. \
 Alternatively, may use regex per matching here https://regexr.com/662ov.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-01-18
 - **Author**: David Dorsey, Michael Haag, Splunk
 - **ID**: c4db14d9-7909-48b4-a054-aa14d89dbb19
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1027](https://attack.mitre.org/techniques/T1027/) | Obfuscated Files or Information | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Command &amp; Control
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+* PR.IP
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 7
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -56,17 +116,13 @@ Alternatively, may use regex per matching here https://regexr.com/662ov.
 | `malicious_powershell_process___encoded_command_filter`
 ```
 
-#### Associated Analytic Story
-* [Hermetic Wiper](/stories/hermetic_wiper)
-* [Malicious PowerShell](/stories/malicious_powershell)
-* [NOBELIUM Group](/stories/nobelium_group)
-* [WhisperGate](/stories/whispergate)
+> :information_source:
+> **malicious_powershell_process_-_encoded_command_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.process_name
 * Processes.process
@@ -76,13 +132,19 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.process_id
 
 
-#### Kill Chain Phase
-* Command &amp; Control
-* Actions on Objectives
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 System administrators may use this option, but it&#39;s not common.
+
+#### Associated Analytic Story
+* [Hermetic Wiper](/stories/hermetic_wiper)
+* [Malicious PowerShell](/stories/malicious_powershell)
+* [NOBELIUM Group](/stories/nobelium_group)
+* [WhisperGate](/stories/whispergate)
+
+
 
 
 #### RBA
@@ -92,6 +154,8 @@ System administrators may use this option, but it&#39;s not common.
 | 35.0 | 70 | 50 | Powershell.exe running potentially malicious encodede commands on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

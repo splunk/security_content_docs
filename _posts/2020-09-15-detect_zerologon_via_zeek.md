@@ -15,7 +15,7 @@ tags:
   - CVE-2020-1472
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -25,19 +25,80 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search detects attempts to run exploits for the Zerologon CVE-2020-1472 vulnerability via Zeek RPC
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-09-15
 - **Author**: Shannon Davis, Splunk
 - **ID**: bf7a06ec-f703-11ea-adc1-0242ac120002
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1190](https://attack.mitre.org/techniques/T1190/) | Exploit Public-Facing Application | Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+* CIS 11
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
+| ----------- | ----------- | -------------- |
+| [CVE-2020-1472](https://nvd.nist.gov/vuln/detail/CVE-2020-1472) | An elevation of privilege vulnerability exists when an attacker establishes a vulnerable Netlogon secure channel connection to a domain controller, using the Netlogon Remote Protocol (MS-NRPC), aka &#39;Netlogon Elevation of Privilege Vulnerability&#39;. | 9.3 |
+
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -49,24 +110,27 @@ This search detects attempts to run exploits for the Zerologon CVE-2020-1472 vul
 | search `detect_zerologon_via_zeek_filter`
 ```
 
-#### Associated Analytic Story
-* [Detect Zerologon Attack](/stories/detect_zerologon_attack)
+> :information_source:
+> **detect_zerologon_via_zeek_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting Zeek DCE-RPC data into Splunk. Zeek data should also be getting ingested in JSON format.  We are detecting when all three RPC operations (NetrServerReqChallenge, NetrServerAuthenticate3, NetrServerPasswordSet2) are splunk_security_essentials_app via bro:rpc:json.  These three operations are then correlated on the Zeek UID field.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * operation
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+You must be ingesting Zeek DCE-RPC data into Splunk. Zeek data should also be getting ingested in JSON format.  We are detecting when all three RPC operations (NetrServerReqChallenge, NetrServerAuthenticate3, NetrServerPasswordSet2) are splunk_security_essentials_app via bro:rpc:json.  These three operations are then correlated on the Zeek UID field.
 #### Known False Positives
 unknown
+
+#### Associated Analytic Story
+* [Detect Zerologon Attack](/stories/detect_zerologon_attack)
+
+
 
 
 #### RBA
@@ -76,13 +140,8 @@ unknown
 | 25.0 | 50 | 50 | tbd |
 
 
-
-#### CVE
-
-| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
-| ----------- | ----------- | -------------- |
-| [CVE-2020-1472](https://nvd.nist.gov/vuln/detail/CVE-2020-1472) | An elevation of privilege vulnerability exists when an attacker establishes a vulnerable Netlogon secure channel connection to a domain controller, using the Netlogon Remote Protocol (MS-NRPC), aka &#39;Netlogon Elevation of Privilege Vulnerability&#39;. | 9.3 |
-
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

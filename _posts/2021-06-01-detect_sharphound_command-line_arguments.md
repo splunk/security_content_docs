@@ -35,13 +35,18 @@ tags:
 
 The following analytic identifies common command-line arguments used by SharpHound `-collectionMethod` and `invoke-bloodhound`. Being the script is FOSS, function names may be modified, but these changes are dependent upon the operator. In most instances the defaults are used. This analytic works to identify the common command-line attributes used. It does not cover the entirety of every argument in order to avoid false positives.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-06-01
 - **Author**: Michael Haag, Splunk
 - **ID**: a0bdd2f6-c2ff-11eb-b918-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -61,6 +66,52 @@ The following analytic identifies common command-line arguments used by SharpHou
 
 | [T1069](https://attack.mitre.org/techniques/T1069/) | Permission Groups Discovery | Discovery |
 
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Reconnaissance
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
+
 #### Search
 
 ```
@@ -72,15 +123,13 @@ The following analytic identifies common command-line arguments used by SharpHou
 | `detect_sharphound_command_line_arguments_filter`
 ```
 
-#### Associated Analytic Story
-* [Discovery Techniques](/stories/discovery_techniques)
-* [Ransomware](/stories/ransomware)
+> :information_source:
+> **detect_sharphound_command-line_arguments_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -91,12 +140,17 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Reconnaissance
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node.
 #### Known False Positives
 False positives should be limited as the arguments used are specific to SharpHound. Filter as needed or add more command-line arguments as needed.
+
+#### Associated Analytic Story
+* [Discovery Techniques](/stories/discovery_techniques)
+* [Ransomware](/stories/ransomware)
+
+
 
 
 #### RBA
@@ -106,6 +160,8 @@ False positives should be limited as the arguments used are specific to SharpHou
 | 24.0 | 30 | 80 | Possible SharpHound command-Line arguments identified on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -23,19 +23,76 @@ tags:
 
 The following analytic identifies a suspicious deletion of a critical folder in Linux machine using rm command. This technique was seen in industroyer2 campaign to wipe or destroy energy facilities of a targeted sector. Deletion in these list of folder is not so common since it need some elevated privileges to access some of it. We recommend to look further events specially in file access or file deletion, process commandline that may related to this technique.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-04-22
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 33f89303-cc6f-49ad-921d-2eaea38a6f7a
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1485](https://attack.mitre.org/techniques/T1485/) | Data Destruction | Impact |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -48,15 +105,13 @@ The following analytic identifies a suspicious deletion of a critical folder in 
 | `linux_deleting_critical_directory_using_rm_command_filter`
 ```
 
-#### Associated Analytic Story
-* [Industroyer2](/stories/industroyer2)
-* [Data Destruction](/stories/data_destruction)
+> :information_source:
+> **linux_deleting_critical_directory_using_rm_command_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -67,12 +122,17 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 #### Known False Positives
 Administrator or network operator can use this application for automation purposes. Please update the filter macros to remove false positives.
+
+#### Associated Analytic Story
+* [Industroyer2](/stories/industroyer2)
+* [Data Destruction](/stories/data_destruction)
+
+
 
 
 #### RBA
@@ -82,6 +142,8 @@ Administrator or network operator can use this application for automation purpos
 | 64.0 | 80 | 80 | A deletion in known critical list of folder using rm command $process$ executed on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -23,19 +23,76 @@ tags:
 
 The following analytic identifies path traversal command-line execution. This technique was seen in malicious document that execute malicious code using msdt.exe and path traversal technique that serve as defense evasion. This TTP is a good pivot to look for more suspicious process and command-line that runs before and after this execution. This may help you to find possible downloaded malware or other lolbin execution.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-06-01
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 58fcdeb1-728d-415d-b0d7-3ab18a275ec2
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1059](https://attack.mitre.org/techniques/T1059/) | Command and Scripting Interpreter | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -48,15 +105,13 @@ The following analytic identifies path traversal command-line execution. This te
 | `windows_command_and_scripting_interpreter_path_traversal_exec_filter`
 ```
 
-#### Associated Analytic Story
-* [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics)
-* [Microsoft Support Diagnostic Tool Vulnerability CVE-2022-30190](/stories/microsoft_support_diagnostic_tool_vulnerability_cve-2022-30190)
+> :information_source:
+> **windows_command_and_scripting_interpreter_path_traversal_exec_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -71,12 +126,17 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product
 #### Known False Positives
 Not known at this moment.
+
+#### Associated Analytic Story
+* [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics)
+* [Microsoft Support Diagnostic Tool Vulnerability CVE-2022-30190](/stories/microsoft_support_diagnostic_tool_vulnerability_cve-2022-30190)
+
+
 
 
 #### RBA
@@ -86,6 +146,8 @@ Not known at this moment.
 | 90.0 | 90 | 100 | A parent process $parent_process_name$ has spawned a child $process_name$ with path traversal commandline $process$ in $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

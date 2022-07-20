@@ -21,19 +21,76 @@ tags:
 
 The following analytic identifies the use of `cacls.exe`, `icacls.exe` or `xcacls.exe` placing the grant permission on a file or directory. Adversaries perform this behavior to allow components of their files to run, however it allows responders to review or gaining access to adversary files on disk.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2021-11-30
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: c6da561a-cd29-11eb-ae65-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1222](https://attack.mitre.org/techniques/T1222/) | File and Directory Permissions Modification | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.AC
+* PR.IP
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 14
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -46,14 +103,13 @@ The following analytic identifies the use of `cacls.exe`, `icacls.exe` or `xcacl
 | into write_ssa_detected_events();
 ```
 
-#### Associated Analytic Story
-* [XMRig](/stories/xmrig)
+> :information_source:
+> **grant_permission_using_cacls_utility_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Tune and filter known instances where renamed icacls.exe may be used.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * dest_device_id
 * process_name
@@ -64,12 +120,16 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * cmd_line
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Tune and filter known instances where renamed icacls.exe may be used.
 #### Known False Positives
 System administrators may use cacls utilities but this is not a common practice. Filter as needed.
+
+#### Associated Analytic Story
+* [XMRig](/stories/xmrig)
+
+
 
 
 #### RBA
@@ -79,6 +139,8 @@ System administrators may use cacls utilities but this is not a common practice.
 | 35.0 | 50 | 70 | A cacls process $process_name$ with commandline $cmd_line$ try to grant user a permission to a file or directory in host $dest_device_id$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

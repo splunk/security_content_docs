@@ -15,7 +15,7 @@ tags:
   - Web
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -25,19 +25,80 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks for long URLs that have several SQL commands visible within them.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web)
 - **Last Updated**: 2022-03-28
 - **Author**: Bhavin Patel, Splunk
 - **ID**: e0aad4cf-0790-423b-8328-7564d0d938f9
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1190](https://attack.mitre.org/techniques/T1190/) | Exploit Public-Facing Application | Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Delivery
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.DS
+* ID.RA
+* PR.PT
+* PR.IP
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 4
+* CIS 13
+* CIS 18
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -51,14 +112,13 @@ This search looks for long URLs that have several SQL commands visible within th
 | `sql_injection_with_long_urls_filter`
 ```
 
-#### Associated Analytic Story
-* [SQL Injection](/stories/sql_injection)
+> :information_source:
+> **sql_injection_with_long_urls_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be monitoring network communications to your web servers or ingesting your HTTP logs and populating the Web data model. You must also identify your web servers in the Enterprise Security assets table.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Web.dest_category
 * Web.url_length
@@ -69,12 +129,16 @@ To successfully implement this search, you need to be monitoring network communi
 * Web.http_user_agent
 
 
-#### Kill Chain Phase
-* Delivery
 
-
+#### How To Implement
+To successfully implement this search, you need to be monitoring network communications to your web servers or ingesting your HTTP logs and populating the Web data model. You must also identify your web servers in the Enterprise Security assets table.
 #### Known False Positives
 It&#39;s possible that legitimate traffic will have long URLs or long user agent strings and that common SQL commands may be found within the URL. Please investigate as appropriate.
+
+#### Associated Analytic Story
+* [SQL Injection](/stories/sql_injection)
+
+
 
 
 #### RBA
@@ -84,6 +148,8 @@ It&#39;s possible that legitimate traffic will have long URLs or long user agent
 | 25.0 | 50 | 50 | SQL injection attempt with url $url$ detected on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

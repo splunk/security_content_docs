@@ -23,19 +23,75 @@ tags:
 
 This search looks for the execution of `adfind.exe` with command-line arguments that it uses by default. Specifically the filter or search functions. It also considers the arguments necessary like objectcategory, see readme for more details: https://www.joeware.net/freetools/tools/adfind/usage.htm. This has been seen used before by Wizard Spider, FIN6 and actors whom also launched SUNBURST. AdFind.exe is usually used a recon tool to enumare a domain controller.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-11-03
 - **Author**: Jose Hernandez, Bhavin Patel, Splunk
 - **ID**: bd3b0187-189b-46c0-be45-f52da2bae67f
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1018](https://attack.mitre.org/techniques/T1018/) | Remote System Discovery | Discovery |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -48,15 +104,13 @@ This search looks for the execution of `adfind.exe` with command-line arguments 
 | `windows_adfind_exe_filter`
 ```
 
-#### Associated Analytic Story
-* [NOBELIUM Group](/stories/nobelium_group)
-* [Domain Trust Discovery](/stories/domain_trust_discovery)
+> :information_source:
+> **windows_adfind_exe_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.process
 * Processes.dest
@@ -67,12 +121,17 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 #### Known False Positives
 administrators rarely use adfind, usually not used for legitimate reasons
+
+#### Associated Analytic Story
+* [NOBELIUM Group](/stories/nobelium_group)
+* [Domain Trust Discovery](/stories/domain_trust_discovery)
+
+
 
 
 #### RBA
@@ -82,6 +141,8 @@ administrators rarely use adfind, usually not used for legitimate reasons
 | 25.0 | 50 | 50 | Windows AdFind Exe |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

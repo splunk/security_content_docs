@@ -22,19 +22,76 @@ tags:
 
 This analytic is designed to detect IAM users attempting to update/modify AWS lambda code via the AWS CLI to gain persistence, futher access into your AWS environment and to facilitate planting backdoors. In this instance, an attacker may upload malicious code/binary to a lambda function which will be executed automatically when the funnction is triggered.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2022-02-24
 - **Author**: Bhavin Patel, Splunk
 - **ID**: 211b80d3-6340-4345-11ad-212bf3d0d111
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1204](https://attack.mitre.org/techniques/T1204/) | User Execution | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.DS
+* PR.AC
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 13
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -44,26 +101,29 @@ This analytic is designed to detect IAM users attempting to update/modify AWS la
 |`aws_lambda_updatefunctioncode_filter`
 ```
 
-#### Associated Analytic Story
-* [Suspicious Cloud User Activities](/stories/suspicious_cloud_user_activities)
+> :information_source:
+> **aws_lambda_updatefunctioncode_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install Splunk AWS Add on and enable Cloudtrail logs in your AWS Environment.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * eventName
 * userAgent
 * errorCode
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must install Splunk AWS Add on and enable Cloudtrail logs in your AWS Environment.
 #### Known False Positives
 While this search has no known false positives, it is possible that an AWS admin or an autorized IAM user has updated the lambda fuction code legitimately.
+
+#### Associated Analytic Story
+* [Suspicious Cloud User Activities](/stories/suspicious_cloud_user_activities)
+
+
 
 
 #### RBA
@@ -73,6 +133,8 @@ While this search has no known false positives, it is possible that an AWS admin
 | 63.0 | 70 | 90 | User $user_arn$ is attempting to update the lambda function code of $function_updated$ from this IP $src_ip$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -25,13 +25,18 @@ tags:
 
 This search is to detect an anomaly event of non-chrome process accessing the files in chrome user default folder. This folder contains all the sqlite database of the chrome browser related to users login, history, cookies and etc. Most of the RAT, trojan spy as well as FIN7 jssloader try to parse the those sqlite database to collect information on the compromised host. This SACL Event (4663) need to be enabled to tthe firefox profile directory to be eable to use this. Since you monitoring this access to the folder a noise coming from firefox need to be filter and also sqlite db browser and explorer .exe to make this detection more stable.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-09-15
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 81263de4-160a-11ec-944f-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,52 @@ This search is to detect an anomaly event of non-chrome process accessing the fi
 | [T1555](https://attack.mitre.org/techniques/T1555/) | Credentials from Password Stores | Credential Access |
 
 | [T1555.003](https://attack.mitre.org/techniques/T1555/003/) | Credentials from Web Browsers | Credential Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -51,15 +102,13 @@ This search is to detect an anomaly event of non-chrome process accessing the fi
 | `non_chrome_process_accessing_chrome_default_dir_filter`
 ```
 
-#### Associated Analytic Story
-* [FIN7](/stories/fin7)
-* [Remcos](/stories/remcos)
+> :information_source:
+> **non_chrome_process_accessing_chrome_default_dir_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you must ingest Windows Security Event logs and track event code 4663. For 4663, enable &#34;Audit Object Access&#34; in Group Policy. Then check the two boxes listed for both &#34;Success&#34; and &#34;Failure.&#34;
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Object_Name
 * Object_Type
@@ -72,12 +121,17 @@ To successfully implement this search, you must ingest Windows Security Event lo
 * user
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you must ingest Windows Security Event logs and track event code 4663. For 4663, enable &#34;Audit Object Access&#34; in Group Policy. Then check the two boxes listed for both &#34;Success&#34; and &#34;Failure.&#34;
 #### Known False Positives
 other browser not listed related to firefox may catch by this rule.
+
+#### Associated Analytic Story
+* [FIN7](/stories/fin7)
+* [Remcos](/stories/remcos)
+
+
 
 
 #### RBA
@@ -87,6 +141,8 @@ other browser not listed related to firefox may catch by this rule.
 | 35.0 | 50 | 70 | a non firefox browser process $process_name$ accessing $Object_Name$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -24,19 +24,80 @@ tags:
 
 This detection utilizes machine learning model named &#34;risky_command_abuse&#34; trained from &#34;Splunk Command and Scripting Interpreter Risky SPL MLTK Baseline&#34;. It should be scheduled to run hourly to detect whether a user has run searches containing risky SPL from this list https://docs.splunk.com/Documentation/Splunk/latest/Security/SPLsafeguards#Commands_that_trigger_the_warninga with abnormally long running time in the past one hour, comparing with his/her past seven days history. This search uses the trained baseline to infer whether a search is an outlier (isOutlier ~= 1.0) or not (isOutlier~= 0.0)
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Splunk_Audit](https://docs.splunk.com/Documentation/CIM/latest/User/SplunkAudit)
 - **Last Updated**: 2022-05-27
 - **Author**: Abhinav Mishra, Kumar Sharad and Xiao Lin, Splunk
 - **ID**: 19d0146c-2eae-4e53-8d39-1198a78fa9ca
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1059](https://attack.mitre.org/techniques/T1059/) | Command and Scripting Interpreter | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.AE
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 6
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
+| ----------- | ----------- | -------------- |
+| [CVE-2022-32154](https://nvd.nist.gov/vuln/detail/CVE-2022-32154) | Dashboards in Splunk Enterprise versions before 9.0 might let an attacker inject risky search commands into a form token when the token is used in a query in a cross-origin request. The result bypasses SPL safeguards for risky commands. See New capabilities can limit access to some custom and potentially risky commands (https://docs.splunk.com/Documentation/Splunk/9.0.0/Security/SPLsafeguards#New_capabilities_can_limit_access_to_some_custom_and_potentially_risky_commands) for more information. Note that the attack is browser-based and an attacker cannot exploit it at will. | 4.0 |
+
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -61,14 +122,13 @@ This detection utilizes machine learning model named &#34;risky_command_abuse&#3
 | `splunk_command_and_scripting_interpreter_risky_spl_mltk_filter`
 ```
 
-#### Associated Analytic Story
-* [Splunk Vulnerabilities](/stories/splunk_vulnerabilities)
+> :information_source:
+> **splunk_command_and_scripting_interpreter_risky_spl_mltk_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This detection depends on MLTK app which can be found here - https://splunkbase.splunk.com/app/2890/ and the Splunk Audit datamodel which can be found here - https://splunkbase.splunk.com/app/1621/. Baseline model needs to be built using &#34;Splunk Command and Scripting Interpreter Risky SPL MLTK Baseline&#34; before this search can run. Please note that the current search only finds matches exactly one space between separator bar and risky commands.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Search_Activity.search
 * Search_Activity.total_run_time
@@ -76,12 +136,16 @@ This detection depends on MLTK app which can be found here - https://splunkbase.
 * Search_Activity.search_type
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+This detection depends on MLTK app which can be found here - https://splunkbase.splunk.com/app/2890/ and the Splunk Audit datamodel which can be found here - https://splunkbase.splunk.com/app/1621/. Baseline model needs to be built using &#34;Splunk Command and Scripting Interpreter Risky SPL MLTK Baseline&#34; before this search can run. Please note that the current search only finds matches exactly one space between separator bar and risky commands.
 #### Known False Positives
 If the run time of a search exceeds the boundaries of outlier defined by the fitted density function model, false positives can occur, incorrectly labeling a long running search as potentially risky.
+
+#### Associated Analytic Story
+* [Splunk Vulnerabilities](/stories/splunk_vulnerabilities)
+
+
 
 
 #### RBA
@@ -91,13 +155,8 @@ If the run time of a search exceeds the boundaries of outlier defined by the fit
 | 20.0 | 50 | 40 | Abnormally long run time for risk SPL command seen by user $(Search_Activity.user). |
 
 
-
-#### CVE
-
-| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
-| ----------- | ----------- | -------------- |
-| [CVE-2022-32154](https://nvd.nist.gov/vuln/detail/CVE-2022-32154) | Dashboards in Splunk Enterprise versions before 9.0 might let an attacker inject risky search commands into a form token when the token is used in a query in a cross-origin request. The result bypasses SPL safeguards for risky commands. See New capabilities can limit access to some custom and potentially risky commands (https://docs.splunk.com/Documentation/Splunk/9.0.0/Security/SPLsafeguards#New_capabilities_can_limit_access_to_some_custom_and_potentially_risky_commands) for more information. Note that the attack is browser-based and an attacker cannot exploit it at will. | 4.0 |
-
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

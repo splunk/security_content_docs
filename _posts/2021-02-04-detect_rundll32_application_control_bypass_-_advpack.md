@@ -25,13 +25,18 @@ tags:
 
 The following analytic identifies rundll32.exe loading advpack.dll and ieadvpack.dll by calling the LaunchINFSection function on the command line. This particular technique will load script code from a file. Upon a successful execution, the following module loads may occur - clr.dll, jscript.dll and scrobj.dll. During investigation, identify script content origination. Generally, a child process will spawn from rundll32.exe, but that may be bypassed based on script code contents. Rundll32.exe is natively found in C:\Windows\system32 and C:\Windows\syswow64. During investigation, review any network connections and obtain the script content executed. It&#39;s possible other files are on disk.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-02-04
 - **Author**: Michael Haag, Splunk
 - **ID**: 4aefadfe-9abd-4bf8-b3fd-867e9ef95bf8
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,57 @@ The following analytic identifies rundll32.exe loading advpack.dll and ieadvpack
 | [T1218](https://attack.mitre.org/techniques/T1218/) | System Binary Proxy Execution | Defense Evasion |
 
 | [T1218.011](https://attack.mitre.org/techniques/T1218/011/) | Rundll32 | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,15 +108,13 @@ The following analytic identifies rundll32.exe loading advpack.dll and ieadvpack
 | `detect_rundll32_application_control_bypass___advpack_filter`
 ```
 
-#### Associated Analytic Story
-* [Suspicious Rundll32 Activity](/stories/suspicious_rundll32_activity)
-* [Living Off The Land](/stories/living_off_the_land)
+> :information_source:
+> **detect_rundll32_application_control_bypass_-_advpack_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -75,12 +129,17 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 Although unlikely, some legitimate applications may use advpack.dll or ieadvpack.dll, triggering a false positive.
+
+#### Associated Analytic Story
+* [Suspicious Rundll32 Activity](/stories/suspicious_rundll32_activity)
+* [Living Off The Land](/stories/living_off_the_land)
+
+
 
 
 #### RBA
@@ -90,6 +149,8 @@ Although unlikely, some legitimate applications may use advpack.dll or ieadvpack
 | 80.0 | 80 | 100 | An instance of $parent_process_name$ spawning $process_name$ loading advpack.dll and ieadvpack.dll by calling the LaunchINFSection function on the command line was identified on endpoint $dest$ by user $user$. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

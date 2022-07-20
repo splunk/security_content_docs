@@ -24,13 +24,18 @@ tags:
 
 This search detects when multiple user configured a forwarding rule to the same destination.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-12-16
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: f8dfe015-dbb3-4569-ba75-b13787e06aa4
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,57 @@ This search detects when multiple user configured a forwarding rule to the same 
 | [T1114.003](https://attack.mitre.org/techniques/T1114/003/) | Email Forwarding Rule | Collection |
 
 | [T1114](https://attack.mitre.org/techniques/T1114/) | Email Collection | Collection |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.DP
+* DE.AE
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -54,26 +110,29 @@ This search detects when multiple user configured a forwarding rule to the same 
 |`o365_suspicious_user_email_forwarding_filter`
 ```
 
-#### Associated Analytic Story
-* [Office 365 Detections](/stories/office_365_detections)
-* [Data Exfiltration](/stories/data_exfiltration)
+> :information_source:
+> **o365_suspicious_user_email_forwarding_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install splunk Microsoft Office 365 add-on. This search works with o365:management:activity
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Operation
 * Parameters
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must install splunk Microsoft Office 365 add-on. This search works with o365:management:activity
 #### Known False Positives
 unknown
+
+#### Associated Analytic Story
+* [Office 365 Detections](/stories/office_365_detections)
+* [Data Exfiltration](/stories/data_exfiltration)
+
+
 
 
 #### RBA
@@ -83,6 +142,8 @@ unknown
 | 48.0 | 80 | 60 | User $user$ configured multiple users $src_user$ with a count of $count_src_user$, a forwarding rule to same destination $ForwardingSmtpAddress$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

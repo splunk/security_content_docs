@@ -22,19 +22,76 @@ tags:
 
 This search looks for AWS CloudTrail events and analyse the amount of eventNames which starts with Describe by a single user. This indicates that this user scans the configuration of your AWS cloud environment.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-04-13
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: 1fdd164a-def8-4762-83a9-9ffe24e74d5a
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1526](https://attack.mitre.org/techniques/T1526/) | Cloud Service Discovery | Discovery |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.DS
+* PR.AC
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 13
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -47,14 +104,13 @@ This search looks for AWS CloudTrail events and analyse the amount of eventNames
 |`aws_excessive_security_scanning_filter`
 ```
 
-#### Associated Analytic Story
-* [AWS User Monitoring](/stories/aws_user_monitoring)
+> :information_source:
+> **aws_excessive_security_scanning_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install splunk AWS add on and Splunk App for AWS. This search works with AWS CloudTrail logs.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * eventName
 * src
@@ -63,12 +119,16 @@ You must install splunk AWS add on and Splunk App for AWS. This search works wit
 * userIdentity.arn
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must install splunk AWS add on and Splunk App for AWS. This search works with AWS CloudTrail logs.
 #### Known False Positives
 While this search has no known false positives.
+
+#### Associated Analytic Story
+* [AWS User Monitoring](/stories/aws_user_monitoring)
+
+
 
 
 #### RBA
@@ -78,6 +138,8 @@ While this search has no known false positives.
 | 18.0 | 30 | 60 | user $user$ has excessive number of api calls $dc_events$ from these IP addresses $src$, violating the threshold of 50,  using the following commands $command$. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

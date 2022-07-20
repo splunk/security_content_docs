@@ -23,19 +23,70 @@ tags:
 
 This search is to detect execution of chcp.exe application. this utility is used to change the active code page of the console. This technique was seen in icedid malware to know the locale region/language/country of the compromise host.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-07-27
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 21d236ec-eec1-11eb-b23e-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1059](https://attack.mitre.org/techniques/T1059/) | Command and Scripting Interpreter | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Reconnaissance
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -48,15 +99,13 @@ This search is to detect execution of chcp.exe application. this utility is used
 | `chcp_command_execution_filter`
 ```
 
-#### Associated Analytic Story
-* [IcedID](/stories/icedid)
-* [Azorult](/stories/azorult)
+> :information_source:
+> **chcp_command_execution_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Tune and filter known instances where renamed chcp.com may be used.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * process_name
 * process
@@ -68,12 +117,17 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * user
 
 
-#### Kill Chain Phase
-* Reconnaissance
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Tune and filter known instances where renamed chcp.com may be used.
 #### Known False Positives
 other tools or script may used this to change code page to UTF-* or others
+
+#### Associated Analytic Story
+* [IcedID](/stories/icedid)
+* [Azorult](/stories/azorult)
+
+
 
 
 #### RBA
@@ -83,6 +137,8 @@ other tools or script may used this to change code page to UTF-* or others
 | 9.0 | 30 | 30 | parent process $parent_process_name$ spawning chcp process $process_name$ with parent command line $parent_process$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

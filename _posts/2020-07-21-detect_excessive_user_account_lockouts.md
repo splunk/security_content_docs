@@ -31,13 +31,18 @@ tags:
 
 This search detects user accounts that have been locked out a relatively high number of times in a short period.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change)
 - **Last Updated**: 2020-07-21
 - **Author**: David Dorsey, Splunk
 - **ID**: 95a7f9a5-6096-437e-a19e-86f42ac609bd
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -46,6 +51,56 @@ This search detects user accounts that have been locked out a relatively high nu
 | [T1078](https://attack.mitre.org/techniques/T1078/) | Valid Accounts | Defense Evasion, Persistence, Privilege Escalation, Initial Access |
 
 | [T1078.003](https://attack.mitre.org/techniques/T1078/003/) | Local Accounts | Defense Evasion, Persistence, Privilege Escalation, Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.IP
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -60,26 +115,29 @@ This search detects user accounts that have been locked out a relatively high nu
 | `detect_excessive_user_account_lockouts_filter`
 ```
 
-#### Associated Analytic Story
-* [Account Monitoring and Controls](/stories/account_monitoring_and_controls)
+> :information_source:
+> **detect_excessive_user_account_lockouts_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-ou must ingest your Windows security event logs in the `Change` datamodel under the nodename is `Account_Management`, for this search to execute successfully. Please consider updating the cron schedule and the count of lockouts you want to monitor, according to your environment.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * All_Changes.result
 * nodename
 * All_Changes.user
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+ou must ingest your Windows security event logs in the `Change` datamodel under the nodename is `Account_Management`, for this search to execute successfully. Please consider updating the cron schedule and the count of lockouts you want to monitor, according to your environment.
 #### Known False Positives
 It is possible that a legitimate user is experiencing an issue causing multiple account login failures leading to lockouts.
+
+#### Associated Analytic Story
+* [Account Monitoring and Controls](/stories/account_monitoring_and_controls)
+
+
 
 
 #### RBA
@@ -89,6 +147,8 @@ It is possible that a legitimate user is experiencing an issue causing multiple 
 | 36.0 | 60 | 60 | Multiple accounts have been locked out. Review $nodename$ and $result$ related to $user$. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -25,19 +25,70 @@ tags:
 
 The following hunting analytic assists with identifying suspicious tasks that have been registered and ran in Windows using EventID 200 (action run) and 201 (action completed). It is recommended to filter based on ActionName by specifying specific paths not used in your environment. After some basic tuning, this may be effective in capturing evasive ways to register tasks on Windows. Review parallel events related to tasks being scheduled. EventID 106 will generate when a new task is generated, however, that does not mean it ran. Capture any files on disk and analyze.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-10-19
 - **Author**: Michael Haag, Splunk
 - **ID**: b3632472-310b-11ec-9aab-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1053.005](https://attack.mitre.org/techniques/T1053/005/) | Scheduled Task | Execution, Persistence, Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -50,16 +101,13 @@ The following hunting analytic assists with identifying suspicious tasks that ha
 | `winevent_windows_task_scheduler_event_action_started_filter`
 ```
 
-#### Associated Analytic Story
-* [IcedID](/stories/icedid)
-* [Windows Persistence Techniques](/stories/windows_persistence_techniques)
-* [Industroyer2](/stories/industroyer2)
+> :information_source:
+> **winevent_windows_task_scheduler_event_action_started_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-Task Scheduler logs are required to be collected. Enable logging with inputs.conf by adding a stanza for [WinEventLog://Microsoft-Windows-TaskScheduler/Operational] and renderXml=false. Note, not translating it in XML may require a proper extraction of specific items in the Message.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * TaskName
 * ActionName
@@ -68,12 +116,18 @@ Task Scheduler logs are required to be collected. Enable logging with inputs.con
 * ProcessID
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+Task Scheduler logs are required to be collected. Enable logging with inputs.conf by adding a stanza for [WinEventLog://Microsoft-Windows-TaskScheduler/Operational] and renderXml=false. Note, not translating it in XML may require a proper extraction of specific items in the Message.
 #### Known False Positives
 False positives will be present. Filter based on ActionName paths or specify keywords of interest.
+
+#### Associated Analytic Story
+* [IcedID](/stories/icedid)
+* [Windows Persistence Techniques](/stories/windows_persistence_techniques)
+* [Industroyer2](/stories/industroyer2)
+
+
 
 
 #### RBA
@@ -83,6 +137,8 @@ False positives will be present. Filter based on ActionName paths or specify key
 | 80.0 | 80 | 100 | A Scheduled Task was scheduled and ran on $dest$. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

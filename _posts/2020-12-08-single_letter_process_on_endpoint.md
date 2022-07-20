@@ -25,13 +25,18 @@ tags:
 
 This search looks for process names that consist only of a single letter.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2020-12-08
 - **Author**: David Dorsey, Splunk
 - **ID**: a4214f0b-e01c-41bc-8cc4-d2b71e3056b4
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,57 @@ This search looks for process names that consist only of a single letter.
 | [T1204](https://attack.mitre.org/techniques/T1204/) | User Execution | Execution |
 
 | [T1204.002](https://attack.mitre.org/techniques/T1204/002/) | Malicious File | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* ID.AM
+* PR.DS
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 2
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -55,14 +111,13 @@ This search looks for process names that consist only of a single letter.
 | `single_letter_process_on_endpoint_filter`
 ```
 
-#### Associated Analytic Story
-* [DHS Report TA18-074A](/stories/dhs_report_ta18-074a)
+> :information_source:
+> **single_letter_process_on_endpoint_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting data that records process activity from your hosts to populate the Endpoint data model in the Processes node. You must also be ingesting logs with both the process name and command line from your endpoints. The command-line arguments are mapped to the &#34;process&#34; field in the Endpoint data model.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -70,12 +125,16 @@ You must be ingesting data that records process activity from your hosts to popu
 * Processes.process_name
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must be ingesting data that records process activity from your hosts to populate the Endpoint data model in the Processes node. You must also be ingesting logs with both the process name and command line from your endpoints. The command-line arguments are mapped to the &#34;process&#34; field in the Endpoint data model.
 #### Known False Positives
 Single-letter executables are not always malicious. Investigate this activity with your normal incident-response process.
+
+#### Associated Analytic Story
+* [DHS Report TA18-074A](/stories/dhs_report_ta18-074a)
+
+
 
 
 #### RBA
@@ -85,6 +144,8 @@ Single-letter executables are not always malicious. Investigate this activity wi
 | 63.0 | 70 | 90 | A suspicious process $process_name$ with single letter in host $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -25,13 +25,18 @@ tags:
 
 This search is to detect a suspicious file creation namely passff.tar and cookie.tar. This files are possible archived of stolen browser information like history and cookies in a compromised machine with IcedID.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-07-30
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 0db4da70-f14b-11eb-8043-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,52 @@ This search is to detect a suspicious file creation namely passff.tar and cookie
 | [T1560.001](https://attack.mitre.org/techniques/T1560/001/) | Archive via Utility | Collection |
 
 | [T1560](https://attack.mitre.org/techniques/T1560/) | Archive Collected Data | Collection |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -51,14 +102,13 @@ This search is to detect a suspicious file creation namely passff.tar and cookie
 | `icedid_exfiltrated_archived_file_creation_filter`
 ```
 
-#### Associated Analytic Story
-* [IcedID](/stories/icedid)
+> :information_source:
+> **icedid_exfiltrated_archived_file_creation_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * TargetFilename
 * EventCode
@@ -67,12 +117,16 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Computer
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 #### Known False Positives
 unknown
+
+#### Associated Analytic Story
+* [IcedID](/stories/icedid)
+
+
 
 
 #### RBA
@@ -82,6 +136,8 @@ unknown
 | 72.0 | 80 | 90 | process $SourceImage$ create a file $TargetImage$ in host $Computer$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

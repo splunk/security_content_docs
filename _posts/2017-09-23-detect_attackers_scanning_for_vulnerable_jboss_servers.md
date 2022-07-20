@@ -15,7 +15,7 @@ tags:
   - Web
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -25,19 +25,70 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks for specific GET or HEAD requests to web servers that are indicative of reconnaissance attempts to identify vulnerable JBoss servers. JexBoss is described as the exploit tool of choice for this malicious activity.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web)
 - **Last Updated**: 2017-09-23
 - **Author**: Bhavin Patel, Splunk
 - **ID**: 104658f4-afdc-499e-9719-17243f982681
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1082](https://attack.mitre.org/techniques/T1082/) | System Information Discovery | Discovery |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Reconnaissance
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -50,15 +101,13 @@ This search looks for specific GET or HEAD requests to web servers that are indi
 | `detect_attackers_scanning_for_vulnerable_jboss_servers_filter`
 ```
 
-#### Associated Analytic Story
-* [JBoss Vulnerability](/stories/jboss_vulnerability)
-* [SamSam Ransomware](/stories/samsam_ransomware)
+> :information_source:
+> **detect_attackers_scanning_for_vulnerable_jboss_servers_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting data from the web server or network traffic that contains web specific information, and populating the Web data model.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Web.http_method
 * Web.url
@@ -66,12 +115,17 @@ You must be ingesting data from the web server or network traffic that contains 
 * Web.dest
 
 
-#### Kill Chain Phase
-* Reconnaissance
 
-
+#### How To Implement
+You must be ingesting data from the web server or network traffic that contains web specific information, and populating the Web data model.
 #### Known False Positives
 It&#39;s possible for legitimate HTTP requests to be made to URLs containing the suspicious paths.
+
+#### Associated Analytic Story
+* [JBoss Vulnerability](/stories/jboss_vulnerability)
+* [SamSam Ransomware](/stories/samsam_ransomware)
+
+
 
 
 #### RBA
@@ -81,6 +135,8 @@ It&#39;s possible for legitimate HTTP requests to be made to URLs containing the
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -22,19 +22,70 @@ tags:
 
 This search provides detection of KMS keys where action kms:Encrypt is accessible for everyone (also outside of your organization). This is an indicator that your account is compromised and the attacker uses the encryption key to compromise another company.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-01-11
 - **Author**: Rod Soto, Patrick Bareiss Splunk
 - **ID**: c79c164f-4b21-4847-98f9-cf6a9f49179e
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1486](https://attack.mitre.org/techniques/T1486/) | Data Encrypted for Impact | Impact |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -53,14 +104,13 @@ This search provides detection of KMS keys where action kms:Encrypt is accessibl
 |`aws_detect_users_creating_keys_with_encrypt_policy_without_mfa_filter`
 ```
 
-#### Associated Analytic Story
-* [Ransomware Cloud](/stories/ransomware_cloud)
+> :information_source:
+> **aws_detect_users_creating_keys_with_encrypt_policy_without_mfa_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install splunk AWS add on and Splunk App for AWS. This search works with AWS CloudTrail logs
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * eventName
 * eventSource
@@ -70,12 +120,16 @@ You must install splunk AWS add on and Splunk App for AWS. This search works wit
 * userIdentity.principalId
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+You must install splunk AWS add on and Splunk App for AWS. This search works with AWS CloudTrail logs
 #### Known False Positives
 unknown
+
+#### Associated Analytic Story
+* [Ransomware Cloud](/stories/ransomware_cloud)
+
+
 
 
 #### RBA
@@ -85,6 +139,8 @@ unknown
 | 25.0 | 50 | 50 | AWS account is potentially compromised and user $userIdentity.principalId$ is trying to compromise other accounts. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -21,12 +21,63 @@ tags:
 
 This search looks for arguments to certutil.exe indicating the manipulation or extraction of Certificate. This certificate can then be used to sign new authentication tokens specially inside Federated environments such as Windows ADFS.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-01-26
 - **Author**: Rod Soto, Splunk
 - **ID**: 337a46be-600f-11eb-ae93-0242ac130002
+
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Installation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -38,16 +89,13 @@ This search looks for arguments to certutil.exe indicating the manipulation or e
 | `certutil_exe_certificate_extraction_filter`
 ```
 
-#### Associated Analytic Story
-* [Windows Persistence Techniques](/stories/windows_persistence_techniques)
-* [Cloud Federated Credential Abuse](/stories/cloud_federated_credential_abuse)
-* [Living Off The Land](/stories/living_off_the_land)
+> :information_source:
+> **certutil_exe_certificate_extraction_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -62,12 +110,18 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Installation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node.
 #### Known False Positives
 Unless there are specific use cases, manipulating or exporting certificates using certutil is uncommon. Extraction of certificate has been observed during attacks such as Golden SAML and other campaigns targeting Federated services.
+
+#### Associated Analytic Story
+* [Windows Persistence Techniques](/stories/windows_persistence_techniques)
+* [Cloud Federated Credential Abuse](/stories/cloud_federated_credential_abuse)
+* [Living Off The Land](/stories/living_off_the_land)
+
+
 
 
 #### RBA
@@ -77,6 +131,8 @@ Unless there are specific use cases, manipulating or exporting certificates usin
 | 63.0 | 90 | 70 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest$ by user $user$ attempting export a certificate. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

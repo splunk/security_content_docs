@@ -25,13 +25,18 @@ tags:
 
 This search looks for the creation of local administrator accounts using net.exe .
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-09-08
 - **Author**: Bhavin Patel, Splunk
 - **ID**: b89919ed-fe5f-492c-b139-151bb162040e
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,57 @@ This search looks for the creation of local administrator accounts using net.exe
 | [T1136.001](https://attack.mitre.org/techniques/T1136/001/) | Local Account | Persistence |
 
 | [T1136](https://attack.mitre.org/techniques/T1136/) | Create Account | Persistence |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,15 +108,13 @@ This search looks for the creation of local administrator accounts using net.exe
 | `create_local_admin_accounts_using_net_exe_filter`
 ```
 
-#### Associated Analytic Story
-* [DHS Report TA18-074A](/stories/dhs_report_ta18-074a)
-* [Azorult](/stories/azorult)
+> :information_source:
+> **create_local_admin_accounts_using_net_exe_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting data that records process activity from your hosts to populate the Endpoint data model in the Processes node. You must also be ingesting logs with both the process name and command line from your endpoints. The command-line arguments are mapped to the &#34;process&#34; field in the Endpoint data model.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -75,12 +129,17 @@ You must be ingesting data that records process activity from your hosts to popu
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must be ingesting data that records process activity from your hosts to populate the Endpoint data model in the Processes node. You must also be ingesting logs with both the process name and command line from your endpoints. The command-line arguments are mapped to the &#34;process&#34; field in the Endpoint data model.
 #### Known False Positives
 Administrators often leverage net.exe to create admin accounts.
+
+#### Associated Analytic Story
+* [DHS Report TA18-074A](/stories/dhs_report_ta18-074a)
+* [Azorult](/stories/azorult)
+
+
 
 
 #### RBA
@@ -90,6 +149,8 @@ Administrators often leverage net.exe to create admin accounts.
 | 30.0 | 50 | 60 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest$ by user $user$ attempting to add a user to the local Administrators group. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -24,13 +24,18 @@ tags:
 
 This search looks for Dependabot Alerts in Github logs.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-09-01
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: 05032b04-4469-4034-9df7-05f607d75cba
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,58 @@ This search looks for Dependabot Alerts in Github logs.
 | [T1195.001](https://attack.mitre.org/techniques/T1195/001/) | Compromise Software Dependencies and Development Tools | Initial Access |
 
 | [T1195](https://attack.mitre.org/techniques/T1195/) | Supply Chain Compromise | Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.DS
+* PR.AC
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 13
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,14 +109,13 @@ This search looks for Dependabot Alerts in Github logs.
 | `github_dependabot_alert_filter`
 ```
 
-#### Associated Analytic Story
-* [Dev Sec Ops](/stories/dev_sec_ops)
+> :information_source:
+> **github_dependabot_alert_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must index GitHub logs. You can follow the url in reference to onboard GitHub logs.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * alert.id
 * repository.full_name
@@ -74,12 +130,16 @@ You must index GitHub logs. You can follow the url in reference to onboard GitHu
 * alert.severity
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must index GitHub logs. You can follow the url in reference to onboard GitHub logs.
 #### Known False Positives
 unknown
+
+#### Associated Analytic Story
+* [Dev Sec Ops](/stories/dev_sec_ops)
+
+
 
 
 #### RBA
@@ -89,6 +149,8 @@ unknown
 | 27.0 | 30 | 90 | Vulnerabilities found in packages used by GitHub repository $repository$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

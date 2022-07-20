@@ -26,19 +26,81 @@ tags:
 
 On May 3rd, 2022, Splunk published a security advisory for  username enumeration stemming from verbose login failure messages present on some REST endpoints. This detection will alert on attempted exploitation in patched versions of Splunk as well as actual exploitation in unpatched version of Splunk.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2022-04-29
 - **Author**: Lou Stella, Splunk
 - **ID**: 25625cb4-1c4d-4463-b0f9-7cb462699cde
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1078](https://attack.mitre.org/techniques/T1078/) | Valid Accounts | Defense Evasion, Persistence, Privilege Escalation, Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Reconnaissance
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
+| ----------- | ----------- | -------------- |
+| [CVE-2021-33845](https://nvd.nist.gov/vuln/detail/CVE-2021-33845) | The Splunk Enterprise REST API allows enumeration of usernames via the lockout error message. The potential vulnerability impacts Splunk Enterprise instances before 8.1.7 when configured to repress verbose login errors. | 5.0 |
+
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -50,26 +112,29 @@ On May 3rd, 2022, Splunk published a security advisory for  username enumeration
 | `splunk_user_enumeration_attempt_filter`
 ```
 
-#### Associated Analytic Story
-* [Splunk Vulnerabilities](/stories/splunk_vulnerabilities)
+> :information_source:
+> **splunk_user_enumeration_attempt_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This detection does not require you to ingest any new data. The detection does require the ability to search the _audit index. This detection may assist in efforts to find password spraying or brute force authorization attempts in addition to someone enumerating usernames.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * user
 * src
 * info
 * action
 
 
-#### Kill Chain Phase
-* Reconnaissance
 
-
+#### How To Implement
+This detection does not require you to ingest any new data. The detection does require the ability to search the _audit index. This detection may assist in efforts to find password spraying or brute force authorization attempts in addition to someone enumerating usernames.
 #### Known False Positives
 Automation executing authentication attempts against your Splunk infrastructure with outdated credentials may cause false positives.
+
+#### Associated Analytic Story
+* [Splunk Vulnerabilities](/stories/splunk_vulnerabilities)
+
+
 
 
 #### RBA
@@ -79,13 +144,8 @@ Automation executing authentication attempts against your Splunk infrastructure 
 | 40.0 | 50 | 80 | $TotalFailedAuths$ failed authentication events to Splunk from $src$ detected. |
 
 
-
-#### CVE
-
-| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
-| ----------- | ----------- | -------------- |
-| [CVE-2021-33845](https://nvd.nist.gov/vuln/detail/CVE-2021-33845) | The Splunk Enterprise REST API allows enumeration of usernames via the lockout error message. The potential vulnerability impacts Splunk Enterprise instances before 8.1.7 when configured to repress verbose login errors. | 5.0 |
-
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

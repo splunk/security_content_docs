@@ -25,13 +25,18 @@ tags:
 
 Monitor for signs that Vssadmin or Wmic has been used to create a shadow copy.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2019-12-10
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: eb120f5f-b879-4a63-97c1-93352b5df844
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,57 @@ Monitor for signs that Vssadmin or Wmic has been used to create a shadow copy.
 | [T1003.003](https://attack.mitre.org/techniques/T1003/003/) | NTDS | Credential Access |
 
 | [T1003](https://attack.mitre.org/techniques/T1003/) | OS Credential Dumping | Credential Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,14 +108,13 @@ Monitor for signs that Vssadmin or Wmic has been used to create a shadow copy.
 | `creation_of_shadow_copy_filter`
 ```
 
-#### Associated Analytic Story
-* [Credential Dumping](/stories/credential_dumping)
+> :information_source:
+> **creation_of_shadow_copy_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting endpoint data that tracks process activity, including parent-child relationships from your endpoints, to populate the Endpoint data model in the Processes node. The command-line arguments are mapped to the &#34;process&#34; field in the Endpoint data model.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -74,12 +129,16 @@ You must be ingesting endpoint data that tracks process activity, including pare
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must be ingesting endpoint data that tracks process activity, including parent-child relationships from your endpoints, to populate the Endpoint data model in the Processes node. The command-line arguments are mapped to the &#34;process&#34; field in the Endpoint data model.
 #### Known False Positives
 Legitimate administrator usage of Vssadmin or Wmic will create false positives.
+
+#### Associated Analytic Story
+* [Credential Dumping](/stories/credential_dumping)
+
+
 
 
 #### RBA
@@ -89,6 +148,8 @@ Legitimate administrator usage of Vssadmin or Wmic will create false positives.
 | 81.0 | 90 | 90 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest$ by user $user$ attempting to create a shadow copy to perform offline password cracking. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

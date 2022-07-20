@@ -24,13 +24,18 @@ tags:
 
 This search looks for AWS CloudTrail events where a user A who has already permission to create access keys, makes an API call to create access keys for another user B. Attackers have been know to use this technique for Privilege Escalation in case new victim(user B) has more permissions than old victim(user B)
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2022-03-03
 - **Author**: Bhavin Patel, Splunk
 - **ID**: 2a9b80d3-6340-4345-11ad-212bf3d0d111
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,58 @@ This search looks for AWS CloudTrail events where a user A who has already permi
 | [T1136.003](https://attack.mitre.org/techniques/T1136/003/) | Cloud Account | Persistence |
 
 | [T1136](https://attack.mitre.org/techniques/T1136/) | Create Account | Persistence |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.DS
+* PR.AC
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 13
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,14 +109,13 @@ This search looks for AWS CloudTrail events where a user A who has already permi
 |`aws_createaccesskey_filter`
 ```
 
-#### Associated Analytic Story
-* [AWS IAM Privilege Escalation](/stories/aws_iam_privilege_escalation)
+> :information_source:
+> **aws_createaccesskey_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install splunk AWS add on and Splunk App for AWS. This search works with AWS CloudTrail logs.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * eventName
 * userAgent
@@ -67,12 +123,16 @@ You must install splunk AWS add on and Splunk App for AWS. This search works wit
 * requestParameters.userName
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must install splunk AWS add on and Splunk App for AWS. This search works with AWS CloudTrail logs.
 #### Known False Positives
 While this search has no known false positives, it is possible that an AWS admin has legitimately created keys for another user.
+
+#### Associated Analytic Story
+* [AWS IAM Privilege Escalation](/stories/aws_iam_privilege_escalation)
+
+
 
 
 #### RBA
@@ -82,6 +142,8 @@ While this search has no known false positives, it is possible that an AWS admin
 | 63.0 | 70 | 90 | User $user_arn$ is attempting to create access keys for $requestParameters.userName$ from this IP $src$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

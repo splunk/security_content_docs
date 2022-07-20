@@ -22,7 +22,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -32,13 +32,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 By enabling Dynamic ARP Inspection as a Layer 2 Security measure on the organization&#39;s network devices, we will be able to detect ARP Poisoning attacks in the Infrastructure.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-08-11
 - **Author**: Mikael Bjerkeland, Splunk
 - **ID**: b44bebd6-bd39-467b-9321-73971bcd7aac
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -52,6 +57,60 @@ By enabling Dynamic ARP Inspection as a Layer 2 Security measure on the organiza
 
 | [T1557.002](https://attack.mitre.org/techniques/T1557/002/) | ARP Cache Poisoning | Credential Access, Collection |
 
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Reconnaissance
+* Delivery
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* ID.AM
+* PR.DS
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 1
+* CIS 11
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
+
 #### Search
 
 ```
@@ -63,14 +122,13 @@ By enabling Dynamic ARP Inspection as a Layer 2 Security measure on the organiza
 | `detect_arp_poisoning_filter`
 ```
 
-#### Associated Analytic Story
-* [Router and Infrastructure Security](/stories/router_and_infrastructure_security)
+> :information_source:
+> **detect_arp_poisoning_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This search uses a standard SPL query on logs from Cisco Network devices. The network devices must be configured with DHCP Snooping (see https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960x/software/15-0_2_EX/security/configuration_guide/b_sec_152ex_2960-x_cg/b_sec_152ex_2960-x_cg_chapter_01101.html) and Dynamic ARP Inspection (see https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960x/software/15-2_2_e/security/configuration_guide/b_sec_1522e_2960x_cg/b_sec_1522e_2960x_cg_chapter_01111.html) and log with a severity level of minimum &#34;5 - notification&#34;. The search also requires that the Cisco Networks Add-on for Splunk (https://splunkbase.splunk.com/app/1467) is used to parse the logs from the Cisco network devices.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * facility
 * mnemonic
@@ -81,14 +139,16 @@ This search uses a standard SPL query on logs from Cisco Network devices. The ne
 * src_interface
 
 
-#### Kill Chain Phase
-* Reconnaissance
-* Delivery
-* Actions on Objectives
 
-
+#### How To Implement
+This search uses a standard SPL query on logs from Cisco Network devices. The network devices must be configured with DHCP Snooping (see https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960x/software/15-0_2_EX/security/configuration_guide/b_sec_152ex_2960-x_cg/b_sec_152ex_2960-x_cg_chapter_01101.html) and Dynamic ARP Inspection (see https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst2960x/software/15-2_2_e/security/configuration_guide/b_sec_1522e_2960x_cg/b_sec_1522e_2960x_cg_chapter_01111.html) and log with a severity level of minimum &#34;5 - notification&#34;. The search also requires that the Cisco Networks Add-on for Splunk (https://splunkbase.splunk.com/app/1467) is used to parse the logs from the Cisco network devices.
 #### Known False Positives
 This search might be prone to high false positives if DHCP Snooping or ARP inspection has been incorrectly configured, or if a device normally sends many ARP packets (unlikely).
+
+#### Associated Analytic Story
+* [Router and Infrastructure Security](/stories/router_and_infrastructure_security)
+
+
 
 
 #### RBA
@@ -98,6 +158,8 @@ This search might be prone to high false positives if DHCP Snooping or ARP inspe
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

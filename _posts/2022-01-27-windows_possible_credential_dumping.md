@@ -28,13 +28,18 @@ CallTrace Stack trace of where open process is called. Included is the DLL and t
 dbgcore.dll or dbghelp.dll  are two core Windows debug DLLs that have minidump functions which provide a way for applications to produce crashdump files that contain a useful subset of the entire process context. \
 The idea behind using ntdll.dll is to blend in by using native api of ntdll.dll. For example in sekurlsa module there are many ntdll exported api, like RtlCopyMemory, used to execute this module which is related to lsass dumping.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2022-01-27
 - **Author**: Michael Haag, Splunk
 - **ID**: e4723b92-7266-11ec-af45-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -43,6 +48,55 @@ The idea behind using ntdll.dll is to blend in by using native api of ntdll.dll.
 | [T1003.001](https://attack.mitre.org/techniques/T1003/001/) | LSASS Memory | Credential Access |
 
 | [T1003](https://attack.mitre.org/techniques/T1003/) | OS Credential Dumping | Credential Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.AE
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -55,16 +109,13 @@ The idea behind using ntdll.dll is to blend in by using native api of ntdll.dll.
 | `windows_possible_credential_dumping_filter`
 ```
 
-#### Associated Analytic Story
-* [Credential Dumping](/stories/credential_dumping)
-* [Detect Zerologon Attack](/stories/detect_zerologon_attack)
-* [DarkSide Ransomware](/stories/darkside_ransomware)
+> :information_source:
+> **windows_possible_credential_dumping_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Enabling EventCode 10 TargetProcess lsass.exe is required.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Computer
 * TargetImage
@@ -75,12 +126,18 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * TargetUser
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Enabling EventCode 10 TargetProcess lsass.exe is required.
 #### Known False Positives
 False positives will occur based on GrantedAccess 0x1010 and 0x1400, filter based on source image as needed or remove them. Concern is Cobalt Strike usage of Mimikatz will generate 0x1010 initially, but later be caught.
+
+#### Associated Analytic Story
+* [Credential Dumping](/stories/credential_dumping)
+* [Detect Zerologon Attack](/stories/detect_zerologon_attack)
+* [DarkSide Ransomware](/stories/darkside_ransomware)
+
+
 
 
 #### RBA
@@ -90,6 +147,8 @@ False positives will occur based on GrantedAccess 0x1010 and 0x1400, filter base
 | 64.0 | 80 | 80 | A process, $SourceImage$, has loaded $ImageLoaded$ that are typically related to credential dumping on $dest$. Review for further details. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

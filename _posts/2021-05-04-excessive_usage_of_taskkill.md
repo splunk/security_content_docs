@@ -25,13 +25,18 @@ tags:
 
 This analytic identifies excessive usage of `taskkill.exe` application. This application is commonly used by adversaries to evade detections by killing security product processes or even other processes to evade detection.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-05-04
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: fe5bca48-accb-11eb-a67c-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,52 @@ This analytic identifies excessive usage of `taskkill.exe` application. This app
 | [T1562.001](https://attack.mitre.org/techniques/T1562/001/) | Disable or Modify Tools | Defense Evasion |
 
 | [T1562](https://attack.mitre.org/techniques/T1562/) | Impair Defenses | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -53,15 +104,13 @@ This analytic identifies excessive usage of `taskkill.exe` application. This app
 | `excessive_usage_of_taskkill_filter`
 ```
 
-#### Associated Analytic Story
-* [XMRig](/stories/xmrig)
-* [Azorult](/stories/azorult)
+> :information_source:
+> **excessive_usage_of_taskkill_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Tune and filter known instances where renamed taskkill.exe may be used.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.parent_process_name
 * Processes.process_name
@@ -71,12 +120,17 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Processes.process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Tune and filter known instances where renamed taskkill.exe may be used.
 #### Known False Positives
 Unknown. Filter as needed.
+
+#### Associated Analytic Story
+* [XMRig](/stories/xmrig)
+* [Azorult](/stories/azorult)
+
+
 
 
 #### RBA
@@ -86,6 +140,8 @@ Unknown. Filter as needed.
 | 28.0 | 40 | 70 | Excessive usage  of taskkill.exe with process id $process_id$ (more than 10 within 1m) has been detected on $dest$ with a parent process of $parent_process_name$. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

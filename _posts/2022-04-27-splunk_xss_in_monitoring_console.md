@@ -23,19 +23,81 @@ tags:
 
 On May 3rd, 2022, Splunk published a security advisory for a reflective Cross-Site Scripting (XSS) vulnerability stemming from the lack of input validation in the Distributed Monitoring Console app. This detection will alert on attempted exploitation in patched versions of Splunk as well as actual exploitation in unpatched version of Splunk.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2022-04-27
 - **Author**: Lou Stella, Splunk
 - **ID**: b11accac-6fa3-4103-8a1a-7210f1a67087
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1189](https://attack.mitre.org/techniques/T1189/) | Drive-by Compromise | Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
+| ----------- | ----------- | -------------- |
+| [CVE-2022-27183](https://nvd.nist.gov/vuln/detail/CVE-2022-27183) | The Monitoring Console app configured in Distributed mode allows for a Reflected XSS in a query parameter in Splunk Enterprise versions before 8.1.4. The Monitoring Console app is a bundled app included in Splunk Enterprise, not for download on SplunkBase, and not installed on Splunk Cloud Platform instances. Note that the Cloud Monitoring Console is not impacted. | 4.3 |
+
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -45,14 +107,13 @@ On May 3rd, 2022, Splunk published a security advisory for a reflective Cross-Si
 | `splunk_xss_in_monitoring_console_filter`
 ```
 
-#### Associated Analytic Story
-* [Splunk Vulnerabilities](/stories/splunk_vulnerabilities)
+> :information_source:
+> **splunk_xss_in_monitoring_console_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This detection does not require you to ingest any new data. The detection does require the ability to search the _internal index. This detection will find attempted exploitation of CVE-2022-27183.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * method
 * uri_query
 * status
@@ -61,12 +122,16 @@ This detection does not require you to ingest any new data. The detection does r
 * uri
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+This detection does not require you to ingest any new data. The detection does require the ability to search the _internal index. This detection will find attempted exploitation of CVE-2022-27183.
 #### Known False Positives
 Use of the monitoring console where the less-than sign (&lt;) is the first character in the description field.
+
+#### Associated Analytic Story
+* [Splunk Vulnerabilities](/stories/splunk_vulnerabilities)
+
+
 
 
 #### RBA
@@ -76,13 +141,8 @@ Use of the monitoring console where the less-than sign (&lt;) is the first chara
 | 40.0 | 50 | 80 | A potential XSS attempt has been detected from $user$ |
 
 
-
-#### CVE
-
-| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
-| ----------- | ----------- | -------------- |
-| [CVE-2022-27183](https://nvd.nist.gov/vuln/detail/CVE-2022-27183) | The Monitoring Console app configured in Distributed mode allows for a Reflected XSS in a query parameter in Splunk Enterprise versions before 8.1.4. The Monitoring Console app is a bundled app included in Splunk Enterprise, not for download on SplunkBase, and not installed on Splunk Cloud Platform instances. Note that the Cloud Monitoring Console is not impacted. | 4.3 |
-
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

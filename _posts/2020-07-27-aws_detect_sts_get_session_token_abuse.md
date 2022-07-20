@@ -15,7 +15,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -25,19 +25,70 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search provides detection of suspicious use of sts:GetSessionToken. These tokens can be created on the go and used by attackers to move laterally and escalate privileges.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-07-27
 - **Author**: Rod Soto, Splunk
 - **ID**: 85d7b35f-b8b5-4b01-916f-29b81e7a0551
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1550](https://attack.mitre.org/techniques/T1550/) | Use Alternate Authentication Material | Defense Evasion, Lateral Movement |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -49,14 +100,13 @@ This search provides detection of suspicious use of sts:GetSessionToken. These t
 | `aws_detect_sts_get_session_token_abuse_filter`
 ```
 
-#### Associated Analytic Story
-* [AWS Cross Account Activity](/stories/aws_cross_account_activity)
+> :information_source:
+> **aws_detect_sts_get_session_token_abuse_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install splunk AWS add-on and Splunk App for AWS. This search works with cloudwatch logs
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * userIdentity.type
 * eventName
@@ -70,12 +120,16 @@ You must install splunk AWS add-on and Splunk App for AWS. This search works wit
 * region
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+You must install splunk AWS add-on and Splunk App for AWS. This search works with cloudwatch logs
 #### Known False Positives
 Sts:GetSessionToken can be very noisy as in certain environments numerous calls of this type can be executed. This search can be adjusted to provide specific values to identify cases of abuse. In specific environments the use of field requestParameters.serialNumber will need to be used.
+
+#### Associated Analytic Story
+* [AWS Cross Account Activity](/stories/aws_cross_account_activity)
+
+
 
 
 #### RBA
@@ -85,6 +139,8 @@ Sts:GetSessionToken can be very noisy as in certain environments numerous calls 
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

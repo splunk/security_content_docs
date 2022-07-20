@@ -29,13 +29,18 @@ tags:
 
 The search looks for reg.exe modifying registry keys that define Windows services and their configurations.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2020-11-26
 - **Author**: Rico Valdez, Splunk
 - **ID**: 8470d755-0c13-45b3-bd63-387a373c10cf
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -44,6 +49,62 @@ The search looks for reg.exe modifying registry keys that define Windows service
 | [T1574.011](https://attack.mitre.org/techniques/T1574/011/) | Services Registry Permissions Weakness | Persistence, Privilege Escalation, Defense Evasion |
 
 | [T1574](https://attack.mitre.org/techniques/T1574/) | Hijack Execution Flow | Persistence, Privilege Escalation, Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Installation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.IP
+* PR.PT
+* PR.AC
+* PR.AT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -56,16 +117,13 @@ The search looks for reg.exe modifying registry keys that define Windows service
 | `reg_exe_manipulating_windows_services_registry_keys_filter`
 ```
 
-#### Associated Analytic Story
-* [Windows Service Abuse](/stories/windows_service_abuse)
-* [Windows Persistence Techniques](/stories/windows_persistence_techniques)
-* [Living Off The Land](/stories/living_off_the_land)
+> :information_source:
+> **reg_exe_manipulating_windows_services_registry_keys_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you must be ingesting data that records registry activity from your hosts to populate the endpoint data model in the registry node. This is typically populated via endpoint detection-and-response product, such as Carbon Black or endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the registry.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.process_name
 * Processes.parent_process_name
@@ -75,12 +133,18 @@ To successfully implement this search, you must be ingesting data that records r
 * Processes.dest
 
 
-#### Kill Chain Phase
-* Installation
 
-
+#### How To Implement
+To successfully implement this search, you must be ingesting data that records registry activity from your hosts to populate the endpoint data model in the registry node. This is typically populated via endpoint detection-and-response product, such as Carbon Black or endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the registry.
 #### Known False Positives
 It is unusual for a service to be created or modified by directly manipulating the registry. However, there may be legitimate instances of this behavior. It is important to validate and investigate, as appropriate.
+
+#### Associated Analytic Story
+* [Windows Service Abuse](/stories/windows_service_abuse)
+* [Windows Persistence Techniques](/stories/windows_persistence_techniques)
+* [Living Off The Land](/stories/living_off_the_land)
+
+
 
 
 #### RBA
@@ -90,6 +154,8 @@ It is unusual for a service to be created or modified by directly manipulating t
 | 45.0 | 75 | 60 | A reg.exe process $process_name$ with commandline $process$ in host $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

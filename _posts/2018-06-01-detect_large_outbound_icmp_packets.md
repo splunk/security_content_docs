@@ -15,7 +15,7 @@ tags:
   - Network_Traffic
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -25,19 +25,75 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks for outbound ICMP packets with a packet size larger than 1,000 bytes. Various threat actors have been known to use ICMP as a command and control channel for their attack infrastructure. Large ICMP packets from an endpoint to a remote host may be indicative of this activity.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 - **Last Updated**: 2018-06-01
 - **Author**: Rico Valdez, Splunk
 - **ID**: e9c102de-4d43-42a7-b1c8-8062ea297419
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1095](https://attack.mitre.org/techniques/T1095/) | Non-Application Layer Protocol | Command And Control |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Command &amp; Control
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.AE
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 9
+* CIS 12
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -51,14 +107,13 @@ This search looks for outbound ICMP packets with a packet size larger than 1,000
 | `detect_large_outbound_icmp_packets_filter`
 ```
 
-#### Associated Analytic Story
-* [Command and Control](/stories/command_and_control)
+> :information_source:
+> **detect_large_outbound_icmp_packets_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-In order to run this search effectively, we highly recommend that you leverage the Assets and Identity framework. It is important that you have a good understanding of how your network segments are designed and that you are able to distinguish internal from external address space. Add a category named `internal` to the CIDRs that host the company&#39;s assets in the `assets_by_cidr.csv` lookup file, which is located in `$SPLUNK_HOME/etc/apps/SA-IdentityManagement/lookups/`. More information on updating this lookup can be found here: https://docs.splunk.com/Documentation/ES/5.0.0/Admin/Addassetandidentitydata. This search also requires you to be ingesting your network traffic and populating the Network_Traffic data model
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * All_Traffic.action
 * All_Traffic.bytes
@@ -69,12 +124,16 @@ In order to run this search effectively, we highly recommend that you leverage t
 * All_Traffic.dest_ip
 
 
-#### Kill Chain Phase
-* Command &amp; Control
 
-
+#### How To Implement
+In order to run this search effectively, we highly recommend that you leverage the Assets and Identity framework. It is important that you have a good understanding of how your network segments are designed and that you are able to distinguish internal from external address space. Add a category named `internal` to the CIDRs that host the company&#39;s assets in the `assets_by_cidr.csv` lookup file, which is located in `$SPLUNK_HOME/etc/apps/SA-IdentityManagement/lookups/`. More information on updating this lookup can be found here: https://docs.splunk.com/Documentation/ES/5.0.0/Admin/Addassetandidentitydata. This search also requires you to be ingesting your network traffic and populating the Network_Traffic data model
 #### Known False Positives
 ICMP packets are used in a variety of ways to help troubleshoot networking issues and ensure the proper flow of traffic. As such, it is possible that a large ICMP packet could be perfectly legitimate. If large ICMP packets are associated with command and control traffic, there will typically be a large number of these packets observed over time. If the search is providing a large number of false positives, you can modify the macro `detect_large_outbound_icmp_packets_filter` to adjust the byte threshold or add specific IP addresses to an allow list.
+
+#### Associated Analytic Story
+* [Command and Control](/stories/command_and_control)
+
+
 
 
 #### RBA
@@ -84,6 +143,8 @@ ICMP packets are used in a variety of ways to help troubleshoot networking issue
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

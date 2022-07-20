@@ -22,7 +22,7 @@ tags:
   - Endpoint_Processes
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -32,13 +32,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 An attacker may use LOLBAS tools spawned from vulnerable applications not typically used by system administrators. This analytic leverages the Splunk Streaming ML DSP plugin to find rare parent/child relationships. The list of application has been extracted from https://github.com/LOLBAS-Project/LOLBAS/tree/master/yml/OSBinaries
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2021-11-30
 - **Author**: Peter Gael, Splunk; Ignacio Bermudez Corrales, Splunk
 - **ID**: cf090c78-bcc6-11eb-8529-0242ac130003
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -51,6 +56,57 @@ An attacker may use LOLBAS tools spawned from vulnerable applications not typica
 | [T1053](https://attack.mitre.org/techniques/T1053/) | Scheduled Task/Job | Execution, Persistence, Privilege Escalation |
 
 | [T1072](https://attack.mitre.org/techniques/T1072/) | Software Deployment Tools | Execution, Lateral Movement |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -70,14 +126,13 @@ An attacker may use LOLBAS tools spawned from vulnerable applications not typica
 | into write_ssa_detected_events();
 ```
 
-#### Associated Analytic Story
-* [Unusual Processes](/stories/unusual_processes)
+> :information_source:
+> **rare_parent-child_process_relationship_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-Collect endpoint data such as sysmon or 4688 events.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * process
 * process_name
 * parent_process_name
@@ -87,12 +142,16 @@ Collect endpoint data such as sysmon or 4688 events.
 * cmd_line
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+Collect endpoint data such as sysmon or 4688 events.
 #### Known False Positives
 Some custom tools used by administrators could be used rarely to launch remotely applications. This might trigger false positives at the beginning when it has not collected yet enough data to construct the baseline.
+
+#### Associated Analytic Story
+* [Unusual Processes](/stories/unusual_processes)
+
+
 
 
 #### RBA
@@ -102,6 +161,8 @@ Some custom tools used by administrators could be used rarely to launch remotely
 | 25.0 | 50 | 50 | Rare Parent-Child Process Relationship |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

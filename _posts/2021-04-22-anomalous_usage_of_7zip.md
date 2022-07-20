@@ -25,13 +25,18 @@ tags:
 
 The following detection identifies a 7z.exe spawned from `Rundll32.exe` or `Dllhost.exe`. It is assumed that the adversary has brought in `7z.exe` and `7z.dll`. It has been observed where an adversary will rename `7z.exe`. Additional coverage may be required to identify the behavior of renamed instances of `7z.exe`. During triage, identify the source of injection into `Rundll32.exe` or `Dllhost.exe`. Capture any files written to disk and analyze as needed. Review parallel processes for additional behaviors. Typically, archiving files will result in exfiltration.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-04-22
 - **Author**: Michael Haag, Teoderick Contreras, Splunk
 - **ID**: 9364ee8e-a39a-11eb-8f1d-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,52 @@ The following detection identifies a 7z.exe spawned from `Rundll32.exe` or `Dllh
 | [T1560.001](https://attack.mitre.org/techniques/T1560/001/) | Archive via Utility | Collection |
 
 | [T1560](https://attack.mitre.org/techniques/T1560/) | Archive Collected Data | Collection |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,15 +103,13 @@ The following detection identifies a 7z.exe spawned from `Rundll32.exe` or `Dllh
 | `anomalous_usage_of_7zip_filter`
 ```
 
-#### Associated Analytic Story
-* [Cobalt Strike](/stories/cobalt_strike)
-* [NOBELIUM Group](/stories/nobelium_group)
+> :information_source:
+> **anomalous_usage_of_7zip_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.process_name
 * Processes.process
@@ -73,12 +122,17 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node.
 #### Known False Positives
 False positives should be limited as this behavior is not normal for `rundll32.exe` or `dllhost.exe` to spawn and run 7zip.
+
+#### Associated Analytic Story
+* [Cobalt Strike](/stories/cobalt_strike)
+* [NOBELIUM Group](/stories/nobelium_group)
+
+
 
 
 #### RBA
@@ -88,6 +142,8 @@ False positives should be limited as this behavior is not normal for `rundll32.e
 | 64.0 | 80 | 80 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest$ by user $user$. This behavior is indicative of suspicious loading of 7zip. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

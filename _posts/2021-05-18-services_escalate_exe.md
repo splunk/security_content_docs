@@ -24,19 +24,70 @@ tags:
 
 The following analytic identifies the use of `svc-exe` with Cobalt Strike. The behavior typically follows after an adversary has already gained initial access and is escalating privileges. Using `svc-exe`, a randomly named binary will be downloaded from the remote Teamserver and placed on disk within `C:\Windows\400619a.exe`. Following, the binary will be added to the registry under key `HKLM\System\CurrentControlSet\Services\400619a\` with multiple keys and values added to look like a legitimate service. Upon loading, `services.exe` will spawn the randomly named binary from `\\127.0.0.1\ADMIN$\400619a.exe`. The process lineage is completed with `400619a.exe` spawning rundll32.exe, which is the default `spawnto_` value for Cobalt Strike. The `spawnto_` value is arbitrary and may be any process on disk (typically system32/syswow64 binary). The `spawnto_` process will also contain a network connection. During triage, review parallel procesess and identify any additional file modifications.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-05-18
 - **Author**: Michael Haag, Splunk
 - **ID**: c448488c-b7ec-11eb-8253-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1548](https://attack.mitre.org/techniques/T1548/) | Abuse Elevation Control Mechanism | Privilege Escalation, Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -49,14 +100,13 @@ The following analytic identifies the use of `svc-exe` with Cobalt Strike. The b
 | `services_escalate_exe_filter`
 ```
 
-#### Associated Analytic Story
-* [Cobalt Strike](/stories/cobalt_strike)
+> :information_source:
+> **services_escalate_exe_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you will need to ensure that DNS data is populating the Network_Resolution data model.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -67,12 +117,16 @@ To successfully implement this search, you will need to ensure that DNS data is 
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you will need to ensure that DNS data is populating the Network_Resolution data model.
 #### Known False Positives
 False positives should be limited as `services.exe` should never spawn a process from `ADMIN$`. Filter as needed.
+
+#### Associated Analytic Story
+* [Cobalt Strike](/stories/cobalt_strike)
+
+
 
 
 #### RBA
@@ -82,6 +136,8 @@ False positives should be limited as `services.exe` should never spawn a process
 | 76.0 | 80 | 95 | A service process $parent_process_name$ with process path $process_path$ in host $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

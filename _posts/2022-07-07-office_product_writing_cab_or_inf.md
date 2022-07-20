@@ -26,13 +26,18 @@ tags:
 
 The following analytic identifies behavior related to CVE-2021-40444. Whereas the malicious document will load ActiveX and download the remote payload (.inf, .cab). During triage, review parallel processes and further activity on endpoint to identify additional patterns. Retrieve the file modifications and analyze further.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-07-07
 - **Author**: Michael Haag, Splunk
 - **ID**: f48cd1d4-125a-11ec-a447-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -41,6 +46,57 @@ The following analytic identifies behavior related to CVE-2021-40444. Whereas th
 | [T1566](https://attack.mitre.org/techniques/T1566/) | Phishing | Initial Access |
 
 | [T1566.001](https://attack.mitre.org/techniques/T1566/001/) | Spearphishing Attachment | Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
+| ----------- | ----------- | -------------- |
+| [CVE-2021-40444](https://nvd.nist.gov/vuln/detail/CVE-2021-40444) | Microsoft MSHTML Remote Code Execution Vulnerability | 6.8 |
+
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -59,15 +115,13 @@ The following analytic identifies behavior related to CVE-2021-40444. Whereas th
 | `office_product_writing_cab_or_inf_filter`
 ```
 
-#### Associated Analytic Story
-* [Spearphishing Attachments](/stories/spearphishing_attachments)
-* [Microsoft MSHTML Remote Code Execution CVE-2021-40444](/stories/microsoft_mshtml_remote_code_execution_cve-2021-40444)
+> :information_source:
+> **office_product_writing_cab_or_inf_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node and `Filesystem` node.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * dest
 * process_name
@@ -77,12 +131,17 @@ To successfully implement this search you need to be ingesting information on pr
 * file_path
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node and `Filesystem` node.
 #### Known False Positives
 The query is structured in a way that `action` (read, create) is not defined. Review the results of this query, filter, and tune as necessary. It may be necessary to generate this query specific to your endpoint product.
+
+#### Associated Analytic Story
+* [Spearphishing Attachments](/stories/spearphishing_attachments)
+* [Microsoft MSHTML Remote Code Execution CVE-2021-40444](/stories/microsoft_mshtml_remote_code_execution_cve-2021-40444)
+
+
 
 
 #### RBA
@@ -92,13 +151,8 @@ The query is structured in a way that `action` (read, create) is not defined. Re
 | 80.0 | 80 | 100 | An instance of $process_name$ was identified on $dest$ writing an inf or cab file to this. This is not typical of $process_name$. |
 
 
-
-#### CVE
-
-| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
-| ----------- | ----------- | -------------- |
-| [CVE-2021-40444](https://nvd.nist.gov/vuln/detail/CVE-2021-40444) | Microsoft MSHTML Remote Code Execution Vulnerability | 6.8 |
-
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

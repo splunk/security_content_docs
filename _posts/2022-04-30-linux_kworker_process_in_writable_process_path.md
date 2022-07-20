@@ -25,13 +25,18 @@ tags:
 
 This analytic looks for suspicious process kworker commandline in a linux machine. kworker process name or thread are common names of kernel threads in linux process. This hunting detections can lead to investigate process contains process path in writable directory in linux like /home/, /var/log and /tmp/. This technique was seen in cyclopsblink malware to blend its core and other of its child process as normal kworker on the compromised machine. This detection might be a good pivot to look for other IOC related to cyclopsblink malware or attacks.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-04-30
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 1cefb270-74a5-4e27-aa0c-2b6fa7c5b4ed
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,58 @@ This analytic looks for suspicious process kworker commandline in a linux machin
 | [T1036.004](https://attack.mitre.org/techniques/T1036/004/) | Masquerade Task or Service | Defense Evasion |
 
 | [T1036](https://attack.mitre.org/techniques/T1036/) | Masquerading | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,14 +109,13 @@ This analytic looks for suspicious process kworker commandline in a linux machin
 | `linux_kworker_process_in_writable_process_path_filter`
 ```
 
-#### Associated Analytic Story
-* [CyclopsBLink](/stories/cyclopsblink)
+> :information_source:
+> **linux_kworker_process_in_writable_process_path_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -72,12 +128,16 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Processes.process_path
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 #### Known False Positives
 unknown
+
+#### Associated Analytic Story
+* [CyclopsBLink](/stories/cyclopsblink)
+
+
 
 
 #### RBA
@@ -87,6 +147,8 @@ unknown
 | 36.0 | 60 | 60 | a $process_name$ with kworker commandline in $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

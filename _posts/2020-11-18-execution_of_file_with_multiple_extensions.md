@@ -25,13 +25,18 @@ tags:
 
 This search looks for processes launched from files that have double extensions in the file name. This is typically done to obscure the &#34;real&#34; file extension and make it appear as though the file being accessed is a data file, as opposed to executable content.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2020-11-18
 - **Author**: Rico Valdez, Splunk
 - **ID**: b06a555e-dce0-417d-a2eb-28a5d8d66ef7
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,59 @@ This search looks for processes launched from files that have double extensions 
 | [T1036](https://attack.mitre.org/techniques/T1036/) | Masquerading | Defense Evasion |
 
 | [T1036.003](https://attack.mitre.org/techniques/T1036/003/) | Rename System Utilities | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+* PR.PT
+* PR.IP
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,15 +110,13 @@ This search looks for processes launched from files that have double extensions 
 | `execution_of_file_with_multiple_extensions_filter`
 ```
 
-#### Associated Analytic Story
-* [Windows File Extension and Association Abuse](/stories/windows_file_extension_and_association_abuse)
-* [Masquerading - Rename System Utilities](/stories/masquerading_-_rename_system_utilities)
+> :information_source:
+> **execution_of_file_with_multiple_extensions_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you must be ingesting data that records process activity from your hosts to populate the endpoint data model in the processes node.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.process
 * Processes.dest
@@ -68,12 +124,17 @@ To successfully implement this search, you must be ingesting data that records p
 * Processes.parent_process
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+To successfully implement this search, you must be ingesting data that records process activity from your hosts to populate the endpoint data model in the processes node.
 #### Known False Positives
 None identified.
+
+#### Associated Analytic Story
+* [Windows File Extension and Association Abuse](/stories/windows_file_extension_and_association_abuse)
+* [Masquerading - Rename System Utilities](/stories/masquerading_-_rename_system_utilities)
+
+
 
 
 #### RBA
@@ -83,6 +144,8 @@ None identified.
 | 56.0 | 80 | 70 | process $process$ have double extensions in the file name is executed on $dest$ by $user$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -23,19 +23,70 @@ tags:
 
 This analytic is to detect a suspicious registry modification to disable security audit logs. This technique was shared by a researcher to disable Security logs of windows by adding this registry. The Windows will think it is WinPE and will not log any event to the Security Log
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-01-27
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 39ebdc68-25b9-11ec-aec7-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1112](https://attack.mitre.org/techniques/T1112/) | Modify Registry | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -53,15 +104,13 @@ This analytic is to detect a suspicious registry modification to disable securit
 | `disable_security_logs_using_minint_registry_filter`
 ```
 
-#### Associated Analytic Story
-* [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics)
-* [Windows Registry Abuse](/stories/windows_registry_abuse)
+> :information_source:
+> **disable_security_logs_using_minint_registry_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you must be ingesting data that records registry activity from your hosts to populate the endpoint data model in the registry node. This is typically populated via endpoint detection-and-response product, such as Carbon Black or endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the registry.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Registry.dest
 * Registry.user
@@ -71,12 +120,17 @@ To successfully implement this search, you must be ingesting data that records r
 * Registry.registry_value_data
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you must be ingesting data that records registry activity from your hosts to populate the endpoint data model in the registry node. This is typically populated via endpoint detection-and-response product, such as Carbon Black or endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the registry.
 #### Known False Positives
 Unknown.
+
+#### Associated Analytic Story
+* [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics)
+* [Windows Registry Abuse](/stories/windows_registry_abuse)
+
+
 
 
 #### RBA
@@ -86,6 +140,8 @@ Unknown.
 | 80.0 | 80 | 100 | modified/added/deleted registry entry $Registry.registry_path$ in $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

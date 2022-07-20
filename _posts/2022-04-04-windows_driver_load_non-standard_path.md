@@ -23,19 +23,76 @@ tags:
 
 The following analytic uses Windows EventCode 7045 to identify new Kernel Mode Drivers being loaded in Windows from a non-standard path. Note that, adversaries may move malicious or vulnerable drivers into these paths and load up. The idea is that this analytic provides visibility into drivers loading in non-standard file paths.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-04-04
 - **Author**: Michael Haag, Splunk
 - **ID**: 9216ef3d-066a-4958-8f27-c84589465e62
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1014](https://attack.mitre.org/techniques/T1014/) | Rootkit | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Installation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -47,14 +104,13 @@ The following analytic uses Windows EventCode 7045 to identify new Kernel Mode D
 | `windows_driver_load_non_standard_path_filter`
 ```
 
-#### Associated Analytic Story
-* [Windows Drivers](/stories/windows_drivers)
+> :information_source:
+> **windows_driver_load_non-standard_path_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To implement this analytic, the Windows EventCode 7045 will need to be logged. The Windows TA for Splunk is also recommended.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * ComputerName
 * EventCode
 * Service_File_Name
@@ -63,12 +119,16 @@ To implement this analytic, the Windows EventCode 7045 will need to be logged. T
 * Service_Type
 
 
-#### Kill Chain Phase
-* Installation
 
-
+#### How To Implement
+To implement this analytic, the Windows EventCode 7045 will need to be logged. The Windows TA for Splunk is also recommended.
 #### Known False Positives
 False positives may be present based on legitimate third party applications needing to install drivers. Filter, or allow list known good drivers consistently being installed in these paths.
+
+#### Associated Analytic Story
+* [Windows Drivers](/stories/windows_drivers)
+
+
 
 
 #### RBA
@@ -78,6 +138,8 @@ False positives may be present based on legitimate third party applications need
 | 36.0 | 60 | 60 | A kernel mode driver was loaded from a non-standard path on $ComputerName$. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

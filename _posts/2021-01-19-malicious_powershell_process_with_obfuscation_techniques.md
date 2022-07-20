@@ -25,13 +25,18 @@ tags:
 
 This search looks for PowerShell processes launched with arguments that have characters indicative of obfuscation on the command-line.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-01-19
 - **Author**: David Dorsey, Splunk
 - **ID**: cde75cf6-3c7a-4dd6-af01-27cdb4511fd4
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,61 @@ This search looks for PowerShell processes launched with arguments that have cha
 | [T1059](https://attack.mitre.org/techniques/T1059/) | Command and Scripting Interpreter | Execution |
 
 | [T1059.001](https://attack.mitre.org/techniques/T1059/001/) | PowerShell | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Command &amp; Control
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+* PR.IP
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 7
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -54,15 +114,13 @@ This search looks for PowerShell processes launched with arguments that have cha
 | search num_obfuscation > 10 
 ```
 
-#### Associated Analytic Story
-* [Hermetic Wiper](/stories/hermetic_wiper)
-* [Malicious PowerShell](/stories/malicious_powershell)
+> :information_source:
+> **malicious_powershell_process_with_obfuscation_techniques_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -77,13 +135,17 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Command &amp; Control
-* Actions on Objectives
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 These characters might be legitimately on the command-line, but it is not common.
+
+#### Associated Analytic Story
+* [Hermetic Wiper](/stories/hermetic_wiper)
+* [Malicious PowerShell](/stories/malicious_powershell)
+
+
 
 
 #### RBA
@@ -93,6 +155,8 @@ These characters might be legitimately on the command-line, but it is not common
 | 42.0 | 70 | 60 | Powershell.exe running with potential obfuscated arguments on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

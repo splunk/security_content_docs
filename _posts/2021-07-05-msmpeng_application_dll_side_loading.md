@@ -29,13 +29,18 @@ tags:
 
 This search is to detect a suspicious creation of msmpeng.exe or mpsvc.dll in non default windows defender folder. This technique was seen couple days ago with revil ransomware in Kaseya Supply chain. The approach is to drop an old version of msmpeng.exe to load the actual payload name as mspvc.dll which will load the revil ransomware to the compromise machine
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-07-05
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 8bb3f280-dd9b-11eb-84d5-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -44,6 +49,52 @@ This search is to detect a suspicious creation of msmpeng.exe or mpsvc.dll in no
 | [T1574.002](https://attack.mitre.org/techniques/T1574/002/) | DLL Side-Loading | Persistence, Privilege Escalation, Defense Evasion |
 
 | [T1574](https://attack.mitre.org/techniques/T1574/) | Hijack Execution Flow | Persistence, Privilege Escalation, Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -56,15 +107,13 @@ This search is to detect a suspicious creation of msmpeng.exe or mpsvc.dll in no
 | `msmpeng_application_dll_side_loading_filter`
 ```
 
-#### Associated Analytic Story
-* [Ransomware](/stories/ransomware)
-* [Revil Ransomware](/stories/revil_ransomware)
+> :information_source:
+> **msmpeng_application_dll_side_loading_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the Filesystem responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Filesystem` node.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Filesystem.file_create_time
 * Filesystem.process_id
@@ -73,12 +122,17 @@ To successfully implement this search you need to be ingesting information on pr
 * Filesystem.file_path
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the Filesystem responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Filesystem` node.
 #### Known False Positives
 quite minimal false positive expected.
+
+#### Associated Analytic Story
+* [Ransomware](/stories/ransomware)
+* [Revil Ransomware](/stories/revil_ransomware)
+
+
 
 
 #### RBA
@@ -88,6 +142,8 @@ quite minimal false positive expected.
 | 25.0 | 50 | 50 |  |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

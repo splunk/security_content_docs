@@ -25,13 +25,18 @@ tags:
 
 This search looks for PowerShell processes started with parameters used to bypass the local execution policy for scripts. These parameters are often observed in attacks leveraging PowerShell scripts as they override the default PowerShell execution policy.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2020-07-21
 - **Author**: Rico Valdez, Mauricio Velazco, Splunk
 - **ID**: 9be56c82-b1cc-4318-87eb-d138afaaca39
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,61 @@ This search looks for PowerShell processes started with parameters used to bypas
 | [T1059](https://attack.mitre.org/techniques/T1059/) | Command and Scripting Interpreter | Execution |
 
 | [T1059.001](https://attack.mitre.org/techniques/T1059/001/) | PowerShell | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Command &amp; Control
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+* PR.IP
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 7
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,15 +112,13 @@ This search looks for PowerShell processes started with parameters used to bypas
 | `malicious_powershell_process___execution_policy_bypass_filter`
 ```
 
-#### Associated Analytic Story
-* [DHS Report TA18-074A](/stories/dhs_report_ta18-074a)
-* [HAFNIUM Group](/stories/hafnium_group)
+> :information_source:
+> **malicious_powershell_process_-_execution_policy_bypass_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -75,13 +133,17 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Command &amp; Control
-* Actions on Objectives
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 There may be legitimate reasons to bypass the PowerShell execution policy. The PowerShell script being run with this parameter should be validated to ensure that it is legitimate.
+
+#### Associated Analytic Story
+* [DHS Report TA18-074A](/stories/dhs_report_ta18-074a)
+* [HAFNIUM Group](/stories/hafnium_group)
+
+
 
 
 #### RBA
@@ -91,6 +153,8 @@ There may be legitimate reasons to bypass the PowerShell execution policy. The P
 | 42.0 | 70 | 60 | PowerShell local execution policy bypass attempt on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

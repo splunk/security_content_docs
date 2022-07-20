@@ -25,13 +25,18 @@ tags:
 
 Monitor for changes of the ExecutionPolicy in the registry to the values &#34;unrestricted&#34; or &#34;bypass,&#34; which allows the execution of malicious scripts.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-02-18
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: c2590137-0b08-4985-9ec5-6ae23d92f63d
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,58 @@ Monitor for changes of the ExecutionPolicy in the registry to the values &#34;un
 | [T1059](https://attack.mitre.org/techniques/T1059/) | Command and Scripting Interpreter | Execution |
 
 | [T1059.001](https://attack.mitre.org/techniques/T1059/001/) | PowerShell | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Installation
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,17 +109,13 @@ Monitor for changes of the ExecutionPolicy in the registry to the values &#34;un
 | `set_default_powershell_execution_policy_to_unrestricted_or_bypass_filter`
 ```
 
-#### Associated Analytic Story
-* [Hermetic Wiper](/stories/hermetic_wiper)
-* [Malicious PowerShell](/stories/malicious_powershell)
-* [Credential Dumping](/stories/credential_dumping)
-* [HAFNIUM Group](/stories/hafnium_group)
+> :information_source:
+> **set_default_powershell_execution_policy_to_unrestricted_or_bypass_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting data that records process activity from your hosts to populate the Endpoint data model in the Registry node. You must also be ingesting logs with the fields registry_path, registry_key_name, and registry_value_name from your endpoints.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Registry.registry_path
 * Registry.registry_key_name
@@ -70,13 +123,19 @@ You must be ingesting data that records process activity from your hosts to popu
 * Registry.dest
 
 
-#### Kill Chain Phase
-* Installation
-* Actions on Objectives
 
-
+#### How To Implement
+You must be ingesting data that records process activity from your hosts to populate the Endpoint data model in the Registry node. You must also be ingesting logs with the fields registry_path, registry_key_name, and registry_value_name from your endpoints.
 #### Known False Positives
 Administrators may attempt to change the default execution policy on a system for a variety of reasons. However, setting the policy to &#34;unrestricted&#34; or &#34;bypass&#34; as this search is designed to identify, would be unusual. Hits should be reviewed and investigated as appropriate.
+
+#### Associated Analytic Story
+* [Hermetic Wiper](/stories/hermetic_wiper)
+* [Malicious PowerShell](/stories/malicious_powershell)
+* [Credential Dumping](/stories/credential_dumping)
+* [HAFNIUM Group](/stories/hafnium_group)
+
+
 
 
 #### RBA
@@ -86,6 +145,8 @@ Administrators may attempt to change the default execution policy on a system fo
 | 48.0 | 60 | 80 | A registry modification in $registry_path$ with reg key $registry_key_name$ and reg value $registry_value_name$ in host $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

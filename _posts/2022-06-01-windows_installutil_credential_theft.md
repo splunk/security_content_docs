@@ -28,13 +28,18 @@ When `InstallUtil.exe` is used in a malicous manner, the path to an executable o
 If used by a developer, typically this will be found with multiple command-line switches/arguments and spawn from Visual Studio. \
 During triage review resulting network connections, file modifications, and parallel processes. Capture any artifacts and review further.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-06-01
 - **Author**: Michael Haag, Mauricio Velazo, Splunk
 - **ID**: ccfeddec-43ec-11ec-b494-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -43,6 +48,52 @@ During triage review resulting network connections, file modifications, and para
 | [T1218.004](https://attack.mitre.org/techniques/T1218/004/) | InstallUtil | Defense Evasion |
 
 | [T1218](https://attack.mitre.org/techniques/T1218/) | System Binary Proxy Execution | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -55,14 +106,13 @@ During triage review resulting network connections, file modifications, and para
 | `windows_installutil_credential_theft_filter`
 ```
 
-#### Associated Analytic Story
-* [Signed Binary Proxy Execution InstallUtil](/stories/signed_binary_proxy_execution_installutil)
+> :information_source:
+> **windows_installutil_credential_theft_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and module loads from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -77,12 +127,16 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and module loads from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 #### Known False Positives
 Typically this will not trigger as by it&#39;s very nature InstallUtil does not need credentials. Filter as needed.
+
+#### Associated Analytic Story
+* [Signed Binary Proxy Execution InstallUtil](/stories/signed_binary_proxy_execution_installutil)
+
+
 
 
 #### RBA
@@ -92,6 +146,8 @@ Typically this will not trigger as by it&#39;s very nature InstallUtil does not 
 | 80.0 | 80 | 100 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest$ by user $user$ loading samlib.dll and vaultcli.dll to potentially capture credentials in memory. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

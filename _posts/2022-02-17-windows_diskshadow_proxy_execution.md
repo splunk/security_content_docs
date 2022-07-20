@@ -21,19 +21,74 @@ tags:
 
 DiskShadow.exe is a Microsoft Signed binary present on Windows Server. It has a scripting mode intended for complex scripted backup operations. This feature also allows for execution of arbitrary unsigned code. This analytic looks for the usage of the scripting mode flags in executions of DiskShadow. During triage, compare to known backup behavior in your environment and then review the scripts called by diskshadow.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2022-02-17
 - **Author**: Lou Stella, Splunk
 - **ID**: aa502688-9037-11ec-842d-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1218](https://attack.mitre.org/techniques/T1218/) | System Binary Proxy Execution | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -48,14 +103,13 @@ DiskShadow.exe is a Microsoft Signed binary present on Windows Server. It has a 
 | into write_ssa_detected_events();
 ```
 
-#### Associated Analytic Story
-* [Living Off The Land](/stories/living_off_the_land)
+> :information_source:
+> **windows_diskshadow_proxy_execution_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on processes that include the name of the process responsible for the changes from your endpoints into the `Endpoint_Processess` datamodel.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * dest_device_id
 * process_name
@@ -66,12 +120,16 @@ To successfully implement this search you need to be ingesting information on pr
 * cmd_line
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on processes that include the name of the process responsible for the changes from your endpoints into the `Endpoint_Processess` datamodel.
 #### Known False Positives
 Administrators using the DiskShadow tool in their infrastructure as a main backup tool with scripts will cause false positives
+
+#### Associated Analytic Story
+* [Living Off The Land](/stories/living_off_the_land)
+
+
 
 
 #### RBA
@@ -81,6 +139,8 @@ Administrators using the DiskShadow tool in their infrastructure as a main backu
 | 49.0 | 70 | 70 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest_device_id$ by user $dest_user_id$ attempting to run a script. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -12,7 +12,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -22,12 +22,67 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 The search looks for a sharp increase in the number of files written to a particular host
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-03-16
 - **Author**: David Dorsey, Splunk
 - **ID**: fdb0f805-74e4-4539-8c00-618927333aae
+
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -42,27 +97,30 @@ The search looks for a sharp increase in the number of files written to a partic
 | `spike_in_file_writes_filter` 
 ```
 
+> :information_source:
+> **spike_in_file_writes_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+
+
+#### Required fields
+List of fields required to use this analytic.
+* _time
+* Filesystem.action
+* Filesystem.dest
+
+
+
+#### How To Implement
+In order to implement this search, you must populate the Endpoint file-system data model node. This is typically populated via endpoint detection and response product, such as Carbon Black or endpoint data sources such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the file system.
+#### Known False Positives
+It is important to understand that if you happen to install any new applications on your hosts or are copying a large number of files, you can expect to see a large increase of file modifications.
+
 #### Associated Analytic Story
 * [SamSam Ransomware](/stories/samsam_ransomware)
 * [Ryuk Ransomware](/stories/ryuk_ransomware)
 * [Ransomware](/stories/ransomware)
 
 
-#### How To Implement
-In order to implement this search, you must populate the Endpoint file-system data model node. This is typically populated via endpoint detection and response product, such as Carbon Black or endpoint data sources such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the file system.
-
-#### Required field
-* _time
-* Filesystem.action
-* Filesystem.dest
-
-
-#### Kill Chain Phase
-* Actions on Objectives
-
-
-#### Known False Positives
-It is important to understand that if you happen to install any new applications on your hosts or are copying a large number of files, you can expect to see a large increase of file modifications.
 
 
 #### RBA
@@ -72,6 +130,8 @@ It is important to understand that if you happen to install any new applications
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -29,13 +29,18 @@ tags:
 
 The following analytic identifies a suspicious process creation of At application. This process can be used by malware, adversaries and red teamers to create persistence entry to the targeted or compromised host with their malicious code. This anomaly detection can be a good indicator to investigate the event before and after this process execution, when it was executed and what schedule task it will execute.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-05-26
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: bf0a378e-5f3c-11ec-a6de-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -44,6 +49,58 @@ The following analytic identifies a suspicious process creation of At applicatio
 | [T1053.002](https://attack.mitre.org/techniques/T1053/002/) | At | Execution, Persistence, Privilege Escalation |
 
 | [T1053](https://attack.mitre.org/techniques/T1053/) | Scheduled Task/Job | Execution, Persistence, Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -56,15 +113,13 @@ The following analytic identifies a suspicious process creation of At applicatio
 | `linux_at_application_execution_filter`
 ```
 
-#### Associated Analytic Story
-* [Linux Privilege Escalation](/stories/linux_privilege_escalation)
-* [Linux Persistence Techniques](/stories/linux_persistence_techniques)
+> :information_source:
+> **linux_at_application_execution_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -75,12 +130,17 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 #### Known False Positives
 Administrator or network operator can use this application for automation purposes. Please update the filter macros to remove false positives.
+
+#### Associated Analytic Story
+* [Linux Privilege Escalation](/stories/linux_privilege_escalation)
+* [Linux Persistence Techniques](/stories/linux_persistence_techniques)
+
+
 
 
 #### RBA
@@ -90,6 +150,8 @@ Administrator or network operator can use this application for automation purpos
 | 9.0 | 30 | 30 | At application was executed in $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

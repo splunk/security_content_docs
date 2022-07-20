@@ -13,7 +13,7 @@ tags:
   - Endpoint_Filesystem
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -23,19 +23,70 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This detection detects a high amount of file deletions in a short time for specific file types. This can be an indicator for a malicious insider.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Filesystem](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointFilesystem)
 - **Last Updated**: 2021-12-07
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: b6200efd-13bd-4336-920a-057b25bbcfaf
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1485](https://attack.mitre.org/techniques/T1485/) | Data Destruction | Impact |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -53,27 +104,30 @@ This detection detects a high amount of file deletions in a short time for speci
 | into write_ssa_detected_events();
 ```
 
-#### Associated Analytic Story
-* [Clop Ransomware](/stories/clop_ransomware)
-* [Insider Threat](/stories/insider_threat)
+> :information_source:
+> **high_file_deletion_frequency_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Filesytem` node.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * action
 * process
 * file_name
 * file_path
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Filesytem` node.
 #### Known False Positives
 user may delete bunch of pictures or files in a folder.
+
+#### Associated Analytic Story
+* [Clop Ransomware](/stories/clop_ransomware)
+* [Insider Threat](/stories/insider_threat)
+
+
 
 
 #### RBA
@@ -83,6 +137,8 @@ user may delete bunch of pictures or files in a folder.
 | 72.0 | 90 | 80 | High frequency file deletion activity detected on host $Computer$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

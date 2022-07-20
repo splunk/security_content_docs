@@ -25,13 +25,18 @@ tags:
 
 This search looks for the execution of the cscript.exe or wscript.exe processes, with a parent of cmd.exe. The search will return the count, the first and last time this execution was seen on a machine, the user, and the destination of the machine
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2020-07-21
 - **Author**: Bhavin Patel, Mauricio Velazco, Splunk
 - **ID**: b89919ed-fe5f-492c-b139-95dbb162039e
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,57 @@ This search looks for the execution of the cscript.exe or wscript.exe processes,
 | [T1059](https://attack.mitre.org/techniques/T1059/) | Command and Scripting Interpreter | Execution |
 
 | [T1059.003](https://attack.mitre.org/techniques/T1059/003/) | Windows Command Shell | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,16 +108,13 @@ This search looks for the execution of the cscript.exe or wscript.exe processes,
 | `detect_use_of_cmd_exe_to_launch_script_interpreters_filter`
 ```
 
-#### Associated Analytic Story
-* [Emotet Malware  DHS Report TA18-201A ](/stories/emotet_malware__dhs_report_ta18-201a_)
-* [Suspicious Command-Line Executions](/stories/suspicious_command-line_executions)
-* [Azorult](/stories/azorult)
+> :information_source:
+> **detect_use_of_cmd_exe_to_launch_script_interpreters_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you must be ingesting data that records process activity from your hosts to populate the endpoint data model in the processes node. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.process
 * Processes.parent_process_name
@@ -71,12 +124,18 @@ To successfully implement this search, you must be ingesting data that records p
 * Processes.dest
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you must be ingesting data that records process activity from your hosts to populate the endpoint data model in the processes node. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 #### Known False Positives
 Some legitimate applications may exhibit this behavior.
+
+#### Associated Analytic Story
+* [Emotet Malware  DHS Report TA18-201A ](/stories/emotet_malware__dhs_report_ta18-201a_)
+* [Suspicious Command-Line Executions](/stories/suspicious_command-line_executions)
+* [Azorult](/stories/azorult)
+
+
 
 
 #### RBA
@@ -86,6 +145,8 @@ Some legitimate applications may exhibit this behavior.
 | 35.0 | 70 | 50 | cmd.exe launching script interpreters on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

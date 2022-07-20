@@ -22,19 +22,76 @@ tags:
 
 This search uses the Kubernetes logs from a nginx ingress controller to detect remote file inclusion attacks.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-08-23
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: fc5531ae-62fd-4de6-9c36-b4afdae8ca95
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1212](https://attack.mitre.org/techniques/T1212/) | Exploitation for Credential Access | Credential Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.DS
+* PR.AC
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 13
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -53,23 +110,26 @@ This search uses the Kubernetes logs from a nginx ingress controller to detect r
 | `kubernetes_nginx_ingress_rfi_filter`
 ```
 
-#### Associated Analytic Story
-* [Dev Sec Ops](/stories/dev_sec_ops)
+> :information_source:
+> **kubernetes_nginx_ingress_rfi_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+
+
+#### Required fields
+List of fields required to use this analytic.
+* raw
+
 
 
 #### How To Implement
 You must ingest Kubernetes logs through Splunk Connect for Kubernetes.
-
-#### Required field
-* raw
-
-
-#### Kill Chain Phase
-* Actions on Objectives
-
-
 #### Known False Positives
 unknown
+
+#### Associated Analytic Story
+* [Dev Sec Ops](/stories/dev_sec_ops)
+
+
 
 
 #### RBA
@@ -79,6 +139,8 @@ unknown
 | 49.0 | 70 | 70 | Remote File Inclusion Attack detected on $host$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

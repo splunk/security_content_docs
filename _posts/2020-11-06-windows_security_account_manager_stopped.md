@@ -23,19 +23,75 @@ tags:
 
 The search looks for a Windows Security Account Manager (SAM) was stopped via command-line. This is consistent with Ryuk infections across a fleet of endpoints.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2020-11-06
 - **Author**: Rod Soto, Jose Hernandez, Splunk
 - **ID**: 69c12d59-d951-431e-ab77-ec426b8d65e6
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1489](https://attack.mitre.org/techniques/T1489/) | Service Stop | Impact |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Delivery
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -48,14 +104,13 @@ The search looks for a Windows Security Account Manager (SAM) was stopped via co
 | `windows_security_account_manager_stopped_filter`
 ```
 
-#### Associated Analytic Story
-* [Ryuk Ransomware](/stories/ryuk_ransomware)
+> :information_source:
+> **windows_security_account_manager_stopped_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting data that records the process-system activity from your hosts to populate the Endpoint Processes data-model object. If you are using Sysmon, you will need a Splunk Universal Forwarder on each endpoint from which you want to collect data.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.process_name
 * Processes.process
@@ -63,12 +118,16 @@ You must be ingesting data that records the process-system activity from your ho
 * Processes.user
 
 
-#### Kill Chain Phase
-* Delivery
 
-
+#### How To Implement
+You must be ingesting data that records the process-system activity from your hosts to populate the Endpoint Processes data-model object. If you are using Sysmon, you will need a Splunk Universal Forwarder on each endpoint from which you want to collect data.
 #### Known False Positives
 SAM is a critical windows service, stopping it would cause major issues on an endpoint this makes false positive rare. AlthoughNo false positives have been identified.
+
+#### Associated Analytic Story
+* [Ryuk Ransomware](/stories/ryuk_ransomware)
+
+
 
 
 #### RBA
@@ -78,6 +137,8 @@ SAM is a critical windows service, stopping it would cause major issues on an en
 | 70.0 | 70 | 100 | The Windows Security Account Manager (SAM) was stopped via cli by $user$ on $dest$ by this command: $processs$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

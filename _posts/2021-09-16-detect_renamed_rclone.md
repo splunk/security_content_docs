@@ -23,19 +23,70 @@ tags:
 
 The following analytic identifies the usage of `rclone.exe`, renamed, being used to exfiltrate data to a remote destination. RClone has been used by multiple ransomware groups to exfiltrate data. In many instances, it will be downloaded from the legitimate site and executed accordingly. During triage, isolate the endpoint and begin to review parallel processes for additional behavior. At this stage, the adversary may have staged data to be exfiltrated.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-09-16
 - **Author**: Michael Haag, Splunk
 - **ID**: 6dca1124-b3ec-11eb-9328-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1020](https://attack.mitre.org/techniques/T1020/) | Automated Exfiltration | Exfiltration |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -48,15 +99,13 @@ The following analytic identifies the usage of `rclone.exe`, renamed, being used
 | `detect_renamed_rclone_filter`
 ```
 
-#### Associated Analytic Story
-* [DarkSide Ransomware](/stories/darkside_ransomware)
-* [Ransomware](/stories/ransomware)
+> :information_source:
+> **detect_renamed_rclone_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -71,12 +120,17 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 False positives should be limited as this analytic identifies renamed instances of `rclone.exe`. Filter as needed if there is a legitimate business use case.
+
+#### Associated Analytic Story
+* [DarkSide Ransomware](/stories/darkside_ransomware)
+* [Ransomware](/stories/ransomware)
+
+
 
 
 #### RBA
@@ -86,6 +140,8 @@ False positives should be limited as this analytic identifies renamed instances 
 | 27.0 | 30 | 90 | The following $process_name$ has been identified as renamed, spawning from $parent_process_name$ on $dest$ by $user$. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

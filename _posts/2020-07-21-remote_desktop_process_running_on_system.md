@@ -17,7 +17,7 @@ tags:
   - Endpoint
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -27,13 +27,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks for the remote desktop process mstsc.exe running on systems upon which it doesn&#39;t typically run. This is accomplished by filtering out all systems that are noted in the `common_rdp_source category` in the Assets and Identity framework.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2020-07-21
 - **Author**: David Dorsey, Splunk
 - **ID**: f5939373-8054-40ad-8c64-cec478a22a4a
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,60 @@ This search looks for the remote desktop process mstsc.exe running on systems up
 | [T1021.001](https://attack.mitre.org/techniques/T1021/001/) | Remote Desktop Protocol | Lateral Movement |
 
 | [T1021](https://attack.mitre.org/techniques/T1021/) | Remote Services | Lateral Movement |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.AE
+* PR.AC
+* PR.IP
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 9
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -54,15 +113,13 @@ This search looks for the remote desktop process mstsc.exe running on systems up
 | `remote_desktop_process_running_on_system_filter` 
 ```
 
-#### Associated Analytic Story
-* [Hidden Cobra Malware](/stories/hidden_cobra_malware)
-* [Active Directory Lateral Movement](/stories/active_directory_lateral_movement)
+> :information_source:
+> **remote_desktop_process_running_on_system_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you must be ingesting data that records process activity from your hosts to populate the endpoint data model in the processes node. The search requires you to identify systems that do not commonly use remote desktop. You can use the included support search &#34;Identify Systems Using Remote Desktop&#34; to identify these systems. After identifying them, you will need to add the &#34;common_rdp_source&#34; category to that system using the Enterprise Security Assets and Identities framework. This can be done by adding an entry in the assets.csv file located in `SA-IdentityManagement/lookups`.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.process
 * Processes.dest_category
@@ -70,12 +127,17 @@ To successfully implement this search, you must be ingesting data that records p
 * Processes.user
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+To successfully implement this search, you must be ingesting data that records process activity from your hosts to populate the endpoint data model in the processes node. The search requires you to identify systems that do not commonly use remote desktop. You can use the included support search &#34;Identify Systems Using Remote Desktop&#34; to identify these systems. After identifying them, you will need to add the &#34;common_rdp_source&#34; category to that system using the Enterprise Security Assets and Identities framework. This can be done by adding an entry in the assets.csv file located in `SA-IdentityManagement/lookups`.
 #### Known False Positives
 Remote Desktop may be used legitimately by users on the network.
+
+#### Associated Analytic Story
+* [Hidden Cobra Malware](/stories/hidden_cobra_malware)
+* [Active Directory Lateral Movement](/stories/active_directory_lateral_movement)
+
+
 
 
 #### RBA
@@ -85,6 +147,8 @@ Remote Desktop may be used legitimately by users on the network.
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -27,13 +27,18 @@ tags:
 
 This analytic identifies XMRIG coinminer driver installation on the system. The XMRIG driver name by default is `WinRing0x64.sys`. This cpu miner is an open source project that is commonly abused by adversaries to infect and mine bitcoin.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-04-29
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 90080fa6-a8df-11eb-91e4-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,52 @@ This analytic identifies XMRIG coinminer driver installation on the system. The 
 | [T1543.003](https://attack.mitre.org/techniques/T1543/003/) | Windows Service | Persistence, Privilege Escalation |
 
 | [T1543](https://attack.mitre.org/techniques/T1543/) | Create or Modify System Process | Persistence, Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -53,14 +104,13 @@ This analytic identifies XMRIG coinminer driver installation on the system. The 
 | `xmrig_driver_loaded_filter`
 ```
 
-#### Associated Analytic Story
-* [XMRig](/stories/xmrig)
+> :information_source:
+> **xmrig_driver_loaded_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the driver loaded and Signature from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Computer
 * ImageLoaded
@@ -70,12 +120,16 @@ To successfully implement this search, you need to be ingesting logs with the dr
 * Signed
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the driver loaded and Signature from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 #### Known False Positives
 False positives should be limited.
+
+#### Associated Analytic Story
+* [XMRig](/stories/xmrig)
+
+
 
 
 #### RBA
@@ -85,6 +139,8 @@ False positives should be limited.
 | 80.0 | 80 | 100 | A driver $ImageLoaded$ related to xmrig crytominer loaded in host $Computer$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

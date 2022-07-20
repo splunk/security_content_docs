@@ -27,13 +27,18 @@ tags:
 
 This analytic will identify the possible execution of ping sleep batch commands. This technique was seen in several malware samples and is used to trigger sleep times without explicitly calling sleep functions or commandlets. The goal is to delay the execution of malicious code and bypass detection or sandbox analysis. This  detection can be a good indicator of a process delaying its execution for malicious purposes.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-01-20
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: ce058d6c-79f2-11ec-b476-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,58 @@ This analytic will identify the possible execution of ping sleep batch commands.
 | [T1497](https://attack.mitre.org/techniques/T1497/) | Virtualization/Sandbox Evasion | Defense Evasion, Discovery |
 
 | [T1497.003](https://attack.mitre.org/techniques/T1497/003/) | Time Based Evasion | Defense Evasion, Discovery |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -54,14 +111,13 @@ This analytic will identify the possible execution of ping sleep batch commands.
 | `ping_sleep_batch_command_filter`
 ```
 
-#### Associated Analytic Story
-* [WhisperGate](/stories/whispergate)
+> :information_source:
+> **ping_sleep_batch_command_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -76,12 +132,16 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 #### Known False Positives
 Administrator or network operator may execute this command. Please update the filter macros to remove false positives.
+
+#### Associated Analytic Story
+* [WhisperGate](/stories/whispergate)
+
+
 
 
 #### RBA
@@ -91,6 +151,8 @@ Administrator or network operator may execute this command. Please update the fi
 | 36.0 | 60 | 60 | suspicious $process$ commandline run in $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

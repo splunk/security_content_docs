@@ -17,7 +17,7 @@ tags:
   - Email
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -27,13 +27,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks for emails that have attachments with suspicious file extensions.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Email](https://docs.splunk.com/Documentation/CIM/latest/User/Email)
 - **Last Updated**: 2020-07-22
 - **Author**: David Dorsey, Splunk
 - **ID**: 473bd65f-06ca-4dfe-a2b8-ba04ab4a0084
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,59 @@ This search looks for emails that have attachments with suspicious file extensio
 | [T1566.001](https://attack.mitre.org/techniques/T1566/001/) | Spearphishing Attachment | Initial Access |
 
 | [T1566](https://attack.mitre.org/techniques/T1566/) | Phishing | Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Delivery
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.AE
+* PR.IP
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 7
+* CIS 12
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -55,30 +113,33 @@ This search looks for emails that have attachments with suspicious file extensio
 | `suspicious_email_attachment_extensions_filter` 
 ```
 
-#### Associated Analytic Story
-* [Hermetic Wiper](/stories/hermetic_wiper)
-* [Emotet Malware  DHS Report TA18-201A ](/stories/emotet_malware__dhs_report_ta18-201a_)
-* [Suspicious Emails](/stories/suspicious_emails)
+> :information_source:
+> **suspicious_email_attachment_extensions_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You need to ingest data from emails. Specifically, the sender&#39;s address and the file names of any attachments must be mapped to the Email data model. \
- **Splunk Phantom Playbook Integration**\
-If Splunk Phantom is also configured in your environment, a Playbook called &#34;Suspicious Email Attachment Investigate and Delete&#34; can be configured to run when any results are found by this detection search. To use this integration, install the Phantom App for Splunk `https://splunkbase.splunk.com/app/3411/`, and add the correct hostname to the &#34;Phantom Instance&#34; field in the Adaptive Response Actions when configuring this detection search. The notable event will be sent to Phantom and the playbook will gather further information about the file attachment and its network behaviors. If Phantom finds malicious behavior and an analyst approves of the results, the email will be deleted from the user&#39;s inbox.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * All_Email.file_name
 * All_Email.src_user
 * All_Email.message_id
 
 
-#### Kill Chain Phase
-* Delivery
 
-
+#### How To Implement
+You need to ingest data from emails. Specifically, the sender&#39;s address and the file names of any attachments must be mapped to the Email data model. \
+ **Splunk Phantom Playbook Integration**\
+If Splunk Phantom is also configured in your environment, a Playbook called &#34;Suspicious Email Attachment Investigate and Delete&#34; can be configured to run when any results are found by this detection search. To use this integration, install the Phantom App for Splunk `https://splunkbase.splunk.com/app/3411/`, and add the correct hostname to the &#34;Phantom Instance&#34; field in the Adaptive Response Actions when configuring this detection search. The notable event will be sent to Phantom and the playbook will gather further information about the file attachment and its network behaviors. If Phantom finds malicious behavior and an analyst approves of the results, the email will be deleted from the user&#39;s inbox.
 #### Known False Positives
 None identified
+
+#### Associated Analytic Story
+* [Hermetic Wiper](/stories/hermetic_wiper)
+* [Emotet Malware  DHS Report TA18-201A ](/stories/emotet_malware__dhs_report_ta18-201a_)
+* [Suspicious Emails](/stories/suspicious_emails)
+
+
 
 
 #### RBA
@@ -88,6 +149,8 @@ None identified
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

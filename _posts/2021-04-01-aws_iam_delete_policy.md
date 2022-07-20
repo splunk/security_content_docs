@@ -22,19 +22,70 @@ tags:
 
 The following detection identifes when a policy is deleted on AWS. This does not identify whether successful or failed, but the error messages tell a story of suspicious attempts. There is a specific process to follow when deleting a policy. First, detach the policy from all users, groups, and roles that the policy is attached to, using DetachUserPolicy , DetachGroupPolicy , or DetachRolePolicy.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-04-01
 - **Author**: Michael Haag, Splunk
 - **ID**: ec3a9362-92fe-11eb-99d0-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1098](https://attack.mitre.org/techniques/T1098/) | Account Manipulation | Persistence |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -46,14 +97,13 @@ The following detection identifes when a policy is deleted on AWS. This does not
 | `aws_iam_delete_policy_filter`
 ```
 
-#### Associated Analytic Story
-* [AWS IAM Privilege Escalation](/stories/aws_iam_privilege_escalation)
+> :information_source:
+> **aws_iam_delete_policy_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-The Splunk AWS Add-on and Splunk App for AWS is required to utilize this data. The search requires AWS Cloudtrail logs.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * eventName
 * userAgent
@@ -61,12 +111,16 @@ The Splunk AWS Add-on and Splunk App for AWS is required to utilize this data. T
 * requestParameters.policyArn
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+The Splunk AWS Add-on and Splunk App for AWS is required to utilize this data. The search requires AWS Cloudtrail logs.
 #### Known False Positives
 This detection will require tuning to provide high fidelity detection capabilties. Tune based on src addresses (corporate offices, VPN terminations) or by groups of users. Not every user with AWS access should have permission to delete policies (least privilege). In addition, this may be saved seperately and tuned for failed or success attempts only.
+
+#### Associated Analytic Story
+* [AWS IAM Privilege Escalation](/stories/aws_iam_privilege_escalation)
+
+
 
 
 #### RBA
@@ -76,6 +130,8 @@ This detection will require tuning to provide high fidelity detection capabiltie
 | 10.0 | 20 | 50 | User $user_arn$ has deleted AWS Policies from IP address $src$ by executing the following command $eventName$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

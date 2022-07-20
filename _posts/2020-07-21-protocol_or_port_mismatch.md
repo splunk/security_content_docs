@@ -17,7 +17,7 @@ tags:
   - Network_Traffic
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -27,13 +27,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks for network traffic on common ports where a higher layer protocol does not match the port that is being used. For example, this search should identify cases where protocols other than HTTP are running on TCP port 80. This can be used by attackers to circumvent firewall restrictions, or as an attempt to hide malicious communications over ports and protocols that are typically allowed and not well inspected.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 - **Last Updated**: 2020-07-21
 - **Author**: Rico Valdez, Splunk
 - **ID**: 54dc1265-2f74-4b6d-b30d-49eb506a31b3
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,58 @@ This search looks for network traffic on common ports where a higher layer proto
 | [T1048.003](https://attack.mitre.org/techniques/T1048/003/) | Exfiltration Over Unencrypted Non-C2 Protocol | Exfiltration |
 
 | [T1048](https://attack.mitre.org/techniques/T1048/) | Exfiltration Over Alternative Protocol | Exfiltration |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Command &amp; Control
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.AE
+* PR.AC
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 9
+* CIS 12
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -54,15 +111,13 @@ This search looks for network traffic on common ports where a higher layer proto
 | `protocol_or_port_mismatch_filter`
 ```
 
-#### Associated Analytic Story
-* [Prohibited Traffic Allowed or Protocol Mismatch](/stories/prohibited_traffic_allowed_or_protocol_mismatch)
-* [Command and Control](/stories/command_and_control)
+> :information_source:
+> **protocol_or_port_mismatch_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-Running this search properly requires a technology that can inspect network traffic and identify common protocols. Technologies such as Bro and Palo Alto Networks firewalls are two examples that will identify protocols via inspection, and not just assume a specific protocol based on the transport protocol and ports.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * All_Traffic.app
 * All_Traffic.dest_port
@@ -70,12 +125,17 @@ Running this search properly requires a technology that can inspect network traf
 * All_Traffic.dest_ip
 
 
-#### Kill Chain Phase
-* Command &amp; Control
 
-
+#### How To Implement
+Running this search properly requires a technology that can inspect network traffic and identify common protocols. Technologies such as Bro and Palo Alto Networks firewalls are two examples that will identify protocols via inspection, and not just assume a specific protocol based on the transport protocol and ports.
 #### Known False Positives
 None identified
+
+#### Associated Analytic Story
+* [Prohibited Traffic Allowed or Protocol Mismatch](/stories/prohibited_traffic_allowed_or_protocol_mismatch)
+* [Command and Control](/stories/command_and_control)
+
+
 
 
 #### RBA
@@ -85,6 +145,8 @@ None identified
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

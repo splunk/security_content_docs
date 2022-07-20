@@ -21,7 +21,7 @@ feature_row:
   - image_path: /static/feature_stories.png
     alt: "fully responsive"
     title: "Analytic Stories"
-    excerpt: "See all **0** use cases, 📦 of detections built to address a threat."
+    excerpt: "See all **134** use cases, 📦 of detections built to address a threat."
     url: "/stories"
     btn_class: "btn--primary"
     btn_label: "Explore"
@@ -46,7 +46,7 @@ This project gives you access to our repository of Analytic Stories that are sec
 ## [Detection Coverage](https://mitremap.splunkresearch.com/) 🗺
 Below is a snapshot in time of what technique we currently have some detection coverage for. The darker the shade of blue the more detections we have for this particular technique.
 
-[![](static/coverage.png)](https://mitremap.splunkresearch.com/)
+[![](mitre-map/coverage.png)](https://mitremap.splunkresearch.com/)
 
 ## View Our Content 🔎
 

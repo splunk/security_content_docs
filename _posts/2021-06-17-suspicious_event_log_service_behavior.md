@@ -24,13 +24,18 @@ tags:
 
 The following analytic utilizes Windows Event ID 1100 to identify when Windows event log service is shutdown. Note that this is a voluminous analytic that will require tuning or restricted to specific endpoints based on criticality. This event generates every time Windows Event Log service has shut down. It also generates during normal system shutdown. During triage, based on time of day and user, determine if this was planned. If not planned, follow through with reviewing parallel alerts and other data sources to determine what else may have occurred.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-06-17
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 2b85aa3d-f5f6-4c2e-a081-a09f6e1c2e40
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,62 @@ The following analytic utilizes Windows Event ID 1100 to identify when Windows e
 | [T1070](https://attack.mitre.org/techniques/T1070/) | Indicator Removal on Host | Defense Evasion |
 
 | [T1070.001](https://attack.mitre.org/techniques/T1070/001/) | Clear Windows Event Logs | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.DP
+* PR.IP
+* PR.AC
+* PR.AT
+* DE.AE
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 6
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -50,27 +111,30 @@ The following analytic utilizes Windows Event ID 1100 to identify when Windows e
 | `suspicious_event_log_service_behavior_filter`
 ```
 
+> :information_source:
+> **suspicious_event_log_service_behavior_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+
+
+#### Required fields
+List of fields required to use this analytic.
+* _time
+* EventCode
+* dest
+
+
+
+#### How To Implement
+To successfully implement this search, you need to be ingesting Windows event logs from your hosts. In addition, the Splunk Windows TA is needed.
+#### Known False Positives
+It is possible the Event Logging service gets shut down due to system errors or legitimately administration tasks. Filter as needed.
+
 #### Associated Analytic Story
 * [Windows Log Manipulation](/stories/windows_log_manipulation)
 * [Ransomware](/stories/ransomware)
 * [Clop Ransomware](/stories/clop_ransomware)
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting Windows event logs from your hosts. In addition, the Splunk Windows TA is needed.
-
-#### Required field
-* _time
-* EventCode
-* dest
-
-
-#### Kill Chain Phase
-* Actions on Objectives
-
-
-#### Known False Positives
-It is possible the Event Logging service gets shut down due to system errors or legitimately administration tasks. Filter as needed.
 
 
 #### RBA
@@ -80,6 +144,8 @@ It is possible the Event Logging service gets shut down due to system errors or 
 | 9.0 | 30 | 30 | The Windows Event Log Service shutdown on $ComputerName$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

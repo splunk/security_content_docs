@@ -21,12 +21,67 @@ tags:
 
 This search looks for cloud compute instances being created with previously unseen image IDs.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change)
 - **Last Updated**: 2018-10-12
 - **Author**: David Dorsey, Splunk
 - **ID**: bc24922d-987c-4645-b288-f8c73ec194c4
+
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* ID.AM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 1
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -46,14 +101,13 @@ This search looks for cloud compute instances being created with previously unse
 | `cloud_compute_instance_created_with_previously_unseen_image_filter`
 ```
 
-#### Associated Analytic Story
-* [Cloud Cryptomining](/stories/cloud_cryptomining)
+> :information_source:
+> **cloud_compute_instance_created_with_previously_unseen_image_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting your cloud infrastructure logs from your cloud provider. You should run the baseline search `Previously Seen Cloud Compute Images - Initial` to build the initial table of images observed and times. You must also enable the second baseline search `Previously Seen Cloud Compute Images - Update` to keep this table up to date and to age out old data. You can also provide additional filtering for this search by customizing the `cloud_compute_instance_created_with_previously_unseen_image_filter` macro.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * All_Changes.object_id
 * All_Changes.action
@@ -61,12 +115,16 @@ You must be ingesting your cloud infrastructure logs from your cloud provider. Y
 * All_Changes.user
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must be ingesting your cloud infrastructure logs from your cloud provider. You should run the baseline search `Previously Seen Cloud Compute Images - Initial` to build the initial table of images observed and times. You must also enable the second baseline search `Previously Seen Cloud Compute Images - Update` to keep this table up to date and to age out old data. You can also provide additional filtering for this search by customizing the `cloud_compute_instance_created_with_previously_unseen_image_filter` macro.
 #### Known False Positives
 After a new image is created, the first systems created with that image will cause this alert to fire.  Verify that the image being used was created by a legitimate user.
+
+#### Associated Analytic Story
+* [Cloud Cryptomining](/stories/cloud_cryptomining)
+
+
 
 
 #### RBA
@@ -76,6 +134,8 @@ After a new image is created, the first systems created with that image will cau
 | 36.0 | 60 | 60 | User $user$ is creating an instance $dest$ with an image that has not been previously seen. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -23,19 +23,78 @@ tags:
 
 This analytic identifies wmic.exe being launched with parameters to spawn a process on a remote system. Red Teams and adversaries alike may abuse WMI and this binary for lateral movement and remote code execution.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-11-12
 - **Author**: Rico Valdez, Mauricio Velazco, Splunk
 - **ID**: d25d2c3d-d9d8-40ec-8fdf-e86fe155a3da
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1047](https://attack.mitre.org/techniques/T1047/) | Windows Management Instrumentation | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* PR.AT
+* PR.AC
+* PR.IP
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -48,16 +107,13 @@ This analytic identifies wmic.exe being launched with parameters to spawn a proc
 | `remote_process_instantiation_via_wmi_filter`
 ```
 
-#### Associated Analytic Story
-* [Ransomware](/stories/ransomware)
-* [Suspicious WMI Use](/stories/suspicious_wmi_use)
-* [Active Directory Lateral Movement](/stories/active_directory_lateral_movement)
+> :information_source:
+> **remote_process_instantiation_via_wmi_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -72,12 +128,18 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 The wmic.exe utility is a benign Windows application. It may be used legitimately by Administrators with these parameters for remote system administration, but it&#39;s relatively uncommon.
+
+#### Associated Analytic Story
+* [Ransomware](/stories/ransomware)
+* [Suspicious WMI Use](/stories/suspicious_wmi_use)
+* [Active Directory Lateral Movement](/stories/active_directory_lateral_movement)
+
+
 
 
 #### RBA
@@ -87,6 +149,8 @@ The wmic.exe utility is a benign Windows application. It may be used legitimatel
 | 49.0 | 70 | 70 | A wmic.exe process $process$ contain process spawn commandline $process$ in host $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

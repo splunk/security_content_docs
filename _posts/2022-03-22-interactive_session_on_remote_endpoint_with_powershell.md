@@ -24,13 +24,18 @@ tags:
 
 The following analytic utilizes PowerShell Script Block Logging (EventCode=4104) to identify the usage of the `Enter-PSSession`. This commandlet can be used to open an interactive session on a remote endpoint leveraging the WinRM protocol. Red Teams and adversaries alike may abuse WinRM and `Enter-PSSession` for lateral movement and remote code execution.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2022-03-22
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: a4e8f3a4-48b2-11ec-bcfc-3e22fbd008af
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,52 @@ The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
 | [T1021](https://attack.mitre.org/techniques/T1021/) | Remote Services | Lateral Movement |
 
 | [T1021.006](https://attack.mitre.org/techniques/T1021/006/) | Windows Remote Management | Lateral Movement |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -50,14 +101,13 @@ The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
 | `interactive_session_on_remote_endpoint_with_powershell_filter`
 ```
 
-#### Associated Analytic Story
-* [Active Directory Lateral Movement](/stories/active_directory_lateral_movement)
+> :information_source:
+> **interactive_session_on_remote_endpoint_with_powershell_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this analytic, you will need to enable PowerShell Script Block Logging on some or all endpoints. Additional setup instructions can be found https://docs.splunk.com/Documentation/UBA/5.0.4.1/GetDataIn/AddPowerShell#Configure_module_logging_for_PowerShell.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventCode
 * Message
@@ -65,12 +115,16 @@ To successfully implement this analytic, you will need to enable PowerShell Scri
 * User
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this analytic, you will need to enable PowerShell Script Block Logging on some or all endpoints. Additional setup instructions can be found https://docs.splunk.com/Documentation/UBA/5.0.4.1/GetDataIn/AddPowerShell#Configure_module_logging_for_PowerShell.
 #### Known False Positives
 Administrators may leverage WinRM and `Enter-PSSession` for administrative and troubleshooting tasks. This activity is usually limited to a small set of hosts or users. In certain environments, tuning may not be possible.
+
+#### Associated Analytic Story
+* [Active Directory Lateral Movement](/stories/active_directory_lateral_movement)
+
+
 
 
 #### RBA
@@ -80,6 +134,8 @@ Administrators may leverage WinRM and `Enter-PSSession` for administrative and t
 | 45.0 | 90 | 50 | An interactive session was opened on a remote endpoint from $ComputerName |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

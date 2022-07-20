@@ -25,19 +25,70 @@ tags:
 
 This analytic identifies an on demand run of a Windows Schedule Task through shell or command-line. This technique has been used by adversaries that force to run their created Schedule Task as their persistence mechanism or for lateral movement as part of their malicious attack to the compromised machine.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-05-07
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: bb37061e-af1f-11eb-a159-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1053](https://attack.mitre.org/techniques/T1053/) | Scheduled Task/Job | Execution, Persistence, Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -50,15 +101,13 @@ This analytic identifies an on demand run of a Windows Schedule Task through she
 | `schtasks_run_task_on_demand_filter`
 ```
 
-#### Associated Analytic Story
-* [XMRig](/stories/xmrig)
-* [Industroyer2](/stories/industroyer2)
+> :information_source:
+> **schtasks_run_task_on_demand_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Tune and filter known instances where renamed schtasks.exe may be used.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.process
 * Processes.process_id
@@ -68,12 +117,17 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Processes.user
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Tune and filter known instances where renamed schtasks.exe may be used.
 #### Known False Positives
 Administrators may use to debug Schedule Task entries. Filter as needed.
+
+#### Associated Analytic Story
+* [XMRig](/stories/xmrig)
+* [Industroyer2](/stories/industroyer2)
+
+
 
 
 #### RBA
@@ -83,6 +137,8 @@ Administrators may use to debug Schedule Task entries. Filter as needed.
 | 48.0 | 60 | 80 | A &#34;on demand&#34; execution of schedule task process $process_name$  using commandline $process$ in host $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

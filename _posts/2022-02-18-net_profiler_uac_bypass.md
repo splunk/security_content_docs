@@ -27,13 +27,18 @@ tags:
 
 This search is to detect modification of registry to bypass UAC windows feature. This technique is to add a payload dll path on .NET COR file path that will be loaded by mmc.exe as soon it was executed. This detection rely on monitoring the registry key and values in the detection area. It may happened that windows update some dll related to mmc.exe and add dll path in this registry. In this case filtering is needed.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-02-18
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 0252ca80-e30d-11eb-8aa3-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,52 @@ This search is to detect modification of registry to bypass UAC windows feature.
 | [T1548.002](https://attack.mitre.org/techniques/T1548/002/) | Bypass User Account Control | Privilege Escalation, Defense Evasion |
 
 | [T1548](https://attack.mitre.org/techniques/T1548/) | Abuse Elevation Control Mechanism | Privilege Escalation, Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -54,14 +105,13 @@ This search is to detect modification of registry to bypass UAC windows feature.
 | `net_profiler_uac_bypass_filter`
 ```
 
-#### Associated Analytic Story
-* [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics)
+> :information_source:
+> **net_profiler_uac_bypass_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Registry` node. Also make sure that this registry was included in your config files ex. sysmon config to be monitored.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Registry.registry_path
 * Registry.registry_key_name
@@ -69,12 +119,16 @@ To successfully implement this search you need to be ingesting information on pr
 * Registry.dest
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Registry` node. Also make sure that this registry was included in your config files ex. sysmon config to be monitored.
 #### Known False Positives
 limited false positive. It may trigger by some windows update that will modify this registry.
+
+#### Associated Analytic Story
+* [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics)
+
+
 
 
 #### RBA
@@ -84,6 +138,8 @@ limited false positive. It may trigger by some windows update that will modify t
 | 63.0 | 70 | 90 | Suspicious modification of registry $registry_path$ with possible payload path $registry_value_name$ in $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

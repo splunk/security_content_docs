@@ -25,13 +25,18 @@ tags:
 
 This analytic will detect the execution of sdelete.exe attempting to delete potentially important files that may related to adversary or insider threats to destroy evidence or information sabotage. Sdelete is a SysInternals utility meant to securely delete files on disk. This tool is commonly used to clear tracks and artifact on the targeted host.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2021-11-15
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: fcc52b9a-4616-11ec-8454-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,52 @@ This analytic will detect the execution of sdelete.exe attempting to delete pote
 | [T1070.004](https://attack.mitre.org/techniques/T1070/004/) | File Deletion | Defense Evasion |
 
 | [T1070](https://attack.mitre.org/techniques/T1070/) | Indicator Removal on Host | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -54,15 +105,13 @@ This analytic will detect the execution of sdelete.exe attempting to delete pote
 | into write_ssa_detected_events();
 ```
 
-#### Associated Analytic Story
-* [Information Sabotage](/stories/information_sabotage)
-* [Insider Threat](/stories/insider_threat)
+> :information_source:
+> **sdelete_application_execution_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * dest
 * user
@@ -75,12 +124,17 @@ To successfully implement this search you need to be ingesting information on pr
 * cmd_line
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 False positives should be limited, filter as needed.
+
+#### Associated Analytic Story
+* [Information Sabotage](/stories/information_sabotage)
+* [Insider Threat](/stories/insider_threat)
+
+
 
 
 #### RBA
@@ -90,6 +144,8 @@ False positives should be limited, filter as needed.
 | 42.0 | 60 | 70 | Sdelete process $process_name$ executed on $dest_device_id$ attempting to permanently delete files by $dest_user_id$. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

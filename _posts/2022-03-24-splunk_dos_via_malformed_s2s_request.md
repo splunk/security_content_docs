@@ -23,19 +23,81 @@ tags:
 
 On March 24th, 2022, Splunk published a security advisory for a possible Denial of Service stemming from the lack of validation in a specific key-value field in the Splunk-to-Splunk (S2S) protocol. This detection will alert on attempted exploitation in patched versions of Splunk.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2022-03-24
 - **Author**: Lou Stella, Splunk
 - **ID**: fc246e56-953b-40c1-8634-868f9e474cbd
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1498](https://attack.mitre.org/techniques/T1498/) | Network Denial of Service | Impact |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
+| ----------- | ----------- | -------------- |
+| [CVE-2021-3422](https://nvd.nist.gov/vuln/detail/CVE-2021-3422) | The lack of validation of a key-value field in the Splunk-to-Splunk protocol results in a denial-of-service in Splunk Enterprise instances configured to index Universal Forwarder traffic. The vulnerability impacts Splunk Enterprise versions before 7.3.9, 8.0 versions before 8.0.9, and 8.1 versions before 8.1.3. It does not impact Universal Forwarders. When Splunk forwarding is secured using TLS or a Token, the attack requires compromising the certificate or token, or both. Implementation of either or both reduces the severity to Medium. | 4.3 |
+
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -45,14 +107,13 @@ On March 24th, 2022, Splunk published a security advisory for a possible Denial 
 | `splunk_dos_via_malformed_s2s_request_filter`
 ```
 
-#### Associated Analytic Story
-* [Splunk Vulnerabilities](/stories/splunk_vulnerabilities)
+> :information_source:
+> **splunk_dos_via_malformed_s2s_request_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This detection does not require you to ingest any new data. The detection does require the ability to search the _internal index. This detection will only find attempted exploitation on versions of Splunk already patched for CVE-2021-3422.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * host
 * src
 * log_level
@@ -60,12 +121,16 @@ This detection does not require you to ingest any new data. The detection does r
 * thread_name
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+This detection does not require you to ingest any new data. The detection does require the ability to search the _internal index. This detection will only find attempted exploitation on versions of Splunk already patched for CVE-2021-3422.
 #### Known False Positives
 None.
+
+#### Associated Analytic Story
+* [Splunk Vulnerabilities](/stories/splunk_vulnerabilities)
+
+
 
 
 #### RBA
@@ -75,13 +140,8 @@ None.
 | 50.0 | 50 | 100 | An attempt to exploit CVE-2021-3422 was detected from $src$ against $host$ |
 
 
-
-#### CVE
-
-| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
-| ----------- | ----------- | -------------- |
-| [CVE-2021-3422](https://nvd.nist.gov/vuln/detail/CVE-2021-3422) | The lack of validation of a key-value field in the Splunk-to-Splunk protocol results in a denial-of-service in Splunk Enterprise instances configured to index Universal Forwarder traffic. The vulnerability impacts Splunk Enterprise versions before 7.3.9, 8.0 versions before 8.0.9, and 8.1 versions before 8.1.3. It does not impact Universal Forwarders. When Splunk forwarding is secured using TLS or a Token, the attack requires compromising the certificate or token, or both. Implementation of either or both reduces the severity to Medium. | 4.3 |
-
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

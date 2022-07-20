@@ -25,19 +25,70 @@ tags:
 
 This search provides specific SAML access from specific Service Provider, user and targeted principal at AWS. This search provides specific information to detect abnormal access or potential credential hijack or forgery, specially in federated environments using SAML protocol inside the perimeter or cloud provider.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-01-26
 - **Author**: Rod Soto, Splunk
 - **ID**: bbe23980-6019-11eb-ae93-0242ac130002
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1078](https://attack.mitre.org/techniques/T1078/) | Valid Accounts | Defense Evasion, Persistence, Privilege Escalation, Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -49,14 +100,13 @@ This search provides specific SAML access from specific Service Provider, user a
 |`aws_saml_access_by_provider_user_and_principal_filter`
 ```
 
-#### Associated Analytic Story
-* [Cloud Federated Credential Abuse](/stories/cloud_federated_credential_abuse)
+> :information_source:
+> **aws_saml_access_by_provider_user_and_principal_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install splunk AWS add on and Splunk App for AWS. This search works with AWS CloudTrail logs
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * eventName
 * requestParameters.principalArn
@@ -68,12 +118,16 @@ You must install splunk AWS add on and Splunk App for AWS. This search works wit
 * userAgent
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+You must install splunk AWS add on and Splunk App for AWS. This search works with AWS CloudTrail logs
 #### Known False Positives
 Attacks using a Golden SAML or SAML assertion hijacks or forgeries are very difficult to detect as accessing cloud providers with these assertions looks exactly like normal access, however things such as source IP sourceIPAddress user, and principal targeted at receiving cloud provider along with endpoint credential access and abuse detection searches can provide the necessary context to detect these attacks.
+
+#### Associated Analytic Story
+* [Cloud Federated Credential Abuse](/stories/cloud_federated_credential_abuse)
+
+
 
 
 #### RBA
@@ -83,6 +137,8 @@ Attacks using a Golden SAML or SAML assertion hijacks or forgeries are very diff
 | 64.0 | 80 | 80 | From IP address $sourceIPAddress$, user agent $userAgent$ has trigged an event $eventName$ for account ID $recipientAccountId$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

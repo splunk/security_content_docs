@@ -8,7 +8,6 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  - Actions on Objectives
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -33,10 +32,10 @@ Among things to look out for are S3 access from unfamiliar locations and by unfa
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Detect New Open S3 buckets](/cloud/detect_new_open_s3_buckets/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object)| TTP |
-| [Detect New Open S3 Buckets over AWS CLI](/cloud/detect_new_open_s3_buckets_over_aws_cli/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object)| TTP |
-| [Detect S3 access from a new IP](/cloud/detect_s3_access_from_a_new_ip/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object)| Anomaly |
-| [Detect Spike in S3 Bucket deletion](/cloud/detect_spike_in_s3_bucket_deletion/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object)| Anomaly |
+| [Detect New Open S3 Buckets over AWS CLI](/cloud/detect_new_open_s3_buckets_over_aws_cli/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | TTP |
+| [Detect New Open S3 buckets](/cloud/detect_new_open_s3_buckets/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | TTP |
+| [Detect S3 access from a new IP](/cloud/detect_s3_access_from_a_new_ip/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | Anomaly |
+| [Detect Spike in S3 Bucket deletion](/cloud/detect_spike_in_s3_bucket_deletion/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | Anomaly |
 
 #### Reference
 

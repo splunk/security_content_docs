@@ -26,13 +26,18 @@ tags:
 
 The following analytc uses Windows Event Id 7045, `New Service Was Installed`, to identify the creation of a Windows Service where the service binary path is located in public paths. This behavior could represent the installation of a malicious service. Red Teams and adversaries alike may create malicious Services for lateral movement or remote code execution
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-11-22
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 3abb2eda-4bb8-11ec-9ae4-3e22fbd008af
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -41,6 +46,52 @@ The following analytc uses Windows Event Id 7045, `New Service Was Installed`, t
 | [T1543](https://attack.mitre.org/techniques/T1543/) | Create or Modify System Process | Persistence, Privilege Escalation |
 
 | [T1543.003](https://attack.mitre.org/techniques/T1543/003/) | Windows Service | Persistence, Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,14 +103,13 @@ The following analytc uses Windows Event Id 7045, `New Service Was Installed`, t
 | `windows_service_created_within_public_path_filter`
 ```
 
-#### Associated Analytic Story
-* [Active Directory Lateral Movement](/stories/active_directory_lateral_movement)
+> :information_source:
+> **windows_service_created_within_public_path_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the Service name, Service File Name Service Start type, and Service Type from your endpoints.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * EventCode
 * Service_File_Name
 * Service_Type
@@ -68,12 +118,16 @@ To successfully implement this search, you need to be ingesting logs with the Se
 * Service_Start_Type
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the Service name, Service File Name Service Start type, and Service Type from your endpoints.
 #### Known False Positives
 Legitimate applications may install services with uncommon services paths.
+
+#### Associated Analytic Story
+* [Active Directory Lateral Movement](/stories/active_directory_lateral_movement)
+
+
 
 
 #### RBA
@@ -83,6 +137,8 @@ Legitimate applications may install services with uncommon services paths.
 | 54.0 | 90 | 60 | A Windows Service $Service_File_Name$ with a public path was created on $ComputerName |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

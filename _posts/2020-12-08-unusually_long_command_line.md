@@ -12,7 +12,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -22,12 +22,68 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 Command lines that are extremely long may be indicative of malicious activity on your hosts.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-12-08
 - **Author**: David Dorsey, Splunk
 - **ID**: c77162d3-f93c-45cc-80c8-22f6a4264e7f
+
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -45,17 +101,13 @@ Command lines that are extremely long may be indicative of malicious activity on
 | where maxlen > ((threshold*stdevperhost) + avgperhost)
 ```
 
-#### Associated Analytic Story
-* [Suspicious Command-Line Executions](/stories/suspicious_command-line_executions)
-* [Unusual Processes](/stories/unusual_processes)
-* [Possible Backdoor Activity Associated With MUDCARP Espionage Campaigns](/stories/possible_backdoor_activity_associated_with_mudcarp_espionage_campaigns)
-* [Ransomware](/stories/ransomware)
+> :information_source:
+> **unusually_long_command_line_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting endpoint data that tracks process activity, including parent-child relationships, from your endpoints to populate the Endpoint data model in the Processes node. The command-line arguments are mapped to the process field in the Endpoint data model.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.user
 * Processes.dest
@@ -63,12 +115,19 @@ You must be ingesting endpoint data that tracks process activity, including pare
 * Processes.process
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must be ingesting endpoint data that tracks process activity, including parent-child relationships, from your endpoints to populate the Endpoint data model in the Processes node. The command-line arguments are mapped to the process field in the Endpoint data model.
 #### Known False Positives
 Some legitimate applications start with long command lines.
+
+#### Associated Analytic Story
+* [Suspicious Command-Line Executions](/stories/suspicious_command-line_executions)
+* [Unusual Processes](/stories/unusual_processes)
+* [Possible Backdoor Activity Associated With MUDCARP Espionage Campaigns](/stories/possible_backdoor_activity_associated_with_mudcarp_espionage_campaigns)
+* [Ransomware](/stories/ransomware)
+
+
 
 
 #### RBA
@@ -78,6 +137,8 @@ Some legitimate applications start with long command lines.
 | 42.0 | 70 | 60 | Unusually long command line $Processes.process_name$ on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

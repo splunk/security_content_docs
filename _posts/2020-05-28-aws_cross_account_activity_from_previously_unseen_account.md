@@ -21,12 +21,69 @@ tags:
 
 This search looks for AssumeRole events where an IAM role in a different account is requested for the first time.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication)
 - **Last Updated**: 2020-05-28
 - **Author**: Rico Valdez, Splunk
 - **ID**: 21193641-cb96-4a2c-a707-d9b9a7f7792b
+
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.AC
+* PR.DS
+* DE.AE
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -45,14 +102,13 @@ This search looks for AssumeRole events where an IAM role in a different account
 | `aws_cross_account_activity_from_previously_unseen_account_filter`
 ```
 
-#### Associated Analytic Story
-* [Suspicious Cloud Authentication Activities](/stories/suspicious_cloud_authentication_activities)
+> :information_source:
+> **aws_cross_account_activity_from_previously_unseen_account_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting your cloud infrastructure logs from your cloud provider. You should run the baseline search `Previously Seen AWS Cross Account Activity - Initial` to build the initial table of source IP address, geographic locations, and times. You must also enable the second baseline search `Previously Seen AWS Cross Account Activity - Update` to keep this table up to date and to age out old data. You can also provide additional filtering for this search by customizing the `aws_cross_account_activity_from_previously_unseen_account_filter` macro.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Authentication.signature
 * Authentication.vendor_account
@@ -61,12 +117,16 @@ You must be ingesting your cloud infrastructure logs from your cloud provider. Y
 * Authentication.src
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must be ingesting your cloud infrastructure logs from your cloud provider. You should run the baseline search `Previously Seen AWS Cross Account Activity - Initial` to build the initial table of source IP address, geographic locations, and times. You must also enable the second baseline search `Previously Seen AWS Cross Account Activity - Update` to keep this table up to date and to age out old data. You can also provide additional filtering for this search by customizing the `aws_cross_account_activity_from_previously_unseen_account_filter` macro.
 #### Known False Positives
 Using multiple AWS accounts and roles is perfectly valid behavior. It&#39;s suspicious when an account requests privileges of an account it hasn&#39;t before. You should validate with the account owner that this is a legitimate request.
+
+#### Associated Analytic Story
+* [Suspicious Cloud Authentication Activities](/stories/suspicious_cloud_authentication_activities)
+
+
 
 
 #### RBA
@@ -76,6 +136,8 @@ Using multiple AWS accounts and roles is perfectly valid behavior. It&#39;s susp
 | 15.0 | 30 | 50 | AWS account $requestingAccountId$ is trying to access resource from some other account $requestedAccountId$, for the first time. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

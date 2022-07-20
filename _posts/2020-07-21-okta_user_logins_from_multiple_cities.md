@@ -22,7 +22,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -32,13 +32,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search detects logins from the same user from different cities in a 24 hour period.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-07-21
 - **Author**: Rico Valdez, Splunk
 - **ID**: 7594fa07-9f34-4d01-81cc-d6af6a5db9e8
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -47,6 +52,56 @@ This search detects logins from the same user from different cities in a 24 hour
 | [T1078](https://attack.mitre.org/techniques/T1078/) | Valid Accounts | Defense Evasion, Persistence, Privilege Escalation, Initial Access |
 
 | [T1078.001](https://attack.mitre.org/techniques/T1078/001/) | Default Accounts | Defense Evasion, Persistence, Privilege Escalation, Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -59,14 +114,13 @@ This search detects logins from the same user from different cities in a 24 hour
 | search locations > 1
 ```
 
-#### Associated Analytic Story
-* [Suspicious Okta Activity](/stories/suspicious_okta_activity)
+> :information_source:
+> **okta_user_logins_from_multiple_cities_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This search is specific to Okta and requires Okta logs are being ingested in your Splunk deployment.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * displayMessage
 * client.geographicalContext.city
@@ -74,12 +128,16 @@ This search is specific to Okta and requires Okta logs are being ingested in you
 * user
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+This search is specific to Okta and requires Okta logs are being ingested in your Splunk deployment.
 #### Known False Positives
 Users in your enviornment may legitmately be travelling and loggin in from different locations. This search is useful for those users that should *not* be travelling for some reason, such as the COVID-19 pandemic. The search also relies on the geographical information being populated in the Okta logs. It is also possible that a connection from another region may be attributed to a login from a remote VPN endpoint.
+
+#### Associated Analytic Story
+* [Suspicious Okta Activity](/stories/suspicious_okta_activity)
+
+
 
 
 #### RBA
@@ -89,6 +147,8 @@ Users in your enviornment may legitmately be travelling and loggin in from diffe
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

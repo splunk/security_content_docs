@@ -23,19 +23,70 @@ tags:
 
 This detection targets behaviors observed in post exploit kits like Meterpreter and Koadic that are run in memory.  We have observed that these tools must invoke an excessive number of taskhost.exe and taskhostex.exe processes to complete various actions (discovery, lateral movement, etc.).  It is extremely uncommon in the course of normal operations to see so many distinct taskhost and taskhostex processes running concurrently in a short time frame.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-06-07
 - **Author**: Michael Hart
 - **ID**: f443dac2-c7cf-11eb-ab51-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1059](https://attack.mitre.org/techniques/T1059/) | Command and Scripting Interpreter | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -53,14 +104,13 @@ This detection targets behaviors observed in post exploit kits like Meterpreter 
 | `excessive_number_of_taskhost_processes_filter`
 ```
 
-#### Associated Analytic Story
-* [Meterpreter](/stories/meterpreter)
+> :information_source:
+> **excessive_number_of_taskhost_processes_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting events related to processes on the endpoints that include the name of the process and process id into the `Endpoint` datamodel in the `Processes` node.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.process_id
 * Processes.process_name
@@ -68,12 +118,16 @@ To successfully implement this search you need to be ingesting events related to
 * Processes.user
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting events related to processes on the endpoints that include the name of the process and process id into the `Endpoint` datamodel in the `Processes` node.
 #### Known False Positives
 Administrators, administrative actions or certain applications may run many instances of taskhost and taskhostex concurrently.  Filter as needed.
+
+#### Associated Analytic Story
+* [Meterpreter](/stories/meterpreter)
+
+
 
 
 #### RBA
@@ -83,6 +137,8 @@ Administrators, administrative actions or certain applications may run many inst
 | 56.0 | 80 | 70 | An excessive amount of $process_name$ was executed on $dest$ indicative of suspicious behavior. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

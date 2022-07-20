@@ -23,13 +23,18 @@ tags:
 
 The following analytic identifies &#34;rundll32.exe&#34; execution with inline protocol handlers. &#34;JavaScript&#34;, &#34;VBScript&#34;, and &#34;About&#34; are the only supported options when invoking HTA content directly on the command-line. This type of behavior is commonly observed with fileless malware or application whitelisting bypass techniques. The search will return the first time and last time these command-line arguments were used for these executions, as well as the target system, the user, process &#34;rundll32.exe&#34; and its parent process.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2022-02-23
 - **Author**: Michael Haag, Splunk
 - **ID**: 0caa1dd6-94f5-11ec-9786-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -38,6 +43,57 @@ The following analytic identifies &#34;rundll32.exe&#34; execution with inline p
 | [T1218](https://attack.mitre.org/techniques/T1218/) | System Binary Proxy Execution | Defense Evasion |
 
 | [T1218.005](https://attack.mitre.org/techniques/T1218/005/) | Mshta | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -51,16 +107,13 @@ The following analytic identifies &#34;rundll32.exe&#34; execution with inline p
 | into write_ssa_detected_events();
 ```
 
-#### Associated Analytic Story
-* [Suspicious MSHTA Activity](/stories/suspicious_mshta_activity)
-* [NOBELIUM Group](/stories/nobelium_group)
-* [Living Off The Land](/stories/living_off_the_land)
+> :information_source:
+> **windows_rundll32_inline_hta_execution_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * dest_device_id
 * process_name
@@ -71,12 +124,18 @@ To successfully implement this search you need to be ingesting information on pr
 * cmd_line
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 Although unlikely, some legitimate applications may exhibit this behavior, triggering a false positive.
+
+#### Associated Analytic Story
+* [Suspicious MSHTA Activity](/stories/suspicious_mshta_activity)
+* [NOBELIUM Group](/stories/nobelium_group)
+* [Living Off The Land](/stories/living_off_the_land)
+
+
 
 
 #### RBA
@@ -86,6 +145,8 @@ Although unlikely, some legitimate applications may exhibit this behavior, trigg
 | 56.0 | 70 | 80 | Suspicious $process_name$ inline HTA execution on $dest_device_id$. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

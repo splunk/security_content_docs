@@ -22,19 +22,76 @@ tags:
 
 The following analytic utilizes PowerShell Script Block Logging (EventCode=4104) to identify commandlets used by the PowerView hacking tool leveraged to discover Windows endpoints with Kerberos Unconstrained Delegation. Red Teams and adversaries alike may leverage use this technique for situational awareness and Active Directory Discovery.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2022-03-28
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: fbf9e47f-e531-4fea-942d-5c95af7ed4d6
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1018](https://attack.mitre.org/techniques/T1018/) | Remote System Discovery | Discovery |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Reconnaissance
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -46,14 +103,13 @@ The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
 | `windows_powerview_unconstrained_delegation_discovery_filter`
 ```
 
-#### Associated Analytic Story
-* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
+> :information_source:
+> **windows_powerview_unconstrained_delegation_discovery_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-The following  analytic requires PowerShell operational logs to be imported. Modify the powershell macro as needed to match the sourcetype or add index. This analytic is specific to 4104, or PowerShell Script Block Logging.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventCode
 * Message
@@ -61,12 +117,16 @@ The following  analytic requires PowerShell operational logs to be imported. Mod
 * User
 
 
-#### Kill Chain Phase
-* Reconnaissance
 
-
+#### How To Implement
+The following  analytic requires PowerShell operational logs to be imported. Modify the powershell macro as needed to match the sourcetype or add index. This analytic is specific to 4104, or PowerShell Script Block Logging.
 #### Known False Positives
 Administrators or power users may leverage PowerView for system management or troubleshooting.
+
+#### Associated Analytic Story
+* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
+
+
 
 
 #### RBA
@@ -76,6 +136,8 @@ Administrators or power users may leverage PowerView for system management or tr
 | 35.0 | 50 | 70 | Suspicious PowerShell Get-DomainComputer was identified on endpoint $ComputerName$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

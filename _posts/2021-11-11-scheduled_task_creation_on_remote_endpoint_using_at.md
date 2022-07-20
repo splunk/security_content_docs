@@ -29,13 +29,18 @@ tags:
 
 This analytic looks for the execution of `at.exe` with command-line arguments utilized to create a Scheduled Task on a remote endpoint. Red Teams and adversaries alike may abuse the Task Scheduler for lateral movement and remote code execution. The `at.exe` binary internally leverages the AT protocol which was deprecated starting with Windows 8 and Windows Server 2012 but may still work on previous versions of Windows. Furthermore, attackers may enable this protocol on demand by changing a sytem registry key.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-11-11
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 4be54858-432f-11ec-8209-3e22fbd008af
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -44,6 +49,52 @@ This analytic looks for the execution of `at.exe` with command-line arguments ut
 | [T1053](https://attack.mitre.org/techniques/T1053/) | Scheduled Task/Job | Execution, Persistence, Privilege Escalation |
 
 | [T1053.002](https://attack.mitre.org/techniques/T1053/002/) | At | Execution, Persistence, Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -56,15 +107,13 @@ This analytic looks for the execution of `at.exe` with command-line arguments ut
 | `scheduled_task_creation_on_remote_endpoint_using_at_filter`
 ```
 
-#### Associated Analytic Story
-* [Active Directory Lateral Movement](/stories/active_directory_lateral_movement)
-* [Living Off The Land](/stories/living_off_the_land)
+> :information_source:
+> **scheduled_task_creation_on_remote_endpoint_using_at_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -79,12 +128,17 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints.
 #### Known False Positives
 Administrators may create scheduled tasks on remote systems, but this activity is usually limited to a small set of hosts or users.
+
+#### Associated Analytic Story
+* [Active Directory Lateral Movement](/stories/active_directory_lateral_movement)
+* [Living Off The Land](/stories/living_off_the_land)
+
+
 
 
 #### RBA
@@ -94,6 +148,8 @@ Administrators may create scheduled tasks on remote systems, but this activity i
 | 54.0 | 90 | 60 | A Windows Scheduled Task was created on a remote endpoint from $dest |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

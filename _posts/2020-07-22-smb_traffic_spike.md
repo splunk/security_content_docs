@@ -17,7 +17,7 @@ tags:
   - Network_Traffic
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -27,13 +27,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks for spikes in the number of Server Message Block (SMB) traffic connections.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 - **Last Updated**: 2020-07-22
 - **Author**: David Dorsey, Splunk
 - **ID**: 7f5fb3e1-4209-4914-90db-0ec21b936378
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,56 @@ This search looks for spikes in the number of Server Message Block (SMB) traffic
 | [T1021.002](https://attack.mitre.org/techniques/T1021/002/) | SMB/Windows Admin Shares | Lateral Movement |
 
 | [T1021](https://attack.mitre.org/techniques/T1021/) | Remote Services | Lateral Movement |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -57,6 +112,25 @@ This search looks for spikes in the number of Server Message Block (SMB) traffic
 | `smb_traffic_spike_filter` 
 ```
 
+> :information_source:
+> **smb_traffic_spike_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+
+
+#### Required fields
+List of fields required to use this analytic.
+* _time
+* All_Traffic.dest_port
+* All_Traffic.app
+* All_Traffic.src
+
+
+
+#### How To Implement
+This search requires you to be ingesting your network traffic logs and populating the `Network_Traffic` data model.
+#### Known False Positives
+A file server may experience high-demand loads that could cause this analytic to trigger.
+
 #### Associated Analytic Story
 * [Emotet Malware  DHS Report TA18-201A ](/stories/emotet_malware__dhs_report_ta18-201a_)
 * [Hidden Cobra Malware](/stories/hidden_cobra_malware)
@@ -64,22 +138,6 @@ This search looks for spikes in the number of Server Message Block (SMB) traffic
 * [DHS Report TA18-074A](/stories/dhs_report_ta18-074a)
 
 
-#### How To Implement
-This search requires you to be ingesting your network traffic logs and populating the `Network_Traffic` data model.
-
-#### Required field
-* _time
-* All_Traffic.dest_port
-* All_Traffic.app
-* All_Traffic.src
-
-
-#### Kill Chain Phase
-* Actions on Objectives
-
-
-#### Known False Positives
-A file server may experience high-demand loads that could cause this analytic to trigger.
 
 
 #### RBA
@@ -89,6 +147,8 @@ A file server may experience high-demand loads that could cause this analytic to
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

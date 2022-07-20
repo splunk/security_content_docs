@@ -23,19 +23,76 @@ tags:
 
 This analytic is to look for suspicious file creation in the critical folder like &#34;System32\Drivers&#34; folder without file extension. This artifacts was seen in latest hermeticwiper where it drops its driver component in Driver Directory both the compressed(without file extension) and the actual driver component (with .sys file extension). This TTP is really a good indication that a host might be compromised by this destructive malware that wipes the boot sector of the system.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-02-25
 - **Author**: Teoderick Contreras, Bhavin Patel, Splunk
 - **ID**: 0dbcac64-963c-11ec-bf04-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1485](https://attack.mitre.org/techniques/T1485/) | Data Destruction | Impact |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -54,15 +111,13 @@ This analytic is to look for suspicious file creation in the critical folder lik
 | `windows_file_without_extension_in_critical_folder_filter`
 ```
 
-#### Associated Analytic Story
-* [Data Destruction](/stories/data_destruction)
-* [Hermetic Wiper](/stories/hermetic_wiper)
+> :information_source:
+> **windows_file_without_extension_in_critical_folder_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the Filesystem responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Filesystem` node.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Filesystem.file_create_time
 * Filesystem.process_id
@@ -76,12 +131,17 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.user
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the Filesystem responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Filesystem` node.
 #### Known False Positives
 Unknown at this point
+
+#### Associated Analytic Story
+* [Data Destruction](/stories/data_destruction)
+* [Hermetic Wiper](/stories/hermetic_wiper)
+
+
 
 
 #### RBA
@@ -91,6 +151,8 @@ Unknown at this point
 | 90.0 | 90 | 100 | Driver file with out file extension drop in $file_path$ in $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -21,19 +21,75 @@ tags:
 
 The following analytic identifies parent processes, browsers, Windows terminal applications, Office Products and Java spawning cmd.exe. By its very nature, many applications spawn cmd.exe natively or built into macros. Much of this will need to be tuned to further enhance the risk.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2022-03-01
 - **Author**: Ignacio Bermudez Corrales, Splunk
 - **ID**: c10a18cb-fd80-4ffa-a844-25026e0a0c94
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1059](https://attack.mitre.org/techniques/T1059/) | Command and Scripting Interpreter | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -49,14 +105,13 @@ The following analytic identifies parent processes, browsers, Windows terminal a
 | into write_ssa_detected_events()
 ```
 
-#### Associated Analytic Story
-* [Suspicious Command-Line Executions](/stories/suspicious_command-line_executions)
+> :information_source:
+> **detect_prohibited_applications_spawning_cmd_exe_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-In order to successfully implement this analytic, you will need endpoint process data from a EDR product or Sysmon. This search has been modified to process raw sysmon data from attack_range&#39;s nxlogs on DSP.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * process_name
 * parent_process_name
 * _time
@@ -65,12 +120,16 @@ In order to successfully implement this analytic, you will need endpoint process
 * cmd_line
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+In order to successfully implement this analytic, you will need endpoint process data from a EDR product or Sysmon. This search has been modified to process raw sysmon data from attack_range&#39;s nxlogs on DSP.
 #### Known False Positives
 There are circumstances where an application may legitimately execute and interact with the Windows command-line interface.
+
+#### Associated Analytic Story
+* [Suspicious Command-Line Executions](/stories/suspicious_command-line_executions)
+
+
 
 
 #### RBA
@@ -80,6 +139,8 @@ There are circumstances where an application may legitimately execute and intera
 | 35.0 | 70 | 50 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest_device_id$ by user $dest_user_id$, producing a suspicious event that warrants investigating. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

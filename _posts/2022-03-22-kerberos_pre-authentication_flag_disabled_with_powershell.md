@@ -24,13 +24,18 @@ tags:
 
 The following analytic utilizes PowerShell Script Block Logging (EventCode=4104) to identify the execution of the `Set-ADAccountControl` commandlet with specific parameters. `Set-ADAccountControl` is part of the Active Directory PowerShell module used to manage Windows Active Directory networks. As the name suggests, `Set-ADAccountControl` is used to modify User Account Control values for an Active Directory domain account. With the appropiate parameters, Set-ADAccountControl allows adversaries to disable Kerberos Pre-Authentication for an account to to easily perform a brute force attack against the user&#39;s password offline leveraging the ASP REP Roasting technique. Red Teams and adversaries alike who have obtained privileges in an Active Directory network may use this technique as a backdoor or a way to escalate privileges.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2022-03-22
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 59b51620-94c9-11ec-b3d5-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,52 @@ The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
 | [T1558](https://attack.mitre.org/techniques/T1558/) | Steal or Forge Kerberos Tickets | Credential Access |
 
 | [T1558.004](https://attack.mitre.org/techniques/T1558/004/) | AS-REP Roasting | Credential Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -50,23 +101,26 @@ The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
 | `kerberos_pre_authentication_flag_disabled_with_powershell_filter`
 ```
 
-#### Associated Analytic Story
-* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
+> :information_source:
+> **kerberos_pre-authentication_flag_disabled_with_powershell_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+
+
+#### Required fields
+List of fields required to use this analytic.
+* _time
+
 
 
 #### How To Implement
 To successfully implement this analytic, you will need to enable PowerShell Script Block Logging on some or all endpoints. Additional setup here https://docs.splunk.com/Documentation/UBA/5.0.4.1/GetDataIn/AddPowerShell#Configure_module_logging_for_PowerShell.
-
-#### Required field
-* _time
-
-
-#### Kill Chain Phase
-* Exploitation
-
-
 #### Known False Positives
 Although unlikely, Administrators may need to set this flag for legitimate purposes.
+
+#### Associated Analytic Story
+* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
+
+
 
 
 #### RBA
@@ -76,6 +130,8 @@ Although unlikely, Administrators may need to set this flag for legitimate purpo
 | 45.0 | 50 | 90 | Kerberos Pre Authentication was Disabled using PowerShell on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

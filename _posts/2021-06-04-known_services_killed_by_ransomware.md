@@ -23,19 +23,70 @@ tags:
 
 This search detects a suspicioous termination of known services killed by ransomware before encrypting files in a compromised machine. This technique is commonly seen in most of ransomware now a days to avoid exception error while accessing the targetted files it wants to encrypts because of the open handle of those services to the targetted file.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-06-04
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 3070f8e0-c528-11eb-b2a0-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1490](https://attack.mitre.org/techniques/T1490/) | Inhibit System Recovery | Impact |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -47,15 +98,13 @@ This search detects a suspicioous termination of known services killed by ransom
 | `known_services_killed_by_ransomware_filter`
 ```
 
-#### Associated Analytic Story
-* [Ransomware](/stories/ransomware)
-* [BlackMatter Ransomware](/stories/blackmatter_ransomware)
+> :information_source:
+> **known_services_killed_by_ransomware_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the 7036 EventCode ScManager in System audit Logs from your endpoints.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventCode
 * Message
@@ -63,12 +112,17 @@ To successfully implement this search, you need to be ingesting logs with the 70
 * Type
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the 7036 EventCode ScManager in System audit Logs from your endpoints.
 #### Known False Positives
 Admin activities or installing related updates may do a sudden stop to list of services we monitor.
+
+#### Associated Analytic Story
+* [Ransomware](/stories/ransomware)
+* [BlackMatter Ransomware](/stories/blackmatter_ransomware)
+
+
 
 
 #### RBA
@@ -78,6 +132,8 @@ Admin activities or installing related updates may do a sudden stop to list of s
 | 72.0 | 90 | 80 | Known services $Message$ terminated by a potential ransomware on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

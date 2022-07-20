@@ -32,13 +32,18 @@ schtasks.exe is natively found in `C:\Windows\system32` and `C:\Windows\syswow64
 The following DLL(s) are loaded when schtasks.exe or TaskService is launched -`taskschd.dll`. If found loaded by another process, it is possible a scheduled task is being registered within that process context in memory.\
 Upon triage, identify the task scheduled source. Was it schtasks.exe or was it via TaskService. Review the job created and the Command to be executed. Capture any artifacts on disk and review. Identify any parallel processes within the same timeframe to identify source.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-04-08
 - **Author**: Michael Haag, Splunk
 - **ID**: 5d9c6eee-988c-11eb-8253-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -47,6 +52,52 @@ Upon triage, identify the task scheduled source. Was it schtasks.exe or was it v
 | [T1053.005](https://attack.mitre.org/techniques/T1053/005/) | Scheduled Task | Execution, Persistence, Privilege Escalation |
 
 | [T1053](https://attack.mitre.org/techniques/T1053/) | Scheduled Task/Job | Execution, Persistence, Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -60,6 +111,26 @@ Upon triage, identify the task scheduled source. Was it schtasks.exe or was it v
 | `winevent_scheduled_task_created_within_public_path_filter`
 ```
 
+> :information_source:
+> **winevent_scheduled_task_created_within_public_path_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+
+
+#### Required fields
+List of fields required to use this analytic.
+* _time
+* dest
+* Task_Name
+* Description
+* Command
+
+
+
+#### How To Implement
+To successfully implement this search, you need to be ingesting Windows Security Event Logs with 4698 EventCode enabled. The Windows TA is also required.
+#### Known False Positives
+False positives are possible if legitimate applications are allowed to register tasks in public paths. Filter as needed based on paths that are used legitimately.
+
 #### Associated Analytic Story
 * [Windows Persistence Techniques](/stories/windows_persistence_techniques)
 * [Ransomware](/stories/ransomware)
@@ -69,23 +140,6 @@ Upon triage, identify the task scheduled source. Was it schtasks.exe or was it v
 * [Industroyer2](/stories/industroyer2)
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting Windows Security Event Logs with 4698 EventCode enabled. The Windows TA is also required.
-
-#### Required field
-* _time
-* dest
-* Task_Name
-* Description
-* Command
-
-
-#### Kill Chain Phase
-* Exploitation
-
-
-#### Known False Positives
-False positives are possible if legitimate applications are allowed to register tasks in public paths. Filter as needed based on paths that are used legitimately.
 
 
 #### RBA
@@ -95,6 +149,8 @@ False positives are possible if legitimate applications are allowed to register 
 | 70.0 | 70 | 100 | A windows scheduled task was created (task name=$Task_Name$) on $dest$ by the following command: $Command$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -24,13 +24,18 @@ tags:
 
 The following analytic utilizes PowerShell Script Block Logging (EventCode=4104) to identify the execution of the `Get-DomainGroupMember` commandlet. `Get-DomainGroupMember` is part of PowerView, a PowerShell tool used to perform enumeration on Windows domains. As the name suggests, `Get-DomainGroupMember` is used to list the members of an specific domain group. Red Teams and adversaries alike use PowerView to enumerate elevated domain groups for situational awareness and Active Directory Discovery to identify high privileged users.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-08-25
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 10d62950-0de5-4199-a710-cff9ea79b413
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,52 @@ The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
 | [T1069](https://attack.mitre.org/techniques/T1069/) | Permission Groups Discovery | Discovery |
 
 | [T1069.002](https://attack.mitre.org/techniques/T1069/002/) | Domain Groups | Discovery |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Reconnaissance
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -49,14 +100,13 @@ The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
 | `elevated_group_discovery_with_powerview_filter`
 ```
 
-#### Associated Analytic Story
-* [Active Directory Discovery](/stories/active_directory_discovery)
+> :information_source:
+> **elevated_group_discovery_with_powerview_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this analytic, you will need to enable PowerShell Script Block Logging on some or all endpoints. Additional setup here https://docs.splunk.com/Documentation/UBA/5.0.4.1/GetDataIn/AddPowerShell#Configure_module_logging_for_PowerShell.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventCode
 * Message
@@ -64,12 +114,16 @@ To successfully implement this analytic, you will need to enable PowerShell Scri
 * User
 
 
-#### Kill Chain Phase
-* Reconnaissance
 
-
+#### How To Implement
+To successfully implement this analytic, you will need to enable PowerShell Script Block Logging on some or all endpoints. Additional setup here https://docs.splunk.com/Documentation/UBA/5.0.4.1/GetDataIn/AddPowerShell#Configure_module_logging_for_PowerShell.
 #### Known False Positives
 Administrators or power users may use this PowerView for troubleshooting.
+
+#### Associated Analytic Story
+* [Active Directory Discovery](/stories/active_directory_discovery)
+
+
 
 
 #### RBA
@@ -79,6 +133,8 @@ Administrators or power users may use this PowerView for troubleshooting.
 | 21.0 | 30 | 70 | Elevated group discovery using PowerView on $dest$ by $user$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

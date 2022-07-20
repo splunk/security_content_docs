@@ -24,19 +24,75 @@ tags:
 
 The following analytic identifies `pkexec` spawning with no command-line arguments. A vulnerability in Polkit&#39;s pkexec component identified as CVE-2021-4034 (PwnKit) which is present in the default configuration of all major Linux distributions and can be exploited to gain full root privileges on the system.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-01-28
 - **Author**: Michael Haag, Splunk
 - **ID**: 03e22c1c-8086-11ec-ac2e-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1068](https://attack.mitre.org/techniques/T1068/) | Exploitation for Privilege Escalation | Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
+| ----------- | ----------- | -------------- |
+| [CVE-2021-4034](https://nvd.nist.gov/vuln/detail/CVE-2021-4034) | A local privilege escalation vulnerability was found on polkit&#39;s pkexec utility. The pkexec application is a setuid tool designed to allow unprivileged users to run commands as privileged users according predefined policies. The current version of pkexec doesn&#39;t handle the calling parameters count correctly and ends trying to execute environment variables as commands. An attacker can leverage this by crafting environment variables in such a way it&#39;ll induce pkexec to execute arbitrary code. When successfully executed the attack can cause a local privilege escalation given unprivileged users administrative rights on the target machine. | 7.2 |
+
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -50,14 +106,13 @@ The following analytic identifies `pkexec` spawning with no command-line argumen
 | `linux_pkexec_privilege_escalation_filter`
 ```
 
-#### Associated Analytic Story
-* [Linux Privilege Escalation](/stories/linux_privilege_escalation)
+> :information_source:
+> **linux_pkexec_privilege_escalation_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-Depending on the EDR product in use, there are multiple ways to &#34;null&#34; the command-line field, Processes.process. Two that may be useful `process=&#34;(^.{0}$)&#34;` or `| where isnull(process)`. To generate data for this behavior, Sysmon for Linux was utilized. To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -72,12 +127,16 @@ Depending on the EDR product in use, there are multiple ways to &#34;null&#34; t
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+Depending on the EDR product in use, there are multiple ways to &#34;null&#34; the command-line field, Processes.process. Two that may be useful `process=&#34;(^.{0}$)&#34;` or `| where isnull(process)`. To generate data for this behavior, Sysmon for Linux was utilized. To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 False positives may be present, filter as needed.
+
+#### Associated Analytic Story
+* [Linux Privilege Escalation](/stories/linux_privilege_escalation)
+
+
 
 
 #### RBA
@@ -87,13 +146,8 @@ False positives may be present, filter as needed.
 | 56.0 | 80 | 70 | An instance of $parent_process_name$ spawning $process_name$ was identified on endpoint $dest$ by user $user$ related to a local privilege escalation in polkit pkexec. |
 
 
-
-#### CVE
-
-| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
-| ----------- | ----------- | -------------- |
-| [CVE-2021-4034](https://nvd.nist.gov/vuln/detail/CVE-2021-4034) | A local privilege escalation vulnerability was found on polkit&#39;s pkexec utility. The pkexec application is a setuid tool designed to allow unprivileged users to run commands as privileged users according predefined policies. The current version of pkexec doesn&#39;t handle the calling parameters count correctly and ends trying to execute environment variables as commands. An attacker can leverage this by crafting environment variables in such a way it&#39;ll induce pkexec to execute arbitrary code. When successfully executed the attack can cause a local privilege escalation given unprivileged users administrative rights on the target machine. | 7.2 |
-
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

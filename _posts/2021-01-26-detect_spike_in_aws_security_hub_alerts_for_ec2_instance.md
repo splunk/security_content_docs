@@ -20,12 +20,67 @@ tags:
 
 This search looks for a spike in number of of AWS security Hub alerts for an EC2 instance in 4 hours intervals
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-01-26
 - **Author**: Bhavin Patel, Splunk
 - **ID**: 2a9b80d3-6340-4345-b5ad-290bf5d0d222
+
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.DP
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 13
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -41,14 +96,13 @@ This search looks for a spike in number of of AWS security Hub alerts for an EC2
 | `detect_spike_in_aws_security_hub_alerts_for_ec2_instance_filter`
 ```
 
-#### Associated Analytic Story
-* [AWS Security Hub Alerts](/stories/aws_security_hub_alerts)
+> :information_source:
+> **detect_spike_in_aws_security_hub_alerts_for_ec2_instance_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install the AWS App for Splunk (version 5.1.0 or later) and Splunk Add-on for AWS (version 4.4.0 or later), then configure your Security Hub inputs. The threshold_value should be tuned to your environment and schedule these searches according to the bucket span interval.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Resources{}.Type
 * Title
@@ -59,12 +113,16 @@ You must install the AWS App for Splunk (version 5.1.0 or later) and Splunk Add-
 * dest
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+You must install the AWS App for Splunk (version 5.1.0 or later) and Splunk Add-on for AWS (version 4.4.0 or later), then configure your Security Hub inputs. The threshold_value should be tuned to your environment and schedule these searches according to the bucket span interval.
 #### Known False Positives
 None
+
+#### Associated Analytic Story
+* [AWS Security Hub Alerts](/stories/aws_security_hub_alerts)
+
+
 
 
 #### RBA
@@ -74,6 +132,8 @@ None
 | 15.0 | 30 | 50 | Spike in AWS security Hub alerts with title $Title$ for EC2 instance $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

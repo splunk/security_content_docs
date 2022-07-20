@@ -27,13 +27,18 @@ tags:
 
 The following analytic identifies a modification or registry add to the safeboot registry as an autostart mechanism. This technique is utilized by adversaries to persist a driver or service into Safe Mode. Two keys are monitored in this analytic,  Minimal and Network. adding values to Minimal will load into Safe Mode and by adding into Network it will provide the service or drive the ability to perform network connections in Safe Mode.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-03-31
 - **Author**: Teoderick Contreras, Michael Haag, Splunk
 - **ID**: c6149154-c9d8-11eb-9da7-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,52 @@ The following analytic identifies a modification or registry add to the safeboot
 | [T1547.001](https://attack.mitre.org/techniques/T1547/001/) | Registry Run Keys / Startup Folder | Persistence, Privilege Escalation |
 
 | [T1547](https://attack.mitre.org/techniques/T1547/) | Boot or Logon Autostart Execution | Persistence, Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -56,16 +107,13 @@ The following analytic identifies a modification or registry add to the safeboot
 | `windows_registry_modification_for_safe_mode_persistence_filter`
 ```
 
-#### Associated Analytic Story
-* [Ransomware](/stories/ransomware)
-* [Windows Registry Abuse](/stories/windows_registry_abuse)
-* [Windows Drivers](/stories/windows_drivers)
+> :information_source:
+> **windows_registry_modification_for_safe_mode_persistence_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you must be ingesting data that records registry activity from your hosts to populate the endpoint data model in the registry node. This is typically populated via endpoint detection-and-response product, such as Carbon Black or endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the registry.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Registry.registry_path
 * Registry.registry_key_name
@@ -78,12 +126,18 @@ To successfully implement this search, you must be ingesting data that records r
 * Processes.process_guid
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you must be ingesting data that records registry activity from your hosts to populate the endpoint data model in the registry node. This is typically populated via endpoint detection-and-response product, such as Carbon Black or endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the registry.
 #### Known False Positives
 updated windows application needed in safe boot may used this registry
+
+#### Associated Analytic Story
+* [Ransomware](/stories/ransomware)
+* [Windows Registry Abuse](/stories/windows_registry_abuse)
+* [Windows Drivers](/stories/windows_drivers)
+
+
 
 
 #### RBA
@@ -93,6 +147,8 @@ updated windows application needed in safe boot may used this registry
 | 42.0 | 60 | 70 | Safeboot registry $registry_path$ was added or modified with a new value $registry_value_name$ on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

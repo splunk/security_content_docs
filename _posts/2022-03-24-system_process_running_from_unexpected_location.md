@@ -21,19 +21,75 @@ tags:
 
 An attacker tries might try to use different version of a system command without overriding original, or they might try to avoid some detection running the process from a different folder. This detection checks that a list of system processes run inside C:\\Windows\System32 or C:\\Windows\SysWOW64 The list of system processes has been extracted from https://github.com/splunk/security_content/blob/develop/lookups/is_windows_system_file.csv and the original detection https://github.com/splunk/security_content/blob/develop/detections/system_processes_run_from_unexpected_locations.yml
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2022-03-24
 - **Author**: Jose Hernadnez, Ignacio Bermudez Corrales, Splunk
 - **ID**: 28179107-099a-464a-94d3-08301e6c055f
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1036](https://attack.mitre.org/techniques/T1036/) | Masquerading | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -71,15 +127,13 @@ $cond_6 =
 | into write_ssa_detected_events();
 ```
 
-#### Associated Analytic Story
-* [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics)
-* [Masquerading - Rename System Utilities](/stories/masquerading_-_rename_system_utilities)
+> :information_source:
+> **system_process_running_from_unexpected_location_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-Collect endpoint data such as sysmon or 4688 events.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * dest_device_id
 * process_name
 * _time
@@ -87,12 +141,17 @@ Collect endpoint data such as sysmon or 4688 events.
 * process_path
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+Collect endpoint data such as sysmon or 4688 events.
 #### Known False Positives
 None
+
+#### Associated Analytic Story
+* [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics)
+* [Masquerading - Rename System Utilities](/stories/masquerading_-_rename_system_utilities)
+
+
 
 
 #### RBA
@@ -102,6 +161,8 @@ None
 | 56.0 | 70 | 80 | A system process $process_name$ with commandline $cmd_line$ spawn in non-default folder path in host $dest_device_id$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

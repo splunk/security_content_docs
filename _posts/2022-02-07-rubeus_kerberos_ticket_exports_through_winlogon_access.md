@@ -26,13 +26,18 @@ tags:
 
 The following analytic looks for a process accessing the winlogon.exe system process. The Splunk Threat Research team identified this behavior when using the Rubeus tool to monitor for and export kerberos tickets from memory. Before being able to export tickets. Rubeus will try to escalate privileges to SYSTEM by obtaining a handle to winlogon.exe before trying to monitor for kerberos tickets. Exporting tickets from memory is typically the first step for pass the ticket attacks. Red teams and adversaries alike may use the pass the ticket technique using stolen Kerberos tickets to move laterally within an environment, bypassing normal system access controls. Defenders should be aware that adversaries may customize the source code of Rubeus to potentially bypass this analytic.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2022-02-07
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 5ed8c50a-8869-11ec-876f-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -41,6 +46,52 @@ The following analytic looks for a process accessing the winlogon.exe system pro
 | [T1550](https://attack.mitre.org/techniques/T1550/) | Use Alternate Authentication Material | Defense Evasion, Lateral Movement |
 
 | [T1550.003](https://attack.mitre.org/techniques/T1550/003/) | Pass the Ticket | Defense Evasion, Lateral Movement |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -53,14 +104,13 @@ The following analytic looks for a process accessing the winlogon.exe system pro
 | `rubeus_kerberos_ticket_exports_through_winlogon_access_filter`
 ```
 
-#### Associated Analytic Story
-* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
+> :information_source:
+> **rubeus_kerberos_ticket_exports_through_winlogon_access_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This search needs Sysmon Logs and a sysmon configuration, which includes EventCode 10. This search uses an input macro named `sysmon`. We strongly recommend that you specify your environment-specific configurations (index, source, sourcetype, etc.) for Windows Sysmon logs. Replace the macro definition with configurations for your Splunk environment.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventCode
 * TargetImage
@@ -71,12 +121,16 @@ This search needs Sysmon Logs and a sysmon configuration, which includes EventCo
 * SourceProcessId
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+This search needs Sysmon Logs and a sysmon configuration, which includes EventCode 10. This search uses an input macro named `sysmon`. We strongly recommend that you specify your environment-specific configurations (index, source, sourcetype, etc.) for Windows Sysmon logs. Replace the macro definition with configurations for your Splunk environment.
 #### Known False Positives
 Legitimate applications may obtain a handle for winlogon.exe. Filter as needed
+
+#### Associated Analytic Story
+* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
+
+
 
 
 #### RBA
@@ -86,6 +140,8 @@ Legitimate applications may obtain a handle for winlogon.exe. Filter as needed
 | 36.0 | 60 | 60 | Winlogon.exe was accessed by $SourceImage$ on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -24,13 +24,18 @@ tags:
 
 The following detection identifies any malformed policy document exceptions with a status of `failure`. A malformed policy document exception occurs in instances where roles are attempted to be assumed, or brute forced. In a brute force attempt, using a tool like CloudSploit or Pacu, an attempt will look like `arn:aws:iam::111111111111:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS`.  Meaning, when an adversary is attempting to identify a role name, multiple failures will occur. This detection focuses on the errors of a remote attempt that is failing.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-04-01
 - **Author**: Michael Haag, Splunk
 - **ID**: f19e09b0-9308-11eb-b7ec-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,52 @@ The following detection identifies any malformed policy document exceptions with
 | [T1580](https://attack.mitre.org/techniques/T1580/) | Cloud Infrastructure Discovery | Discovery |
 
 | [T1110](https://attack.mitre.org/techniques/T1110/) | Brute Force | Credential Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Reconnaissance
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -51,14 +102,13 @@ The following detection identifies any malformed policy document exceptions with
 | `aws_iam_assume_role_policy_brute_force_filter`
 ```
 
-#### Associated Analytic Story
-* [AWS IAM Privilege Escalation](/stories/aws_iam_privilege_escalation)
+> :information_source:
+> **aws_iam_assume_role_policy_brute_force_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-The Splunk AWS Add-on and Splunk App for AWS is required to utilize this data. The search requires AWS Cloudtrail logs. Set the `where count` greater than a value to identify suspicious activity in your environment.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * eventName
 * userAgent
@@ -66,12 +116,16 @@ The Splunk AWS Add-on and Splunk App for AWS is required to utilize this data. T
 * requestParameters.policyName
 
 
-#### Kill Chain Phase
-* Reconnaissance
 
-
+#### How To Implement
+The Splunk AWS Add-on and Splunk App for AWS is required to utilize this data. The search requires AWS Cloudtrail logs. Set the `where count` greater than a value to identify suspicious activity in your environment.
 #### Known False Positives
 This detection will require tuning to provide high fidelity detection capabilties. Tune based on src addresses (corporate offices, VPN terminations) or by groups of users.
+
+#### Associated Analytic Story
+* [AWS IAM Privilege Escalation](/stories/aws_iam_privilege_escalation)
+
+
 
 
 #### RBA
@@ -81,6 +135,8 @@ This detection will require tuning to provide high fidelity detection capabiltie
 | 28.0 | 40 | 70 | User $user_arn$ has caused multiple failures with errorCode $errorCode$, which potentially means adversary is attempting to identify a role name. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

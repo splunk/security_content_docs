@@ -5,8 +5,8 @@ main:
     url: /stories/
   - title: "Playbooks"
     url: /playbooks/
-  - title: "Tags"
-    url: /tags/
+  - title: "Blog"
+    url: https://www.splunk.com/en_us/blog/author/secmrkt-research.html
   - title: "About"
     url: https://www.splunk.com/en_us/cyber-security/threat-research.html
 detections:
@@ -81,6 +81,22 @@ detections:
 stories:
   - title: "Use Case"
     children:
+      - title: Abuse
+        url: /stories/abuse/
+      - title: Adversary Tactics
+        url: /stories/adversary_tactics/
+      - title: Best Practices
+        url: /stories/best_practices/
+      - title: Cloud Security
+        url: /stories/cloud_security/
+      - title: Data Destruction
+        url: /stories/data_destruction/
+      - title: Malware
+        url: /stories/malware/
+      - title: Privilege Escalation
+        url: /stories/privilege_escalation/
+      - title: Vulnerability
+        url: /stories/vulnerability/
 playbooks:
   - title: "Type"
     children:

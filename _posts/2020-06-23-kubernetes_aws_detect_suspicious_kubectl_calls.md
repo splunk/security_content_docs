@@ -12,7 +12,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -22,12 +22,63 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search provides information on anonymous Kubectl calls with IP, verb namespace and object access context
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-06-23
 - **Author**: Rod Soto, Splunk
 - **ID**: 042a3d32-8318-4763-9679-09db2644a8f2
+
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -38,14 +89,13 @@ This search provides information on anonymous Kubectl calls with IP, verb namesp
 |`kubernetes_aws_detect_suspicious_kubectl_calls_filter`
 ```
 
-#### Associated Analytic Story
-* [Kubernetes Sensitive Object Access Activity](/stories/kubernetes_sensitive_object_access_activity)
+> :information_source:
+> **kubernetes_aws_detect_suspicious_kubectl_calls_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install splunk AWS add on and Splunk App for AWS. This search works with cloudwatch logs.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * userAgent
 * sourceIPs{}
@@ -55,12 +105,16 @@ You must install splunk AWS add on and Splunk App for AWS. This search works wit
 * requestURI
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+You must install splunk AWS add on and Splunk App for AWS. This search works with cloudwatch logs.
 #### Known False Positives
 Kubectl calls are not malicious by nature. However source IP, verb and Object can reveal potential malicious activity, specially anonymous suspicious IPs and sensitive objects such as configmaps or secrets
+
+#### Associated Analytic Story
+* [Kubernetes Sensitive Object Access Activity](/stories/kubernetes_sensitive_object_access_activity)
+
+
 
 
 #### RBA
@@ -70,6 +124,8 @@ Kubectl calls are not malicious by nature. However source IP, verb and Object ca
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

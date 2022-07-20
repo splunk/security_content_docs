@@ -14,7 +14,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -24,19 +24,70 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search can help the detection of compromised accounts or internal users sending suspcious calendar invites via GSuite calendar. These invites may contain malicious links or attachments.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-10-24
 - **Author**: Rod Soto, Teoderick Contreras
 - **ID**: 03cdd68a-34fb-11ec-9bd3-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1566](https://attack.mitre.org/techniques/T1566/) | Phishing | Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -50,14 +101,13 @@ This search can help the detection of compromised accounts or internal users sen
 | `gsuite_suspicious_calendar_invite_filter`
 ```
 
-#### Associated Analytic Story
-* [Spearphishing Attachments](/stories/spearphishing_attachments)
+> :information_source:
+> **gsuite_suspicious_calendar_invite_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-In order to successfully implement this search, you need to be ingesting logs related to gsuite (gsuite:calendar:json) having the file sharing metadata like file type, source owner, destination target user, description, etc. This search can also be made more specific by selecting specific emails, subdomains timeframe, organizational units, targeted user, etc. In order for the search to work for your environment please update `yourdomain.com` value in the query with the domain relavant for your organization.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * email
 * parameters.event_title
@@ -65,12 +115,16 @@ In order to successfully implement this search, you need to be ingesting logs re
 * parameters.event_title
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+In order to successfully implement this search, you need to be ingesting logs related to gsuite (gsuite:calendar:json) having the file sharing metadata like file type, source owner, destination target user, description, etc. This search can also be made more specific by selecting specific emails, subdomains timeframe, organizational units, targeted user, etc. In order for the search to work for your environment please update `yourdomain.com` value in the query with the domain relavant for your organization.
 #### Known False Positives
 This search will also produce normal activity statistics. Fields such as email, ip address, name, parameters.organizer_calendar_id, parameters.target_calendar_id and parameters.event_title may give away phishing intent.For more specific results use email parameter.
+
+#### Associated Analytic Story
+* [Spearphishing Attachments](/stories/spearphishing_attachments)
+
+
 
 
 #### RBA
@@ -80,6 +134,8 @@ This search will also produce normal activity statistics. Fields such as email, 
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

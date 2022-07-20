@@ -18,7 +18,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -35,13 +35,18 @@ The following analytic identifies the use of a native MacOS utility, PlistBuddy,
 - PlistBuddy -c &#34;Add :ProgramArguments:1 string -c&#34; ~/Library/Launchagents/init_verx.plist \
 Upon triage, capture the property list file being written to disk and review for further indicators. Contain the endpoint and triage further.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-02-22
 - **Author**: Michael Haag, Splunk
 - **ID**: 20ba6c32-c733-4a32-b64e-2688cf231399
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -51,6 +56,52 @@ Upon triage, capture the property list file being written to disk and review for
 
 | [T1543](https://attack.mitre.org/techniques/T1543/) | Create or Modify System Process | Persistence, Privilege Escalation |
 
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
+
 #### Search
 
 ```
@@ -58,24 +109,27 @@ Upon triage, capture the property list file being written to disk and review for
 |  `suspicious_plistbuddy_usage_via_osquery_filter`
 ```
 
-#### Associated Analytic Story
-* [Silver Sparrow](/stories/silver_sparrow)
+> :information_source:
+> **suspicious_plistbuddy_usage_via_osquery_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-OSQuery must be installed and configured to pick up process events (info at https://osquery.io) as well as using the Splunk OSQuery Add-on https://splunkbase.splunk.com/app/4402. Modify the macro and validate fields are correct.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * columns.cmdline
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+OSQuery must be installed and configured to pick up process events (info at https://osquery.io) as well as using the Splunk OSQuery Add-on https://splunkbase.splunk.com/app/4402. Modify the macro and validate fields are correct.
 #### Known False Positives
 Some legitimate applications may use PlistBuddy to create or modify property lists and possibly generate false positives. Review the property list being modified or created to confirm.
+
+#### Associated Analytic Story
+* [Silver Sparrow](/stories/silver_sparrow)
+
+
 
 
 #### RBA
@@ -85,6 +139,8 @@ Some legitimate applications may use PlistBuddy to create or modify property lis
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

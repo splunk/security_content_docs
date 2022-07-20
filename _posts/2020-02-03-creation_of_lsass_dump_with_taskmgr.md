@@ -24,13 +24,18 @@ tags:
 
 Detect the hands on keyboard behavior of Windows Task Manager creating a process dump of lsass.exe. Upon this behavior occurring, a file write/modification will occur in the users profile under \AppData\Local\Temp. The dump file, lsass.dmp, cannot be renamed, however if the dump occurs more than once, it will be named lsass (2).dmp.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-02-03
 - **Author**: Michael Haag, Splunk
 - **ID**: b2fbe95a-9c62-4c12-8a29-24b97e84c0cd
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,57 @@ Detect the hands on keyboard behavior of Windows Task Manager creating a process
 | [T1003.001](https://attack.mitre.org/techniques/T1003/001/) | LSASS Memory | Credential Access |
 
 | [T1003](https://attack.mitre.org/techniques/T1003/) | OS Credential Dumping | Credential Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 6
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -51,14 +107,13 @@ Detect the hands on keyboard behavior of Windows Task Manager creating a process
 | `creation_of_lsass_dump_with_taskmgr_filter`
 ```
 
-#### Associated Analytic Story
-* [Credential Dumping](/stories/credential_dumping)
+> :information_source:
+> **creation_of_lsass_dump_with_taskmgr_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This search requires Sysmon Logs and a Sysmon configuration, which includes EventCode 11 for detecting file create of lsass.dmp. This search uses an input macro named `sysmon`. We strongly recommend that you specify your environment-specific configurations (index, source, sourcetype, etc.) for Windows Sysmon logs. Replace the macro definition with configurations for your Splunk environment. The search also uses a post-filter macro designed to filter out known false positives.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventID
 * process_name
@@ -67,12 +122,16 @@ This search requires Sysmon Logs and a Sysmon configuration, which includes Even
 * object_category
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+This search requires Sysmon Logs and a Sysmon configuration, which includes EventCode 11 for detecting file create of lsass.dmp. This search uses an input macro named `sysmon`. We strongly recommend that you specify your environment-specific configurations (index, source, sourcetype, etc.) for Windows Sysmon logs. Replace the macro definition with configurations for your Splunk environment. The search also uses a post-filter macro designed to filter out known false positives.
 #### Known False Positives
 Administrators can create memory dumps for debugging purposes, but memory dumps of the LSASS process would be unusual.
+
+#### Associated Analytic Story
+* [Credential Dumping](/stories/credential_dumping)
+
+
 
 
 #### RBA
@@ -82,6 +141,8 @@ Administrators can create memory dumps for debugging purposes, but memory dumps 
 | 80.0 | 80 | 100 | $process_name$ was identified on endpoint $Computer$ writing $TargetFilename$ to disk. This behavior is related to dumping credentials via Task Manager. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

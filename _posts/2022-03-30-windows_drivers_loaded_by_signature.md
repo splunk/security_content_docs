@@ -25,13 +25,18 @@ tags:
 
 The following analytic assists with viewing all drivers being loaded by using Sysmon EventCode 6 (Driver Load). Sysmon provides some simple fields to assist with identifying suspicious drivers. Use this analytic to look at prevalence of driver (count), path of driver, signature status and hash. Review these fields with scrutiny until the ability to prove the driver is legitimate and has a purpose in the environment.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-03-30
 - **Author**: Michael Haag, Splunk
 - **ID**: d2d4af6a-6c2b-4d79-80c5-fc2cf12a2f68
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,58 @@ The following analytic assists with viewing all drivers being loaded by using Sy
 | [T1014](https://attack.mitre.org/techniques/T1014/) | Rootkit | Defense Evasion |
 
 | [T1068](https://attack.mitre.org/techniques/T1068/) | Exploitation for Privilege Escalation | Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -51,14 +108,13 @@ The following analytic assists with viewing all drivers being loaded by using Sy
 | `windows_drivers_loaded_by_signature_filter`
 ```
 
-#### Associated Analytic Story
-* [Windows Drivers](/stories/windows_drivers)
+> :information_source:
+> **windows_drivers_loaded_by_signature_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have the latest version of the Sysmon TA. Most EDR products provide the ability to review driver loads, or module loads, and using a query as such help with hunting for malicious drivers.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * ImageLoaded
 * Computer
@@ -69,12 +125,16 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Hashes
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have the latest version of the Sysmon TA. Most EDR products provide the ability to review driver loads, or module loads, and using a query as such help with hunting for malicious drivers.
 #### Known False Positives
 This analytic is meant to assist with identifying drivers loaded in the environment and not to be setup for notables off the bat.
+
+#### Associated Analytic Story
+* [Windows Drivers](/stories/windows_drivers)
+
+
 
 
 #### RBA
@@ -84,6 +144,8 @@ This analytic is meant to assist with identifying drivers loaded in the environm
 | 42.0 | 60 | 70 | A driver has loaded on $Computer$. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -27,13 +27,18 @@ tags:
 
 This analytic is to detect a deletion of services in a linux machine. attacker may delete or modify services to impair some security features or act as defense evasion in a compromised linux machine. This TTP can be also a good indicator of a malware trying to wipe or delete several files in a compromised host as part of its destructive payload like what acidrain malware does in linux or router machines. This detection can be a good pivot to check what process and user tries to delete this type of files which is not so common and need further investigation.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-04-12
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: b509bbd3-0331-4aaa-8e4a-d2affe100af6
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -44,6 +49,58 @@ This analytic is to detect a deletion of services in a linux machine. attacker m
 | [T1070.004](https://attack.mitre.org/techniques/T1070/004/) | File Deletion | Defense Evasion |
 
 | [T1070](https://attack.mitre.org/techniques/T1070/) | Indicator Removal on Host | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -61,14 +118,13 @@ This analytic is to detect a deletion of services in a linux machine. attacker m
 | `linux_deletion_of_services_filter`
 ```
 
-#### Associated Analytic Story
-* [AcidRain](/stories/acidrain)
+> :information_source:
+> **linux_deletion_of_services_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Filesystem.dest
 * Filesystem.file_create_time
@@ -87,12 +143,16 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 #### Known False Positives
 Administrator or network operator can execute this command. Please update the filter macros to remove false positives.
+
+#### Associated Analytic Story
+* [AcidRain](/stories/acidrain)
+
+
 
 
 #### RBA
@@ -102,6 +162,8 @@ Administrator or network operator can execute this command. Please update the fi
 | 64.0 | 80 | 80 | a $process_name$ deleting a services in $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

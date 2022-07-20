@@ -24,19 +24,70 @@ tags:
 This search, detects execution of suspicious bash commands from various commonly leveraged bash scripts like (AutoSUID, LinEnum, LinPeas) to perform discovery of possible paths of privilege execution, password files, vulnerable directories, executables and file permissions on a Linux host.\
 The search logic specifically looks for high number of distinct commands run in a short period of time.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-12-06
 - **Author**: Bhavin Patel, Splunk
 - **ID**: 0edd5112-56c9-11ec-b990-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1059.004](https://attack.mitre.org/techniques/T1059/004/) | Unix Shell | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -53,14 +104,13 @@ The search logic specifically looks for high number of distinct commands run in 
 | `suspicious_linux_discovery_commands_filter`
 ```
 
-#### Associated Analytic Story
-* [Linux Post-Exploitation](/stories/linux_post-exploitation)
+> :information_source:
+> **suspicious_linux_discovery_commands_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This detection search is based on Splunk add-on for Microsoft Sysmon-Linux.(https://splunkbase.splunk.com/app/6176/). Please install this add-on to parse fields correctly and execute detection search. Consider customizing the time window and threshold values according to your environment.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.process
 * Processes.parent_process_name
@@ -68,12 +118,16 @@ This detection search is based on Splunk add-on for Microsoft Sysmon-Linux.(http
 * Processes.process_name
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+This detection search is based on Splunk add-on for Microsoft Sysmon-Linux.(https://splunkbase.splunk.com/app/6176/). Please install this add-on to parse fields correctly and execute detection search. Consider customizing the time window and threshold values according to your environment.
 #### Known False Positives
 Unless an administrator is using these commands to troubleshoot or audit a system, the execution of these commands should be monitored.
+
+#### Associated Analytic Story
+* [Linux Post-Exploitation](/stories/linux_post-exploitation)
+
+
 
 
 #### RBA
@@ -83,6 +137,8 @@ Unless an administrator is using these commands to troubleshoot or audit a syste
 | 81.0 | 90 | 90 | Suspicious Linux Discovery Commands detected on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

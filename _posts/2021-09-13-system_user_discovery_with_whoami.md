@@ -23,19 +23,70 @@ tags:
 
 This analytic looks for the execution of `whoami.exe` without any arguments. This windows native binary prints out the current logged user. Red Teams and adversaries alike may leverage `whoami.exe` to identify system users on a compromised endpoint for situational awareness and Active Directory Discovery.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-09-13
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 894fc43e-6f50-47d5-a68b-ee9ee23e18f4
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1033](https://attack.mitre.org/techniques/T1033/) | System Owner/User Discovery | Discovery |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Reconnaissance
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -48,14 +99,13 @@ This analytic looks for the execution of `whoami.exe` without any arguments. Thi
 | `system_user_discovery_with_whoami_filter`
 ```
 
-#### Associated Analytic Story
-* [Active Directory Discovery](/stories/active_directory_discovery)
+> :information_source:
+> **system_user_discovery_with_whoami_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -70,12 +120,16 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Reconnaissance
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node.
 #### Known False Positives
 Administrators or power users may use this command for troubleshooting.
+
+#### Associated Analytic Story
+* [Active Directory Discovery](/stories/active_directory_discovery)
+
+
 
 
 #### RBA
@@ -85,6 +139,8 @@ Administrators or power users may use this command for troubleshooting.
 | 15.0 | 30 | 50 | System user discovery on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -14,7 +14,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -24,19 +24,77 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks at S3 bucket-access logs and detects new or previously unseen remote IP addresses that have successfully accessed an S3 bucket.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2018-06-28
 - **Author**: Bhavin Patel, Splunk
 - **ID**: e6f1bb1b-f441-492b-9126-902acda217da
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1530](https://attack.mitre.org/techniques/T1530/) | Data from Cloud Storage Object | Collection |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.DS
+* PR.AC
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 13
+* CIS 14
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -57,26 +115,29 @@ This search looks at S3 bucket-access logs and detects new or previously unseen 
 | `detect_s3_access_from_a_new_ip_filter`
 ```
 
-#### Associated Analytic Story
-* [Suspicious AWS S3 Activities](/stories/suspicious_aws_s3_activities)
+> :information_source:
+> **detect_s3_access_from_a_new_ip_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install the AWS App for Splunk (version 5.1.0 or later) and Splunk Add-on for AWS (version 4.4.0 or later), then configure your S3 access logs&#39; inputs. This search works best when you run the &#34;Previously Seen S3 Bucket Access by Remote IP&#34; support search once to create a history of previously seen remote IPs and bucket names.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * http_status
 * bucket_name
 * remote_ip
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must install the AWS App for Splunk (version 5.1.0 or later) and Splunk Add-on for AWS (version 4.4.0 or later), then configure your S3 access logs&#39; inputs. This search works best when you run the &#34;Previously Seen S3 Bucket Access by Remote IP&#34; support search once to create a history of previously seen remote IPs and bucket names.
 #### Known False Positives
 S3 buckets can be accessed from any IP, as long as it can make a successful connection. This will be a false postive, since the search is looking for a new IP within the past hour
+
+#### Associated Analytic Story
+* [Suspicious AWS S3 Activities](/stories/suspicious_aws_s3_activities)
+
+
 
 
 #### RBA
@@ -86,6 +147,8 @@ S3 buckets can be accessed from any IP, as long as it can make a successful conn
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

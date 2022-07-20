@@ -25,13 +25,18 @@ tags:
 
 This analytic is to detect a possible attempt to dump or access the content of /etc/passwd and /etc/shadow to enable offline credential cracking. &#34;etc/passwd&#34; store user information within linux OS while &#34;etc/shadow&#34; contain the user passwords hash. Adversaries and threat actors may attempt to access this to gain persistence and/or privilege escalation. This anomaly detection can be a good indicator of possible credential dumping technique but it might catch some normal administrator automation scripts or during credential auditing. In this scenario filter is needed.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-01-10
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 16107e0e-71fc-11ec-b862-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,58 @@ This analytic is to detect a possible attempt to dump or access the content of /
 | [T1003.008](https://attack.mitre.org/techniques/T1003/008/) | /etc/passwd and /etc/shadow | Credential Access |
 
 | [T1003](https://attack.mitre.org/techniques/T1003/) | OS Credential Dumping | Credential Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,15 +109,13 @@ This analytic is to detect a possible attempt to dump or access the content of /
 | `linux_possible_access_to_credential_files_filter`
 ```
 
-#### Associated Analytic Story
-* [Linux Privilege Escalation](/stories/linux_privilege_escalation)
-* [Linux Persistence Techniques](/stories/linux_persistence_techniques)
+> :information_source:
+> **linux_possible_access_to_credential_files_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -71,12 +126,17 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 #### Known False Positives
 Administrator or network operator can execute this command. Please update the filter macros to remove false positives.
+
+#### Associated Analytic Story
+* [Linux Privilege Escalation](/stories/linux_privilege_escalation)
+* [Linux Persistence Techniques](/stories/linux_persistence_techniques)
+
+
 
 
 #### RBA
@@ -86,6 +146,8 @@ Administrator or network operator can execute this command. Please update the fi
 | 25.0 | 50 | 50 | A commandline $process$ executed on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

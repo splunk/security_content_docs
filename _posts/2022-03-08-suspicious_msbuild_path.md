@@ -29,13 +29,18 @@ tags:
 
 The following analytic identifies msbuild.exe executing from a non-standard path. Msbuild.exe is natively found in C:\Windows\Microsoft.NET\Framework\v4.0.30319 and C:\Windows\Microsoft.NET\Framework64\v4.0.30319. Instances of Visual Studio will run a copy of msbuild.exe. A moved instance of MSBuild is suspicious, however there are instances of build applications that will move or use a copy of MSBuild.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-03-08
 - **Author**: Michael Haag, Splunk
 - **ID**: f5198224-551c-11eb-ae93-0242ac130002
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -49,6 +54,57 @@ The following analytic identifies msbuild.exe executing from a non-standard path
 
 | [T1127.001](https://attack.mitre.org/techniques/T1127/001/) | MSBuild | Defense Evasion |
 
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
+
 #### Search
 
 ```
@@ -60,17 +116,13 @@ The following analytic identifies msbuild.exe executing from a non-standard path
 | `suspicious_msbuild_path_filter`
 ```
 
-#### Associated Analytic Story
-* [Trusted Developer Utilities Proxy Execution MSBuild](/stories/trusted_developer_utilities_proxy_execution_msbuild)
-* [Cobalt Strike](/stories/cobalt_strike)
-* [Masquerading - Rename System Utilities](/stories/masquerading_-_rename_system_utilities)
-* [Living Off The Land](/stories/living_off_the_land)
+> :information_source:
+> **suspicious_msbuild_path_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -85,12 +137,19 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 Some legitimate applications may use a moved copy of msbuild.exe, triggering a false positive. Baselining of MSBuild.exe usage is recommended to better understand it&#39;s path usage. Visual Studio runs an instance out of a path that will need to be filtered on.
+
+#### Associated Analytic Story
+* [Trusted Developer Utilities Proxy Execution MSBuild](/stories/trusted_developer_utilities_proxy_execution_msbuild)
+* [Cobalt Strike](/stories/cobalt_strike)
+* [Masquerading - Rename System Utilities](/stories/masquerading_-_rename_system_utilities)
+* [Living Off The Land](/stories/living_off_the_land)
+
+
 
 
 #### RBA
@@ -100,6 +159,8 @@ Some legitimate applications may use a moved copy of msbuild.exe, triggering a f
 | 49.0 | 70 | 70 | Msbuild.exe ran from an uncommon path on $dest$ execyted by $user$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

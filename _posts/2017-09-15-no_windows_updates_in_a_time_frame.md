@@ -13,7 +13,7 @@ tags:
   - Updates
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -23,12 +23,68 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks for Windows endpoints that have not generated an event indicating a successful Windows update in the last 60 days. Windows updates are typically released monthly and applied shortly thereafter. An endpoint that has not successfully applied an update in this time frame indicates the endpoint is not regularly being patched for some reason.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Updates](https://docs.splunk.com/Documentation/CIM/latest/User/Updates)
 - **Last Updated**: 2017-09-15
 - **Author**: Bhavin Patel, Splunk
 - **ID**: 1a77c08c-2f56-409c-a2d3-7d64617edd4f
+
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* PR.MA
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 18
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -46,26 +102,29 @@ This search looks for Windows endpoints that have not generated an event indicat
 | `no_windows_updates_in_a_time_frame_filter`
 ```
 
-#### Associated Analytic Story
-* [Monitor for Updates](/stories/monitor_for_updates)
+> :information_source:
+> **no_windows_updates_in_a_time_frame_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, it requires that the &#39;Update&#39; data model is being populated. This can be accomplished by ingesting Windows events or the Windows Update log via a universal forwarder on the Windows endpoints you wish to monitor. The Windows add-on should be also be installed and configured to properly parse Windows events in Splunk. There may be other data sources which can populate this data model, including vulnerability management systems.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Updates.status
 * Updates.vendor_product
 * Updates.dest
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, it requires that the &#39;Update&#39; data model is being populated. This can be accomplished by ingesting Windows events or the Windows Update log via a universal forwarder on the Windows endpoints you wish to monitor. The Windows add-on should be also be installed and configured to properly parse Windows events in Splunk. There may be other data sources which can populate this data model, including vulnerability management systems.
 #### Known False Positives
 None identified
+
+#### Associated Analytic Story
+* [Monitor for Updates](/stories/monitor_for_updates)
+
+
 
 
 #### RBA
@@ -75,6 +134,8 @@ None identified
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

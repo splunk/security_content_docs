@@ -25,13 +25,18 @@ tags:
 
 this search detects a potential malicious office document that create schedule task entry through macro VBA api or through loading taskschd.dll. This technique was seen in so many malicious macro malware that create persistence , beaconing using task schedule malware entry The search will return the first time and last time the task was registered, as well as the `Command` to be executed, `Task Name`, `Author`, `Enabled`, and whether it is `Hidden` or not. schtasks.exe is natively found in `C:\Windows\system32` and `C:\Windows\syswow64`. The following DLL(s) are loaded when schtasks.exe or TaskService is launched -`taskschd.dll`. If found loaded by another process, it&#39;s possible a scheduled task is being registered within that process context in memory. Upon triage, identify the task scheduled source. Was it schtasks.exe or via TaskService? Review the job created and the Command to be executed. Capture any artifacts on disk and review. Identify any parallel processes within the same timeframe to identify source.&#39;
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-04-14
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: cc8b7b74-9d0f-11eb-8342-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,52 @@ this search detects a potential malicious office document that create schedule t
 | [T1566](https://attack.mitre.org/techniques/T1566/) | Phishing | Initial Access |
 
 | [T1566.001](https://attack.mitre.org/techniques/T1566/001/) | Spearphishing Attachment | Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -51,14 +102,13 @@ this search detects a potential malicious office document that create schedule t
 | `office_document_creating_schedule_task_filter`
 ```
 
-#### Associated Analytic Story
-* [Spearphishing Attachments](/stories/spearphishing_attachments)
+> :information_source:
+> **office_document_creating_schedule_task_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name and ImageLoaded (Like sysmon EventCode 7) from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Also be sure to include those monitored dll to your own sysmon config.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * ImageLoaded
 * AllImageLoaded
 * Computer
@@ -70,12 +120,16 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * _time
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name and ImageLoaded (Like sysmon EventCode 7) from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Also be sure to include those monitored dll to your own sysmon config.
 #### Known False Positives
 unknown
+
+#### Associated Analytic Story
+* [Spearphishing Attachments](/stories/spearphishing_attachments)
+
+
 
 
 #### RBA
@@ -85,6 +139,8 @@ unknown
 | 49.0 | 70 | 70 | Office document creating a schedule task on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

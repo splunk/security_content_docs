@@ -25,13 +25,18 @@ tags:
 
 The wevtutil.exe application is the windows event log utility. This searches for wevtutil.exe with parameters for clearing the application, security, setup, trace or system event logs.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-10-11
 - **Author**: David Dorsey, Michael Haag, Splunk
 - **ID**: 2827c0fd-e1be-4868-ae25-59d28e0f9d4f
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,63 @@ The wevtutil.exe application is the windows event log utility. This searches for
 | [T1070.001](https://attack.mitre.org/techniques/T1070/001/) | Clear Windows Event Logs | Defense Evasion |
 
 | [T1070](https://attack.mitre.org/techniques/T1070/) | Indicator Removal on Host | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.DP
+* PR.IP
+* PR.PT
+* PR.AC
+* PR.AT
+* DE.AE
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 6
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,16 +114,13 @@ The wevtutil.exe application is the windows event log utility. This searches for
 | `suspicious_wevtutil_usage_filter`
 ```
 
-#### Associated Analytic Story
-* [Windows Log Manipulation](/stories/windows_log_manipulation)
-* [Ransomware](/stories/ransomware)
-* [Clop Ransomware](/stories/clop_ransomware)
+> :information_source:
+> **suspicious_wevtutil_usage_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting data that records process activity from your hosts to populate the Endpoint data model in the Processes node. You must also be ingesting logs with both the process name and command line from your endpoints. The command-line arguments are mapped to the &#34;process&#34; field in the Endpoint data model.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.process
 * Processes.process_name
@@ -70,12 +129,18 @@ You must be ingesting data that records process activity from your hosts to popu
 * Processes.user
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must be ingesting data that records process activity from your hosts to populate the Endpoint data model in the Processes node. You must also be ingesting logs with both the process name and command line from your endpoints. The command-line arguments are mapped to the &#34;process&#34; field in the Endpoint data model.
 #### Known False Positives
 The wevtutil.exe application is a legitimate Windows event log utility. Administrators may use it to manage Windows event logs.
+
+#### Associated Analytic Story
+* [Windows Log Manipulation](/stories/windows_log_manipulation)
+* [Ransomware](/stories/ransomware)
+* [Clop Ransomware](/stories/clop_ransomware)
+
+
 
 
 #### RBA
@@ -85,6 +150,8 @@ The wevtutil.exe application is a legitimate Windows event log utility. Administ
 | 28.0 | 40 | 70 | Wevtutil.exe being used to clear Event Logs on $dest$ by $user$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

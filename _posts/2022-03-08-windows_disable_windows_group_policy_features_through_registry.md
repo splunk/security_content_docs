@@ -23,19 +23,76 @@ tags:
 
 This analytic is to detect a suspicious registry modification to disable windows features. These techniques are seen in several ransomware malware to impair the compromised host to make it hard for analyst to mitigate or response from the attack. Disabling these known features make the analysis and forensic response more hard. Disabling these feature is not so common but can still be implemented by the administrator for security purposes. In this scenario filters for users that are allowed doing this is needed.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-03-08
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 63a449ae-9f04-11ec-945e-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1112](https://attack.mitre.org/techniques/T1112/) | Modify Registry | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -53,16 +110,13 @@ This analytic is to detect a suspicious registry modification to disable windows
 | `windows_disable_windows_group_policy_features_through_registry_filter`
 ```
 
-#### Associated Analytic Story
-* [Ransomware](/stories/ransomware)
-* [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics)
-* [Windows Registry Abuse](/stories/windows_registry_abuse)
+> :information_source:
+> **windows_disable_windows_group_policy_features_through_registry_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the Filesystem responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` and `Registry` node.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Registry.registry_key_name
 * Registry.registry_path
@@ -77,12 +131,18 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.process_guid
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the Filesystem responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` and `Registry` node.
 #### Known False Positives
 unknown
+
+#### Associated Analytic Story
+* [Ransomware](/stories/ransomware)
+* [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics)
+* [Windows Registry Abuse](/stories/windows_registry_abuse)
+
+
 
 
 #### RBA
@@ -92,6 +152,8 @@ unknown
 | 49.0 | 70 | 70 | Registry modification to disable windows features on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

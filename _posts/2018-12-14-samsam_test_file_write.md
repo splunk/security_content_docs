@@ -23,19 +23,75 @@ tags:
 
 The search looks for a file named &#34;test.txt&#34; written to the windows system directory tree, which is consistent with Samsam propagation.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2018-12-14
 - **Author**: Rico Valdez, Splunk
 - **ID**: 493a879d-519d-428f-8f57-a06a0fdc107e
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1486](https://attack.mitre.org/techniques/T1486/) | Data Encrypted for Impact | Impact |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Delivery
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -48,14 +104,13 @@ The search looks for a file named &#34;test.txt&#34; written to the windows syst
 | `samsam_test_file_write_filter`
 ```
 
-#### Associated Analytic Story
-* [SamSam Ransomware](/stories/samsam_ransomware)
+> :information_source:
+> **samsam_test_file_write_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting data that records the file-system activity from your hosts to populate the Endpoint file-system data-model node. If you are using Sysmon, you will need a Splunk Universal Forwarder on each endpoint from which you want to collect data.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Filesystem.user
 * Filesystem.dest
@@ -63,12 +118,16 @@ You must be ingesting data that records the file-system activity from your hosts
 * Filesystem.file_path
 
 
-#### Kill Chain Phase
-* Delivery
 
-
+#### How To Implement
+You must be ingesting data that records the file-system activity from your hosts to populate the Endpoint file-system data-model node. If you are using Sysmon, you will need a Splunk Universal Forwarder on each endpoint from which you want to collect data.
 #### Known False Positives
 No false positives have been identified.
+
+#### Associated Analytic Story
+* [SamSam Ransomware](/stories/samsam_ransomware)
+
+
 
 
 #### RBA
@@ -78,6 +137,8 @@ No false positives have been identified.
 | 12.0 | 60 | 20 | A samsam ransomware test file creation in $file_path$ in host $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -27,13 +27,18 @@ This search looks for system processes that typically execute from `C:\Windows\S
 This detection utilizes a lookup that is deduped `system32` and `syswow64` directories from Server 2016 and Windows 10.\
 During triage, review the parallel processes - what process moved the native Windows binary? identify any artifacts on disk and review. If a remote destination is contacted, what is the reputation?
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2020-12-08
 - **Author**: David Dorsey, Michael Haag, Splunk
 - **ID**: a34aae96-ccf8-4aef-952c-3ea21444444d
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,57 @@ During triage, review the parallel processes - what process moved the native Win
 | [T1036](https://attack.mitre.org/techniques/T1036/) | Masquerading | Defense Evasion |
 
 | [T1036.003](https://attack.mitre.org/techniques/T1036/003/) | Rename System Utilities | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -55,17 +111,13 @@ During triage, review the parallel processes - what process moved the native Win
 | `system_processes_run_from_unexpected_locations_filter`
 ```
 
-#### Associated Analytic Story
-* [Suspicious Command-Line Executions](/stories/suspicious_command-line_executions)
-* [Unusual Processes](/stories/unusual_processes)
-* [Ransomware](/stories/ransomware)
-* [Masquerading - Rename System Utilities](/stories/masquerading_-_rename_system_utilities)
+> :information_source:
+> **system_processes_run_from_unexpected_locations_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.process_path
 * Processes.user
@@ -76,12 +128,19 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.process_hash
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` node.
 #### Known False Positives
 This detection may require tuning based on third party applications utilizing native Windows binaries in non-standard paths.
+
+#### Associated Analytic Story
+* [Suspicious Command-Line Executions](/stories/suspicious_command-line_executions)
+* [Unusual Processes](/stories/unusual_processes)
+* [Ransomware](/stories/ransomware)
+* [Masquerading - Rename System Utilities](/stories/masquerading_-_rename_system_utilities)
+
+
 
 
 #### RBA
@@ -91,6 +150,8 @@ This detection may require tuning based on third party applications utilizing na
 | 49.0 | 70 | 70 | System process running from unexpected location on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

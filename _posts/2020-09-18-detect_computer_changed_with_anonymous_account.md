@@ -15,7 +15,7 @@ tags:
   - CVE-2020-1472
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -25,19 +25,81 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks for Event Code 4742 (Computer Change) or EventCode 4624 (An account was successfully logged on) with an anonymous account.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-09-18
 - **Author**: Rod Soto, Jose Hernandez, Splunk
 - **ID**: 1400624a-d42d-484d-8843-e6753e6e3645
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1210](https://attack.mitre.org/techniques/T1210/) | Exploitation of Remote Services | Lateral Movement |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.AE
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 6
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
+| ----------- | ----------- | -------------- |
+| [CVE-2020-1472](https://nvd.nist.gov/vuln/detail/CVE-2020-1472) | An elevation of privilege vulnerability exists when an attacker establishes a vulnerable Netlogon secure channel connection to a domain controller, using the Netlogon Remote Protocol (MS-NRPC), aka &#39;Netlogon Elevation of Privilege Vulnerability&#39;. | 9.3 |
+
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -47,14 +109,13 @@ This search looks for Event Code 4742 (Computer Change) or EventCode 4624 (An ac
 | `detect_computer_changed_with_anonymous_account_filter`
 ```
 
-#### Associated Analytic Story
-* [Detect Zerologon Attack](/stories/detect_zerologon_attack)
+> :information_source:
+> **detect_computer_changed_with_anonymous_account_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This search requires audit computer account management to be enabled on the system in order to generate Event ID 4742. We strongly recommend that you specify your environment-specific configurations (index, source, sourcetype, etc.) for Windows Event Logs. Replace the macro definition with configurations for your Splunk environment. The search also uses a post-filter macro designed to filter out known false positives.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventCode
 * TargetUserName
@@ -63,12 +124,16 @@ This search requires audit computer account management to be enabled on the syst
 * user
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+This search requires audit computer account management to be enabled on the system in order to generate Event ID 4742. We strongly recommend that you specify your environment-specific configurations (index, source, sourcetype, etc.) for Windows Event Logs. Replace the macro definition with configurations for your Splunk environment. The search also uses a post-filter macro designed to filter out known false positives.
 #### Known False Positives
 None thus far found
+
+#### Associated Analytic Story
+* [Detect Zerologon Attack](/stories/detect_zerologon_attack)
+
+
 
 
 #### RBA
@@ -78,13 +143,8 @@ None thus far found
 | 49.0 | 70 | 70 | The following $EventCode$ occurred on $dest$ by $user$ with Logon Type 3, which may be indicative of the an account or group being changed by an anonymous account. |
 
 
-
-#### CVE
-
-| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
-| ----------- | ----------- | -------------- |
-| [CVE-2020-1472](https://nvd.nist.gov/vuln/detail/CVE-2020-1472) | An elevation of privilege vulnerability exists when an attacker establishes a vulnerable Netlogon secure channel connection to a domain controller, using the Netlogon Remote Protocol (MS-NRPC), aka &#39;Netlogon Elevation of Privilege Vulnerability&#39;. | 9.3 |
-
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

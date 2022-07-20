@@ -26,13 +26,18 @@ tags:
 
 The following query uses IAM events to track the success of a group being deleted on AWS. This is typically not indicative of malicious behavior, but a precurser to additional events thay may unfold. Review parallel IAM events - recently added users, new groups and so forth. Inversely, review failed attempts in a similar manner.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-03-31
 - **Author**: Michael Haag, Splunk
 - **ID**: e776d06c-9267-11eb-819b-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -44,6 +49,52 @@ The following query uses IAM events to track the success of a group being delete
 
 | [T1069](https://attack.mitre.org/techniques/T1069/) | Permission Groups Discovery | Discovery |
 
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
+
 #### Search
 
 ```
@@ -54,14 +105,13 @@ The following query uses IAM events to track the success of a group being delete
 | `aws_iam_successful_group_deletion_filter`
 ```
 
-#### Associated Analytic Story
-* [AWS IAM Privilege Escalation](/stories/aws_iam_privilege_escalation)
+> :information_source:
+> **aws_iam_successful_group_deletion_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-The Splunk AWS Add-on and Splunk App for AWS is required to utilize this data. The search requires AWS Cloudtrail logs.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * eventName
 * userAgent
@@ -69,12 +119,16 @@ The Splunk AWS Add-on and Splunk App for AWS is required to utilize this data. T
 * requestParameters.groupName
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+The Splunk AWS Add-on and Splunk App for AWS is required to utilize this data. The search requires AWS Cloudtrail logs.
 #### Known False Positives
 This detection will require tuning to provide high fidelity detection capabilties. Tune based on src addresses (corporate offices, VPN terminations) or by groups of users. Not every user with AWS access should have permission to delete groups (least privilege).
+
+#### Associated Analytic Story
+* [AWS IAM Privilege Escalation](/stories/aws_iam_privilege_escalation)
+
+
 
 
 #### RBA
@@ -84,6 +138,8 @@ This detection will require tuning to provide high fidelity detection capabiltie
 | 5.0 | 10 | 50 | User $user_arn$ has sucessfully deleted mulitple groups $group_deleted$ from $src$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -25,13 +25,18 @@ tags:
 
 The following analytic identifies installation of a root CA certificate by monitoring the registry. The base paths may be found [here](https://gist.github.com/mattifestation/75d6117707bcf8c26845b3cbb6ad2b6b/raw/ae65ef15c706140ffc2e165615204e20f2903028/RootCAInstallationDetection.xml). In short, there are specific certificate registry paths that will be written to (SetValue) when a new certificate is added. The high-fidelity events to pay attention to are SetValue events where the TargetObject property ends with &#34;&lt;THUMBPRINT_VALUE&gt;\Blob&#34; as this indicates the direct installation or modification of a root certificate binary blob. The other high fidelity reference will be which process is making the registry modifications. There are very few processes that modify these day to day, therefore monitoring for all to start (hunting) provides a great beginning.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-03-31
 - **Author**: Michael Haag, Splunk
 - **ID**: 5ee98b2f-8b9e-457a-8bdc-dd41aaba9e87
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,58 @@ The following analytic identifies installation of a root CA certificate by monit
 | [T1553.004](https://attack.mitre.org/techniques/T1553/004/) | Install Root Certificate | Defense Evasion |
 
 | [T1553](https://attack.mitre.org/techniques/T1553/) | Subvert Trust Controls | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -54,15 +111,13 @@ The following analytic identifies installation of a root CA certificate by monit
 | `windows_registry_certificate_added_filter`
 ```
 
-#### Associated Analytic Story
-* [Windows Drivers](/stories/windows_drivers)
-* [Windows Registry Abuse](/stories/windows_registry_abuse)
+> :information_source:
+> **windows_registry_certificate_added_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` and `Registry` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Registry.registry_path
 * Registry.registry_key_name
@@ -75,12 +130,17 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.process_guid
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` and `Registry` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 False positives will be limited to a legitimate business applicating consistently adding new root certificates to the endpoint. Filter by user, process, or thumbprint.
+
+#### Associated Analytic Story
+* [Windows Drivers](/stories/windows_drivers)
+* [Windows Registry Abuse](/stories/windows_registry_abuse)
+
+
 
 
 #### RBA
@@ -90,6 +150,8 @@ False positives will be limited to a legitimate business applicating consistentl
 | 42.0 | 60 | 70 | A root certificate was added on $dest$. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

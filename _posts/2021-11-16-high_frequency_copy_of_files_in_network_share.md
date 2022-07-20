@@ -23,19 +23,70 @@ tags:
 
 This analytic is to detect a suspicious high frequency copying/moving of files in network share as part of information sabotage. This anomaly event can be a good indicator of insider trying to sabotage data by transfering classified or internal files within network share to exfitrate it after or to lure evidence of insider attack to other user. This behavior may catch several noise if network share is a common place for classified or internal document processing.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-11-16
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 40925f12-4709-11ec-bb43-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1537](https://attack.mitre.org/techniques/T1537/) | Transfer Data to Cloud Account | Exfiltration |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -50,15 +101,13 @@ This analytic is to detect a suspicious high frequency copying/moving of files i
 | `high_frequency_copy_of_files_in_network_share_filter`
 ```
 
-#### Associated Analytic Story
-* [Information Sabotage](/stories/information_sabotage)
-* [Insider Threat](/stories/insider_threat)
+> :information_source:
+> **high_frequency_copy_of_files_in_network_share_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-o successfully implement this search, you need to be ingesting Windows Security Event Logs with 5145 EventCode enabled. The Windows TA is also required. Also enable the object Audit access success/failure in your group policy.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventCode
 * Share_Name
@@ -70,12 +119,17 @@ o successfully implement this search, you need to be ingesting Windows Security 
 * Source_Address
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+o successfully implement this search, you need to be ingesting Windows Security Event Logs with 5145 EventCode enabled. The Windows TA is also required. Also enable the object Audit access success/failure in your group policy.
 #### Known False Positives
 this behavior may seen in normal transfer of file within network if network share is common place for sharing documents.
+
+#### Associated Analytic Story
+* [Information Sabotage](/stories/information_sabotage)
+* [Insider Threat](/stories/insider_threat)
+
+
 
 
 #### RBA
@@ -85,6 +139,8 @@ this behavior may seen in normal transfer of file within network if network shar
 | 9.0 | 30 | 30 | high frequency copy of document in network share $Share_Name$ from $Source_Address$ by $user$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

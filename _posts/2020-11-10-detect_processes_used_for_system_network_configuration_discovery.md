@@ -23,19 +23,77 @@ tags:
 
 This search looks for fast execution of processes used for system network configuration discovery on the endpoint.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2020-11-10
 - **Author**: Bhavin Patel, Splunk
 - **ID**: a51bfe1a-94f0-48cc-b1e4-16ae10145893
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1016](https://attack.mitre.org/techniques/T1016/) | System Network Configuration Discovery | Discovery |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Installation
+* Command &amp; Control
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* ID.AM
+* PR.DS
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 2
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,14 +110,13 @@ This search looks for fast execution of processes used for system network config
 | `detect_processes_used_for_system_network_configuration_discovery_filter`
 ```
 
-#### Associated Analytic Story
-* [Unusual Processes](/stories/unusual_processes)
+> :information_source:
+> **detect_processes_used_for_system_network_configuration_discovery_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting data that records registry activity from your hosts to populate the Endpoint data model in the processes node. This is typically populated via endpoint detection-and-response product, such as Carbon Black, or endpoint data sources, such as Sysmon. The data used for this search is usually generated via logs that report reads and writes to the registry or that are populated via Windows event logs, after enabling process tracking in your Windows audit settings.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -74,14 +131,16 @@ You must be ingesting data that records registry activity from your hosts to pop
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Installation
-* Command &amp; Control
-* Actions on Objectives
 
-
+#### How To Implement
+You must be ingesting data that records registry activity from your hosts to populate the Endpoint data model in the processes node. This is typically populated via endpoint detection-and-response product, such as Carbon Black, or endpoint data sources, such as Sysmon. The data used for this search is usually generated via logs that report reads and writes to the registry or that are populated via Windows event logs, after enabling process tracking in your Windows audit settings.
 #### Known False Positives
 It is uncommon for normal users to execute a series of commands used for network discovery. System administrators often use scripts to execute these commands. These can generate false positives.
+
+#### Associated Analytic Story
+* [Unusual Processes](/stories/unusual_processes)
+
+
 
 
 #### RBA
@@ -91,6 +150,8 @@ It is uncommon for normal users to execute a series of commands used for network
 | 32.0 | 40 | 80 | An instance of $parent_process_name$ spawning multiple $process_name$ was identified on endpoint $dest$ by user $user$ typically not a normal behavior of the process. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

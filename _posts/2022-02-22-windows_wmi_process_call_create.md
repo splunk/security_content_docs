@@ -23,19 +23,76 @@ tags:
 
 This analytic is to look for wmi commandlines to execute or create process. This technique was used by adversaries or threat actor to execute their malicious payload in local or remote host. This hunting query is a good pivot to start to look further which process trigger the wmi or what process it execute locally or remotely.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-02-22
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 0661c2de-93de-11ec-9833-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1047](https://attack.mitre.org/techniques/T1047/) | Windows Management Instrumentation | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -48,14 +105,13 @@ This analytic is to look for wmi commandlines to execute or create process. This
 | `windows_wmi_process_call_create_filter`
 ```
 
-#### Associated Analytic Story
-* [Suspicious WMI Use](/stories/suspicious_wmi_use)
+> :information_source:
+> **windows_wmi_process_call_create_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -71,12 +127,16 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Processes.process_guid
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 #### Known False Positives
 Administrators may execute this command for testing or auditing.
+
+#### Associated Analytic Story
+* [Suspicious WMI Use](/stories/suspicious_wmi_use)
+
+
 
 
 #### RBA
@@ -86,6 +146,8 @@ Administrators may execute this command for testing or auditing.
 | 25.0 | 50 | 50 | process with $process$ commandline executed in $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

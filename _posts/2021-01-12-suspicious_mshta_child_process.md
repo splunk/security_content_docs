@@ -25,13 +25,18 @@ tags:
 
 The following analytic identifies child processes spawning from  &#34;mshta.exe&#34;. The search will return the first time and last time these command-line arguments were used for these executions, as well as the target system, the user, parent process &#34;mshta.exe&#34; and its child process.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-01-12
 - **Author**: Michael Haag, Splunk
 - **ID**: 60023bb6-5500-11eb-ae93-0242ac130002
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,57 @@ The following analytic identifies child processes spawning from  &#34;mshta.exe&
 | [T1218](https://attack.mitre.org/techniques/T1218/) | System Binary Proxy Execution | Defense Evasion |
 
 | [T1218.005](https://attack.mitre.org/techniques/T1218/005/) | Mshta | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,15 +108,13 @@ The following analytic identifies child processes spawning from  &#34;mshta.exe&
 | `suspicious_mshta_child_process_filter`
 ```
 
-#### Associated Analytic Story
-* [Suspicious MSHTA Activity](/stories/suspicious_mshta_activity)
-* [Living Off The Land](/stories/living_off_the_land)
+> :information_source:
+> **suspicious_mshta_child_process_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.process_name
 * Processes.process
@@ -70,12 +124,17 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Processes.user
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 #### Known False Positives
 Although unlikely, some legitimate applications may exhibit this behavior, triggering a false positive.
+
+#### Associated Analytic Story
+* [Suspicious MSHTA Activity](/stories/suspicious_mshta_activity)
+* [Living Off The Land](/stories/living_off_the_land)
+
+
 
 
 #### RBA
@@ -85,6 +144,8 @@ Although unlikely, some legitimate applications may exhibit this behavior, trigg
 | 40.0 | 50 | 80 | suspicious mshta child process detected on host $dest$ by user $user$. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

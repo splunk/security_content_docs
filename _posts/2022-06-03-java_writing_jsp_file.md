@@ -24,19 +24,81 @@ tags:
 
 The following analytic identifies the process java writing a .jsp to disk. This is potentially indicative of a web shell being written to disk. Modify and tune the analytic based on data ingested. For instance, it may be worth running a broad query for jsp file writes first before performing a join.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-06-03
 - **Author**: Michael Haag, Splunk
 - **ID**: eb65619c-4f8d-4383-a975-d352765d344b
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1190](https://attack.mitre.org/techniques/T1190/) | Exploit Public-Facing Application | Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
+| ----------- | ----------- | -------------- |
+| [CVE-2022-22965](https://nvd.nist.gov/vuln/detail/CVE-2022-22965) | A Spring MVC or Spring WebFlux application running on JDK 9+ may be vulnerable to remote code execution (RCE) via data binding. The specific exploit requires the application to run on Tomcat as a WAR deployment. If the application is deployed as a Spring Boot executable jar, i.e. the default, it is not vulnerable to the exploit. However, the nature of the vulnerability is more general, and there may be other ways to exploit it. | 7.5 |
+
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -54,15 +116,13 @@ The following analytic identifies the process java writing a .jsp to disk. This 
 | `java_writing_jsp_file_filter`
 ```
 
-#### Associated Analytic Story
-* [Spring4Shell CVE-2022-22965](/stories/spring4shell_cve-2022-22965)
-* [Atlassian Confluence Server and Data Center CVE-2022-26134](/stories/atlassian_confluence_server_and_data_center_cve-2022-26134)
+> :information_source:
+> **java_writing_jsp_file_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` and `Filesystem` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -83,12 +143,17 @@ To successfully implement this search you need to be ingesting information on pr
 * Filesystem.user
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the process responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Processes` and `Filesystem` node. In addition, confirm the latest CIM App 4.20 or higher is installed and the latest TA for the endpoint product.
 #### Known False Positives
 False positives are possible and filtering may be required. Restrict by assets or filter known jsp files that are common for the environment.
+
+#### Associated Analytic Story
+* [Spring4Shell CVE-2022-22965](/stories/spring4shell_cve-2022-22965)
+* [Atlassian Confluence Server and Data Center CVE-2022-26134](/stories/atlassian_confluence_server_and_data_center_cve-2022-26134)
+
+
 
 
 #### RBA
@@ -98,13 +163,8 @@ False positives are possible and filtering may be required. Restrict by assets o
 | 42.0 | 60 | 70 | An instance of $process_name$ was identified on endpoint $dest$ writing a jsp file to disk, potentially indicative of exploitation. |
 
 
-
-#### CVE
-
-| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
-| ----------- | ----------- | -------------- |
-| [CVE-2022-22965](https://nvd.nist.gov/vuln/detail/CVE-2022-22965) | A Spring MVC or Spring WebFlux application running on JDK 9+ may be vulnerable to remote code execution (RCE) via data binding. The specific exploit requires the application to run on Tomcat as a WAR deployment. If the application is deployed as a Spring Boot executable jar, i.e. the default, it is not vulnerable to the exploit. However, the nature of the vulnerability is more general, and there may be other ways to exploit it. | 7.5 |
-
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

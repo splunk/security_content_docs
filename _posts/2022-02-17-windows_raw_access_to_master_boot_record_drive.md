@@ -25,13 +25,18 @@ tags:
 
 This analytic is to look for suspicious raw access read to drive where the master boot record is placed. This technique was seen in several attacks by adversaries or threat actor to wipe, encrypt or overwrite the master boot record code as part of their impact payload. This detection is a good indicator that there is a process try to read or write on MBR sector.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-02-17
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 7b83f666-900c-11ec-a2d9-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,58 @@ This analytic is to look for suspicious raw access read to drive where the maste
 | [T1561.002](https://attack.mitre.org/techniques/T1561/002/) | Disk Structure Wipe | Impact |
 
 | [T1561](https://attack.mitre.org/techniques/T1561/) | Disk Wipe | Impact |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -51,17 +108,13 @@ This analytic is to look for suspicious raw access read to drive where the maste
 | `windows_raw_access_to_master_boot_record_drive_filter`
 ```
 
-#### Associated Analytic Story
-* [Data Destruction](/stories/data_destruction)
-* [Caddy Wiper](/stories/caddy_wiper)
-* [WhisperGate](/stories/whispergate)
-* [Hermetic Wiper](/stories/hermetic_wiper)
+> :information_source:
+> **windows_raw_access_to_master_boot_record_drive_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the raw access read event (like sysmon eventcode 9), process name and process guid from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Computer
 * Image
@@ -72,12 +125,19 @@ To successfully implement this search, you need to be ingesting logs with the ra
 * EventCode
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the raw access read event (like sysmon eventcode 9), process name and process guid from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 #### Known False Positives
 This event is really notable but we found minimal number of normal application from system32 folder like svchost.exe accessing it too. In this case we used &#39;system32&#39; and &#39;syswow64&#39; path as a filter for this detection.
+
+#### Associated Analytic Story
+* [Data Destruction](/stories/data_destruction)
+* [Caddy Wiper](/stories/caddy_wiper)
+* [WhisperGate](/stories/whispergate)
+* [Hermetic Wiper](/stories/hermetic_wiper)
+
+
 
 
 #### RBA
@@ -87,6 +147,8 @@ This event is really notable but we found minimal number of normal application f
 | 90.0 | 90 | 100 | process accessing MBR $device$ in $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

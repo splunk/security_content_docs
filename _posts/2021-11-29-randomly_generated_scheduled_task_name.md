@@ -20,7 +20,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -30,13 +30,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 The following hunting analytic leverages Event ID 4698, `A scheduled task was created`, to identify the creation of a Scheduled Task with a suspicious, high entropy, Task Name. To achieve this, this analytic also leverages the `ut_shannon` function from the URL ToolBox Splunk application. Red teams and adversaries alike may abuse the Task Scheduler to create and start a remote Scheduled Task and obtain remote code execution. To achieve this goal, tools like Impacket or Crapmapexec, typically create a Scheduled Task with a random task name on the victim host. This hunting analytic may help defenders identify Scheduled Tasks created as part of a lateral movement attack. The entropy threshold `ut_shannon &gt; 3` should be customized by users. The Command field can be used to determine if the task has malicious intent or not.
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-11-29
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 9d22a780-5165-11ec-ad4f-3e22fbd008af
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -45,6 +50,52 @@ The following hunting analytic leverages Event ID 4698, `A scheduled task was cr
 | [T1053](https://attack.mitre.org/techniques/T1053/) | Scheduled Task/Job | Execution, Persistence, Privilege Escalation |
 
 | [T1053.005](https://attack.mitre.org/techniques/T1053/005/) | Scheduled Task | Execution, Persistence, Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -57,14 +108,13 @@ The following hunting analytic leverages Event ID 4698, `A scheduled task was cr
 | `randomly_generated_scheduled_task_name_filter`
 ```
 
-#### Associated Analytic Story
-* [Active Directory Lateral Movement](/stories/active_directory_lateral_movement)
+> :information_source:
+> **randomly_generated_scheduled_task_name_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting Windows Security Event Logs with 4698 EventCode enabled. The Windows TA as well as the URL ToolBox application are also required.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * dest
 * Task_Name
@@ -72,12 +122,16 @@ To successfully implement this search, you need to be ingesting Windows Security
 * Command
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting Windows Security Event Logs with 4698 EventCode enabled. The Windows TA as well as the URL ToolBox application are also required.
 #### Known False Positives
 Legitimate applications may use random Scheduled Task names.
+
+#### Associated Analytic Story
+* [Active Directory Lateral Movement](/stories/active_directory_lateral_movement)
+
+
 
 
 #### RBA
@@ -87,6 +141,8 @@ Legitimate applications may use random Scheduled Task names.
 | 45.0 | 90 | 50 | A windows scheduled task with a suspicious task name was created on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

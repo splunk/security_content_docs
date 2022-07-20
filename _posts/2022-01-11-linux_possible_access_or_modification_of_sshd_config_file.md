@@ -25,13 +25,18 @@ tags:
 
 This analytic is to look for suspicious process command-line that might be accessing or modifying sshd_config. This file is the ssh configuration file that might be modify by threat actors or adversaries to redirect port connection, allow user using authorized key generated during attack. This anomaly detection might catch noise from administrator auditing or modifying ssh configuration file. In this scenario filter is needed
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-01-11
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 7a85eb24-72da-11ec-ac76-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,58 @@ This analytic is to look for suspicious process command-line that might be acces
 | [T1098.004](https://attack.mitre.org/techniques/T1098/004/) | SSH Authorized Keys | Persistence |
 
 | [T1098](https://attack.mitre.org/techniques/T1098/) | Account Manipulation | Persistence |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,15 +109,13 @@ This analytic is to look for suspicious process command-line that might be acces
 | `linux_possible_access_or_modification_of_sshd_config_file_filter`
 ```
 
-#### Associated Analytic Story
-* [Linux Privilege Escalation](/stories/linux_privilege_escalation)
-* [Linux Persistence Techniques](/stories/linux_persistence_techniques)
+> :information_source:
+> **linux_possible_access_or_modification_of_sshd_config_file_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -71,12 +126,17 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 #### Known False Positives
 Administrator or network operator can use this commandline for automation purposes. Please update the filter macros to remove false positives.
+
+#### Associated Analytic Story
+* [Linux Privilege Escalation](/stories/linux_privilege_escalation)
+* [Linux Persistence Techniques](/stories/linux_persistence_techniques)
+
+
 
 
 #### RBA
@@ -86,6 +146,8 @@ Administrator or network operator can use this commandline for automation purpos
 | 25.0 | 50 | 50 | a commandline $process$ executed on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

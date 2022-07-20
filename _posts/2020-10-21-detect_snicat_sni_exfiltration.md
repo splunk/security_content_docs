@@ -14,7 +14,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -24,19 +24,76 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks for commands that the SNICat tool uses in the TLS SNI field.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-10-21
 - **Author**: Shannon Davis, Splunk
 - **ID**: 82d06410-134c-11eb-adc1-0242ac120002
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1041](https://attack.mitre.org/techniques/T1041/) | Exfiltration Over C2 Channel | Exfiltration |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.DS
+* DE.CM
+* DE.AE
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 13
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -59,26 +116,29 @@ This search looks for commands that the SNICat tool uses in the TLS SNI field.
 | `detect_snicat_sni_exfiltration_filter`
 ```
 
-#### Associated Analytic Story
-* [Data Exfiltration](/stories/data_exfiltration)
+> :information_source:
+> **detect_snicat_sni_exfiltration_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting Zeek SSL data into Splunk. Zeek data should also be getting ingested in JSON format.  We are detecting when any of the predefined SNICat commands are found within the server_name (SNI) field. These commands are LIST, LS, SIZE, LD, CB, EX, ALIVE, EXIT, WHERE, and finito.  You can go further once this has been detected, and run other searches to decode the SNI data to prove or disprove if any data exfiltration has taken place.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * server_name
 * src_ip
 * dest_ip
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must be ingesting Zeek SSL data into Splunk. Zeek data should also be getting ingested in JSON format.  We are detecting when any of the predefined SNICat commands are found within the server_name (SNI) field. These commands are LIST, LS, SIZE, LD, CB, EX, ALIVE, EXIT, WHERE, and finito.  You can go further once this has been detected, and run other searches to decode the SNI data to prove or disprove if any data exfiltration has taken place.
 #### Known False Positives
 Unknown
+
+#### Associated Analytic Story
+* [Data Exfiltration](/stories/data_exfiltration)
+
+
 
 
 #### RBA
@@ -88,6 +148,8 @@ Unknown
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

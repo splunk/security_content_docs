@@ -23,19 +23,70 @@ tags:
 
 This search is to detect a suspicious creation of image in appdata folder made by process that also has a file reference in appdata folder. This technique was seen in remcos rat that capture screenshot of the compromised machine and place it in the appdata and will be send to its C2 server. This TTP is really a good indicator to check that process because it is in suspicious folder path and image files are not commonly created by user in this folder path.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-07-07
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: f6f904c4-1ac0-11ec-806b-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1113](https://attack.mitre.org/techniques/T1113/) | Screen Capture | Collection |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,14 +103,13 @@ This search is to detect a suspicious creation of image in appdata folder made b
 | `suspicious_image_creation_in_appdata_folder_filter`
 ```
 
-#### Associated Analytic Story
-* [Remcos](/stories/remcos)
+> :information_source:
+> **suspicious_image_creation_in_appdata_folder_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * dest
 * file_create_time
@@ -70,12 +120,16 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * process
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 #### Known False Positives
 unknown
+
+#### Associated Analytic Story
+* [Remcos](/stories/remcos)
+
+
 
 
 #### RBA
@@ -85,6 +139,8 @@ unknown
 | 49.0 | 70 | 70 | process $process_name$ creating image file $file_path$ in $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

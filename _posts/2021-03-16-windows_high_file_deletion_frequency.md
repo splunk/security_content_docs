@@ -23,19 +23,70 @@ tags:
 
 This search looks for high frequency of file deletion relative to process name and process id. These events usually happen when the ransomware tries to encrypt the files with the ransomware file extensions and sysmon treat the original files to be deleted as soon it was replace as encrypted data.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-03-16
 - **Author**: Teoderick Contreras
 - **ID**: 45b125c4-866f-11eb-a95a-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1485](https://attack.mitre.org/techniques/T1485/) | Data Destruction | Impact |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -48,15 +99,13 @@ This search looks for high frequency of file deletion relative to process name a
 | `windows_high_file_deletion_frequency_filter`
 ```
 
-#### Associated Analytic Story
-* [Clop Ransomware](/stories/clop_ransomware)
-* [WhisperGate](/stories/whispergate)
+> :information_source:
+> **windows_high_file_deletion_frequency_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the deleted target file name, process name and process id  from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * EventCode
 * TargetFilename
 * Computer
@@ -66,12 +115,17 @@ To successfully implement this search, you need to be ingesting logs with the de
 * _time
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the deleted target file name, process name and process id  from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 #### Known False Positives
 user may delete bunch of pictures or files in a folder.
+
+#### Associated Analytic Story
+* [Clop Ransomware](/stories/clop_ransomware)
+* [WhisperGate](/stories/whispergate)
+
+
 
 
 #### RBA
@@ -81,6 +135,8 @@ user may delete bunch of pictures or files in a folder.
 | 72.0 | 90 | 80 | High frequency file deletion activity detected on host $Computer$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

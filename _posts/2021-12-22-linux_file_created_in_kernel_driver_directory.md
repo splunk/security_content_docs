@@ -27,13 +27,18 @@ tags:
 
 This analytic looks for suspicious file creation in kernel/driver directory in linux platform. This directory is known folder for all linux kernel module available within the system. so creation of file in this directory is a good indicator that there is a possible rootkit installation in the host machine. This technique was abuse by adversaries, malware author and red teamers to gain high privileges to their malicious code such us in kernel level. Even this event is not so common administrator or legitimate 3rd party tool may install driver or linux kernel module as part of its installation.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-12-22
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: b85bbeec-6326-11ec-9311-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,58 @@ This analytic looks for suspicious file creation in kernel/driver directory in l
 | [T1547.006](https://attack.mitre.org/techniques/T1547/006/) | Kernel Modules and Extensions | Persistence, Privilege Escalation |
 
 | [T1547](https://attack.mitre.org/techniques/T1547/) | Boot or Logon Autostart Execution | Persistence, Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -54,15 +111,13 @@ This analytic looks for suspicious file creation in kernel/driver directory in l
 | `linux_file_created_in_kernel_driver_directory_filter`
 ```
 
-#### Associated Analytic Story
-* [Linux Privilege Escalation](/stories/linux_privilege_escalation)
-* [Linux Persistence Techniques](/stories/linux_persistence_techniques)
+> :information_source:
+> **linux_file_created_in_kernel_driver_directory_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the file name, file path, and process_guid executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Filesystem.dest
 * Filesystem.file_create_time
@@ -71,12 +126,17 @@ To successfully implement this search, you need to be ingesting logs with the fi
 * Filesystem.file_path
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the file name, file path, and process_guid executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 #### Known False Positives
 Administrator or network operator can create file in this folders for automation purposes. Please update the filter macros to remove false positives.
+
+#### Associated Analytic Story
+* [Linux Privilege Escalation](/stories/linux_privilege_escalation)
+* [Linux Persistence Techniques](/stories/linux_persistence_techniques)
+
+
 
 
 #### RBA
@@ -86,6 +146,8 @@ Administrator or network operator can create file in this folders for automation
 | 72.0 | 80 | 90 | A file $file_name$ is created in $file_path$ on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -15,7 +15,7 @@ tags:
   - Endpoint
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -25,19 +25,77 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks for child processes spawned by zoom.exe or zoom.us that has not previously been seen.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2020-05-20
 - **Author**: David Dorsey, Splunk
 - **ID**: e91bd102-d630-4e76-ab73-7e3ba22c5961
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1068](https://attack.mitre.org/techniques/T1068/) | Exploitation for Privilege Escalation | Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+* PR.IP
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,14 +110,13 @@ This search looks for child processes spawned by zoom.exe or zoom.us that has no
 |`first_time_seen_child_process_of_zoom_filter`
 ```
 
-#### Associated Analytic Story
-* [Suspicious Zoom Child Processes](/stories/suspicious_zoom_child_processes)
+> :information_source:
+> **first_time_seen_child_process_of_zoom_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting data that records process activity from your hosts to populate the Endpoint data model in the Processes node. You should run the baseline search `Previously Seen Zoom Child Processes - Initial` to build the initial table of child processes and hostnames for this search to work. You should also schedule at the same interval as this search the second baseline search `Previously Seen Zoom Child Processes - Update` to keep this table up to date and to age out old child processes. Please update the `previously_seen_zoom_child_processes_window` macro to adjust the time window.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.parent_process_name
 * Processes.parent_process_id
@@ -70,12 +127,16 @@ You must be ingesting data that records process activity from your hosts to popu
 * Processes.dest
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must be ingesting data that records process activity from your hosts to populate the Endpoint data model in the Processes node. You should run the baseline search `Previously Seen Zoom Child Processes - Initial` to build the initial table of child processes and hostnames for this search to work. You should also schedule at the same interval as this search the second baseline search `Previously Seen Zoom Child Processes - Update` to keep this table up to date and to age out old child processes. Please update the `previously_seen_zoom_child_processes_window` macro to adjust the time window.
 #### Known False Positives
 A new child process of zoom isn&#39;t malicious by that fact alone. Further investigation of the actions of the child process is needed to verify any malicious behavior is taken.
+
+#### Associated Analytic Story
+* [Suspicious Zoom Child Processes](/stories/suspicious_zoom_child_processes)
+
+
 
 
 #### RBA
@@ -85,6 +146,8 @@ A new child process of zoom isn&#39;t malicious by that fact alone. Further inve
 | 64.0 | 80 | 80 | Child process $process_name$ with $process_id$ spawned by zoom.exe or zoom.us which has not been previously on host $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

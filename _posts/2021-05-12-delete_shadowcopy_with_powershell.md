@@ -23,19 +23,70 @@ tags:
 
 This following analytic detects PowerShell command to delete shadow copy using the WMIC PowerShell module. This technique was seen used by a recent adversary to deploy DarkSide Ransomware where it executed a child process of PowerShell to execute a hex encoded command to delete shadow copy. This hex encoded command was able to be decrypted by PowerShell log.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-05-12
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 5ee2bcd0-b2ff-11eb-bb34-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1490](https://attack.mitre.org/techniques/T1490/) | Inhibit System Recovery | Impact |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -47,16 +98,13 @@ This following analytic detects PowerShell command to delete shadow copy using t
 | `delete_shadowcopy_with_powershell_filter`
 ```
 
-#### Associated Analytic Story
-* [DarkSide Ransomware](/stories/darkside_ransomware)
-* [Ransomware](/stories/ransomware)
-* [Revil Ransomware](/stories/revil_ransomware)
+> :information_source:
+> **delete_shadowcopy_with_powershell_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the powershell logs  from your endpoints. make sure you enable needed registry to monitor this event.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventCode
 * Message
@@ -64,12 +112,18 @@ To successfully implement this search, you need to be ingesting logs with the po
 * User
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the powershell logs  from your endpoints. make sure you enable needed registry to monitor this event.
 #### Known False Positives
 unknown
+
+#### Associated Analytic Story
+* [DarkSide Ransomware](/stories/darkside_ransomware)
+* [Ransomware](/stories/ransomware)
+* [Revil Ransomware](/stories/revil_ransomware)
+
+
 
 
 #### RBA
@@ -79,6 +133,8 @@ unknown
 | 81.0 | 90 | 90 | An attempt to delete ShadowCopy was performed using PowerShell on $ComputerName$ by $User$. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

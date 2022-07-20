@@ -24,13 +24,18 @@ tags:
 
 This search is to detect a suspicious outbound e-mail from internal email to external email domain. This can be a good hunting query to monitor insider or outbound email traffic for not common domain e-mail. The idea is to parse the domain of destination email check if there is a minimum outbound traffic &lt; 20 with attachment.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-08-17
 - **Author**: Teoderick Contreras, Stanislav Miskovic, Splunk
 - **ID**: dc4dc3a8-ff54-11eb-8bf7-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,52 @@ This search is to detect a suspicious outbound e-mail from internal email to ext
 | [T1048.003](https://attack.mitre.org/techniques/T1048/003/) | Exfiltration Over Unencrypted Non-C2 Protocol | Exfiltration |
 
 | [T1048](https://attack.mitre.org/techniques/T1048/) | Exfiltration Over Alternative Protocol | Exfiltration |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -57,24 +108,27 @@ This search is to detect a suspicious outbound e-mail from internal email to ext
 | `gsuite_outbound_email_with_attachment_to_external_domain_filter`
 ```
 
+> :information_source:
+> **gsuite_outbound_email_with_attachment_to_external_domain_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+
+
+#### Required fields
+List of fields required to use this analytic.
+* _time
+
+
+
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs related to gsuite having the file attachment metadata like file type, file extension, source email, destination email, num of attachment and etc.
+#### Known False Positives
+network admin and normal user may send this file attachment as part of their day to day work. having a good protocol in attaching this file type to an e-mail may reduce the risk of having a spear phishing attack.
+
 #### Associated Analytic Story
 * [Dev Sec Ops](/stories/dev_sec_ops)
 * [Insider Threat](/stories/insider_threat)
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs related to gsuite having the file attachment metadata like file type, file extension, source email, destination email, num of attachment and etc.
-
-#### Required field
-* _time
-
-
-#### Kill Chain Phase
-* Exploitation
-
-
-#### Known False Positives
-network admin and normal user may send this file attachment as part of their day to day work. having a good protocol in attaching this file type to an e-mail may reduce the risk of having a spear phishing attack.
 
 
 #### RBA
@@ -84,6 +138,8 @@ network admin and normal user may send this file attachment as part of their day
 | 9.0 | 30 | 30 | suspicious email from $source.address$ to $destination{}.address$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

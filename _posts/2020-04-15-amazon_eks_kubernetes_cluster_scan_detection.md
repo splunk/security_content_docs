@@ -14,7 +14,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -24,19 +24,70 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search provides information of unauthenticated requests via user agent, and authentication data against Kubernetes cluster in AWS
 
-- **Type**: Hunting
+- **Type**: [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-04-15
 - **Author**: Rod Soto, Splunk
 - **ID**: 294c4686-63dd-4fe6-93a2-ca807626704a
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1526](https://attack.mitre.org/techniques/T1526/) | Cloud Service Discovery | Discovery |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Reconnaissance
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -49,14 +100,13 @@ This search provides information of unauthenticated requests via user agent, and
 |`amazon_eks_kubernetes_cluster_scan_detection_filter` 
 ```
 
-#### Associated Analytic Story
-* [Kubernetes Scanning Activity](/stories/kubernetes_scanning_activity)
+> :information_source:
+> **amazon_eks_kubernetes_cluster_scan_detection_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install the AWS App for Splunk (version 5.1.0 or later) and Splunk Add-on for AWS (version 4.4.0 or later), then configure your CloudWatch EKS Logs inputs.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * user.username
 * userAgent
@@ -70,12 +120,16 @@ You must install the AWS App for Splunk (version 5.1.0 or later) and Splunk Add-
 * user.groups{}
 
 
-#### Kill Chain Phase
-* Reconnaissance
 
-
+#### How To Implement
+You must install the AWS App for Splunk (version 5.1.0 or later) and Splunk Add-on for AWS (version 4.4.0 or later), then configure your CloudWatch EKS Logs inputs.
 #### Known False Positives
 Not all unauthenticated requests are malicious, but frequency, UA and source IPs will provide context.
+
+#### Associated Analytic Story
+* [Kubernetes Scanning Activity](/stories/kubernetes_scanning_activity)
+
+
 
 
 #### RBA
@@ -85,6 +139,8 @@ Not all unauthenticated requests are malicious, but frequency, UA and source IPs
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

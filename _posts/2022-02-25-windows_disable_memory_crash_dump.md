@@ -23,19 +23,76 @@ tags:
 
 The following analytic identifies a process that is attempting to disable the ability on Windows to generate a memory crash dump. This was recently identified being utilized by HermeticWiper. To disable crash dumps, the value must be set to 0. This feature is typically modified to perform a memory crash dump when a computer stops unexpectedly because of a Stop error (also known as a blue screen, system crash, or bug check).
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-02-25
 - **Author**: Michael Haag, Splunk
 - **ID**: 59e54602-9680-11ec-a8a6-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1485](https://attack.mitre.org/techniques/T1485/) | Data Destruction | Impact |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -51,17 +108,13 @@ The following analytic identifies a process that is attempting to disable the ab
 | `windows_disable_memory_crash_dump_filter`
 ```
 
-#### Associated Analytic Story
-* [Data Destruction](/stories/data_destruction)
-* [Ransomware](/stories/ransomware)
-* [Hermetic Wiper](/stories/hermetic_wiper)
-* [Windows Registry Abuse](/stories/windows_registry_abuse)
+> :information_source:
+> **windows_disable_memory_crash_dump_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on process that include the name of the Filesystem responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Filesystem` and `Registry` node.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Filesystem.file_create_time
 * Filesystem.process_id
@@ -78,12 +131,19 @@ To successfully implement this search you need to be ingesting information on pr
 * Processes.process_guid
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on process that include the name of the Filesystem responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Filesystem` and `Registry` node.
 #### Known False Positives
 unknown
+
+#### Associated Analytic Story
+* [Data Destruction](/stories/data_destruction)
+* [Ransomware](/stories/ransomware)
+* [Hermetic Wiper](/stories/hermetic_wiper)
+* [Windows Registry Abuse](/stories/windows_registry_abuse)
+
+
 
 
 #### RBA
@@ -93,6 +153,8 @@ unknown
 | 90.0 | 90 | 100 | A process $process_name$ was identified attempting to disable memory crash dumps on $dest$. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

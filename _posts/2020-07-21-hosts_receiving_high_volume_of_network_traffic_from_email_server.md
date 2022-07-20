@@ -17,7 +17,7 @@ tags:
   - Network_Traffic
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -27,13 +27,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks for an increase of data transfers from your email server to your clients. This could be indicative of a malicious actor collecting data using your email server.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 - **Last Updated**: 2020-07-21
 - **Author**: Bhavin Patel, Splunk
 - **ID**: 7f5fb3e1-4209-4914-90db-0ec21b556368
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,58 @@ This search looks for an increase of data transfers from your email server to yo
 | [T1114.002](https://attack.mitre.org/techniques/T1114/002/) | Remote Email Collection | Collection |
 
 | [T1114](https://attack.mitre.org/techniques/T1114/) | Email Collection | Collection |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+* DE.AE
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 7
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -58,26 +115,29 @@ This search looks for an increase of data transfers from your email server to yo
 | `hosts_receiving_high_volume_of_network_traffic_from_email_server_filter`
 ```
 
-#### Associated Analytic Story
-* [Collection and Staging](/stories/collection_and_staging)
+> :information_source:
+> **hosts_receiving_high_volume_of_network_traffic_from_email_server_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This search requires you to be ingesting your network traffic and populating the Network_Traffic data model.  Your email servers must be categorized as &#34;email_server&#34; for the search to work, as well. You may need to adjust the deviation_threshold and minimum_data_samples values based on the network traffic in your environment. The &#34;deviation_threshold&#34; field is a multiplying factor to control how much variation you&#39;re willing to tolerate. The &#34;minimum_data_samples&#34; field is the minimum number of connections of data samples required for the statistic to be valid.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * All_Traffic.bytes_in
 * All_Traffic.dest_category
 * All_Traffic.src_ip
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+This search requires you to be ingesting your network traffic and populating the Network_Traffic data model.  Your email servers must be categorized as &#34;email_server&#34; for the search to work, as well. You may need to adjust the deviation_threshold and minimum_data_samples values based on the network traffic in your environment. The &#34;deviation_threshold&#34; field is a multiplying factor to control how much variation you&#39;re willing to tolerate. The &#34;minimum_data_samples&#34; field is the minimum number of connections of data samples required for the statistic to be valid.
 #### Known False Positives
 The false-positive rate will vary based on how you set the deviation_threshold and data_samples values. Our recommendation is to adjust these values based on your network traffic to and from your email servers.
+
+#### Associated Analytic Story
+* [Collection and Staging](/stories/collection_and_staging)
+
+
 
 
 #### RBA
@@ -87,6 +147,8 @@ The false-positive rate will vary based on how you set the deviation_threshold a
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -17,7 +17,7 @@ tags:
   - Endpoint
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -27,13 +27,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 The search looks at the change-analysis data model and detects email files created outside the normal Outlook directory.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2020-07-21
 - **Author**: Bhavin Patel, Splunk
 - **ID**: 8d52cf03-ba25-4101-aa78-07994aed4f74
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,54 @@ The search looks at the change-analysis data model and detects email files creat
 | [T1114](https://attack.mitre.org/techniques/T1114/) | Email Collection | Collection |
 
 | [T1114.001](https://attack.mitre.org/techniques/T1114/001/) | Local Email Collection | Collection |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -54,14 +107,13 @@ The search looks at the change-analysis data model and detects email files creat
 | `email_files_written_outside_of_the_outlook_directory_filter` 
 ```
 
-#### Associated Analytic Story
-* [Collection and Staging](/stories/collection_and_staging)
+> :information_source:
+> **email_files_written_outside_of_the_outlook_directory_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you must be ingesting data that records the file-system activity from your hosts to populate the Endpoint.Filesystem data model node. This is typically populated via endpoint detection-and-response product, such as Carbon Black, or by other endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report file-system reads and writes.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Filesystem.file_path
 * Filesystem.file_name
@@ -70,12 +122,16 @@ To successfully implement this search, you must be ingesting data that records t
 * Filesystem.dest
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+To successfully implement this search, you must be ingesting data that records the file-system activity from your hosts to populate the Endpoint.Filesystem data model node. This is typically populated via endpoint detection-and-response product, such as Carbon Black, or by other endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report file-system reads and writes.
 #### Known False Positives
 Administrators and users sometimes prefer backing up their email data by moving the email files into a different folder. These attempts will be detected by the search.
+
+#### Associated Analytic Story
+* [Collection and Staging](/stories/collection_and_staging)
+
+
 
 
 #### RBA
@@ -85,6 +141,8 @@ Administrators and users sometimes prefer backing up their email data by moving 
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

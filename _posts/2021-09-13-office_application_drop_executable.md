@@ -25,13 +25,18 @@ tags:
 
 This search is to detect a suspicious MS office application that drop or create executables or script in the host. This behavior is commonly seen in spear phishing office attachment where it drop malicious files or script to compromised the host. It might be some normal macro may drop script or tools as part of automation but still this behavior is reallly suspicious and not commonly seen in normal office application
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-09-13
 - **Author**: Teoderick Contreras, Michael Haag Splunk
 - **ID**: 73ce70c4-146d-11ec-9184-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,52 @@ This search is to detect a suspicious MS office application that drop or create 
 | [T1566](https://attack.mitre.org/techniques/T1566/) | Phishing | Initial Access |
 
 | [T1566.001](https://attack.mitre.org/techniques/T1566/001/) | Spearphishing Attachment | Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -58,14 +109,13 @@ This search is to detect a suspicious MS office application that drop or create 
 | `office_application_drop_executable_filter`
 ```
 
-#### Associated Analytic Story
-* [FIN7](/stories/fin7)
+> :information_source:
+> **office_application_drop_executable_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Tune and filter known instances where renamed rundll32.exe may be used.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Image
 * TargetFilename
@@ -74,12 +124,16 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * user_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Tune and filter known instances where renamed rundll32.exe may be used.
 #### Known False Positives
 office macro for automation may do this behavior
+
+#### Associated Analytic Story
+* [FIN7](/stories/fin7)
+
+
 
 
 #### RBA
@@ -89,6 +143,8 @@ office macro for automation may do this behavior
 | 64.0 | 80 | 80 | process $process_name$ drops a file $TargetFilename$ in host $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

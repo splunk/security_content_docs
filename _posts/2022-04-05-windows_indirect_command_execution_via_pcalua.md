@@ -23,19 +23,75 @@ tags:
 
 The following analytic detects programs that have been started by pcalua.exe. pcalua.exe is the Microsoft Windows Program Compatability Assistant.  While this tool can be used to start legitimate programs, it has been observed being used to evade protections on command line execution.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-04-05
 - **Author**: Eric McGinnis, Splunk
 - **ID**: 3428ac18-a410-4823-816c-ce697d26f7a8
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1202](https://attack.mitre.org/techniques/T1202/) | Indirect Command Execution | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.AE
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+* CIS 10
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -48,14 +104,13 @@ The following analytic detects programs that have been started by pcalua.exe. pc
 | `windows_indirect_command_execution_via_pcalua_filter`
 ```
 
-#### Associated Analytic Story
-* [Living Off The Land](/stories/living_off_the_land)
+> :information_source:
+> **windows_indirect_command_execution_via_pcalua_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the full process path in the process field of CIM&#39;s Process data model. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Tune and filter known instances where pcalua.exe may be used.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -70,12 +125,16 @@ To successfully implement this search, you need to be ingesting logs with the fu
 * Processes.process_path
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the full process path in the process field of CIM&#39;s Process data model. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA. Tune and filter known instances where pcalua.exe may be used.
 #### Known False Positives
 Some legacy applications may be run using pcalua.exe.  Filter these results as needed.
+
+#### Associated Analytic Story
+* [Living Off The Land](/stories/living_off_the_land)
+
+
 
 
 #### RBA
@@ -85,6 +144,8 @@ Some legacy applications may be run using pcalua.exe.  Filter these results as n
 | 25.0 | 50 | 50 | The Program Compatability Assistant (pcalua.exe) launched the process $process_name$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

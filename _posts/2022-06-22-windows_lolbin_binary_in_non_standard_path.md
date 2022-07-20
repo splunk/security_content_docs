@@ -27,13 +27,18 @@ tags:
 
 The following analytic identifies native living off the land binaries within the Windows operating system that may be abused by adversaries by moving it to a new directory. The list of binaries was derived from the https://lolbas-project.github.io site, and excluded common process names (cmd.exe, explorer.exe, csc.exe, hh.exe, regedit.exe) and DotNet binaries. It also does not include the category of OtherMSBinaries.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2022-06-22
 - **Author**: Michael Haag, Splunk
 - **ID**: 25689101-012a-324a-94d3-08301e6c065a
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -46,6 +51,57 @@ The following analytic identifies native living off the land binaries within the
 | [T1218](https://attack.mitre.org/techniques/T1218/) | System Binary Proxy Execution | Defense Evasion |
 
 | [T1218.004](https://attack.mitre.org/techniques/T1218/004/) | InstallUtil | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -63,16 +119,13 @@ $cond_1 =
 | into write_ssa_detected_events();
 ```
 
-#### Associated Analytic Story
-* [Unusual Processes](/stories/unusual_processes)
-* [Ransomware](/stories/ransomware)
-* [WhisperGate](/stories/whispergate)
+> :information_source:
+> **windows_lolbin_binary_in_non_standard_path_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-Collect endpoint data such as sysmon or 4688 events.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * dest_device_id
 * process_name
 * _time
@@ -81,12 +134,18 @@ Collect endpoint data such as sysmon or 4688 events.
 * cmd_line
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+Collect endpoint data such as sysmon or 4688 events.
 #### Known False Positives
 False positives may be present and filtering may be required. Certain utilities will run from non-standard paths based on the third-party application in use.
+
+#### Associated Analytic Story
+* [Unusual Processes](/stories/unusual_processes)
+* [Ransomware](/stories/ransomware)
+* [WhisperGate](/stories/whispergate)
+
+
 
 
 #### RBA
@@ -96,6 +155,8 @@ False positives may be present and filtering may be required. Certain utilities 
 | 49.0 | 70 | 70 | A system process $process_name$ with commandline $cmd_line$ spawn in non-default folder path on host $dest_device_id$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

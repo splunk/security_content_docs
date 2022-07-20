@@ -27,13 +27,18 @@ tags:
 
 The search looks for modifications to registry keys that can be used to launch an application or service at system startup.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-01-26
 - **Author**: Jose Hernandez, David Dorsey, Teoderick Contreras, Rod Soto, Splunk
 - **ID**: f5f6af30-7aa7-4295-bfe9-07fe87c01a4b
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,58 @@ The search looks for modifications to registry keys that can be used to launch a
 | [T1547.001](https://attack.mitre.org/techniques/T1547/001/) | Registry Run Keys / Startup Folder | Persistence, Privilege Escalation |
 
 | [T1547](https://attack.mitre.org/techniques/T1547/) | Boot or Logon Autostart Execution | Persistence, Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+* DE.AE
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -59,6 +116,26 @@ The search looks for modifications to registry keys that can be used to launch a
 | `registry_keys_used_for_persistence_filter`
 ```
 
+> :information_source:
+> **registry_keys_used_for_persistence_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+
+
+#### Required fields
+List of fields required to use this analytic.
+* _time
+* Registry.registry_key_name
+* Registry.registry_path
+* Registry.dest
+* Registry.user
+
+
+
+#### How To Implement
+To successfully implement this search, you must be ingesting data that records registry activity from your hosts to populate the endpoint data model in the registry node. This is typically populated via endpoint detection-and-response product, such as Carbon Black or endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the registry.
+#### Known False Positives
+There are many legitimate applications that must execute on system startup and will use these registry keys to accomplish that task.
+
 #### Associated Analytic Story
 * [Suspicious Windows Registry Activities](/stories/suspicious_windows_registry_activities)
 * [Suspicious MSHTA Activity](/stories/suspicious_mshta_activity)
@@ -73,23 +150,6 @@ The search looks for modifications to registry keys that can be used to launch a
 * [Azorult](/stories/azorult)
 
 
-#### How To Implement
-To successfully implement this search, you must be ingesting data that records registry activity from your hosts to populate the endpoint data model in the registry node. This is typically populated via endpoint detection-and-response product, such as Carbon Black or endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the registry.
-
-#### Required field
-* _time
-* Registry.registry_key_name
-* Registry.registry_path
-* Registry.dest
-* Registry.user
-
-
-#### Kill Chain Phase
-* Actions on Objectives
-
-
-#### Known False Positives
-There are many legitimate applications that must execute on system startup and will use these registry keys to accomplish that task.
 
 
 #### RBA
@@ -99,6 +159,8 @@ There are many legitimate applications that must execute on system startup and w
 | 76.0 | 80 | 95 | A registry activity in $registry_path$ related to persistence in host $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

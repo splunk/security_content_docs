@@ -12,7 +12,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -22,12 +22,76 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks for unusually long strings in the Content-Type http header that the client sends the server.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2017-10-13
 - **Author**: Bhavin Patel, Splunk
 - **ID**: 57a0a2bf-353f-40c1-84dc-29293f3c35b7
+
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Delivery
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* ID.RA
+* RS.MI
+* PR.PT
+* PR.IP
+* DE.AE
+* PR.MA
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 4
+* CIS 18
+* CIS 12
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -39,14 +103,13 @@ This search looks for unusually long strings in the Content-Type http header tha
 | `unusually_long_content_type_length_filter`
 ```
 
-#### Associated Analytic Story
-* [Apache Struts Vulnerability](/stories/apache_struts_vulnerability)
+> :information_source:
+> **unusually_long_content-type_length_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This particular search leverages data extracted from Stream:HTTP. You must configure the http stream using the Splunk Stream App on your Splunk Stream deployment server to extract the cs_content_type field.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * cs_content_type
 * endtime
@@ -55,12 +118,16 @@ This particular search leverages data extracted from Stream:HTTP. You must confi
 * url
 
 
-#### Kill Chain Phase
-* Delivery
 
-
+#### How To Implement
+This particular search leverages data extracted from Stream:HTTP. You must configure the http stream using the Splunk Stream App on your Splunk Stream deployment server to extract the cs_content_type field.
 #### Known False Positives
 Very few legitimate Content-Type fields will have a length greater than 100 characters.
+
+#### Associated Analytic Story
+* [Apache Struts Vulnerability](/stories/apache_struts_vulnerability)
+
+
 
 
 #### RBA
@@ -70,6 +137,8 @@ Very few legitimate Content-Type fields will have a length greater than 100 char
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

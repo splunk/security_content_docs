@@ -24,19 +24,81 @@ tags:
 
 The following analytic identifies activity related to the web application Spring Cloud Function that was recently idenfied as vulnerable. This is CVE-2022-22963. Multiple proof of concept code was released. The URI that is hit includes `functionrouter`. The specifics of the exploit include a status of 500. In this query we did not include it, but for filtering you can add Web.status=500. The exploit data itself (based on all the POCs) is located in the form_data field. This field will include all class.modules being called.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web)
 - **Last Updated**: 2022-04-05
 - **Author**: Michael Haag, Splunk
 - **ID**: 89dddbad-369a-4f8a-ace2-2439218735bc
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1190](https://attack.mitre.org/techniques/T1190/) | Exploit Public-Facing Application | Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
+| ----------- | ----------- | -------------- |
+| [CVE-2022-22963](https://nvd.nist.gov/vuln/detail/CVE-2022-22963) | In Spring Cloud Function versions 3.1.6, 3.2.2 and older unsupported versions, when using routing functionality it is possible for a user to provide a specially crafted SpEL as a routing-expression that may result in remote code execution and access to local resources. | 7.5 |
+
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -49,14 +111,13 @@ The following analytic identifies activity related to the web application Spring
 | `web_spring_cloud_function_functionrouter_filter`
 ```
 
-#### Associated Analytic Story
-* [Spring4Shell CVE-2022-22965](/stories/spring4shell_cve-2022-22965)
+> :information_source:
+> **web_spring_cloud_function_functionrouter_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on Web traffic that include fields relavent for traffic into the `Web` datamodel.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Web.http_method
 * Web.url
@@ -66,12 +127,16 @@ To successfully implement this search you need to be ingesting information on We
 * Web.http_user_agent
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on Web traffic that include fields relavent for traffic into the `Web` datamodel.
 #### Known False Positives
 False positives may be present with legitimate applications. Attempt to filter by dest IP or use Asset groups to restrict to servers.
+
+#### Associated Analytic Story
+* [Spring4Shell CVE-2022-22965](/stories/spring4shell_cve-2022-22965)
+
+
 
 
 #### RBA
@@ -81,13 +146,8 @@ False positives may be present with legitimate applications. Attempt to filter b
 | 42.0 | 70 | 60 | A suspicious URL has been requested against $dest$ by $src$, related to a vulnerability in Spring Cloud. |
 
 
-
-#### CVE
-
-| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
-| ----------- | ----------- | -------------- |
-| [CVE-2022-22963](https://nvd.nist.gov/vuln/detail/CVE-2022-22963) | In Spring Cloud Function versions 3.1.6, 3.2.2 and older unsupported versions, when using routing functionality it is possible for a user to provide a specially crafted SpEL as a routing-expression that may result in remote code execution and access to local resources. | 7.5 |
-
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

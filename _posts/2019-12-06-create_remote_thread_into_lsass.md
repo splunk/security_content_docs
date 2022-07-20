@@ -24,13 +24,18 @@ tags:
 
 Detect remote thread creation into LSASS consistent with credential dumping.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2019-12-06
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: 67d4dbef-9564-4699-8da8-03a151529edc
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,57 @@ Detect remote thread creation into LSASS consistent with credential dumping.
 | [T1003.001](https://attack.mitre.org/techniques/T1003/001/) | LSASS Memory | Credential Access |
 
 | [T1003](https://attack.mitre.org/techniques/T1003/) | OS Credential Dumping | Credential Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -51,14 +107,13 @@ Detect remote thread creation into LSASS consistent with credential dumping.
 | `create_remote_thread_into_lsass_filter`
 ```
 
-#### Associated Analytic Story
-* [Credential Dumping](/stories/credential_dumping)
+> :information_source:
+> **create_remote_thread_into_lsass_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This search needs Sysmon Logs with a Sysmon configuration, which includes EventCode 8 with lsass.exe. This search uses an input macro named `sysmon`. We strongly recommend that you specify your environment-specific configurations (index, source, sourcetype, etc.) for Windows Sysmon logs. Replace the macro definition with configurations for your Splunk environment. The search also uses a post-filter macro designed to filter out known false positives.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventID
 * TargetImage
@@ -69,12 +124,16 @@ This search needs Sysmon Logs with a Sysmon configuration, which includes EventC
 * dest
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+This search needs Sysmon Logs with a Sysmon configuration, which includes EventCode 8 with lsass.exe. This search uses an input macro named `sysmon`. We strongly recommend that you specify your environment-specific configurations (index, source, sourcetype, etc.) for Windows Sysmon logs. Replace the macro definition with configurations for your Splunk environment. The search also uses a post-filter macro designed to filter out known false positives.
 #### Known False Positives
 Other tools can access LSASS for legitimate reasons and generate an event. In these cases, tweaking the search may help eliminate noise.
+
+#### Associated Analytic Story
+* [Credential Dumping](/stories/credential_dumping)
+
+
 
 
 #### RBA
@@ -84,6 +143,8 @@ Other tools can access LSASS for legitimate reasons and generate an event. In th
 | 81.0 | 90 | 90 | A process has created a remote thread into $TargetImage$ on $dest$. This behavior is indicative of credential dumping and should be investigated. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

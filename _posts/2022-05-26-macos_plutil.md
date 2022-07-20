@@ -23,19 +23,76 @@ tags:
 
 Detect usage of plutil to modify plist files. Adversaries can modiy plist files to executed binaries or add command line arguments. Plist files in auto-run locations are executed upon user logon or system startup.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-05-26
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: c11f2b57-92c1-4cd2-b46c-064eafb833ac
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1647](https://attack.mitre.org/techniques/T1647/) | Plist File Modification | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -49,14 +106,13 @@ Detect usage of plutil to modify plist files. Adversaries can modiy plist files 
 | `macos_plutil_filter`
 ```
 
-#### Associated Analytic Story
-* [Living Off The Land](/stories/living_off_the_land)
+> :information_source:
+> **macos_plutil_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This detection uses osquery and endpoint security on MacOS. Follow the link in references, which describes how to setup process auditing in MacOS with endpoint security and osquery.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * columns.cmdline
 * columns.pid
@@ -67,12 +123,16 @@ This detection uses osquery and endpoint security on MacOS. Follow the link in r
 * host
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+This detection uses osquery and endpoint security on MacOS. Follow the link in references, which describes how to setup process auditing in MacOS with endpoint security and osquery.
 #### Known False Positives
 Administrators using plutil to change plist files.
+
+#### Associated Analytic Story
+* [Living Off The Land](/stories/living_off_the_land)
+
+
 
 
 #### RBA
@@ -82,6 +142,8 @@ Administrators using plutil to change plist files.
 | 25.0 | 50 | 50 | plutil are executed on $host$ from $user$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

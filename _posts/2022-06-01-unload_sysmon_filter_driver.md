@@ -25,13 +25,18 @@ tags:
 
 Attackers often disable security tools to avoid detection. This search looks for the usage of process `fltMC.exe` to unload a Sysmon Driver that will stop sysmon from collecting the data.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-06-01
 - **Author**: Bhavin Patel, Splunk
 - **ID**: e5928ff3-23eb-4d8b-b8a4-dcbc844fdfbe
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,56 @@ Attackers often disable security tools to avoid detection. This search looks for
 | [T1562.001](https://attack.mitre.org/techniques/T1562/001/) | Disable or Modify Tools | Defense Evasion |
 
 | [T1562](https://attack.mitre.org/techniques/T1562/) | Impair Defenses | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -53,14 +108,13 @@ Attackers often disable security tools to avoid detection. This search looks for
 | table firstTime lastTime dest user count process_name process_id parent_process_name process
 ```
 
-#### Associated Analytic Story
-* [Disabling Security Tools](/stories/disabling_security_tools)
+> :information_source:
+> **unload_sysmon_filter_driver_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting data that records process activity from your hosts to populate the Endpoint data model in the Processes node. You must also be ingesting logs with both the process name and command line from your endpoints. The command-line arguments are mapped to the &#34;process&#34; field in the Endpoint data model. This search is also shipped with `unload_sysmon_filter_driver_filter` macro, update this macro to filter out false positives.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.process_name
 * Processes.process
@@ -70,12 +124,16 @@ You must be ingesting data that records process activity from your hosts to popu
 * Processes.user
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must be ingesting data that records process activity from your hosts to populate the Endpoint data model in the Processes node. You must also be ingesting logs with both the process name and command line from your endpoints. The command-line arguments are mapped to the &#34;process&#34; field in the Endpoint data model. This search is also shipped with `unload_sysmon_filter_driver_filter` macro, update this macro to filter out false positives.
 #### Known False Positives
 Unknown at the moment
+
+#### Associated Analytic Story
+* [Disabling Security Tools](/stories/disabling_security_tools)
+
+
 
 
 #### RBA
@@ -85,6 +143,8 @@ Unknown at the moment
 | 45.0 | 50 | 90 | Possible Sysmon filter driver unloading on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -8,7 +8,6 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Web
-  - Exploitation
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -31,13 +30,13 @@ On April 6, 2022, VMware published VMSA-2022-0011, which discloses multiple vuln
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [VMware Server Side Template Injection Hunt](/web/vmware_server_side_template_injection_hunt/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application)| Hunting |
-| [VMware Workspace ONE Freemarker Server-side Template Injection](/web/vmware_workspace_one_freemarker_server-side_template_injection/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application)| Anomaly |
+| [VMware Server Side Template Injection Hunt](/web/vmware_server_side_template_injection_hunt/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | Hunting |
+| [VMware Workspace ONE Freemarker Server-side Template Injection](/web/vmware_workspace_one_freemarker_server-side_template_injection/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | Anomaly |
 
 #### Reference
 
 * [https://attackerkb.com/topics/BDXyTqY1ld/cve-2022-22954/rapid7-analysis](https://attackerkb.com/topics/BDXyTqY1ld/cve-2022-22954/rapid7-analysis)
-* [https://www.cisa.gov/uscert/sites/default/files/publications/CISA_CSA_Threat_Actors_Chaining_VMware_Unpatched_Vulnerabilities_for_Full_System_Control.pdf](https://www.cisa.gov/uscert/sites/default/files/publications/CISA_CSA_Threat_Actors_Chaining_VMware_Unpatched_Vulnerabilities_for_Full_System_Control.pdf)
+* [https://www.cisa.gov/uscert/ncas/alerts/aa22-138b](https://www.cisa.gov/uscert/ncas/alerts/aa22-138b)
 
 
 

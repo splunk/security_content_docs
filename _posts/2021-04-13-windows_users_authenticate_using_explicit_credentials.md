@@ -27,13 +27,18 @@ The detection calculates the standard deviation for each host and leverages the 
 This detection will trigger on the potenfially malicious host, perhaps controlled via a trojan or operated by an insider threat, from where a password spraying attack is being executed.\
 The analytics returned fields allow analysts to investigate the event further by providing fields like source account, attempted user accounts and the endpoint were the behavior was identified.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-04-13
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: e61918fa-9ca4-11eb-836c-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,52 @@ The analytics returned fields allow analysts to investigate the event further by
 | [T1110.003](https://attack.mitre.org/techniques/T1110/003/) | Password Spraying | Credential Access |
 
 | [T1110](https://attack.mitre.org/techniques/T1110/) | Brute Force | Credential Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -59,15 +110,13 @@ The analytics returned fields allow analysts to investigate the event further by
 | `windows_users_authenticate_using_explicit_credentials_filter` 
 ```
 
-#### Associated Analytic Story
-* [Active Directory Password Spraying](/stories/active_directory_password_spraying)
-* [Insider Threat](/stories/insider_threat)
+> :information_source:
+> **windows_users_authenticate_using_explicit_credentials_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting Windows Event Logs from domain controllers as well as member servers and workstations. The Advanced Security Audit policy setting `Audit Logon` within `Logon/Logoff` needs to be enabled.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventCode
 * Security_ID
@@ -75,12 +124,17 @@ To successfully implement this search, you need to be ingesting Windows Event Lo
 * ComputerName
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting Windows Event Logs from domain controllers as well as member servers and workstations. The Advanced Security Audit policy setting `Audit Logon` within `Logon/Logoff` needs to be enabled.
 #### Known False Positives
 A source user failing attempting to authenticate multiple users on a host is not a common behavior for regular systems. Some applications, however, may exhibit this behavior in which case sets of users hosts can be added to an allow list. Possible false positive scenarios include systems where several users connect to like Mail servers, identity providers, remote desktop services, Citrix, etc.
+
+#### Associated Analytic Story
+* [Active Directory Password Spraying](/stories/active_directory_password_spraying)
+* [Insider Threat](/stories/insider_threat)
+
+
 
 
 #### RBA
@@ -90,6 +144,8 @@ A source user failing attempting to authenticate multiple users on a host is not
 | 49.0 | 70 | 70 | Potential password spraying attack from $ComputerName$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

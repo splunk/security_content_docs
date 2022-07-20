@@ -28,13 +28,18 @@ tags:
 
 The following analytic is static indicators related to CVE-2022-22963, Spring4Shell. The 3 indicators provide an amount of fidelity that source IP is attemping to exploit a web shell on the destination. The filename and cmd are arbitrary in this exploitation. Java will write a JSP to disk and a process will spawn from Java based on the cmd passed. This is indicative of typical web shell activity.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web)
 - **Last Updated**: 2022-04-05
 - **Author**: Michael Haag, Splunk
 - **ID**: 2850c734-2d44-4431-8139-1a56f6f54c01
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -45,6 +50,63 @@ The following analytic is static indicators related to CVE-2022-22963, Spring4Sh
 | [T1505](https://attack.mitre.org/techniques/T1505/) | Server Software Component | Persistence |
 
 | [T1190](https://attack.mitre.org/techniques/T1190/) | Exploit Public-Facing Application | Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
+| ----------- | ----------- | -------------- |
+| [CVE-2022-22965](https://nvd.nist.gov/vuln/detail/CVE-2022-22965) | A Spring MVC or Spring WebFlux application running on JDK 9+ may be vulnerable to remote code execution (RCE) via data binding. The specific exploit requires the application to run on Tomcat as a WAR deployment. If the application is deployed as a Spring Boot executable jar, i.e. the default, it is not vulnerable to the exploit. However, the nature of the vulnerability is more general, and there may be other ways to exploit it. | 7.5 |
+
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -57,14 +119,13 @@ The following analytic is static indicators related to CVE-2022-22963, Spring4Sh
 | `spring4shell_payload_url_request_filter`
 ```
 
-#### Associated Analytic Story
-* [Spring4Shell CVE-2022-22965](/stories/spring4shell_cve-2022-22965)
+> :information_source:
+> **spring4shell_payload_url_request_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on Web traffic that include fields relavent for traffic into the `Web` datamodel.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Web.http_method
 * Web.url
@@ -74,12 +135,16 @@ To successfully implement this search you need to be ingesting information on We
 * Web.http_user_agent
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on Web traffic that include fields relavent for traffic into the `Web` datamodel.
 #### Known False Positives
 The jsp file names are static names used in current proof of concept code. =
+
+#### Associated Analytic Story
+* [Spring4Shell CVE-2022-22965](/stories/spring4shell_cve-2022-22965)
+
+
 
 
 #### RBA
@@ -89,13 +154,8 @@ The jsp file names are static names used in current proof of concept code. =
 | 36.0 | 60 | 60 | A URL was requested related to Spring4Shell POC code on $dest$ by $src$. |
 
 
-
-#### CVE
-
-| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
-| ----------- | ----------- | -------------- |
-| [CVE-2022-22965](https://nvd.nist.gov/vuln/detail/CVE-2022-22965) | A Spring MVC or Spring WebFlux application running on JDK 9+ may be vulnerable to remote code execution (RCE) via data binding. The specific exploit requires the application to run on Tomcat as a WAR deployment. If the application is deployed as a Spring Boot executable jar, i.e. the default, it is not vulnerable to the exploit. However, the nature of the vulnerability is more general, and there may be other ways to exploit it. | 7.5 |
-
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

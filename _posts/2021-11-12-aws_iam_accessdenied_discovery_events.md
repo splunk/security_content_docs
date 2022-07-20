@@ -22,19 +22,70 @@ tags:
 
 The following detection identifies excessive AccessDenied events within an hour timeframe. It is possible that an access key to AWS may have been stolen and is being misused to perform discovery events. In these instances, the access is not available with the key stolen therefore these events will be generated.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-11-12
 - **Author**: Michael Haag, Splunk
 - **ID**: 3e1f1568-9633-11eb-a69c-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1580](https://attack.mitre.org/techniques/T1580/) | Cloud Infrastructure Discovery | Discovery |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Reconnaissance
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -48,14 +99,13 @@ The following detection identifies excessive AccessDenied events within an hour 
 | `aws_iam_accessdenied_discovery_events_filter`
 ```
 
-#### Associated Analytic Story
-* [Suspicious Cloud User Activities](/stories/suspicious_cloud_user_activities)
+> :information_source:
+> **aws_iam_accessdenied_discovery_events_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-The Splunk AWS Add-on and Splunk App for AWS is required to utilize this data. The search requires AWS Cloudtrail logs.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * eventName
 * eventSource
@@ -64,12 +114,16 @@ The Splunk AWS Add-on and Splunk App for AWS is required to utilize this data. T
 * userIdentity.type
 
 
-#### Kill Chain Phase
-* Reconnaissance
 
-
+#### How To Implement
+The Splunk AWS Add-on and Splunk App for AWS is required to utilize this data. The search requires AWS Cloudtrail logs.
 #### Known False Positives
 It is possible to start this detection will need to be tuned by source IP or user. In addition, change the count values to an upper threshold to restrict false positives.
+
+#### Associated Analytic Story
+* [Suspicious Cloud User Activities](/stories/suspicious_cloud_user_activities)
+
+
 
 
 #### RBA
@@ -79,6 +133,8 @@ It is possible to start this detection will need to be tuned by source IP or use
 | 10.0 | 20 | 50 | User $userIdentity.arn$ is seen to perform excessive number of discovery related api calls- $failures$, within an hour where the access was denied. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

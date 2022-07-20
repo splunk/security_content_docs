@@ -8,7 +8,6 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
-  - Exploitation
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -31,9 +30,9 @@ Adversaries may use this technique to maximize the impact on the target organiza
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Linux Iptables Firewall Modification](/endpoint/linux_iptables_firewall_modification/) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall), [Impair Defenses](/tags/#impair-defenses)| Anomaly |
-| [Linux Kworker Process In Writable Process Path](/endpoint/linux_kworker_process_in_writable_process_path/) | [Masquerade Task or Service](/tags/#masquerade-task-or-service), [Masquerading](/tags/#masquerading)| Hunting |
-| [Linux Stdout Redirection To Dev Null File](/endpoint/linux_stdout_redirection_to_dev_null_file/) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall), [Impair Defenses](/tags/#impair-defenses)| Anomaly |
+| [Linux Iptables Firewall Modification](/endpoint/linux_iptables_firewall_modification/) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall), [Impair Defenses](/tags/#impair-defenses) | Anomaly |
+| [Linux Kworker Process In Writable Process Path](/endpoint/linux_kworker_process_in_writable_process_path/) | [Masquerade Task or Service](/tags/#masquerade-task-or-service), [Masquerading](/tags/#masquerading) | Hunting |
+| [Linux Stdout Redirection To Dev Null File](/endpoint/linux_stdout_redirection_to_dev_null_file/) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall), [Impair Defenses](/tags/#impair-defenses) | Anomaly |
 
 #### Reference
 

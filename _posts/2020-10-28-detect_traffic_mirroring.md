@@ -20,7 +20,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -30,13 +30,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 Adversaries may leverage traffic mirroring in order to automate data exfiltration over compromised network infrastructure. Traffic mirroring is a native feature for some network devices and used for network analysis and may be configured to duplicate traffic and forward to one or more destinations for analysis by a network analyzer or other monitoring device.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-10-28
 - **Author**: Mikael Bjerkeland, Splunk
 - **ID**: 42b3b753-5925-49c5-9742-36fa40a73990
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -50,6 +55,59 @@ Adversaries may leverage traffic mirroring in order to automate data exfiltratio
 
 | [T1020.001](https://attack.mitre.org/techniques/T1020/001/) | Traffic Duplication | Exfiltration |
 
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Delivery
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* ID.AM
+* PR.DS
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 1
+* CIS 11
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
+
 #### Search
 
 ```
@@ -60,27 +118,29 @@ Adversaries may leverage traffic mirroring in order to automate data exfiltratio
 | `detect_traffic_mirroring_filter`
 ```
 
-#### Associated Analytic Story
-* [Router and Infrastructure Security](/stories/router_and_infrastructure_security)
+> :information_source:
+> **detect_traffic_mirroring_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This search uses a standard SPL query on logs from Cisco Network devices. The network devices must log with a severity level of minimum &#34;5 - notification&#34;. The search also requires that the Cisco Networks Add-on for Splunk (https://splunkbase.splunk.com/app/1467) is used to parse the logs from the Cisco network devices and that the devices have been configured according to the documentation of the Cisco Networks Add-on. Also note that an attacker may disable logging from the device prior to enabling traffic mirroring.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * facility
 * mnemonic
 * host
 
 
-#### Kill Chain Phase
-* Delivery
-* Actions on Objectives
 
-
+#### How To Implement
+This search uses a standard SPL query on logs from Cisco Network devices. The network devices must log with a severity level of minimum &#34;5 - notification&#34;. The search also requires that the Cisco Networks Add-on for Splunk (https://splunkbase.splunk.com/app/1467) is used to parse the logs from the Cisco network devices and that the devices have been configured according to the documentation of the Cisco Networks Add-on. Also note that an attacker may disable logging from the device prior to enabling traffic mirroring.
 #### Known False Positives
 This search will return false positives for any legitimate traffic captures by network administrators.
+
+#### Associated Analytic Story
+* [Router and Infrastructure Security](/stories/router_and_infrastructure_security)
+
+
 
 
 #### RBA
@@ -90,6 +150,8 @@ This search will return false positives for any legitimate traffic captures by n
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

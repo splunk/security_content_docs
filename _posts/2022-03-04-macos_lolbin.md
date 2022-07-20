@@ -25,13 +25,18 @@ tags:
 
 Detect multiple executions of Living off the Land (LOLbin) binaries in a short period of time.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-03-04
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: 58d270fb-5b39-418e-a855-4b8ac046805e
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,58 @@ Detect multiple executions of Living off the Land (LOLbin) binaries in a short p
 | [T1059.004](https://attack.mitre.org/techniques/T1059/004/) | Unix Shell | Execution |
 
 | [T1059](https://attack.mitre.org/techniques/T1059/) | Command and Scripting Interpreter | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -54,14 +111,13 @@ Detect multiple executions of Living off the Land (LOLbin) binaries in a short p
 | `macos_lolbin_filter`
 ```
 
-#### Associated Analytic Story
-* [Living Off The Land](/stories/living_off_the_land)
+> :information_source:
+> **macos_lolbin_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This detection uses osquery and endpoint security on MacOS. Follow the link in references, which describes how to setup process auditing in MacOS with endpoint security and osquery.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * columns.cmdline
 * columns.pid
@@ -72,12 +128,16 @@ This detection uses osquery and endpoint security on MacOS. Follow the link in r
 * host
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+This detection uses osquery and endpoint security on MacOS. Follow the link in references, which describes how to setup process auditing in MacOS with endpoint security and osquery.
 #### Known False Positives
 None identified.
+
+#### Associated Analytic Story
+* [Living Off The Land](/stories/living_off_the_land)
+
+
 
 
 #### RBA
@@ -87,6 +147,8 @@ None identified.
 | 25.0 | 50 | 50 | Multiplle LOLbin are executed on host $host$ by user $user$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

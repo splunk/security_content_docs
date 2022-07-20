@@ -17,7 +17,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -27,19 +27,70 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search provides detection of GCPloit exploitation framework. This framework can be used to escalate privileges and move laterally from compromised high privilege accounts.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-10-08
 - **Author**: Rod Soto, Splunk
 - **ID**: a1c5a85e-a162-410c-a5d9-99ff639e5a52
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1078](https://attack.mitre.org/techniques/T1078/) | Valid Accounts | Defense Evasion, Persistence, Privilege Escalation, Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -49,14 +100,13 @@ This search provides detection of GCPloit exploitation framework. This framework
 | `gcp_detect_gcploit_framework_filter`
 ```
 
-#### Associated Analytic Story
-* [GCP Cross Account Activity](/stories/gcp_cross_account_activity)
+> :information_source:
+> **gcp_detect_gcploit_framework_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install splunk GCP add-on. This search works with gcp:pubsub:message logs
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * data.protoPayload.request.function.timeout
 * src
@@ -68,12 +118,16 @@ You must install splunk GCP add-on. This search works with gcp:pubsub:message lo
 * http_user_agent
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+You must install splunk GCP add-on. This search works with gcp:pubsub:message logs
 #### Known False Positives
 Payload.request.function.timeout value can possibly be match with other functions or requests however the source user and target request account may indicate an attempt to move laterally accross acounts or projects
+
+#### Associated Analytic Story
+* [GCP Cross Account Activity](/stories/gcp_cross_account_activity)
+
+
 
 
 #### RBA
@@ -83,6 +137,8 @@ Payload.request.function.timeout value can possibly be match with other function
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

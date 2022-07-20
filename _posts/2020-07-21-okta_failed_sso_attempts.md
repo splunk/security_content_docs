@@ -22,7 +22,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -32,13 +32,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 Detect failed Okta SSO events
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-07-21
 - **Author**: Rico Valdez, Splunk
 - **ID**: 371a6545-2618-4032-ad84-93386b8698c5
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -47,6 +52,56 @@ Detect failed Okta SSO events
 | [T1078](https://attack.mitre.org/techniques/T1078/) | Valid Accounts | Defense Evasion, Persistence, Privilege Escalation, Initial Access |
 
 | [T1078.001](https://attack.mitre.org/techniques/T1078/001/) | Default Accounts | Defense Evasion, Persistence, Privilege Escalation, Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -58,14 +113,13 @@ Detect failed Okta SSO events
 | `okta_failed_sso_attempts_filter` 
 ```
 
-#### Associated Analytic Story
-* [Suspicious Okta Activity](/stories/suspicious_okta_activity)
+> :information_source:
+> **okta_failed_sso_attempts_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This search is specific to Okta and requires Okta logs are being ingested in your Splunk deployment.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * displayMessage
 * app
@@ -74,12 +128,16 @@ This search is specific to Okta and requires Okta logs are being ingested in you
 * src_ip
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+This search is specific to Okta and requires Okta logs are being ingested in your Splunk deployment.
 #### Known False Positives
 There may be a faulty config preventing legitmate users from accessing apps they should have access to.
+
+#### Associated Analytic Story
+* [Suspicious Okta Activity](/stories/suspicious_okta_activity)
+
+
 
 
 #### RBA
@@ -89,6 +147,8 @@ There may be a faulty config preventing legitmate users from accessing apps they
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

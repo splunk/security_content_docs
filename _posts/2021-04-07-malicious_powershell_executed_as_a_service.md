@@ -25,13 +25,18 @@ tags:
 
 This detection is to identify the abuse the Windows SC.exe to execute malicious commands or payloads via PowerShell.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-04-07
 - **Author**: Ryan Becwar
 - **ID**: 8e204dfd-cae0-4ea8-a61d-e972a1ff2ff8
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,52 @@ This detection is to identify the abuse the Windows SC.exe to execute malicious 
 | [T1569](https://attack.mitre.org/techniques/T1569/) | System Services | Execution |
 
 | [T1569.002](https://attack.mitre.org/techniques/T1569/002/) | Service Execution | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -60,14 +111,13 @@ This detection is to identify the abuse the Windows SC.exe to execute malicious 
 | `malicious_powershell_executed_as_a_service_filter`
 ```
 
-#### Associated Analytic Story
-* [Malicious Powershell](/stories/malicious_powershell)
+> :information_source:
+> **malicious_powershell_executed_as_a_service_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting Windows System logs with the Service name, Service File Name Service Start type, and Service Type from your endpoints.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * EventCode
 * Service_File_Name
 * Service_Type
@@ -78,12 +128,16 @@ To successfully implement this search, you need to be ingesting Windows System l
 * user
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting Windows System logs with the Service name, Service File Name Service Start type, and Service Type from your endpoints.
 #### Known False Positives
 Creating a hidden powershell service is rare and could key off of those instances.
+
+#### Associated Analytic Story
+* [Malicious Powershell](/stories/malicious_powershell)
+
+
 
 
 #### RBA
@@ -93,6 +147,8 @@ Creating a hidden powershell service is rare and could key off of those instance
 | 72.0 | 90 | 80 | Identifies the abuse the Windows SC.exe to execute malicious powerShell as a service $Service_File_Name$ by $user$ on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

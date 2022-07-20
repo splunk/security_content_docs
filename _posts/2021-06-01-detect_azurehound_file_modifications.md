@@ -35,13 +35,18 @@ tags:
 
 The following analytic is similar to SharpHound file modifications, but this instance covers the use of Invoke-AzureHound. AzureHound is the SharpHound equivilent but for Azure. It&#39;s possible this may never be seen in an environment as most attackers may execute this tool remotely. Once execution is complete, a zip file with a similar name will drop `20210601090751-azurecollection.zip`. In addition to the zip, multiple .json files will be written to disk, which are in the zip.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-06-01
 - **Author**: Michael Haag, Splunk
 - **ID**: 1c34549e-c31b-11eb-996b-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -61,6 +66,52 @@ The following analytic is similar to SharpHound file modifications, but this ins
 
 | [T1069](https://attack.mitre.org/techniques/T1069/) | Permission Groups Discovery | Discovery |
 
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Reconnaissance
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
+
 #### Search
 
 ```
@@ -72,14 +123,13 @@ The following analytic is similar to SharpHound file modifications, but this ins
 | `detect_azurehound_file_modifications_filter`
 ```
 
-#### Associated Analytic Story
-* [Discovery Techniques](/stories/discovery_techniques)
+> :information_source:
+> **detect_azurehound_file_modifications_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you need to be ingesting information on file modifications that include the name of the process, and file, responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Filesystem` node.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * file_path
 * dest
@@ -88,12 +138,16 @@ To successfully implement this search you need to be ingesting information on fi
 * file_create_time
 
 
-#### Kill Chain Phase
-* Reconnaissance
 
-
+#### How To Implement
+To successfully implement this search you need to be ingesting information on file modifications that include the name of the process, and file, responsible for the changes from your endpoints into the `Endpoint` datamodel in the `Filesystem` node.
 #### Known False Positives
 False positives should be limited as the analytic is specific to a filename with extension .zip. Filter as needed.
+
+#### Associated Analytic Story
+* [Discovery Techniques](/stories/discovery_techniques)
+
+
 
 
 #### RBA
@@ -103,6 +157,8 @@ False positives should be limited as the analytic is specific to a filename with
 | 63.0 | 70 | 90 | A file - $file_name$ was written to disk that is related to AzureHound, a AzureAD enumeration utility, has occurred on endpoint $dest$ by user $user$. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

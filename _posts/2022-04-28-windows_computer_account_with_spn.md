@@ -23,19 +23,76 @@ tags:
 
 The following analytic identifies two SPNs, HOST and RestrictedKrbHost, added using the KrbRelayUp behavior. This particular behavior has been found in other Kerberos based attacks.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-04-28
 - **Author**: Michael Haag, Splunk
 - **ID**: 9a3e57e7-33f4-470e-b25d-165baa6e8357
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1558](https://attack.mitre.org/techniques/T1558/) | Steal or Forge Kerberos Tickets | Credential Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Installation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -49,15 +106,13 @@ The following analytic identifies two SPNs, HOST and RestrictedKrbHost, added us
 | `windows_computer_account_with_spn_filter`
 ```
 
-#### Associated Analytic Story
-* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
-* [Local Privilege Escalation With KrbRelayUp](/stories/local_privilege_escalation_with_krbrelayup)
+> :information_source:
+> **windows_computer_account_with_spn_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting Windows Security Event Logs with 4741 EventCode enabled. The Windows TA is also required.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventCode
 * MSADChangedAttributes
@@ -69,12 +124,17 @@ To successfully implement this search, you need to be ingesting Windows Security
 * Logon_Id
 
 
-#### Kill Chain Phase
-* Installation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting Windows Security Event Logs with 4741 EventCode enabled. The Windows TA is also required.
 #### Known False Positives
 It is possible third party applications may add these SPNs to Computer Accounts, filtering may be needed.
+
+#### Associated Analytic Story
+* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
+* [Local Privilege Escalation With KrbRelayUp](/stories/local_privilege_escalation_with_krbrelayup)
+
+
 
 
 #### RBA
@@ -84,6 +144,8 @@ It is possible third party applications may add these SPNs to Computer Accounts,
 | 64.0 | 80 | 80 | A Computer Account was created with SPNs related to Kerberos on $dest$, possibly indicative of Kerberos relay attack. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

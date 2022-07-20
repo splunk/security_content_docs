@@ -22,19 +22,76 @@ tags:
 
 This search looks for AWS CloudTrail events where a user has created an open/public S3 bucket.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2021-07-19
 - **Author**: Bhavin Patel, Patrick Bareiss, Splunk
 - **ID**: 2a9b80d3-6340-4345-b5ad-290bf3d0dac4
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1530](https://attack.mitre.org/techniques/T1530/) | Data from Cloud Storage Object | Collection |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.DS
+* PR.AC
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 13
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -55,14 +112,13 @@ This search looks for AWS CloudTrail events where a user has created an open/pub
 | `detect_new_open_s3_buckets_filter` 
 ```
 
-#### Associated Analytic Story
-* [Suspicious AWS S3 Activities](/stories/suspicious_aws_s3_activities)
+> :information_source:
+> **detect_new_open_s3_buckets_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install the AWS App for Splunk.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * eventSource
 * eventName
@@ -74,12 +130,16 @@ You must install the AWS App for Splunk.
 * permission
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must install the AWS App for Splunk.
 #### Known False Positives
 While this search has no known false positives, it is possible that an AWS admin has legitimately created a public bucket for a specific purpose. That said, AWS strongly advises against granting full control to the &#34;All Users&#34; group.
+
+#### Associated Analytic Story
+* [Suspicious AWS S3 Activities](/stories/suspicious_aws_s3_activities)
+
+
 
 
 #### RBA
@@ -89,6 +149,8 @@ While this search has no known false positives, it is possible that an AWS admin
 | 48.0 | 60 | 80 | User $user_arn$ has created an open/public bucket $bucketName$ with the following permissions $permission$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

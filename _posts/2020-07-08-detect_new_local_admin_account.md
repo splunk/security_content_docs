@@ -24,13 +24,18 @@ tags:
 
 This search looks for newly created accounts that have been elevated to local administrators.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-07-08
 - **Author**: David Dorsey, Splunk
 - **ID**: b25f6f62-0712-43c1-b203-083231ffd97d
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,58 @@ This search looks for newly created accounts that have been elevated to local ad
 | [T1136.001](https://attack.mitre.org/techniques/T1136/001/) | Local Account | Persistence |
 
 | [T1136](https://attack.mitre.org/techniques/T1136/) | Create Account | Persistence |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+* Command &amp; Control
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.AC
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,15 +109,13 @@ This search looks for newly created accounts that have been elevated to local ad
 | `detect_new_local_admin_account_filter`
 ```
 
-#### Associated Analytic Story
-* [DHS Report TA18-074A](/stories/dhs_report_ta18-074a)
-* [HAFNIUM Group](/stories/hafnium_group)
+> :information_source:
+> **detect_new_local_admin_account_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting Windows event logs using the Splunk Windows TA and collecting event code 4720 and 4732
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventCode
 * Group_Name
@@ -69,13 +124,17 @@ You must be ingesting Windows event logs using the Splunk Windows TA and collect
 * user
 
 
-#### Kill Chain Phase
-* Actions on Objectives
-* Command &amp; Control
 
-
+#### How To Implement
+You must be ingesting Windows event logs using the Splunk Windows TA and collecting event code 4720 and 4732
 #### Known False Positives
 The activity may be legitimate. For this reason, it&#39;s best to verify the account with an administrator and ask whether there was a valid service request for the account creation. If your local administrator group name is not &#34;Administrators&#34;, this search may generate an excessive number of false positives
+
+#### Associated Analytic Story
+* [DHS Report TA18-074A](/stories/dhs_report_ta18-074a)
+* [HAFNIUM Group](/stories/hafnium_group)
+
+
 
 
 #### RBA
@@ -85,6 +144,8 @@ The activity may be legitimate. For this reason, it&#39;s best to verify the acc
 | 42.0 | 60 | 70 | A $user$ on $dest$ was added recently. Identify if this was legitimate behavior or not. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

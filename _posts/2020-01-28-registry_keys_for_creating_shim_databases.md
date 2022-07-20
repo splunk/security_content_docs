@@ -27,13 +27,18 @@ tags:
 
 This search looks for registry activity associated with application compatibility shims, which can be leveraged by attackers for various nefarious purposes.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2020-01-28
 - **Author**: Bhavin Patel, Patrick Bareiss, Teoderick Contreras, Splunk
 - **ID**: f5f6af30-7aa7-4295-bfe9-07fe87c01bbb
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,57 @@ This search looks for registry activity associated with application compatibilit
 | [T1546.011](https://attack.mitre.org/techniques/T1546/011/) | Application Shimming | Privilege Escalation, Persistence |
 
 | [T1546](https://attack.mitre.org/techniques/T1546/) | Event Triggered Execution | Privilege Escalation, Persistence |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -59,16 +115,13 @@ This search looks for registry activity associated with application compatibilit
 | `registry_keys_for_creating_shim_databases_filter`
 ```
 
-#### Associated Analytic Story
-* [Suspicious Windows Registry Activities](/stories/suspicious_windows_registry_activities)
-* [Windows Persistence Techniques](/stories/windows_persistence_techniques)
-* [Windows Registry Abuse](/stories/windows_registry_abuse)
+> :information_source:
+> **registry_keys_for_creating_shim_databases_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you must populate the Change_Analysis data model. This is typically populated via endpoint detection and response product, such as Carbon Black or other endpoint data sources such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the registry.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Registry.registry_key_name
 * Registry.registry_path
@@ -76,12 +129,18 @@ To successfully implement this search, you must populate the Change_Analysis dat
 * Registry.user
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+To successfully implement this search, you must populate the Change_Analysis data model. This is typically populated via endpoint detection and response product, such as Carbon Black or other endpoint data sources such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the registry.
 #### Known False Positives
 There are many legitimate applications that leverage shim databases for compatibility purposes for legacy applications
+
+#### Associated Analytic Story
+* [Suspicious Windows Registry Activities](/stories/suspicious_windows_registry_activities)
+* [Windows Persistence Techniques](/stories/windows_persistence_techniques)
+* [Windows Registry Abuse](/stories/windows_registry_abuse)
+
+
 
 
 #### RBA
@@ -91,6 +150,8 @@ There are many legitimate applications that leverage shim databases for compatib
 | 56.0 | 70 | 80 | A registry activity in $registry_path$ related to shim modication in host $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

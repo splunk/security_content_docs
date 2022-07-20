@@ -23,19 +23,70 @@ tags:
 
 This search is to detect file creation in remcos folder in appdata which is the keylog and clipboard logs that will be send to its c2 server. This is really a good TTP indicator that there is a remcos rat in the system that do keylogging, clipboard grabbing and audio recording.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-09-21
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 25ae862a-1ac3-11ec-94a1-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1113](https://attack.mitre.org/techniques/T1113/) | Screen Capture | Collection |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -48,14 +99,13 @@ This search is to detect file creation in remcos folder in appdata which is the 
 | `remcos_rat_file_creation_in_remcos_folder_filter`
 ```
 
-#### Associated Analytic Story
-* [Remcos](/stories/remcos)
+> :information_source:
+> **remcos_rat_file_creation_in_remcos_folder_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * dest
 * file_create_time
@@ -63,12 +113,16 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * file_path
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 #### Known False Positives
 unknown
+
+#### Associated Analytic Story
+* [Remcos](/stories/remcos)
+
+
 
 
 #### RBA
@@ -78,6 +132,8 @@ unknown
 | 100.0 | 100 | 100 | file $file_name$ created in $file_path$ of $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

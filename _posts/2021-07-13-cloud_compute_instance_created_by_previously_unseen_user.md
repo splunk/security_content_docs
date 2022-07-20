@@ -31,13 +31,18 @@ tags:
 
 This search looks for cloud compute instances created by users who have not created them before.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change)
 - **Last Updated**: 2021-07-13
 - **Author**: Rico Valdez, Splunk
 - **ID**: 37a0ec8d-827e-4d6d-8025-cedf31f3a149
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -46,6 +51,56 @@ This search looks for cloud compute instances created by users who have not crea
 | [T1078.004](https://attack.mitre.org/techniques/T1078/004/) | Cloud Accounts | Defense Evasion, Persistence, Privilege Escalation, Initial Access |
 
 | [T1078](https://attack.mitre.org/techniques/T1078/) | Valid Accounts | Defense Evasion, Persistence, Privilege Escalation, Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* ID.AM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 1
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -63,14 +118,13 @@ This search looks for cloud compute instances created by users who have not crea
 | `cloud_compute_instance_created_by_previously_unseen_user_filter`
 ```
 
-#### Associated Analytic Story
-* [Cloud Cryptomining](/stories/cloud_cryptomining)
+> :information_source:
+> **cloud_compute_instance_created_by_previously_unseen_user_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting the appropriate cloud-infrastructure logs Run the &#34;Previously Seen Cloud Compute Creations By User&#34; support search to create of baseline of previously seen users.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * All_Changes.object
 * All_Changes.action
@@ -78,12 +132,16 @@ You must be ingesting the appropriate cloud-infrastructure logs Run the &#34;Pre
 * All_Changes.vendor_region
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+You must be ingesting the appropriate cloud-infrastructure logs Run the &#34;Previously Seen Cloud Compute Creations By User&#34; support search to create of baseline of previously seen users.
 #### Known False Positives
 It&#39;s possible that a user will start to create compute instances for the first time, for any number of reasons. Verify with the user launching instances that this is the intended behavior.
+
+#### Associated Analytic Story
+* [Cloud Cryptomining](/stories/cloud_cryptomining)
+
+
 
 
 #### RBA
@@ -93,6 +151,8 @@ It&#39;s possible that a user will start to create compute instances for the fir
 | 18.0 | 30 | 60 | User $user$ is creating a new instance $dest$ for the first time |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

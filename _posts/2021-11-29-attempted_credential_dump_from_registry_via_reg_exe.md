@@ -23,13 +23,18 @@ tags:
 
 The following analytic identifies the use of `reg.exe` attempting to export Windows registry keys that contain hashed credentials. Adversaries will utilize this technique to capture and perform offline password cracking.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2021-11-29
 - **Author**: Jose Hernandez, Splunk
 - **ID**: 14038953-e5f2-4daf-acff-5452062baf03
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -38,6 +43,58 @@ The following analytic identifies the use of `reg.exe` attempting to export Wind
 | [T1003](https://attack.mitre.org/techniques/T1003/) | OS Credential Dumping | Credential Access |
 
 | [T1003.002](https://attack.mitre.org/techniques/T1003/002/) | Security Account Manager | Credential Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -52,14 +109,13 @@ The following analytic identifies the use of `reg.exe` attempting to export Wind
 | into write_ssa_detected_events(); 
 ```
 
-#### Associated Analytic Story
-* [Credential Dumping](/stories/credential_dumping)
+> :information_source:
+> **attempted_credential_dump_from_registry_via_reg_exe_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * process_name
 * _time
 * dest_device_id
@@ -68,12 +124,16 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * cmd_line
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you must have at least version 6.0.4 of the Sysmon TA.
 #### Known False Positives
 None identified.
+
+#### Associated Analytic Story
+* [Credential Dumping](/stories/credential_dumping)
+
+
 
 
 #### RBA
@@ -83,6 +143,8 @@ None identified.
 | 63.0 | 70 | 90 | An attempt to save registry keys storing credentials has been performed on $dest_device_id$ by $dest_user_id$ via process $process_name$. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

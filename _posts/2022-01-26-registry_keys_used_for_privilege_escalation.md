@@ -27,13 +27,18 @@ tags:
 
 This search looks for modifications to registry keys that can be used to elevate privileges. The registry keys under &#34;Image File Execution Options&#34; are used to intercept calls to an executable and can be used to attach malicious binaries to benign system binaries.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-01-26
 - **Author**: David Dorsey, Teoderick Contreras, Splunk
 - **ID**: c9f4b923-f8af-4155-b697-1354f5bcbc5e
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,57 @@ This search looks for modifications to registry keys that can be used to elevate
 | [T1546.012](https://attack.mitre.org/techniques/T1546/012/) | Image File Execution Options Injection | Privilege Escalation, Persistence |
 
 | [T1546](https://attack.mitre.org/techniques/T1546/) | Event Triggered Execution | Privilege Escalation, Persistence |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -59,6 +115,26 @@ This search looks for modifications to registry keys that can be used to elevate
 | `registry_keys_used_for_privilege_escalation_filter`
 ```
 
+> :information_source:
+> **registry_keys_used_for_privilege_escalation_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+
+
+#### Required fields
+List of fields required to use this analytic.
+* _time
+* Registry.registry_path
+* Registry.registry_key_name
+* Registry.dest
+* Registry.user
+
+
+
+#### How To Implement
+To successfully implement this search, you must be ingesting data that records registry activity from your hosts to populate the endpoint data model in the registry node. This is typically populated via endpoint detection-and-response product, such as Carbon Black, or endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the registry.
+#### Known False Positives
+There are many legitimate applications that must execute upon system startup and will use these registry keys to accomplish that task.
+
 #### Associated Analytic Story
 * [Windows Privilege Escalation](/stories/windows_privilege_escalation)
 * [Suspicious Windows Registry Activities](/stories/suspicious_windows_registry_activities)
@@ -67,23 +143,6 @@ This search looks for modifications to registry keys that can be used to elevate
 * [Hermetic Wiper](/stories/hermetic_wiper)
 
 
-#### How To Implement
-To successfully implement this search, you must be ingesting data that records registry activity from your hosts to populate the endpoint data model in the registry node. This is typically populated via endpoint detection-and-response product, such as Carbon Black, or endpoint data sources, such as Sysmon. The data used for this search is typically generated via logs that report reads and writes to the registry.
-
-#### Required field
-* _time
-* Registry.registry_path
-* Registry.registry_key_name
-* Registry.dest
-* Registry.user
-
-
-#### Kill Chain Phase
-* Actions on Objectives
-
-
-#### Known False Positives
-There are many legitimate applications that must execute upon system startup and will use these registry keys to accomplish that task.
 
 
 #### RBA
@@ -93,6 +152,8 @@ There are many legitimate applications that must execute upon system startup and
 | 76.0 | 80 | 95 | A registry activity in $registry_path$ related to privilege escalation in host $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

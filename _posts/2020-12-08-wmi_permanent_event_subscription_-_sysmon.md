@@ -31,13 +31,18 @@ All event subscriptions have three components \
 1. Binding - Registers a filter to a consumer. EventID = 21 \
 Monitor for the creation of new WMI EventFilter, EventConsumer, and FilterToConsumerBinding. It may be pertinent to review all 3 to identify the flow of execution. In addition, EventCode 4104 may assist with any other PowerShell script usage that registered the subscription.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-12-08
 - **Author**: Rico Valdez, Michael Haag, Splunk
 - **ID**: ad05aae6-3b2a-4f73-af97-57bd26cee3b9
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -46,6 +51,60 @@ Monitor for the creation of new WMI EventFilter, EventConsumer, and FilterToCons
 | [T1546.003](https://attack.mitre.org/techniques/T1546/003/) | Windows Management Instrumentation Event Subscription | Privilege Escalation, Persistence |
 
 | [T1546](https://attack.mitre.org/techniques/T1546/) | Event Triggered Execution | Privilege Escalation, Persistence |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* PR.AT
+* PR.AC
+* PR.IP
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -56,14 +115,13 @@ Monitor for the creation of new WMI EventFilter, EventConsumer, and FilterToCons
 | `wmi_permanent_event_subscription___sysmon_filter`
 ```
 
-#### Associated Analytic Story
-* [Suspicious WMI Use](/stories/suspicious_wmi_use)
+> :information_source:
+> **wmi_permanent_event_subscription_-_sysmon_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you must be collecting Sysmon data using Sysmon version 6.1 or greater and have Sysmon configured to generate alerts for WMI activity (eventID= 19, 20, 21). In addition, you must have at least version 6.0.4 of the Sysmon TA installed to properly parse the fields.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventCode
 * host
@@ -75,12 +133,16 @@ To successfully implement this search, you must be collecting Sysmon data using 
 * Filter
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+To successfully implement this search, you must be collecting Sysmon data using Sysmon version 6.1 or greater and have Sysmon configured to generate alerts for WMI activity (eventID= 19, 20, 21). In addition, you must have at least version 6.0.4 of the Sysmon TA installed to properly parse the fields.
 #### Known False Positives
 Although unlikely, administrators may use event subscriptions for legitimate purposes.
+
+#### Associated Analytic Story
+* [Suspicious WMI Use](/stories/suspicious_wmi_use)
+
+
 
 
 #### RBA
@@ -90,6 +152,8 @@ Although unlikely, administrators may use event subscriptions for legitimate pur
 | 30.0 | 30 | 100 | User $user$ on $host$ executed the following suspicious WMI query: $Query$.  Filter: $filter$. Consumer: $Consumer$.  EventCode: $EventCode$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

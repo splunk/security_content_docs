@@ -31,13 +31,18 @@ The following analytic identifies new printer drivers being load by utilizing th
 Within the proof of concept code, the following event will occur - &#34;Printer driver 1234 for Windows x64 Version-3 was added or updated. Files:- UNIDRV.DLL, kernelbase.dll, evil.dll. No user action is required.&#34; \
 During triage, isolate the endpoint and review for source of exploitation. Capture any additional file modification events and review the source of where the exploitation began.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-07-01
 - **Author**: Mauricio Velazco, Michael Haag, Teoderick Contreras, Splunk
 - **ID**: 313681a2-da8e-11eb-adad-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -46,6 +51,58 @@ During triage, isolate the endpoint and review for source of exploitation. Captu
 | [T1547.012](https://attack.mitre.org/techniques/T1547/012/) | Print Processors | Persistence, Privilege Escalation |
 
 | [T1547](https://attack.mitre.org/techniques/T1547/) | Boot or Logon Autostart Execution | Persistence, Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
+| ----------- | ----------- | -------------- |
+| [CVE-2021-34527](https://nvd.nist.gov/vuln/detail/CVE-2021-34527) | Windows Print Spooler Remote Code Execution Vulnerability | 9.0 |
+| [CVE-2021-1675](https://nvd.nist.gov/vuln/detail/CVE-2021-1675) | Windows Print Spooler Elevation of Privilege Vulnerability | 9.3 |
+
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -57,14 +114,13 @@ During triage, isolate the endpoint and review for source of exploitation. Captu
 | `print_spooler_adding_a_printer_driver_filter`
 ```
 
-#### Associated Analytic Story
-* [PrintNightmare CVE-2021-34527](/stories/printnightmare_cve-2021-34527)
+> :information_source:
+> **print_spooler_adding_a_printer_driver_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You will need to ensure PrintService Admin and Operational logs are being logged to Splunk from critical or all systems.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * OpCode
 * EventCode
@@ -72,12 +128,16 @@ You will need to ensure PrintService Admin and Operational logs are being logged
 * Message
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+You will need to ensure PrintService Admin and Operational logs are being logged to Splunk from critical or all systems.
 #### Known False Positives
 Unknown. This may require filtering.
+
+#### Associated Analytic Story
+* [PrintNightmare CVE-2021-34527](/stories/printnightmare_cve-2021-34527)
+
+
 
 
 #### RBA
@@ -87,14 +147,8 @@ Unknown. This may require filtering.
 | 72.0 | 80 | 90 | Suspicious print driver was loaded on endpoint $ComputerName$. |
 
 
-
-#### CVE
-
-| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
-| ----------- | ----------- | -------------- |
-| [CVE-2021-34527](https://nvd.nist.gov/vuln/detail/CVE-2021-34527) | Windows Print Spooler Remote Code Execution Vulnerability | 9.0 |
-| [CVE-2021-1675](https://nvd.nist.gov/vuln/detail/CVE-2021-1675) | Windows Print Spooler Elevation of Privilege Vulnerability | 9.3 |
-
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

@@ -16,7 +16,7 @@ tags:
   - Endpoint
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -26,19 +26,82 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks for child processes of spoolsv.exe. This activity is associated with a POC privilege-escalation exploit associated with CVE-2018-8440. Spoolsv.exe is the process associated with the Print Spooler service in Windows and typically runs as SYSTEM.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2020-03-16
 - **Author**: Rico Valdez, Splunk
 - **ID**: aa0c4aeb-5b18-41c4-8c07-f1442d7599df
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1068](https://attack.mitre.org/techniques/T1068/) | Exploitation for Privilege Escalation | Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.AC
+* PR.PT
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 5
+* CIS 8
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
+| ----------- | ----------- | -------------- |
+| [CVE-2018-8440](https://nvd.nist.gov/vuln/detail/CVE-2018-8440) | An elevation of privilege vulnerability exists when Windows improperly handles calls to Advanced Local Procedure Call (ALPC), aka &#34;Windows ALPC Elevation of Privilege Vulnerability.&#34; This affects Windows 7, Windows Server 2012 R2, Windows RT 8.1, Windows Server 2008, Windows Server 2012, Windows 8.1, Windows Server 2016, Windows Server 2008 R2, Windows 10, Windows 10 Servers. | 7.2 |
+
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -51,15 +114,13 @@ This search looks for child processes of spoolsv.exe. This activity is associate
 | `child_processes_of_spoolsv_exe_filter` 
 ```
 
-#### Associated Analytic Story
-* [Windows Privilege Escalation](/stories/windows_privilege_escalation)
-* [Hermetic Wiper](/stories/hermetic_wiper)
+> :information_source:
+> **child_processes_of_spoolsv_exe_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must be ingesting endpoint data that tracks process activity, including parent-child relationships from your endpoints to populate the Endpoint data model in the Processes node. The command-line arguments are mapped to the &#34;process&#34; field in the Endpoint data model. Update the `children_of_spoolsv_filter` macro to filter out legitimate child processes spawned by spoolsv.exe.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.process_name
 * Processes.process
@@ -70,12 +131,17 @@ You must be ingesting endpoint data that tracks process activity, including pare
 * Processes.user
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+You must be ingesting endpoint data that tracks process activity, including parent-child relationships from your endpoints to populate the Endpoint data model in the Processes node. The command-line arguments are mapped to the &#34;process&#34; field in the Endpoint data model. Update the `children_of_spoolsv_filter` macro to filter out legitimate child processes spawned by spoolsv.exe.
 #### Known False Positives
 Some legitimate printer-related processes may show up as children of spoolsv.exe. You should confirm that any activity as legitimate and may be added as exclusions in the search.
+
+#### Associated Analytic Story
+* [Windows Privilege Escalation](/stories/windows_privilege_escalation)
+* [Hermetic Wiper](/stories/hermetic_wiper)
+
+
 
 
 #### RBA
@@ -85,13 +151,8 @@ Some legitimate printer-related processes may show up as children of spoolsv.exe
 | 25.0 | 50 | 50 | tbd |
 
 
-
-#### CVE
-
-| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
-| ----------- | ----------- | -------------- |
-| [CVE-2018-8440](https://nvd.nist.gov/vuln/detail/CVE-2018-8440) | An elevation of privilege vulnerability exists when Windows improperly handles calls to Advanced Local Procedure Call (ALPC), aka &#34;Windows ALPC Elevation of Privilege Vulnerability.&#34; This affects Windows 7, Windows Server 2012 R2, Windows RT 8.1, Windows Server 2008, Windows Server 2012, Windows 8.1, Windows Server 2016, Windows Server 2008 R2, Windows 10, Windows 10 Servers. | 7.2 |
-
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

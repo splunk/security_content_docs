@@ -17,7 +17,7 @@ tags:
   - Network_Resolution
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -27,13 +27,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 The search is used to identify attempts to use your DNS Infrastructure for DDoS purposes via a DNS amplification attack leveraging ANY queries.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution)
 - **Last Updated**: 2017-09-20
 - **Author**: Bhavin Patel, Splunk
 - **ID**: 8fa891f7-a533-4b3c-af85-5aa2e7c1f1eb
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -42,6 +47,59 @@ The search is used to identify attempts to use your DNS Infrastructure for DDoS 
 | [T1498](https://attack.mitre.org/techniques/T1498/) | Network Denial of Service | Impact |
 
 | [T1498.002](https://attack.mitre.org/techniques/T1498/002/) | Reflection Amplification | Impact |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.PT
+* DE.AE
+* PR.IP
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 11
+* CIS 12
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -53,26 +111,29 @@ The search is used to identify attempts to use your DNS Infrastructure for DDoS 
 | `large_volume_of_dns_any_queries_filter`
 ```
 
-#### Associated Analytic Story
-* [DNS Amplification Attacks](/stories/dns_amplification_attacks)
+> :information_source:
+> **large_volume_of_dns_any_queries_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search you must ensure that DNS data is populating the Network_Resolution data model.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * DNS.message_type
 * DNS.record_type
 * DNS.dest
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+To successfully implement this search you must ensure that DNS data is populating the Network_Resolution data model.
 #### Known False Positives
 Legitimate ANY requests may trigger this search, however it is unusual to see a large volume of them under typical circumstances. You may modify the threshold in the search to better suit your environment.
+
+#### Associated Analytic Story
+* [DNS Amplification Attacks](/stories/dns_amplification_attacks)
+
+
 
 
 #### RBA
@@ -82,6 +143,8 @@ Legitimate ANY requests may trigger this search, however it is unusual to see a 
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

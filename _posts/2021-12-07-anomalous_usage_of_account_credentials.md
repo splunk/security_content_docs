@@ -16,7 +16,7 @@ tags:
   - Endpoint_Processes
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -26,19 +26,75 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This is an anomaly generating detection looking for multiple interactive logins within a specific time period. An insider threat may attempt to steal colleagues credentials in low tech, undetectable methods, in order to gain access to additional information or to hide their own behavior. This should capture their attempted use of those credentials on a workstation.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Behavioral Analytics
 - **Datamodel**: [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2021-12-07
 - **Author**: Lou Stella, Splunk
 - **ID**: 629cbf9e-5785-11ec-9611-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1078.002](https://attack.mitre.org/techniques/T1078/002/) | Domain Accounts | Defense Evasion, Persistence, Privilege Escalation, Initial Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.AC
+* DE.AE
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 14
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -56,23 +112,26 @@ This is an anomaly generating detection looking for multiple interactive logins 
 | into write_ssa_detected_events();
 ```
 
-#### Associated Analytic Story
-* [Insider Threat](/stories/insider_threat)
+> :information_source:
+> **anomalous_usage_of_account_credentials_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+
+
+#### Required fields
+List of fields required to use this analytic.
+* _time
+
 
 
 #### How To Implement
 To successfully implement this detection, you need to be ingesting logon events from workstations.
-
-#### Required field
-* _time
-
-
-#### Kill Chain Phase
-* Exploitation
-
-
 #### Known False Positives
 Shared workstations can cause false positives
+
+#### Associated Analytic Story
+* [Insider Threat](/stories/insider_threat)
+
+
 
 
 #### RBA
@@ -82,6 +141,8 @@ Shared workstations can cause false positives
 | 6.0 | 20 | 30 | Multiple interactive logins detected on $device$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

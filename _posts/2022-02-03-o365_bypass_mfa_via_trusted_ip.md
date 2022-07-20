@@ -24,13 +24,18 @@ tags:
 
 This search detects newly added IP addresses/CIDR blocks to the list of MFA Trusted IPs to bypass multi factor authentication. Attackers are often known to use this technique so that they can bypass the MFA system.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2022-02-03
 - **Author**: Bhavin Patel, Splunk
 - **ID**: c783dd98-c703-4252-9e8a-f19d9f66949e
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -39,6 +44,52 @@ This search detects newly added IP addresses/CIDR blocks to the list of MFA Trus
 | [T1562.007](https://attack.mitre.org/techniques/T1562/007/) | Disable or Modify Cloud Firewall | Defense Evasion |
 
 | [T1562](https://attack.mitre.org/techniques/T1562/) | Impair Defenses | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -55,14 +106,13 @@ This search detects newly added IP addresses/CIDR blocks to the list of MFA Trus
 | `o365_bypass_mfa_via_trusted_ip_filter`
 ```
 
-#### Associated Analytic Story
-* [Office 365 Detections](/stories/office_365_detections)
+> :information_source:
+> **o365_bypass_mfa_via_trusted_ip_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You must install Splunk Microsoft Office 365 add-on. This search works with o365:management:activity
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * signature
 * ModifiedProperties{}.Name
@@ -75,12 +125,16 @@ You must install Splunk Microsoft Office 365 add-on. This search works with o365
 * action
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+You must install Splunk Microsoft Office 365 add-on. This search works with o365:management:activity
 #### Known False Positives
 Unless it is a special case, it is uncommon to continually update Trusted IPs to MFA configuration.
+
+#### Associated Analytic Story
+* [Office 365 Detections](/stories/office_365_detections)
+
+
 
 
 #### RBA
@@ -90,6 +144,8 @@ Unless it is a special case, it is uncommon to continually update Trusted IPs to
 | 42.0 | 70 | 60 | User $user_id$ has added new IP addresses $ip_addresses_new_added$ to a list of trusted IPs to bypass MFA |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

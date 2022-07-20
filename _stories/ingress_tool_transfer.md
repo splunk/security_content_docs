@@ -8,8 +8,7 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
-  - Actions on Objectives
-  - Exploitation
+  - Endpoint_Processes
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -19,7 +18,7 @@ tags:
 Adversaries may transfer tools or other files from an external system into a compromised environment. Files may be copied from an external adversary controlled system through the command and control channel to bring tools into the victim network or through alternate protocols with another tool such as FTP.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2021-03-24
 - **Author**: Michael Haag, Splunk
 - **ID**: b3782036-8cbd-11eb-9d8e-acde48001122
@@ -32,16 +31,21 @@ Ingress tool transfer is a Technique under tactic Command and Control. Behaviors
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Any Powershell DownloadFile](/endpoint/any_powershell_downloadfile/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [PowerShell](/tags/#powershell), [Ingress Tool Transfer](/tags/#ingress-tool-transfer)| TTP |
-| [Any Powershell DownloadString](/endpoint/any_powershell_downloadstring/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [PowerShell](/tags/#powershell), [Ingress Tool Transfer](/tags/#ingress-tool-transfer)| TTP |
-| [BITSAdmin Download File](/endpoint/bitsadmin_download_file/) | [BITS Jobs](/tags/#bits-jobs), [Ingress Tool Transfer](/tags/#ingress-tool-transfer)| TTP |
-| [CertUtil Download With URLCache and Split Arguments](/endpoint/certutil_download_with_urlcache_and_split_arguments/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer)| TTP |
-| [CertUtil Download With VerifyCtl and Split Arguments](/endpoint/certutil_download_with_verifyctl_and_split_arguments/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer)| TTP |
-| [Curl Download and Bash Execution](/endpoint/curl_download_and_bash_execution/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer)| TTP |
-| [Wget Download and Bash Execution](/endpoint/wget_download_and_bash_execution/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer)| TTP |
-| [Windows Curl Download to Suspicious Path](/endpoint/windows_curl_download_to_suspicious_path/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer)| TTP |
-| [Windows Curl Upload to Remote Destination](/endpoint/windows_curl_upload_to_remote_destination/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer)| TTP |
-| [Suspicious Curl Network Connection](/endpoint/suspicious_curl_network_connection/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer)| TTP |
+| [Any Powershell DownloadFile](/endpoint/any_powershell_downloadfile/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [PowerShell](/tags/#powershell), [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | TTP |
+| [Any Powershell DownloadString](/endpoint/any_powershell_downloadstring/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [PowerShell](/tags/#powershell), [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | TTP |
+| [BITSAdmin Download File](/endpoint/bitsadmin_download_file/) | [BITS Jobs](/tags/#bits-jobs), [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | TTP |
+| [CertUtil Download With URLCache and Split Arguments](/endpoint/certutil_download_with_urlcache_and_split_arguments/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | TTP |
+| [CertUtil Download With VerifyCtl and Split Arguments](/endpoint/certutil_download_with_verifyctl_and_split_arguments/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | TTP |
+| [Curl Download and Bash Execution](/endpoint/curl_download_and_bash_execution/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | TTP |
+| [Suspicious Curl Network Connection](/endpoint/suspicious_curl_network_connection/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | TTP |
+| [Wget Download and Bash Execution](/endpoint/wget_download_and_bash_execution/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | TTP |
+| [Windows Bitsadmin Download File](/endpoint/windows_bitsadmin_download_file/) | [BITS Jobs](/tags/#bits-jobs), [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | TTP |
+| [Windows CertUtil URLCache Download](/endpoint/windows_certutil_urlcache_download/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | TTP |
+| [Windows CertUtil VerifyCtl Download](/endpoint/windows_certutil_verifyctl_download/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | TTP |
+| [Windows Curl Download to Suspicious Path](/endpoint/windows_curl_download_to_suspicious_path/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | TTP |
+| [Windows Curl Upload to Remote Destination](/endpoint/windows_curl_upload_to_remote_destination/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | TTP |
+| [Windows Curl Upload to Remote Destination](/endpoint/windows_curl_upload_to_remote_destination/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | TTP |
+| [Windows Powershell DownloadFile](/endpoint/windows_powershell_downloadfile/) | [Automated Exfiltration](/tags/#automated-exfiltration) | Anomaly |
 
 #### Reference
 

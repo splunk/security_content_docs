@@ -25,19 +25,70 @@ tags:
 
 The following analytic identifies a process performing an outbound connection on port 88 used by default by the network authentication protocol Kerberos. Typically, on a regular Windows endpoint, only the lsass.exe process is the one tasked with connecting to the Kerberos Distribution Center to obtain Kerberos tickets. Identifying an unknown process using this protocol may be evidence of an adversary abusing the Kerberos protocol.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 - **Last Updated**: 2022-03-09
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: c91a0852-9fbb-11ec-af44-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1550](https://attack.mitre.org/techniques/T1550/) | Use Alternate Authentication Material | Defense Evasion, Lateral Movement |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Reconnaissance
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -54,14 +105,13 @@ The following analytic identifies a process performing an outbound connection on
 | `unknown_process_using_the_kerberos_protocol_filter`
 ```
 
-#### Associated Analytic Story
-* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
+> :information_source:
+> **unknown_process_using_the_kerberos_protocol_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you must be ingesting your endpoint events and populating the Endpoint and Network data models.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * All_Traffic.dest_ip
 * All_Traffic.dest_port
@@ -74,12 +124,16 @@ To successfully implement this search, you must be ingesting your endpoint event
 * Processes.parent_process_name
 
 
-#### Kill Chain Phase
-* Reconnaissance
 
-
+#### How To Implement
+To successfully implement this search, you must be ingesting your endpoint events and populating the Endpoint and Network data models.
 #### Known False Positives
 Custom applications may leverage the Kerberos protocol. Filter as needed.
+
+#### Associated Analytic Story
+* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
+
+
 
 
 #### RBA
@@ -89,6 +143,8 @@ Custom applications may leverage the Kerberos protocol. Filter as needed.
 | 36.0 | 60 | 60 |  |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

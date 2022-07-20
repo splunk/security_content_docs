@@ -30,7 +30,7 @@ tags:
 ---
 
 {% if detection.experimental is sameas true -%}
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 {% endif %}
 
@@ -40,13 +40,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 {{ detection.description }}
 
-- **Type**: {{ detection.type }}
+- **Type**: [{{ detection.type }}](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: {{ detection.tags.product|join(', ') }}
-- **Datamodel**: {% for datamodel in detection.datamodel %}[{{ datamodel }}](https://docs.splunk.com/Documentation/CIM/latest/User/{{ datamodel|replace("_", "")}}){% if not loop.last %}, {% endif %}{%-endfor %}
+{% if detection.datamodel -%}- **Datamodel**: {% for datamodel in detection.datamodel %}[{{ datamodel }}](https://docs.splunk.com/Documentation/CIM/latest/User/{{ datamodel|replace("_", "")}}){% if not loop.last %}, {% endif %}{%- endfor %}{%- endif %}
 - **Last Updated**: {{ detection.date }}
 - **Author**: {{detection.author}}
 - **ID**: {{ detection.id }}
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 {% if detection.mitre_attacks %}
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -62,6 +67,66 @@ We have not been able to test, simulate, or build datasets for this detection. U
 {% endif -%}
 {% endfor %}
 {% endif -%}
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+{% for phase in detection.tags.kill_chain_phases -%}
+* {{ phase }}
+{% endfor %}
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+{% if detection.tags.nist -%}
+{% for nist in detection.tags.nist -%}
+* {{ nist }}
+{% endfor %}
+{% endif %}
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+{% if detection.tags.cis20 -%}
+{% for cis in detection.tags.cis20 -%}
+* {{ cis }}
+{% endfor %}
+{% endif %}
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+{% if detection.cve %}
+| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
+| ----------- | ----------- | -------------- |
+{% for cve in detection.cve -%}
+| [{{ cve.id }}](https://nvd.nist.gov/vuln/detail/{{cve.id}}) | {{ cve.summary }} | {{ cve.cvss }} |
+{% endfor %}
+{% endif %}
+
+</div>
+</details>
+
 
 #### Search
 
@@ -69,26 +134,53 @@ We have not been able to test, simulate, or build datasets for this detection. U
 {{ detection.search|replace("|", "\n|")|safe }}
 ```
 
+{% if detection.macros -%}
+#### Macros
+The SPL above uses the following Macros:
+{% for macro in detection.macros -%}
+{% if not '_filter' in macro.name -%}
+* [{{ macro.name }}](https://github.com/splunk/security_content/blob/develop/macros/{{macro.name}}.yml)
+{% endif -%}
+{% endfor %}
+{% endif -%}
+
+> :information_source:
+> **{{detection.name | lower | replace(" ", "_") }}_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
+
+{% if detection.lookups -%}
+#### Lookups
+The SPL above uses the following Lookups:
+
+{% for lookup in object.lookups -%}
+* [{{lookup.name}}](https://github.com/splunk/security_content/blob/develop/lookups/{{lookup.name}}.yml) with [data](https://github.com/splunk/security_content/tree/develop/lookups/{{lookup.name}}.csv)
+{% endfor %}
+{% endif -%}
+
+{% if detection.splunk_app_enrichment %}
+#### Supported Add-on (TA)
+List of [Splunk Add-on's](https://docs.splunk.com/Documentation/AddOns/released/Overview/AboutSplunkadd-ons) tested to work with the analytic.
+{% for splunk_app in detection.splunk_app_enrichment %}
+* [{{ splunk_app.name }}]({{splunk_app.url}})
+{%-endfor %}
+{% endif %}
+
+#### Required fields
+List of fields required to use this analytic.
+{% for field in detection.tags.required_fields -%}
+* {{ field }}
+{% endfor %}
+
+
+#### How To Implement
+{{ detection.how_to_implement}}
+#### Known False Positives
+{{ detection.known_false_positives}}
+
 #### Associated Analytic Story
 {% for story in detection.tags.analytic_story -%}
 * [{{ story }}](/stories/{{story|lower|replace(" ", "_")}})
 {% endfor %}
 
-#### How To Implement
-{{ detection.how_to_implement}}
-
-#### Required field
-{% for field in detection.tags.required_fields -%}
-* {{ field }}
-{% endfor %}
-
-#### Kill Chain Phase
-{% for phase in detection.tags.kill_chain_phases -%}
-* {{ phase }}
-{% endfor %}
-
-#### Known False Positives
-{{ detection.known_false_positives}}
 
 {% if detection.tags.observable %}
 #### RBA
@@ -98,15 +190,9 @@ We have not been able to test, simulate, or build datasets for this detection. U
 | {{(detection.tags.impact * detection.tags.confidence)/100}} | {{ detection.tags.impact }} | {{ detection.tags.confidence }} | {{detection.tags.message}} |
 {% endif %}
 
-{% if detection.cve %}
-#### CVE
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
-| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
-| ----------- | ----------- | -------------- |
-{% for cve in detection.cve -%}
-| [{{ cve.id }}](https://nvd.nist.gov/vuln/detail/{{cve.id}}) | {{ cve.summary }} | {{ cve.cvss }} |
-{% endfor %}
-{% endif %}
 
 #### Reference
 {% if detection.references %}

@@ -16,7 +16,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -26,13 +26,18 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks for the first and last time a Windows service is seen running in your environment. This table is then cached.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-07-21
 - **Author**: David Dorsey, Splunk
 - **ID**: 823136f2-d755-4b6d-ae04-372b486a5808
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -41,6 +46,61 @@ This search looks for the first and last time a Windows service is seen running 
 | [T1569](https://attack.mitre.org/techniques/T1569/) | System Services | Execution |
 
 | [T1569.002](https://attack.mitre.org/techniques/T1569/002/) | Service Execution | Execution |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Installation
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* ID.AM
+* PR.DS
+* PR.AC
+* DE.AE
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 2
+* CIS 9
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -54,29 +114,31 @@ This search looks for the first and last time a Windows service is seen running 
 | `first_time_seen_running_windows_service_filter`
 ```
 
-#### Associated Analytic Story
-* [Windows Service Abuse](/stories/windows_service_abuse)
-* [Orangeworm Attack Group](/stories/orangeworm_attack_group)
-* [NOBELIUM Group](/stories/nobelium_group)
+> :information_source:
+> **first_time_seen_running_windows_service_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-While this search does not require you to adhere to Splunk CIM, you must be ingesting your Windows system event logs in order for this search to execute successfully. You should run the baseline search `Previously Seen Running Windows Services - Initial` to build the initial table of child processes and hostnames for this search to work. You should also schedule at the same interval as this search the second baseline search `Previously Seen Running Windows Services - Update` to keep this table up to date and to age out old Windows Services. Please update the `previously_seen_windows_services_window` macro to adjust the time window. Please ensure that the Splunk Add-on for Microsoft Windows is version 8.0.0 or above.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * EventCode
 * Message
 * dest
 
 
-#### Kill Chain Phase
-* Installation
-* Actions on Objectives
 
-
+#### How To Implement
+While this search does not require you to adhere to Splunk CIM, you must be ingesting your Windows system event logs in order for this search to execute successfully. You should run the baseline search `Previously Seen Running Windows Services - Initial` to build the initial table of child processes and hostnames for this search to work. You should also schedule at the same interval as this search the second baseline search `Previously Seen Running Windows Services - Update` to keep this table up to date and to age out old Windows Services. Please update the `previously_seen_windows_services_window` macro to adjust the time window. Please ensure that the Splunk Add-on for Microsoft Windows is version 8.0.0 or above.
 #### Known False Positives
 A previously unseen service is not necessarily malicious. Verify that the service is legitimate and that was installed by a legitimate process.
+
+#### Associated Analytic Story
+* [Windows Service Abuse](/stories/windows_service_abuse)
+* [Orangeworm Attack Group](/stories/orangeworm_attack_group)
+* [NOBELIUM Group](/stories/nobelium_group)
+
+
 
 
 #### RBA
@@ -86,6 +148,8 @@ A previously unseen service is not necessarily malicious. Verify that the servic
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

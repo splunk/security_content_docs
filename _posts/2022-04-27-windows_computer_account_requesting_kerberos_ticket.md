@@ -23,19 +23,76 @@ tags:
 
 The following analytic identifies a ComputerAccount requesting a Kerberos Ticket. typically, a user account requests a Kerberos ticket. This behavior was identified with KrbUpRelay, but additional Kerberos attacks have exhibited similar behavior.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-04-27
 - **Author**: Michael Haag, Splunk
 - **ID**: fb3b2bb3-75a4-4279-848a-165b42624770
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1558](https://attack.mitre.org/techniques/T1558/) | Steal or Forge Kerberos Tickets | Credential Access |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -47,15 +104,13 @@ The following analytic identifies a ComputerAccount requesting a Kerberos Ticket
 | `windows_computer_account_requesting_kerberos_ticket_filter`
 ```
 
-#### Associated Analytic Story
-* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
-* [Local Privilege Escalation With KrbRelayUp](/stories/local_privilege_escalation_with_krbrelayup)
+> :information_source:
+> **windows_computer_account_requesting_kerberos_ticket_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting Windows Security Event Logs with 4768 EventCode enabled. The Windows TA is also required.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * dest
 * subject
@@ -66,12 +121,17 @@ To successfully implement this search, you need to be ingesting Windows Security
 * src_ip
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting Windows Security Event Logs with 4768 EventCode enabled. The Windows TA is also required.
 #### Known False Positives
 It is possible false positives will be present based on third party applications. Filtering may be needed.
+
+#### Associated Analytic Story
+* [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks)
+* [Local Privilege Escalation With KrbRelayUp](/stories/local_privilege_escalation_with_krbrelayup)
+
+
 
 
 #### RBA
@@ -81,6 +141,8 @@ It is possible false positives will be present based on third party applications
 | 35.0 | 50 | 70 | A Computer Account requested a Kerberos ticket on $dest$, possibly indicative of Kerberos relay attack. |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

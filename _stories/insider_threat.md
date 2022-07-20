@@ -10,8 +10,9 @@ tags:
   - Splunk Behavioral Analytics
   - Authentication
   - Endpoint
-  - Exploitation
-  - Reconnaissance
+  - Endpoint_Filesystem
+  - Endpoint_Processes
+  - Network_Traffic
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -21,7 +22,7 @@ tags:
 Monitor for activities and techniques associated with insider threats and specifically focusing on malicious insiders operating with in a corporate environment.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud, Splunk Behavioral Analytics
-- **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
+- **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Filesystem](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointFilesystem), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 - **Last Updated**: 2022-05-19
 - **Author**: Jose Hernandez, Splunk
 - **ID**: c633df29-a950-4c4c-a0f8-02be6730797c
@@ -34,12 +35,17 @@ Insider Threats are best defined by CISA: "Insider threat incidents are possible
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Gsuite Drive Share In External Email](/cloud/gsuite_drive_share_in_external_email/) | [Exfiltration to Cloud Storage](/tags/#exfiltration-to-cloud-storage), [Exfiltration Over Web Service](/tags/#exfiltration-over-web-service)| Anomaly |
-| [Gsuite Outbound Email With Attachment To External Domain](/cloud/gsuite_outbound_email_with_attachment_to_external_domain/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol), [Exfiltration Over Alternative Protocol](/tags/#exfiltration-over-alternative-protocol)| Anomaly |
-| [High Frequency Copy Of Files In Network Share](/endpoint/high_frequency_copy_of_files_in_network_share/) | [Transfer Data to Cloud Account](/tags/#transfer-data-to-cloud-account)| Anomaly |
-| [Multiple Users Failing To Authenticate From Process](/endpoint/multiple_users_failing_to_authenticate_from_process/) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force)| Anomaly |
-| [Potential password in username](/endpoint/potential_password_in_username/) | [Local Accounts](/tags/#local-accounts), [Credentials In Files](/tags/#credentials-in-files)| Hunting |
-| [Windows Users Authenticate Using Explicit Credentials](/endpoint/windows_users_authenticate_using_explicit_credentials/) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force)| Anomaly |
+| [Anomalous Usage of Account Credentials](/endpoint/anomalous_usage_of_account_credentials/) | [Domain Accounts](/tags/#domain-accounts) | Anomaly |
+| [Excessive Number of Office Files Copied](/endpoint/excessive_number_of_office_files_copied/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol) | Anomaly |
+| [Gsuite Drive Share In External Email](/cloud/gsuite_drive_share_in_external_email/) | [Exfiltration to Cloud Storage](/tags/#exfiltration-to-cloud-storage), [Exfiltration Over Web Service](/tags/#exfiltration-over-web-service) | Anomaly |
+| [Gsuite Outbound Email With Attachment To External Domain](/cloud/gsuite_outbound_email_with_attachment_to_external_domain/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol), [Exfiltration Over Alternative Protocol](/tags/#exfiltration-over-alternative-protocol) | Anomaly |
+| [High File Deletion Frequency](/endpoint/high_file_deletion_frequency/) | [Data Destruction](/tags/#data-destruction) | Anomaly |
+| [High Frequency Copy Of Files In Network Share](/endpoint/high_frequency_copy_of_files_in_network_share/) | [Transfer Data to Cloud Account](/tags/#transfer-data-to-cloud-account) | Anomaly |
+| [Multiple Users Failing To Authenticate From Process](/endpoint/multiple_users_failing_to_authenticate_from_process/) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | Anomaly |
+| [Potential password in username](/endpoint/potential_password_in_username/) | [Local Accounts](/tags/#local-accounts), [Credentials In Files](/tags/#credentials-in-files) | Hunting |
+| [Sdelete Application Execution](/endpoint/sdelete_application_execution/) | [Data Destruction](/tags/#data-destruction), [File Deletion](/tags/#file-deletion), [Indicator Removal on Host](/tags/#indicator-removal-on-host) | Anomaly |
+| [Unusual Volume of Data Download from Internal Server Per Entity](/network/unusual_volume_of_data_download_from_internal_server_per_entity/) | [Data from Information Repositories](/tags/#data-from-information-repositories), [Data from Network Shared Drive](/tags/#data-from-network-shared-drive) | Anomaly |
+| [Windows Users Authenticate Using Explicit Credentials](/endpoint/windows_users_authenticate_using_explicit_credentials/) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | Anomaly |
 
 #### Reference
 

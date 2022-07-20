@@ -8,9 +8,6 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
-  - Delivery
-  - Exploitation
-  - Installation
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -33,12 +30,12 @@ A rootkit on Windows may sometimes be in the form of a Windows Driver. A driver 
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Windows Driver Load Non-Standard Path](/endpoint/windows_driver_load_non-standard_path/) | [Rootkit](/tags/#rootkit)| TTP |
-| [Windows Drivers Loaded by Signature](/endpoint/windows_drivers_loaded_by_signature/) | [Rootkit](/tags/#rootkit), [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation)| Hunting |
-| [Windows Registry Certificate Added](/endpoint/windows_registry_certificate_added/) | [Install Root Certificate](/tags/#install-root-certificate), [Subvert Trust Controls](/tags/#subvert-trust-controls)| TTP |
-| [Windows Registry Modification for Safe Mode Persistence](/endpoint/windows_registry_modification_for_safe_mode_persistence/) | [Registry Run Keys / Startup Folder](/tags/#registry-run-keys-/-startup-folder), [Boot or Logon Autostart Execution](/tags/#boot-or-logon-autostart-execution)| TTP |
-| [Windows Service Create Kernel Mode Driver](/endpoint/windows_service_create_kernel_mode_driver/) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process), [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation)| TTP |
-| [Windows System File on Disk](/endpoint/windows_system_file_on_disk/) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation)| Hunting |
+| [Windows Driver Load Non-Standard Path](/endpoint/windows_driver_load_non-standard_path/) | [Rootkit](/tags/#rootkit) | TTP |
+| [Windows Drivers Loaded by Signature](/endpoint/windows_drivers_loaded_by_signature/) | [Rootkit](/tags/#rootkit), [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | Hunting |
+| [Windows Registry Certificate Added](/endpoint/windows_registry_certificate_added/) | [Install Root Certificate](/tags/#install-root-certificate), [Subvert Trust Controls](/tags/#subvert-trust-controls) | TTP |
+| [Windows Registry Modification for Safe Mode Persistence](/endpoint/windows_registry_modification_for_safe_mode_persistence/) | [Registry Run Keys / Startup Folder](/tags/#registry-run-keys-/-startup-folder), [Boot or Logon Autostart Execution](/tags/#boot-or-logon-autostart-execution) | TTP |
+| [Windows Service Create Kernel Mode Driver](/endpoint/windows_service_create_kernel_mode_driver/) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process), [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | TTP |
+| [Windows System File on Disk](/endpoint/windows_system_file_on_disk/) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | Hunting |
 
 #### Reference
 

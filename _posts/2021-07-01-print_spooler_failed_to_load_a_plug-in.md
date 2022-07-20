@@ -32,13 +32,18 @@ Within the proof of concept code, the following error will occur - &#34;The prin
 The analytic is based on file path and failure to load the plug-in. \
 During triage, isolate the endpoint and review for source of exploitation. Capture any additional file modification events.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-07-01
 - **Author**: Mauricio Velazco, Michael Haag, Splunk
 - **ID**: 1adc9548-da7c-11eb-8f13-acde48001122
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -47,6 +52,58 @@ During triage, isolate the endpoint and review for source of exploitation. Captu
 | [T1547.012](https://attack.mitre.org/techniques/T1547/012/) | Print Processors | Persistence, Privilege Escalation |
 
 | [T1547](https://attack.mitre.org/techniques/T1547/) | Boot or Logon Autostart Execution | Persistence, Privilege Escalation |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
+| ----------- | ----------- | -------------- |
+| [CVE-2021-34527](https://nvd.nist.gov/vuln/detail/CVE-2021-34527) | Windows Print Spooler Remote Code Execution Vulnerability | 9.0 |
+| [CVE-2021-1675](https://nvd.nist.gov/vuln/detail/CVE-2021-1675) | Windows Print Spooler Elevation of Privilege Vulnerability | 9.3 |
+
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -58,14 +115,13 @@ During triage, isolate the endpoint and review for source of exploitation. Captu
 | `print_spooler_failed_to_load_a_plug_in_filter`
 ```
 
-#### Associated Analytic Story
-* [PrintNightmare CVE-2021-34527](/stories/printnightmare_cve-2021-34527)
+> :information_source:
+> **print_spooler_failed_to_load_a_plug-in_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-You will need to ensure PrintService Admin and Operational logs are being logged to Splunk from critical or all systems.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * OpCode
 * EventCode
@@ -73,12 +129,16 @@ You will need to ensure PrintService Admin and Operational logs are being logged
 * Message
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+You will need to ensure PrintService Admin and Operational logs are being logged to Splunk from critical or all systems.
 #### Known False Positives
 False positives are unknown and filtering may be required.
+
+#### Associated Analytic Story
+* [PrintNightmare CVE-2021-34527](/stories/printnightmare_cve-2021-34527)
+
+
 
 
 #### RBA
@@ -88,14 +148,8 @@ False positives are unknown and filtering may be required.
 | 72.0 | 80 | 90 | Suspicious printer spooler errors have occured on endpoint $ComputerName$ with EventCode $EventCode$. |
 
 
-
-#### CVE
-
-| ID          | Summary | [CVSS](https://nvd.nist.gov/vuln-metrics/cvss) |
-| ----------- | ----------- | -------------- |
-| [CVE-2021-34527](https://nvd.nist.gov/vuln/detail/CVE-2021-34527) | Windows Print Spooler Remote Code Execution Vulnerability | 9.0 |
-| [CVE-2021-1675](https://nvd.nist.gov/vuln/detail/CVE-2021-1675) | Windows Print Spooler Elevation of Privilege Vulnerability | 9.3 |
-
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

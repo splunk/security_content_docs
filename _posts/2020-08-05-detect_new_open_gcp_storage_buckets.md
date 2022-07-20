@@ -14,7 +14,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -24,19 +24,76 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks for GCP PubSub events where a user has created an open/public GCP Storage bucket.
 
-- **Type**: TTP
+- **Type**: [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2020-08-05
 - **Author**: Shannon Davis, Splunk
 - **ID**: f6ea3466-d6bb-11ea-87d0-0242ac130003
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
 | ID          | Technique   | Tactic         |
 | ----------- | ----------- |--------------- |
 | [T1530](https://attack.mitre.org/techniques/T1530/) | Data from Cloud Storage Object | Collection |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Actions on Objectives
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* PR.DS
+* PR.AC
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 13
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -54,14 +111,13 @@ This search looks for GCP PubSub events where a user has created an open/public 
 | search `detect_new_open_gcp_storage_buckets_filter`
 ```
 
-#### Associated Analytic Story
-* [Suspicious GCP Storage Activities](/stories/suspicious_gcp_storage_activities)
+> :information_source:
+> **detect_new_open_gcp_storage_buckets_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-This search relies on the Splunk Add-on for Google Cloud Platform, setting up a Cloud Pub/Sub input, along with the relevant GCP PubSub topics and logging sink to capture GCP Storage Bucket events (https://cloud.google.com/logging/docs/routing/overview).
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * data.resource.type
 * data.protoPayload.methodName
@@ -74,12 +130,16 @@ This search relies on the Splunk Add-on for Google Cloud Platform, setting up a 
 * data.protoPayload.serviceData.policyDelta.bindingDeltas{}.member
 
 
-#### Kill Chain Phase
-* Actions on Objectives
 
-
+#### How To Implement
+This search relies on the Splunk Add-on for Google Cloud Platform, setting up a Cloud Pub/Sub input, along with the relevant GCP PubSub topics and logging sink to capture GCP Storage Bucket events (https://cloud.google.com/logging/docs/routing/overview).
 #### Known False Positives
 While this search has no known false positives, it is possible that a GCP admin has legitimately created a public bucket for a specific purpose. That said, GCP strongly advises against granting full control to the &#34;allUsers&#34; group.
+
+#### Associated Analytic Story
+* [Suspicious GCP Storage Activities](/stories/suspicious_gcp_storage_activities)
+
+
 
 
 #### RBA
@@ -89,6 +149,8 @@ While this search has no known false positives, it is possible that a GCP admin 
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

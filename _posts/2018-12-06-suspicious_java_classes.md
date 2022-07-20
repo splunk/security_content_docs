@@ -12,7 +12,7 @@ tags:
   - Splunk Cloud
 ---
 
-### ⚠️ WARNING THIS IS A EXPERIMENTAL DETECTION
+### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
 We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
 
 
@@ -22,12 +22,68 @@ We have not been able to test, simulate, or build datasets for this detection. U
 
 This search looks for suspicious Java classes that are often used to exploit remote command execution in common Java frameworks, such as Apache Struts.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+
 - **Last Updated**: 2018-12-06
 - **Author**: Jose Hernandez, Splunk
 - **ID**: 6ed33786-5e87-4f55-b62c-cb5f1168b831
+
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.AE
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 7
+* CIS 12
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -42,14 +98,13 @@ This search looks for suspicious Java classes that are often used to exploit rem
 | `suspicious_java_classes_filter`
 ```
 
-#### Associated Analytic Story
-* [Apache Struts Vulnerability](/stories/apache_struts_vulnerability)
+> :information_source:
+> **suspicious_java_classes_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-In order to properly run this search, Splunk needs to ingest data from your web-traffic appliances that serve or sit in the path of your Struts application servers. This can be accomplished by indexing data from a web proxy, or by using network traffic-analysis tools, such as Splunk Stream or Bro.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * http_method
 * http_content_length
@@ -61,12 +116,16 @@ In order to properly run this search, Splunk needs to ingest data from your web-
 * dest
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+In order to properly run this search, Splunk needs to ingest data from your web-traffic appliances that serve or sit in the path of your Struts application servers. This can be accomplished by indexing data from a web proxy, or by using network traffic-analysis tools, such as Splunk Stream or Bro.
 #### Known False Positives
 There are no known false positives.
+
+#### Associated Analytic Story
+* [Apache Struts Vulnerability](/stories/apache_struts_vulnerability)
+
+
 
 
 #### RBA
@@ -76,6 +135,8 @@ There are no known false positives.
 | 25.0 | 50 | 50 | tbd |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

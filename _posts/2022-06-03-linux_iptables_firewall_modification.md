@@ -25,13 +25,18 @@ tags:
 
 This analytic looks for suspicious commandline that modify the iptables firewall setting of a linux machine. This technique was seen in cyclopsblink malware where it modifies the firewall setting of the compromised machine to allow traffic to its tcp port that will be used to communicate with its C2 server.
 
-- **Type**: Anomaly
+- **Type**: [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-06-03
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 309d59dc-1e1b-49b2-9800-7cf18d12f7b7
 
+### Annotations
+<details>
+  <summary>ATT&CK</summary>
+
+<div markdown="1">
 
 #### [ATT&CK](https://attack.mitre.org/)
 
@@ -40,6 +45,58 @@ This analytic looks for suspicious commandline that modify the iptables firewall
 | [T1562.004](https://attack.mitre.org/techniques/T1562/004/) | Disable or Modify System Firewall | Defense Evasion |
 
 | [T1562](https://attack.mitre.org/techniques/T1562/) | Impair Defenses | Defense Evasion |
+
+</div>
+</details>
+
+
+<details>
+  <summary>Kill Chain Phase</summary>
+
+<div markdown="1">
+
+* Exploitation
+
+
+</div>
+</details>
+
+
+<details>
+  <summary>NIST</summary>
+
+<div markdown="1">
+
+* DE.CM
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CIS20</summary>
+
+<div markdown="1">
+
+* CIS 3
+* CIS 5
+* CIS 16
+
+
+
+</div>
+</details>
+
+<details>
+  <summary>CVE</summary>
+
+<div markdown="1">
+
+
+</div>
+</details>
+
 
 #### Search
 
@@ -60,14 +117,13 @@ This analytic looks for suspicious commandline that modify the iptables firewall
 | `linux_iptables_firewall_modification_filter`
 ```
 
-#### Associated Analytic Story
-* [CyclopsBLink](/stories/cyclopsblink)
+> :information_source:
+> **linux_iptables_firewall_modification_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
-#### How To Implement
-To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 
-#### Required field
+#### Required fields
+List of fields required to use this analytic.
 * _time
 * Processes.dest
 * Processes.user
@@ -78,12 +134,16 @@ To successfully implement this search, you need to be ingesting logs with the pr
 * Processes.parent_process_id
 
 
-#### Kill Chain Phase
-* Exploitation
 
-
+#### How To Implement
+To successfully implement this search, you need to be ingesting logs with the process name, parent process, and command-line executions from your endpoints. If you are using Sysmon, you can use the Add-on for Linux Sysmon from Splunkbase.
 #### Known False Positives
 administrator may do this commandline for auditing and testing purposes. In this scenario filter is needed.
+
+#### Associated Analytic Story
+* [CyclopsBLink](/stories/cyclopsblink)
+
+
 
 
 #### RBA
@@ -93,6 +153,8 @@ administrator may do this commandline for auditing and testing purposes. In this
 | 25.0 | 50 | 50 | A commandline $process$ that may modify iptables firewall on $dest$ |
 
 
+> :information_source:
+> The Risk Score is calculated by the following formula: Risk Score = (Impact * Confidence/100). Initial Confidence and Impact is set by the analytic author.
 
 
 #### Reference

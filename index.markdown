@@ -72,7 +72,7 @@ Replay any detection dataset to a Splunk Enterprise Server by using our [`replay
 The [Splunk Attack Range](https://github.com/splunk/attack_range) which allows you to create a isolated environment to launch attacks and test/build detections.
 
 ## Questions? 📞
-Please use the [GitHub issue tracker](https://github.com/splunk/attack_range/issues) to submit bugs or request features.
+Please use the [GitHub issue tracker](https://github.com/splunk/security_content/issues) to submit bugs or request features.
 
 If you have questions or need support, you can:
 

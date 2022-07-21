@@ -119,6 +119,16 @@ The SPL above uses the following Macros:
 > :information_source:
 > **cloud_api_calls_from_previously_unseen_user_roles_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
+#### Lookups
+The SPL above uses the following Lookups:
+
+* [previously_seen_cloud_api_calls_per_user_role](https://github.com/splunk/security_content/blob/develop/lookups/previously_seen_cloud_api_calls_per_user_role.yml) with [data](https://github.com/splunk/security_content/tree/develop/lookups/previously_seen_cloud_api_calls_per_user_role.csv)
+
+
+#### Supported Add-on (TA)
+List of [Splunk Add-on's](https://docs.splunk.com/Documentation/AddOns/released/Overview/AboutSplunkadd-ons) tested to work with the analytic.
+
+* [Splunk Add-on for Amazon Kinesis Firehose](https://splunkbase.splunk.com/app/3719)
 
 
 #### Required fields

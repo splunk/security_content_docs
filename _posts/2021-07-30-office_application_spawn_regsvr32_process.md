@@ -105,13 +105,18 @@ this detection was designed to identifies suspicious spawned process of known MS
 
 #### Macros
 The SPL above uses the following Macros:
+* [process_regsvr32](https://github.com/splunk/security_content/blob/develop/macros/process_regsvr32.yml)
 * [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
 * [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
-* [process_regsvr32](https://github.com/splunk/security_content/blob/develop/macros/process_regsvr32.yml)
 
 > :information_source:
 > **office_application_spawn_regsvr32_process_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
+
+#### Supported Add-on (TA)
+List of [Splunk Add-on's](https://docs.splunk.com/Documentation/AddOns/released/Overview/AboutSplunkadd-ons) tested to work with the analytic.
+
+* [Splunk Add-on for Sysmon](https://splunkbase.splunk.com/app/5709)
 
 
 #### Required fields

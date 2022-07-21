@@ -122,6 +122,11 @@ The SPL above uses the following Macros:
 > :information_source:
 > **circle_ci_disable_security_step_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
+#### Lookups
+The SPL above uses the following Lookups:
+
+* [mandatory_step_for_job](https://github.com/splunk/security_content/blob/develop/lookups/mandatory_step_for_job.yml) with [data](https://github.com/splunk/security_content/tree/develop/lookups/mandatory_step_for_job.csv)
+
 
 
 #### Required fields

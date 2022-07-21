@@ -121,6 +121,11 @@ The SPL above uses the following Macros:
 > :information_source:
 > **detect_aws_console_login_by_user_from_new_city_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
+#### Lookups
+The SPL above uses the following Lookups:
+
+* [previously_seen_users_console_logins](https://github.com/splunk/security_content/blob/develop/lookups/previously_seen_users_console_logins.yml) with [data](https://github.com/splunk/security_content/tree/develop/lookups/previously_seen_users_console_logins.csv)
+
 
 
 #### Required fields

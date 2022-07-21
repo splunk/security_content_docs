@@ -4,10 +4,11 @@ import argparse
 import sys
 import re
 import requests
-from os import path, walk, remove
 import json
-from jinja2 import Environment, FileSystemLoader
 import datetime
+import xmltodict
+from os import path, walk, remove
+from jinja2 import Environment, FileSystemLoader
 from stix2 import FileSystemSource
 from stix2 import Filter
 from pycvesearch import CVESearch
@@ -61,36 +62,27 @@ def get_mitre_enrichment_new(attack, mitre_attack_id):
 def enrich_splunk_app(splunk_ta):   
     appurl = SPLUNKBASE_API_URL + splunk_ta
     splunk_app_enriched = dict()
-    
     try:
-        content = requests_get_helper(appurl, force_cached_or_offline)
-        response_dict = xmltodict.parse(content)
-        
+        response = requests.get(appurl)
+        response_dict = xmltodict.parse(response.content)
         # check if list since data changes depending on answer
-        url, results = self._parse_splunkbase_response(response_dict)
+        url, results = parse_splunkbase_response(response_dict)
         # grab the app name
         for i in results:
             if i['@name'] == 'appName':
                 splunk_app_enriched['name'] = i['#text']
         # grab out the splunkbase url  
         if 'entriesbyid' in url:
-            content = requests_get_helper(url, force_cached_or_offline)
-            response_dict = xmltodict.parse(content)
-            
+            response = requests.get(url)
+            response_dict = xmltodict.parse(response.content)
             #print(json.dumps(response_dict, indent=2))
             url, results = parse_splunkbase_response(response_dict)
             # chop the url so we grab the splunkbase portion but not direct download
             splunk_app_enriched['url'] = url.rsplit('/', 4)[0]
     except requests.exceptions.ConnectionError as connErr:
-        print(f"There was a connErr for ta {splunk_ta}: {connErr}")
         # there was a connection error lets just capture the name
         splunk_app_enriched['name'] = splunk_ta
         splunk_app_enriched['url'] = ''
-    except Exception as e:
-        print(f"There was an unknown error enriching the Splunk TA [{splunk_ta}]: {str(e)}")
-        splunk_app_enriched['name'] = splunk_ta
-        splunk_app_enriched['url'] = ''
-
 
     return splunk_app_enriched
 
@@ -102,9 +94,9 @@ def parse_splunkbase_response(response_dict):
         url = response_dict['feed']['entry']['link']['@href']
         results = response_dict['feed']['entry']['content']['s:dict']['s:key']
     return url, results
+        
 
-
-def addMacros(detection, REPO_PATH): 
+def add_macros(detection, REPO_PATH): 
     # process macro yamls
     manifest_files = []
     for root, dirs, files in walk(REPO_PATH + 'macros'):
@@ -155,7 +147,7 @@ def addMacros(detection, REPO_PATH):
     return detection
 
 
-def addLookups(detection, REPO_PATH):
+def add_lookups(detection, REPO_PATH):
     # process lookup yamls
     manifest_files = []
     for root, dirs, files in walk(REPO_PATH + 'lookups'):
@@ -173,22 +165,26 @@ def addLookups(detection, REPO_PATH):
                 print(exc)
                 print("Error reading {0}".format(manifest_file))
                 sys.exit(1)
-        lookup_yaml = object
+        lookups.append(object)
 
-    lookups.append(lookup_yaml)
     lookups_found = re.findall(r'lookup (?:update=true)?(?:append=t)?\s*([^\s]*)', detection['search'])
     detection['lookups'] = []
     for lookup_name in lookups_found:
         for lookup in lookups:
             if lookup['name'] == lookup_name:
                 detection['lookups'].append(lookup)
+
     return detection
 
-def addSplunkApp(detection):
+def add_splunk_app(detection):
     splunk_app_enrichment = []
     if 'supported_tas' in detection['tags']:
         for splunk_app in detection['tags']['supported_tas']:
             splunk_app_enrichment.append(enrich_splunk_app(splunk_app))
+    detection['splunk_app_enrichment'] = splunk_app_enrichment
+    print(splunk_app_enrichment)
+
+    return detection
 
 
 def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, sorted_detections, messages, VERBOSE):
@@ -384,10 +380,10 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, messag
         detection_yaml = object
 
         # add macros
-        detection_yaml = addMacros(detection_yaml, REPO_PATH)
+        detection_yaml = add_macros(detection_yaml, REPO_PATH)
 
         # add lookups
-        detection_yaml = addLookups(detection_yaml, REPO_PATH)
+        detection_yaml = add_lookups(detection_yaml, REPO_PATH)
 
         # enrich the mitre object
         mitre_attacks = []
@@ -396,6 +392,9 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, messag
                 mitre_attack = get_mitre_enrichment_new(attack, mitre_technique_id)
                 mitre_attacks.append(mitre_attack)
             detection_yaml['mitre_attacks'] = mitre_attacks
+
+        # enrich support_tas
+        detection_yaml = add_splunk_app(detection_yaml)
 
         # enrich the cve object
         cves = []

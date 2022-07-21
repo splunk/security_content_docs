@@ -118,6 +118,11 @@ The SPL above uses the following Macros:
 > :information_source:
 > **kubernetes_nginx_ingress_lfi_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
+#### Lookups
+The SPL above uses the following Lookups:
+
+* [local_file_inclusion_paths](https://github.com/splunk/security_content/blob/develop/lookups/local_file_inclusion_paths.yml) with [data](https://github.com/splunk/security_content/tree/develop/lookups/local_file_inclusion_paths.csv)
+
 
 
 #### Required fields

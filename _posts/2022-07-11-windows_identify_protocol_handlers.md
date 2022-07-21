@@ -115,6 +115,11 @@ The SPL above uses the following Macros:
 > :information_source:
 > **windows_identify_protocol_handlers_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
+#### Lookups
+The SPL above uses the following Lookups:
+
+* [windows_protocol_handlers](https://github.com/splunk/security_content/blob/develop/lookups/windows_protocol_handlers.yml) with [data](https://github.com/splunk/security_content/tree/develop/lookups/windows_protocol_handlers.csv)
+
 
 
 #### Required fields

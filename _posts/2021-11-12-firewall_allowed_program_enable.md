@@ -112,6 +112,11 @@ The SPL above uses the following Macros:
 > **firewall_allowed_program_enable_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
 
+#### Supported Add-on (TA)
+List of [Splunk Add-on's](https://docs.splunk.com/Documentation/AddOns/released/Overview/AboutSplunkadd-ons) tested to work with the analytic.
+
+* [Splunk Add-on for Sysmon](https://splunkbase.splunk.com/app/5709)
+
 
 #### Required fields
 List of fields required to use this analytic.

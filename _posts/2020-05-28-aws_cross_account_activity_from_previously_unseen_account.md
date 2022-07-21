@@ -109,6 +109,11 @@ The SPL above uses the following Macros:
 > :information_source:
 > **aws_cross_account_activity_from_previously_unseen_account_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
+#### Lookups
+The SPL above uses the following Lookups:
+
+* [previously_seen_aws_cross_account_activity](https://github.com/splunk/security_content/blob/develop/lookups/previously_seen_aws_cross_account_activity.yml) with [data](https://github.com/splunk/security_content/tree/develop/lookups/previously_seen_aws_cross_account_activity.csv)
+
 
 
 #### Required fields

@@ -116,6 +116,12 @@ The SPL above uses the following Macros:
 > :information_source:
 > **detect_spike_in_blocked_outbound_traffic_from_your_aws_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
+#### Lookups
+The SPL above uses the following Lookups:
+
+* [baseline_blocked_outbound_connections](https://github.com/splunk/security_content/blob/develop/lookups/baseline_blocked_outbound_connections.yml) with [data](https://github.com/splunk/security_content/tree/develop/lookups/baseline_blocked_outbound_connections.csv)
+* [baseline_blocked_outbound_connections](https://github.com/splunk/security_content/blob/develop/lookups/baseline_blocked_outbound_connections.yml) with [data](https://github.com/splunk/security_content/tree/develop/lookups/baseline_blocked_outbound_connections.csv)
+
 
 
 #### Required fields

@@ -128,6 +128,16 @@ The SPL above uses the following Macros:
 > :information_source:
 > **attacker_tools_on_endpoint_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
 
+#### Lookups
+The SPL above uses the following Lookups:
+
+* [attacker_tools](https://github.com/splunk/security_content/blob/develop/lookups/attacker_tools.yml) with [data](https://github.com/splunk/security_content/tree/develop/lookups/attacker_tools.csv)
+
+
+#### Supported Add-on (TA)
+List of [Splunk Add-on's](https://docs.splunk.com/Documentation/AddOns/released/Overview/AboutSplunkadd-ons) tested to work with the analytic.
+
+* [Splunk Add-on for Sysmon](https://splunkbase.splunk.com/app/5709)
 
 
 #### Required fields

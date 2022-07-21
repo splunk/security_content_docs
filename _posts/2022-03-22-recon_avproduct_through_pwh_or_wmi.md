@@ -99,8 +99,8 @@ The following analytic identifies suspicious PowerShell script execution via Eve
 
 #### Macros
 The SPL above uses the following Macros:
-* [powershell](https://github.com/splunk/security_content/blob/develop/macros/powershell.yml)
 * [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+* [powershell](https://github.com/splunk/security_content/blob/develop/macros/powershell.yml)
 
 > :information_source:
 > **recon_avproduct_through_pwh_or_wmi_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
@@ -111,9 +111,9 @@ The SPL above uses the following Macros:
 List of fields required to use this analytic.
 * _time
 * EventCode
-* ScriptBlockText
-* Computer
-* UserID
+* Message
+* ComputerName
+* User
 
 
 
@@ -134,7 +134,7 @@ network administrator may used this command for checking purposes
 
 | Risk Score  | Impact      | Confidence   | Message      |
 | ----------- | ----------- |--------------|--------------|
-| 56.0 | 70 | 80 | A suspicious powershell script contains AV recon command in $ScriptBlockText$ with EventCode $EventCode$ in host $Computer$ |
+| 56.0 | 70 | 80 | A suspicious powershell script contains AV recon command in $Message$ with EventCode $EventCode$ in host $ComputerName$ |
 
 
 > :information_source:
@@ -148,7 +148,6 @@ network administrator may used this command for checking purposes
 * [https://blog.palantir.com/tampering-with-windows-event-tracing-background-offense-and-defense-4be7ac62ac63](https://blog.palantir.com/tampering-with-windows-event-tracing-background-offense-and-defense-4be7ac62ac63)
 * [https://static1.squarespace.com/static/552092d5e4b0661088167e5c/t/59c1814829f18782e24f1fe2/1505853768977/Windows+PowerShell+Logging+Cheat+Sheet+ver+Sept+2017+v2.1.pdf](https://static1.squarespace.com/static/552092d5e4b0661088167e5c/t/59c1814829f18782e24f1fe2/1505853768977/Windows+PowerShell+Logging+Cheat+Sheet+ver+Sept+2017+v2.1.pdf)
 * [https://www.crowdstrike.com/blog/investigating-powershell-command-and-script-logging/](https://www.crowdstrike.com/blog/investigating-powershell-command-and-script-logging/)
-* [https://www.splunk.com/en_us/blog/security/hunting-for-malicious-powershell-using-script-block-logging.html](https://www.splunk.com/en_us/blog/security/hunting-for-malicious-powershell-using-script-block-logging.html)
 
 
 
@@ -157,6 +156,7 @@ Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://githu
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
 
 * [https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/t1592/pwh_av_recon/windows-powershell-xml.log](https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/t1592/pwh_av_recon/windows-powershell-xml.log)
+* [https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/honeypots/pwsh/windows-powershell.log](https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/honeypots/pwsh/windows-powershell.log)
 
 
 

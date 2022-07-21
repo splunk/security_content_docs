@@ -11,12 +11,12 @@ sidebar:
 | Name    | SOAR Apps | Type        |
 | --------| ---------- | ----------- |
 | [AWS Disable User Accounts](/playbooks/aws_disable_user_accounts/)|AWS IAM| Response |
-| [AWS Find Inactive Users](/playbooks/aws_find_inactive_users/)|AWS IAMPhantom| Investigation |
+| [AWS Find Inactive Users](/playbooks/aws_find_inactive_users/)|AWS IAM, Phantom| Investigation |
 | [Active Directory Reset password](/playbooks/active_directory_reset_password/)|LDAP| Response |
-| [Block Indicators](/playbooks/block_indicators/)|Palo Alto Networks FirewallCarbonBlack ResponseOpenDNS Umbrella| Response |
+| [Block Indicators](/playbooks/block_indicators/)|Palo Alto Networks Firewall, CarbonBlack Response, OpenDNS Umbrella| Response |
 | [Crowdstrike Malware Triage](/playbooks/crowdstrike_malware_triage/)|Crowdstrike OAuth| Response |
 | [Delete Detected Files](/playbooks/delete_detected_files/)|Windows Remote Management| Response |
-| [Email Notification for Malware](/playbooks/email_notification_for_malware/)|VirusTotalWildFireCarbonBlack ResponseSMTP| Response |
+| [Email Notification for Malware](/playbooks/email_notification_for_malware/)|VirusTotal, WildFire, CarbonBlack Response, SMTP| Response |
 | [Internal Host SSH Investigate](/playbooks/internal_host_ssh_investigate/)|SSH| Investigation |
 | [Internal Host SSH Log4j Investigate](/playbooks/internal_host_ssh_log4j_investigate/)|SSH| Investigation |
 | [Internal Host SSH Log4j Response](/playbooks/internal_host_ssh_log4j_response/)|SSH| Response |
@@ -26,8 +26,8 @@ sidebar:
 | [Log4j Investigate](/playbooks/log4j_investigate/)| None | Investigation |
 | [Log4j Respond](/playbooks/log4j_respond/)| None | Response |
 | [Log4j Splunk Investigation](/playbooks/log4j_splunk_investigation/)|Splunk| Investigation |
-| [Malware Hunt and Contain](/playbooks/malware_hunt_and_contain/)|LDAPServiceNowCarbonBlack ResponseVirusTotal| Response |
-| [Ransomware Investigate and Contain](/playbooks/ransomware_investigate_and_contain/)|Carbon Black ResponseLDAPPalo Alto Networks FirewallWildFireCylance| Response |
+| [Malware Hunt and Contain](/playbooks/malware_hunt_and_contain/)|LDAP, ServiceNow, CarbonBlack Response, VirusTotal| Response |
+| [Ransomware Investigate and Contain](/playbooks/ransomware_investigate_and_contain/)|Carbon Black Response, LDAP, Palo Alto Networks Firewall, WildFire, Cylance| Response |
 | [Risk Notable Block Indicators](/playbooks/risk_notable_block_indicators/)|None| Response |
 | [Risk Notable Enrich](/playbooks/risk_notable_enrich/)|None| Investigation |
 | [Risk Notable Import Data](/playbooks/risk_notable_import_data/)|Splunk| Investigation |

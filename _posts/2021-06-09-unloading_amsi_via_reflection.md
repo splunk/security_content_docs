@@ -109,8 +109,8 @@ During triage, review parallel processes using an EDR product or 4688 events. It
 
 #### Macros
 The SPL above uses the following Macros:
-* [powershell](https://github.com/splunk/security_content/blob/develop/macros/powershell.yml)
 * [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+* [powershell](https://github.com/splunk/security_content/blob/develop/macros/powershell.yml)
 
 > :information_source:
 > **unloading_amsi_via_reflection_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
@@ -120,10 +120,10 @@ The SPL above uses the following Macros:
 #### Required fields
 List of fields required to use this analytic.
 * _time
-* ScriptBlockText
-* Opcode
-* Computer
-* UserID
+* Message
+* OpCode
+* ComputerName
+* User
 * EventCode
 
 
@@ -144,7 +144,7 @@ Potential for some third party applications to disable AMSI upon invocation. Fil
 
 | Risk Score  | Impact      | Confidence   | Message      |
 | ----------- | ----------- |--------------|--------------|
-| 49.0 | 70 | 70 | Possible AMSI Unloading via Reflection using PowerShell on $Computer$ |
+| 49.0 | 70 | 70 | Possible AMSI Unloading via Reflection using PowerShell on $ComputerName$ |
 
 
 > :information_source:

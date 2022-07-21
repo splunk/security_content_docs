@@ -1,6 +1,6 @@
 ---
 title: "Powershell Execute COM Object"
-excerpt: "Component Object Model Hijacking, Event Triggered Execution, PowerShell"
+excerpt: "Component Object Model Hijacking, Event Triggered Execution"
 categories:
   - Endpoint
 last_modified_at: 2022-03-22
@@ -13,8 +13,6 @@ tags:
   - Event Triggered Execution
   - Privilege Escalation
   - Persistence
-  - PowerShell
-  - Execution
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
@@ -49,8 +47,6 @@ This search is to detect a COM CLSID execution through powershell. This techniqu
 | [T1546.015](https://attack.mitre.org/techniques/T1546/015/) | Component Object Model Hijacking | Privilege Escalation, Persistence |
 
 | [T1546](https://attack.mitre.org/techniques/T1546/) | Event Triggered Execution | Privilege Escalation, Persistence |
-
-| [T1059.001](https://attack.mitre.org/techniques/T1059/001/) | PowerShell | Execution |
 
 </div>
 </details>
@@ -110,8 +106,8 @@ This search is to detect a COM CLSID execution through powershell. This techniqu
 
 #### Macros
 The SPL above uses the following Macros:
-* [powershell](https://github.com/splunk/security_content/blob/develop/macros/powershell.yml)
 * [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+* [powershell](https://github.com/splunk/security_content/blob/develop/macros/powershell.yml)
 
 > :information_source:
 > **powershell_execute_com_object_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
@@ -121,9 +117,6 @@ The SPL above uses the following Macros:
 #### Required fields
 List of fields required to use this analytic.
 * _time
-* ScriptBlockText
-* Computer
-* EventCode
 
 
 
@@ -144,7 +137,7 @@ network operrator may use this command.
 
 | Risk Score  | Impact      | Confidence   | Message      |
 | ----------- | ----------- |--------------|--------------|
-| 5.0 | 10 | 50 | A suspicious powershell script contains COM CLSID command in $ScriptBlockText$ with EventCode $EventCode$ in host $Computer$ |
+| 5.0 | 10 | 50 | A suspicious powershell script contains COM CLSID command in $Message$ with EventCode $EventCode$ in host $ComputerName$ |
 
 
 > :information_source:
@@ -154,7 +147,6 @@ network operrator may use this command.
 #### Reference
 
 * [https://threadreaderapp.com/thread/1423361119926816776.html](https://threadreaderapp.com/thread/1423361119926816776.html)
-* [https://www.splunk.com/en_us/blog/security/hunting-for-malicious-powershell-using-script-block-logging.html](https://www.splunk.com/en_us/blog/security/hunting-for-malicious-powershell-using-script-block-logging.html)
 
 
 
@@ -163,6 +155,7 @@ Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://githu
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
 
 * [https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.015/pwh_com_object/windows-powershell-xml.log](https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1546.015/pwh_com_object/windows-powershell-xml.log)
+* [https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/malware/conti/conti_leak/windows-powershell.log](https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/malware/conti/conti_leak/windows-powershell.log)
 
 
 

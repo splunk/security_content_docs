@@ -1,6 +1,6 @@
 ---
 title: "UAC Bypass MMC Load Unsigned Dll"
-excerpt: "Bypass User Account Control, Abuse Elevation Control Mechanism, MMC"
+excerpt: "Bypass User Account Control, Abuse Elevation Control Mechanism"
 categories:
   - Endpoint
 last_modified_at: 2021-07-12
@@ -12,8 +12,6 @@ tags:
   - Defense Evasion
   - Abuse Elevation Control Mechanism
   - Privilege Escalation
-  - Defense Evasion
-  - MMC
   - Defense Evasion
   - Splunk Enterprise
   - Splunk Enterprise Security
@@ -49,8 +47,6 @@ This search is to detect a suspicious loaded unsigned dll by MMC.exe application
 | [T1548.002](https://attack.mitre.org/techniques/T1548/002/) | Bypass User Account Control | Privilege Escalation, Defense Evasion |
 
 | [T1548](https://attack.mitre.org/techniques/T1548/) | Abuse Elevation Control Mechanism | Privilege Escalation, Defense Evasion |
-
-| [T1218.014](https://attack.mitre.org/techniques/T1218/014/) | MMC | Defense Evasion |
 
 </div>
 </details>

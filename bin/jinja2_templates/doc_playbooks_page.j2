@@ -8,11 +8,11 @@ sidebar:
   nav: "playbooks"
 ---
 
-| Name    | Detections | Type        |
+| Name    | SOAR Apps | Type        |
 | --------| ---------- | ----------- |
 {% for playbook in playbooks -%}
-{% if playbook.tags.detections -%}
-| [{{ playbook.name }}](/playbooks/{{ playbook.name|lower|replace(' ', '_') }}/)|{% for detection in playbook.tags.detections -%}{% for d in detections -%}{% if d.name == detection -%}[{{ detection }}](/{{ d.kind }}/{{detection|lower|replace(" ", "_")}}/){% endif -%}{%- endfor -%}{%- endfor -%} | {{ playbook.type }} |
+{% if playbook.app_list -%}
+| [{{ playbook.name }}](/playbooks/{{ playbook.name|lower|replace(' ', '_') }}/)|{% for app in playbook.app_list -%}{{ app }}{%- endfor -%} | {{ playbook.type }} |
 {% else -%}
 | [{{ playbook.name }}](/playbooks/{{ playbook.name|lower|replace(' ', '_') }}/)| None | {{ playbook.type }} |
 {% endif -%}

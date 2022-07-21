@@ -182,7 +182,6 @@ def add_splunk_app(detection):
         for splunk_app in detection['tags']['supported_tas']:
             splunk_app_enrichment.append(enrich_splunk_app(splunk_app))
     detection['splunk_app_enrichment'] = splunk_app_enrichment
-    print(splunk_app_enrichment)
 
     return detection
 

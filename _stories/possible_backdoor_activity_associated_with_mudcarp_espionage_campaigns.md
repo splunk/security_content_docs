@@ -58,11 +58,12 @@ If behavioral searches included in this story yield positive hits, iDefense reco
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [PowerShell - Connect To Internet With Hidden Window](/endpoint/powershell_-_connect_to_internet_with_hidden_window/) | [PowerShell](/tags/#powershell), [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Registry Keys Used For Persistence](/endpoint/registry_keys_used_for_persistence/) | [Registry Run Keys / Startup Folder](/tags/#registry-run-keys-/-startup-folder), [Boot or Logon Autostart Execution](/tags/#boot-or-logon-autostart-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Unusually Long Command Line](/endpoint/unusually_long_command_line/) |  | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Unusually Long Command Line - MLTK](/endpoint/unusually_long_command_line_-_mltk/) |  | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows Powershell Connect to Internet With Hidden Window](/endpoint/windows_powershell_connect_to_internet_with_hidden_window/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [First time seen command line argument](/deprecated/a1b6e73f-98d5-470f-99ac-77aacd578473/) | [PowerShell](/tags/#powershell), [Windows Command Shell](/tags/#windows-command-shell) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [PowerShell - Connect To Internet With Hidden Window](/endpoint/ee18ed37-0802-4268-9435-b3b91aaa18db/) | [PowerShell](/tags/#powershell), [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Registry Keys Used For Persistence](/endpoint/f5f6af30-7aa7-4295-bfe9-07fe87c01a4b/) | [Registry Run Keys / Startup Folder](/tags/#registry-run-keys-/-startup-folder), [Boot or Logon Autostart Execution](/tags/#boot-or-logon-autostart-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Unusually Long Command Line](/endpoint/c77162d3-f93c-45cc-80c8-22f6a4264e7f/) |  | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Unusually Long Command Line - MLTK](/endpoint/57edaefa-a73b-45e5-bbae-f39c1473f941/) |  | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Powershell Connect to Internet With Hidden Window](/endpoint/477e068e-8b6d-11ec-b6c1-81af21670352/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

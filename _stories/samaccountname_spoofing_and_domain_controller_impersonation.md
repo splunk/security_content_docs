@@ -30,9 +30,9 @@ On November 9, 2021, Microsoft released patches to address two vulnerabilities t
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Suspicious Computer Account Name Change](/endpoint/suspicious_computer_account_name_change/) | [Valid Accounts](/tags/#valid-accounts), [Domain Accounts](/tags/#domain-accounts) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Suspicious Kerberos Service Ticket Request](/endpoint/suspicious_kerberos_service_ticket_request/) | [Valid Accounts](/tags/#valid-accounts), [Domain Accounts](/tags/#domain-accounts) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Suspicious Ticket Granting Ticket Request](/endpoint/suspicious_ticket_granting_ticket_request/) | [Valid Accounts](/tags/#valid-accounts), [Domain Accounts](/tags/#domain-accounts) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Suspicious Computer Account Name Change](/endpoint/35a61ed8-61c4-11ec-bc1e-acde48001122/) | [Valid Accounts](/tags/#valid-accounts), [Domain Accounts](/tags/#domain-accounts) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Suspicious Kerberos Service Ticket Request](/endpoint/8b1297bc-6204-11ec-b7c4-acde48001122/) | [Valid Accounts](/tags/#valid-accounts), [Domain Accounts](/tags/#domain-accounts) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Suspicious Ticket Granting Ticket Request](/endpoint/d77d349e-6269-11ec-9cfe-acde48001122/) | [Valid Accounts](/tags/#valid-accounts), [Domain Accounts](/tags/#domain-accounts) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

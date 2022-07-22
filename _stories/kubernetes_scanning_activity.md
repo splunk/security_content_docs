@@ -29,9 +29,12 @@ Kubernetes is the most used container orchestration platform, this orchestration
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Amazon EKS Kubernetes Pod scan detection](/cloud/amazon_eks_kubernetes_pod_scan_detection/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Amazon EKS Kubernetes cluster scan detection](/cloud/amazon_eks_kubernetes_cluster_scan_detection/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [GCP Kubernetes cluster pod scan detection](/cloud/gcp_kubernetes_cluster_pod_scan_detection/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Amazon EKS Kubernetes Pod scan detection](/cloud/dbfca1dd-b8e5-4ba4-be0e-e565e5d62002/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Amazon EKS Kubernetes cluster scan detection](/cloud/294c4686-63dd-4fe6-93a2-ca807626704a/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [GCP Kubernetes cluster pod scan detection](/cloud/19b53215-4a16-405b-8087-9e6acf619842/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [GCP Kubernetes cluster scan detection](/deprecated/db5957ec-0144-4c56-b512-9dccbe7a2d26/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Kubernetes Azure pod scan fingerprint](/deprecated/86aad3e0-732f-4f66-bbbc-70df448e461d/) |  | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Kubernetes Azure scan fingerprint](/deprecated/c5e5bd5c-1013-4841-8b23-e7b3253c840a/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

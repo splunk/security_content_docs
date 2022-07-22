@@ -30,7 +30,7 @@ This Analytic Story is designed to help you develop a better understanding of wh
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Detect Unauthorized Assets by MAC address](/network/detect_unauthorized_assets_by_mac_address/) |  | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Unauthorized Assets by MAC address](/network/dcfd6b40-42f9-469d-a433-2e53f7489ff4/) |  | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

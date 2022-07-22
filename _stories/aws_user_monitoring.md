@@ -32,7 +32,12 @@ The detection searches in this Analytic Story are designed to help you uncover A
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [AWS Excessive Security Scanning](/cloud/aws_excessive_security_scanning/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [AWS Excessive Security Scanning](/cloud/1fdd164a-def8-4762-83a9-9ffe24e74d5a/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect API activity from users without MFA](/deprecated/4d46e8bd-4072-48e4-92db-0325889ef894/) |  | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect AWS API Activities From Unapproved Accounts](/deprecated/ada0f478-84a8-4641-a3f1-d82362d4bd55/) | [Cloud Accounts](/tags/#cloud-accounts) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Spike in AWS API Activity](/deprecated/ada0f478-84a8-4641-a3f1-d32362d4bd55/) | [Cloud Accounts](/tags/#cloud-accounts) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Spike in Security Group Activity](/deprecated/ada0f478-84a8-4641-a3f1-e32372d4bd53/) | [Cloud Accounts](/tags/#cloud-accounts) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect new API calls from user roles](/deprecated/22773e84-bac0-4595-b086-20d3f335b4f1/) | [Cloud Accounts](/tags/#cloud-accounts) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

@@ -30,10 +30,10 @@ Silver Sparrow works is a dropper and uses typical persistence mechanisms on a M
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Suspicious Curl Network Connection](/endpoint/suspicious_curl_network_connection/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Suspicious PlistBuddy Usage](/endpoint/suspicious_plistbuddy_usage/) | [Launch Agent](/tags/#launch-agent), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Suspicious PlistBuddy Usage via OSquery](/endpoint/suspicious_plistbuddy_usage_via_osquery/) | [Launch Agent](/tags/#launch-agent), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Suspicious SQLite3 LSQuarantine Behavior](/endpoint/suspicious_sqlite3_lsquarantine_behavior/) | [Data Staged](/tags/#data-staged) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Suspicious Curl Network Connection](/endpoint/3f613dc0-21f2-4063-93b1-5d3c15eef22f/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Suspicious PlistBuddy Usage](/endpoint/c3194009-e0eb-4f84-87a9-4070f8688f00/) | [Launch Agent](/tags/#launch-agent), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Suspicious PlistBuddy Usage via OSquery](/endpoint/20ba6c32-c733-4a32-b64e-2688cf231399/) | [Launch Agent](/tags/#launch-agent), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Suspicious SQLite3 LSQuarantine Behavior](/endpoint/e1997b2e-655f-4561-82fd-aeba8e1c1a86/) | [Data Staged](/tags/#data-staged) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

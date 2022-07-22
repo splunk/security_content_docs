@@ -30,9 +30,9 @@ Adversaries may use this technique to maximize the impact on the target organiza
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Linux Iptables Firewall Modification](/endpoint/linux_iptables_firewall_modification/) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall), [Impair Defenses](/tags/#impair-defenses) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Linux Kworker Process In Writable Process Path](/endpoint/linux_kworker_process_in_writable_process_path/) | [Masquerade Task or Service](/tags/#masquerade-task-or-service), [Masquerading](/tags/#masquerading) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Linux Stdout Redirection To Dev Null File](/endpoint/linux_stdout_redirection_to_dev_null_file/) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall), [Impair Defenses](/tags/#impair-defenses) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Linux Iptables Firewall Modification](/endpoint/309d59dc-1e1b-49b2-9800-7cf18d12f7b7/) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall), [Impair Defenses](/tags/#impair-defenses) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Linux Kworker Process In Writable Process Path](/endpoint/1cefb270-74a5-4e27-aa0c-2b6fa7c5b4ed/) | [Masquerade Task or Service](/tags/#masquerade-task-or-service), [Masquerading](/tags/#masquerading) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Linux Stdout Redirection To Dev Null File](/endpoint/de62b809-a04d-46b5-9a15-8298d330f0c8/) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall), [Impair Defenses](/tags/#impair-defenses) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

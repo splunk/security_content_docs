@@ -32,8 +32,9 @@ Searches in this Analytic Story leverage the capabilities of OSquery to address 
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [MacOS - Re-opened Applications](/endpoint/macos_-_re-opened_applications/) |  | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Processes Tapping Keyboard Events](/endpoint/processes_tapping_keyboard_events/) |  | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [MacOS - Re-opened Applications](/endpoint/40bb64f9-f619-4e3d-8732-328d40377c4b/) |  | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Osquery pack - ColdRoot detection](/deprecated/a6fffe5e-05c3-4c04-badc-887607fbb8dc/) |  | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Processes Tapping Keyboard Events](/endpoint/2a371608-331d-4034-ae2c-21dda8f1d0ec/) |  | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

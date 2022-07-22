@@ -31,7 +31,7 @@ The search in this story can help you to detect if attackers are abusing your co
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Large Volume of DNS ANY Queries](/network/large_volume_of_dns_any_queries/) | [Network Denial of Service](/tags/#network-denial-of-service), [Reflection Amplification](/tags/#reflection-amplification) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Large Volume of DNS ANY Queries](/network/8fa891f7-a533-4b3c-af85-5aa2e7c1f1eb/) | [Network Denial of Service](/tags/#network-denial-of-service), [Reflection Amplification](/tags/#reflection-amplification) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

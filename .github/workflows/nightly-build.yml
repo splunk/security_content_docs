@@ -1,0 +1,48 @@
+name: nightly-build
+on:
+  schedule:
+    - cron: "0 2 * * *"
+jobs:
+  nightly:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout security_content_docs
+        uses: actions/checkout@v3
+
+      - name: install python 3.10    
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+          architecture: "x64"
+
+      - name: install poetry
+        uses: snok/install-poetry@v1
+
+      - name: clone splunk security content
+        uses:action/checkout@v3
+        with:
+          repository: splunk/security_content
+          path: security_content_docs
+
+      - name: clone mtire cti
+        uses:action/checkout@v3
+        with:
+          repository: mitre/cti
+          path: security_content_docs
+
+      - name: run site_gen.py
+        run: |
+          python bin/site_gen.py -v
+
+      - name: update github with new site
+        run: |
+          # configure git to prep for commit
+          git config user.email "research@splunk.com"
+          git config user.name "publish bot"
+          git config --global push.default simple
+          git add *
+          git commit --allow-empty -m "updating research.splunk.com site bits [ci skip]"
+          # push quietly to prevent showing the token in log
+          # no need to provide any credentials
+          git push
+

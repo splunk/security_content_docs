@@ -33,10 +33,10 @@ Upon usage of InfoTech Storage Handlers, ms-its, its, mk, itss.dll will load.
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Detect HTML Help Renamed](/endpoint/detect_html_help_renamed/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Compiled HTML File](/tags/#compiled-html-file) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Detect HTML Help Spawn Child Process](/endpoint/detect_html_help_spawn_child_process/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Compiled HTML File](/tags/#compiled-html-file) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Detect HTML Help URL in Command Line](/endpoint/detect_html_help_url_in_command_line/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Compiled HTML File](/tags/#compiled-html-file) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Detect HTML Help Using InfoTech Storage Handlers](/endpoint/detect_html_help_using_infotech_storage_handlers/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Compiled HTML File](/tags/#compiled-html-file) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect HTML Help Renamed](/endpoint/62fed254-513b-460e-953d-79771493a9f3/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Compiled HTML File](/tags/#compiled-html-file) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect HTML Help Spawn Child Process](/endpoint/723716de-ee55-4cd4-9759-c44e7e55ba4b/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Compiled HTML File](/tags/#compiled-html-file) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect HTML Help URL in Command Line](/endpoint/8c5835b9-39d9-438b-817c-95f14c69a31e/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Compiled HTML File](/tags/#compiled-html-file) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect HTML Help Using InfoTech Storage Handlers](/endpoint/0b2eefa5-5508-450d-b970-3dd2fb761aec/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Compiled HTML File](/tags/#compiled-html-file) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

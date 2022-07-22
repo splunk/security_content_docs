@@ -32,10 +32,10 @@ Among things to look out for are S3 access from unfamiliar locations and by unfa
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Detect New Open S3 Buckets over AWS CLI](/cloud/detect_new_open_s3_buckets_over_aws_cli/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Detect New Open S3 buckets](/cloud/detect_new_open_s3_buckets/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Detect S3 access from a new IP](/cloud/detect_s3_access_from_a_new_ip/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Detect Spike in S3 Bucket deletion](/cloud/detect_spike_in_s3_bucket_deletion/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect New Open S3 Buckets over AWS CLI](/cloud/39c61d09-8b30-4154-922b-2d0a694ecc22/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect New Open S3 buckets](/cloud/2a9b80d3-6340-4345-b5ad-290bf3d0dac4/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect S3 access from a new IP](/cloud/e6f1bb1b-f441-492b-9126-902acda217da/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Spike in S3 Bucket deletion](/cloud/e733a326-59d2-446d-b8db-14a17151aa68/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

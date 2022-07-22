@@ -34,11 +34,11 @@ This Analytic Story is focused on detecting suspicious new instances in your clo
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Abnormally High Number Of Cloud Instances Launched](/cloud/abnormally_high_number_of_cloud_instances_launched/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Cloud Compute Instance Created By Previously Unseen User](/cloud/cloud_compute_instance_created_by_previously_unseen_user/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Cloud Compute Instance Created In Previously Unused Region](/cloud/cloud_compute_instance_created_in_previously_unused_region/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Cloud Compute Instance Created With Previously Unseen Image](/cloud/cloud_compute_instance_created_with_previously_unseen_image/) |  | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Cloud Compute Instance Created With Previously Unseen Instance Type](/cloud/cloud_compute_instance_created_with_previously_unseen_instance_type/) |  | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Abnormally High Number Of Cloud Instances Launched](/cloud/f2361e9f-3928-496c-a556-120cd4223a65/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Cloud Compute Instance Created By Previously Unseen User](/cloud/37a0ec8d-827e-4d6d-8025-cedf31f3a149/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Cloud Compute Instance Created In Previously Unused Region](/cloud/fa4089e2-50e3-40f7-8469-d2cc1564ca59/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Cloud Compute Instance Created With Previously Unseen Image](/cloud/bc24922d-987c-4645-b288-f8c73ec194c4/) |  | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Cloud Compute Instance Created With Previously Unseen Instance Type](/cloud/c6ddbf53-9715-49f3-bb4c-fb2e8a309cda/) |  | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

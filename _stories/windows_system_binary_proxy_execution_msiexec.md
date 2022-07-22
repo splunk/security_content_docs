@@ -30,11 +30,11 @@ Adversaries may abuse msiexec.exe to launch local or network accessible MSI file
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Windows MSIExec DLLRegisterServer](/endpoint/windows_msiexec_dllregisterserver/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows MSIExec Remote Download](/endpoint/windows_msiexec_remote_download/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows MSIExec Spawn Discovery Command](/endpoint/windows_msiexec_spawn_discovery_command/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows MSIExec Unregister DLLRegisterServer](/endpoint/windows_msiexec_unregister_dllregisterserver/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows MSIExec With Network Connections](/endpoint/windows_msiexec_with_network_connections/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows MSIExec DLLRegisterServer](/endpoint/fdb59aef-d88f-4909-8369-ec2afbd2c398/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows MSIExec Remote Download](/endpoint/6aa49ff2-3c92-4586-83e0-d83eb693dfda/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows MSIExec Spawn Discovery Command](/endpoint/e9d05aa2-32f0-411b-930c-5b8ca5c4fcee/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows MSIExec Unregister DLLRegisterServer](/endpoint/a27db3c5-1a9a-46df-a577-765d3f1a3c24/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows MSIExec With Network Connections](/endpoint/827409a1-5393-4d8d-8da4-bbb297c262a7/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

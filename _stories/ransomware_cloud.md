@@ -30,8 +30,8 @@ Ransomware is an ever-present risk to the enterprise, wherein an infected host e
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [AWS Detect Users creating keys with encrypt policy without MFA](/cloud/aws_detect_users_creating_keys_with_encrypt_policy_without_mfa/) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [AWS Detect Users with KMS keys performing encryption S3](/cloud/aws_detect_users_with_kms_keys_performing_encryption_s3/) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [AWS Detect Users creating keys with encrypt policy without MFA](/cloud/c79c164f-4b21-4847-98f9-cf6a9f49179e/) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [AWS Detect Users with KMS keys performing encryption S3](/cloud/884a5f59-eec7-4f4a-948b-dbde18225fdc/) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

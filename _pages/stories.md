@@ -12,9 +12,9 @@ sidebar:
 | ----------- | ----------- |--------------|
 | [AWS Cross Account Activity](aws_cross_account_activity) | [Use Alternate Authentication Material](/tags/#use-alternate-authentication-material) | [Defense Evasion](/tags/#defense-evasion) |
 | [AWS IAM Privilege Escalation](aws_iam_privilege_escalation) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) | [Persistence](/tags/#persistence) |
-| [AWS Network ACL Activity](aws_network_acl_activity) | [Disable or Modify Cloud Firewall](/tags/#disable-or-modify-cloud-firewall), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |
+| [AWS Network ACL Activity](aws_network_acl_activity) | [Disable or Modify Cloud Firewall](/tags/#disable-or-modify-cloud-firewall) | [Defense Evasion](/tags/#defense-evasion) |
 | [AWS Security Hub Alerts]() | None | None |
-| [AWS User Monitoring](aws_user_monitoring) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Discovery](/tags/#discovery) |
+| [AWS User Monitoring](aws_user_monitoring) | [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [AcidRain](acidrain) | [Data Destruction](/tags/#data-destruction), [File Deletion](/tags/#file-deletion), [Indicator Removal on Host](/tags/#indicator-removal-on-host) | [Impact](/tags/#impact) |
 | [Active Directory Discovery](active_directory_discovery) | [Permission Groups Discovery](/tags/#permission-groups-discovery), [Local Groups](/tags/#local-groups) | [Discovery](/tags/#discovery) |
 | [Active Directory Kerberos Attacks](active_directory_kerberos_attacks) | [Remote System Discovery](/tags/#remote-system-discovery) | [Discovery](/tags/#discovery) |
@@ -44,7 +44,7 @@ sidebar:
 | [DarkSide Ransomware](darkside_ransomware) | [LSASS Memory](/tags/#lsass-memory), [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [Data Destruction](data_destruction) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [Data Exfiltration](data_exfiltration) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol), [Exfiltration Over Alternative Protocol](/tags/#exfiltration-over-alternative-protocol) | [Exfiltration](/tags/#exfiltration) |
-| [Data Protection](data_protection) | [Drive-by Compromise](/tags/#drive-by-compromise) | [Initial Access](/tags/#initial-access) |
+| [Data Protection](data_protection) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol) | [Exfiltration](/tags/#exfiltration) |
 | [Deobfuscate-Decode Files or Information](deobfuscate-decode_files_or_information) | [Deobfuscate/Decode Files or Information](/tags/#deobfuscate/decode-files-or-information) | [Defense Evasion](/tags/#defense-evasion) |
 | [Detect Zerologon Attack](detect_zerologon_attack) | [LSASS Memory](/tags/#lsass-memory), [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [Dev Sec Ops](dev_sec_ops) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Discovery](/tags/#discovery) |
@@ -95,7 +95,7 @@ sidebar:
 | [Remcos](remcos) | [Process Injection](/tags/#process-injection), [Create or Modify System Process](/tags/#create-or-modify-system-process), [Parent PID Spoofing](/tags/#parent-pid-spoofing), [Access Token Manipulation](/tags/#access-token-manipulation) | [Defense Evasion](/tags/#defense-evasion) |
 | [Revil Ransomware](revil_ransomware) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [CMSTP](/tags/#cmstp) | [Defense Evasion](/tags/#defense-evasion) |
 | [Router and Infrastructure Security](router_and_infrastructure_security) | [Hardware Additions](/tags/#hardware-additions), [Automated Exfiltration](/tags/#automated-exfiltration), [Network Denial of Service](/tags/#network-denial-of-service), [Traffic Duplication](/tags/#traffic-duplication) | [Initial Access](/tags/#initial-access) |
-| [Ryuk Ransomware](ryuk_ransomware) | [Service Stop](/tags/#service-stop) | [Impact](/tags/#impact) |
+| [Ryuk Ransomware](ryuk_ransomware) | [Windows Command Shell](/tags/#windows-command-shell) | [Execution](/tags/#execution) |
 | [SQL Injection](sql_injection) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [SamSam Ransomware](samsam_ransomware) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) | [Impact](/tags/#impact) |
 | [Signed Binary Proxy Execution InstallUtil](signed_binary_proxy_execution_installutil) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [InstallUtil](/tags/#installutil) | [Defense Evasion](/tags/#defense-evasion) |
@@ -103,7 +103,7 @@ sidebar:
 | [Spearphishing Attachments](spearphishing_attachments) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
 | [Splunk Vulnerabilities](splunk_vulnerabilities) | [Digital Certificates](/tags/#digital-certificates) | [Resource Development](/tags/#resource-development) |
 | [Spring4Shell CVE-2022-22965](spring4shell_cve-2022-22965) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
-| [Suspicious AWS Login Activities](suspicious_aws_login_activities) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |
+| [Suspicious AWS Login Activities](suspicious_aws_login_activities) | [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious AWS S3 Activities](suspicious_aws_s3_activities) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | [Collection](/tags/#collection) |
 | [Suspicious AWS Traffic]() | None | None |
 | [Suspicious Cloud Authentication Activities](suspicious_cloud_authentication_activities) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |
@@ -134,10 +134,10 @@ sidebar:
 | [Windows Defense Evasion Tactics](windows_defense_evasion_tactics) | [Bypass User Account Control](/tags/#bypass-user-account-control), [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Windows Discovery Techniques](windows_discovery_techniques) | [Permission Groups Discovery](/tags/#permission-groups-discovery), [Local Groups](/tags/#local-groups) | [Discovery](/tags/#discovery) |
 | [Windows Drivers](windows_drivers) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
-| [Windows File Extension and Association Abuse](windows_file_extension_and_association_abuse) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities) | [Defense Evasion](/tags/#defense-evasion) |
+| [Windows File Extension and Association Abuse](windows_file_extension_and_association_abuse) | [Change Default File Association](/tags/#change-default-file-association) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Windows Log Manipulation](windows_log_manipulation) | [Indicator Removal on Host](/tags/#indicator-removal-on-host), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [Defense Evasion](/tags/#defense-evasion) |
 | [Windows Persistence Techniques](windows_persistence_techniques) | [Services Registry Permissions Weakness](/tags/#services-registry-permissions-weakness) | [Persistence](/tags/#persistence) |
-| [Windows Privilege Escalation](windows_privilege_escalation) | [Time Providers](/tags/#time-providers), [Boot or Logon Autostart Execution](/tags/#boot-or-logon-autostart-execution) | [Persistence](/tags/#persistence) |
+| [Windows Privilege Escalation](windows_privilege_escalation) | [Malicious File](/tags/#malicious-file) | [Execution](/tags/#execution) |
 | [Windows Registry Abuse](windows_registry_abuse) | [Services Registry Permissions Weakness](/tags/#services-registry-permissions-weakness) | [Persistence](/tags/#persistence) |
 | [Windows Service Abuse](windows_service_abuse) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [Persistence](/tags/#persistence) |
 | [Windows System Binary Proxy Execution MSIExec](windows_system_binary_proxy_execution_msiexec) | [Msiexec](/tags/#msiexec) | [Defense Evasion](/tags/#defense-evasion) |

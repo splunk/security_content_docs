@@ -46,6 +46,8 @@ detections:
         url: /detections/authentication/
       - title: Change
         url: /detections/change/
+      - title: Change_Analysis
+        url: /detections/change_analysis/
       - title: Email
         url: /detections/email/
       - title: Endpoint
@@ -66,8 +68,12 @@ detections:
         url: /detections/risk/
       - title: Splunk_Audit
         url: /detections/splunk_audit/
+      - title: UEBA
+        url: /detections/ueba/
       - title: Updates
         url: /detections/updates/
+      - title: Vulnerabilities
+        url: /detections/vulnerabilities/
       - title: Web
         url: /detections/web/
   - title: "Product"

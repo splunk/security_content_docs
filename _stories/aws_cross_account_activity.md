@@ -31,11 +31,11 @@ This Analytic Story includes searches that will help you monitor your AWS CloudT
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [aws detect attach to role policy](/cloud/aws_detect_attach_to_role_policy/) | [Valid Accounts](/tags/#valid-accounts) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [aws detect permanent key creation](/cloud/aws_detect_permanent_key_creation/) | [Valid Accounts](/tags/#valid-accounts) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [aws detect role creation](/cloud/aws_detect_role_creation/) | [Valid Accounts](/tags/#valid-accounts) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [aws detect sts assume role abuse](/cloud/aws_detect_sts_assume_role_abuse/) | [Valid Accounts](/tags/#valid-accounts) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [aws detect sts get session token abuse](/cloud/aws_detect_sts_get_session_token_abuse/) | [Use Alternate Authentication Material](/tags/#use-alternate-authentication-material) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [aws detect attach to role policy](/cloud/88fc31dd-f331-448c-9856-d3d51dd5d3a1/) | [Valid Accounts](/tags/#valid-accounts) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [aws detect permanent key creation](/cloud/12d6d713-3cb4-4ffc-a064-1dca3d1cca01/) | [Valid Accounts](/tags/#valid-accounts) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [aws detect role creation](/cloud/5f04081e-ddee-4353-afe4-504f288de9ad/) | [Valid Accounts](/tags/#valid-accounts) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [aws detect sts assume role abuse](/cloud/8e565314-b6a2-46d8-9f05-1a34a176a662/) | [Valid Accounts](/tags/#valid-accounts) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [aws detect sts get session token abuse](/cloud/85d7b35f-b8b5-4b01-916f-29b81e7a0551/) | [Use Alternate Authentication Material](/tags/#use-alternate-authentication-material) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

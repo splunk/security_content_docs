@@ -29,7 +29,15 @@ Kubernetes is the most used container orchestration platform, this orchestration
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Kubernetes AWS detect suspicious kubectl calls](/cloud/kubernetes_aws_detect_suspicious_kubectl_calls/) |  | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [AWS EKS Kubernetes cluster sensitive object access](/deprecated/7f227943-2196-4d4d-8d6a-ac8cb308e61c/) |  | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Kubernetes AWS detect service accounts forbidden failure access](/deprecated/a6959c57-fa8f-4277-bb86-7c32fba579d5/) |  | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Kubernetes AWS detect suspicious kubectl calls](/cloud/042a3d32-8318-4763-9679-09db2644a8f2/) |  | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Kubernetes Azure detect sensitive object access](/deprecated/1bba382b-07fd-4ffa-b390-8002739b76e8/) |  | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Kubernetes Azure detect service accounts forbidden failure access](/deprecated/019690d7-420f-4da0-b320-f27b09961514/) |  | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Kubernetes Azure detect suspicious kubectl calls](/deprecated/4b6d1ba8-0000-4cec-87e6-6cbbd71651b5/) |  | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Kubernetes GCP detect sensitive object access](/deprecated/bdb6d596-86a0-4aba-8369-418ae8b9963a/) |  | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Kubernetes GCP detect service accounts forbidden failure access](/deprecated/7094808d-432a-48e7-bb3c-77e96c894f3b/) |  | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Kubernetes GCP detect suspicious kubectl calls](/deprecated/a5bed417-070a-41f2-a1e4-82b6aa281557/) |  | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

@@ -12,9 +12,9 @@ sidebar:
 | ----------- | ----------- |--------------|
 | [AWS Cross Account Activity](/stories/aws_cross_account_activity/) | [Use Alternate Authentication Material](/tags/#use-alternate-authentication-material) | [Defense Evasion](/tags/#defense-evasion) |
 | [AWS IAM Privilege Escalation](/stories/aws_iam_privilege_escalation/) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) | [Persistence](/tags/#persistence) |
-| [AWS Network ACL Activity](/stories/aws_network_acl_activity/) | [Disable or Modify Cloud Firewall](/tags/#disable-or-modify-cloud-firewall), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |
+| [AWS Network ACL Activity](/stories/aws_network_acl_activity/) | [Disable or Modify Cloud Firewall](/tags/#disable-or-modify-cloud-firewall) | [Defense Evasion](/tags/#defense-evasion) |
 | [AWS Security Hub Alerts]() | None | None |
-| [AWS User Monitoring](/stories/aws_user_monitoring/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Discovery](/tags/#discovery) |
+| [AWS User Monitoring](/stories/aws_user_monitoring/) | [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Cloud Cryptomining](/stories/cloud_cryptomining/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |
 | [Cloud Federated Credential Abuse](/stories/cloud_federated_credential_abuse/) | [Image File Execution Options Injection](/tags/#image-file-execution-options-injection), [Event Triggered Execution](/tags/#event-triggered-execution) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Dev Sec Ops](/stories/dev_sec_ops/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Discovery](/tags/#discovery) |
@@ -22,7 +22,7 @@ sidebar:
 | [Kubernetes Scanning Activity](/stories/kubernetes_scanning_activity/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Discovery](/tags/#discovery) |
 | [Kubernetes Sensitive Object Access Activity]() | None | None |
 | [Office 365 Detections](/stories/office_365_detections/) | [Email Forwarding Rule](/tags/#email-forwarding-rule), [Email Collection](/tags/#email-collection) | [Collection](/tags/#collection) |
-| [Suspicious AWS Login Activities](/stories/suspicious_aws_login_activities/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |
+| [Suspicious AWS Login Activities](/stories/suspicious_aws_login_activities/) | [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious AWS S3 Activities](/stories/suspicious_aws_s3_activities/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | [Collection](/tags/#collection) |
 | [Suspicious AWS Traffic]() | None | None |
 | [Suspicious Cloud Authentication Activities](/stories/suspicious_cloud_authentication_activities/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |

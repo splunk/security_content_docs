@@ -30,12 +30,12 @@ Monitor and detect techniques used by attackers who leverage the mshta.exe proce
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Detect Regasm Spawning a Process](/endpoint/detect_regasm_spawning_a_process/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Regsvcs/Regasm](/tags/#regsvcs/regasm) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Detect Regasm with Network Connection](/endpoint/detect_regasm_with_network_connection/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Regsvcs/Regasm](/tags/#regsvcs/regasm) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Detect Regasm with no Command Line Arguments](/endpoint/detect_regasm_with_no_command_line_arguments/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Regsvcs/Regasm](/tags/#regsvcs/regasm) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Detect Regsvcs Spawning a Process](/endpoint/detect_regsvcs_spawning_a_process/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Regsvcs/Regasm](/tags/#regsvcs/regasm) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Detect Regsvcs with Network Connection](/endpoint/detect_regsvcs_with_network_connection/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Regsvcs/Regasm](/tags/#regsvcs/regasm) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Detect Regsvcs with No Command Line Arguments](/endpoint/detect_regsvcs_with_no_command_line_arguments/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Regsvcs/Regasm](/tags/#regsvcs/regasm) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Regasm Spawning a Process](/endpoint/72170ec5-f7d2-42f5-aefb-2b8be6aad15f/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Regsvcs/Regasm](/tags/#regsvcs/regasm) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Regasm with Network Connection](/endpoint/07921114-6db4-4e2e-ae58-3ea8a52ae93f/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Regsvcs/Regasm](/tags/#regsvcs/regasm) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Regasm with no Command Line Arguments](/endpoint/c3bc1430-04e7-4178-835f-047d8e6e97df/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Regsvcs/Regasm](/tags/#regsvcs/regasm) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Regsvcs Spawning a Process](/endpoint/bc477b57-5c21-4ab6-9c33-668772e7f114/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Regsvcs/Regasm](/tags/#regsvcs/regasm) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Regsvcs with Network Connection](/endpoint/e3e7a1c0-f2b9-445c-8493-f30a63522d1a/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Regsvcs/Regasm](/tags/#regsvcs/regasm) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Regsvcs with No Command Line Arguments](/endpoint/6b74d578-a02e-4e94-a0d1-39440d0bf254/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Regsvcs/Regasm](/tags/#regsvcs/regasm) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

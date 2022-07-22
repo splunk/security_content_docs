@@ -36,7 +36,7 @@ tags:
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
 {%- for detection in story.detections %}
-| [{{ detection.name }}](/{{ detection.kind }}/{{ detection.name | lower | replace(' ', '_') }}/) | {% for attack in detection.mitre_attacks -%}{%- if attack.technique -%}[{{ attack.technique }}](/tags/#{{ attack.technique | lower | replace(" ", "-") }}){% else %}None{%- endif -%}{% if not loop.last %}, {% endif %}{%- endfor %} | [{{ detection.type }}](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [{{ detection.name }}](/{{ detection.kind }}/{{ detection.id | lower }}/) | {% for attack in detection.mitre_attacks -%}{%- if attack.technique -%}[{{ attack.technique }}](/tags/#{{ attack.technique | lower | replace(" ", "-") }}){% else %}None{%- endif -%}{% if not loop.last %}, {% endif %}{%- endfor %} | [{{ detection.type }}](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 {%- endfor %}
 
 #### Reference

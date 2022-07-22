@@ -30,8 +30,11 @@ tags:
 ---
 
 {% if detection.experimental is sameas true -%}
-### :warning: WARNING THIS IS A EXPERIMENTAL DETECTION
-We have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
+### :warning: THIS IS A EXPERIMENTAL DETECTION
+This detection has been marked experimental by the Splunk Threat Research team. This means we have not been able to test, simulate, or build datasets for this detection. Use at your own risk. This analytic is **NOT** supported.
+{% elif detection.deprecated is sameas true %}
+### :no_entry: THIS IS A DEPRECATED DETECTION
+This detection has been marked deprecated by the Splunk Threat Research team. This means that it will no longer be maintained or supported. 
 {% endif %}
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -156,7 +159,7 @@ The SPL above uses the following Lookups:
 {% endfor %}
 {% endif -%}
 
-{% if detection.splunk_app_enrichment %}
+{% if detection.z %}
 #### Supported Add-on (TA)
 List of [Splunk Add-on's](https://docs.splunk.com/Documentation/AddOns/released/Overview/AboutSplunkadd-ons) tested to work with the analytic.
 {% for splunk_app in detection.splunk_app_enrichment %}

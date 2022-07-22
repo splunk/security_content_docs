@@ -38,7 +38,10 @@ The searches in this Analytic Story help you detect and investigate activities t
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Detect hosts connecting to dynamic domain providers](/network/detect_hosts_connecting_to_dynamic_domain_providers/) | [Drive-by Compromise](/tags/#drive-by-compromise) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Clients Connecting to Multiple DNS Servers](/deprecated/74ec6f18-604b-4202-a567-86b2066be3ce/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [DNS Query Requests Resolved by Unauthorized DNS Servers](/deprecated/1a67f15a-f4ff-4170-84e9-08cf6f75d6f6/) | [DNS](/tags/#dns) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [DNS record changed](/deprecated/44d3a43e-dcd5-49f7-8356-5209bb369065/) | [DNS](/tags/#dns) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect hosts connecting to dynamic domain providers](/network/a1e761ac-1344-4dbd-88b2-3f34c912d359/) | [Drive-by Compromise](/tags/#drive-by-compromise) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

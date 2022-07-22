@@ -18,12 +18,16 @@ CVESSEARCH_API_URL = 'https://cve.circl.lu'
 SPLUNKBASE_API_URL = "https://apps.splunk.com/api/apps/entriesbyid/"
 
 def get_cve_enrichment_new(cve_id):
-    cve = CVESearch(CVESSEARCH_API_URL)
-    result = cve.id(cve_id)
     cve_enriched = dict()
-    cve_enriched['id'] = cve_id
-    cve_enriched['cvss'] = result['cvss']
-    cve_enriched['summary'] = result['summary']
+    try: 
+        cve = CVESearch(CVESSEARCH_API_URL)
+        result = cve.id(cve_id)
+        cve_enriched['id'] = cve_id
+        cve_enriched['cvss'] = result['cvss']
+        cve_enriched['summary'] = result['summary']
+    except requests.exceptions.JSONDecodeError as exc:
+        print(exc)
+        print("Error getting CVE info for {0}".format(cve_id))
     return cve_enriched
 
 def get_all_techniques(projects_path):
@@ -354,8 +358,8 @@ def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, sorted_de
     return sorted_stories, messages
 
 
-def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, messages, VERBOSE):
-    types = ["endpoint", "application", "cloud", "network", "web", "experimental"]
+def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, messages, VERBOSE, SKIP_ENRICHMENT):
+    types = ["endpoint", "application", "cloud", "network", "web", "experimental", "deprecated"]
     manifest_files = []
     for t in types:
         for root, dirs, files in walk(REPO_PATH + 'detections/' + t):
@@ -384,6 +388,7 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, messag
         # add lookups
         detection_yaml = add_lookups(detection_yaml, REPO_PATH)
 
+
         # enrich the mitre object
         mitre_attacks = []
         if 'mitre_attack_id' in detection_yaml['tags']:
@@ -392,16 +397,18 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, messag
                 mitre_attacks.append(mitre_attack)
             detection_yaml['mitre_attacks'] = mitre_attacks
 
-        # enrich support_tas
-        detection_yaml = add_splunk_app(detection_yaml)
+        if SKIP_ENRICHMENT:
+            print("Info skipping CVE and splunk app enrichment for detection {0}".format(detection_yaml['name']))
+            # enrich support_tas
+            detection_yaml = add_splunk_app(detection_yaml)
 
-        # enrich the cve object
-        cves = []
-        if 'cve' in detection_yaml['tags']:
-            for cve_id in detection_yaml['tags']['cve']:
-                cve = get_cve_enrichment_new(cve_id)
-                cves.append(cve)
-            detection_yaml['cve'] = cves
+            # enrich the cve object
+            cves = []
+            if 'cve' in detection_yaml['tags']:
+                for cve_id in detection_yaml['tags']['cve']:
+                    cve = get_cve_enrichment_new(cve_id)
+                    cves.append(cve)
+                detection_yaml['cve'] = cves
 
         # grab the kind
         detection_yaml['kind'] = manifest_file.split('/')[-2]
@@ -409,6 +416,10 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, messag
         # check if is experimental, add the flag
         if "experimental" == manifest_file.split('/')[2]:
             detection_yaml['experimental'] = True
+    
+        # check if is deprecated, add the flag
+        if "deprecated" == manifest_file.split('/')[2]:
+            detection_yaml['deprecated'] = True
 
         # skip baselines and Investigation
         if detection_yaml['type'] == 'Baseline' or detection_yaml['type'] == 'Investigation':
@@ -422,9 +433,9 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, messag
                              trim_blocks=False, autoescape=True)
 
     # write markdown
-    template = j2_env.get_template('doc_detections.j2')
+    template = j2_env.get_template('doc_detections.j2') 
     for detection in sorted_detections:
-        file_name = detection['date'] + "-" + detection['name'].lower().replace(" ","_") + '.md'
+        file_name = detection['date'] + "-" + detection['id'].lower() + '.md'
         output_path = path.join(OUTPUT_DIR + '/_posts/' + file_name)
         output = template.render(detection=detection, time=datetime.datetime.now())
         with open(output_path, 'w', encoding="utf-8") as f:
@@ -514,7 +525,7 @@ if __name__ == "__main__":
     parser.add_argument("-cti_path", "--cpath", required=False, default='cti/', help="path to cti repo")
     parser.add_argument("-o", "--output", required=False, default='.', help="path to the output directory for the docs")
     parser.add_argument("-v", "--verbose", required=False, default=False, action='store_true', help="prints verbose output")
-
+    parser.add_argument("-s", "--skip_enrichment", required=False, default=False, action='store_true', help="skips app and cve enrichments")
 
     # parse them
     args = parser.parse_args()
@@ -522,6 +533,7 @@ if __name__ == "__main__":
     CTI_PATH = args.cpath
     OUTPUT_DIR = args.output
     VERBOSE = args.verbose
+    SKIP_ENRICHMENT= args.skip_enrichment
 
     if not (path.isdir(REPO_PATH) or path.isdir(REPO_PATH)):
         print("error: {0} is not a directory".format(REPO_PATH))
@@ -547,7 +559,7 @@ if __name__ == "__main__":
 
     messages = []
     print("processing detections")
-    sorted_detections, messages = generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, techniques, messages, VERBOSE)
+    sorted_detections, messages = generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, techniques, messages, VERBOSE, SKIP_ENRICHMENT)
     print("processing stories")
     sorted_stories, messages = generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, techniques, sorted_detections, messages, VERBOSE)
     print("processing playbooks")

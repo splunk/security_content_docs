@@ -31,7 +31,7 @@ This Analytic Story contains a search designed to identify attempts by attackers
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [SQL Injection with Long URLs](/web/sql_injection_with_long_urls/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [SQL Injection with Long URLs](/web/e0aad4cf-0790-423b-8328-7564d0d938f9/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

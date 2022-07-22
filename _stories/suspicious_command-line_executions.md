@@ -31,13 +31,14 @@ The ability to execute arbitrary commands via the Windows CLI is a primary goal 
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Detect Prohibited Applications Spawning cmd exe](/endpoint/detect_prohibited_applications_spawning_cmd_exe/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [Windows Command Shell](/tags/#windows-command-shell) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Detect Prohibited Applications Spawning cmd exe](/endpoint/detect_prohibited_applications_spawning_cmd_exe/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Detect Use of cmd exe to Launch Script Interpreters](/endpoint/detect_use_of_cmd_exe_to_launch_script_interpreters/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [Windows Command Shell](/tags/#windows-command-shell) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Potentially malicious code on commandline](/endpoint/potentially_malicious_code_on_commandline/) | [Windows Command Shell](/tags/#windows-command-shell) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [System Processes Run From Unexpected Locations](/endpoint/system_processes_run_from_unexpected_locations/) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Unusually Long Command Line](/endpoint/unusually_long_command_line/) |  | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Unusually Long Command Line - MLTK](/endpoint/unusually_long_command_line_-_mltk/) |  | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Prohibited Applications Spawning cmd exe](/endpoint/dcfd6b40-42f9-469d-a433-2e53f7486664/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [Windows Command Shell](/tags/#windows-command-shell) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Prohibited Applications Spawning cmd exe](/endpoint/c10a18cb-fd80-4ffa-a844-25026e0a0c94/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Use of cmd exe to Launch Script Interpreters](/endpoint/b89919ed-fe5f-492c-b139-95dbb162039e/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [Windows Command Shell](/tags/#windows-command-shell) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [First time seen command line argument](/deprecated/a1b6e73f-98d5-470f-99ac-77aacd578473/) | [PowerShell](/tags/#powershell), [Windows Command Shell](/tags/#windows-command-shell) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Potentially malicious code on commandline](/endpoint/9c53c446-757e-11ec-871d-acde48001122/) | [Windows Command Shell](/tags/#windows-command-shell) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [System Processes Run From Unexpected Locations](/endpoint/a34aae96-ccf8-4aef-952c-3ea21444444d/) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Unusually Long Command Line](/endpoint/c77162d3-f93c-45cc-80c8-22f6a4264e7f/) |  | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Unusually Long Command Line - MLTK](/endpoint/57edaefa-a73b-45e5-bbae-f39c1473f941/) |  | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

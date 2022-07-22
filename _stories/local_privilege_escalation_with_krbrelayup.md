@@ -30,11 +30,11 @@ In October 2021, James Forshaw from Googles Project Zero released a research  bl
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Windows Computer Account Created by Computer Account](/endpoint/windows_computer_account_created_by_computer_account/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows Computer Account Requesting Kerberos Ticket](/endpoint/windows_computer_account_requesting_kerberos_ticket/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows Computer Account With SPN](/endpoint/windows_computer_account_with_spn/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows Kerberos Local Successful Logon](/endpoint/windows_kerberos_local_successful_logon/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows KrbRelayUp Service Creation](/endpoint/windows_krbrelayup_service_creation/) | [Windows Service](/tags/#windows-service) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Computer Account Created by Computer Account](/endpoint/97a8dc5f-8a7c-4fed-9e3e-ec407fd0268a/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Computer Account Requesting Kerberos Ticket](/endpoint/fb3b2bb3-75a4-4279-848a-165b42624770/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Computer Account With SPN](/endpoint/9a3e57e7-33f4-470e-b25d-165baa6e8357/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Kerberos Local Successful Logon](/endpoint/8309c3a8-4d34-48ae-ad66-631658214653/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows KrbRelayUp Service Creation](/endpoint/e40ef542-8241-4419-9af4-6324582ea60a/) | [Windows Service](/tags/#windows-service) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

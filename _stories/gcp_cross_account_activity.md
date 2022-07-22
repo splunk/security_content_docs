@@ -31,7 +31,10 @@ This Analytic Story includes searches that will help you monitor your GCP Audit 
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [GCP Detect gcploit framework](/cloud/gcp_detect_gcploit_framework/) | [Valid Accounts](/tags/#valid-accounts) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [GCP Detect accounts with high risk roles by project](/deprecated/27af8c15-38b0-4408-b339-920170724adb/) | [Valid Accounts](/tags/#valid-accounts) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [GCP Detect gcploit framework](/cloud/a1c5a85e-a162-410c-a5d9-99ff639e5a52/) | [Valid Accounts](/tags/#valid-accounts) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [GCP Detect high risk permissions by resource and account](/deprecated/2e70ef35-2187-431f-aedc-4503dc9b06ba/) | [Valid Accounts](/tags/#valid-accounts) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [gcp detect oauth token abuse](/deprecated/a7e9f7bb-8901-4ad0-8d88-0a4ab07b1972/) | [Valid Accounts](/tags/#valid-accounts) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

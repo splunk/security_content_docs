@@ -32,11 +32,11 @@ In addition to compromising the security of your data, when bad actors leverage 
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [AWS IAM AccessDenied Discovery Events](/cloud/aws_iam_accessdenied_discovery_events/) | [Cloud Infrastructure Discovery](/tags/#cloud-infrastructure-discovery) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [AWS Lambda UpdateFunctionCode](/cloud/aws_lambda_updatefunctioncode/) | [User Execution](/tags/#user-execution) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Abnormally High Number Of Cloud Infrastructure API Calls](/cloud/abnormally_high_number_of_cloud_infrastructure_api_calls/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Abnormally High Number Of Cloud Security Group API Calls](/cloud/abnormally_high_number_of_cloud_security_group_api_calls/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Cloud API Calls From Previously Unseen User Roles](/cloud/cloud_api_calls_from_previously_unseen_user_roles/) | [Valid Accounts](/tags/#valid-accounts) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [AWS IAM AccessDenied Discovery Events](/cloud/3e1f1568-9633-11eb-a69c-acde48001122/) | [Cloud Infrastructure Discovery](/tags/#cloud-infrastructure-discovery) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [AWS Lambda UpdateFunctionCode](/cloud/211b80d3-6340-4345-11ad-212bf3d0d111/) | [User Execution](/tags/#user-execution) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Abnormally High Number Of Cloud Infrastructure API Calls](/cloud/0840ddf1-8c89-46ff-b730-c8d6722478c0/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Abnormally High Number Of Cloud Security Group API Calls](/cloud/d4dfb7f3-7a37-498a-b5df-f19334e871af/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Cloud API Calls From Previously Unseen User Roles](/cloud/2181ad1f-1e73-4d0c-9780-e8880482a08f/) | [Valid Accounts](/tags/#valid-accounts) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

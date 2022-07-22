@@ -32,8 +32,8 @@ While investigating a detection related to this analytic story, please bear in m
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Excessive distinct processes from Windows Temp](/endpoint/excessive_distinct_processes_from_windows_temp/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Excessive number of taskhost processes](/endpoint/excessive_number_of_taskhost_processes/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Excessive distinct processes from Windows Temp](/endpoint/23587b6a-c479-11eb-b671-acde48001122/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Excessive number of taskhost processes](/endpoint/f443dac2-c7cf-11eb-ab51-acde48001122/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

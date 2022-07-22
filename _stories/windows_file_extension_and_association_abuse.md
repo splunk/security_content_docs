@@ -34,7 +34,9 @@ Run the searches in this story to detect and investigate suspicious behavior tha
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Execution of File with Multiple Extensions](/endpoint/execution_of_file_with_multiple_extensions/) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Execution of File With Spaces Before Extension](/deprecated/ab0353e6-a956-420b-b724-a8b4846d5d5a/) | [Rename System Utilities](/tags/#rename-system-utilities) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Execution of File with Multiple Extensions](/endpoint/b06a555e-dce0-417d-a2eb-28a5d8d66ef7/) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Suspicious Changes to File Associations](/deprecated/1b989a0e-0129-4446-a695-f193a5b746fc/) | [Change Default File Association](/tags/#change-default-file-association) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

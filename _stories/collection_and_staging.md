@@ -33,12 +33,13 @@ Use the searches to detect and monitor suspicious behavior related to these acti
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Detect Renamed 7-Zip](/endpoint/detect_renamed_7-zip/) | [Archive via Utility](/tags/#archive-via-utility), [Archive Collected Data](/tags/#archive-collected-data) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Detect Renamed WinRAR](/endpoint/detect_renamed_winrar/) | [Archive via Utility](/tags/#archive-via-utility), [Archive Collected Data](/tags/#archive-collected-data) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Email files written outside of the Outlook directory](/application/email_files_written_outside_of_the_outlook_directory/) | [Email Collection](/tags/#email-collection), [Local Email Collection](/tags/#local-email-collection) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Email servers sending high volume traffic to hosts](/application/email_servers_sending_high_volume_traffic_to_hosts/) | [Email Collection](/tags/#email-collection), [Remote Email Collection](/tags/#remote-email-collection) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Hosts receiving high volume of network traffic from email server](/network/hosts_receiving_high_volume_of_network_traffic_from_email_server/) | [Remote Email Collection](/tags/#remote-email-collection), [Email Collection](/tags/#email-collection) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Suspicious writes to windows Recycle Bin](/endpoint/suspicious_writes_to_windows_recycle_bin/) | [Masquerading](/tags/#masquerading) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Renamed 7-Zip](/endpoint/4057291a-b8cf-11eb-95fe-acde48001122/) | [Archive via Utility](/tags/#archive-via-utility), [Archive Collected Data](/tags/#archive-collected-data) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Renamed WinRAR](/endpoint/1b7bfb2c-b8e6-11eb-99ac-acde48001122/) | [Archive via Utility](/tags/#archive-via-utility), [Archive Collected Data](/tags/#archive-collected-data) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Email files written outside of the Outlook directory](/application/8d52cf03-ba25-4101-aa78-07994aed4f74/) | [Email Collection](/tags/#email-collection), [Local Email Collection](/tags/#local-email-collection) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Email servers sending high volume traffic to hosts](/application/7f5fb3e1-4209-4914-90db-0ec21b556378/) | [Email Collection](/tags/#email-collection), [Remote Email Collection](/tags/#remote-email-collection) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Hosts receiving high volume of network traffic from email server](/network/7f5fb3e1-4209-4914-90db-0ec21b556368/) | [Remote Email Collection](/tags/#remote-email-collection), [Email Collection](/tags/#email-collection) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Suspicious writes to System Volume Information](/deprecated/cd6297cd-2bdd-4aa1-84aa-5d2f84228fac/) | [Masquerading](/tags/#masquerading) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Suspicious writes to windows Recycle Bin](/endpoint/b5541828-8ffd-4070-9d95-b3da4de924cb/) | [Masquerading](/tags/#masquerading) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

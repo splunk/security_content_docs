@@ -30,7 +30,7 @@ Adversaries may use the information from System Network Configuration Discovery 
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Linux System Network Discovery](/endpoint/linux_system_network_discovery/) | [System Network Configuration Discovery](/tags/#system-network-configuration-discovery) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Linux System Network Discovery](/endpoint/535cb214-8b47-11ec-a2c7-acde48001122/) | [System Network Configuration Discovery](/tags/#system-network-configuration-discovery) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

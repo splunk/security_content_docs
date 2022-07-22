@@ -8,7 +8,7 @@ main:
   - title: "Blog"
     url: https://www.splunk.com/en_us/blog/author/secmrkt-research.html
   - title: "About"
-    url: https://www.splunk.com/en_us/cyber-security/threat-research.html
+    url: /about/
 detections:
   - title: "Tactic"
     children:

@@ -112,8 +112,8 @@ This search looks for Pull Request from unknown user.
 
 #### Macros
 The SPL above uses the following Macros:
-* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
 * [github](https://github.com/splunk/security_content/blob/develop/macros/github.yml)
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
 * [github_known_users](https://github.com/splunk/security_content/blob/develop/macros/github_known_users.yml)
 
 > :information_source:

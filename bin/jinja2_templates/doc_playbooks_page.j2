@@ -8,11 +8,11 @@ sidebar:
   nav: "playbooks"
 ---
 
-| Name    | SOAR Apps | Type        |
+| Name    | SOAR App   | Type        |
 | --------| ---------- | ----------- |
 {% for playbook in playbooks -%}
 {% if playbook.app_list -%}
-| [{{ playbook.name }}](/playbooks/{{ playbook.name|lower|replace(' ', '_') }}/)|{% for app in playbook.app_list -%}{{ app }}{% if not loop.last %}, {% endif %}{%- endfor -%} | {{ playbook.type }} |
+| [{{ playbook.name }}](/playbooks/{{ playbook.name|lower|replace(' ', '_') }}/)|{% for app in playbook.app_list -%}[{{ app }}](https://splunkbase.splunk.com/apps/#/search/{{ app }}/product/soar){% if not loop.last %}, {% endif %}{%- endfor -%} | {{ playbook.type }} |
 {% else -%}
 | [{{ playbook.name }}](/playbooks/{{ playbook.name|lower|replace(' ', '_') }}/)| None | {{ playbook.type }} |
 {% endif -%}

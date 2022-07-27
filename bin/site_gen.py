@@ -268,22 +268,29 @@ def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, sorted_de
             story['kill_chain_phases'] = sorted(sto_to_kill_chain_phases[story['name']])
 
     # sort stories into categories
+    # grab all the categories first 
     categories = []
     category_names = set()
     for story in sorted_stories:
         if 'category' in story['tags']:
-            category_names.add(story['tags']['category'][0])
+            for category in story['tags']['category']:    
+                category_names.add(category)
 
+    # build an category object with stories to populate
     for category_name in sorted(category_names):
         new_category = {}
         new_category['name'] = category_name
         new_category['stories'] = []
         categories.append(new_category)
 
+    # this is ugly :-(, go through each story, find matching categories
+    # add it to our newly minted category object
     for story in sorted_stories:
         for category in categories:
-            if category['name'] == story['tags']['category'][0]:
-                category['stories'].append(story)
+            if 'category' in story['tags']:
+                for c in story['tags']['category']:    
+                    if category['name'] == c:
+                        category['stories'].append(story)
 
     j2_env = Environment(loader=FileSystemLoader(TEMPLATE_PATH), # nosemgrep
                              trim_blocks=False)

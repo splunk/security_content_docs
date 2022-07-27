@@ -89,6 +89,8 @@ stories:
     children:
       - title: Abuse
         url: /stories/abuse/
+      - title: Account Compromise
+        url: /stories/account_compromise/
       - title: Adversary Tactics
         url: /stories/adversary_tactics/
       - title: Best Practices
@@ -97,10 +99,16 @@ stories:
         url: /stories/cloud_security/
       - title: Data Destruction
         url: /stories/data_destruction/
+      - title: Lateral Movement
+        url: /stories/lateral_movement/
       - title: Malware
         url: /stories/malware/
       - title: Privilege Escalation
         url: /stories/privilege_escalation/
+      - title: Ransomware
+        url: /stories/ransomware/
+      - title: Unauthorized Software
+        url: /stories/unauthorized_software/
       - title: Vulnerability
         url: /stories/vulnerability/
 playbooks:

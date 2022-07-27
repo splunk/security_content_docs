@@ -3,7 +3,13 @@ title: Lateral Movement
 layout: tag
 author_profile: false
 taxonomy: Lateral Movement
-permalink: /detections/lateral_movement/
+permalink: /stories/lateral_movement/
 sidebar:
-  nav: "detections"
+  nav: "stories"
 ---
+
+| Name        | Technique   | Tactic       |
+| ----------- | ----------- |--------------|
+| [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks/) | [Remote System Discovery](/tags/#remote-system-discovery) | [Discovery](/tags/#discovery) |
+| [Insider Threat](/stories/insider_threat/) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
+| [Living Off The Land](/stories/living_off_the_land/) | [Bypass User Account Control](/tags/#bypass-user-account-control), [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [Privilege Escalation](/tags/#privilege-escalation) |

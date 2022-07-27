@@ -3,7 +3,12 @@ title: Account Compromise
 layout: tag
 author_profile: false
 taxonomy: Account Compromise
-permalink: /detections/account_compromise/
+permalink: /stories/account_compromise/
 sidebar:
-  nav: "detections"
+  nav: "stories"
 ---
+
+| Name        | Technique   | Tactic       |
+| ----------- | ----------- |--------------|
+| [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks/) | [Remote System Discovery](/tags/#remote-system-discovery) | [Discovery](/tags/#discovery) |
+| [Insider Threat](/stories/insider_threat/) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |

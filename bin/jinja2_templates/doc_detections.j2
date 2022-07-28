@@ -27,7 +27,7 @@ tags:
 {%- for datamodel in detection.datamodel %}
   - {{ datamodel }}
 {%- endfor %}
-redirect_from: {{detection.kind}}/{{ detection.name | lower | replace (" ", "_") }}
+redirect_from: {{detection.kind}}/{{ detection.name | lower | replace (" ", "_") }}/
 ---
 
 {% if detection.experimental is sameas true -%}

@@ -21,7 +21,7 @@ feature_row:
   - image_path: /static/feature_stories.png
     alt: "fully responsive"
     title: "Analytic Stories"
-    excerpt: "See all **134** use cases, 📦 of detections built to address a threat."
+    excerpt: "See all **133** use cases, 📦 of detections built to address a threat."
     url: "/stories"
     btn_class: "btn--primary"
     btn_label: "Explore"

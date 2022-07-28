@@ -41,7 +41,6 @@ sidebar:
 | [DHS Report TA18-074A](dhs_report_ta18-074a) | [Modify Registry](/tags/#modify-registry) | [Defense Evasion](/tags/#defense-evasion) |
 | [DNS Amplification Attacks](dns_amplification_attacks) | [Network Denial of Service](/tags/#network-denial-of-service), [Reflection Amplification](/tags/#reflection-amplification) | [Impact](/tags/#impact) |
 | [DNS Hijacking](dns_hijacking) | [Drive-by Compromise](/tags/#drive-by-compromise) | [Initial Access](/tags/#initial-access) |
-| [DarkCrystal RAT](darkcrystal_rat) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
 | [DarkSide Ransomware](darkside_ransomware) | [LSASS Memory](/tags/#lsass-memory), [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [Data Destruction](data_destruction) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [Data Exfiltration](data_exfiltration) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol), [Exfiltration Over Alternative Protocol](/tags/#exfiltration-over-alternative-protocol) | [Exfiltration](/tags/#exfiltration) |

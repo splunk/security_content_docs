@@ -82,6 +82,8 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll-redirect-from
+
 
 # Site Author
 author:
@@ -169,3 +171,4 @@ analytics:
   google:
     tracking_id: "G-294P2LYRR5"
     anonymize_ip: false # default
+

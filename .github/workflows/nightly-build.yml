@@ -19,7 +19,7 @@ jobs:
         uses: snok/install-poetry@v1
 
       - name: clone splunk security content
-        uses:action/checkout@v3
+        uses: action/checkout@v3
         with:
           repository: splunk/security_content
           path: security_content_docs

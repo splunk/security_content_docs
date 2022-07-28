@@ -84,6 +84,15 @@ plugins:
   - jekyll-include-cache
   - jekyll-redirect-from
 
+# plugin whitelist
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+  - jekyll-redirect-from
 
 # Site Author
 author:

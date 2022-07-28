@@ -43,8 +43,8 @@ Ingress tool transfer is a Technique under tactic Command and Control. Behaviors
 | [Windows CertUtil URLCache Download](/endpoint/8cb1ad38-8f6d-11ec-87a3-acde48001122/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows CertUtil VerifyCtl Download](/endpoint/9ac29c40-8f6b-11ec-b19a-acde48001122/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Curl Download to Suspicious Path](/endpoint/c32f091e-30db-11ec-8738-acde48001122/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows Curl Upload to Remote Destination](/endpoint/cc8d046a-543b-11ec-b864-acde48001122/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Curl Upload to Remote Destination](/endpoint/42f8f1a2-4228-11ec-aade-acde48001122/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Curl Upload to Remote Destination](/endpoint/cc8d046a-543b-11ec-b864-acde48001122/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Powershell DownloadFile](/endpoint/46440222-81d5-44b1-a376-19dcd70d1b08/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference

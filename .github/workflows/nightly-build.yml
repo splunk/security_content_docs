@@ -25,7 +25,7 @@ jobs:
           path: security_content_docs
 
       - name: clone mtire cti
-        uses:action/checkout@v3
+        uses: action/checkout@v3
         with:
           repository: mitre/cti
           path: security_content_docs

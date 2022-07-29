@@ -8,6 +8,7 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
+  - Risk
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -17,7 +18,7 @@ tags:
 Monitor for activities and techniques associated with maintaining persistence on a Linux system--a sign that an adversary may have compromised your environment.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk)
 - **Last Updated**: 2021-12-17
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: e40d13e5-d38b-457e-af2a-e8e6a2f2b516
@@ -46,6 +47,7 @@ Maintaining persistence is one of the first steps taken by attackers after the i
 | [Linux Insert Kernel Module Using Insmod Utility](/endpoint/18b5a1a0-6326-11ec-943a-acde48001122/) | [Kernel Modules and Extensions](/tags/#kernel-modules-and-extensions), [Boot or Logon Autostart Execution](/tags/#boot-or-logon-autostart-execution) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Linux Install Kernel Module Using Modprobe Utility](/endpoint/387b278a-6326-11ec-aa2c-acde48001122/) | [Kernel Modules and Extensions](/tags/#kernel-modules-and-extensions), [Boot or Logon Autostart Execution](/tags/#boot-or-logon-autostart-execution) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Linux NOPASSWD Entry In Sudoers File](/endpoint/ab1e0d52-624a-11ec-8e0b-acde48001122/) | [Sudo and Sudo Caching](/tags/#sudo-and-sudo-caching), [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Linux Persistence and Privilege Escalation Risk Behavior](/endpoint/ad5ac21b-3b1e-492c-8e19-ea5d5e8e5cf1/) | [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [Correlation](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Linux Possible Access Or Modification Of sshd Config File](/endpoint/7a85eb24-72da-11ec-ac76-acde48001122/) | [SSH Authorized Keys](/tags/#ssh-authorized-keys), [Account Manipulation](/tags/#account-manipulation) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Linux Possible Access To Credential Files](/endpoint/16107e0e-71fc-11ec-b862-acde48001122/) | [/etc/passwd and /etc/shadow](/tags/#/etc/passwd-and-/etc/shadow), [OS Credential Dumping](/tags/#os-credential-dumping) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Linux Possible Access To Sudoers File](/endpoint/4479539c-71fc-11ec-b2e2-acde48001122/) | [Sudo and Sudo Caching](/tags/#sudo-and-sudo-caching), [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

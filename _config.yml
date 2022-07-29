@@ -73,6 +73,7 @@ exclude:
   - venv 
   - security_content
   - vendor
+  - cti
 
 # Plugins (previously gems:)
 plugins:

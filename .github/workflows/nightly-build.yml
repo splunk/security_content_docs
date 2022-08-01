@@ -18,6 +18,9 @@ jobs:
       - name: install poetry
         uses: snok/install-poetry@v1
 
+      - name: install dependencies
+        run: poetry install --no-interaction --no-root
+
       - name: clone splunk security content
         uses: actions/checkout@v3
         with:

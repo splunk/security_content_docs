@@ -43,7 +43,7 @@ jobs:
       - name: run site_gen.py
         run: |
           source .venv/bin/activate
-          python bin/site_gen.py -security_content_path ~/tmp/security_content -cti_path /tmp/cti -v
+          python bin/site_gen.py -security_content_path /tmp/security_content -cti_path /tmp/cti -v
 
       - name: update github with new site
         run: |

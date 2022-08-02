@@ -11,6 +11,7 @@ jobs:
     steps:
       - name: checkout security_content_docs
         uses: actions/checkout@v3
+        with: 
 
       - name: install python 3.10    
         uses: actions/setup-python@v2
@@ -32,12 +33,13 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: splunk/security_content
-
+          path: security_content_docs/security_content
 
       - name: clone mtire cti
         uses: actions/checkout@v3
         with:
           repository: mitre/cti
+          path: security_content_docs/security_content
 
 
       - name: run site_gen.py

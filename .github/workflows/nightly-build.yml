@@ -2,6 +2,9 @@ name: nightly-build
 on:
   schedule:
     - cron: "0 2 * * *"
+  push:
+    branches:    
+      - 'main'
 jobs:
   nightly:
     runs-on: ubuntu-latest
@@ -35,6 +38,7 @@ jobs:
 
       - name: run site_gen.py
         run: |
+          poetry shell
           python bin/site_gen.py -v
 
       - name: update github with new site

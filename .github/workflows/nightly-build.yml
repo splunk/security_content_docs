@@ -38,8 +38,8 @@ jobs:
 
       - name: run site_gen.py
         run: |
-          poetry shell
-          python bin/site_gen.py -v
+          poetry run bin/site_gen.py -v
+          
 
       - name: update github with new site
         run: |

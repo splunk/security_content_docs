@@ -24,7 +24,6 @@ jobs:
           virtualenvs-create: true
           virtualenvs-in-project: true
           installer-parallel: true
-          virtualenvs-path: ~/venv
 
       - name: install dependencies
         run: poetry install --no-interaction 
@@ -44,8 +43,7 @@ jobs:
 
       - name: run site_gen.py
         run: |
-          source ~/venv/bin/activate
-          python bin/site_gen.py -v
+          poetry run bin/site_gen.py -v
 
       - name: update github with new site
         run: |

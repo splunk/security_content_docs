@@ -32,18 +32,18 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: splunk/security_content
-          path: /tmp
+
 
       - name: clone mtire cti
         uses: actions/checkout@v3
         with:
           repository: mitre/cti
-          path: /tmp
+
 
       - name: run site_gen.py
         run: |
           source .venv/bin/activate
-          python bin/site_gen.py -security_content_path /tmp/security_content -cti_path /tmp/cti -v
+          python bin/site_gen.py -v
 
       - name: update github with new site
         run: |

@@ -48,4 +48,4 @@ The ability to execute arbitrary commands via the Windows CLI is a primary goal 
 
 
 
-[*source*](https://github.com/splunk/security_content/tree/develop/stories/suspicious_command-line_executions.yml) \| *version*: **2**
+[*source*](https://github.com/splunk/security_content/tree/develop/stories/suspicious_command_line_executions.yml) \| *version*: **2**

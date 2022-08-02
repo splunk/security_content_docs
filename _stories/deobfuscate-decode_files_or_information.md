@@ -40,4 +40,4 @@ An example of obfuscated files is `Certutil.exe` usage to encode a portable exec
 
 
 
-[*source*](https://github.com/splunk/security_content/tree/develop/stories/deobfuscate-decode_files_or_information.yml) \| *version*: **1**
+[*source*](https://github.com/splunk/security_content/tree/develop/stories/deobfuscate_decode_files_or_information.yml) \| *version*: **1**

@@ -13,33 +13,33 @@ detections:
   - title: "Tactic"
     children:
       - title: Collection
-        url: /detections/collection/
+        url: /tags/#collection
       - title: Command And Control
-        url: /detections/command_and_control/
+        url: /tags/#command-and-control
       - title: Credential Access
-        url: /detections/credential_access/
+        url: /tags/#credential-access
       - title: Defense Evasion
-        url: /detections/defense_evasion/
+        url: /tags/#defense-evasion
       - title: Discovery
-        url: /detections/discovery/
+        url: /tags/#discovery
       - title: Execution
-        url: /detections/execution/
+        url: /tags/#execution
       - title: Exfiltration
-        url: /detections/exfiltration/
+        url: /tags/#exfiltration
       - title: Impact
-        url: /detections/impact/
+        url: /tags/#impact
       - title: Initial Access
-        url: /detections/initial_access/
+        url: /tags/#initial-access
       - title: Lateral Movement
-        url: /detections/lateral_movement/
+        url: /tags/#lateral-movement
       - title: Persistence
-        url: /detections/persistence/
+        url: /tags/#persistence
       - title: Privilege Escalation
-        url: /detections/privilege_escalation/
+        url: /tags/#privilege-escalation
       - title: Reconnaissance
-        url: /detections/reconnaissance/
+        url: /tags/#reconnaissance
       - title: Resource Development
-        url: /detections/resource_development/
+        url: /tags/#resource-development
   - title: "Datamodel"
     children:
       - title: Authentication
@@ -80,8 +80,6 @@ detections:
     children:
       - title: "Splunk Enterprise Security"
         url: /tags/#splunk-enterprise-security
-      - title: "Splunk Behavioral Analytics"
-        url: /tags/#splunk-behavioral-analytics
       - title: "Splunk Behavioral Analytics"
         url: /tags/#splunk-behavioral-analytics
 stories:

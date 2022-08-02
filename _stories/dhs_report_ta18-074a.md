@@ -56,4 +56,4 @@ Suspicious activities--spikes in SMB traffic, processes that launch netsh (to mo
 
 
 
-[*source*](https://github.com/splunk/security_content/tree/develop/stories/dhs_report_ta18-074a.yml) \| *version*: **2**
+[*source*](https://github.com/splunk/security_content/tree/develop/stories/dhs_report_ta18_074a.yml) \| *version*: **2**

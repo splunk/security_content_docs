@@ -52,4 +52,4 @@ There will be false positives as some native Windows processes are moved or ran 
 
 
 
-[*source*](https://github.com/splunk/security_content/tree/develop/stories/masquerading_-_rename_system_utilities.yml) \| *version*: **1**
+[*source*](https://github.com/splunk/security_content/tree/develop/stories/masquerading___rename_system_utilities.yml) \| *version*: **1**

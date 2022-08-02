@@ -46,4 +46,4 @@ tags:
 {% endfor %}
 {% endif %}
 
-[*source*](https://github.com/splunk/security_content/tree/develop/stories/{{ story.name | lower | replace (" ", "_") }}.yml) \| *version*: **{{story.version}}**
+[*source*](https://github.com/splunk/security_content/tree/develop/stories/{{ story.name | lower | replace (" ", "_") | replace ("-", "_") }}.yml) \| *version*: **{{story.version}}**

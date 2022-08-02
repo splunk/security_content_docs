@@ -11,7 +11,6 @@ jobs:
     steps:
       - name: checkout security_content_docs
         uses: actions/checkout@v3
-        with: 
 
       - name: install python 3.10    
         uses: actions/setup-python@v2

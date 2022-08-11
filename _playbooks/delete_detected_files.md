@@ -349,7 +349,7 @@ This playbook acts upon events where a file has been determined to be malicious 
 
 
 
-* [Executable File Written in Administrative SMB Share](/endpoint//)
+* [Executable File Written in Administrative SMB Share](/endpoint/f63c34fe-a435-11eb-935a-acde48001122/)
 
 
 

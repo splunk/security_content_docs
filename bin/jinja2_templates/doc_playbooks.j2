@@ -30,7 +30,7 @@ tags:
 {% for detection in playbook.tags.detections -%}
 {% for d in detections -%}
 {% if d.name == detection -%}
-* [{{ detection }}](/{{ d.kind }}/{{detection.id|lower}}/)
+* [{{ detection }}](/{{ d.kind }}/{{d.id|lower}}/)
 {% endif %}
 {% endfor %}
 {% endfor %}

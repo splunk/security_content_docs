@@ -10,6 +10,7 @@ sidebar:
 
 | Name        | Technique   | Tactic       |
 | ----------- | ----------- |--------------|
+| [AWS Credential Access](/stories/aws_credential_access/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |
 | [AWS Cross Account Activity](/stories/aws_cross_account_activity/) | [Use Alternate Authentication Material](/tags/#use-alternate-authentication-material) | [Defense Evasion](/tags/#defense-evasion) |
 | [AWS Defense Evasion](/stories/aws_defense_evasion/) | [Impair Defenses](/tags/#impair-defenses), [Disable Cloud Logs](/tags/#disable-cloud-logs) | [Defense Evasion](/tags/#defense-evasion) |
 | [AWS IAM Privilege Escalation](/stories/aws_iam_privilege_escalation/) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) | [Persistence](/tags/#persistence) |

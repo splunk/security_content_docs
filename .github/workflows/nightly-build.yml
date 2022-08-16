@@ -53,7 +53,11 @@ jobs:
           git config user.email "research@splunk.com"
           git config user.name "publish bot"
           git config --global push.default simple
-          git add *
+          git add _posts/
+          git add _stories/
+          git add _pages/
+          git add _data/
+          git add _playbooks/
           git commit --allow-empty -m "updating research.splunk.com site bits [ci skip]"
           # push quietly to prevent showing the token in log
           # no need to provide any credentials

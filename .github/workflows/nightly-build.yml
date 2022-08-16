@@ -48,6 +48,8 @@ jobs:
       - name: update github with new site
         run: |
           # configure git to prep for commit
+          rm -rf cti
+          rm -rf security_content
           git config user.email "research@splunk.com"
           git config user.name "publish bot"
           git config --global push.default simple

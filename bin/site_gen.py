@@ -26,7 +26,7 @@ def get_cve_enrichment_new(cve_id):
         cve_enriched['cvss'] = result['cvss']
         cve_enriched['summary'] = result['summary']
     except requests.exceptions.JSONDecodeError as exc:
-        print(exc)
+        print(exc, result)
         print("Error getting CVE info for {0}".format(cve_id))
     return cve_enriched
 
@@ -404,8 +404,9 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, messag
                 mitre_attacks.append(mitre_attack)
             detection_yaml['mitre_attacks'] = mitre_attacks
 
-        if SKIP_ENRICHMENT:
-            print("Info skipping CVE and splunk app enrichment for detection {0}".format(detection_yaml['name']))
+        if SKIP_ENRICHMENT == False:
+            if VERBOSE:
+                print("Info CVE and splunk app enrichment for detection {0}".format(detection_yaml['name']))
             # enrich support_tas
             detection_yaml = add_splunk_app(detection_yaml)
 
@@ -416,6 +417,8 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, messag
                     cve = get_cve_enrichment_new(cve_id)
                     cves.append(cve)
                 detection_yaml['cve'] = cves
+        else:
+            print("Info skipping CVE and splunk app enrichment for detection {0}".format(detection_yaml['name']))
 
         # grab the kind
         detection_yaml['kind'] = manifest_file.split('/')[-2]
@@ -532,7 +535,7 @@ if __name__ == "__main__":
     parser.add_argument("-cti_path", "--cpath", required=False, default='cti/', help="path to cti repo")
     parser.add_argument("-o", "--output", required=False, default='.', help="path to the output directory for the docs")
     parser.add_argument("-v", "--verbose", required=False, default=False, action='store_true', help="prints verbose output")
-    parser.add_argument("-s", "--skip_enrichment", required=False, default=False, action='store_true', help="skips app and cve enrichments")
+    parser.add_argument("-s", "--skip_enrichment", required=False, choices=('True','False'), default=False, help="skips app and cve enrichments")
 
     # parse them
     args = parser.parse_args()

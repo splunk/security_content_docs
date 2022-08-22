@@ -19,15 +19,17 @@ SPLUNKBASE_API_URL = "https://apps.splunk.com/api/apps/entriesbyid/"
 
 def get_cve_enrichment_new(cve_id):
     cve_enriched = dict()
+    cve_enriched['id'] = cve_id
+
     try: 
         cve = CVESearch(CVESSEARCH_API_URL)
         result = cve.id(cve_id)
-        cve_enriched['id'] = cve_id
         cve_enriched['cvss'] = result['cvss']
         cve_enriched['summary'] = result['summary']
     except requests.exceptions.JSONDecodeError as exc:
-        print(exc, result)
+        print(exc)
         print("Error getting CVE info for {0}".format(cve_id))
+
     return cve_enriched
 
 def get_all_techniques(projects_path):

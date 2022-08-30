@@ -123,6 +123,7 @@ Ransomware is an ever-present risk to the enterprise, wherein an infected host e
 | [Windows NirSoft AdvancedRun](/endpoint/bb4f3090-7ae4-11ec-897f-acde48001122/) | [Tool](/tags/#tool) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Raccine Scheduled Task Deletion](/endpoint/c9f010da-57ab-11ec-82bd-acde48001122/) | [Disable or Modify Tools](/tags/#disable-or-modify-tools) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Registry Modification for Safe Mode Persistence](/endpoint/c6149154-c9d8-11eb-9da7-acde48001122/) | [Registry Run Keys / Startup Folder](/tags/#registry-run-keys-/-startup-folder), [Boot or Logon Autostart Execution](/tags/#boot-or-logon-autostart-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Remote Access Software Hunt](/endpoint/8bd22c9f-05a2-4db1-b131-29271f28cb0a/) | [Remote Access Software](/tags/#remote-access-software) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

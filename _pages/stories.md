@@ -38,7 +38,7 @@ sidebar:
 | [Cobalt Strike](cobalt_strike) | [Masquerading](/tags/#masquerading), [Trusted Developer Utilities Proxy Execution](/tags/#trusted-developer-utilities-proxy-execution), [Rename System Utilities](/tags/#rename-system-utilities), [MSBuild](/tags/#msbuild) | [Defense Evasion](/tags/#defense-evasion) |
 | [ColdRoot MacOS RAT]() | None | None |
 | [Collection and Staging](collection_and_staging) | [Masquerading](/tags/#masquerading) | [Defense Evasion](/tags/#defense-evasion) |
-| [Command and Control](command_and_control) | [Remote Access Software](/tags/#remote-access-software) | [Command And Control](/tags/#command-and-control) |
+| [Command and Control](command_and_control) | [Application Layer Protocol](/tags/#application-layer-protocol), [Web Protocols](/tags/#web-protocols) | [Command And Control](/tags/#command-and-control) |
 | [Credential Dumping](credential_dumping) | [NTDS](/tags/#ntds), [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [CyclopsBLink](cyclopsblink) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |
 | [DHS Report TA18-074A](dhs_report_ta18-074a) | [Modify Registry](/tags/#modify-registry) | [Defense Evasion](/tags/#defense-evasion) |
@@ -96,7 +96,7 @@ sidebar:
 | [PrintNightmare CVE-2021-34527](printnightmare_cve-2021-34527) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Rundll32](/tags/#rundll32) | [Defense Evasion](/tags/#defense-evasion) |
 | [Prohibited Traffic Allowed or Protocol Mismatch](prohibited_traffic_allowed_or_protocol_mismatch) | [Application Layer Protocol](/tags/#application-layer-protocol), [Web Protocols](/tags/#web-protocols) | [Command And Control](/tags/#command-and-control) |
 | [ProxyShell](proxyshell) | [Server Software Component](/tags/#server-software-component), [Web Shell](/tags/#web-shell) | [Persistence](/tags/#persistence) |
-| [Ransomware](ransomware) | [Remote Access Software](/tags/#remote-access-software) | [Command And Control](/tags/#command-and-control) |
+| [Ransomware](ransomware) | [Registry Run Keys / Startup Folder](/tags/#registry-run-keys-/-startup-folder), [Boot or Logon Autostart Execution](/tags/#boot-or-logon-autostart-execution) | [Persistence](/tags/#persistence) |
 | [Ransomware Cloud](ransomware_cloud) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) | [Impact](/tags/#impact) |
 | [Remcos](remcos) | [Process Injection](/tags/#process-injection), [Create or Modify System Process](/tags/#create-or-modify-system-process), [Parent PID Spoofing](/tags/#parent-pid-spoofing), [Access Token Manipulation](/tags/#access-token-manipulation) | [Defense Evasion](/tags/#defense-evasion) |
 | [Revil Ransomware](revil_ransomware) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [CMSTP](/tags/#cmstp) | [Defense Evasion](/tags/#defense-evasion) |

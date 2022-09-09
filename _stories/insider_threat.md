@@ -45,6 +45,7 @@ Insider Threats are best defined by CISA: "Insider threat incidents are possible
 | [Potential password in username](/endpoint/5ced34b4-ab32-4bb0-8f22-3b8f186f0a38/) | [Local Accounts](/tags/#local-accounts), [Credentials In Files](/tags/#credentials-in-files) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Sdelete Application Execution](/endpoint/fcc52b9a-4616-11ec-8454-acde48001122/) | [Data Destruction](/tags/#data-destruction), [File Deletion](/tags/#file-deletion), [Indicator Removal on Host](/tags/#indicator-removal-on-host) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Unusual Volume of Data Download from Internal Server Per Entity](/network/cca028f4-77dd-11ec-bc09-acde48001122/) | [Data from Information Repositories](/tags/#data-from-information-repositories), [Data from Network Shared Drive](/tags/#data-from-network-shared-drive) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Remote Access Software Hunt](/endpoint/8bd22c9f-05a2-4db1-b131-29271f28cb0a/) | [Remote Access Software](/tags/#remote-access-software) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Users Authenticate Using Explicit Credentials](/endpoint/e61918fa-9ca4-11eb-836c-acde48001122/) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference

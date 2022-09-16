@@ -18,7 +18,7 @@ sidebar:
 | [Azure Active Directory Account Takeover](/stories/azure_active_directory_account_takeover/) | [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying) | [Credential Access](/tags/#credential-access) |
 | [BITS Jobs](/stories/bits_jobs/) | [BITS Jobs](/tags/#bits-jobs), [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [Defense Evasion](/tags/#defense-evasion) |
 | [Baron Samedit CVE-2021-3156](/stories/baron_samedit_cve-2021-3156/) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
-| [Brute Ratel C4](/stories/brute_ratel_c4/) | [Services Registry Permissions Weakness](/tags/#services-registry-permissions-weakness) | [Persistence](/tags/#persistence) |
+| [Brute Ratel C4](/stories/brute_ratel_c4/) | [Service Stop](/tags/#service-stop) | [Impact](/tags/#impact) |
 | [Caddy Wiper](/stories/caddy_wiper/) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [Cobalt Strike](/stories/cobalt_strike/) | [Masquerading](/tags/#masquerading), [Trusted Developer Utilities Proxy Execution](/tags/#trusted-developer-utilities-proxy-execution), [Rename System Utilities](/tags/#rename-system-utilities), [MSBuild](/tags/#msbuild) | [Defense Evasion](/tags/#defense-evasion) |
 | [Collection and Staging](/stories/collection_and_staging/) | [Masquerading](/tags/#masquerading) | [Defense Evasion](/tags/#defense-evasion) |

@@ -27,11 +27,12 @@ sidebar:
 | [Atlassian Confluence Server and Data Center CVE-2022-26134](atlassian_confluence_server_and_data_center_cve-2022-26134) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Azorult](azorult) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |
 | [Azure Active Directory Account Takeover](azure_active_directory_account_takeover) | [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying) | [Credential Access](/tags/#credential-access) |
+| [Azure Active Directory Persistence](azure_active_directory_persistence) | [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [BITS Jobs](bits_jobs) | [BITS Jobs](/tags/#bits-jobs), [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [Defense Evasion](/tags/#defense-evasion) |
 | [Baron Samedit CVE-2021-3156](baron_samedit_cve-2021-3156) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [BlackMatter Ransomware](blackmatter_ransomware) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) | [Impact](/tags/#impact) |
 | [Brand Monitoring]() | None | None |
-| [Brute Ratel C4](brute_ratel_c4) | [Services Registry Permissions Weakness](/tags/#services-registry-permissions-weakness) | [Persistence](/tags/#persistence) |
+| [Brute Ratel C4](brute_ratel_c4) | [Service Stop](/tags/#service-stop) | [Impact](/tags/#impact) |
 | [Caddy Wiper](caddy_wiper) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [Clop Ransomware](clop_ransomware) | [System Services](/tags/#system-services), [Service Execution](/tags/#service-execution) | [Execution](/tags/#execution) |
 | [Cloud Cryptomining](cloud_cryptomining) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |

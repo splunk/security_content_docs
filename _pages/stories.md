@@ -33,6 +33,7 @@ sidebar:
 | [BlackMatter Ransomware](blackmatter_ransomware) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) | [Impact](/tags/#impact) |
 | [Brand Monitoring]() | None | None |
 | [Brute Ratel C4](brute_ratel_c4) | [Service Stop](/tags/#service-stop) | [Impact](/tags/#impact) |
+| [CISA AA22-257A](cisa_aa22-257a) | [Protocol Tunneling](/tags/#protocol-tunneling), [SSH](/tags/#ssh) | [Command And Control](/tags/#command-and-control) |
 | [Caddy Wiper](caddy_wiper) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [Clop Ransomware](clop_ransomware) | [System Services](/tags/#system-services), [Service Execution](/tags/#service-execution) | [Execution](/tags/#execution) |
 | [Cloud Cryptomining](cloud_cryptomining) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |
@@ -119,7 +120,7 @@ sidebar:
 | [Suspicious Cloud Provisioning Activities](suspicious_cloud_provisioning_activities) | [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious Cloud User Activities](suspicious_cloud_user_activities) | [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious Command-Line Executions](suspicious_command-line_executions) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities) | [Defense Evasion](/tags/#defense-evasion) |
-| [Suspicious Compiled HTML Activity](suspicious_compiled_html_activity) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Compiled HTML File](/tags/#compiled-html-file) | [Defense Evasion](/tags/#defense-evasion) |
+| [Suspicious Compiled HTML Activity](suspicious_compiled_html_activity) | [Compiled HTML File](/tags/#compiled-html-file), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious DNS Traffic](suspicious_dns_traffic) | [Exfiltration Over Alternative Protocol](/tags/#exfiltration-over-alternative-protocol) | [Exfiltration](/tags/#exfiltration) |
 | [Suspicious Emails](suspicious_emails) | [Spearphishing Attachment](/tags/#spearphishing-attachment), [Phishing](/tags/#phishing) | [Initial Access](/tags/#initial-access) |
 | [Suspicious GCP Storage Activities](suspicious_gcp_storage_activities) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | [Collection](/tags/#collection) |

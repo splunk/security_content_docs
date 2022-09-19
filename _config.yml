@@ -15,8 +15,7 @@ logo: "/static/logo.png"
 #teaser: "/static/logo.png"
 masthead_title: "Security Content"
 words_per_minute: 200
-search: true
-search_full_content: true
+
 # Social Sharing
 twitter:
   username: splunk
@@ -181,4 +180,6 @@ analytics:
   google:
     tracking_id: "G-294P2LYRR5"
     anonymize_ip: false # default
+
+# search settings
 

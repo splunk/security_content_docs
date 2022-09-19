@@ -18,6 +18,7 @@ sidebar:
 | [AWS Security Hub Alerts]() | None | None |
 | [AWS User Monitoring](/stories/aws_user_monitoring/) | [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Azure Active Directory Account Takeover](/stories/azure_active_directory_account_takeover/) | [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying) | [Credential Access](/tags/#credential-access) |
+| [Azure Active Directory Persistence](/stories/azure_active_directory_persistence/) | [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Cloud Cryptomining](/stories/cloud_cryptomining/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |
 | [Cloud Federated Credential Abuse](/stories/cloud_federated_credential_abuse/) | [Image File Execution Options Injection](/tags/#image-file-execution-options-injection), [Event Triggered Execution](/tags/#event-triggered-execution) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Dev Sec Ops](/stories/dev_sec_ops/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Discovery](/tags/#discovery) |

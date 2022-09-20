@@ -13,5 +13,5 @@ sidebar:
 | [Brand Monitoring]() | None | None |
 | [DNS Amplification Attacks](/stories/dns_amplification_attacks/) | [Network Denial of Service](/tags/#network-denial-of-service), [Reflection Amplification](/tags/#reflection-amplification) | [Impact](/tags/#impact) |
 | [Data Protection](/stories/data_protection/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol) | [Exfiltration](/tags/#exfiltration) |
-| [Information Sabotage](/stories/information_sabotage/) | [Indicator Removal on Host](/tags/#indicator-removal-on-host), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [Defense Evasion](/tags/#defense-evasion) |
+| [Information Sabotage](/stories/information_sabotage/) | [Data Destruction](/tags/#data-destruction), [File Deletion](/tags/#file-deletion), [Indicator Removal on Host](/tags/#indicator-removal-on-host) | [Impact](/tags/#impact) |
 | [Netsh Abuse](/stories/netsh_abuse/) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |

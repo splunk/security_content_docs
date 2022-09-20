@@ -182,4 +182,9 @@ analytics:
     anonymize_ip: false # default
 
 # search settings
+search_provider: lunr
+search_full_content: false
+lunr:
+  search_within_pages: false
+
 

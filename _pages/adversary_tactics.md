@@ -18,10 +18,12 @@ sidebar:
 | [Azure Active Directory Account Takeover](/stories/azure_active_directory_account_takeover/) | [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying) | [Credential Access](/tags/#credential-access) |
 | [BITS Jobs](/stories/bits_jobs/) | [BITS Jobs](/tags/#bits-jobs), [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [Defense Evasion](/tags/#defense-evasion) |
 | [Baron Samedit CVE-2021-3156](/stories/baron_samedit_cve-2021-3156/) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
+| [Brute Ratel C4](/stories/brute_ratel_c4/) | [Service Stop](/tags/#service-stop) | [Impact](/tags/#impact) |
+| [CISA AA22-257A](/stories/cisa_aa22-257a/) | [Protocol Tunneling](/tags/#protocol-tunneling), [SSH](/tags/#ssh) | [Command And Control](/tags/#command-and-control) |
 | [Caddy Wiper](/stories/caddy_wiper/) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [Cobalt Strike](/stories/cobalt_strike/) | [Masquerading](/tags/#masquerading), [Trusted Developer Utilities Proxy Execution](/tags/#trusted-developer-utilities-proxy-execution), [Rename System Utilities](/tags/#rename-system-utilities), [MSBuild](/tags/#msbuild) | [Defense Evasion](/tags/#defense-evasion) |
 | [Collection and Staging](/stories/collection_and_staging/) | [Masquerading](/tags/#masquerading) | [Defense Evasion](/tags/#defense-evasion) |
-| [Command and Control](/stories/command_and_control/) | [Application Layer Protocol](/tags/#application-layer-protocol), [Web Protocols](/tags/#web-protocols) | [Command And Control](/tags/#command-and-control) |
+| [Command and Control](/stories/command_and_control/) | [Remote Access Software](/tags/#remote-access-software) | [Command And Control](/tags/#command-and-control) |
 | [Credential Dumping](/stories/credential_dumping/) | [NTDS](/tags/#ntds), [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [DNS Hijacking](/stories/dns_hijacking/) | [Drive-by Compromise](/tags/#drive-by-compromise) | [Initial Access](/tags/#initial-access) |
 | [Data Exfiltration](/stories/data_exfiltration/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol), [Exfiltration Over Alternative Protocol](/tags/#exfiltration-over-alternative-protocol) | [Exfiltration](/tags/#exfiltration) |
@@ -58,7 +60,7 @@ sidebar:
 | [Spearphishing Attachments](/stories/spearphishing_attachments/) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
 | [Spring4Shell CVE-2022-22965](/stories/spring4shell_cve-2022-22965/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Suspicious Command-Line Executions](/stories/suspicious_command-line_executions/) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities) | [Defense Evasion](/tags/#defense-evasion) |
-| [Suspicious Compiled HTML Activity](/stories/suspicious_compiled_html_activity/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Compiled HTML File](/tags/#compiled-html-file) | [Defense Evasion](/tags/#defense-evasion) |
+| [Suspicious Compiled HTML Activity](/stories/suspicious_compiled_html_activity/) | [Compiled HTML File](/tags/#compiled-html-file), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious DNS Traffic](/stories/suspicious_dns_traffic/) | [Exfiltration Over Alternative Protocol](/tags/#exfiltration-over-alternative-protocol) | [Exfiltration](/tags/#exfiltration) |
 | [Suspicious Emails](/stories/suspicious_emails/) | [Spearphishing Attachment](/tags/#spearphishing-attachment), [Phishing](/tags/#phishing) | [Initial Access](/tags/#initial-access) |
 | [Suspicious MSHTA Activity](/stories/suspicious_mshta_activity/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Mshta](/tags/#mshta) | [Defense Evasion](/tags/#defense-evasion) |

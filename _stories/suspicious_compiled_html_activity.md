@@ -8,6 +8,7 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
+  - Endpoint_Processes
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -17,7 +18,7 @@ tags:
 Monitor and detect techniques used by attackers who leverage the mshta.exe process to execute malicious code.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2021-02-11
 - **Author**: Michael Haag, Splunk
 - **ID**: a09db4d1-3827-4833-87b8-3a397e532119
@@ -37,6 +38,10 @@ Upon usage of InfoTech Storage Handlers, ms-its, its, mk, itss.dll will load.
 | [Detect HTML Help Spawn Child Process](/endpoint/723716de-ee55-4cd4-9759-c44e7e55ba4b/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Compiled HTML File](/tags/#compiled-html-file) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect HTML Help URL in Command Line](/endpoint/8c5835b9-39d9-438b-817c-95f14c69a31e/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Compiled HTML File](/tags/#compiled-html-file) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect HTML Help Using InfoTech Storage Handlers](/endpoint/0b2eefa5-5508-450d-b970-3dd2fb761aec/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Compiled HTML File](/tags/#compiled-html-file) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows System Binary Proxy Execution Compiled HTML File Decompile](/endpoint/2acf0e19-4149-451c-a3f3-39cd3c77e37d/) | [Compiled HTML File](/tags/#compiled-html-file), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows System Binary Proxy Execution Compiled HTML File Decompile](/endpoint/11c32b19-05a6-48a8-ab28-18dbd9ec5d50/) | [Compiled HTML File](/tags/#compiled-html-file), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows System Binary Proxy Execution Compiled HTML File URL In Command Line](/endpoint/0fec631a-7c9b-4e4c-b28b-93260953e25f/) | [Compiled HTML File](/tags/#compiled-html-file), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows System Binary Proxy Execution Compiled HTML File Using InfoTech Storage Handlers](/endpoint/ba0c2450-caea-4086-ac3a-a71e2659754b/) | [Compiled HTML File](/tags/#compiled-html-file), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

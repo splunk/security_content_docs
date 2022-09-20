@@ -52,6 +52,7 @@ Because this communication is so critical for an adversary, they often use techn
 | [Prohibited Network Traffic Allowed](/network/ce5a0962-849f-4720-a678-753fe6674479/) | [Exfiltration Over Alternative Protocol](/tags/#exfiltration-over-alternative-protocol) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Protocol or Port Mismatch](/network/54dc1265-2f74-4b6d-b30d-49eb506a31b3/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol), [Exfiltration Over Alternative Protocol](/tags/#exfiltration-over-alternative-protocol) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [TOR Traffic](/network/ea688274-9c06-4473-b951-e4cb7a5d7a45/) | [Application Layer Protocol](/tags/#application-layer-protocol), [Web Protocols](/tags/#web-protocols) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Remote Access Software Hunt](/endpoint/8bd22c9f-05a2-4db1-b131-29271f28cb0a/) | [Remote Access Software](/tags/#remote-access-software) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

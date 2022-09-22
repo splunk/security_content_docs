@@ -12,7 +12,8 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://splunkresearch.com" # the base hostname & protocol for your site, e.g. http://example.com
 repository: splunk/security_content
 logo: "/static/logo.png"
-teaser: "/static/logo.png"
+# controls logo image on each search result
+#teaser: "/static/logo.png"
 masthead_title: "Security Content"
 words_per_minute: 200
 

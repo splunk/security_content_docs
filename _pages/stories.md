@@ -27,10 +27,13 @@ sidebar:
 | [Atlassian Confluence Server and Data Center CVE-2022-26134](atlassian_confluence_server_and_data_center_cve-2022-26134) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Azorult](azorult) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |
 | [Azure Active Directory Account Takeover](azure_active_directory_account_takeover) | [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying) | [Credential Access](/tags/#credential-access) |
+| [Azure Active Directory Persistence](azure_active_directory_persistence) | [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [BITS Jobs](bits_jobs) | [BITS Jobs](/tags/#bits-jobs), [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [Defense Evasion](/tags/#defense-evasion) |
 | [Baron Samedit CVE-2021-3156](baron_samedit_cve-2021-3156) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [BlackMatter Ransomware](blackmatter_ransomware) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) | [Impact](/tags/#impact) |
 | [Brand Monitoring]() | None | None |
+| [Brute Ratel C4](brute_ratel_c4) | [Service Stop](/tags/#service-stop) | [Impact](/tags/#impact) |
+| [CISA AA22-257A](cisa_aa22-257a) | [Protocol Tunneling](/tags/#protocol-tunneling), [SSH](/tags/#ssh) | [Command And Control](/tags/#command-and-control) |
 | [Caddy Wiper](caddy_wiper) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [Clop Ransomware](clop_ransomware) | [System Services](/tags/#system-services), [Service Execution](/tags/#service-execution) | [Execution](/tags/#execution) |
 | [Cloud Cryptomining](cloud_cryptomining) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |
@@ -38,7 +41,7 @@ sidebar:
 | [Cobalt Strike](cobalt_strike) | [Masquerading](/tags/#masquerading), [Trusted Developer Utilities Proxy Execution](/tags/#trusted-developer-utilities-proxy-execution), [Rename System Utilities](/tags/#rename-system-utilities), [MSBuild](/tags/#msbuild) | [Defense Evasion](/tags/#defense-evasion) |
 | [ColdRoot MacOS RAT]() | None | None |
 | [Collection and Staging](collection_and_staging) | [Masquerading](/tags/#masquerading) | [Defense Evasion](/tags/#defense-evasion) |
-| [Command and Control](command_and_control) | [Application Layer Protocol](/tags/#application-layer-protocol), [Web Protocols](/tags/#web-protocols) | [Command And Control](/tags/#command-and-control) |
+| [Command and Control](command_and_control) | [Remote Access Software](/tags/#remote-access-software) | [Command And Control](/tags/#command-and-control) |
 | [Credential Dumping](credential_dumping) | [NTDS](/tags/#ntds), [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [CyclopsBLink](cyclopsblink) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |
 | [DHS Report TA18-074A](dhs_report_ta18-074a) | [Modify Registry](/tags/#modify-registry) | [Defense Evasion](/tags/#defense-evasion) |
@@ -66,7 +69,7 @@ sidebar:
 | [Hidden Cobra Malware](hidden_cobra_malware) | [SMB/Windows Admin Shares](/tags/#smb/windows-admin-shares), [Remote Services](/tags/#remote-services) | [Lateral Movement](/tags/#lateral-movement) |
 | [IcedID](icedid) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |
 | [Industroyer2](industroyer2) | [Domain Account](/tags/#domain-account), [Account Discovery](/tags/#account-discovery) | [Discovery](/tags/#discovery) |
-| [Information Sabotage](information_sabotage) | [Data Destruction](/tags/#data-destruction), [File Deletion](/tags/#file-deletion), [Indicator Removal on Host](/tags/#indicator-removal-on-host) | [Impact](/tags/#impact) |
+| [Information Sabotage](information_sabotage) | [Indicator Removal on Host](/tags/#indicator-removal-on-host), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [Defense Evasion](/tags/#defense-evasion) |
 | [Ingress Tool Transfer](ingress_tool_transfer) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Insider Threat](insider_threat) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
 | [JBoss Vulnerability](jboss_vulnerability) | [System Information Discovery](/tags/#system-information-discovery) | [Discovery](/tags/#discovery) |
@@ -96,7 +99,7 @@ sidebar:
 | [PrintNightmare CVE-2021-34527](printnightmare_cve-2021-34527) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Rundll32](/tags/#rundll32) | [Defense Evasion](/tags/#defense-evasion) |
 | [Prohibited Traffic Allowed or Protocol Mismatch](prohibited_traffic_allowed_or_protocol_mismatch) | [Application Layer Protocol](/tags/#application-layer-protocol), [Web Protocols](/tags/#web-protocols) | [Command And Control](/tags/#command-and-control) |
 | [ProxyShell](proxyshell) | [Server Software Component](/tags/#server-software-component), [Web Shell](/tags/#web-shell) | [Persistence](/tags/#persistence) |
-| [Ransomware](ransomware) | [Registry Run Keys / Startup Folder](/tags/#registry-run-keys-/-startup-folder), [Boot or Logon Autostart Execution](/tags/#boot-or-logon-autostart-execution) | [Persistence](/tags/#persistence) |
+| [Ransomware](ransomware) | [Remote Access Software](/tags/#remote-access-software) | [Command And Control](/tags/#command-and-control) |
 | [Ransomware Cloud](ransomware_cloud) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) | [Impact](/tags/#impact) |
 | [Remcos](remcos) | [Process Injection](/tags/#process-injection), [Create or Modify System Process](/tags/#create-or-modify-system-process), [Parent PID Spoofing](/tags/#parent-pid-spoofing), [Access Token Manipulation](/tags/#access-token-manipulation) | [Defense Evasion](/tags/#defense-evasion) |
 | [Revil Ransomware](revil_ransomware) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [CMSTP](/tags/#cmstp) | [Defense Evasion](/tags/#defense-evasion) |
@@ -117,7 +120,7 @@ sidebar:
 | [Suspicious Cloud Provisioning Activities](suspicious_cloud_provisioning_activities) | [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious Cloud User Activities](suspicious_cloud_user_activities) | [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious Command-Line Executions](suspicious_command-line_executions) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities) | [Defense Evasion](/tags/#defense-evasion) |
-| [Suspicious Compiled HTML Activity](suspicious_compiled_html_activity) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Compiled HTML File](/tags/#compiled-html-file) | [Defense Evasion](/tags/#defense-evasion) |
+| [Suspicious Compiled HTML Activity](suspicious_compiled_html_activity) | [Compiled HTML File](/tags/#compiled-html-file), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious DNS Traffic](suspicious_dns_traffic) | [Exfiltration Over Alternative Protocol](/tags/#exfiltration-over-alternative-protocol) | [Exfiltration](/tags/#exfiltration) |
 | [Suspicious Emails](suspicious_emails) | [Spearphishing Attachment](/tags/#spearphishing-attachment), [Phishing](/tags/#phishing) | [Initial Access](/tags/#initial-access) |
 | [Suspicious GCP Storage Activities](suspicious_gcp_storage_activities) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | [Collection](/tags/#collection) |

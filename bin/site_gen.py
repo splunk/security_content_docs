@@ -192,7 +192,7 @@ def add_splunk_app(detection):
     return detection
 
 
-def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, sorted_detections, messages, VERBOSE):
+def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack, sorted_detections, messages, VERBOSE):
     manifest_files = []
     for root, dirs, files in walk(REPO_PATH + 'stories'):
         for file in files:
@@ -315,12 +315,13 @@ def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, sorted_de
 
     template = j2_env.get_template('doc_navigation.j2')
     output_path = path.join(OUTPUT_DIR + '/_data/navigation.yml')
-    output = template.render(tactics=sorted(tactics), datamodels=sorted(datamodels), categories=sorted(category_names))
+    output = template.render(types=types, tactics=sorted(tactics), datamodels=sorted(datamodels), categories=sorted(category_names))
     with open(output_path, 'w', encoding="utf-8") as f:
         f.write(output)
     messages.append("doc_gen.py wrote navigation.yml structure to: {0}".format(output_path))
 
     # write navigation _pages
+
     # for datamodels
     template = j2_env.get_template('doc_navigation_pages.j2')
     for datamodel in sorted(datamodels):
@@ -329,6 +330,7 @@ def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, sorted_de
         with open(output_path, 'w', encoding="utf-8") as f:
             f.write(output)
         messages.append("doc_gen.py wrote _page for: {1} structure to: {0}".format(output_path, datamodel))
+
     # for tactics
     for tactic in sorted(tactics):
         output_path = path.join(OUTPUT_DIR + '/_pages/' + tactic.lower().replace(" ", "_") + ".md")
@@ -336,6 +338,23 @@ def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, sorted_de
         with open(output_path, 'w', encoding="utf-8") as f:
             f.write(output)
         messages.append("doc_gen.py wrote _page for: {1} structure to: {0}".format(output_path, tactic))
+
+    # type page
+    template = j2_env.get_template('doc_types_page.j2')
+    output_path = path.join(OUTPUT_DIR + '/_pages/types.md')
+    output = template.render(types=types)
+    with open(output_path, 'w', encoding="utf-8") as f:
+        f.write(output)
+    messages.append("doc_gen.py wrote _page for: {1} structure to: {0}".format(output_path, 'types.md'))
+
+    # for types 
+    template = j2_env.get_template('doc_navigation_type_pages.j2')
+    for type in types:
+        output_path = path.join(OUTPUT_DIR + '/_pages/' + type.lower() + "_type.md")
+        output = template.render(type=type, detections=sorted_detections)
+        with open(output_path, 'w', encoding="utf-8") as f:
+            f.write(output)
+        messages.append("doc_gen.py wrote _page for: {1} structure to: {0}".format(output_path, type))
 
     # for story categories
     template = j2_env.get_template('doc_navigation_story_pages.j2')
@@ -367,8 +386,8 @@ def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, sorted_de
     return sorted_stories, messages
 
 
-def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, attack, messages, VERBOSE, SKIP_ENRICHMENT):
-    types = ["endpoint", "application", "cloud", "network", "web", "experimental", "deprecated"]
+def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack, messages, VERBOSE, SKIP_ENRICHMENT):
+    
     manifest_files = []
     for t in types:
         for root, dirs, files in walk(REPO_PATH + 'detections/' + t):
@@ -569,11 +588,13 @@ if __name__ == "__main__":
         print("error: %s : %s" % (file, e.strerror))
         sys.exit(1)
 
+    # detection categories
+    types = ["endpoint", "application", "cloud", "network", "web", "experimental", "deprecated"]
     messages = []
     print("processing detections")
-    sorted_detections, messages = generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, techniques, messages, VERBOSE, SKIP_ENRICHMENT)
+    sorted_detections, messages = generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, techniques, messages, VERBOSE, SKIP_ENRICHMENT)
     print("processing stories")
-    sorted_stories, messages = generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, techniques, sorted_detections, messages, VERBOSE)
+    sorted_stories, messages = generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, techniques, sorted_detections, messages, VERBOSE)
     print("processing playbooks")
     sorted_playbooks, messages = generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detections, messages, VERBOSE)
     messages = generate_doc_index(OUTPUT_DIR, TEMPLATE_PATH, sorted_detections, sorted_stories, sorted_playbooks, messages, VERBOSE)

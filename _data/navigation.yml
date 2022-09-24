@@ -10,6 +10,22 @@ main:
   - title: "About"
     url: /about/
 detections:
+  - title: "Types"
+    children:
+      - title: Endpoint
+        url: /categories/endpoint
+      - title: Application
+        url: /categories/application
+      - title: Cloud
+        url: /categories/cloud
+      - title: Network
+        url: /categories/network
+      - title: Web
+        url: /categories/web
+      - title: Experimental
+        url: /categories/experimental
+      - title: Deprecated
+        url: /categories/deprecated
   - title: "Tactic"
     children:
       - title: Collection

@@ -1,0 +1,13 @@
+---
+title: "Types"
+layout: categories
+author_profile: false
+permalink: /categories/
+classes: wide
+sidebar:
+  nav: "detections"
+---
+
+{%- for type in types %}
+- [{{ type | capitalize }}](/categories/{{ type }})
+{%- endfor %}

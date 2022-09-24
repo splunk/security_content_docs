@@ -8,7 +8,6 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
-  - Endpoint_Processes
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -18,7 +17,7 @@ tags:
 Adversaries may abuse msiexec.exe to proxy execution of malicious payloads. Msiexec.exe is the command-line utility for the Windows Installer and is thus commonly associated with executing installation packages (.msi).
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-06-16
 - **Author**: Michael Haag, Splunk
 - **ID**: bea2e16b-4599-46ad-a95b-116078726c68
@@ -36,9 +35,6 @@ Adversaries may abuse msiexec.exe to launch local or network accessible MSI file
 | [Windows MSIExec Spawn Discovery Command](/endpoint/e9d05aa2-32f0-411b-930c-5b8ca5c4fcee/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows MSIExec Unregister DLLRegisterServer](/endpoint/a27db3c5-1a9a-46df-a577-765d3f1a3c24/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows MSIExec With Network Connections](/endpoint/827409a1-5393-4d8d-8da4-bbb297c262a7/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows System Binary Proxy Execution MSIExec DLLRegisterServer](/endpoint/8d1d5570-722c-49a3-996c-2e2cceef5163/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows System Binary Proxy Execution MSIExec Remote Download](/endpoint/92cbbf0f-9a6b-4e9d-8c35-cc9244a4e3d5/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows System Binary Proxy Execution MSIExec Unregister DLL](/endpoint/df76a8d1-92e1-4ec9-b8f7-695b5838703e/) | [Msiexec](/tags/#msiexec) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

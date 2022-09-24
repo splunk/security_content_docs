@@ -10,6 +10,12 @@ main:
   - title: "About"
     url: /about/
 detections:
+  - title: "Types"
+    children:
+    {%- for type in types %}
+      - title: {{ type | capitalize }}
+        url: /categories/{{ type }}
+    {%- endfor %}
   - title: "Tactic"
     children:
     {%- for tactic in tactics %}

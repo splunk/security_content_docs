@@ -1,0 +1,17 @@
+---
+title: {{ type|capitalize }}
+layout: categories
+author_profile: false
+classes: wide
+permalink: /categories/{{ type }}
+sidebar:
+  nav: "detections"
+---
+
+| Name    | Technique | Datamodel |
+| --------| --------- |------------|
+{%- for detection in detections -%}
+{% if detection.kind|lower == type|lower %}
+| [{{ detection.name }}](/{{ detection.kind }}/{{ detection.id | lower }}/) | {% if detection.mitre_attacks -%}{% for attack in detection.mitre_attacks -%} [{{ attack.technique }}](/tags/#{{ attack.technique | lower | replace(" ", "-") }}){% if not loop.last -%}, {% endif -%}{%- endfor %}{% else %} None {%- endif %} | {% if detection.datamodel -%}{% for datamodel in detection.datamodel %}[{{ datamodel }}](https://docs.splunk.com/Documentation/CIM/latest/User/{{ datamodel|replace("_", "")}}){% if not loop.last %}, {% endif %}{%- endfor %}{% else %} None {%- endif %} |
+{%- endif -%}
+{%- endfor -%}

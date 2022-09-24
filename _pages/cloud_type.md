@@ -50,11 +50,26 @@ sidebar:
 | [Amazon EKS Kubernetes Pod scan detection](/cloud/dbfca1dd-b8e5-4ba4-be0e-e565e5d62002/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) |  None |
 | [Amazon EKS Kubernetes cluster scan detection](/cloud/294c4686-63dd-4fe6-93a2-ca807626704a/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) |  None |
 | [Azure AD Authentication Failed During MFA Challenge](/cloud/e62c9c2e-bf51-4719-906c-3074618fcc1c/) | [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation) |  None |
+| [Azure AD External Guest User Invited](/cloud/c1fb4edb-cab1-4359-9b40-925ffd797fb5/) | [Cloud Account](/tags/#cloud-account) |  None |
+| [Azure AD Global Administrator Role Assigned](/cloud/825fed20-309d-4fd1-8aaf-cd49c1bb093c/) | [Additional Cloud Roles](/tags/#additional-cloud-roles) |  None |
+| [Azure AD Multi-Factor Authentication Disabled](/cloud/482dd42a-acfa-486b-a0bb-d6fcda27318e/) | [Modify Authentication Process](/tags/#modify-authentication-process) |  None |
+| [Azure AD Multiple Failed MFA Requests For User](/cloud/264ea131-ab1f-41b8-90e0-33ad1a1888ea/) | [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation), [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) |  None |
 | [Azure AD Multiple Users Failing To Authenticate From Ip](/cloud/94481a6a-8f59-4c86-957f-55a71e3612a6/) | [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying) |  None |
+| [Azure AD New Custom Domain Added](/cloud/30c47f45-dd6a-4720-9963-0bca6c8686ef/) | [Domain Policy Modification](/tags/#domain-policy-modification), [Domain Trust Modification](/tags/#domain-trust-modification) |  None |
+| [Azure AD New Federated Domain Added](/cloud/a87cd633-076d-4ab2-9047-977751a3c1a0/) | [Domain Policy Modification](/tags/#domain-policy-modification), [Domain Trust Modification](/tags/#domain-trust-modification) |  None |
+| [Azure AD Privileged Role Assigned](/cloud/a28f0bc3-3400-4a6e-a2da-89b9e95f0d2a/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) |  None |
+| [Azure AD Service Principal Created](/cloud/f8ba49e7-ffd3-4b53-8f61-e73974583c5d/) | [Cloud Account](/tags/#cloud-account) |  None |
+| [Azure AD Service Principal New Client Credentials](/cloud/e3adc0d3-9e4b-4b5d-b662-12cec1adff2a/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Credentials](/tags/#additional-cloud-credentials) |  None |
+| [Azure AD Service Principal Owner Added](/cloud/7ddf2084-6cf3-4a44-be83-474f7b73c701/) | [Account Manipulation](/tags/#account-manipulation) |  None |
 | [Azure AD Successful PowerShell Authentication](/cloud/62f10052-d7b3-4e48-b57b-56f8e3ac7ceb/) | [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) |  None |
 | [Azure AD Successful Single-Factor Authentication](/cloud/a560e7f6-1711-4353-885b-40be53101fcd/) | [Security Account Manager](/tags/#security-account-manager) |  None |
 | [Azure AD Unusual Number of Failed Authentications From Ip](/cloud/3d8d3a36-93b8-42d7-8d91-c5f24cec223d/) | [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying) |  None |
+| [Azure AD User Enabled And Password Reset](/cloud/1347b9e8-2daa-4a6f-be73-b421d3d9e268/) | [Account Manipulation](/tags/#account-manipulation) |  None |
+| [Azure AD User ImmutableId Attribute Updated](/cloud/0c0badad-4536-4a84-a561-5ff760f3c00e/) | [Account Manipulation](/tags/#account-manipulation) |  None |
 | [Azure Active Directory High Risk Sign-in](/cloud/1ecff169-26d7-4161-9a7b-2ac4c8e61bea/) | [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying) |  None |
+| [Azure Automation Account Created](/cloud/860902fd-2e76-46b3-b050-ba548dab576c/) | [Create Account](/tags/#create-account), [Cloud Account](/tags/#cloud-account) |  None |
+| [Azure Automation Runbook Created](/cloud/178d696d-6dc6-4ee8-9d25-93fee34eaf5b/) | [Create Account](/tags/#create-account), [Cloud Account](/tags/#cloud-account) |  None |
+| [Azure Runbook Webhook Created](/cloud/e98944a9-92e4-443c-81b8-a322e33ce75a/) | [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) |  None |
 | [Circle CI Disable Security Job](/cloud/4a2fdd41-c578-4cd4-9ef7-980e352517f2/) | [Compromise Client Software Binary](/tags/#compromise-client-software-binary) |  None |
 | [Circle CI Disable Security Step](/cloud/72cb9de9-e98b-4ac9-80b2-5331bba6ea97/) | [Compromise Client Software Binary](/tags/#compromise-client-software-binary) |  None |
 | [Cloud API Calls From Previously Unseen User Roles](/cloud/2181ad1f-1e73-4d0c-9780-e8880482a08f/) | [Valid Accounts](/tags/#valid-accounts) | [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change) |

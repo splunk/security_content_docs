@@ -50,6 +50,8 @@ The following Splunk detections assist with identifying the HAFNIUM groups trade
 | [Set Default PowerShell Execution Policy To Unrestricted or Bypass](/endpoint/c2590137-0b08-4985-9ec5-6ae23d92f63d/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [PowerShell](/tags/#powershell) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Unified Messaging Service Spawning a Process](/endpoint/f1126df0-7bd5-11eb-988f-acde48001122/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [W3WP Spawning Shell](/endpoint/0f03423c-7c6a-11eb-bc47-acde48001122/) | [Server Software Component](/tags/#server-software-component), [Web Shell](/tags/#web-shell) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows OS Credential Dumping with Ntdsutil Export NTDS](/endpoint/dad9ddec-a72a-47be-87b6-a0f7ba98ed6e/) | [NTDS](/tags/#ntds), [OS Credential Dumping](/tags/#os-credential-dumping) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows OS Credential Dumping with Procdump](/endpoint/e102e297-dbe6-4a19-b319-5c08f4c19a06/) | [LSASS Memory](/tags/#lsass-memory), [OS Credential Dumping](/tags/#os-credential-dumping) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Powershell Connect to Internet With Hidden Window](/endpoint/477e068e-8b6d-11ec-b6c1-81af21670352/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference

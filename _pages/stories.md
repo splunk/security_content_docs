@@ -22,6 +22,7 @@ sidebar:
 | [Active Directory Kerberos Attacks](active_directory_kerberos_attacks) | [Remote System Discovery](/tags/#remote-system-discovery) | [Discovery](/tags/#discovery) |
 | [Active Directory Lateral Movement](active_directory_lateral_movement) | [Remote Services](/tags/#remote-services), [Windows Remote Management](/tags/#windows-remote-management) | [Lateral Movement](/tags/#lateral-movement) |
 | [Active Directory Password Spraying](active_directory_password_spraying) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
+| [AgentTesla](agenttesla) | [Spearphishing Attachment](/tags/#spearphishing-attachment), [Phishing](/tags/#phishing) | [Initial Access](/tags/#initial-access) |
 | [Apache Struts Vulnerability](apache_struts_vulnerability) | [System Information Discovery](/tags/#system-information-discovery) | [Discovery](/tags/#discovery) |
 | [Asset Tracking]() | None | None |
 | [Atlassian Confluence Server and Data Center CVE-2022-26134](atlassian_confluence_server_and_data_center_cve-2022-26134) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |

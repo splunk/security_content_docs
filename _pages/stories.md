@@ -10,10 +10,10 @@ sidebar:
 
 | Name    |   Technique |     Tactic   |
 | ----------- | ----------- |--------------|
-| [AWS Credential Access](aws_credential_access) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |
 | [AWS Cross Account Activity](aws_cross_account_activity) | [Use Alternate Authentication Material](/tags/#use-alternate-authentication-material) | [Defense Evasion](/tags/#defense-evasion) |
 | [AWS Defense Evasion](aws_defense_evasion) | [Impair Defenses](/tags/#impair-defenses), [Disable Cloud Logs](/tags/#disable-cloud-logs) | [Defense Evasion](/tags/#defense-evasion) |
 | [AWS IAM Privilege Escalation](aws_iam_privilege_escalation) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) | [Persistence](/tags/#persistence) |
+| [AWS Identity and Access Management Account Takeover](aws_identity_and_access_management_account_takeover) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |
 | [AWS Network ACL Activity](aws_network_acl_activity) | [Disable or Modify Cloud Firewall](/tags/#disable-or-modify-cloud-firewall) | [Defense Evasion](/tags/#defense-evasion) |
 | [AWS Security Hub Alerts]() | None | None |
 | [AWS User Monitoring](aws_user_monitoring) | [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
@@ -35,6 +35,7 @@ sidebar:
 | [Brand Monitoring]() | None | None |
 | [Brute Ratel C4](brute_ratel_c4) | [Service Stop](/tags/#service-stop) | [Impact](/tags/#impact) |
 | [CISA AA22-257A](cisa_aa22-257a) | [Protocol Tunneling](/tags/#protocol-tunneling), [SSH](/tags/#ssh) | [Command And Control](/tags/#command-and-control) |
+| [CISA AA22-264A](cisa_aa22-264a) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Caddy Wiper](caddy_wiper) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [Clop Ransomware](clop_ransomware) | [System Services](/tags/#system-services), [Service Execution](/tags/#service-execution) | [Execution](/tags/#execution) |
 | [Cloud Cryptomining](cloud_cryptomining) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |

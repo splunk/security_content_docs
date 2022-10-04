@@ -37,11 +37,13 @@ sidebar:
 | [AWS IAM Failure Group Deletion](/cloud/723b861a-92eb-11eb-93b8-acde48001122/) | [Account Manipulation](/tags/#account-manipulation) |  None |
 | [AWS IAM Successful Group Deletion](/cloud/e776d06c-9267-11eb-819b-acde48001122/) | [Cloud Groups](/tags/#cloud-groups), [Account Manipulation](/tags/#account-manipulation), [Permission Groups Discovery](/tags/#permission-groups-discovery) |  None |
 | [AWS Lambda UpdateFunctionCode](/cloud/211b80d3-6340-4345-11ad-212bf3d0d111/) | [User Execution](/tags/#user-execution) |  None |
+| [AWS Multiple Users Failing To Authenticate From Ip](/cloud/71e1fb89-dd5f-4691-8523-575420de4630/) | [Security Account Manager](/tags/#security-account-manager) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [AWS Network Access Control List Created with All Open Ports](/cloud/ada0f478-84a8-4641-a3f1-d82362d6bd75/) | [Disable or Modify Cloud Firewall](/tags/#disable-or-modify-cloud-firewall), [Impair Defenses](/tags/#impair-defenses) |  None |
 | [AWS Network Access Control List Deleted](/cloud/ada0f478-84a8-4641-a3f1-d82362d6fd75/) | [Disable or Modify Cloud Firewall](/tags/#disable-or-modify-cloud-firewall), [Impair Defenses](/tags/#impair-defenses) |  None |
 | [AWS SAML Access by Provider User and Principal](/cloud/bbe23980-6019-11eb-ae93-0242ac130002/) | [Valid Accounts](/tags/#valid-accounts) |  None |
 | [AWS SAML Update identity provider](/cloud/2f0604c6-6030-11eb-ae93-0242ac130002/) | [Valid Accounts](/tags/#valid-accounts) |  None |
 | [AWS SetDefaultPolicyVersion](/cloud/2a9b80d3-6340-4345-11ad-212bf3d0dac4/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) |  None |
+| [AWS Unusual Number of Failed Authentications From Ip](/cloud/0b5c9c2b-e2cb-4831-b4f1-af125ceb1386/) | [Security Account Manager](/tags/#security-account-manager) |  None |
 | [AWS UpdateLoginProfile](/cloud/2a9b80d3-6a40-4115-11ad-212bf3d0d111/) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) |  None |
 | [Abnormally High Number Of Cloud Infrastructure API Calls](/cloud/0840ddf1-8c89-46ff-b730-c8d6722478c0/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) | [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change) |
 | [Abnormally High Number Of Cloud Instances Destroyed](/cloud/ef629fc9-1583-4590-b62a-f2247fbf7bbf/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) | [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change) |
@@ -84,7 +86,7 @@ sidebar:
 | [Cloud Provisioning Activity From Previously Unseen Region](/cloud/5aba1860-9617-4af9-b19d-aecac16fe4f2/) | [Valid Accounts](/tags/#valid-accounts) | [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change) |
 | [Correlation by Repository and Risk](/cloud/8da9fdd9-6a1b-4ae0-8a34-8c25e6be9687/) | [Malicious Image](/tags/#malicious-image), [User Execution](/tags/#user-execution) |  None |
 | [Correlation by User and Risk](/cloud/610e12dc-b6fa-4541-825e-4a0b3b6f6773/) | [Malicious Image](/tags/#malicious-image), [User Execution](/tags/#user-execution) |  None |
-| [Detect AWS Console Login by New User](/cloud/bc91a8cd-35e7-4bb2-6140-e756cc46fd71/) |  None | [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication) |
+| [Detect AWS Console Login by New User](/cloud/bc91a8cd-35e7-4bb2-6140-e756cc46fd71/) | [Unsecured Credentials](/tags/#unsecured-credentials) | [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication) |
 | [Detect AWS Console Login by User from New City](/cloud/121b0b11-f8ac-4ed6-a132-3800ca4fc07a/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication) |
 | [Detect AWS Console Login by User from New Country](/cloud/67bd3def-c41c-4bf6-837b-ae196b4257c6/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication) |
 | [Detect AWS Console Login by User from New Region](/cloud/9f31aa8e-e37c-46bc-bce1-8b3be646d026/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication) |

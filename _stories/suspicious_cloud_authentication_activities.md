@@ -33,7 +33,7 @@ This Analytic Story has data model versions of cloud searches leveraging Authent
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
 | [AWS Cross Account Activity From Previously Unseen Account](/cloud/21193641-cb96-4a2c-a707-d9b9a7f7792b/) |  | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Detect AWS Console Login by New User](/cloud/bc91a8cd-35e7-4bb2-6140-e756cc46fd71/) |  | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect AWS Console Login by New User](/cloud/bc91a8cd-35e7-4bb2-6140-e756cc46fd71/) | [Unsecured Credentials](/tags/#unsecured-credentials) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect AWS Console Login by User from New City](/cloud/121b0b11-f8ac-4ed6-a132-3800ca4fc07a/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect AWS Console Login by User from New Country](/cloud/67bd3def-c41c-4bf6-837b-ae196b4257c6/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect AWS Console Login by User from New Region](/cloud/9f31aa8e-e37c-46bc-bce1-8b3be646d026/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

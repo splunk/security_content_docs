@@ -95,6 +95,7 @@ sidebar:
 | [Netsh Abuse](netsh_abuse) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |
 | [Network Discovery](network_discovery) | [System Network Configuration Discovery](/tags/#system-network-configuration-discovery) | [Discovery](/tags/#discovery) |
 | [Office 365 Detections](office_365_detections) | [Email Forwarding Rule](/tags/#email-forwarding-rule), [Email Collection](/tags/#email-collection) | [Collection](/tags/#collection) |
+| [Okta MFA Exhaustion](okta_mfa_exhaustion) | [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
 | [Orangeworm Attack Group](orangeworm_attack_group) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [Persistence](/tags/#persistence) |
 | [PetitPotam NTLM Relay on Active Directory Certificate Services](petitpotam_ntlm_relay_on_active_directory_certificate_services) | [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [Possible Backdoor Activity Associated With MUDCARP Espionage Campaigns](possible_backdoor_activity_associated_with_mudcarp_espionage_campaigns) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |

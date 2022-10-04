@@ -18,8 +18,16 @@ sidebar:
 | [Monitor Email For Brand Abuse](/application/b2ea1f38-3a3e-4b8a-9cf1-82760d86a6b8/) |  None | [Email](https://docs.splunk.com/Documentation/CIM/latest/User/Email) |
 | [Multiple Okta Users With Invalid Credentials From The Same IP](/application/19cba45f-cad3-4032-8911-0c09e0444552/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
 | [No Windows Updates in a time frame](/application/1a77c08c-2f56-409c-a2d3-7d64617edd4f/) |  None | [Updates](https://docs.splunk.com/Documentation/CIM/latest/User/Updates) |
+| [Okta Account Locked Out](/application/d650c0ae-bdc5-400e-9f0f-f7aa0a010ef1/) | [Brute Force](/tags/#brute-force) |  None |
 | [Okta Account Lockout Events](/application/62b70968-a0a5-4724-8ac4-67871e6f544d/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
 | [Okta Failed SSO Attempts](/application/371a6545-2618-4032-ad84-93386b8698c5/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
+| [Okta MFA Exhaustion Hunt](/application/97e2fe57-3740-402c-988a-76b64ce04b8d/) | [Brute Force](/tags/#brute-force) |  None |
+| [Okta New API Token Created](/application/c3d22720-35d3-4da4-bd0a-740d37192bd4/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
+| [Okta New Device Enrolled on Account](/application/bb27cbce-d4de-432c-932f-2e206e9130fb/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
+| [Okta Risk Threshold Exceeded](/application/d8b967dd-657f-4d88-93b5-c588bcd7218c/) | [Valid Accounts](/tags/#valid-accounts), [Brute Force](/tags/#brute-force) | [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk) |
+| [Okta Suspicious Activity Reported](/application/bfc840f5-c9c6-454c-aa13-b46fd0bf1e79/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
+| [Okta ThreatInsight Threat Detected](/application/140504ae-5fe2-4d65-b2bc-a211813fbca6/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
+| [Okta Two or More Rejected Okta Pushes](/application/d93f785e-4c2c-4262-b8c7-12b77a13fd39/) | [Brute Force](/tags/#brute-force) |  None |
 | [Okta User Logins From Multiple Cities](/application/7594fa07-9f34-4d01-81cc-d6af6a5db9e8/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
 | [Path traversal SPL injection](/application/dfe55688-82ed-4d24-a21b-ed8f0e0fda99/) | [File and Directory Discovery](/tags/#file-and-directory-discovery) |  None |
 | [Splunk Account Discovery Drilldown Dashboard Disclosure](/application/f844c3f6-fd99-43a2-ba24-93e35fe84be6/) | [Account Discovery](/tags/#account-discovery) |  None |

@@ -160,7 +160,7 @@ The SPL above uses the following Lookups:
 {% endfor %}
 {% endif -%}
 
-{% if detection.z %}
+{% if detection.splunk_app_enrichment %}
 #### Supported Add-on (TA)
 List of [Splunk Add-on's](https://docs.splunk.com/Documentation/AddOns/released/Overview/AboutSplunkadd-ons) tested to work with the analytic.
 {% for splunk_app in detection.splunk_app_enrichment %}

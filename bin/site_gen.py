@@ -547,6 +547,46 @@ def generate_doc_index(OUTPUT_DIR, TEMPLATE_PATH, sorted_detections, sorted_stor
 
     return messages
 
+
+def wipe_old_folders(OUTPUT_DIR, VERBOSE):
+    
+    if VERBOSE:
+        print("wiping the {0}/_posts/* folder".format(OUTPUT_DIR))
+
+    try:
+        for root, dirs, files in walk(OUTPUT_DIR + '/_posts/'):
+            for file in files:
+                if file.endswith(".md"):
+                    remove(OUTPUT_DIR + '/_posts/' + file)
+    except OSError as e:
+        print("error: %s : %s" % (file, e.strerror))
+        sys.exit(1)
+
+    if VERBOSE:
+        print("wiping the {0}/_stories/* folder".format(OUTPUT_DIR))
+
+    try:
+        for root, dirs, files in walk(OUTPUT_DIR + '/_stories/'):
+            for file in files:
+                if file.endswith(".md"):
+                    remove(OUTPUT_DIR + '/_stories/' + file)
+    except OSError as e:
+        print("error: %s : %s" % (file, e.strerror))
+        sys.exit(1)
+
+    if VERBOSE:
+        print("wiping the {0}/_playbooks/* folder".format(OUTPUT_DIR))
+
+    try:
+        for root, dirs, files in walk(OUTPUT_DIR + '/_playbooks/'):
+            for file in files:
+                if file.endswith(".md"):
+                    remove(OUTPUT_DIR + '/_playbooks/' + file)
+    except OSError as e:
+        print("error: %s : %s" % (file, e.strerror))
+        sys.exit(1)
+
+
 if __name__ == "__main__":
 
     # grab arguments
@@ -576,17 +616,7 @@ if __name__ == "__main__":
         print("getting mitre enrichment data from cti")
     techniques = get_all_techniques(CTI_PATH)
 
-    if VERBOSE:
-        print("wiping the {0}/_posts/* folder".format(OUTPUT_DIR))
-
-    try:
-        for root, dirs, files in walk(OUTPUT_DIR + '/_posts/'):
-            for file in files:
-                if file.endswith(".md"):
-                    remove(OUTPUT_DIR + '/_posts/' + file)
-    except OSError as e:
-        print("error: %s : %s" % (file, e.strerror))
-        sys.exit(1)
+    wipe_old_folders(OUTPUT_DIR, VERBOSE)
 
     # detection categories
     types = ["endpoint", "application", "cloud", "network", "web", "experimental", "deprecated"]

@@ -36,6 +36,7 @@ sidebar:
 | [Brute Ratel C4](brute_ratel_c4) | [Service Stop](/tags/#service-stop) | [Impact](/tags/#impact) |
 | [CISA AA22-257A](cisa_aa22-257a) | [Protocol Tunneling](/tags/#protocol-tunneling), [SSH](/tags/#ssh) | [Command And Control](/tags/#command-and-control) |
 | [CISA AA22-264A](cisa_aa22-264a) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
+| [CISA AA22-277A](cisa_aa22-277a) | [System Network Configuration Discovery](/tags/#system-network-configuration-discovery), [Internet Connection Discovery](/tags/#internet-connection-discovery) | [Discovery](/tags/#discovery) |
 | [Caddy Wiper](caddy_wiper) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [Clop Ransomware](clop_ransomware) | [System Services](/tags/#system-services), [Service Execution](/tags/#service-execution) | [Execution](/tags/#execution) |
 | [Cloud Cryptomining](cloud_cryptomining) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |
@@ -101,7 +102,8 @@ sidebar:
 | [Possible Backdoor Activity Associated With MUDCARP Espionage Campaigns](possible_backdoor_activity_associated_with_mudcarp_espionage_campaigns) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [PrintNightmare CVE-2021-34527](printnightmare_cve-2021-34527) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Rundll32](/tags/#rundll32) | [Defense Evasion](/tags/#defense-evasion) |
 | [Prohibited Traffic Allowed or Protocol Mismatch](prohibited_traffic_allowed_or_protocol_mismatch) | [Application Layer Protocol](/tags/#application-layer-protocol), [Web Protocols](/tags/#web-protocols) | [Command And Control](/tags/#command-and-control) |
-| [ProxyShell](proxyshell) | [Server Software Component](/tags/#server-software-component), [Web Shell](/tags/#web-shell) | [Persistence](/tags/#persistence) |
+| [ProxyNotShell](proxynotshell) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
+| [ProxyShell](proxyshell) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Ransomware](ransomware) | [Remote Access Software](/tags/#remote-access-software) | [Command And Control](/tags/#command-and-control) |
 | [Ransomware Cloud](ransomware_cloud) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) | [Impact](/tags/#impact) |
 | [Remcos](remcos) | [Process Injection](/tags/#process-injection), [Create or Modify System Process](/tags/#create-or-modify-system-process), [Parent PID Spoofing](/tags/#parent-pid-spoofing), [Access Token Manipulation](/tags/#access-token-manipulation) | [Defense Evasion](/tags/#defense-evasion) |

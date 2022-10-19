@@ -41,6 +41,7 @@ Attackers are developing increasingly sophisticated techniques for hijacking tar
 | [Registry Keys for Creating SHIM Databases](/endpoint/f5f6af30-7aa7-4295-bfe9-07fe87c01bbb/) | [Application Shimming](/tags/#application-shimming), [Event Triggered Execution](/tags/#event-triggered-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Remote Registry Key modifications](/deprecated/c9f4b923-f8af-4155-b697-1354f5dcbc5e/) |  | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Suspicious Changes to File Associations](/deprecated/1b989a0e-0129-4446-a695-f193a5b746fc/) | [Change Default File Association](/tags/#change-default-file-association) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Mshta Execution In Registry](/endpoint/e13ceade-b673-4d34-adc4-4d9c01729753/) | [Mshta](/tags/#mshta) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Service Creation Using Registry Entry](/endpoint/25212358-948e-11ec-ad47-acde48001122/) | [Services Registry Permissions Weakness](/tags/#services-registry-permissions-weakness) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference

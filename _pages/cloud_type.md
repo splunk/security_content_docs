@@ -10,6 +10,7 @@ sidebar:
 
 | Name    | Technique | Datamodel |
 | --------| --------- |------------|
+| [AWS Console Login Failed During MFA Challenge](/cloud/55349868-5583-466f-98ab-d3beb321961e/) | [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation) |  None |
 | [AWS Create Policy Version to allow all resources](/cloud/2a9b80d3-6340-4345-b5ad-212bf3d0dac4/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) |  None |
 | [AWS CreateAccessKey](/cloud/2a9b80d3-6340-4345-11ad-212bf3d0d111/) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) |  None |
 | [AWS CreateLoginProfile](/cloud/2a9b80d3-6340-4345-11ad-212bf444d111/) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) |  None |
@@ -37,12 +38,15 @@ sidebar:
 | [AWS IAM Failure Group Deletion](/cloud/723b861a-92eb-11eb-93b8-acde48001122/) | [Account Manipulation](/tags/#account-manipulation) |  None |
 | [AWS IAM Successful Group Deletion](/cloud/e776d06c-9267-11eb-819b-acde48001122/) | [Cloud Groups](/tags/#cloud-groups), [Account Manipulation](/tags/#account-manipulation), [Permission Groups Discovery](/tags/#permission-groups-discovery) |  None |
 | [AWS Lambda UpdateFunctionCode](/cloud/211b80d3-6340-4345-11ad-212bf3d0d111/) | [User Execution](/tags/#user-execution) |  None |
+| [AWS Multi-Factor Authentication Disabled](/cloud/374832b1-3603-420c-b456-b373e24d34c0/) | [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
+| [AWS Multiple Failed MFA Requests For User](/cloud/1fece617-e614-4329-9e61-3ba228c0f353/) | [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation) |  None |
 | [AWS Multiple Users Failing To Authenticate From Ip](/cloud/71e1fb89-dd5f-4691-8523-575420de4630/) | [Security Account Manager](/tags/#security-account-manager) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [AWS Network Access Control List Created with All Open Ports](/cloud/ada0f478-84a8-4641-a3f1-d82362d6bd75/) | [Disable or Modify Cloud Firewall](/tags/#disable-or-modify-cloud-firewall), [Impair Defenses](/tags/#impair-defenses) |  None |
 | [AWS Network Access Control List Deleted](/cloud/ada0f478-84a8-4641-a3f1-d82362d6fd75/) | [Disable or Modify Cloud Firewall](/tags/#disable-or-modify-cloud-firewall), [Impair Defenses](/tags/#impair-defenses) |  None |
 | [AWS SAML Access by Provider User and Principal](/cloud/bbe23980-6019-11eb-ae93-0242ac130002/) | [Valid Accounts](/tags/#valid-accounts) |  None |
 | [AWS SAML Update identity provider](/cloud/2f0604c6-6030-11eb-ae93-0242ac130002/) | [Valid Accounts](/tags/#valid-accounts) |  None |
 | [AWS SetDefaultPolicyVersion](/cloud/2a9b80d3-6340-4345-11ad-212bf3d0dac4/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) |  None |
+| [AWS Successful Single-Factor Authentication](/cloud/a520b1fe-cc9e-4f56-b762-18354594c52f/) | [Cloud Accounts](/tags/#cloud-accounts) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [AWS Unusual Number of Failed Authentications From Ip](/cloud/0b5c9c2b-e2cb-4831-b4f1-af125ceb1386/) | [Security Account Manager](/tags/#security-account-manager) |  None |
 | [AWS UpdateLoginProfile](/cloud/2a9b80d3-6a40-4115-11ad-212bf3d0d111/) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) |  None |
 | [Abnormally High Number Of Cloud Infrastructure API Calls](/cloud/0840ddf1-8c89-46ff-b730-c8d6722478c0/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) | [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change) |

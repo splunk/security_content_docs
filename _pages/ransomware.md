@@ -10,4 +10,4 @@ sidebar:
 
 | Name        | Technique   | Tactic       |
 | ----------- | ----------- |--------------|
-| [ProxyShell](/stories/proxyshell/) | [Server Software Component](/tags/#server-software-component), [Web Shell](/tags/#web-shell) | [Persistence](/tags/#persistence) |
+| [ProxyShell](/stories/proxyshell/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |

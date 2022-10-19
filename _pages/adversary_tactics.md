@@ -21,6 +21,7 @@ sidebar:
 | [Brute Ratel C4](/stories/brute_ratel_c4/) | [Service Stop](/tags/#service-stop) | [Impact](/tags/#impact) |
 | [CISA AA22-257A](/stories/cisa_aa22-257a/) | [Protocol Tunneling](/tags/#protocol-tunneling), [SSH](/tags/#ssh) | [Command And Control](/tags/#command-and-control) |
 | [CISA AA22-264A](/stories/cisa_aa22-264a/) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
+| [CISA AA22-277A](/stories/cisa_aa22-277a/) | [System Network Configuration Discovery](/tags/#system-network-configuration-discovery), [Internet Connection Discovery](/tags/#internet-connection-discovery) | [Discovery](/tags/#discovery) |
 | [Caddy Wiper](/stories/caddy_wiper/) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [Cobalt Strike](/stories/cobalt_strike/) | [Masquerading](/tags/#masquerading), [Trusted Developer Utilities Proxy Execution](/tags/#trusted-developer-utilities-proxy-execution), [Rename System Utilities](/tags/#rename-system-utilities), [MSBuild](/tags/#msbuild) | [Defense Evasion](/tags/#defense-evasion) |
 | [Collection and Staging](/stories/collection_and_staging/) | [Masquerading](/tags/#masquerading) | [Defense Evasion](/tags/#defense-evasion) |
@@ -55,7 +56,8 @@ sidebar:
 | [Okta MFA Exhaustion](/stories/okta_mfa_exhaustion/) | [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
 | [PetitPotam NTLM Relay on Active Directory Certificate Services](/stories/petitpotam_ntlm_relay_on_active_directory_certificate_services/) | [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [Possible Backdoor Activity Associated With MUDCARP Espionage Campaigns](/stories/possible_backdoor_activity_associated_with_mudcarp_espionage_campaigns/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
-| [ProxyShell](/stories/proxyshell/) | [Server Software Component](/tags/#server-software-component), [Web Shell](/tags/#web-shell) | [Persistence](/tags/#persistence) |
+| [ProxyNotShell](/stories/proxynotshell/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
+| [ProxyShell](/stories/proxyshell/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [SQL Injection](/stories/sql_injection/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Signed Binary Proxy Execution InstallUtil](/stories/signed_binary_proxy_execution_installutil/) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [InstallUtil](/tags/#installutil) | [Defense Evasion](/tags/#defense-evasion) |
 | [Silver Sparrow](/stories/silver_sparrow/) | [Data Staged](/tags/#data-staged) | [Collection](/tags/#collection) |

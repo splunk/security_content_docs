@@ -30,9 +30,9 @@ This playbook retrieves IP addresses, domains, and file hashes, blocks them on v
 #### How To Implement
 This playbook uses the following custom lists:  ip_address_blocklist, domain_blocklist, filehash_blocklist. This playbook provides an easy, automated, and straightforward solution to maintaining up-to-date IP address, file, and domain blocklists. The playbook looks for any of the required CEF fields within the container. The CEF value is then cross-referenced with their respective Custom Lists. IP addresses are blocked on a Firewall, while domains are blocked using a blocklist service.  The blocking of these two will prevent access to the IOCs.  Finally, file hashes are blocked using an endpoint protection service, which will prevent the process from running on affected endpoints within a network. After the IOCs are blocked using various apps, they are added to their respective custom lists as to maintain a running blocklist record.
 
-#### [Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/block_indicators.json)
+#### [View Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/block_indicators.json)
 
-[![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/block_indicators.png =250x250)](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/block_indicators.json)
+[![view](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/block_indicators.png){:height="200px" width="200px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/block_indicators.json)
 
 #### Required field
 * destinationDnsDomain

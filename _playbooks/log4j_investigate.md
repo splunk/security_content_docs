@@ -10304,9 +10304,9 @@ Published in response to CVE-2021-44228, this playbook and its sub-playbooks can
 #### How To Implement
 To start this playbook, create a custom list called &#34;log4j_hosts&#34; with a format in which the first column should be an IP or hostname of a potentially affected log4j host, the second should be the operating system family (either unix or windows). If the operating system is unknown it can be left blank. In the block called &#34;fetch_hosts_from_custom_list&#34;, change the custom list name from &#34;log4j_hosts&#34; if needed. If the operating system family (&#34;windows&#34; or &#34;unix&#34;) is not known, both ssh and winrm will be attempted. If ssh and/or winrm are not the preferred endpoint management methods, these playbooks could be ported to use Google&#39;s GRR, osquery,  CrowdStrike&#39;s RTR, Carbon Black&#39;s EDR API, or similar tools. The artifact scope &#34;all&#34; is used throughout this playbook because the artifact list can be added to as the playbook progresses.
 
-#### [Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/log4j_investigate.json)
+#### [View Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/log4j_investigate.json)
 
-[![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/log4j_investigate.png =250x250)](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/log4j_investigate.json)
+[![view](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/log4j_investigate.png){:height="200px" width="200px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/log4j_investigate.json)
 
 #### Required field
 

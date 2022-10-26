@@ -28,9 +28,9 @@ This playbook was designed to be called by a user to process indicators that are
 #### How To Implement
 tbd
 
-#### [Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_review_indicators.json)
+#### [View Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_review_indicators.json)
 
-[![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/risk_notable_review_indicators.png =250x250)](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_review_indicators.json)
+[![view](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/risk_notable_review_indicators.png){:height="200px" width="200px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_review_indicators.json)
 
 #### Required field
 

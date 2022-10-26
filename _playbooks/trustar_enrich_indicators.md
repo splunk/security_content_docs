@@ -28,9 +28,9 @@ Use TruSTAR to gather threat information about indicators in a SOAR event. Tag t
 #### How To Implement
 To use this playbook as a sub-playbook of &#34;threat_intel_investigate&#34;, copy it to the local git repository and make sure it has the tags &#34;investigate&#34; and &#34;threat_intel&#34;. To use this playbook as a sub-playbook of &#34;risk_notable_enrich&#34;, copy it to local and make sure it has the tags &#34;investigate&#34; and &#34;risk_notable&#34; To control the types of indicators processed by this playbook, change the data types of the &#34;indicators&#34; input&#34;
 
-#### [Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/trustar_enrich_indicators.json)
+#### [View Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/trustar_enrich_indicators.json)
 
-[![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/trustar_enrich_indicators.png =250x250)](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/trustar_enrich_indicators.json)
+[![view](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/trustar_enrich_indicators.png){:height="200px" width="200px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/trustar_enrich_indicators.json)
 
 #### Required field
 * indicators

@@ -27,9 +27,9 @@ This playbook checks for the presence of the Risk Response workbook and updates 
 #### How To Implement
 tbd
 
-#### [Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_mitigate.json)
+#### [View Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_mitigate.json)
 
-[![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/risk_notable_mitigate.png =250x250)](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_mitigate.json)
+[![view](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/risk_notable_mitigate.png){:height="200px" width="200px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_mitigate.json)
 
 #### Required field
 

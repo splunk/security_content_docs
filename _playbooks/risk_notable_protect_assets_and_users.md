@@ -28,9 +28,9 @@ This playbook attempts to find assets and users from the notable event and match
 #### How To Implement
 tbd
 
-#### [Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_protect_assets_and_users.json)
+#### [View Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_protect_assets_and_users.json)
 
-[![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/risk_notable_protect_assets_and_users.png =250x250)](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_protect_assets_and_users.json)
+[![view](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/risk_notable_protect_assets_and_users.png){:height="200px" width="200px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_protect_assets_and_users.json)
 
 #### Required field
 

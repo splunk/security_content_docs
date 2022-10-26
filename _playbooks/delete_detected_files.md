@@ -1170,9 +1170,9 @@ This playbook acts upon events where a file has been determined to be malicious 
 #### How To Implement
 This playbook reads and then deletes files stored with artifact:*.cef.filePath from hosts stored in artifact:*.cef.destinationAddress. Windows Remote Management must be enabled on the remote computer.
 
-#### [Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/delete_detected_files.json)
+#### [View Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/delete_detected_files.json)
 
-[![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/delete_detected_files.png =250x250)](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/delete_detected_files.json)
+[![view](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/delete_detected_files.png){:height="200px" width="200px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/delete_detected_files.json)
 
 #### Required field
 * filePath

@@ -28,9 +28,9 @@ Published in response to CVE-2021-44228, this playbook accepts a list of hosts a
 #### How To Implement
 The ssh asset may require ssh access to delete some files depending on their permissions.
 
-#### [Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_ssh_log4j_respond.json)
+#### [View Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_ssh_log4j_respond.json)
 
-[![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/internal_host_ssh_log4j_respond.png =250x250)](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_ssh_log4j_respond.json)
+[![view](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/internal_host_ssh_log4j_respond.png){:height="200px" width="200px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_ssh_log4j_respond.json)
 
 #### Required field
 

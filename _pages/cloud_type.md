@@ -94,14 +94,14 @@ sidebar:
 | [Detect AWS Console Login by User from New City](/cloud/121b0b11-f8ac-4ed6-a132-3800ca4fc07a/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication) |
 | [Detect AWS Console Login by User from New Country](/cloud/67bd3def-c41c-4bf6-837b-ae196b4257c6/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication) |
 | [Detect AWS Console Login by User from New Region](/cloud/9f31aa8e-e37c-46bc-bce1-8b3be646d026/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication) |
-| [Detect GCP Storage access from a new IP](/cloud/ccc3246a-daa1-11ea-87d0-0242ac130022/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) |  None |
-| [Detect New Open GCP Storage Buckets](/cloud/f6ea3466-d6bb-11ea-87d0-0242ac130003/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) |  None |
-| [Detect New Open S3 Buckets over AWS CLI](/cloud/39c61d09-8b30-4154-922b-2d0a694ecc22/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) |  None |
-| [Detect New Open S3 buckets](/cloud/2a9b80d3-6340-4345-b5ad-290bf3d0dac4/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) |  None |
-| [Detect S3 access from a new IP](/cloud/e6f1bb1b-f441-492b-9126-902acda217da/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) |  None |
+| [Detect GCP Storage access from a new IP](/cloud/ccc3246a-daa1-11ea-87d0-0242ac130022/) | [Data from Cloud Storage](/tags/#data-from-cloud-storage) |  None |
+| [Detect New Open GCP Storage Buckets](/cloud/f6ea3466-d6bb-11ea-87d0-0242ac130003/) | [Data from Cloud Storage](/tags/#data-from-cloud-storage) |  None |
+| [Detect New Open S3 Buckets over AWS CLI](/cloud/39c61d09-8b30-4154-922b-2d0a694ecc22/) | [Data from Cloud Storage](/tags/#data-from-cloud-storage) |  None |
+| [Detect New Open S3 buckets](/cloud/2a9b80d3-6340-4345-b5ad-290bf3d0dac4/) | [Data from Cloud Storage](/tags/#data-from-cloud-storage) |  None |
+| [Detect S3 access from a new IP](/cloud/e6f1bb1b-f441-492b-9126-902acda217da/) | [Data from Cloud Storage](/tags/#data-from-cloud-storage) |  None |
 | [Detect Spike in AWS Security Hub Alerts for EC2 Instance](/cloud/2a9b80d3-6340-4345-b5ad-290bf5d0d222/) |  None |  None |
 | [Detect Spike in AWS Security Hub Alerts for User](/cloud/2a9b80d3-6220-4345-b5ad-290bf5d0d222/) |  None |  None |
-| [Detect Spike in S3 Bucket deletion](/cloud/e733a326-59d2-446d-b8db-14a17151aa68/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) |  None |
+| [Detect Spike in S3 Bucket deletion](/cloud/e733a326-59d2-446d-b8db-14a17151aa68/) | [Data from Cloud Storage](/tags/#data-from-cloud-storage) |  None |
 | [Detect Spike in blocked Outbound Traffic from your AWS](/cloud/d3fffa37-492f-487b-a35d-c60fcb2acf01/) |  None |  None |
 | [Detect shared ec2 snapshot](/cloud/2a9b80d3-6340-4345-b5ad-290bf3d222c4/) | [Transfer Data to Cloud Account](/tags/#transfer-data-to-cloud-account) |  None |
 | [GCP Detect gcploit framework](/cloud/a1c5a85e-a162-410c-a5d9-99ff639e5a52/) | [Valid Accounts](/tags/#valid-accounts) |  None |

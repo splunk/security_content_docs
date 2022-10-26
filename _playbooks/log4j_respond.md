@@ -10304,8 +10304,9 @@ Published in response to CVE-2021-44228, this playbook is meant to be launched a
 #### How To Implement
 To use this playbook, create a custom list called &#34;log4j_hosts_and_files&#34; with a format in which the first column should be an IP or hostname of a potentially affected log4j host, the second should be the operating system family (either unix or windows), and the third should be a full path to a file to delete if there are any. The first two are mandatory and the file is optional. In the block called &#34;enumerate_files_to_delete&#34;, change the custom list name from &#34;log4j_hosts_and_files&#34; if needed. If ssh and/or winrm are not the preferred endpoint management methods, these playbooks could be ported to use Google&#39;s GRR, osquery,  CrowdStrike&#39;s RTR, Carbon Black&#39;s EDR API, or similar tools. The artifact scope &#34;all&#34; is used throughout this playbook because the artifact list can be added to as the playbook progresses.
 
-#### Playbooks
-![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/log4j_respond.png)
+#### [Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/log4j_respond.json)
+
+[![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/log4j_respond.png =250x250)](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/log4j_respond.json)
 
 #### Required field
 

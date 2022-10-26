@@ -31,8 +31,9 @@ The Splunk search used to locate contributing events requires three fields in th
 A custom code block sorts the returned event data and produces a markdown formatted note into the note_content output field. This field is then available for use in downstream playbooks.&#34;
 
 
-#### Playbooks
-![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/risk_notable_import_data.png)
+#### [Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_import_data.json)
+
+[![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/risk_notable_import_data.png =250x250)](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_import_data.json)
 
 #### Required field
 * event_id

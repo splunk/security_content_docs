@@ -28,8 +28,9 @@ Investigate an internal unix host using SSH. This pushes a bash script to the en
 #### How To Implement
 The ssh asset requires sudo access to scan the whole file system.
 
-#### Playbooks
-![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/internal_host_ssh_log4j_investigate.png)
+#### [Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_ssh_log4j_investigate.json)
+
+[![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/internal_host_ssh_log4j_investigate.png =250x250)](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_ssh_log4j_investigate.json)
 
 #### Required field
 

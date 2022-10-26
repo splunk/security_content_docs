@@ -28,8 +28,9 @@ Performs a general investigation on key aspects of a windows device using window
 #### How To Implement
 The winrm asset requires Administrator access to gather certain files.
 
-#### Playbooks
-![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/internal_host_winrm_investigate.png)
+#### [Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_winrm_investigate.json)
+
+[![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/internal_host_winrm_investigate.png =250x250)](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_winrm_investigate.json)
 
 #### Required field
 

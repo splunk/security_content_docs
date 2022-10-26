@@ -28,8 +28,9 @@ This playbook collects the available Indicator data types within the event as we
 #### How To Implement
 tbd
 
-#### Playbooks
-![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/risk_notable_enrich.png)
+#### [Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_enrich.json)
+
+[![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/risk_notable_enrich.png =250x250)](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_enrich.json)
 
 #### Required field
 

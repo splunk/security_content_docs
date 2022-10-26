@@ -1174,8 +1174,9 @@ This playbook investigates and contains ransomware detected on endpoints.
 #### How To Implement
 This playbook requires the Splunk SOAR apps for Palo Alto Networks Firewalls, Palo Alto Wildfire, LDAP, and Carbon Black Response.
 
-#### Playbooks
-![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/ransomware_investigate_and_contain.png)
+#### [Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/ransomware_investigate_and_contain.json)
+
+[![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/ransomware_investigate_and_contain.png =250x250)](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/ransomware_investigate_and_contain.json)
 
 #### Required field
 * ComputerName

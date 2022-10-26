@@ -28,8 +28,9 @@ This playbook checks for the presence of the Risk Investigation workbook and upd
 #### How To Implement
 Set this playbook to run in Active mode on the Risk Notable label in Splunk SOAR.
 
-#### Playbooks
-![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/risk_notable_investigate.png)
+#### [Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_investigate.json)
+
+[![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/risk_notable_investigate.png =250x250)](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_investigate.json)
 
 #### Required field
 

@@ -38,8 +38,9 @@ tags:
 #### How To Implement
 {{ playbook.how_to_implement}}
 
-#### Playbooks
-![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/{{ playbook.playbook | lower | replace(" ", "_")}}.png)
+#### [View Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/{{ playbook.playbook | lower | replace(" ", "_")}}.json)
+
+[![view](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/{{ playbook.playbook | lower | replace(" ", "_")}}.png){:height="200px" width="200px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/{{ playbook.playbook | lower | replace(" ", "_")}}.json)
 
 #### Required field
 {% for field in playbook.tags.playbook_fields -%}

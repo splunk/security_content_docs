@@ -29,8 +29,9 @@ Find AWS accounts that have not been used for a long time (90 days by default). 
 #### How To Implement
 This playbook is meant to run on a Timer, such as once per week. To adjust the lookback period away from the default, change the number of days to a different negative number in the &#39;calculate_start_time&#39; block. Note that this playbook will ignore accounts where the password has never been used. These could be unused human accounts or they could be API accounts where the access keys are actively used.
 
-#### Playbooks
-![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/aws_find_inactive_users.png)
+#### [Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/aws_find_inactive_users.json)
+
+[![](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/aws_find_inactive_users.png =250x250)](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/aws_find_inactive_users.json)
 
 #### Required field
 

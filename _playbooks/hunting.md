@@ -32,9 +32,10 @@ The hunting Playbook queries a number of internal security technologies in order
 #### How To Implement
 Be sure to update asset naming to reflect the asset names configured in your environment.
 
-#### [View Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/hunting.json)
 
-[![view](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/hunting.png){:height="200px" width="200px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/hunting.json)
+#### Explore Playbook
+
+![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/hunting.png)
 
 #### Required field
 * fileHash

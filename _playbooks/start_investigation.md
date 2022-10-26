@@ -27,9 +27,10 @@ Handle cases in Splunk SOAR with consistency that only automation can provide. T
 #### How To Implement
 This is a playbook that is designed to be recommended within a workbook. If used in this manner, the playbook will assign the user that launched the playbook as the owner of the event, move the event status to &#34;Open&#34;, and complete the workbook task where this playbook appears. If there is a task after the one where the playbook appears (within the same phase), it will set the next task to &#34;In Progress.&#34;
 
-#### [View Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/start_investigation.json)
 
-[![view](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/start_investigation.png){:height="200px" width="200px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/start_investigation.json)
+#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/start_investigation.json)
+
+[![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/start_investigation.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/start_investigation.json)
 
 #### Required field
 

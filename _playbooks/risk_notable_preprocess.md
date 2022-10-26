@@ -29,9 +29,10 @@ tags:
 #### How To Implement
 tbd
 
-#### [View Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_preprocess.json)
 
-[![view](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/risk_notable_preprocess.png){:height="200px" width="200px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_preprocess.json)
+#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_preprocess.json)
+
+[![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/risk_notable_preprocess.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_preprocess.json)
 
 #### Required field
 * event_id

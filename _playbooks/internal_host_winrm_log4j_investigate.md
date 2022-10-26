@@ -28,9 +28,10 @@ Published in response to CVE-2021-44228, this playbook uses WinRM to scan Window
 #### How To Implement
 The winrm asset requires Administrator access to scan the whole file system.
 
-#### [View Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_winrm_log4j_investigate.json)
 
-[![view](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/internal_host_winrm_log4j_investigate.png){:height="200px" width="200px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_winrm_log4j_investigate.json)
+#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_winrm_log4j_investigate.json)
+
+[![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/internal_host_winrm_log4j_investigate.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_winrm_log4j_investigate.json)
 
 #### Required field
 

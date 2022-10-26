@@ -29,8 +29,8 @@ Similar to other cloud providers, GCP operates on a shared responsibility model.
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Detect GCP Storage access from a new IP](/cloud/ccc3246a-daa1-11ea-87d0-0242ac130022/) | [Data from Cloud Storage](/tags/#data-from-cloud-storage) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Detect New Open GCP Storage Buckets](/cloud/f6ea3466-d6bb-11ea-87d0-0242ac130003/) | [Data from Cloud Storage](/tags/#data-from-cloud-storage) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect GCP Storage access from a new IP](/cloud/ccc3246a-daa1-11ea-87d0-0242ac130022/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect New Open GCP Storage Buckets](/cloud/f6ea3466-d6bb-11ea-87d0-0242ac130003/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

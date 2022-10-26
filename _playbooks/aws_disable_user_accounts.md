@@ -28,9 +28,10 @@ Disable a list of AWS IAM user accounts. After checking the list of accounts aga
 #### How To Implement
 This playbook works with the community playbook aws_find_inactive_users using the usernames discovered by that playbook. Change the prompt block from admin to the correct analyst user or role. You should create a custom list called aws_inactive_user_allowlist. Any user names in that list will be ignored by this playbook.
 
-#### [View Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/aws_disable_user_accounts.json)
 
-[![view](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/aws_disable_user_accounts.png){:height="200px" width="200px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/aws_disable_user_accounts.json)
+#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/aws_disable_user_accounts.json)
+
+[![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/aws_disable_user_accounts.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/aws_disable_user_accounts.json)
 
 #### Required field
 * aws_username

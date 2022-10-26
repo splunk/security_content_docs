@@ -28,9 +28,10 @@ This playbook locates available playbooks with the response tag and presents the
 #### How To Implement
 tbd
 
-#### [View Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_verdict.json)
 
-[![view](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/risk_notable_verdict.png){:height="200px" width="200px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_verdict.json)
+#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_verdict.json)
+
+[![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/risk_notable_verdict.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_verdict.json)
 
 #### Required field
 

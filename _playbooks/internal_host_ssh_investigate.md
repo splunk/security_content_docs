@@ -28,9 +28,10 @@ Investigate an internal unix host using SSH. This pushes a bash script to the en
 #### How To Implement
 The ssh asset requires sudo access to view the processes with open sockets.
 
-#### [View Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_ssh_investigate.json)
 
-[![view](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/internal_host_ssh_investigate.png){:height="200px" width="200px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_ssh_investigate.json)
+#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_ssh_investigate.json)
+
+[![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/internal_host_ssh_investigate.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_ssh_investigate.json)
 
 #### Required field
 

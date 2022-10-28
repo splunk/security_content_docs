@@ -27,10 +27,10 @@ sidebar:
 | [Kubernetes Sensitive Object Access Activity]() | None | None |
 | [Office 365 Detections](/stories/office_365_detections/) | [Email Forwarding Rule](/tags/#email-forwarding-rule), [Email Collection](/tags/#email-collection) | [Collection](/tags/#collection) |
 | [Suspicious AWS Login Activities](/stories/suspicious_aws_login_activities/) | [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
-| [Suspicious AWS S3 Activities](/stories/suspicious_aws_s3_activities/) | [Data from Cloud Storage](/tags/#data-from-cloud-storage) | [Collection](/tags/#collection) |
+| [Suspicious AWS S3 Activities](/stories/suspicious_aws_s3_activities/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | [Collection](/tags/#collection) |
 | [Suspicious AWS Traffic]() | None | None |
 | [Suspicious Cloud Authentication Activities](/stories/suspicious_cloud_authentication_activities/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious Cloud Instance Activities](/stories/suspicious_cloud_instance_activities/) | [Transfer Data to Cloud Account](/tags/#transfer-data-to-cloud-account) | [Exfiltration](/tags/#exfiltration) |
 | [Suspicious Cloud Provisioning Activities](/stories/suspicious_cloud_provisioning_activities/) | [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious Cloud User Activities](/stories/suspicious_cloud_user_activities/) | [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
-| [Suspicious GCP Storage Activities](/stories/suspicious_gcp_storage_activities/) | [Data from Cloud Storage](/tags/#data-from-cloud-storage) | [Collection](/tags/#collection) |
+| [Suspicious GCP Storage Activities](/stories/suspicious_gcp_storage_activities/) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | [Collection](/tags/#collection) |

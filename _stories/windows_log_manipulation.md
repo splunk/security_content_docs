@@ -33,12 +33,12 @@ The Analytic Story gives users two different ways to detect manipulation of Wind
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
 | [Deleting Shadow Copies](/endpoint/b89919ed-ee5f-492c-b139-95dbb162039e/) | [Inhibit System Recovery](/tags/#inhibit-system-recovery) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Suspicious Event Log Service Behavior](/endpoint/2b85aa3d-f5f6-4c2e-a081-a09f6e1c2e40/) | [Indicator Removal](/tags/#indicator-removal), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Suspicious wevtutil Usage](/endpoint/2827c0fd-e1be-4868-ae25-59d28e0f9d4f/) | [Clear Windows Event Logs](/tags/#clear-windows-event-logs), [Indicator Removal](/tags/#indicator-removal) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [USN Journal Deletion](/endpoint/b6e0ff70-b122-4227-9368-4cf322ab43c3/) | [Indicator Removal](/tags/#indicator-removal) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [WevtUtil Usage To Clear Logs](/endpoint/5438113c-cdd9-11eb-93b8-acde48001122/) | [Indicator Removal](/tags/#indicator-removal), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Wevtutil Usage To Disable Logs](/endpoint/a4bdc944-cdd9-11eb-ac97-acde48001122/) | [Indicator Removal](/tags/#indicator-removal), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows Event Log Cleared](/endpoint/ad517544-aff9-4c96-bd99-d6eb43bfbb6a/) | [Indicator Removal](/tags/#indicator-removal), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Suspicious Event Log Service Behavior](/endpoint/2b85aa3d-f5f6-4c2e-a081-a09f6e1c2e40/) | [Indicator Removal on Host](/tags/#indicator-removal-on-host), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Suspicious wevtutil Usage](/endpoint/2827c0fd-e1be-4868-ae25-59d28e0f9d4f/) | [Clear Windows Event Logs](/tags/#clear-windows-event-logs), [Indicator Removal on Host](/tags/#indicator-removal-on-host) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [USN Journal Deletion](/endpoint/b6e0ff70-b122-4227-9368-4cf322ab43c3/) | [Indicator Removal on Host](/tags/#indicator-removal-on-host) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [WevtUtil Usage To Clear Logs](/endpoint/5438113c-cdd9-11eb-93b8-acde48001122/) | [Indicator Removal on Host](/tags/#indicator-removal-on-host), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Wevtutil Usage To Disable Logs](/endpoint/a4bdc944-cdd9-11eb-ac97-acde48001122/) | [Indicator Removal on Host](/tags/#indicator-removal-on-host), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Event Log Cleared](/endpoint/ad517544-aff9-4c96-bd99-d6eb43bfbb6a/) | [Indicator Removal on Host](/tags/#indicator-removal-on-host), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

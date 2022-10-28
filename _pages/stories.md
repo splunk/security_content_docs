@@ -17,7 +17,7 @@ sidebar:
 | [AWS Network ACL Activity](aws_network_acl_activity) | [Disable or Modify Cloud Firewall](/tags/#disable-or-modify-cloud-firewall) | [Defense Evasion](/tags/#defense-evasion) |
 | [AWS Security Hub Alerts]() | None | None |
 | [AWS User Monitoring](aws_user_monitoring) | [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
-| [AcidRain](acidrain) | [Data Destruction](/tags/#data-destruction), [File Deletion](/tags/#file-deletion), [Indicator Removal on Host](/tags/#indicator-removal-on-host) | [Impact](/tags/#impact) |
+| [AcidRain](acidrain) | [Data Destruction](/tags/#data-destruction), [File Deletion](/tags/#file-deletion), [Indicator Removal](/tags/#indicator-removal) | [Impact](/tags/#impact) |
 | [Active Directory Discovery](active_directory_discovery) | [Permission Groups Discovery](/tags/#permission-groups-discovery), [Local Groups](/tags/#local-groups) | [Discovery](/tags/#discovery) |
 | [Active Directory Kerberos Attacks](active_directory_kerberos_attacks) | [Remote System Discovery](/tags/#remote-system-discovery) | [Discovery](/tags/#discovery) |
 | [Active Directory Lateral Movement](active_directory_lateral_movement) | [Remote Services](/tags/#remote-services), [Windows Remote Management](/tags/#windows-remote-management) | [Lateral Movement](/tags/#lateral-movement) |
@@ -72,7 +72,7 @@ sidebar:
 | [Hidden Cobra Malware](hidden_cobra_malware) | [SMB/Windows Admin Shares](/tags/#smb/windows-admin-shares), [Remote Services](/tags/#remote-services) | [Lateral Movement](/tags/#lateral-movement) |
 | [IcedID](icedid) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |
 | [Industroyer2](industroyer2) | [Domain Account](/tags/#domain-account), [Account Discovery](/tags/#account-discovery) | [Discovery](/tags/#discovery) |
-| [Information Sabotage](information_sabotage) | [Indicator Removal on Host](/tags/#indicator-removal-on-host), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [Defense Evasion](/tags/#defense-evasion) |
+| [Information Sabotage](information_sabotage) | [Indicator Removal](/tags/#indicator-removal), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [Defense Evasion](/tags/#defense-evasion) |
 | [Ingress Tool Transfer](ingress_tool_transfer) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Insider Threat](insider_threat) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
 | [JBoss Vulnerability](jboss_vulnerability) | [System Information Discovery](/tags/#system-information-discovery) | [Discovery](/tags/#discovery) |
@@ -118,7 +118,7 @@ sidebar:
 | [Splunk Vulnerabilities](splunk_vulnerabilities) | [Digital Certificates](/tags/#digital-certificates) | [Resource Development](/tags/#resource-development) |
 | [Spring4Shell CVE-2022-22965](spring4shell_cve-2022-22965) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Suspicious AWS Login Activities](suspicious_aws_login_activities) | [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
-| [Suspicious AWS S3 Activities](suspicious_aws_s3_activities) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | [Collection](/tags/#collection) |
+| [Suspicious AWS S3 Activities](suspicious_aws_s3_activities) | [Data from Cloud Storage](/tags/#data-from-cloud-storage) | [Collection](/tags/#collection) |
 | [Suspicious AWS Traffic]() | None | None |
 | [Suspicious Cloud Authentication Activities](suspicious_cloud_authentication_activities) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious Cloud Instance Activities](suspicious_cloud_instance_activities) | [Transfer Data to Cloud Account](/tags/#transfer-data-to-cloud-account) | [Exfiltration](/tags/#exfiltration) |
@@ -128,7 +128,7 @@ sidebar:
 | [Suspicious Compiled HTML Activity](suspicious_compiled_html_activity) | [Compiled HTML File](/tags/#compiled-html-file), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious DNS Traffic](suspicious_dns_traffic) | [Exfiltration Over Alternative Protocol](/tags/#exfiltration-over-alternative-protocol) | [Exfiltration](/tags/#exfiltration) |
 | [Suspicious Emails](suspicious_emails) | [Spearphishing Attachment](/tags/#spearphishing-attachment), [Phishing](/tags/#phishing) | [Initial Access](/tags/#initial-access) |
-| [Suspicious GCP Storage Activities](suspicious_gcp_storage_activities) | [Data from Cloud Storage Object](/tags/#data-from-cloud-storage-object) | [Collection](/tags/#collection) |
+| [Suspicious GCP Storage Activities](suspicious_gcp_storage_activities) | [Data from Cloud Storage](/tags/#data-from-cloud-storage) | [Collection](/tags/#collection) |
 | [Suspicious MSHTA Activity](suspicious_mshta_activity) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Mshta](/tags/#mshta) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious Okta Activity](suspicious_okta_activity) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious Regsvcs Regasm Activity](suspicious_regsvcs_regasm_activity) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Regsvcs/Regasm](/tags/#regsvcs/regasm) | [Defense Evasion](/tags/#defense-evasion) |
@@ -149,7 +149,7 @@ sidebar:
 | [Windows Discovery Techniques](windows_discovery_techniques) | [Permission Groups Discovery](/tags/#permission-groups-discovery), [Local Groups](/tags/#local-groups) | [Discovery](/tags/#discovery) |
 | [Windows Drivers](windows_drivers) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Windows File Extension and Association Abuse](windows_file_extension_and_association_abuse) | [Change Default File Association](/tags/#change-default-file-association) | [Privilege Escalation](/tags/#privilege-escalation) |
-| [Windows Log Manipulation](windows_log_manipulation) | [Indicator Removal on Host](/tags/#indicator-removal-on-host), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [Defense Evasion](/tags/#defense-evasion) |
+| [Windows Log Manipulation](windows_log_manipulation) | [Indicator Removal](/tags/#indicator-removal), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [Defense Evasion](/tags/#defense-evasion) |
 | [Windows Persistence Techniques](windows_persistence_techniques) | [Services Registry Permissions Weakness](/tags/#services-registry-permissions-weakness) | [Persistence](/tags/#persistence) |
 | [Windows Privilege Escalation](windows_privilege_escalation) | [Malicious File](/tags/#malicious-file) | [Execution](/tags/#execution) |
 | [Windows Registry Abuse](windows_registry_abuse) | [Services Registry Permissions Weakness](/tags/#services-registry-permissions-weakness) | [Persistence](/tags/#persistence) |

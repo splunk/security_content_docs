@@ -24,8 +24,11 @@ def get_cve_enrichment_new(cve_id):
     try: 
         cve = CVESearch(CVESSEARCH_API_URL)
         result = cve.id(cve_id)
-        cve_enriched['cvss'] = result['cvss']
-        cve_enriched['summary'] = result['summary']
+        if result is None:
+            print("Error getting CVE info for {0}".format(cve_id))
+        else:
+            cve_enriched['cvss'] = result['cvss']
+            cve_enriched['summary'] = result['summary']
     except requests.exceptions.JSONDecodeError as exc:
         print(exc)
         print("Error getting CVE info for {0}".format(cve_id))

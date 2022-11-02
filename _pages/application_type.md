@@ -31,17 +31,23 @@ sidebar:
 | [Okta User Logins From Multiple Cities](/application/7594fa07-9f34-4d01-81cc-d6af6a5db9e8/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
 | [Path traversal SPL injection](/application/dfe55688-82ed-4d24-a21b-ed8f0e0fda99/) | [File and Directory Discovery](/tags/#file-and-directory-discovery) |  None |
 | [Splunk Account Discovery Drilldown Dashboard Disclosure](/application/f844c3f6-fd99-43a2-ba24-93e35fe84be6/) | [Account Discovery](/tags/#account-discovery) |  None |
+| [Splunk Code Injection via custom dashboard leading to RCE](/application/b06b41d7-9570-4985-8137-0784f582a1b3/) | [Exploitation of Remote Services](/tags/#exploitation-of-remote-services) |  None |
 | [Splunk Command and Scripting Interpreter Delete Usage](/application/8d3d5d5e-ca43-42be-aa1f-bc64375f6b04/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Splunk_Audit](https://docs.splunk.com/Documentation/CIM/latest/User/SplunkAudit) |
 | [Splunk Command and Scripting Interpreter Risky Commands](/application/1cf58ae1-9177-40b8-a26c-8966040f11ae/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Splunk_Audit](https://docs.splunk.com/Documentation/CIM/latest/User/SplunkAudit) |
 | [Splunk Command and Scripting Interpreter Risky SPL MLTK](/application/19d0146c-2eae-4e53-8d39-1198a78fa9ca/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Splunk_Audit](https://docs.splunk.com/Documentation/CIM/latest/User/SplunkAudit) |
+| [Splunk Data exfiltration from Analytics Workspace using sid query](/application/b6d77c6c-f011-4b03-8650-8f10edb7c4a8/) | [Exfiltration Over Web Service](/tags/#exfiltration-over-web-service) |  None |
 | [Splunk Digital Certificates Infrastructure Version](/application/3c162281-7edb-4ebc-b9a4-5087aaf28fa7/) | [Digital Certificates](/tags/#digital-certificates) |  None |
 | [Splunk Digital Certificates Lack of Encryption](/application/386a7ebc-737b-48cf-9ca8-5405459ed508/) | [Digital Certificates](/tags/#digital-certificates) |  None |
 | [Splunk DoS via Malformed S2S Request](/application/fc246e56-953b-40c1-8634-868f9e474cbd/) | [Network Denial of Service](/tags/#network-denial-of-service) |  None |
 | [Splunk Endpoint Denial of Service DoS Zip Bomb](/application/b237d393-2f57-4531-aad7-ad3c17c8b041/) | [Endpoint Denial of Service](/tags/#endpoint-denial-of-service) |  None |
 | [Splunk Process Injection Forwarder Bundle Downloads](/application/8ea57d78-1aac-45d2-a913-0cd603fb6e9e/) | [Process Injection](/tags/#process-injection) |  None |
 | [Splunk Protocol Impersonation Weak Encryption Configuration](/application/900892bf-70a9-4787-8c99-546dd98ce461/) | [Protocol Impersonation](/tags/#protocol-impersonation) |  None |
+| [Splunk RCE via Splunk Secure Gateway  Splunk Mobile alerts feature](/application/baa41f09-df48-4375-8991-520beea161be/) | [Exploitation of Remote Services](/tags/#exploitation-of-remote-services) |  None |
+| [Splunk Reflected XSS in the templates lists radio](/application/d532d105-c63f-4049-a8c4-e249127ca425/) | [Drive-by Compromise](/tags/#drive-by-compromise) |  None |
+| [Splunk Stored XSS via Data Model objectName field](/application/062bff76-5f9c-496e-a386-cb1adcf69871/) | [Drive-by Compromise](/tags/#drive-by-compromise) |  None |
 | [Splunk User Enumeration Attempt](/application/25625cb4-1c4d-4463-b0f9-7cb462699cde/) | [Valid Accounts](/tags/#valid-accounts) |  None |
 | [Splunk XSS in Monitoring Console](/application/b11accac-6fa3-4103-8a1a-7210f1a67087/) | [Drive-by Compromise](/tags/#drive-by-compromise) |  None |
+| [Splunk XSS in Save table dialog header in search page](/application/a974d1ee-ddca-4837-b6ad-d55a8a239c20/) | [Drive-by Compromise](/tags/#drive-by-compromise) |  None |
 | [Splunk protocol impersonation weak encryption selfsigned](/application/c76c7a2e-df49-414a-bb36-dce2683770de/) | [Digital Certificates](/tags/#digital-certificates) |  None |
 | [Splunk protocol impersonation weak encryption simplerequest](/application/839d12a6-b119-4d44-ac4f-13eed95412c8/) | [Digital Certificates](/tags/#digital-certificates) |  None |
 | [Suspicious Email Attachment Extensions](/application/473bd65f-06ca-4dfe-a2b8-ba04ab4a0084/) | [Spearphishing Attachment](/tags/#spearphishing-attachment), [Phishing](/tags/#phishing) | [Email](https://docs.splunk.com/Documentation/CIM/latest/User/Email) |

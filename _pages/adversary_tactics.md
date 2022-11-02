@@ -85,7 +85,7 @@ sidebar:
 | [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics/) | [Bypass User Account Control](/tags/#bypass-user-account-control), [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Windows Discovery Techniques](/stories/windows_discovery_techniques/) | [Permission Groups Discovery](/tags/#permission-groups-discovery), [Local Groups](/tags/#local-groups) | [Discovery](/tags/#discovery) |
 | [Windows Drivers](/stories/windows_drivers/) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
-| [Windows Log Manipulation](/stories/windows_log_manipulation/) | [Indicator Removal](/tags/#indicator-removal), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [Defense Evasion](/tags/#defense-evasion) |
+| [Windows Log Manipulation](/stories/windows_log_manipulation/) | [Indicator Removal on Host](/tags/#indicator-removal-on-host), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [Defense Evasion](/tags/#defense-evasion) |
 | [Windows Persistence Techniques](/stories/windows_persistence_techniques/) | [Services Registry Permissions Weakness](/tags/#services-registry-permissions-weakness) | [Persistence](/tags/#persistence) |
 | [Windows Privilege Escalation](/stories/windows_privilege_escalation/) | [Malicious File](/tags/#malicious-file) | [Execution](/tags/#execution) |
 | [Windows System Binary Proxy Execution MSIExec](/stories/windows_system_binary_proxy_execution_msiexec/) | [Msiexec](/tags/#msiexec) | [Defense Evasion](/tags/#defense-evasion) |

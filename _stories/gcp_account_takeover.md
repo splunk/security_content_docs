@@ -23,8 +23,7 @@ Monitor for activities and techniques associated with Account Takover attacks ag
 
 #### Narrative
 
-
-Account Takeover (ATO) is an attack whereby cybercriminals gain unauthorized access to online accounts by using different techniques like brute force, social engineering, phishing & spear phishing, credential stuffing, etc. By posing as the real user, cyber-criminals can change account details, send out phishing emails, steal financial information or sensitive data, or use any stolen information to access further accounts within the organization.\ This analytic storic groups detections that can help security operations teams identify the potential compromise of Azure Active Directory accounts.
+Account Takeover (ATO) is an attack whereby cybercriminals gain unauthorized access to online accounts by using different techniques like brute force, social engineering, phishing & spear phishing, credential stuffing, etc. By posing as the real user, cyber-criminals can change account details, send out phishing emails, steal financial information or sensitive data, or use any stolen information to access further accounts within the organization. This analytic storic groups detections that can help security operations teams identify the potential compromise of Azure Active Directory accounts.
 
 #### Detections
 
@@ -41,7 +40,6 @@ Account Takeover (ATO) is an attack whereby cybercriminals gain unauthorized acc
 
 * [https://cloud.google.com/gcp](https://cloud.google.com/gcp)
 * [https://cloud.google.com/architecture/identity/overview-google-authentication](https://cloud.google.com/architecture/identity/overview-google-authentication)
-* [None](None)
 * [https://attack.mitre.org/techniques/T1586/](https://attack.mitre.org/techniques/T1586/)
 * [https://www.imperva.com/learn/application-security/account-takeover-ato/](https://www.imperva.com/learn/application-security/account-takeover-ato/)
 * [https://www.barracuda.com/glossary/account-takeover](https://www.barracuda.com/glossary/account-takeover)

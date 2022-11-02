@@ -68,7 +68,7 @@ sidebar:
 | [Azure AD Service Principal New Client Credentials](/cloud/e3adc0d3-9e4b-4b5d-b662-12cec1adff2a/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Credentials](/tags/#additional-cloud-credentials) |  None |
 | [Azure AD Service Principal Owner Added](/cloud/7ddf2084-6cf3-4a44-be83-474f7b73c701/) | [Account Manipulation](/tags/#account-manipulation) |  None |
 | [Azure AD Successful PowerShell Authentication](/cloud/62f10052-d7b3-4e48-b57b-56f8e3ac7ceb/) | [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) |  None |
-| [Azure AD Successful Single-Factor Authentication](/cloud/a560e7f6-1711-4353-885b-40be53101fcd/) | [Security Account Manager](/tags/#security-account-manager) |  None |
+| [Azure AD Successful Single-Factor Authentication](/cloud/a560e7f6-1711-4353-885b-40be53101fcd/) | [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) |  None |
 | [Azure AD Unusual Number of Failed Authentications From Ip](/cloud/3d8d3a36-93b8-42d7-8d91-c5f24cec223d/) | [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying) |  None |
 | [Azure AD User Enabled And Password Reset](/cloud/1347b9e8-2daa-4a6f-be73-b421d3d9e268/) | [Account Manipulation](/tags/#account-manipulation) |  None |
 | [Azure AD User ImmutableId Attribute Updated](/cloud/0c0badad-4536-4a84-a561-5ff760f3c00e/) | [Account Manipulation](/tags/#account-manipulation) |  None |
@@ -104,8 +104,14 @@ sidebar:
 | [Detect Spike in S3 Bucket deletion](/cloud/e733a326-59d2-446d-b8db-14a17151aa68/) | [Data from Cloud Storage](/tags/#data-from-cloud-storage) |  None |
 | [Detect Spike in blocked Outbound Traffic from your AWS](/cloud/d3fffa37-492f-487b-a35d-c60fcb2acf01/) |  None |  None |
 | [Detect shared ec2 snapshot](/cloud/2a9b80d3-6340-4345-b5ad-290bf3d222c4/) | [Transfer Data to Cloud Account](/tags/#transfer-data-to-cloud-account) |  None |
+| [GCP Authentication Failed During MFA Challenge](/cloud/345f7e1d-a3fe-4158-abd8-e630f9878323/) | [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation) |  None |
 | [GCP Detect gcploit framework](/cloud/a1c5a85e-a162-410c-a5d9-99ff639e5a52/) | [Valid Accounts](/tags/#valid-accounts) |  None |
 | [GCP Kubernetes cluster pod scan detection](/cloud/19b53215-4a16-405b-8087-9e6acf619842/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) |  None |
+| [GCP Multi-Factor Authentication Disabled](/cloud/b9bc5513-6fc1-4821-85a3-e1d81e451c83/) | [Modify Authentication Process](/tags/#modify-authentication-process) |  None |
+| [GCP Multiple Failed MFA Requests For User](/cloud/cbb3cb84-c06f-4393-adcc-5cb6195621f1/) | [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation), [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) |  None |
+| [GCP Multiple Users Failing To Authenticate From Ip](/cloud/da20828e-d6fb-4ee5-afb7-d0ac200923d5/) | [Password Spraying](/tags/#password-spraying) |  None |
+| [GCP Successful Single-Factor Authentication](/cloud/40e17d88-87da-414e-b253-8dc1e4f9555b/) | [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) |  None |
+| [GCP Unusual Number of Failed Authentications From Ip](/cloud/bd8097ed-958a-4873-87d9-44f2b4d85705/) | [Password Spraying](/tags/#password-spraying) |  None |
 | [GSuite Email Suspicious Attachment](/cloud/6d663014-fe92-11eb-ab07-acde48001122/) | [Spearphishing Attachment](/tags/#spearphishing-attachment), [Phishing](/tags/#phishing) |  None |
 | [Gdrive suspicious file sharing](/cloud/a7131dae-34e3-11ec-a2de-acde48001122/) | [Phishing](/tags/#phishing) |  None |
 | [GitHub Actions Disable Security Workflow](/cloud/0459f1a5-c0ac-4987-82d6-65081209f854/) | [Compromise Software Supply Chain](/tags/#compromise-software-supply-chain), [Supply Chain Compromise](/tags/#supply-chain-compromise) |  None |

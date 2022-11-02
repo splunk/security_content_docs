@@ -8,6 +8,7 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
+  - Endpoint_Processes
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -17,7 +18,7 @@ tags:
 Detect signs of malicious payloads that may indicate that your environment has been breached via a phishing attack.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2019-04-29
 - **Author**: Splunk Research Team, Splunk
 - **ID**: 57226b40-94f3-4ce5-b101-a75f67759c27
@@ -52,6 +53,7 @@ This Analytic Story focuses on detecting signs that a malicious payload has been
 | [Office Product Spawning MSHTA](/endpoint/6078fa20-a6d2-11eb-b662-acde48001122/) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Office Product Spawning Rundll32 with no DLL](/endpoint/c661f6be-a38c-11eb-be57-acde48001122/) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Office Product Spawning Windows Script Host](/endpoint/b3628a5b-8d02-42fa-a891-eebf2351cbe1/) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Office Product Spawning Windows Script Host](/endpoint/3ea3851a-8736-41a0-bc09-7e4485b48fa6/) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Office Product Spawning Wmic](/endpoint/ffc236d6-a6c9-11eb-95f1-acde48001122/) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Office Product Writing cab or inf](/endpoint/f48cd1d4-125a-11ec-a447-acde48001122/) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Office Spawning Control](/endpoint/053e027c-10c7-11ec-8437-acde48001122/) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

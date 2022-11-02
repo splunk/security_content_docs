@@ -32,7 +32,7 @@ To get started, run the detection search to identify parent processes of `netsh.
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
 | [Processes created by netsh](/deprecated/b89919ed-fe5f-492c-b139-95dbb162041e/) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Processes launching netsh](/endpoint/b89919ed-fe5f-492c-b139-95dbb162040e/) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall), [Impair Defenses](/tags/#impair-defenses) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Processes launching netsh](/endpoint/b89919ed-fe5f-492c-b139-95dbb162040e/) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall), [Impair Defenses](/tags/#impair-defenses) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

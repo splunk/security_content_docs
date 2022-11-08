@@ -29,7 +29,7 @@ This playbook attempts to find assets and users from the notable event and match
 tbd
 
 
-#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_protect_assets_and_users.json)
+#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_protect_assets_and_users.json){: .btn .btn--info}
 
 [![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/risk_notable_protect_assets_and_users.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_protect_assets_and_users.json)
 

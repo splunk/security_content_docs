@@ -32,7 +32,7 @@ A custom code block sorts the returned event data and produces a markdown format
 
 
 
-#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_import_data.json)
+#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_import_data.json){: .btn .btn--info}
 
 [![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/risk_notable_import_data.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_import_data.json)
 

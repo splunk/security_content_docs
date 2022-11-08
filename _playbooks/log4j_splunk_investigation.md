@@ -29,7 +29,7 @@ Published in response to CVE-2021-44228, this playbook utilizes data already in 
 This playbook presumes you have Enterprise Security and have configured Assets &amp; Identities, as well as the Endpoint.Processes datamodel
 
 
-#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_splunk_investigate_log4j.json)
+#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_splunk_investigate_log4j.json){: .btn .btn--info}
 
 [![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/internal_host_splunk_investigate_log4j.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_splunk_investigate_log4j.json)
 

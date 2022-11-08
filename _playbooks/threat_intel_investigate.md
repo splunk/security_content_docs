@@ -28,7 +28,7 @@ This parent playbook collects data and launches appropriate child playbooks to g
 The prompt is currently sent to the Administrator role, but should be changed to the appropriate user and role. The &#34;list_investigate_playbooks&#34; block fetches playbooks from the local repository with the tags &#34;investigate&#34; and &#34;threat_intel&#34; by default. The playbook &#34;trustar_enrich_indicators&#34; is meant to be used by this playbook, and others can be created to replace it or work alongside it. To add a new input playbook, copy it to the local repository and give it the necessary tags. Define a playbook input with the name &#34;indicators&#34; and the data type matching the types of indicators the playbook can process. To add a new tag to the preconfigured list, add it to the &#34;choices&#34; array in the &#34;threat_intel_indicator_review&#34; prompt block, and add it to the &#34;response_to_tag_map&#34; in &#34;process_indicators&#34;.
 
 
-#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/threat_intel_investigate.json)
+#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/threat_intel_investigate.json){: .btn .btn--info}
 
 [![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/threat_intel_investigate.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/threat_intel_investigate.json)
 

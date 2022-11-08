@@ -29,7 +29,7 @@ Investigate an internal unix host using SSH. This pushes a bash script to the en
 The ssh asset requires sudo access to scan the whole file system.
 
 
-#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_ssh_log4j_investigate.json)
+#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_ssh_log4j_investigate.json){: .btn .btn--info}
 
 [![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/internal_host_ssh_log4j_investigate.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/internal_host_ssh_log4j_investigate.json)
 

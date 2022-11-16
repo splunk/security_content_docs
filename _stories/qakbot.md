@@ -1,6 +1,6 @@
 ---
 title: "Qakbot"
-last_modified_at: 2022-10-12
+last_modified_at: 2022-11-14
 toc: true
 toc_label: ""
 tags:
@@ -14,17 +14,17 @@ tags:
 
 #### Description
 
-Leverage searches that allow you to detect and investigate unusual activities that might relate to the Qakbot/QBot malware including parent-child process anomalies, persistence, initial access, recon and many more. Qakbot is a modular information stealer that has been active since 2007. It is also has historical background to be banking Trojan that steals financial data from infected or compromised system.
+QakBot is a modular banking trojan that has been used primarily by financially-motivated actors since at least 2007. QakBot is continuously maintained and developed and has evolved from an information stealer into a delivery agent for ransomware (ref. MITRE ATT&CK).
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
-- **Last Updated**: 2022-10-12
+- **Last Updated**: 2022-11-14
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 0c6169b1-f126-4d86-8e4f-f7891007ebc6
 
 #### Narrative
 
-Qakbot is also known to leverage tools like powershell, process injection, and mimikatz for its malicious activities. This malware was on the CISA top malware list for 2021.
+QakBot notably has made its way on the CISA top malware list for 2021. QakBot for years has been under continious improvement when it comes to initial access, injection and post-exploitation. Multiple adversaries use QakBot to gain initial access and persist, most notably TA551. The actor(s) behind QakBot possess a modular framework consisting of maldoc builders, signed loaders, and DLLs that produce initially low detection rates at the beginning of the attack, which creates opportunities to deliver additional malware such as Egregor and Cobalt Strike. (ref. Cybersecurity ATT) The more recent campaigns utilize HTML smuggling to deliver a ISO container that has a LNK and QakBot payload. QakBot will either load via regsvr32.exe directly, it will attempt to perform DLL sideloading.
 
 #### Detections
 
@@ -78,10 +78,12 @@ Qakbot is also known to leverage tools like powershell, process injection, and m
 #### Reference
 
 * [https://www.cisa.gov/sites/default/files/publications/202010221030_QakBot%20TLPWHITE.pdf](https://www.cisa.gov/sites/default/files/publications/202010221030_QakBot%20TLPWHITE.pdf)
-* [https://malpedia.caad.fkie.fraunhofer.de/details/win.qakbot](https://malpedia.caad.fkie.fraunhofer.de/details/win.qakbot)
-* [https://securelist.com/qakbot-technical-analysis/103931/](https://securelist.com/qakbot-technical-analysis/103931/)
-* [https://www.fortinet.com/blog/threat-research/new-variant-of-qakbot-spread-by-phishing-emails](https://www.fortinet.com/blog/threat-research/new-variant-of-qakbot-spread-by-phishing-emails)
+* [https://malpedia.caad.fkie.fraunhofer.de/details/win.QakBot](https://malpedia.caad.fkie.fraunhofer.de/details/win.QakBot)
+* [https://securelist.com/QakBot-technical-analysis/103931/](https://securelist.com/QakBot-technical-analysis/103931/)
+* [https://www.fortinet.com/blog/threat-research/new-variant-of-QakBot-spread-by-phishing-emails](https://www.fortinet.com/blog/threat-research/new-variant-of-QakBot-spread-by-phishing-emails)
+* [https://attack.mitre.org/software/S0650/](https://attack.mitre.org/software/S0650/)
+* [https://cybersecurity.att.com/blogs/labs-research/the-rise-of-qakbot](https://cybersecurity.att.com/blogs/labs-research/the-rise-of-qakbot)
 
 
 
-[*source*](https://github.com/splunk/security_content/tree/develop/stories/qakbot.yml) \| *version*: **1**
+[*source*](https://github.com/splunk/security_content/tree/develop/stories/qakbot.yml) \| *version*: **2**

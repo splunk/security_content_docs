@@ -8,6 +8,7 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
+  - Endpoint_Processes
   - Network_Traffic
 ---
 
@@ -18,7 +19,7 @@ tags:
 Monitor for activities and techniques associated with Kerberos based attacks within with Active Directory environments.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 - **Last Updated**: 2022-02-02
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 38b8cf16-8461-11ec-ade1-acde48001122
@@ -58,6 +59,8 @@ Kerberos, initially named after Cerberus, the three-headed dog in Greek mytholog
 | [Windows Get-AdComputer Unconstrained Delegation Discovery](/endpoint/c8640777-469f-4638-ab44-c34a3233ffac/) | [Remote System Discovery](/tags/#remote-system-discovery) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Invalid Users Failed Authentication via Kerberos](/endpoint/001266a6-9d5b-11eb-829b-acde48001122/) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Kerberos Local Successful Logon](/endpoint/8309c3a8-4d34-48ae-ad66-631658214653/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows PowerShell Disabled Kerberos Pre-Authentication Discovery Get-ADUser](/endpoint/d57b4d91-fc91-4482-a325-47693cced1eb/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets), [AS-REP Roasting](/tags/#as-rep-roasting) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows PowerShell Disabled Kerberos Pre-Authentication Discovery With PowerView](/endpoint/dc3f2af7-ca69-47ce-a122-9f9787e19417/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets), [AS-REP Roasting](/tags/#as-rep-roasting) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows PowerView Constrained Delegation Discovery](/endpoint/86dc8176-6e6c-42d6-9684-5444c6557ab3/) | [Remote System Discovery](/tags/#remote-system-discovery) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows PowerView Kerberos Service Ticket Request](/endpoint/970455a1-4ac2-47e1-a9a5-9e75443ddcb9/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets), [Kerberoasting](/tags/#kerberoasting) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows PowerView SPN Discovery](/endpoint/a7093c28-796c-4ebb-9997-e2c18b870837/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets), [Kerberoasting](/tags/#kerberoasting) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

@@ -37,6 +37,7 @@ sidebar:
 | [CISA AA22-257A](cisa_aa22-257a) | [Protocol Tunneling](/tags/#protocol-tunneling), [SSH](/tags/#ssh) | [Command And Control](/tags/#command-and-control) |
 | [CISA AA22-264A](cisa_aa22-264a) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [CISA AA22-277A](cisa_aa22-277a) | [System Network Configuration Discovery](/tags/#system-network-configuration-discovery), [Internet Connection Discovery](/tags/#internet-connection-discovery) | [Discovery](/tags/#discovery) |
+| [CISA AA22-320A](cisa_aa22-320a) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [Persistence](/tags/#persistence) |
 | [CVE-2022-40684 Fortinet Appliance Auth bypass](cve-2022-40684_fortinet_appliance_auth_bypass) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Caddy Wiper](caddy_wiper) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [Clop Ransomware](clop_ransomware) | [System Services](/tags/#system-services), [Service Execution](/tags/#service-execution) | [Execution](/tags/#execution) |
@@ -90,6 +91,7 @@ sidebar:
 | [Log4Shell CVE-2021-44228](log4shell_cve-2021-44228) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Malicious PowerShell](malicious_powershell) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Masquerading - Rename System Utilities](masquerading_-_rename_system_utilities) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [InstallUtil](/tags/#installutil) | [Defense Evasion](/tags/#defense-evasion) |
+| [MetaSploit](metasploit) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Execution](/tags/#execution) |
 | [Meterpreter](meterpreter) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Execution](/tags/#execution) |
 | [Microsoft MSHTML Remote Code Execution CVE-2021-40444](microsoft_mshtml_remote_code_execution_cve-2021-40444) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Rundll32](/tags/#rundll32) | [Defense Evasion](/tags/#defense-evasion) |
 | [Microsoft Support Diagnostic Tool Vulnerability CVE-2022-30190](microsoft_support_diagnostic_tool_vulnerability_cve-2022-30190) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
@@ -105,12 +107,13 @@ sidebar:
 | [Possible Backdoor Activity Associated With MUDCARP Espionage Campaigns](possible_backdoor_activity_associated_with_mudcarp_espionage_campaigns) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [PrintNightmare CVE-2021-34527](printnightmare_cve-2021-34527) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Rundll32](/tags/#rundll32) | [Defense Evasion](/tags/#defense-evasion) |
 | [Prohibited Traffic Allowed or Protocol Mismatch](prohibited_traffic_allowed_or_protocol_mismatch) | [Application Layer Protocol](/tags/#application-layer-protocol), [Web Protocols](/tags/#web-protocols) | [Command And Control](/tags/#command-and-control) |
-| [ProxyNotShell](proxynotshell) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
+| [ProxyNotShell](proxynotshell) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [PowerShell](/tags/#powershell) | [Execution](/tags/#execution) |
 | [ProxyShell](proxyshell) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [PowerShell](/tags/#powershell) | [Execution](/tags/#execution) |
 | [Qakbot](qakbot) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [Execution](/tags/#execution) |
 | [Ransomware](ransomware) | [Remote Access Software](/tags/#remote-access-software) | [Command And Control](/tags/#command-and-control) |
 | [Ransomware Cloud](ransomware_cloud) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) | [Impact](/tags/#impact) |
 | [Remcos](remcos) | [Process Injection](/tags/#process-injection), [Create or Modify System Process](/tags/#create-or-modify-system-process), [Parent PID Spoofing](/tags/#parent-pid-spoofing), [Access Token Manipulation](/tags/#access-token-manipulation) | [Defense Evasion](/tags/#defense-evasion) |
+| [Reverse Network Proxy](reverse_network_proxy) | [Protocol Tunneling](/tags/#protocol-tunneling), [Proxy](/tags/#proxy), [Web Service](/tags/#web-service) | [Command And Control](/tags/#command-and-control) |
 | [Revil Ransomware](revil_ransomware) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [CMSTP](/tags/#cmstp) | [Defense Evasion](/tags/#defense-evasion) |
 | [Router and Infrastructure Security](router_and_infrastructure_security) | [Hardware Additions](/tags/#hardware-additions), [Automated Exfiltration](/tags/#automated-exfiltration), [Network Denial of Service](/tags/#network-denial-of-service), [Traffic Duplication](/tags/#traffic-duplication) | [Initial Access](/tags/#initial-access) |
 | [Ryuk Ransomware](ryuk_ransomware) | [Windows Command Shell](/tags/#windows-command-shell) | [Execution](/tags/#execution) |

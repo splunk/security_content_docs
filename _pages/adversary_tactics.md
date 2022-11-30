@@ -22,6 +22,7 @@ sidebar:
 | [CISA AA22-257A](/stories/cisa_aa22-257a/) | [Protocol Tunneling](/tags/#protocol-tunneling), [SSH](/tags/#ssh) | [Command And Control](/tags/#command-and-control) |
 | [CISA AA22-264A](/stories/cisa_aa22-264a/) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [CISA AA22-277A](/stories/cisa_aa22-277a/) | [System Network Configuration Discovery](/tags/#system-network-configuration-discovery), [Internet Connection Discovery](/tags/#internet-connection-discovery) | [Discovery](/tags/#discovery) |
+| [CISA AA22-320A](/stories/cisa_aa22-320a/) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [Persistence](/tags/#persistence) |
 | [CVE-2022-40684 Fortinet Appliance Auth bypass](/stories/cve-2022-40684_fortinet_appliance_auth_bypass/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Caddy Wiper](/stories/caddy_wiper/) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [Cobalt Strike](/stories/cobalt_strike/) | [Masquerading](/tags/#masquerading), [Trusted Developer Utilities Proxy Execution](/tags/#trusted-developer-utilities-proxy-execution), [Rename System Utilities](/tags/#rename-system-utilities), [MSBuild](/tags/#msbuild) | [Defense Evasion](/tags/#defense-evasion) |
@@ -50,6 +51,7 @@ sidebar:
 | [Log4Shell CVE-2021-44228](/stories/log4shell_cve-2021-44228/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Malicious PowerShell](/stories/malicious_powershell/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Masquerading - Rename System Utilities](/stories/masquerading_-_rename_system_utilities/) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [InstallUtil](/tags/#installutil) | [Defense Evasion](/tags/#defense-evasion) |
+| [MetaSploit](/stories/metasploit/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Execution](/tags/#execution) |
 | [Meterpreter](/stories/meterpreter/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Execution](/tags/#execution) |
 | [Microsoft MSHTML Remote Code Execution CVE-2021-40444](/stories/microsoft_mshtml_remote_code_execution_cve-2021-40444/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Rundll32](/tags/#rundll32) | [Defense Evasion](/tags/#defense-evasion) |
 | [Microsoft Support Diagnostic Tool Vulnerability CVE-2022-30190](/stories/microsoft_support_diagnostic_tool_vulnerability_cve-2022-30190/) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
@@ -58,8 +60,9 @@ sidebar:
 | [OpenSSL CVE-2022-3602](/stories/openssl_cve-2022-3602/) | [Encrypted Channel](/tags/#encrypted-channel) | [Command And Control](/tags/#command-and-control) |
 | [PetitPotam NTLM Relay on Active Directory Certificate Services](/stories/petitpotam_ntlm_relay_on_active_directory_certificate_services/) | [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [Possible Backdoor Activity Associated With MUDCARP Espionage Campaigns](/stories/possible_backdoor_activity_associated_with_mudcarp_espionage_campaigns/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
-| [ProxyNotShell](/stories/proxynotshell/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
+| [ProxyNotShell](/stories/proxynotshell/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [PowerShell](/tags/#powershell) | [Execution](/tags/#execution) |
 | [ProxyShell](/stories/proxyshell/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [PowerShell](/tags/#powershell) | [Execution](/tags/#execution) |
+| [Reverse Network Proxy](/stories/reverse_network_proxy/) | [Protocol Tunneling](/tags/#protocol-tunneling), [Proxy](/tags/#proxy), [Web Service](/tags/#web-service) | [Command And Control](/tags/#command-and-control) |
 | [SQL Injection](/stories/sql_injection/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Signed Binary Proxy Execution InstallUtil](/stories/signed_binary_proxy_execution_installutil/) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [InstallUtil](/tags/#installutil) | [Defense Evasion](/tags/#defense-evasion) |
 | [Silver Sparrow](/stories/silver_sparrow/) | [Data Staged](/tags/#data-staged) | [Collection](/tags/#collection) |

@@ -42,6 +42,7 @@ During Pwn2Own April 2021, a security researcher demonstrated an attack  chain t
 | [W3WP Spawning Shell](/endpoint/0f03423c-7c6a-11eb-bc47-acde48001122/) | [Server Software Component](/tags/#server-software-component), [Web Shell](/tags/#web-shell) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Exchange Autodiscover SSRF Abuse](/web/d436f9e7-0ee7-4a47-864b-6dea2c4e2752/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Exchange PowerShell Module Usage](/endpoint/1118bc65-b0c7-4589-bc2f-ad6802fd0909/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [PowerShell](/tags/#powershell) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows MSExchange Management Mailbox Cmdlet Usage](/endpoint/396de86f-25e7-4b0e-be09-a330be35249d/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [PowerShell](/tags/#powershell) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

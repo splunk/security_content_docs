@@ -41,6 +41,7 @@ Microsoft is investigating two reported zero-day vulnerabilities affecting Micro
 | [Unified Messaging Service Spawning a Process](/endpoint/f1126df0-7bd5-11eb-988f-acde48001122/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [W3WP Spawning Shell](/endpoint/0f03423c-7c6a-11eb-bc47-acde48001122/) | [Server Software Component](/tags/#server-software-component), [Web Shell](/tags/#web-shell) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Exchange Autodiscover SSRF Abuse](/web/d436f9e7-0ee7-4a47-864b-6dea2c4e2752/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows MSExchange Management Mailbox Cmdlet Usage](/endpoint/396de86f-25e7-4b0e-be09-a330be35249d/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [PowerShell](/tags/#powershell) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

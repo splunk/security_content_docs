@@ -60,6 +60,7 @@ sidebar:
 | [OpenSSL CVE-2022-3602](/stories/openssl_cve-2022-3602/) | [Encrypted Channel](/tags/#encrypted-channel) | [Command And Control](/tags/#command-and-control) |
 | [PetitPotam NTLM Relay on Active Directory Certificate Services](/stories/petitpotam_ntlm_relay_on_active_directory_certificate_services/) | [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [Possible Backdoor Activity Associated With MUDCARP Espionage Campaigns](/stories/possible_backdoor_activity_associated_with_mudcarp_espionage_campaigns/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
+| [Prestige Ransomware](/stories/prestige_ransomware/) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [Execution](/tags/#execution) |
 | [ProxyNotShell](/stories/proxynotshell/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [PowerShell](/tags/#powershell) | [Execution](/tags/#execution) |
 | [ProxyShell](/stories/proxyshell/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [PowerShell](/tags/#powershell) | [Execution](/tags/#execution) |
 | [Reverse Network Proxy](/stories/reverse_network_proxy/) | [Protocol Tunneling](/tags/#protocol-tunneling), [Proxy](/tags/#proxy), [Web Service](/tags/#web-service) | [Command And Control](/tags/#command-and-control) |
@@ -91,5 +92,6 @@ sidebar:
 | [Windows Drivers](/stories/windows_drivers/) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Windows Log Manipulation](/stories/windows_log_manipulation/) | [Indicator Removal](/tags/#indicator-removal), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [Defense Evasion](/tags/#defense-evasion) |
 | [Windows Persistence Techniques](/stories/windows_persistence_techniques/) | [Services Registry Permissions Weakness](/tags/#services-registry-permissions-weakness) | [Persistence](/tags/#persistence) |
+| [Windows Post-Exploitation](/stories/windows_post-exploitation/) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [Execution](/tags/#execution) |
 | [Windows Privilege Escalation](/stories/windows_privilege_escalation/) | [Malicious File](/tags/#malicious-file) | [Execution](/tags/#execution) |
 | [Windows System Binary Proxy Execution MSIExec](/stories/windows_system_binary_proxy_execution_msiexec/) | [Msiexec](/tags/#msiexec) | [Defense Evasion](/tags/#defense-evasion) |

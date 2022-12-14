@@ -105,6 +105,7 @@ sidebar:
 | [Orangeworm Attack Group](orangeworm_attack_group) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [Persistence](/tags/#persistence) |
 | [PetitPotam NTLM Relay on Active Directory Certificate Services](petitpotam_ntlm_relay_on_active_directory_certificate_services) | [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [Possible Backdoor Activity Associated With MUDCARP Espionage Campaigns](possible_backdoor_activity_associated_with_mudcarp_espionage_campaigns) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
+| [Prestige Ransomware](prestige_ransomware) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [Execution](/tags/#execution) |
 | [PrintNightmare CVE-2021-34527](printnightmare_cve-2021-34527) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Rundll32](/tags/#rundll32) | [Defense Evasion](/tags/#defense-evasion) |
 | [Prohibited Traffic Allowed or Protocol Mismatch](prohibited_traffic_allowed_or_protocol_mismatch) | [Application Layer Protocol](/tags/#application-layer-protocol), [Web Protocols](/tags/#web-protocols) | [Command And Control](/tags/#command-and-control) |
 | [ProxyNotShell](proxynotshell) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [PowerShell](/tags/#powershell) | [Execution](/tags/#execution) |
@@ -159,6 +160,7 @@ sidebar:
 | [Windows File Extension and Association Abuse](windows_file_extension_and_association_abuse) | [Change Default File Association](/tags/#change-default-file-association) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Windows Log Manipulation](windows_log_manipulation) | [Indicator Removal](/tags/#indicator-removal), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [Defense Evasion](/tags/#defense-evasion) |
 | [Windows Persistence Techniques](windows_persistence_techniques) | [Services Registry Permissions Weakness](/tags/#services-registry-permissions-weakness) | [Persistence](/tags/#persistence) |
+| [Windows Post-Exploitation](windows_post-exploitation) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [Execution](/tags/#execution) |
 | [Windows Privilege Escalation](windows_privilege_escalation) | [Malicious File](/tags/#malicious-file) | [Execution](/tags/#execution) |
 | [Windows Registry Abuse](windows_registry_abuse) | [Services Registry Permissions Weakness](/tags/#services-registry-permissions-weakness) | [Persistence](/tags/#persistence) |
 | [Windows Service Abuse](windows_service_abuse) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [Persistence](/tags/#persistence) |

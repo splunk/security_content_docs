@@ -39,13 +39,13 @@ tags:
 {{ playbook.how_to_implement}}
 
 {% if playbook.tags.vpe_type == "Modern" %}
-#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/{{ playbook.playbook | lower | replace(" ", "_")}}.json){: .btn .btn--info}
+#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/{{ playbook.playbook | replace(" ", "_")}}.json){: .btn .btn--info}
 
-[![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/{{ playbook.playbook | lower | replace(" ", "_")}}.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/{{ playbook.playbook | lower | replace(" ", "_")}}.json)
+[![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/{{ playbook.playbook | replace(" ", "_")}}.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/{{ playbook.playbook | replace(" ", "_")}}.json)
 {% else %}
 #### Explore Playbook
 
-![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/{{ playbook.playbook | lower | replace(" ", "_")}}.png)
+![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/{{ playbook.playbook | replace(" ", "_")}}.png)
 {% endif %}
 #### Required field
 {% for field in playbook.tags.playbook_fields -%}
@@ -60,4 +60,4 @@ tags:
 {% endif %}
 
 
-[*source*](https://github.com/splunk/security_content/tree/develop/playbooks/{{ playbook.playbook | lower | replace (" ", "_") }}.yml) \| *version*: **{{playbook.version}}**
+[*source*](https://github.com/splunk/security_content/tree/develop/playbooks/{{ playbook.playbook | replace (" ", "_") }}.yml) \| *version*: **{{playbook.version}}**

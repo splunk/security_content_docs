@@ -41,7 +41,7 @@ tags:
 {% if playbook.tags.vpe_type == "Modern" %}
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/{{ playbook.playbook | replace(" ", "_")}}.json){: .btn .btn--info}
 
-[![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/{{ playbook.playbook | lower | replace(" ", "_")}}.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/{{ playbook.playbook | replace(" ", "_")}}.json)
+[![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/{{ playbook.playbook | replace(" ", "_")}}.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/{{ playbook.playbook | replace(" ", "_")}}.json)
 {% else %}
 #### Explore Playbook
 

@@ -73,6 +73,7 @@ sidebar:
 | [HAFNIUM Group](hafnium_group) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Hermetic Wiper](hermetic_wiper) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [Hidden Cobra Malware](hidden_cobra_malware) | [SMB/Windows Admin Shares](/tags/#smb/windows-admin-shares), [Remote Services](/tags/#remote-services) | [Lateral Movement](/tags/#lateral-movement) |
+| [IIS Components](iis_components) | [Server Software Component](/tags/#server-software-component), [IIS Components](/tags/#iis-components) | [Persistence](/tags/#persistence) |
 | [IcedID](icedid) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |
 | [Industroyer2](industroyer2) | [Domain Account](/tags/#domain-account), [Account Discovery](/tags/#account-discovery) | [Discovery](/tags/#discovery) |
 | [Information Sabotage](information_sabotage) | [Indicator Removal](/tags/#indicator-removal), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [Defense Evasion](/tags/#defense-evasion) |

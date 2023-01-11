@@ -50,6 +50,7 @@ Microsoft is investigating two reported zero-day vulnerabilities affecting Micro
 * [https://twitter.com/cglyer/status/1575793769814728705?s=20&t=67gq9xCWuyPm1VEm8ydfyA](https://twitter.com/cglyer/status/1575793769814728705?s=20&t=67gq9xCWuyPm1VEm8ydfyA)
 * [https://www.gteltsc.vn/blog/warning-new-attack-campaign-utilized-a-new-0day-rce-vulnerability-on-microsoft-exchange-server-12715.html](https://www.gteltsc.vn/blog/warning-new-attack-campaign-utilized-a-new-0day-rce-vulnerability-on-microsoft-exchange-server-12715.html)
 * [https://research.splunk.com/stories/proxyshell/](https://research.splunk.com/stories/proxyshell/)
+* [https://www.inversecos.com/2022/07/hunting-for-apt-abuse-of-exchange.html](https://www.inversecos.com/2022/07/hunting-for-apt-abuse-of-exchange.html)
 
 
 

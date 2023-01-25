@@ -29,7 +29,7 @@ sidebar:
 | [Collection and Staging](/stories/collection_and_staging/) | [Masquerading](/tags/#masquerading) | [Defense Evasion](/tags/#defense-evasion) |
 | [Command and Control](/stories/command_and_control/) | [Remote Access Software](/tags/#remote-access-software) | [Command And Control](/tags/#command-and-control) |
 | [Credential Dumping](/stories/credential_dumping/) | [NTDS](/tags/#ntds), [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
-| [DNS Hijacking](/stories/dns_hijacking/) | [Drive-by Compromise](/tags/#drive-by-compromise) | [Initial Access](/tags/#initial-access) |
+| [DNS Hijacking](/stories/dns_hijacking/) | [Domain Generation Algorithms](/tags/#domain-generation-algorithms) | [Command And Control](/tags/#command-and-control) |
 | [Data Exfiltration](/stories/data_exfiltration/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol), [Exfiltration Over Alternative Protocol](/tags/#exfiltration-over-alternative-protocol) | [Exfiltration](/tags/#exfiltration) |
 | [Deobfuscate-Decode Files or Information](/stories/deobfuscate-decode_files_or_information/) | [Deobfuscate/Decode Files or Information](/tags/#deobfuscate/decode-files-or-information) | [Defense Evasion](/tags/#defense-evasion) |
 | [Detect Zerologon Attack](/stories/detect_zerologon_attack/) | [LSASS Memory](/tags/#lsass-memory), [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
@@ -90,7 +90,7 @@ sidebar:
 | [Windows DNS SIGRed CVE-2020-1350](/stories/windows_dns_sigred_cve-2020-1350/) | [Exploitation for Client Execution](/tags/#exploitation-for-client-execution) | [Execution](/tags/#execution) |
 | [Windows Defense Evasion Tactics](/stories/windows_defense_evasion_tactics/) | [Bypass User Account Control](/tags/#bypass-user-account-control), [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Windows Discovery Techniques](/stories/windows_discovery_techniques/) | [Permission Groups Discovery](/tags/#permission-groups-discovery), [Local Groups](/tags/#local-groups) | [Discovery](/tags/#discovery) |
-| [Windows Drivers](/stories/windows_drivers/) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
+| [Windows Drivers](/stories/windows_drivers/) | [Windows Service](/tags/#windows-service) | [Persistence](/tags/#persistence) |
 | [Windows Log Manipulation](/stories/windows_log_manipulation/) | [Indicator Removal](/tags/#indicator-removal), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [Defense Evasion](/tags/#defense-evasion) |
 | [Windows Persistence Techniques](/stories/windows_persistence_techniques/) | [Services Registry Permissions Weakness](/tags/#services-registry-permissions-weakness) | [Persistence](/tags/#persistence) |
 | [Windows Post-Exploitation](/stories/windows_post-exploitation/) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [Execution](/tags/#execution) |

@@ -22,7 +22,7 @@ redirect_from: web/proxyshell_proxynotshell_behavior_detected/
 
 #### Description
 
-The following correlation will identify activity related to Windows Exchange being actively exploited by adversaries related to ProxyShell or ProxyNotShell. In addition, the analytic correlates post-exploitation Cobalt Strike analytic story. Common post-exploitation behavior has been seen in the wild includes adversaries running nltest, Cobalt Strike, Mimikatz and adding a new user. The correlation specifically looks for 5 distict analyticstories to trigger, modify or tune as needed for your organization. 5 analytic stories is an arbitrary number but was chosen to reduce the amount of noise but also require the 3 analytic stories to fire. Adversaries will exploit the vulnerable Exchange server, abuse SSRF, drop a web shell, utilize the PowerShell Exchange modules and begin post-exploitation.
+The following correlation will identify activity related to Windows Exchange being actively exploited by adversaries related to ProxyShell or ProxyNotShell. In addition, the analytic correlates post-exploitation Cobalt Strike analytic story. Common post-exploitation behavior has been seen in the wild includes adversaries running nltest, Cobalt Strike, Mimikatz and adding a new user. The correlation specifically looks for 5 distinct analyticstories to trigger. Modify or tune as needed for your organization. 5 analytics is an arbitrary number but was chosen to reduce the amount of noise but also require the 2 analytic stories or a ProxyShell and CobaltStrike to fire. Adversaries will exploit the vulnerable Exchange server, abuse SSRF, drop a web shell, utilize the PowerShell Exchange modules and begin post-exploitation.
 
 - **Type**: [Correlation](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types)
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
@@ -99,18 +99,18 @@ The following correlation will identify activity related to Windows Exchange bei
 
 ```
 
-| tstats `security_content_summariesonly` min(_time) as firstTime max(_time) as lastTime sum(All_Risk.calculated_risk_score) as risk_score, count(All_Risk.calculated_risk_score) as risk_event_count, values(All_Risk.annotations.mitre_attack.mitre_tactic_id) as annotations.mitre_attack.mitre_tactic_id, dc(All_Risk.annotations.mitre_attack.mitre_tactic_id) as mitre_tactic_id_count, values(All_Risk.analyticstories) as analyticstories values(All_Risk.annotations.mitre_attack.mitre_technique_id) as annotations.mitre_attack.mitre_technique_id, dc(All_Risk.annotations.mitre_attack.mitre_technique_id) as mitre_technique_id_count, values(All_Risk.tag) as tag, values(source) as source, dc(source) as source_count dc(All_Risk.analyticstories) as dc_analyticstories from datamodel=Risk.All_Risk where All_Risk.analyticstories IN ("ProxyNotShell","ProxyShell", "Cobalt Strike")   All_Risk.risk_object_type="system" by _time span=1h All_Risk.risk_object All_Risk.risk_object_type 
+| tstats `security_content_summariesonly` min(_time) as firstTime max(_time) as lastTime sum(All_Risk.calculated_risk_score) as risk_score, count(All_Risk.calculated_risk_score) as risk_event_count, values(All_Risk.annotations.mitre_attack.mitre_tactic_id) as annotations.mitre_attack.mitre_tactic_id, dc(All_Risk.annotations.mitre_attack.mitre_tactic_id) as mitre_tactic_id_count, values(All_Risk.analyticstories) as analyticstories values(All_Risk.annotations.mitre_attack.mitre_technique_id) as annotations.mitre_attack.mitre_technique_id, dc(All_Risk.annotations.mitre_attack.mitre_technique_id) as mitre_technique_id_count, values(All_Risk.tag) as tag, values(source) as source, dc(source) as source_count dc(All_Risk.analyticstories) as dc_analyticstories from datamodel=Risk.All_Risk where All_Risk.analyticstories IN ("ProxyNotShell","ProxyShell") OR (All_Risk.analyticstories IN ("ProxyNotShell","ProxyShell") AND All_Risk.analyticstories="Cobalt Strike") All_Risk.risk_object_type="system" by _time span=1h All_Risk.risk_object All_Risk.risk_object_type 
 | `drop_dm_object_name(All_Risk)` 
 | `security_content_ctime(firstTime)` 
-| `security_content_ctime(lastTime)` 
-| where dc_analyticstories >= 5 
+| `security_content_ctime(lastTime)`
+| where source_count >=5 
 | `proxyshell_proxynotshell_behavior_detected_filter`
 ```
 
 #### Macros
 The SPL above uses the following Macros:
-* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
 * [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
+* [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
 
 > :information_source:
 > **proxyshell_proxynotshell_behavior_detected_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.

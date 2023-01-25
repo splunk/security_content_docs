@@ -40,6 +40,7 @@ sidebar:
 | [CISA AA22-320A](cisa_aa22-320a) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [Persistence](/tags/#persistence) |
 | [CVE-2022-40684 Fortinet Appliance Auth bypass](cve-2022-40684_fortinet_appliance_auth_bypass) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Caddy Wiper](caddy_wiper) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
+| [Chaos Ransomware](chaos_ransomware) | [Malicious File](/tags/#malicious-file), [User Execution](/tags/#user-execution) | [Execution](/tags/#execution) |
 | [Clop Ransomware](clop_ransomware) | [System Services](/tags/#system-services), [Service Execution](/tags/#service-execution) | [Execution](/tags/#execution) |
 | [Cloud Cryptomining](cloud_cryptomining) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |
 | [Cloud Federated Credential Abuse](cloud_federated_credential_abuse) | [Image File Execution Options Injection](/tags/#image-file-execution-options-injection), [Event Triggered Execution](/tags/#event-triggered-execution) | [Privilege Escalation](/tags/#privilege-escalation) |
@@ -51,7 +52,7 @@ sidebar:
 | [CyclopsBLink](cyclopsblink) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |
 | [DHS Report TA18-074A](dhs_report_ta18-074a) | [Modify Registry](/tags/#modify-registry) | [Defense Evasion](/tags/#defense-evasion) |
 | [DNS Amplification Attacks](dns_amplification_attacks) | [Network Denial of Service](/tags/#network-denial-of-service), [Reflection Amplification](/tags/#reflection-amplification) | [Impact](/tags/#impact) |
-| [DNS Hijacking](dns_hijacking) | [Drive-by Compromise](/tags/#drive-by-compromise) | [Initial Access](/tags/#initial-access) |
+| [DNS Hijacking](dns_hijacking) | [Domain Generation Algorithms](/tags/#domain-generation-algorithms) | [Command And Control](/tags/#command-and-control) |
 | [DarkCrystal RAT](darkcrystal_rat) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
 | [DarkSide Ransomware](darkside_ransomware) | [LSASS Memory](/tags/#lsass-memory), [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [Data Destruction](data_destruction) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
@@ -89,6 +90,7 @@ sidebar:
 | [Linux Rootkit](linux_rootkit) | [System Information Discovery](/tags/#system-information-discovery), [Rootkit](/tags/#rootkit) | [Discovery](/tags/#discovery) |
 | [Living Off The Land](living_off_the_land) | [Bypass User Account Control](/tags/#bypass-user-account-control), [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Local Privilege Escalation With KrbRelayUp](local_privilege_escalation_with_krbrelayup) | [Windows Service](/tags/#windows-service) | [Persistence](/tags/#persistence) |
+| [LockBit Ransomware](lockbit_ransomware) | [Modify Registry](/tags/#modify-registry) | [Defense Evasion](/tags/#defense-evasion) |
 | [Log4Shell CVE-2021-44228](log4shell_cve-2021-44228) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Malicious PowerShell](malicious_powershell) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Masquerading - Rename System Utilities](masquerading_-_rename_system_utilities) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [InstallUtil](/tags/#installutil) | [Defense Evasion](/tags/#defense-evasion) |
@@ -157,7 +159,7 @@ sidebar:
 | [Windows DNS SIGRed CVE-2020-1350](windows_dns_sigred_cve-2020-1350) | [Exploitation for Client Execution](/tags/#exploitation-for-client-execution) | [Execution](/tags/#execution) |
 | [Windows Defense Evasion Tactics](windows_defense_evasion_tactics) | [Bypass User Account Control](/tags/#bypass-user-account-control), [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Windows Discovery Techniques](windows_discovery_techniques) | [Permission Groups Discovery](/tags/#permission-groups-discovery), [Local Groups](/tags/#local-groups) | [Discovery](/tags/#discovery) |
-| [Windows Drivers](windows_drivers) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
+| [Windows Drivers](windows_drivers) | [Windows Service](/tags/#windows-service) | [Persistence](/tags/#persistence) |
 | [Windows File Extension and Association Abuse](windows_file_extension_and_association_abuse) | [Change Default File Association](/tags/#change-default-file-association) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Windows Log Manipulation](windows_log_manipulation) | [Indicator Removal](/tags/#indicator-removal), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [Defense Evasion](/tags/#defense-evasion) |
 | [Windows Persistence Techniques](windows_persistence_techniques) | [Services Registry Permissions Weakness](/tags/#services-registry-permissions-weakness) | [Persistence](/tags/#persistence) |

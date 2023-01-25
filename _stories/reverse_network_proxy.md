@@ -31,6 +31,7 @@ This analytic story covers tools like Ngrok which is a legitimate reverse proxy 
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
+| [Linux Ngrok Reverse Proxy Usage](/endpoint/bc84d574-708c-467d-b78a-4c1e20171f97/) | [Protocol Tunneling](/tags/#protocol-tunneling), [Proxy](/tags/#proxy), [Web Service](/tags/#web-service) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Ngrok Reverse Proxy on Network](/network/5790a766-53b8-40d3-a696-3547b978fcf0/) | [Protocol Tunneling](/tags/#protocol-tunneling), [Proxy](/tags/#proxy), [Web Service](/tags/#web-service) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Ngrok Reverse Proxy Usage](/endpoint/e2549f2c-0aef-408a-b0c1-e0f270623436/) | [Protocol Tunneling](/tags/#protocol-tunneling), [Proxy](/tags/#proxy), [Web Service](/tags/#web-service) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 

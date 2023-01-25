@@ -37,6 +37,7 @@ A rootkit on Windows may sometimes be in the form of a Windows Driver. A driver 
 | [Windows Registry Modification for Safe Mode Persistence](/endpoint/c6149154-c9d8-11eb-9da7-acde48001122/) | [Registry Run Keys / Startup Folder](/tags/#registry-run-keys-/-startup-folder), [Boot or Logon Autostart Execution](/tags/#boot-or-logon-autostart-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Service Create Kernel Mode Driver](/endpoint/0b4e3b06-1b2b-4885-b752-cf06d12a90cb/) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process), [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows System File on Disk](/endpoint/993ce99d-9cdd-42c7-a2cf-733d5954e5a6/) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Vulnerable Driver Loaded](/endpoint/a2b1f1ef-221f-4187-b2a4-d4b08ec745f4/) | [Windows Service](/tags/#windows-service) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

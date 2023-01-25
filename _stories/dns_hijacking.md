@@ -41,8 +41,9 @@ The searches in this Analytic Story help you detect and investigate activities t
 | [Clients Connecting to Multiple DNS Servers](/deprecated/74ec6f18-604b-4202-a567-86b2066be3ce/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [DNS Query Requests Resolved by Unauthorized DNS Servers](/deprecated/1a67f15a-f4ff-4170-84e9-08cf6f75d6f6/) | [DNS](/tags/#dns) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [DNS record changed](/deprecated/44d3a43e-dcd5-49f7-8356-5209bb369065/) | [DNS](/tags/#dns) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Detect DGA domains using pretrained model in DSDL](/network/92e24f32-9b9a-4060-bba2-2a0eb3bf3493/) | [Domain Generation Algorithms](/tags/#domain-generation-algorithms) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect DGA domains using pretrained model in DSDL](/network/92e24f32-9b9a-4060-bba2-2a0eb31f3493/) | [Domain Generation Algorithms](/tags/#domain-generation-algorithms) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect hosts connecting to dynamic domain providers](/network/a1e761ac-1344-4dbd-88b2-3f34c912d359/) | [Drive-by Compromise](/tags/#drive-by-compromise) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect suspicious DNS TXT records using pretrained model in DSDL](/network/92f65c3a-968c-11ed-a1eb-0242ac120002/) | [Domain Generation Algorithms](/tags/#domain-generation-algorithms) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

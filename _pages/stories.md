@@ -25,6 +25,7 @@ sidebar:
 | [AgentTesla](agenttesla) | [Spearphishing Attachment](/tags/#spearphishing-attachment), [Phishing](/tags/#phishing) | [Initial Access](/tags/#initial-access) |
 | [Apache Struts Vulnerability](apache_struts_vulnerability) | [System Information Discovery](/tags/#system-information-discovery) | [Discovery](/tags/#discovery) |
 | [Asset Tracking]() | None | None |
+| [AsyncRAT](asyncrat) | [Spearphishing Attachment](/tags/#spearphishing-attachment), [Phishing](/tags/#phishing) | [Initial Access](/tags/#initial-access) |
 | [Atlassian Confluence Server and Data Center CVE-2022-26134](atlassian_confluence_server_and_data_center_cve-2022-26134) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Azorult](azorult) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |
 | [Azure Active Directory Account Takeover](azure_active_directory_account_takeover) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying) | [Resource Development](/tags/#resource-development) |
@@ -48,6 +49,7 @@ sidebar:
 | [ColdRoot MacOS RAT]() | None | None |
 | [Collection and Staging](collection_and_staging) | [Masquerading](/tags/#masquerading) | [Defense Evasion](/tags/#defense-evasion) |
 | [Command and Control](command_and_control) | [Remote Access Software](/tags/#remote-access-software) | [Command And Control](/tags/#command-and-control) |
+| [Compromised User Account](compromised_user_account) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Resource Development](/tags/#resource-development) |
 | [Credential Dumping](credential_dumping) | [NTDS](/tags/#ntds), [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [CyclopsBLink](cyclopsblink) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |
 | [DHS Report TA18-074A](dhs_report_ta18-074a) | [Modify Registry](/tags/#modify-registry) | [Defense Evasion](/tags/#defense-evasion) |
@@ -148,6 +150,7 @@ sidebar:
 | [Suspicious WMI Use](suspicious_wmi_use) | [XSL Script Processing](/tags/#xsl-script-processing) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious Windows Registry Activities](suspicious_windows_registry_activities) | [Services Registry Permissions Weakness](/tags/#services-registry-permissions-weakness) | [Persistence](/tags/#persistence) |
 | [Suspicious Zoom Child Processes](suspicious_zoom_child_processes) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
+| [Swift Slicer](swift_slicer) | [Data Destruction](/tags/#data-destruction) | [Impact](/tags/#impact) |
 | [Text4Shell CVE-2022-42889](text4shell_cve-2022-42889) | [Web Shell](/tags/#web-shell), [Server Software Component](/tags/#server-software-component), [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Persistence](/tags/#persistence) |
 | [Trickbot](trickbot) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Execution](/tags/#execution) |
 | [Trusted Developer Utilities Proxy Execution](trusted_developer_utilities_proxy_execution) | [Trusted Developer Utilities Proxy Execution](/tags/#trusted-developer-utilities-proxy-execution) | [Defense Evasion](/tags/#defense-evasion) |
@@ -156,6 +159,7 @@ sidebar:
 | [Use of Cleartext Protocols]() | None | None |
 | [VMware Server Side Injection and Privilege Escalation](vmware_server_side_injection_and_privilege_escalation) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [WhisperGate](whispergate) | [Process Injection](/tags/#process-injection), [Create or Modify System Process](/tags/#create-or-modify-system-process), [Parent PID Spoofing](/tags/#parent-pid-spoofing), [Access Token Manipulation](/tags/#access-token-manipulation) | [Defense Evasion](/tags/#defense-evasion) |
+| [Windows Certificate Services](windows_certificate_services) | [Steal or Forge Authentication Certificates](/tags/#steal-or-forge-authentication-certificates) | [Credential Access](/tags/#credential-access) |
 | [Windows DNS SIGRed CVE-2020-1350](windows_dns_sigred_cve-2020-1350) | [Exploitation for Client Execution](/tags/#exploitation-for-client-execution) | [Execution](/tags/#execution) |
 | [Windows Defense Evasion Tactics](windows_defense_evasion_tactics) | [Bypass User Account Control](/tags/#bypass-user-account-control), [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Windows Discovery Techniques](windows_discovery_techniques) | [Permission Groups Discovery](/tags/#permission-groups-discovery), [Local Groups](/tags/#local-groups) | [Discovery](/tags/#discovery) |

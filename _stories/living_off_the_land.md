@@ -10,6 +10,7 @@ tags:
   - Endpoint
   - Endpoint_Processes
   - Endpoint_Registry
+  - Network_Traffic
   - Risk
 ---
 
@@ -20,7 +21,7 @@ tags:
 Leverage analytics that allow you to identify the presence of an adversary leveraging native applications within your environment.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses), [Endpoint_Registry](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointRegistry), [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses), [Endpoint_Registry](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointRegistry), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic), [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk)
 - **Last Updated**: 2022-03-16
 - **Author**: Lou Stella, Splunk
 - **ID**: 6f7982e2-900b-11ec-a54a-acde48001122
@@ -64,6 +65,7 @@ Living Off The Land refers to an adversary methodology of using native applicati
 | [Dump LSASS via comsvcs DLL](/endpoint/8943b567-f14d-4ee8-a0bb-2121d4ce3184/) | [LSASS Memory](/tags/#lsass-memory), [OS Credential Dumping](/tags/#os-credential-dumping) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Esentutl SAM Copy](/endpoint/d372f928-ce4f-11eb-a762-acde48001122/) | [Security Account Manager](/tags/#security-account-manager), [OS Credential Dumping](/tags/#os-credential-dumping) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Eventvwr UAC Bypass](/endpoint/9cf8fe08-7ad8-11eb-9819-acde48001122/) | [Bypass User Account Control](/tags/#bypass-user-account-control), [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [LOLBAS With Network Traffic](/endpoint/2820f032-19eb-497e-8642-25b04a880359/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer), [Exfiltration Over Web Service](/tags/#exfiltration-over-web-service), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Living Off The Land](/endpoint/1be30d80-3a39-4df9-9102-64a467b24abc/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer), [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Correlation](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [MacOS LOLbin](/endpoint/58d270fb-5b39-418e-a855-4b8ac046805e/) | [Unix Shell](/tags/#unix-shell), [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [MacOS plutil](/endpoint/c11f2b57-92c1-4cd2-b46c-064eafb833ac/) | [Plist File Modification](/tags/#plist-file-modification) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

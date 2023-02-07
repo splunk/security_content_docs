@@ -38,6 +38,7 @@ However, if these IAM policies are misconfigured and have specific combinations 
 | [AWS IAM Delete Policy](/cloud/ec3a9362-92fe-11eb-99d0-acde48001122/) | [Account Manipulation](/tags/#account-manipulation) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [AWS IAM Failure Group Deletion](/cloud/723b861a-92eb-11eb-93b8-acde48001122/) | [Account Manipulation](/tags/#account-manipulation) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [AWS IAM Successful Group Deletion](/cloud/e776d06c-9267-11eb-819b-acde48001122/) | [Cloud Groups](/tags/#cloud-groups), [Account Manipulation](/tags/#account-manipulation), [Permission Groups Discovery](/tags/#permission-groups-discovery) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [AWS Password Policy Changes](/cloud/aee4a575-7064-4e60-b511-246f9baf9895/) | [Password Policy Discovery](/tags/#password-policy-discovery) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [AWS SetDefaultPolicyVersion](/cloud/2a9b80d3-6340-4345-11ad-212bf3d0dac4/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [AWS UpdateLoginProfile](/cloud/2a9b80d3-6a40-4115-11ad-212bf3d0d111/) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 

@@ -10,6 +10,7 @@ sidebar:
 
 | Name    | Technique | Datamodel |
 | --------| --------- |------------|
+| [AWS Concurrent Sessions From Different Ips](/cloud/51c04fdb-2746-465a-b86e-b413a09c9085/) | [Browser Session Hijacking](/tags/#browser-session-hijacking) |  None |
 | [AWS Console Login Failed During MFA Challenge](/cloud/55349868-5583-466f-98ab-d3beb321961e/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation) |  None |
 | [AWS Create Policy Version to allow all resources](/cloud/2a9b80d3-6340-4345-b5ad-212bf3d0dac4/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) |  None |
 | [AWS CreateAccessKey](/cloud/2a9b80d3-6340-4345-11ad-212bf3d0d111/) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) |  None |
@@ -32,6 +33,8 @@ sidebar:
 | [AWS ECR Container Upload Outside Business Hours](/cloud/d4c4d4eb-3994-41ca-a25e-a82d64e125bb/) | [Malicious Image](/tags/#malicious-image), [User Execution](/tags/#user-execution) |  None |
 | [AWS ECR Container Upload Unknown User](/cloud/300688e4-365c-4486-a065-7c884462b31d/) | [Malicious Image](/tags/#malicious-image), [User Execution](/tags/#user-execution) |  None |
 | [AWS Excessive Security Scanning](/cloud/1fdd164a-def8-4762-83a9-9ffe24e74d5a/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) |  None |
+| [AWS High Number Of Failed Authentications For User](/cloud/e3236f49-daf3-4b70-b808-9290912ac64d/) | [Password Policy Discovery](/tags/#password-policy-discovery) |  None |
+| [AWS High Number Of Failed Authentications From Ip](/cloud/f75b7f1a-b8eb-4975-a214-ff3e0a944757/) | [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying), [Credential Stuffing](/tags/#credential-stuffing) |  None |
 | [AWS IAM AccessDenied Discovery Events](/cloud/3e1f1568-9633-11eb-a69c-acde48001122/) | [Cloud Infrastructure Discovery](/tags/#cloud-infrastructure-discovery) |  None |
 | [AWS IAM Assume Role Policy Brute Force](/cloud/f19e09b0-9308-11eb-b7ec-acde48001122/) | [Cloud Infrastructure Discovery](/tags/#cloud-infrastructure-discovery), [Brute Force](/tags/#brute-force) |  None |
 | [AWS IAM Delete Policy](/cloud/ec3a9362-92fe-11eb-99d0-acde48001122/) | [Account Manipulation](/tags/#account-manipulation) |  None |
@@ -43,9 +46,12 @@ sidebar:
 | [AWS Multiple Users Failing To Authenticate From Ip](/cloud/71e1fb89-dd5f-4691-8523-575420de4630/) | [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying), [Credential Stuffing](/tags/#credential-stuffing) |  None |
 | [AWS Network Access Control List Created with All Open Ports](/cloud/ada0f478-84a8-4641-a3f1-d82362d6bd75/) | [Disable or Modify Cloud Firewall](/tags/#disable-or-modify-cloud-firewall), [Impair Defenses](/tags/#impair-defenses) |  None |
 | [AWS Network Access Control List Deleted](/cloud/ada0f478-84a8-4641-a3f1-d82362d6fd75/) | [Disable or Modify Cloud Firewall](/tags/#disable-or-modify-cloud-firewall), [Impair Defenses](/tags/#impair-defenses) |  None |
+| [AWS New MFA Method Registered For User](/cloud/4e3c26f2-4fb9-4bd7-ab46-1b76ffa2a23b/) | [Modify Authentication Process](/tags/#modify-authentication-process), [Multi-Factor Authentication](/tags/#multi-factor-authentication) |  None |
+| [AWS Password Policy Changes](/cloud/aee4a575-7064-4e60-b511-246f9baf9895/) | [Password Policy Discovery](/tags/#password-policy-discovery) |  None |
 | [AWS SAML Access by Provider User and Principal](/cloud/bbe23980-6019-11eb-ae93-0242ac130002/) | [Valid Accounts](/tags/#valid-accounts) |  None |
 | [AWS SAML Update identity provider](/cloud/2f0604c6-6030-11eb-ae93-0242ac130002/) | [Valid Accounts](/tags/#valid-accounts) |  None |
 | [AWS SetDefaultPolicyVersion](/cloud/2a9b80d3-6340-4345-11ad-212bf3d0dac4/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) |  None |
+| [AWS Successful Console Authentication From Multiple IPs](/cloud/395e50e1-2b87-4fa3-8632-0dfbdcbcd2cb/) | [Compromise Accounts](/tags/#compromise-accounts), [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) |  None |
 | [AWS Successful Single-Factor Authentication](/cloud/a520b1fe-cc9e-4f56-b762-18354594c52f/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [AWS Unusual Number of Failed Authentications From Ip](/cloud/0b5c9c2b-e2cb-4831-b4f1-af125ceb1386/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying), [Credential Stuffing](/tags/#credential-stuffing) |  None |
 | [AWS UpdateLoginProfile](/cloud/2a9b80d3-6a40-4115-11ad-212bf3d0d111/) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) |  None |
@@ -56,17 +62,22 @@ sidebar:
 | [Amazon EKS Kubernetes Pod scan detection](/cloud/dbfca1dd-b8e5-4ba4-be0e-e565e5d62002/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) |  None |
 | [Amazon EKS Kubernetes cluster scan detection](/cloud/294c4686-63dd-4fe6-93a2-ca807626704a/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) |  None |
 | [Azure AD Authentication Failed During MFA Challenge](/cloud/e62c9c2e-bf51-4719-906c-3074618fcc1c/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation) |  None |
+| [Azure AD Concurrent Sessions From Different Ips](/cloud/a9126f73-9a9b-493d-96ec-0dd06695490d/) | [Browser Session Hijacking](/tags/#browser-session-hijacking) |  None |
 | [Azure AD External Guest User Invited](/cloud/c1fb4edb-cab1-4359-9b40-925ffd797fb5/) | [Cloud Account](/tags/#cloud-account) |  None |
 | [Azure AD Global Administrator Role Assigned](/cloud/825fed20-309d-4fd1-8aaf-cd49c1bb093c/) | [Additional Cloud Roles](/tags/#additional-cloud-roles) |  None |
+| [Azure AD High Number Of Failed Authentications For User](/cloud/630b1694-210a-48ee-a450-6f79e7679f2c/) | [Brute Force](/tags/#brute-force), [Password Guessing](/tags/#password-guessing) |  None |
+| [Azure AD High Number Of Failed Authentications From Ip](/cloud/e5ab41bf-745d-4f72-a393-2611151afd8e/) | [Brute Force](/tags/#brute-force), [Password Guessing](/tags/#password-guessing), [Password Spraying](/tags/#password-spraying) |  None |
 | [Azure AD Multi-Factor Authentication Disabled](/cloud/482dd42a-acfa-486b-a0bb-d6fcda27318e/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Modify Authentication Process](/tags/#modify-authentication-process), [Multi-Factor Authentication](/tags/#multi-factor-authentication) |  None |
 | [Azure AD Multiple Failed MFA Requests For User](/cloud/264ea131-ab1f-41b8-90e0-33ad1a1888ea/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation), [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) |  None |
 | [Azure AD Multiple Users Failing To Authenticate From Ip](/cloud/94481a6a-8f59-4c86-957f-55a71e3612a6/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying) |  None |
 | [Azure AD New Custom Domain Added](/cloud/30c47f45-dd6a-4720-9963-0bca6c8686ef/) | [Domain Policy Modification](/tags/#domain-policy-modification), [Domain Trust Modification](/tags/#domain-trust-modification) |  None |
 | [Azure AD New Federated Domain Added](/cloud/a87cd633-076d-4ab2-9047-977751a3c1a0/) | [Domain Policy Modification](/tags/#domain-policy-modification), [Domain Trust Modification](/tags/#domain-trust-modification) |  None |
+| [Azure AD New MFA Method Registered For User](/cloud/2628b087-4189-403f-9044-87403f777a1b/) | [Modify Authentication Process](/tags/#modify-authentication-process), [Multi-Factor Authentication](/tags/#multi-factor-authentication) |  None |
 | [Azure AD Privileged Role Assigned](/cloud/a28f0bc3-3400-4a6e-a2da-89b9e95f0d2a/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) |  None |
 | [Azure AD Service Principal Created](/cloud/f8ba49e7-ffd3-4b53-8f61-e73974583c5d/) | [Cloud Account](/tags/#cloud-account) |  None |
 | [Azure AD Service Principal New Client Credentials](/cloud/e3adc0d3-9e4b-4b5d-b662-12cec1adff2a/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Credentials](/tags/#additional-cloud-credentials) |  None |
 | [Azure AD Service Principal Owner Added](/cloud/7ddf2084-6cf3-4a44-be83-474f7b73c701/) | [Account Manipulation](/tags/#account-manipulation) |  None |
+| [Azure AD Successful Authentication From Different Ips](/cloud/be6d868d-33b6-4aaa-912e-724fb555b11a/) | [Brute Force](/tags/#brute-force), [Password Guessing](/tags/#password-guessing), [Password Spraying](/tags/#password-spraying) |  None |
 | [Azure AD Successful PowerShell Authentication](/cloud/62f10052-d7b3-4e48-b57b-56f8e3ac7ceb/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) |  None |
 | [Azure AD Successful Single-Factor Authentication](/cloud/a560e7f6-1711-4353-885b-40be53101fcd/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) |  None |
 | [Azure AD Unusual Number of Failed Authentications From Ip](/cloud/3d8d3a36-93b8-42d7-8d91-c5f24cec223d/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying), [Credential Stuffing](/tags/#credential-stuffing) |  None |

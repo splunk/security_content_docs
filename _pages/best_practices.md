@@ -14,5 +14,5 @@ sidebar:
 | [Monitor for Updates]() | None | None |
 | [Prohibited Traffic Allowed or Protocol Mismatch](/stories/prohibited_traffic_allowed_or_protocol_mismatch/) | [Application Layer Protocol](/tags/#application-layer-protocol), [Web Protocols](/tags/#web-protocols) | [Command And Control](/tags/#command-and-control) |
 | [Router and Infrastructure Security](/stories/router_and_infrastructure_security/) | [Hardware Additions](/tags/#hardware-additions), [Automated Exfiltration](/tags/#automated-exfiltration), [Network Denial of Service](/tags/#network-denial-of-service), [Traffic Duplication](/tags/#traffic-duplication) | [Initial Access](/tags/#initial-access) |
-| [Splunk Vulnerabilities](/stories/splunk_vulnerabilities/) | [Digital Certificates](/tags/#digital-certificates) | [Resource Development](/tags/#resource-development) |
+| [Splunk Vulnerabilities](/stories/splunk_vulnerabilities/) | [Drive-by Compromise](/tags/#drive-by-compromise) | [Initial Access](/tags/#initial-access) |
 | [Use of Cleartext Protocols]() | None | None |

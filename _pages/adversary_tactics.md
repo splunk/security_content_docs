@@ -39,6 +39,7 @@ sidebar:
 | [Double Zero Destructor](/stories/double_zero_destructor/) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |
 | [F5 BIG-IP Vulnerability CVE-2022-1388](/stories/f5_big-ip_vulnerability_cve-2022-1388/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [F5 TMUI RCE CVE-2020-5902](/stories/f5_tmui_rce_cve-2020-5902/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
+| [Fortinet FortiNAC CVE-2022-39952](/stories/fortinet_fortinac_cve-2022-39952/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [HAFNIUM Group](/stories/hafnium_group/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Hermetic Wiper](/stories/hermetic_wiper/) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [IIS Components](/stories/iis_components/) | [Server Software Component](/tags/#server-software-component), [IIS Components](/tags/#iis-components) | [Persistence](/tags/#persistence) |

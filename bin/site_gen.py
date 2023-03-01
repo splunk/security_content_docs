@@ -396,7 +396,10 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack,
         for root, dirs, files in walk(REPO_PATH + 'detections/' + t):
             for file in files:
                 if file.endswith(".yml"):
-                    manifest_files.append((path.join(root, file)))
+                    if file.startswith("ssa___") and ('experimental' in root or 'deprecated' in root):
+                        continue
+                    else:
+                        manifest_files.append((path.join(root, file)))
 
     detections = []
     for manifest_file in tqdm(manifest_files):

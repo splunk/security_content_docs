@@ -155,7 +155,6 @@ Living Off The Land refers to an adversary methodology of using native applicati
 | [Windows System Binary Proxy Execution Compiled HTML File Using InfoTech Storage Handlers](/endpoint/ba0c2450-caea-4086-ac3a-a71e2659754b/) | [Compiled HTML File](/tags/#compiled-html-file), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows System Script Proxy Execution Syncappvpublishingserver](/endpoint/8dd73f89-682d-444c-8b41-8e679966ad3c/) | [System Script Proxy Execution](/tags/#system-script-proxy-execution), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows WMIPrvse Spawn MSBuild](/endpoint/76b3b290-9b31-11ec-a934-acde48001122/) | [Trusted Developer Utilities Proxy Execution](/tags/#trusted-developer-utilities-proxy-execution), [MSBuild](/tags/#msbuild) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows WSReset UAC Bypass](/endpoint/3118f0c2-90d9-11ec-b833-acde48001122/) | [Bypass User Account Control](/tags/#bypass-user-account-control), [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

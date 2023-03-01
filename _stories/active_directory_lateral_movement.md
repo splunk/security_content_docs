@@ -7,7 +7,6 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  - Authentication
   - Endpoint
   - Network_Traffic
 ---
@@ -19,7 +18,7 @@ tags:
 Detect and investigate tactics, techniques, and procedures around how attackers move laterally within an Active Directory environment. Since lateral movement is often a necessary step in a breach, it is important for cyber defenders to deploy detection coverage.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 - **Last Updated**: 2021-12-09
 - **Author**: David Dorsey, Mauricio Velazco Splunk
 - **ID**: 399d65dc-1f08-499b-a259-aad9051f38ad
@@ -44,8 +43,6 @@ If there is evidence of lateral movement, it is imperative for analysts to colle
 | [Interactive Session on Remote Endpoint with PowerShell](/endpoint/a4e8f3a4-48b2-11ec-bcfc-3e22fbd008af/) | [Remote Services](/tags/#remote-services), [Windows Remote Management](/tags/#windows-remote-management) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Mmc LOLBAS Execution Process Spawn](/endpoint/f6601940-4c74-11ec-b9b7-3e22fbd008af/) | [Remote Services](/tags/#remote-services), [Distributed Component Object Model](/tags/#distributed-component-object-model), [MMC](/tags/#mmc) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Possible Lateral Movement PowerShell Spawn](/endpoint/cb909b3e-512b-11ec-aa31-3e22fbd008af/) | [Remote Services](/tags/#remote-services), [Distributed Component Object Model](/tags/#distributed-component-object-model), [Windows Remote Management](/tags/#windows-remote-management), [Windows Management Instrumentation](/tags/#windows-management-instrumentation), [Scheduled Task](/tags/#scheduled-task), [Windows Service](/tags/#windows-service), [PowerShell](/tags/#powershell), [MMC](/tags/#mmc) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Potential Pass the Token or Hash Observed at the Destination Device](/deprecated/82e76b80-5cdb-4899-9b43-85dbe777b36d/) | [Use Alternate Authentication Material](/tags/#use-alternate-authentication-material), [Pass the Hash](/tags/#pass-the-hash) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Potential Pass the Token or Hash Observed by an Event Collecting Device](/deprecated/1058ba3e-a698-49bc-a1e5-7cedece4ea87/) | [Use Alternate Authentication Material](/tags/#use-alternate-authentication-material), [Pass the Hash](/tags/#pass-the-hash) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Randomly Generated Scheduled Task Name](/endpoint/9d22a780-5165-11ec-ad4f-3e22fbd008af/) | [Scheduled Task/Job](/tags/#scheduled-task/job), [Scheduled Task](/tags/#scheduled-task) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Randomly Generated Windows Service Name](/endpoint/2032a95a-5165-11ec-a2c3-3e22fbd008af/) | [Create or Modify System Process](/tags/#create-or-modify-system-process), [Windows Service](/tags/#windows-service) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Remote Desktop Network Traffic](/network/272b8407-842d-4b3d-bead-a704584003d3/) | [Remote Desktop Protocol](/tags/#remote-desktop-protocol), [Remote Services](/tags/#remote-services) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

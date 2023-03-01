@@ -91,7 +91,6 @@ Defense evasion is a tactic--identified in the MITRE ATT&CK framework--that adve
 | [Windows Process With NamedPipe CommandLine](/endpoint/e64399d4-94a8-11ec-a9da-acde48001122/) | [Process Injection](/tags/#process-injection) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Rasautou DLL Execution](/endpoint/6f42b8ce-1e15-11ec-ad5a-acde48001122/) | [Dynamic-link Library Injection](/tags/#dynamic-link-library-injection), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Process Injection](/tags/#process-injection) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Rasautou DLL Execution](/endpoint/6f42b8be-8e96-11ec-ad5a-acde48001122/) | [Dynamic-link Library Injection](/tags/#dynamic-link-library-injection), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Process Injection](/tags/#process-injection) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows WSReset UAC Bypass](/endpoint/3118f0c2-90d9-11ec-b833-acde48001122/) | [Bypass User Account Control](/tags/#bypass-user-account-control), [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

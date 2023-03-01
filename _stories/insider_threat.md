@@ -10,9 +10,7 @@ tags:
   - Splunk Behavioral Analytics
   - Authentication
   - Endpoint
-  - Endpoint_Filesystem
   - Endpoint_Processes
-  - Network_Traffic
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -22,7 +20,7 @@ tags:
 Monitor for activities and techniques associated with insider threats and specifically focusing on malicious insiders operating with in a corporate environment.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud, Splunk Behavioral Analytics
-- **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Filesystem](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointFilesystem), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
+- **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
 - **Last Updated**: 2022-05-19
 - **Author**: Jose Hernandez, Splunk
 - **ID**: c633df29-a950-4c4c-a0f8-02be6730797c
@@ -35,22 +33,18 @@ Insider Threats are best defined by CISA: "Insider threat incidents are possible
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Anomalous Usage of Account Credentials](/endpoint/629cbf9e-5785-11ec-9611-acde48001122/) | [Domain Accounts](/tags/#domain-accounts) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Anomalous usage of Archive Tools](/endpoint/63614a58-10e2-4c6c-ae81-ea1113681439/) | [Archive via Utility](/tags/#archive-via-utility), [Archive Collected Data](/tags/#archive-collected-data) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect Prohibited Applications Spawning cmd exe](/endpoint/c10a18cb-fd80-4ffa-a844-25026e0a0c94/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect RClone Command-Line Usage](/endpoint/e8b74268-5454-11ec-a799-acde48001122/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Excessive Number of Office Files Copied](/endpoint/3c6594a9-8df6-45a1-9357-d73b62083c63/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Fsutil Zeroing File](/endpoint/f792cdc9-43ee-4429-a3c0-ffce4fed1a85/) | [Indicator Removal](/tags/#indicator-removal) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Grant Permission Using Cacls Utility](/endpoint/c6da561a-cd29-11eb-ae65-acde48001122/) | [File and Directory Permissions Modification](/tags/#file-and-directory-permissions-modification) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Gsuite Drive Share In External Email](/cloud/f6ee02d6-fea0-11eb-b2c2-acde48001122/) | [Exfiltration to Cloud Storage](/tags/#exfiltration-to-cloud-storage), [Exfiltration Over Web Service](/tags/#exfiltration-over-web-service) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Gsuite Outbound Email With Attachment To External Domain](/cloud/dc4dc3a8-ff54-11eb-8bf7-acde48001122/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol), [Exfiltration Over Alternative Protocol](/tags/#exfiltration-over-alternative-protocol) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Hiding Files And Directories With Attrib exe](/endpoint/028e4406-6176-11ec-aec2-acde48001122/) | [Windows File and Directory Permissions Modification](/tags/#windows-file-and-directory-permissions-modification), [File and Directory Permissions Modification](/tags/#file-and-directory-permissions-modification) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [High File Deletion Frequency](/endpoint/b6200efd-13bd-4336-920a-057b25bbcfaf/) | [Data Destruction](/tags/#data-destruction) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [High Frequency Copy Of Files In Network Share](/endpoint/40925f12-4709-11ec-bb43-acde48001122/) | [Transfer Data to Cloud Account](/tags/#transfer-data-to-cloud-account) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Multiple Users Failing To Authenticate From Process](/endpoint/9015385a-9c84-11eb-bef2-acde48001122/) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Potential password in username](/endpoint/5ced34b4-ab32-4bb0-8f22-3b8f186f0a38/) | [Local Accounts](/tags/#local-accounts), [Credentials In Files](/tags/#credentials-in-files) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Sdelete Application Execution](/endpoint/fcc52b9a-4616-11ec-8454-acde48001122/) | [Data Destruction](/tags/#data-destruction), [File Deletion](/tags/#file-deletion), [Indicator Removal](/tags/#indicator-removal) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Unusual Volume of Data Download from Internal Server Per Entity](/network/cca028f4-77dd-11ec-bc09-acde48001122/) | [Data from Information Repositories](/tags/#data-from-information-repositories), [Data from Network Shared Drive](/tags/#data-from-network-shared-drive) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [WevtUtil Usage To Clear Logs](/endpoint/5438113c-cdd9-11eb-93b8-acde48001122/) | [Indicator Removal](/tags/#indicator-removal), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Wevtutil Usage To Disable Logs](/endpoint/a4bdc944-cdd9-11eb-ac97-acde48001122/) | [Indicator Removal](/tags/#indicator-removal), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Curl Upload to Remote Destination](/endpoint/cc8d046a-543b-11ec-b864-acde48001122/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

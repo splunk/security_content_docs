@@ -21,7 +21,6 @@ sidebar:
 | [Abnormally High AWS Instances Terminated by User - MLTK](/deprecated/1c02b86a-cd85-473e-a50b-014a9ac8fe3e/) | [Cloud Accounts](/tags/#cloud-accounts) |  None |
 | [Clients Connecting to Multiple DNS Servers](/deprecated/74ec6f18-604b-4202-a567-86b2066be3ce/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution) |
 | [Cloud Network Access Control List Deleted](/deprecated/021abc51-1862-41dd-ad43-43c739c0a983/) |  None |  None |
-| [Credential ExtractionFGDump and CacheDump](/deprecated/3c40b0ef-a03f-460a-9484-e4b9117cbb38/) | [OS Credential Dumping](/tags/#os-credential-dumping), [Security Account Manager](/tags/#security-account-manager) | [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses) |
 | [DNS Query Requests Resolved by Unauthorized DNS Servers](/deprecated/1a67f15a-f4ff-4170-84e9-08cf6f75d6f6/) | [DNS](/tags/#dns) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution) |
 | [DNS record changed](/deprecated/44d3a43e-dcd5-49f7-8356-5209bb369065/) | [DNS](/tags/#dns) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution) |
 | [Detect API activity from users without MFA](/deprecated/4d46e8bd-4072-48e4-92db-0325889ef894/) |  None |  None |
@@ -71,8 +70,6 @@ sidebar:
 | [Monitor DNS For Brand Abuse](/deprecated/24dd17b1-e2fb-4c31-878c-d4f746595bfa/) |  None | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution) |
 | [Open Redirect in Splunk Web](/deprecated/d199fb99-2312-451a-9daa-e5efa6ed76a7/) |  None |  None |
 | [Osquery pack - ColdRoot detection](/deprecated/a6fffe5e-05c3-4c04-badc-887607fbb8dc/) |  None |  None |
-| [Potential Pass the Token or Hash Observed at the Destination Device](/deprecated/82e76b80-5cdb-4899-9b43-85dbe777b36d/) | [Use Alternate Authentication Material](/tags/#use-alternate-authentication-material), [Pass the Hash](/tags/#pass-the-hash) | [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication) |
-| [Potential Pass the Token or Hash Observed by an Event Collecting Device](/deprecated/1058ba3e-a698-49bc-a1e5-7cedece4ea87/) | [Use Alternate Authentication Material](/tags/#use-alternate-authentication-material), [Pass the Hash](/tags/#pass-the-hash) | [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication) |
 | [Processes created by netsh](/deprecated/b89919ed-fe5f-492c-b139-95dbb162041e/) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Prohibited Software On Endpoint](/deprecated/a51bfe1a-94f0-48cc-b4e4-b6ae50145893/) |  None | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Reg exe used to hide files directories via registry keys](/deprecated/61a7d1e6-f5d4-41d9-a9be-39a1ffe69459/) | [Hidden Files and Directories](/tags/#hidden-files-and-directories) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
@@ -89,8 +86,6 @@ sidebar:
 | [Uncommon Processes On Endpoint](/deprecated/29ccce64-a10c-4389-a45f-337cb29ba1f7/) | [Malicious File](/tags/#malicious-file) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Unsigned Image Loaded by LSASS](/deprecated/56ef054c-76ef-45f9-af4a-a634695dcd65/) | [LSASS Memory](/tags/#lsass-memory) |  None |
 | [Unsuccessful Netbackup backups](/deprecated/a34aae96-ccf8-4aaa-952c-3ea21444444f/) |  None |  None |
-| [Unusual LOLBAS in short period of time](/deprecated/59c0dd70-169c-4900-9a1f-bfcf13302f93/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [Scheduled Task/Job](/tags/#scheduled-task/job) | [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses) |
-| [Unusually Long Command Line](/deprecated/58f43aba-1775-445e-b19c-be2b87d83ae3/) |  None | [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses) |
 | [Web Fraud - Account Harvesting](/deprecated/bf1d7b5c-df2f-4249-a401-c09fdc221ddf/) | [Create Account](/tags/#create-account) |  None |
 | [Web Fraud - Anomalous User Clickspeed](/deprecated/31337bbb-bc22-4752-b599-ef192df2dc7a/) | [Valid Accounts](/tags/#valid-accounts) |  None |
 | [Web Fraud - Password Sharing Across Accounts](/deprecated/31337a1a-53b9-4e05-96e9-55c934cb71d3/) |  None |  None |

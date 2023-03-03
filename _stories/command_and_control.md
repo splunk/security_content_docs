@@ -1,5 +1,5 @@
 ---
-title: "Command and Control"
+title: "Command And Control"
 last_modified_at: 2018-06-01
 toc: true
 toc_label: ""
@@ -8,7 +8,6 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
-  - Endpoint_Processes
   - Network_Resolution
   - Network_Traffic
 ---
@@ -17,10 +16,10 @@ tags:
 
 #### Description
 
-Detect and investigate tactics, techniques, and procedures leveraged by attackers to establish and operate command and control channels. Implants installed by attackers on compromised endpoints use these channels to receive instructions and send data back to the malicious operators.
+Detect and investigate tactics, techniques, and procedures leveraged by attackers to establish and operate Command And Control channels. Implants installed by attackers on compromised endpoints use these channels to receive instructions and send data back to the malicious operators.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses), [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 - **Last Updated**: 2018-06-01
 - **Author**: Rico Valdez, Splunk
 - **ID**: 943773c6-c4de-4f38-89a8-0b92f98804d8
@@ -45,7 +44,6 @@ Because this communication is so critical for an adversary, they often use techn
 | [Detect Long DNS TXT Record Response](/deprecated/05437c07-62f5-452e-afdc-04dd44815bb9/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect Spike in blocked Outbound Traffic from your AWS](/cloud/d3fffa37-492f-487b-a35d-c60fcb2acf01/) |  | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect hosts connecting to dynamic domain providers](/network/a1e761ac-1344-4dbd-88b2-3f34c912d359/) | [Drive-by Compromise](/tags/#drive-by-compromise) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Detect suspicious DNS TXT records using pretrained model in DSDL](/network/92f65c3a-968c-11ed-a1eb-0242ac120002/) | [Domain Generation Algorithms](/tags/#domain-generation-algorithms) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detection of DNS Tunnels](/deprecated/104658f4-afdc-499f-9719-17a43f9826f4/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Excessive DNS Failures](/network/104658f4-afdc-499e-9719-17243f9826f1/) | [DNS](/tags/#dns), [Application Layer Protocol](/tags/#application-layer-protocol) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Excessive Usage of NSLOOKUP App](/endpoint/0a69fdaa-a2b8-11eb-b16d-acde48001122/) | [Exfiltration Over Alternative Protocol](/tags/#exfiltration-over-alternative-protocol) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

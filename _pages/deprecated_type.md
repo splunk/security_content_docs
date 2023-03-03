@@ -25,13 +25,13 @@ sidebar:
 | [DNS record changed](/deprecated/44d3a43e-dcd5-49f7-8356-5209bb369065/) | [DNS](/tags/#dns) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution) |
 | [Detect API activity from users without MFA](/deprecated/4d46e8bd-4072-48e4-92db-0325889ef894/) |  None |  None |
 | [Detect AWS API Activities From Unapproved Accounts](/deprecated/ada0f478-84a8-4641-a3f1-d82362d4bd55/) | [Cloud Accounts](/tags/#cloud-accounts) |  None |
-| [Detect DNS requests to Phishing Sites leveraging EvilGinx2](/deprecated/24dd17b1-e2fb-4c31-878c-d4f226595bfa/) | [Spearphishing via Service](/tags/#spearphishing-via-service) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution) |
+| [Detect DNS requests to Phishing Sites leveraging EvilGinx2](/deprecated/24dd17b1-e2fb-4c31-878c-d4f226595bfa/) | [Spearphishing via Service](/tags/#spearphishing-via-service) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution), [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
 | [Detect Long DNS TXT Record Response](/deprecated/05437c07-62f5-452e-afdc-04dd44815bb9/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution) |
 | [Detect Mimikatz Via PowerShell And EventCode 4703](/deprecated/98917be2-bfc8-475a-8618-a9bb06575188/) | [LSASS Memory](/tags/#lsass-memory) |  None |
 | [Detect Spike in AWS API Activity](/deprecated/ada0f478-84a8-4641-a3f1-d32362d4bd55/) | [Cloud Accounts](/tags/#cloud-accounts) |  None |
 | [Detect Spike in Network ACL Activity](/deprecated/ada0f478-84a8-4641-a1f1-e32372d4bd53/) | [Disable or Modify Cloud Firewall](/tags/#disable-or-modify-cloud-firewall) |  None |
 | [Detect Spike in Security Group Activity](/deprecated/ada0f478-84a8-4641-a3f1-e32372d4bd53/) | [Cloud Accounts](/tags/#cloud-accounts) |  None |
-| [Detect USB device insertion](/deprecated/104658f4-afdc-499f-9719-17a43f9826f5/) |  None | [Change_Analysis](https://docs.splunk.com/Documentation/CIM/latest/User/ChangeAnalysis) |
+| [Detect USB device insertion](/deprecated/104658f4-afdc-499f-9719-17a43f9826f5/) |  None | [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change), [Change_Analysis](https://docs.splunk.com/Documentation/CIM/latest/User/ChangeAnalysis) |
 | [Detect new API calls from user roles](/deprecated/22773e84-bac0-4595-b086-20d3f335b4f1/) | [Cloud Accounts](/tags/#cloud-accounts) |  None |
 | [Detect new user AWS Console Login](/deprecated/ada0f478-84a8-4641-a3f3-d82362dffd75/) | [Cloud Accounts](/tags/#cloud-accounts) |  None |
 | [Detect web traffic to dynamic domain providers](/deprecated/134da869-e264-4a8f-8d7e-fcd01c18f301/) | [Web Protocols](/tags/#web-protocols) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
@@ -45,9 +45,9 @@ sidebar:
 | [Execution of File With Spaces Before Extension](/deprecated/ab0353e6-a956-420b-b724-a8b4846d5d5a/) | [Rename System Utilities](/tags/#rename-system-utilities) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Extended Period Without Successful Netbackup Backups](/deprecated/a34aae96-ccf8-4aef-952c-3ea214444440/) |  None |  None |
 | [First time seen command line argument](/deprecated/a1b6e73f-98d5-470f-99ac-77aacd578473/) | [PowerShell](/tags/#powershell), [Windows Command Shell](/tags/#windows-command-shell) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
-| [GCP Detect accounts with high risk roles by project](/deprecated/27af8c15-38b0-4408-b339-920170724adb/) | [Valid Accounts](/tags/#valid-accounts) |  None |
-| [GCP Detect high risk permissions by resource and account](/deprecated/2e70ef35-2187-431f-aedc-4503dc9b06ba/) | [Valid Accounts](/tags/#valid-accounts) |  None |
-| [GCP Kubernetes cluster scan detection](/deprecated/db5957ec-0144-4c56-b512-9dccbe7a2d26/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) |  None |
+| [GCP Detect accounts with high risk roles by project](/deprecated/27af8c15-38b0-4408-b339-920170724adb/) | [Valid Accounts](/tags/#valid-accounts) | [Email](https://docs.splunk.com/Documentation/CIM/latest/User/Email) |
+| [GCP Detect high risk permissions by resource and account](/deprecated/2e70ef35-2187-431f-aedc-4503dc9b06ba/) | [Valid Accounts](/tags/#valid-accounts) | [Email](https://docs.splunk.com/Documentation/CIM/latest/User/Email) |
+| [GCP Kubernetes cluster scan detection](/deprecated/db5957ec-0144-4c56-b512-9dccbe7a2d26/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Email](https://docs.splunk.com/Documentation/CIM/latest/User/Email) |
 | [Identify New User Accounts](/deprecated/475b9e27-17e4-46e2-b7e2-648221be3b89/) | [Domain Accounts](/tags/#domain-accounts) |  None |
 | [Kubernetes AWS detect RBAC authorization by account](/deprecated/de7264ed-3ed9-4fef-bb01-6eefc87cefe8/) |  None |  None |
 | [Kubernetes AWS detect most active service accounts by pod](/deprecated/5b30b25d-7d32-42d8-95ca-64dfcd9076e6/) |  None |  None |
@@ -73,13 +73,13 @@ sidebar:
 | [Processes created by netsh](/deprecated/b89919ed-fe5f-492c-b139-95dbb162041e/) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Prohibited Software On Endpoint](/deprecated/a51bfe1a-94f0-48cc-b4e4-b6ae50145893/) |  None | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Reg exe used to hide files directories via registry keys](/deprecated/61a7d1e6-f5d4-41d9-a9be-39a1ffe69459/) | [Hidden Files and Directories](/tags/#hidden-files-and-directories) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
-| [Remote Registry Key modifications](/deprecated/c9f4b923-f8af-4155-b697-1354f5dcbc5e/) |  None |  None |
+| [Remote Registry Key modifications](/deprecated/c9f4b923-f8af-4155-b697-1354f5dcbc5e/) |  None | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Scheduled tasks used in BadRabbit ransomware](/deprecated/1297fb80-f42a-4b4a-9c8b-78c066437cf6/) | [Scheduled Task](/tags/#scheduled-task) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Spectre and Meltdown Vulnerable Systems](/deprecated/354be8e0-32cd-4da0-8c47-796de13b60ea/) |  None | [Vulnerabilities](https://docs.splunk.com/Documentation/CIM/latest/User/Vulnerabilities) |
 | [Splunk Enterprise Information Disclosure](/deprecated/f6a26b7b-7e80-4963-a9a8-d836e7534ebd/) |  None |  None |
-| [Suspicious Changes to File Associations](/deprecated/1b989a0e-0129-4446-a695-f193a5b746fc/) | [Change Default File Association](/tags/#change-default-file-association) |  None |
-| [Suspicious Email - UBA Anomaly](/deprecated/56e877a6-1455-4479-ad16-0550dc1e33f8/) | [Phishing](/tags/#phishing) | [UEBA](https://docs.splunk.com/Documentation/CIM/latest/User/UEBA) |
-| [Suspicious File Write](/deprecated/57f76b8a-32f0-42ed-b358-d9fa3ca7bac8/) |  None |  None |
+| [Suspicious Changes to File Associations](/deprecated/1b989a0e-0129-4446-a695-f193a5b746fc/) | [Change Default File Association](/tags/#change-default-file-association) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
+| [Suspicious Email - UBA Anomaly](/deprecated/56e877a6-1455-4479-ad16-0550dc1e33f8/) | [Phishing](/tags/#phishing) | [Email](https://docs.splunk.com/Documentation/CIM/latest/User/Email), [UEBA](https://docs.splunk.com/Documentation/CIM/latest/User/UEBA) |
+| [Suspicious File Write](/deprecated/57f76b8a-32f0-42ed-b358-d9fa3ca7bac8/) |  None | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Suspicious Powershell Command-Line Arguments](/deprecated/2cdb91d2-542c-497f-b252-be495e71f38c/) | [PowerShell](/tags/#powershell) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Suspicious Rundll32 Rename](/deprecated/7360137f-abad-473e-8189-acbdaa34d114/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Masquerading](/tags/#masquerading), [Rundll32](/tags/#rundll32), [Rename System Utilities](/tags/#rename-system-utilities) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Suspicious writes to System Volume Information](/deprecated/cd6297cd-2bdd-4aa1-84aa-5d2f84228fac/) | [Masquerading](/tags/#masquerading) |  None |
@@ -89,6 +89,6 @@ sidebar:
 | [Web Fraud - Account Harvesting](/deprecated/bf1d7b5c-df2f-4249-a401-c09fdc221ddf/) | [Create Account](/tags/#create-account) |  None |
 | [Web Fraud - Anomalous User Clickspeed](/deprecated/31337bbb-bc22-4752-b599-ef192df2dc7a/) | [Valid Accounts](/tags/#valid-accounts) |  None |
 | [Web Fraud - Password Sharing Across Accounts](/deprecated/31337a1a-53b9-4e05-96e9-55c934cb71d3/) |  None |  None |
-| [Windows connhost exe started forcefully](/deprecated/c114aaca-68ee-41c2-ad8c-32bf21db8769/) | [Windows Command Shell](/tags/#windows-command-shell) |  None |
-| [Windows hosts file modification](/deprecated/06a6fc63-a72d-41dc-8736-7e3dd9612116/) |  None |  None |
+| [Windows connhost exe started forcefully](/deprecated/c114aaca-68ee-41c2-ad8c-32bf21db8769/) | [Windows Command Shell](/tags/#windows-command-shell) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
+| [Windows hosts file modification](/deprecated/06a6fc63-a72d-41dc-8736-7e3dd9612116/) |  None | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [gcp detect oauth token abuse](/deprecated/a7e9f7bb-8901-4ad0-8d88-0a4ab07b1972/) | [Valid Accounts](/tags/#valid-accounts) |  None |

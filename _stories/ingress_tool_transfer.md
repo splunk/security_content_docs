@@ -8,24 +8,23 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
-  - Endpoint_Processes
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
 
 #### Description
 
-Adversaries may transfer tools or other files from an external system into a compromised environment. Files may be copied from an external adversary controlled system through the command and control channel to bring tools into the victim network or through alternate protocols with another tool such as FTP.
+Adversaries may transfer tools or other files from an external system into a compromised environment. Files may be copied from an external adversary controlled system through the Command And Control channel to bring tools into the victim network or through alternate protocols with another tool such as FTP.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-03-24
 - **Author**: Michael Haag, Splunk
 - **ID**: b3782036-8cbd-11eb-9d8e-acde48001122
 
 #### Narrative
 
-Ingress tool transfer is a Technique under tactic Command and Control. Behaviors will include the use of living off the land binaries to download implants or binaries over alternate communication ports. It is imperative to baseline applications on endpoints to understand what generates network activity, to where, and what is its native behavior. These utilities, when abused, will write files to disk in world writeable paths.\ During triage, review the reputation of the remote public destination IP or domain. Capture any files written to disk and perform analysis. Review other parrallel processes for additional behaviors.
+Ingress tool transfer is a Technique under tactic Command And Control. Behaviors will include the use of living off the land binaries to download implants or binaries over alternate communication ports. It is imperative to baseline applications on endpoints to understand what generates network activity, to where, and what is its native behavior. These utilities, when abused, will write files to disk in world writeable paths.\ During triage, review the reputation of the remote public destination IP or domain. Capture any files written to disk and perform analysis. Review other parrallel processes for additional behaviors.
 
 #### Detections
 
@@ -47,8 +46,8 @@ Ingress tool transfer is a Technique under tactic Command and Control. Behaviors
 | [Windows CertUtil URLCache Download](/endpoint/8cb1ad38-8f6d-11ec-87a3-acde48001122/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows CertUtil VerifyCtl Download](/endpoint/9ac29c40-8f6b-11ec-b19a-acde48001122/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Curl Download to Suspicious Path](/endpoint/c32f091e-30db-11ec-8738-acde48001122/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows Curl Upload to Remote Destination](/endpoint/cc8d046a-543b-11ec-b864-acde48001122/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Curl Upload to Remote Destination](/endpoint/42f8f1a2-4228-11ec-aade-acde48001122/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Curl Upload to Remote Destination](/endpoint/cc8d046a-543b-11ec-b864-acde48001122/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Powershell DownloadFile](/endpoint/46440222-81d5-44b1-a376-19dcd70d1b08/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference

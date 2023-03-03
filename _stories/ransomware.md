@@ -7,8 +7,8 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
+  - Change
   - Endpoint
-  - Endpoint_Processes
   - Network_Traffic
 ---
 
@@ -19,7 +19,7 @@ tags:
 Leverage searches that allow you to detect and investigate unusual activities that might relate to ransomware--spikes in SMB traffic, suspicious wevtutil usage, the presence of common ransomware extensions, and system processes run from unexpected locations, and many others.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
+- **Datamodel**: [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 - **Last Updated**: 2020-02-04
 - **Author**: David Dorsey, Splunk
 - **ID**: cf309d0d-d4aa-4fbb-963d-1e79febd3756
@@ -38,8 +38,8 @@ Ransomware is an ever-present risk to the enterprise, wherein an infected host e
 | [Allow Operation with Consent Admin](/endpoint/7de17d7a-c9d8-11eb-a812-acde48001122/) | [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Attempt To Delete Services](/endpoint/a0c8c292-d01a-11eb-aa18-acde48001122/) | [Service Stop](/tags/#service-stop), [Create or Modify System Process](/tags/#create-or-modify-system-process), [Windows Service](/tags/#windows-service) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Attempt To Disable Services](/endpoint/afb31de4-d023-11eb-98d5-acde48001122/) | [Service Stop](/tags/#service-stop) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [BCDEdit Failure Recovery Modification](/endpoint/76d79d6e-25bb-40f6-b3b2-e0a6b7e5ea13/) | [Inhibit System Recovery](/tags/#inhibit-system-recovery) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [BCDEdit Failure Recovery Modification](/endpoint/809b31d2-5462-11eb-ae93-0242ac130002/) | [Inhibit System Recovery](/tags/#inhibit-system-recovery) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [BCDEdit Failure Recovery Modification](/endpoint/76d79d6e-25bb-40f6-b3b2-e0a6b7e5ea13/) | [Inhibit System Recovery](/tags/#inhibit-system-recovery) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [CMLUA Or CMSTPLUA UAC Bypass](/endpoint/f87b5062-b405-11eb-a889-acde48001122/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [CMSTP](/tags/#cmstp) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Clear Unallocated Sector Using Cipher App](/endpoint/cd80a6ac-c9d9-11eb-8839-acde48001122/) | [File Deletion](/tags/#file-deletion), [Indicator Removal](/tags/#indicator-removal) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Clear Unallocated Sector Using Cipher App](/endpoint/8f907d90-6173-11ec-9c23-acde48001122/) | [File Deletion](/tags/#file-deletion), [Indicator Removal](/tags/#indicator-removal) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
@@ -64,8 +64,8 @@ Ransomware is an ever-present risk to the enterprise, wherein an infected host e
 | [Excessive Usage Of Net App](/endpoint/45e52536-ae42-11eb-b5c6-acde48001122/) | [Account Access Removal](/tags/#account-access-removal) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Excessive Usage Of SC Service Utility](/endpoint/cb6b339e-d4c6-11eb-a026-acde48001122/) | [System Services](/tags/#system-services), [Service Execution](/tags/#service-execution) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Execute Javascript With Jscript COM CLSID](/endpoint/dc64d064-d346-11eb-8588-acde48001122/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [Visual Basic](/tags/#visual-basic) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Fsutil Zeroing File](/endpoint/f792cdc9-43ee-4429-a3c0-ffce4fed1a85/) | [Indicator Removal](/tags/#indicator-removal) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Fsutil Zeroing File](/endpoint/4e5e024e-fabb-11eb-8b8f-acde48001122/) | [Indicator Removal](/tags/#indicator-removal) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Fsutil Zeroing File](/endpoint/f792cdc9-43ee-4429-a3c0-ffce4fed1a85/) | [Indicator Removal](/tags/#indicator-removal) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [ICACLS Grant Command](/endpoint/b1b1e316-accc-11eb-a9b4-acde48001122/) | [File and Directory Permissions Modification](/tags/#file-and-directory-permissions-modification) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Known Services Killed by Ransomware](/endpoint/3070f8e0-c528-11eb-b2a0-acde48001122/) | [Inhibit System Recovery](/tags/#inhibit-system-recovery) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [MS Exchange Mailbox Replication service writing Active Server Pages](/endpoint/985f322c-57a5-11ec-b9ac-acde48001122/) | [Server Software Component](/tags/#server-software-component), [Web Shell](/tags/#web-shell), [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
@@ -114,8 +114,8 @@ Ransomware is an ever-present risk to the enterprise, wherein an infected host e
 | [Windows Disable Shutdown Button Through Registry](/endpoint/55fb2958-9ecd-11ec-a06a-acde48001122/) | [Modify Registry](/tags/#modify-registry) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Disable Windows Group Policy Features Through Registry](/endpoint/63a449ae-9f04-11ec-945e-acde48001122/) | [Modify Registry](/tags/#modify-registry) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows DiskCryptor Usage](/endpoint/d56fe0c8-4650-11ec-a8fa-acde48001122/) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows DotNet Binary in Non Standard Path](/endpoint/21179107-099a-324a-94d3-08301e6c065f/) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [InstallUtil](/tags/#installutil) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows DotNet Binary in Non Standard Path](/endpoint/fddf3b56-7933-11ec-98a6-acde48001122/) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [InstallUtil](/tags/#installutil) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows DotNet Binary in Non Standard Path](/endpoint/21179107-099a-324a-94d3-08301e6c065f/) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [InstallUtil](/tags/#installutil) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Event Log Cleared](/endpoint/ad517544-aff9-4c96-bd99-d6eb43bfbb6a/) | [Indicator Removal](/tags/#indicator-removal), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Hide Notification Features Through Registry](/endpoint/cafa4bce-9f06-11ec-a7b2-acde48001122/) | [Modify Registry](/tags/#modify-registry) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows InstallUtil in Non Standard Path](/endpoint/dcf74b22-7933-11ec-857c-acde48001122/) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [InstallUtil](/tags/#installutil) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

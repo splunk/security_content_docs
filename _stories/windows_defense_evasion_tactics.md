@@ -7,9 +7,9 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
+  - Change
   - Endpoint
-  - Endpoint_Processes
-  - Endpoint_Registry
+  - Web
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -19,7 +19,7 @@ tags:
 Detect tactics used by malware to evade defenses on Windows endpoints. A few of these include suspicious `reg.exe` processes, files hidden with `attrib.exe` and disabling user-account control, among many others 
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses), [Endpoint_Registry](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointRegistry)
+- **Datamodel**: [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web)
 - **Last Updated**: 2018-05-31
 - **Author**: David Dorsey, Splunk
 - **ID**: 56e24a28-5003-4047-b2db-e8f3c4618064
@@ -80,7 +80,6 @@ Defense evasion is a tactic--identified in the MITRE ATT&CK framework--that adve
 | [Windows Disable Windows Group Policy Features Through Registry](/endpoint/63a449ae-9f04-11ec-945e-acde48001122/) | [Modify Registry](/tags/#modify-registry) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows DisableAntiSpyware Registry](/endpoint/23150a40-9301-4195-b802-5bb4f43067fb/) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Event For Service Disabled](/endpoint/9c2620a8-94a1-11ec-b40c-acde48001122/) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows Eventvwr UAC Bypass](/endpoint/66adff66-90d9-11ec-aba7-acde48001122/) | [Bypass User Account Control](/tags/#bypass-user-account-control), [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Excessive Disabled Services Event](/endpoint/c3f85976-94a5-11ec-9a58-acde48001122/) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Hide Notification Features Through Registry](/endpoint/cafa4bce-9f06-11ec-a7b2-acde48001122/) | [Modify Registry](/tags/#modify-registry) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Impair Defense Delete Win Defender Context Menu](/endpoint/395ed5fe-ad13-4366-9405-a228427bdd91/) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
@@ -89,8 +88,8 @@ Defense evasion is a tactic--identified in the MITRE ATT&CK framework--that adve
 | [Windows Modify Show Compress Color And Info Tip Registry](/endpoint/b7548c2e-9a10-11ec-99e3-acde48001122/) | [Modify Registry](/tags/#modify-registry) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows PowerShell Disable HTTP Logging](/endpoint/27958de0-2857-43ca-9d4c-b255cf59dcab/) | [Impair Defenses](/tags/#impair-defenses), [Disable Windows Event Logging](/tags/#disable-windows-event-logging), [Server Software Component](/tags/#server-software-component), [IIS Components](/tags/#iis-components) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Process With NamedPipe CommandLine](/endpoint/e64399d4-94a8-11ec-a9da-acde48001122/) | [Process Injection](/tags/#process-injection) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows Rasautou DLL Execution](/endpoint/6f42b8ce-1e15-11ec-ad5a-acde48001122/) | [Dynamic-link Library Injection](/tags/#dynamic-link-library-injection), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Process Injection](/tags/#process-injection) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Rasautou DLL Execution](/endpoint/6f42b8be-8e96-11ec-ad5a-acde48001122/) | [Dynamic-link Library Injection](/tags/#dynamic-link-library-injection), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Process Injection](/tags/#process-injection) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Rasautou DLL Execution](/endpoint/6f42b8ce-1e15-11ec-ad5a-acde48001122/) | [Dynamic-link Library Injection](/tags/#dynamic-link-library-injection), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Process Injection](/tags/#process-injection) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

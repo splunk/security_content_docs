@@ -7,7 +7,6 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  - Endpoint
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -17,7 +16,7 @@ tags:
 Monitor for activities and techniques associated with the exploitation of the sAMAccountName Spoofing (CVE-2021-42278) and Domain Controller Impersonation (CVE-2021-42287) vulnerabilities.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
+- **Datamodel**: 
 - **Last Updated**: 2021-12-20
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 0244fdee-61be-11ec-900e-acde48001122

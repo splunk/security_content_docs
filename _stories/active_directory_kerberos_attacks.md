@@ -7,8 +7,9 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
+  - Authentication
+  - Change
   - Endpoint
-  - Endpoint_Processes
   - Network_Traffic
 ---
 
@@ -19,7 +20,7 @@ tags:
 Monitor for activities and techniques associated with Kerberos based attacks within with Active Directory environments.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
+- **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication), [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 - **Last Updated**: 2022-02-02
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 38b8cf16-8461-11ec-ade1-acde48001122

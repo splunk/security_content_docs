@@ -52,7 +52,7 @@ The following correlation will identify activity related to Windows Exchange bei
 
 <div markdown="1">
 
-* Exploitation
+* Delivery
 
 
 </div>
@@ -64,7 +64,7 @@ The following correlation will identify activity related to Windows Exchange bei
 
 <div markdown="1">
 
-* DE.CM
+* DE.AE
 
 
 
@@ -76,9 +76,7 @@ The following correlation will identify activity related to Windows Exchange bei
 
 <div markdown="1">
 
-* CIS 3
-* CIS 5
-* CIS 16
+* CIS 13
 
 
 
@@ -161,7 +159,6 @@ False positives will be limited, however tune or modify the query as needed.
 Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
 
-* [https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/proxyshell/proxyshell-risk.log](https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1190/proxyshell/proxyshell-risk.log)
 
 
 

@@ -7,7 +7,8 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  - Endpoint
+  - Authentication
+  - Change
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -17,7 +18,7 @@ tags:
 KrbRelayUp is a tool that allows local privilege escalation from low-priviliged domain user to local system on domain-joined computers.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
+- **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication), [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change)
 - **Last Updated**: 2022-04-28
 - **Author**: Michael Haag, Mauricio Velazco, Splunk
 - **ID**: 765790f0-2f8f-4048-8321-fd1928ec2546

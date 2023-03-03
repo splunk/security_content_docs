@@ -16,6 +16,23 @@ from tqdm import tqdm
 
 CVESSEARCH_API_URL = 'https://cve.circl.lu'
 SPLUNKBASE_API_URL = "https://apps.splunk.com/api/apps/entriesbyid/"
+ATTACK_TACTICS_KILLCHAIN_MAPPING = {
+    "Reconnaissance": "Reconnaissance",
+    "Resource Development": "Weaponization",
+    "Initial Access": "Delivery",
+    "Execution": "Installation",
+    "Persistence": "Installation",
+    "Privilege Escalation": "Exploitation",
+    "Defense Evasion": "Exploitation",
+    "Credential Access": "Exploitation",
+    "Discovery": "Exploitation", 
+    "Lateral Movement": "Exploitation",
+    "Collection": "Exploitation",
+    "Command and Control": "Command and Control",
+    "Command And Control": "Command and Control",
+    "Exfiltration": "Actions On Objectives",
+    "Impact": "Actions On Objectives"
+}
 
 def get_cve_enrichment_new(cve_id):
     cve_enriched = dict()
@@ -67,6 +84,53 @@ def get_mitre_enrichment_new(attack, mitre_attack_id):
             mitre_attack = mitre_attack_object(technique, attack)
             return mitre_attack
     return []
+
+def enrich_datamodel(detection):
+    detection["datamodel"] = []
+    data_models = [
+        "Authentication", 
+        "Change", 
+        "Change_Analysis", 
+        "Email", 
+        "Endpoint", 
+        "Network_Resolution", 
+        "Network_Sessions", 
+        "Network_Traffic", 
+        "Risk", 
+        "Splunk_Audit", 
+        "UEBA", 
+        "Updates", 
+        "Vulnerabilities", 
+        "Web"
+    ]
+    for data_model in data_models:
+        if data_model in detection["search"]:
+            detection["datamodel"].append(data_model)
+
+    return detection
+
+def enrich_cis(detection):
+    if detection["tags"]["security_domain"] == "network":
+        detection["tags"]["cis20"] = ["CIS 13"]
+    else:
+        detection["tags"]["cis20"] = ["CIS 10"]
+    return detection
+
+def enrich_nist(detection):
+    if detection["type"] == "TTP":
+        detection["tags"]["nist"] = ["DE.CM"]
+    else:
+        detection["tags"]["nist"] = ["DE.AE"]
+    return detection
+
+def enrich_kill_chain(detection):
+    kill_chain_phases = list()
+    if "mitre_attacks" in detection:
+        for mitre_attack_obj in detection["mitre_attacks"]:
+            for tactic in mitre_attack_obj["tactic"]:
+                kill_chain_phases.append(ATTACK_TACTICS_KILLCHAIN_MAPPING[tactic])
+        detection["tags"]["kill_chain_phases"] = list(dict.fromkeys(kill_chain_phases))
+    return detection
 
 def enrich_splunk_app(splunk_ta):   
     appurl = SPLUNKBASE_API_URL + splunk_ta
@@ -396,10 +460,12 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack,
         for root, dirs, files in walk(REPO_PATH + 'detections/' + t):
             for file in files:
                 if file.endswith(".yml"):
-                    if file.startswith("ssa___") and ('experimental' in root or 'deprecated' in root):
-                        continue
-                    else:
-                        manifest_files.append((path.join(root, file)))
+                    manifest_files.append((path.join(root, file)))
+
+        for root, dirs, files in walk(REPO_PATH + 'ssa_detections/' + t):
+            for file in files:
+                if file.endswith(".yml"):
+                    manifest_files.append((path.join(root, file)))        
 
     detections = []
     for manifest_file in tqdm(manifest_files):
@@ -416,12 +482,21 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack,
                 sys.exit(1)
         detection_yaml = object
 
+        if "Splunk Behavioral Analytics" in detection_yaml["tags"]["product"]:
+            if detection_yaml["status"] != "production":
+                continue
+
         # add macros
         detection_yaml = add_macros(detection_yaml, REPO_PATH)
 
         # add lookups
         detection_yaml = add_lookups(detection_yaml, REPO_PATH)
 
+        detection_yaml = enrich_datamodel(detection_yaml)
+
+        detection_yaml = enrich_cis(detection_yaml)
+        detection_yaml = enrich_nist(detection_yaml)
+        
 
         # enrich the mitre object
         mitre_attacks = []
@@ -430,6 +505,8 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack,
                 mitre_attack = get_mitre_enrichment_new(attack, mitre_technique_id)
                 mitre_attacks.append(mitre_attack)
             detection_yaml['mitre_attacks'] = mitre_attacks
+
+        detection_yaml = enrich_kill_chain(detection_yaml)
 
         if SKIP_ENRICHMENT == False:
             if VERBOSE:

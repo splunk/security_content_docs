@@ -8,7 +8,6 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
-  - Endpoint_Processes
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -18,7 +17,7 @@ tags:
 Leveraging the Windows command-line interface (CLI) is one of the most common attack techniques--one that is also detailed in the MITRE ATT&CK framework. Use this Analytic Story to help you identify unusual or suspicious use of the CLI on Windows systems.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2020-02-03
 - **Author**: Bhavin Patel, Splunk
 - **ID**: f4368ddf-d59f-4192-84f6-778ac5a3ffc7
@@ -31,8 +30,8 @@ The ability to execute arbitrary commands via the Windows CLI is a primary goal 
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [Detect Prohibited Applications Spawning cmd exe](/endpoint/c10a18cb-fd80-4ffa-a844-25026e0a0c94/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect Prohibited Applications Spawning cmd exe](/endpoint/dcfd6b40-42f9-469d-a433-2e53f7486664/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [Windows Command Shell](/tags/#windows-command-shell) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Prohibited Applications Spawning cmd exe](/endpoint/c10a18cb-fd80-4ffa-a844-25026e0a0c94/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect Use of cmd exe to Launch Script Interpreters](/endpoint/b89919ed-fe5f-492c-b139-95dbb162039e/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [Windows Command Shell](/tags/#windows-command-shell) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect suspicious processnames using a pretrained model in DSDL](/endpoint/a15f8977-ad7d-4669-92ef-b59b97219bf5/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [First time seen command line argument](/deprecated/a1b6e73f-98d5-470f-99ac-77aacd578473/) | [PowerShell](/tags/#powershell), [Windows Command Shell](/tags/#windows-command-shell) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

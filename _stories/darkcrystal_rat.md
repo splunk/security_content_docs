@@ -8,7 +8,6 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
-  - Endpoint_Processes
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -18,7 +17,7 @@ tags:
 Leverage searches that allow you to detect and investigate unusual activities that might relate to the DcRat malware including ddos, spawning more process, botnet c2 communication, defense evasion and etc. The DcRat malware is known commercial backdoor that was first released in 2018. This tool was sold in underground forum and known to be one of the cheapest commercial RATs. DcRat is modular and bespoke plugin framework make it a very flexible option, helpful for a range of nefearious uses.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-07-26
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 639e6006-0885-4847-9394-ddc2902629bf
@@ -46,8 +45,8 @@ Adversaries may use this technique to maximize the impact on the target organiza
 | [Windows Gather Victim Host Information Camera](/endpoint/e4df4676-ea41-4397-b160-3ee0140dc332/) | [Hardware](/tags/#hardware), [Gather Victim Host Information](/tags/#gather-victim-host-information) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Gather Victim Network Info Through Ip Check Web Services](/endpoint/70f7c952-0758-46d6-9148-d8969c4481d1/) | [IP Addresses](/tags/#ip-addresses), [Gather Victim Network Information](/tags/#gather-victim-network-information) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows High File Deletion Frequency](/endpoint/45b125c4-866f-11eb-a95a-acde48001122/) | [Data Destruction](/tags/#data-destruction) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows Ingress Tool Transfer Using Explorer](/endpoint/695bfad6-9662-4f9e-a576-bf02a951aa60/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Ingress Tool Transfer Using Explorer](/endpoint/76753bab-f116-4ea3-8fb9-89b638be58a9/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Ingress Tool Transfer Using Explorer](/endpoint/695bfad6-9662-4f9e-a576-bf02a951aa60/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows System LogOff Commandline](/endpoint/74a8133f-93e7-4b71-9bd3-13a66124fd57/) | [System Shutdown/Reboot](/tags/#system-shutdown/reboot) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows System Reboot CommandLine](/endpoint/97fc2b60-c8eb-4711-93f7-d26fade3686f/) | [System Shutdown/Reboot](/tags/#system-shutdown/reboot) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows System Shutdown CommandLine](/endpoint/4fee57b8-d825-4bf3-9ea8-bf405cdb614c/) | [System Shutdown/Reboot](/tags/#system-shutdown/reboot) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

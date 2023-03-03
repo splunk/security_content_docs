@@ -56,7 +56,7 @@ This analytic will identify suspicious creation of URL shortcut link files. This
 
 <div markdown="1">
 
-* Exploitation
+* Installation
 
 
 </div>
@@ -80,9 +80,7 @@ This analytic will identify suspicious creation of URL shortcut link files. This
 
 <div markdown="1">
 
-* CIS 3
-* CIS 5
-* CIS 16
+* CIS 10
 
 
 
@@ -166,7 +164,6 @@ Administrators may allow creation of script or exe in this path.
 Replay any dataset to Splunk Enterprise by using our [`replay.py`](https://github.com/splunk/attack_data#using-replaypy) tool or the [UI](https://github.com/splunk/attack_data#using-ui).
 Alternatively you can replay a dataset into a [Splunk Attack Range](https://github.com/splunk/attack_range#replay-dumps-into-attack-range-splunk-server)
 
-* [https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/malware/chaos_ransomware/sysmon.log](https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/malware/chaos_ransomware/sysmon.log)
 
 
 

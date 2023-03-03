@@ -10,7 +10,6 @@ tags:
   - Splunk Behavioral Analytics
   - Authentication
   - Endpoint
-  - Endpoint_Processes
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -20,7 +19,7 @@ tags:
 Monitor for activities and techniques associated with insider threats and specifically focusing on malicious insiders operating with in a corporate environment.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud, Splunk Behavioral Analytics
-- **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
+- **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-05-19
 - **Author**: Jose Hernandez, Splunk
 - **ID**: c633df29-a950-4c4c-a0f8-02be6730797c

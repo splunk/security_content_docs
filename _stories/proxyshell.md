@@ -8,7 +8,6 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
-  - Endpoint_Processes
   - Risk
   - Web
 ---
@@ -20,7 +19,7 @@ tags:
 ProxyShell is a chain of exploits targeting on-premise Microsoft Exchange Server - CVE-2021-34473, CVE-2021-34523, and CVE-2021-31207.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses), [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk), [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk), [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web)
 - **Last Updated**: 2021-08-24
 - **Author**: Michael Haag, Teoderick Contreras, Mauricio Velazco, Splunk
 - **ID**: 413bb68e-04e2-11ec-a835-acde48001122
@@ -38,7 +37,6 @@ During Pwn2Own April 2021, a security researcher demonstrated an attack  chain t
 | [Exchange PowerShell Module Usage](/endpoint/2d10095e-05ae-11ec-8fdf-acde48001122/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [PowerShell](/tags/#powershell) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [MS Exchange Mailbox Replication service writing Active Server Pages](/endpoint/985f322c-57a5-11ec-b9ac-acde48001122/) | [Server Software Component](/tags/#server-software-component), [Web Shell](/tags/#web-shell), [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [ProxyShell ProxyNotShell Behavior Detected](/web/c32fab32-6aaf-492d-bfaf-acbed8e50cdf/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Correlation](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Unified Messaging Service Spawning a Process](/endpoint/f1126df0-7bd5-11eb-988f-acde48001122/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [W3WP Spawning Shell](/endpoint/0f03423c-7c6a-11eb-bc47-acde48001122/) | [Server Software Component](/tags/#server-software-component), [Web Shell](/tags/#web-shell) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Exchange Autodiscover SSRF Abuse](/web/d436f9e7-0ee7-4a47-864b-6dea2c4e2752/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Exchange PowerShell Module Usage](/endpoint/1118bc65-b0c7-4589-bc2f-ad6802fd0909/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [PowerShell](/tags/#powershell) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

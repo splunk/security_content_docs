@@ -46,4 +46,6 @@ sidebar:
 | [Splunk Identified SSL TLS Certificates](/network/620fbb89-86fd-4e2e-925f-738374277586/) | [Network Sniffing](/tags/#network-sniffing) |  None |
 | [TOR Traffic](/network/ea688274-9c06-4473-b951-e4cb7a5d7a45/) | [Application Layer Protocol](/tags/#application-layer-protocol), [Web Protocols](/tags/#web-protocols) | [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic) |
 | [Unusually Long Content-Type Length](/network/57a0a2bf-353f-40c1-84dc-29293f3c35b7/) |  None |  None |
+| [Windows AD Replication Service Traffic](/network/c6e24183-a5f4-4b2a-ad01-2eb456d09b67/) | [OS Credential Dumping](/tags/#os-credential-dumping), [DCSync](/tags/#dcsync), [Rogue Domain Controller](/tags/#rogue-domain-controller) | [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic), [Network_Sessions](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkSessions) |
+| [Windows AD Rogue Domain Controller Network Activity](/network/c4aeeeef-da7f-4338-b3ba-553cbcbe2138/) | [Rogue Domain Controller](/tags/#rogue-domain-controller) |  None |
 | [Zeek x509 Certificate with Punycode](/network/029d6fe4-a5fe-43af-827e-c78c50e81d81/) | [Encrypted Channel](/tags/#encrypted-channel) |  None |

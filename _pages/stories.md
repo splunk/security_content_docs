@@ -33,6 +33,7 @@ sidebar:
 | [Azure Active Directory Persistence](azure_active_directory_persistence) | [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [BITS Jobs](bits_jobs) | [BITS Jobs](/tags/#bits-jobs), [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [Defense Evasion](/tags/#defense-evasion) |
 | [Baron Samedit CVE-2021-3156](baron_samedit_cve-2021-3156) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
+| [BishopFox Sliver Adversary Emulation Framework](bishopfox_sliver_adversary_emulation_framework) | [System Services](/tags/#system-services), [Service Execution](/tags/#service-execution) | [Execution](/tags/#execution) |
 | [BlackMatter Ransomware](blackmatter_ransomware) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) | [Impact](/tags/#impact) |
 | [Brand Monitoring]() | None | None |
 | [Brute Ratel C4](brute_ratel_c4) | [Service Stop](/tags/#service-stop) | [Impact](/tags/#impact) |
@@ -129,6 +130,7 @@ sidebar:
 | [SamSam Ransomware](samsam_ransomware) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) | [Impact](/tags/#impact) |
 | [Signed Binary Proxy Execution InstallUtil](signed_binary_proxy_execution_installutil) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [InstallUtil](/tags/#installutil) | [Defense Evasion](/tags/#defense-evasion) |
 | [Silver Sparrow](silver_sparrow) | [Data Staged](/tags/#data-staged) | [Collection](/tags/#collection) |
+| [Sneaky Active Directory Persistence Tricks](sneaky_active_directory_persistence_tricks) | [Security Support Provider](/tags/#security-support-provider), [Boot or Logon Autostart Execution](/tags/#boot-or-logon-autostart-execution) | [Persistence](/tags/#persistence) |
 | [Spearphishing Attachments](spearphishing_attachments) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
 | [Splunk Vulnerabilities](splunk_vulnerabilities) | [Drive-by Compromise](/tags/#drive-by-compromise) | [Initial Access](/tags/#initial-access) |
 | [Spring4Shell CVE-2022-22965](spring4shell_cve-2022-22965) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |

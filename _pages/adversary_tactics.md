@@ -18,6 +18,7 @@ sidebar:
 | [Azure Active Directory Account Takeover](/stories/azure_active_directory_account_takeover/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying) | [Resource Development](/tags/#resource-development) |
 | [BITS Jobs](/stories/bits_jobs/) | [BITS Jobs](/tags/#bits-jobs), [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [Defense Evasion](/tags/#defense-evasion) |
 | [Baron Samedit CVE-2021-3156](/stories/baron_samedit_cve-2021-3156/) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
+| [BishopFox Sliver Adversary Emulation Framework](/stories/bishopfox_sliver_adversary_emulation_framework/) | [System Services](/tags/#system-services), [Service Execution](/tags/#service-execution) | [Execution](/tags/#execution) |
 | [Brute Ratel C4](/stories/brute_ratel_c4/) | [Service Stop](/tags/#service-stop) | [Impact](/tags/#impact) |
 | [CISA AA22-257A](/stories/cisa_aa22-257a/) | [Protocol Tunneling](/tags/#protocol-tunneling), [SSH](/tags/#ssh) | [Command And Control](/tags/#command-and-control) |
 | [CISA AA22-264A](/stories/cisa_aa22-264a/) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
@@ -70,6 +71,7 @@ sidebar:
 | [SQL Injection](/stories/sql_injection/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Signed Binary Proxy Execution InstallUtil](/stories/signed_binary_proxy_execution_installutil/) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [InstallUtil](/tags/#installutil) | [Defense Evasion](/tags/#defense-evasion) |
 | [Silver Sparrow](/stories/silver_sparrow/) | [Data Staged](/tags/#data-staged) | [Collection](/tags/#collection) |
+| [Sneaky Active Directory Persistence Tricks](/stories/sneaky_active_directory_persistence_tricks/) | [Security Support Provider](/tags/#security-support-provider), [Boot or Logon Autostart Execution](/tags/#boot-or-logon-autostart-execution) | [Persistence](/tags/#persistence) |
 | [Spearphishing Attachments](/stories/spearphishing_attachments/) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
 | [Spring4Shell CVE-2022-22965](/stories/spring4shell_cve-2022-22965/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Suspicious Command-Line Executions](/stories/suspicious_command-line_executions/) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities) | [Defense Evasion](/tags/#defense-evasion) |

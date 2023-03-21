@@ -31,7 +31,7 @@ WMI is a Microsoft infrastructure for management data and operations on Windows 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
 | [Detect WMI Event Subscription Persistence](/endpoint/01d9a0c2-cece-11eb-ab46-acde48001122/) | [Windows Management Instrumentation Event Subscription](/tags/#windows-management-instrumentation-event-subscription), [Event Triggered Execution](/tags/#event-triggered-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Process Execution via WMI](/endpoint/24869767-8579-485d-9a4f-d9ddfd8f0cac/) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Process Execution via WMI](/endpoint/24869767-8579-485d-9a4f-d9ddfd8f0cac/) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Remote Process Instantiation via WMI](/endpoint/d25d2c3d-d9d8-40ec-8fdf-e86fe155a3da/) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Remote WMI Command Attempt](/endpoint/272df6de-61f1-4784-877c-1fbc3e2d0838/) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Script Execution via WMI](/endpoint/aa73f80d-d728-4077-b226-81ea0c8be589/) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

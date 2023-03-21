@@ -24,8 +24,11 @@ sidebar:
 | [Okta MFA Exhaustion Hunt](/application/97e2fe57-3740-402c-988a-76b64ce04b8d/) | [Brute Force](/tags/#brute-force) |  None |
 | [Okta New API Token Created](/application/c3d22720-35d3-4da4-bd0a-740d37192bd4/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
 | [Okta New Device Enrolled on Account](/application/bb27cbce-d4de-432c-932f-2e206e9130fb/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
+| [Okta Phishing Detection with FastPass Origin Check](/application/f4ca0057-cbf3-44f8-82ea-4e330ee901d3/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts), [Modify Authentication Process](/tags/#modify-authentication-process) |  None |
 | [Okta Risk Threshold Exceeded](/application/d8b967dd-657f-4d88-93b5-c588bcd7218c/) | [Valid Accounts](/tags/#valid-accounts), [Brute Force](/tags/#brute-force) | [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk) |
 | [Okta Suspicious Activity Reported](/application/bfc840f5-c9c6-454c-aa13-b46fd0bf1e79/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
+| [Okta ThreatInsight Login Failure with High Unknown users](/application/632663b0-4562-4aad-abe9-9f621a049738/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts), [Credential Stuffing](/tags/#credential-stuffing) |  None |
+| [Okta ThreatInsight Suspected PasswordSpray Attack](/application/25dbad05-6682-4dd5-9ce9-8adecf0d9ae2/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts), [Password Spraying](/tags/#password-spraying) |  None |
 | [Okta ThreatInsight Threat Detected](/application/140504ae-5fe2-4d65-b2bc-a211813fbca6/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
 | [Okta Two or More Rejected Okta Pushes](/application/d93f785e-4c2c-4262-b8c7-12b77a13fd39/) | [Brute Force](/tags/#brute-force) |  None |
 | [Okta User Logins From Multiple Cities](/application/7594fa07-9f34-4d01-81cc-d6af6a5db9e8/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |

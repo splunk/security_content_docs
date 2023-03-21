@@ -1,12 +1,12 @@
 ---
-title: "Crowdstrike OAuth API Device Attribute Lookup"
+title: "CrowdStrike OAuth API Device Attribute Lookup"
 last_modified_at: 2023-01-11
 toc: true
 toc_label: ""
 tags:
   - Investigation
   - Splunk SOAR
-  - Crowdstrike OAuth API
+  - CrowdStrike OAuth API
 ---
 
 [Try in Splunk SOAR](https://www.splunk.com/en_us/software/splunk-security-orchestration-and-automation.html){: .btn .btn--success}
@@ -17,7 +17,7 @@ Accepts a user or device and looks up the most recent attributes and groups for 
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [Crowdstrike OAuth API](https://splunkbase.splunk.com/apps/#/search/Crowdstrike OAuth API/product/soar)
+- **Apps**: [CrowdStrike OAuth API](https://splunkbase.splunk.com/apps/#/search/CrowdStrike OAuth API/product/soar)
 - **Last Updated**: 2023-01-11
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: fc0eac01-af2b-4cb0-7b4d-63da67d3fe74
@@ -29,9 +29,9 @@ Accepts a user or device and looks up the most recent attributes and groups for 
 This input playbook requires the Crowdstrike OAuth API connector to be configured. It is designed to work in conjunction with the Dynamic Attribute Lookup playbook or other playbooks in the same style.
 
 
-#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Crowdstrike_OAuth_API_Device_Attribute_Lookup.json){: .btn .btn--info}
+#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/CrowdStrike_OAuth_API_Device_Attribute_Lookup.json){: .btn .btn--info}
 
-[![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/Crowdstrike_OAuth_API_Device_Attribute_Lookup.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Crowdstrike_OAuth_API_Device_Attribute_Lookup.json)
+[![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/CrowdStrike_OAuth_API_Device_Attribute_Lookup.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/CrowdStrike_OAuth_API_Device_Attribute_Lookup.json)
 
 #### Required field
 
@@ -40,4 +40,4 @@ This input playbook requires the Crowdstrike OAuth API connector to be configure
 
 
 
-[*source*](https://github.com/splunk/security_content/tree/develop/playbooks/Crowdstrike_OAuth_API_Device_Attribute_Lookup.yml) \| *version*: **1**
+[*source*](https://github.com/splunk/security_content/tree/develop/playbooks/CrowdStrike_OAuth_API_Device_Attribute_Lookup.yml) \| *version*: **1**

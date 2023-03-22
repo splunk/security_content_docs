@@ -32,6 +32,7 @@ An MFA Fatigue attack is when a threat actor runs a script that attempts to log 
 | ----------- | ----------- |--------------|
 | [Okta Account Locked Out](/application/d650c0ae-bdc5-400e-9f0f-f7aa0a010ef1/) | [Brute Force](/tags/#brute-force) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Okta MFA Exhaustion Hunt](/application/97e2fe57-3740-402c-988a-76b64ce04b8d/) | [Brute Force](/tags/#brute-force) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Okta Mismatch Between Source and Response for Verify Push Request](/application/8085b79b-9b85-4e67-ad63-351c9e9a5e9a/) | [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Okta Risk Threshold Exceeded](/application/d8b967dd-657f-4d88-93b5-c588bcd7218c/) | [Valid Accounts](/tags/#valid-accounts), [Brute Force](/tags/#brute-force) | [Correlation](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Okta Two or More Rejected Okta Pushes](/application/d93f785e-4c2c-4262-b8c7-12b77a13fd39/) | [Brute Force](/tags/#brute-force) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 

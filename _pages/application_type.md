@@ -22,11 +22,14 @@ sidebar:
 | [Okta Account Lockout Events](/application/62b70968-a0a5-4724-8ac4-67871e6f544d/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
 | [Okta Failed SSO Attempts](/application/371a6545-2618-4032-ad84-93386b8698c5/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
 | [Okta MFA Exhaustion Hunt](/application/97e2fe57-3740-402c-988a-76b64ce04b8d/) | [Brute Force](/tags/#brute-force) |  None |
+| [Okta Mismatch Between Source and Response for Verify Push Request](/application/8085b79b-9b85-4e67-ad63-351c9e9a5e9a/) | [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation) |  None |
+| [Okta Multiple Failed Requests to Access Applications](/application/1c21fed1-7000-4a2e-9105-5aaafa437247/) | [Web Session Cookie](/tags/#web-session-cookie), [Cloud Service Dashboard](/tags/#cloud-service-dashboard) |  None |
 | [Okta New API Token Created](/application/c3d22720-35d3-4da4-bd0a-740d37192bd4/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
 | [Okta New Device Enrolled on Account](/application/bb27cbce-d4de-432c-932f-2e206e9130fb/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
 | [Okta Phishing Detection with FastPass Origin Check](/application/f4ca0057-cbf3-44f8-82ea-4e330ee901d3/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts), [Modify Authentication Process](/tags/#modify-authentication-process) |  None |
 | [Okta Risk Threshold Exceeded](/application/d8b967dd-657f-4d88-93b5-c588bcd7218c/) | [Valid Accounts](/tags/#valid-accounts), [Brute Force](/tags/#brute-force) | [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk) |
 | [Okta Suspicious Activity Reported](/application/bfc840f5-c9c6-454c-aa13-b46fd0bf1e79/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
+| [Okta Suspicious Use of a Session Cookie](/application/71ad47d1-d6bd-4e0a-b35c-020ad9a6959e/) | [Steal Web Session Cookie](/tags/#steal-web-session-cookie) |  None |
 | [Okta ThreatInsight Login Failure with High Unknown users](/application/632663b0-4562-4aad-abe9-9f621a049738/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts), [Credential Stuffing](/tags/#credential-stuffing) |  None |
 | [Okta ThreatInsight Suspected PasswordSpray Attack](/application/25dbad05-6682-4dd5-9ce9-8adecf0d9ae2/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts), [Password Spraying](/tags/#password-spraying) |  None |
 | [Okta ThreatInsight Threat Detected](/application/140504ae-5fe2-4d65-b2bc-a211813fbca6/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |

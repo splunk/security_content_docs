@@ -43,7 +43,7 @@ sidebar:
 | [CISA AA22-320A](cisa_aa22-320a) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [Persistence](/tags/#persistence) |
 | [CVE-2022-40684 Fortinet Appliance Auth bypass](cve-2022-40684_fortinet_appliance_auth_bypass) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [CVE-2023-21716 Word RTF Heap Corruption](cve-2023-21716_word_rtf_heap_corruption) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
-| [CVE-2023-23397 PidLidReminder Privilege Escalation](cve-2023-23397_pidlidreminder_privilege_escalation) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol) | [Exfiltration](/tags/#exfiltration) |
+| [CVE-2023-23397 Outlook Elevation of Privilege](cve-2023-23397_outlook_elevation_of_privilege) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol) | [Exfiltration](/tags/#exfiltration) |
 | [Caddy Wiper](caddy_wiper) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [Chaos Ransomware](chaos_ransomware) | [Malicious File](/tags/#malicious-file), [User Execution](/tags/#user-execution) | [Execution](/tags/#execution) |
 | [Clop Ransomware](clop_ransomware) | [System Services](/tags/#system-services), [Service Execution](/tags/#service-execution) | [Execution](/tags/#execution) |

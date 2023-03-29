@@ -47,9 +47,11 @@ sidebar:
 | [Risk Notable Protect Assets and Users](/playbooks/risk_notable_protect_assets_and_users/)|[None](https://splunkbase.splunk.com/apps/#/search/None/product/soar)| Response |
 | [Risk Notable Review Indicators](/playbooks/risk_notable_review_indicators/)|[None](https://splunkbase.splunk.com/apps/#/search/None/product/soar)| Response |
 | [Risk Notable Verdict](/playbooks/risk_notable_verdict/)|[None](https://splunkbase.splunk.com/apps/#/search/None/product/soar)| Response |
+| [SAA Dynamic Analysis](/playbooks/saa_dynamic_analysis/)|[CrowdStrike OAuth API](https://splunkbase.splunk.com/apps/#/search/CrowdStrike OAuth API/product/soar)| Investigation |
 | [ServiceNow Related Tickets Search](/playbooks/servicenow_related_tickets_search/)|[Splunk](https://splunkbase.splunk.com/apps/#/search/Splunk/product/soar)| Investigation |
 | [Splunk Notable Related Tickets Search](/playbooks/splunk_notable_related_tickets_search/)|[Splunk](https://splunkbase.splunk.com/apps/#/search/Splunk/product/soar)| Investigation |
 | [Start Investigation](/playbooks/start_investigation/)| None | Investigation |
 | [Threat Intel Investigate](/playbooks/threat_intel_investigate/)| None | Investigation |
 | [TruSTAR Enrich Indicators](/playbooks/trustar_enrich_indicators/)|[TruSTAR](https://splunkbase.splunk.com/apps/#/search/TruSTAR/product/soar)| Investigation |
+| [UrlScan IO Dynamic Analysis](/playbooks/urlscan_io_dynamic_analysis/)|[urlscan.io](https://splunkbase.splunk.com/apps/#/search/urlscan.io/product/soar)| Investigation |
 | [VirusTotal v3 Identifier Reputation Analysis](/playbooks/virustotal_v3_identifier_reputation_analysis/)|[VirusTotal v3](https://splunkbase.splunk.com/apps/#/search/VirusTotal v3/product/soar)| Investigation |

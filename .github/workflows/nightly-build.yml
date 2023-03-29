@@ -27,13 +27,19 @@ jobs:
 
       - name: install dependencies
         run: poetry install --no-interaction 
-
+      
+      - name: get latest splunk security_content tag
+        id: latestrelease
+        run: |
+          echo "::set-output name=releasetag::$(curl -s https://api.github.com/repos/splunk/security_content/releases/latest | jq '.tag_name' | sed 's/\"//g')"
+          
       - name: clone splunk security content
         uses: actions/checkout@v3
         with:
           repository: splunk/security_content
           path: 'security_content'
-
+          ref: ${{ steps.latestrelease.outputs.releasetag }}
+            
       - name: clone mtire cti
         uses: actions/checkout@v3
         with:

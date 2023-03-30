@@ -31,14 +31,14 @@ jobs:
       - name: get latest splunk security_content tag
         id: latestrelease
         run: |
-          echo "::set-output name=releasetag::$(curl -s https://api.github.com/repos/splunk/security_content/releases/latest | jq '.tag_name' | sed 's/\"//g')"
+          echo "CONTENT_VERSION=$( curl -s https://api.github.com/repos/splunk/security_content/releases/latest | jq '.tag_name' | sed 's/\"//g')" >> $GITHUB_OUTPUT
           
       - name: clone splunk security content
         uses: actions/checkout@v3
         with:
           repository: splunk/security_content
           path: 'security_content'
-          ref: ${{ steps.latestrelease.outputs.releasetag }}
+          ref: ${{ steps.latestrelease.outputs.CONTENT_VERSION }}
             
       - name: clone mtire cti
         uses: actions/checkout@v3

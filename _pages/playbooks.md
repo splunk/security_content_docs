@@ -18,6 +18,7 @@ sidebar:
 | [Azure AD Graph User Attribute Lookup](/playbooks/azure_ad_graph_user_attribute_lookup/)|[Azure AD Graph](https://splunkbase.splunk.com/apps/#/search/Azure AD Graph/product/soar)| Investigation |
 | [Block Indicators](/playbooks/block_indicators/)|[Palo Alto Networks Firewall](https://splunkbase.splunk.com/apps/#/search/Palo Alto Networks Firewall/product/soar), [CarbonBlack Response](https://splunkbase.splunk.com/apps/#/search/CarbonBlack Response/product/soar), [OpenDNS Umbrella](https://splunkbase.splunk.com/apps/#/search/OpenDNS Umbrella/product/soar)| Response |
 | [CrowdStrike OAuth API Device Attribute Lookup](/playbooks/crowdstrike_oauth_api_device_attribute_lookup/)|[CrowdStrike OAuth API](https://splunkbase.splunk.com/apps/#/search/CrowdStrike OAuth API/product/soar)| Investigation |
+| [CrowdStrike OAuth API Dynamic Analysis](/playbooks/crowdstrike_oauth_api_dynamic_analysis/)|[CrowdStrike OAuth API](https://splunkbase.splunk.com/apps/#/search/CrowdStrike OAuth API/product/soar)| Investigation |
 | [Crowdstrike Malware Triage](/playbooks/crowdstrike_malware_triage/)|[Crowdstrike OAuth](https://splunkbase.splunk.com/apps/#/search/Crowdstrike OAuth/product/soar)| Response |
 | [Delete Detected Files](/playbooks/delete_detected_files/)|[Windows Remote Management](https://splunkbase.splunk.com/apps/#/search/Windows Remote Management/product/soar)| Response |
 | [Dynamic Attribute Lookup](/playbooks/dynamic_attribute_lookup/)| None | Investigation |

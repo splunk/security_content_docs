@@ -10,6 +10,7 @@ sidebar:
 
 | Name    | Technique | Datamodel |
 | --------| --------- |------------|
+| [3CX Supply Chain Attack Network Indicators](/network/791b727c-deec-4fbe-a732-756131b3c5a1/) | [Compromise Software Supply Chain](/tags/#compromise-software-supply-chain) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution) |
 | [DNS Query Length Outliers - MLTK](/network/85fbcfe8-9718-4911-adf6-7000d077a3a9/) | [DNS](/tags/#dns), [Application Layer Protocol](/tags/#application-layer-protocol) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution) |
 | [DNS Query Length With High Standard Deviation](/network/1a67f15a-f4ff-4170-84e9-08cf6f75d6f5/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol), [Exfiltration Over Alternative Protocol](/tags/#exfiltration-over-alternative-protocol) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution) |
 | [Detect ARP Poisoning](/network/b44bebd6-bd39-467b-9321-73971bcd7aac/) | [Hardware Additions](/tags/#hardware-additions), [Network Denial of Service](/tags/#network-denial-of-service), [Adversary-in-the-Middle](/tags/#adversary-in-the-middle), [ARP Cache Poisoning](/tags/#arp-cache-poisoning) |  None |

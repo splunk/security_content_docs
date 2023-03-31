@@ -10,6 +10,7 @@ sidebar:
 
 | Name    |   Technique |     Tactic   |
 | ----------- | ----------- |--------------|
+| [3CX Supply Chain Attack](3cx_supply_chain_attack) | [Compromise Software Supply Chain](/tags/#compromise-software-supply-chain) | [Initial Access](/tags/#initial-access) |
 | [AWS Cross Account Activity](aws_cross_account_activity) | [Use Alternate Authentication Material](/tags/#use-alternate-authentication-material) | [Defense Evasion](/tags/#defense-evasion) |
 | [AWS Defense Evasion](aws_defense_evasion) | [Impair Defenses](/tags/#impair-defenses), [Disable Cloud Logs](/tags/#disable-cloud-logs) | [Defense Evasion](/tags/#defense-evasion) |
 | [AWS IAM Privilege Escalation](aws_iam_privilege_escalation) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) | [Persistence](/tags/#persistence) |

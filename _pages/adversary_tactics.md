@@ -10,6 +10,7 @@ sidebar:
 
 | Name        | Technique   | Tactic       |
 | ----------- | ----------- |--------------|
+| [3CX Supply Chain Attack](/stories/3cx_supply_chain_attack/) | [Compromise Software Supply Chain](/tags/#compromise-software-supply-chain) | [Initial Access](/tags/#initial-access) |
 | [Active Directory Discovery](/stories/active_directory_discovery/) | [Permission Groups Discovery](/tags/#permission-groups-discovery), [Local Groups](/tags/#local-groups) | [Discovery](/tags/#discovery) |
 | [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks/) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
 | [Active Directory Lateral Movement](/stories/active_directory_lateral_movement/) | [Remote Services](/tags/#remote-services), [Windows Remote Management](/tags/#windows-remote-management) | [Lateral Movement](/tags/#lateral-movement) |

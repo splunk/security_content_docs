@@ -8,6 +8,8 @@ on:
 jobs:
   nightly:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: checkout security_content_docs
         uses: actions/checkout@v3

@@ -6,7 +6,7 @@ toc_label: ""
 tags:
   - Investigation
   - Splunk SOAR
-  - CrowdStrike OAuth API
+  - Splunk Attack Analyzer API
 ---
 
 [Try in Splunk SOAR](https://www.splunk.com/en_us/software/splunk-security-orchestration-and-automation.html){: .btn .btn--success}
@@ -17,7 +17,7 @@ Accepts url link, domain or vault_id (hash) to be detonated using Splunk Attacke
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [CrowdStrike OAuth API](https://splunkbase.splunk.com/apps/#/search/CrowdStrike OAuth API/product/soar)
+- **Apps**: [Splunk Attack Analyzer API](https://splunkbase.splunk.com/apps/#/search/Splunk Attack Analyzer API/product/soar)
 - **Last Updated**: 2023-03-24
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 2754c122-c63b-4558-9b83-23c1e1b96177

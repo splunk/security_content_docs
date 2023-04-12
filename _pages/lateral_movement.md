@@ -10,6 +10,7 @@ sidebar:
 
 | Name        | Technique   | Tactic       |
 | ----------- | ----------- |--------------|
-| [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks/) | [Remote System Discovery](/tags/#remote-system-discovery) | [Discovery](/tags/#discovery) |
+| [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks/) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
 | [Insider Threat](/stories/insider_threat/) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
 | [Living Off The Land](/stories/living_off_the_land/) | [Trusted Developer Utilities Proxy Execution](/tags/#trusted-developer-utilities-proxy-execution), [MSBuild](/tags/#msbuild) | [Defense Evasion](/tags/#defense-evasion) |
+| [Sneaky Active Directory Persistence Tricks](/stories/sneaky_active_directory_persistence_tricks/) | [Security Support Provider](/tags/#security-support-provider), [Boot or Logon Autostart Execution](/tags/#boot-or-logon-autostart-execution) | [Persistence](/tags/#persistence) |

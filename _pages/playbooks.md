@@ -10,13 +10,20 @@ sidebar:
 
 | Name    | SOAR App   | Type        |
 | --------| ---------- | ----------- |
+| [AD LDAP Entity Attribute Lookup](/playbooks/ad_ldap_entity_attribute_lookup/)|[AD LDAP](https://splunkbase.splunk.com/apps/#/search/AD LDAP/product/soar)| Investigation |
 | [AWS Disable User Accounts](/playbooks/aws_disable_user_accounts/)|[AWS IAM](https://splunkbase.splunk.com/apps/#/search/AWS IAM/product/soar)| Response |
 | [AWS Find Inactive Users](/playbooks/aws_find_inactive_users/)|[AWS IAM](https://splunkbase.splunk.com/apps/#/search/AWS IAM/product/soar), [Phantom](https://splunkbase.splunk.com/apps/#/search/Phantom/product/soar)| Investigation |
 | [Active Directory Reset password](/playbooks/active_directory_reset_password/)|[LDAP](https://splunkbase.splunk.com/apps/#/search/LDAP/product/soar)| Response |
+| [Automated Enrichment](/playbooks/automated_enrichment/)| None | Investigation |
+| [Azure AD Graph User Attribute Lookup](/playbooks/azure_ad_graph_user_attribute_lookup/)|[Azure AD Graph](https://splunkbase.splunk.com/apps/#/search/Azure AD Graph/product/soar)| Investigation |
 | [Block Indicators](/playbooks/block_indicators/)|[Palo Alto Networks Firewall](https://splunkbase.splunk.com/apps/#/search/Palo Alto Networks Firewall/product/soar), [CarbonBlack Response](https://splunkbase.splunk.com/apps/#/search/CarbonBlack Response/product/soar), [OpenDNS Umbrella](https://splunkbase.splunk.com/apps/#/search/OpenDNS Umbrella/product/soar)| Response |
+| [CrowdStrike OAuth API Device Attribute Lookup](/playbooks/crowdstrike_oauth_api_device_attribute_lookup/)|[CrowdStrike OAuth API](https://splunkbase.splunk.com/apps/#/search/CrowdStrike OAuth API/product/soar)| Investigation |
+| [CrowdStrike OAuth API Dynamic Analysis](/playbooks/crowdstrike_oauth_api_dynamic_analysis/)|[CrowdStrike OAuth API](https://splunkbase.splunk.com/apps/#/search/CrowdStrike OAuth API/product/soar)| Investigation |
 | [Crowdstrike Malware Triage](/playbooks/crowdstrike_malware_triage/)|[Crowdstrike OAuth](https://splunkbase.splunk.com/apps/#/search/Crowdstrike OAuth/product/soar)| Response |
 | [Delete Detected Files](/playbooks/delete_detected_files/)|[Windows Remote Management](https://splunkbase.splunk.com/apps/#/search/Windows Remote Management/product/soar)| Response |
+| [Dynamic Attribute Lookup](/playbooks/dynamic_attribute_lookup/)| None | Investigation |
 | [Dynamic Identifier Reputation Analysis](/playbooks/dynamic_identifier_reputation_analysis/)| None | Investigation |
+| [Dynamic Related Tickets Search](/playbooks/dynamic_related_tickets_search/)| None | Investigation |
 | [Email Notification for Malware](/playbooks/email_notification_for_malware/)|[VirusTotal](https://splunkbase.splunk.com/apps/#/search/VirusTotal/product/soar), [WildFire](https://splunkbase.splunk.com/apps/#/search/WildFire/product/soar), [CarbonBlack Response](https://splunkbase.splunk.com/apps/#/search/CarbonBlack Response/product/soar), [SMTP](https://splunkbase.splunk.com/apps/#/search/SMTP/product/soar)| Response |
 | [Hunting](/playbooks/hunting/)|[Splunk](https://splunkbase.splunk.com/apps/#/search/Splunk/product/soar), [Reversing Labs](https://splunkbase.splunk.com/apps/#/search/Reversing Labs/product/soar), [CarbonBlack Response](https://splunkbase.splunk.com/apps/#/search/CarbonBlack Response/product/soar), [Threat Grid](https://splunkbase.splunk.com/apps/#/search/Threat Grid/product/soar), [Falcon Host API](https://splunkbase.splunk.com/apps/#/search/Falcon Host API/product/soar)| Investigation |
 | [Internal Host SSH Investigate](/playbooks/internal_host_ssh_investigate/)|[SSH](https://splunkbase.splunk.com/apps/#/search/SSH/product/soar)| Investigation |
@@ -41,7 +48,11 @@ sidebar:
 | [Risk Notable Protect Assets and Users](/playbooks/risk_notable_protect_assets_and_users/)|[None](https://splunkbase.splunk.com/apps/#/search/None/product/soar)| Response |
 | [Risk Notable Review Indicators](/playbooks/risk_notable_review_indicators/)|[None](https://splunkbase.splunk.com/apps/#/search/None/product/soar)| Response |
 | [Risk Notable Verdict](/playbooks/risk_notable_verdict/)|[None](https://splunkbase.splunk.com/apps/#/search/None/product/soar)| Response |
+| [SAA Dynamic Analysis](/playbooks/saa_dynamic_analysis/)|[Splunk Attack Analyzer API](https://splunkbase.splunk.com/apps/#/search/Splunk Attack Analyzer API/product/soar)| Investigation |
+| [ServiceNow Related Tickets Search](/playbooks/servicenow_related_tickets_search/)|[Splunk](https://splunkbase.splunk.com/apps/#/search/Splunk/product/soar)| Investigation |
+| [Splunk Notable Related Tickets Search](/playbooks/splunk_notable_related_tickets_search/)|[Splunk](https://splunkbase.splunk.com/apps/#/search/Splunk/product/soar)| Investigation |
 | [Start Investigation](/playbooks/start_investigation/)| None | Investigation |
 | [Threat Intel Investigate](/playbooks/threat_intel_investigate/)| None | Investigation |
 | [TruSTAR Enrich Indicators](/playbooks/trustar_enrich_indicators/)|[TruSTAR](https://splunkbase.splunk.com/apps/#/search/TruSTAR/product/soar)| Investigation |
+| [UrlScan IO Dynamic Analysis](/playbooks/urlscan_io_dynamic_analysis/)|[urlscan.io](https://splunkbase.splunk.com/apps/#/search/urlscan.io/product/soar)| Investigation |
 | [VirusTotal v3 Identifier Reputation Analysis](/playbooks/virustotal_v3_identifier_reputation_analysis/)|[VirusTotal v3](https://splunkbase.splunk.com/apps/#/search/VirusTotal v3/product/soar)| Investigation |

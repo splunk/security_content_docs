@@ -8,6 +8,7 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Authentication
+  - Change
   - Endpoint
 ---
 
@@ -18,7 +19,7 @@ tags:
 Uncover activity consistent with credential dumping, a technique wherein attackers compromise systems and attempt to obtain and exfiltrate passwords. The threat actors use these pilfered credentials to further escalate privileges and spread throughout a target environment. The included searches in this Analytic Story are designed to identify attempts to credential dumping.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
+- **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication), [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2020-02-04
 - **Author**: Rico Valdez, Splunk
 - **ID**: 854d78bf-d0e2-4f4e-b05c-640905f86d7a
@@ -57,6 +58,8 @@ The detection searches in this Analytic Story monitor access to the Local Securi
 | [SecretDumps Offline NTDS Dumping Tool](/endpoint/5672819c-be09-11eb-bbfb-acde48001122/) | [NTDS](/tags/#ntds), [OS Credential Dumping](/tags/#os-credential-dumping) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Set Default PowerShell Execution Policy To Unrestricted or Bypass](/endpoint/c2590137-0b08-4985-9ec5-6ae23d92f63d/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [PowerShell](/tags/#powershell) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Unsigned Image Loaded by LSASS](/deprecated/56ef054c-76ef-45f9-af4a-a634695dcd65/) | [LSASS Memory](/tags/#lsass-memory) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows AD Replication Request Initiated by User Account](/endpoint/51307514-1236-49f6-8686-d46d93cc2821/) | [DCSync](/tags/#dcsync), [OS Credential Dumping](/tags/#os-credential-dumping) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows AD Replication Request Initiated from Unsanctioned Location](/endpoint/50998483-bb15-457b-a870-965080d9e3d3/) | [DCSync](/tags/#dcsync), [OS Credential Dumping](/tags/#os-credential-dumping) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Credential Dumping LSASS Memory Createdump](/endpoint/b3b7ce35-fce5-4c73-85f4-700aeada81a9/) | [LSASS Memory](/tags/#lsass-memory) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Hunting System Account Targeting Lsass](/endpoint/1c6abb08-73d1-11ec-9ca0-acde48001122/) | [LSASS Memory](/tags/#lsass-memory), [OS Credential Dumping](/tags/#os-credential-dumping) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Mimikatz Binary Execution](/endpoint/a9e0d6d3-9676-4e26-994d-4e0406bb4467/) | [OS Credential Dumping](/tags/#os-credential-dumping) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

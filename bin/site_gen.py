@@ -486,6 +486,9 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack,
             if detection_yaml["status"] != "production":
                 continue
 
+        if detection_yaml["status"] == "experimental":
+            detection_yaml['experimental'] = True
+
         # add macros
         detection_yaml = add_macros(detection_yaml, REPO_PATH)
 
@@ -528,8 +531,8 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack,
         detection_yaml['kind'] = manifest_file.split('/')[-2]
 
         # check if is experimental, add the flag
-        if "experimental" == manifest_file.split('/')[2]:
-            detection_yaml['experimental'] = True
+        # if detection_yaml["status"] == "experimental":
+        #     detection_yaml['experimental'] = True
     
         # check if is deprecated, add the flag
         if "deprecated" == manifest_file.split('/')[2]:

@@ -10,7 +10,6 @@ sidebar:
 
 | Name    | Technique | Datamodel |
 | --------| --------- |------------|
-| [3CX Supply Chain Attack Network Indicators](/network/791b727c-deec-4fbe-a732-756131b3c5a1/) | [Compromise Software Supply Chain](/tags/#compromise-software-supply-chain) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution) |
 | [DNS Query Length Outliers - MLTK](/network/85fbcfe8-9718-4911-adf6-7000d077a3a9/) | [DNS](/tags/#dns), [Application Layer Protocol](/tags/#application-layer-protocol) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution) |
 | [DNS Query Length With High Standard Deviation](/network/1a67f15a-f4ff-4170-84e9-08cf6f75d6f5/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol), [Exfiltration Over Alternative Protocol](/tags/#exfiltration-over-alternative-protocol) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution) |
 | [Detect ARP Poisoning](/network/b44bebd6-bd39-467b-9321-73971bcd7aac/) | [Hardware Additions](/tags/#hardware-additions), [Network Denial of Service](/tags/#network-denial-of-service), [Adversary-in-the-Middle](/tags/#adversary-in-the-middle), [ARP Cache Poisoning](/tags/#arp-cache-poisoning) |  None |
@@ -44,6 +43,7 @@ sidebar:
 | [Remote Desktop Network Traffic](/network/272b8407-842d-4b3d-bead-a704584003d3/) | [Remote Desktop Protocol](/tags/#remote-desktop-protocol), [Remote Services](/tags/#remote-services) | [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic) |
 | [SMB Traffic Spike](/network/7f5fb3e1-4209-4914-90db-0ec21b936378/) | [SMB/Windows Admin Shares](/tags/#smb/windows-admin-shares), [Remote Services](/tags/#remote-services) | [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic) |
 | [SMB Traffic Spike - MLTK](/network/d25773ba-9ad8-48d1-858e-07ad0bbeb828/) | [SMB/Windows Admin Shares](/tags/#smb/windows-admin-shares), [Remote Services](/tags/#remote-services) | [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic) |
+| [SSL Certificates with Punycode](/network/696694df-5706-495a-81f2-79501fa11b90/) | [Encrypted Channel](/tags/#encrypted-channel) |  None |
 | [Splunk Identified SSL TLS Certificates](/network/620fbb89-86fd-4e2e-925f-738374277586/) | [Network Sniffing](/tags/#network-sniffing) |  None |
 | [TOR Traffic](/network/ea688274-9c06-4473-b951-e4cb7a5d7a45/) | [Application Layer Protocol](/tags/#application-layer-protocol), [Web Protocols](/tags/#web-protocols) | [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic) |
 | [Unusually Long Content-Type Length](/network/57a0a2bf-353f-40c1-84dc-29293f3c35b7/) |  None |  None |

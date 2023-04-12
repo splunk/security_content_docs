@@ -48,7 +48,7 @@ Cybersecurity Infrastructure Security Agency (CISA) released Alert (AA20-302A) o
 | [WinEvent Scheduled Task Created to Spawn Shell](/endpoint/203ef0ea-9bd8-11eb-8201-acde48001122/) | [Scheduled Task](/tags/#scheduled-task), [Scheduled Task/Job](/tags/#scheduled-task/job) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows DisableAntiSpyware Registry](/endpoint/23150a40-9301-4195-b802-5bb4f43067fb/) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Security Account Manager Stopped](/endpoint/69c12d59-d951-431e-ab77-ec426b8d65e6/) | [Service Stop](/tags/#service-stop) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows connhost exe started forcefully](/deprecated/c114aaca-68ee-41c2-ad8c-32bf21db8769/) | [Windows Command Shell](/tags/#windows-command-shell) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows connhost exe started forcefully](/deprecated/c114aaca-68ee-41c2-ad8c-32bf21db8769/) | [Windows Command Shell](/tags/#windows-command-shell) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

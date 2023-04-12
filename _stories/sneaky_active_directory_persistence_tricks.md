@@ -7,9 +7,9 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
+  - Authentication
   - Change
   - Endpoint
-  - Network_Sessions
   - Network_Traffic
 ---
 
@@ -20,7 +20,7 @@ tags:
 Monitor for activities and techniques associated with Windows Active Directory persistence techniques.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Network_Sessions](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkSessions), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
+- **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication), [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 - **Last Updated**: 2022-08-29
 - **Author**: Dean Luxton, Mauricio Velazco, Splunk
 - **ID**: f676c4c1-c769-4ecb-9611-5fd85b497c56
@@ -53,7 +53,6 @@ This analytic story groups detection opportunities for most of the techniques de
 | [Windows AD Short Lived Domain Account ServicePrincipalName](/endpoint/b681977c-d90c-4efc-81a5-c58f945fb541/) | [Account Manipulation](/tags/#account-manipulation) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows AD Short Lived Domain Controller SPN Attribute](/endpoint/57e27f27-369c-4df8-af08-e8c7ee8373d4/) | [Rogue Domain Controller](/tags/#rogue-domain-controller) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows AD Short Lived Server Object](/endpoint/193769d3-1e33-43a9-970e-ad4a88256cdb/) | [Rogue Domain Controller](/tags/#rogue-domain-controller) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows Disable Windows Group Policy Features Through Registry](/endpoint/63a449ae-9f04-11ec-945e-acde48001122/) | [Modify Registry](/tags/#modify-registry) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Security Support Provider Reg Query](/endpoint/31302468-93c9-4eca-9ae3-2d41f53a4e2b/) | [Security Support Provider](/tags/#security-support-provider), [Boot or Logon Autostart Execution](/tags/#boot-or-logon-autostart-execution) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference

@@ -7,6 +7,7 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
+  - Change
   - Change_Analysis
   - Network_Resolution
 ---
@@ -18,7 +19,7 @@ tags:
 Fortify your data-protection arsenal--while continuing to ensure data confidentiality and integrity--with searches that monitor for and help you investigate possible signs of data exfiltration.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Change_Analysis](https://docs.splunk.com/Documentation/CIM/latest/User/ChangeAnalysis), [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution)
+- **Datamodel**: [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change), [Change_Analysis](https://docs.splunk.com/Documentation/CIM/latest/User/ChangeAnalysis), [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution)
 - **Last Updated**: 2017-09-14
 - **Author**: Bhavin Patel, Splunk
 - **ID**: 91c676cf-0b23-438d-abee-f6335e1fce33

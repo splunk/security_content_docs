@@ -7,7 +7,6 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
-  - Endpoint
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -17,7 +16,7 @@ tags:
 Caddy Wiper is a destructive payload that detects if its running on a Domain Controller and executes killswitch if detected. If not in a DC it destroys Users and subsequent mapped drives. This wiper also destroys drive partitions inculding boot partitions.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
+- **Datamodel**: 
 - **Last Updated**: 2022-03-25
 - **Author**: Teoderick Contreras, Rod Soto, Splunk
 - **ID**: 435a156a-8ef1-4184-bd52-22328fb65d3a

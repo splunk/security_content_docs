@@ -7,6 +7,8 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
+  - Authentication
+  - Risk
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -16,7 +18,7 @@ tags:
 Monitor for activities and techniques associated with Account Takover attacks against Azure Active Directory tenants.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+- **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication), [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk)
 - **Last Updated**: 2022-07-14
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 41514c46-7118-4eab-a9bb-f3bfa4e3bea9

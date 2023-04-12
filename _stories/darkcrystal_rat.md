@@ -8,7 +8,6 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
-  - Endpoint_Processes
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -18,7 +17,7 @@ tags:
 Leverage searches that allow you to detect and investigate unusual activities that might relate to the DcRat malware including ddos, spawning more process, botnet c2 communication, defense evasion and etc. The DcRat malware is known commercial backdoor that was first released in 2018. This tool was sold in underground forum and known to be one of the cheapest commercial RATs. DcRat is modular and bespoke plugin framework make it a very flexible option, helpful for a range of nefearious uses.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2022-07-26
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 639e6006-0885-4847-9394-ddc2902629bf

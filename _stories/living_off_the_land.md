@@ -8,8 +8,6 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
-  - Endpoint_Processes
-  - Endpoint_Registry
   - Network_Traffic
   - Risk
 ---
@@ -21,7 +19,7 @@ tags:
 Leverage analytics that allow you to identify the presence of an adversary leveraging native applications within your environment.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses), [Endpoint_Registry](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointRegistry), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic), [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic), [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk)
 - **Last Updated**: 2022-03-16
 - **Author**: Lou Stella, Splunk
 - **ID**: 6f7982e2-900b-11ec-a54a-acde48001122
@@ -107,8 +105,8 @@ Living Off The Land refers to an adversary methodology of using native applicati
 | [Windows Binary Proxy Execution Mavinject DLL Injection](/endpoint/ccf4b61b-1b26-4f2e-a089-f2009c569c57/) | [Mavinject](/tags/#mavinject), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Bits Job Persistence](/endpoint/1e25e97a-8ea4-11ec-9767-acde48001122/) | [BITS Jobs](/tags/#bits-jobs) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Bitsadmin Download File](/endpoint/d76e8188-8f5a-11ec-ace4-acde48001122/) | [BITS Jobs](/tags/#bits-jobs), [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows COM Hijacking InprocServer32 Modification](/endpoint/0ae05a0f-bc84-456b-822a-a5b9c081c7ca/) | [Component Object Model Hijacking](/tags/#component-object-model-hijacking), [Event Triggered Execution](/tags/#event-triggered-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows COM Hijacking InprocServer32 Modification](/endpoint/b7bd83c0-92b5-4fc7-b286-23eccfa2c561/) | [Component Object Model Hijacking](/tags/#component-object-model-hijacking), [Event Triggered Execution](/tags/#event-triggered-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows COM Hijacking InprocServer32 Modification](/endpoint/0ae05a0f-bc84-456b-822a-a5b9c081c7ca/) | [Component Object Model Hijacking](/tags/#component-object-model-hijacking), [Event Triggered Execution](/tags/#event-triggered-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows CertUtil Decode File](/endpoint/b06983f4-8f72-11ec-ab50-acde48001122/) | [Deobfuscate/Decode Files or Information](/tags/#deobfuscate/decode-files-or-information) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows CertUtil URLCache Download](/endpoint/8cb1ad38-8f6d-11ec-87a3-acde48001122/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows CertUtil VerifyCtl Download](/endpoint/9ac29c40-8f6b-11ec-b19a-acde48001122/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
@@ -118,7 +116,6 @@ Living Off The Land refers to an adversary methodology of using native applicati
 | [Windows Defender Tools in Non Standard Path](/endpoint/c205bd2e-cd5b-4224-8510-578a2a1f83d7/) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Diskshadow Proxy Execution](/endpoint/58adae9e-8ea3-11ec-90f6-acde48001122/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Diskshadow Proxy Execution](/endpoint/aa502688-9037-11ec-842d-acde48001122/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows Eventvwr UAC Bypass](/endpoint/66adff66-90d9-11ec-aba7-acde48001122/) | [Bypass User Account Control](/tags/#bypass-user-account-control), [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Identify Protocol Handlers](/endpoint/bd5c311e-a6ea-48ae-a289-19a3398e3648/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Indirect Command Execution Via forfiles](/endpoint/1fdf31c9-ff4d-4c48-b799-0e8666e08787/) | [Indirect Command Execution](/tags/#indirect-command-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Indirect Command Execution Via pcalua](/endpoint/3428ac18-a410-4823-816c-ce697d26f7a8/) | [Indirect Command Execution](/tags/#indirect-command-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

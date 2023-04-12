@@ -21,7 +21,7 @@ sidebar:
 | [Okta Account Locked Out](/application/d650c0ae-bdc5-400e-9f0f-f7aa0a010ef1/) | [Brute Force](/tags/#brute-force) |  None |
 | [Okta Account Lockout Events](/application/62b70968-a0a5-4724-8ac4-67871e6f544d/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
 | [Okta Failed SSO Attempts](/application/371a6545-2618-4032-ad84-93386b8698c5/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
-| [Okta MFA Exhaustion Hunt](/application/97e2fe57-3740-402c-988a-76b64ce04b8d/) | [Brute Force](/tags/#brute-force) |  None |
+| [Okta MFA Exhaustion Hunt](/application/97e2fe57-3740-402c-988a-76b64ce04b8d/) | [Brute Force](/tags/#brute-force) | [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication) |
 | [Okta Mismatch Between Source and Response for Verify Push Request](/application/8085b79b-9b85-4e67-ad63-351c9e9a5e9a/) | [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation) |  None |
 | [Okta Multiple Failed Requests to Access Applications](/application/1c21fed1-7000-4a2e-9105-5aaafa437247/) | [Web Session Cookie](/tags/#web-session-cookie), [Cloud Service Dashboard](/tags/#cloud-service-dashboard) |  None |
 | [Okta New API Token Created](/application/c3d22720-35d3-4da4-bd0a-740d37192bd4/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
@@ -47,9 +47,9 @@ sidebar:
 | [Splunk Digital Certificates Lack of Encryption](/application/386a7ebc-737b-48cf-9ca8-5405459ed508/) | [Digital Certificates](/tags/#digital-certificates) |  None |
 | [Splunk DoS via Malformed S2S Request](/application/fc246e56-953b-40c1-8634-868f9e474cbd/) | [Network Denial of Service](/tags/#network-denial-of-service) |  None |
 | [Splunk Endpoint Denial of Service DoS Zip Bomb](/application/b237d393-2f57-4531-aad7-ad3c17c8b041/) | [Endpoint Denial of Service](/tags/#endpoint-denial-of-service) |  None |
-| [Splunk Improperly Formatted Parameter Crashes splunkd](/application/08978eca-caff-44c1-84dc-53f17def4e14/) | [Endpoint Denial of Service](/tags/#endpoint-denial-of-service) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
+| [Splunk Improperly Formatted Parameter Crashes splunkd](/application/08978eca-caff-44c1-84dc-53f17def4e14/) | [Endpoint Denial of Service](/tags/#endpoint-denial-of-service) | [Splunk_Audit](https://docs.splunk.com/Documentation/CIM/latest/User/SplunkAudit) |
 | [Splunk Process Injection Forwarder Bundle Downloads](/application/8ea57d78-1aac-45d2-a913-0cd603fb6e9e/) | [Process Injection](/tags/#process-injection) |  None |
-| [Splunk Protocol Impersonation Weak Encryption Configuration](/application/900892bf-70a9-4787-8c99-546dd98ce461/) | [Protocol Impersonation](/tags/#protocol-impersonation) |  None |
+| [Splunk Protocol Impersonation Weak Encryption Configuration](/application/900892bf-70a9-4787-8c99-546dd98ce461/) | [Protocol Impersonation](/tags/#protocol-impersonation) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
 | [Splunk RCE via Splunk Secure Gateway  Splunk Mobile alerts feature](/application/baa41f09-df48-4375-8991-520beea161be/) | [Exploitation of Remote Services](/tags/#exploitation-of-remote-services) |  None |
 | [Splunk Reflected XSS in the templates lists radio](/application/d532d105-c63f-4049-a8c4-e249127ca425/) | [Drive-by Compromise](/tags/#drive-by-compromise) |  None |
 | [Splunk Stored XSS via Data Model objectName field](/application/062bff76-5f9c-496e-a386-cb1adcf69871/) | [Drive-by Compromise](/tags/#drive-by-compromise) |  None |
@@ -61,7 +61,7 @@ sidebar:
 | [Splunk list all nonstandard admin accounts](/application/401d689c-8596-4c6b-a710-7b6fdca296d3/) | [Drive-by Compromise](/tags/#drive-by-compromise) |  None |
 | [Splunk protocol impersonation weak encryption selfsigned](/application/c76c7a2e-df49-414a-bb36-dce2683770de/) | [Digital Certificates](/tags/#digital-certificates) |  None |
 | [Splunk protocol impersonation weak encryption simplerequest](/application/839d12a6-b119-4d44-ac4f-13eed95412c8/) | [Digital Certificates](/tags/#digital-certificates) |  None |
-| [Splunk risky Command Abuse disclosed february 2023](/application/ee69374a-d27e-4136-adac-956a96ff60fd/) | [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) |  None |
+| [Splunk risky Command Abuse disclosed february 2023](/application/ee69374a-d27e-4136-adac-956a96ff60fd/) | [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [Splunk_Audit](https://docs.splunk.com/Documentation/CIM/latest/User/SplunkAudit) |
 | [Splunk unnecessary file extensions allowed by lookup table uploads](/application/b7d1293f-e78f-415e-b5f6-443df3480082/) | [Drive-by Compromise](/tags/#drive-by-compromise) |  None |
 | [Suspicious Email Attachment Extensions](/application/473bd65f-06ca-4dfe-a2b8-ba04ab4a0084/) | [Spearphishing Attachment](/tags/#spearphishing-attachment), [Phishing](/tags/#phishing) | [Email](https://docs.splunk.com/Documentation/CIM/latest/User/Email) |
 | [Suspicious Java Classes](/application/6ed33786-5e87-4f55-b62c-cb5f1168b831/) |  None |  None |

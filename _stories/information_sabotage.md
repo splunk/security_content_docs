@@ -8,8 +8,6 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Splunk Behavioral Analytics
-  - Endpoint
-  - Endpoint_Processes
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -19,7 +17,7 @@ tags:
 Leverage searches that allow you to detect and investigate unusual activities that might correlate to insider threat specially in terms of information sabotage.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud, Splunk Behavioral Analytics
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Endpoint_Processes](https://docs.splunk.com/Documentation/CIM/latest/User/EndpointProcesses)
+- **Datamodel**: 
 - **Last Updated**: 2021-11-17
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: b71ba595-ef80-4e39-8b66-887578a7a71b

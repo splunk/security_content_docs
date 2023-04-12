@@ -7,6 +7,7 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
+  - Authentication
   - Risk
 ---
 
@@ -17,7 +18,7 @@ tags:
 A social engineering technique called 'MFA Fatigue', aka 'MFA push spam' or 'MFA Exhaustion', is growing more popular with threat actors as it does not require malware or phishing infrastructure and has proven to be successful in attacks.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk)
+- **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication), [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk)
 - **Last Updated**: 2022-09-27
 - **Author**: Michael Haag, Splunk
 - **ID**: 7c6e508d-4b4d-42c8-82de-5ff4ea3b0cb3

@@ -31,7 +31,7 @@ On March 22, 2023, cybersecurity firm SentinelOne observed a surge in behavioral
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [3CX Supply Chain Attack Network Indicators](/network/791b727c-deec-4fbe-a732-756131b3c5a1/) | [Compromise Software Supply Chain](/tags/#compromise-software-supply-chain) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [3CX Supply Chain Attack Network Indicators](/endpoint/791b727c-deec-4fbe-a732-756131b3c5a1/) | [Compromise Software Supply Chain](/tags/#compromise-software-supply-chain) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Hunting 3CXDesktopApp Software](/endpoint/553d0429-1a1c-44bf-b3f5-a8513deb9ee5/) | [Compromise Software Supply Chain](/tags/#compromise-software-supply-chain) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Non Chrome Process Accessing Chrome Default Dir](/endpoint/81263de4-160a-11ec-944f-acde48001122/) | [Credentials from Password Stores](/tags/#credentials-from-password-stores), [Credentials from Web Browsers](/tags/#credentials-from-web-browsers) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Non Firefox Process Access Firefox Profile Dir](/endpoint/e6fc13b0-1609-11ec-b533-acde48001122/) | [Credentials from Password Stores](/tags/#credentials-from-password-stores), [Credentials from Web Browsers](/tags/#credentials-from-web-browsers) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

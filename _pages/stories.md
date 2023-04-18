@@ -62,7 +62,7 @@ sidebar:
 | [DNS Hijacking](dns_hijacking) | [Domain Generation Algorithms](/tags/#domain-generation-algorithms) | [Command And Control](/tags/#command-and-control) |
 | [DarkCrystal RAT](darkcrystal_rat) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
 | [DarkSide Ransomware](darkside_ransomware) | [LSASS Memory](/tags/#lsass-memory), [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
-| [Data Destruction](data_destruction) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
+| [Data Destruction](data_destruction) | [Process Injection](/tags/#process-injection), [Create or Modify System Process](/tags/#create-or-modify-system-process), [Parent PID Spoofing](/tags/#parent-pid-spoofing), [Access Token Manipulation](/tags/#access-token-manipulation) | [Defense Evasion](/tags/#defense-evasion) |
 | [Data Exfiltration](data_exfiltration) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol), [Exfiltration Over Alternative Protocol](/tags/#exfiltration-over-alternative-protocol) | [Exfiltration](/tags/#exfiltration) |
 | [Data Protection](data_protection) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol) | [Exfiltration](/tags/#exfiltration) |
 | [Deobfuscate-Decode Files or Information](deobfuscate-decode_files_or_information) | [Deobfuscate/Decode Files or Information](/tags/#deobfuscate/decode-files-or-information) | [Defense Evasion](/tags/#defense-evasion) |
@@ -131,6 +131,7 @@ sidebar:
 | [Ryuk Ransomware](ryuk_ransomware) | [Windows Command Shell](/tags/#windows-command-shell) | [Execution](/tags/#execution) |
 | [SQL Injection](sql_injection) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [SamSam Ransomware](samsam_ransomware) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) | [Impact](/tags/#impact) |
+| [Sandworm Tools](sandworm_tools) | [Steal or Forge Authentication Certificates](/tags/#steal-or-forge-authentication-certificates) | [Credential Access](/tags/#credential-access) |
 | [Signed Binary Proxy Execution InstallUtil](signed_binary_proxy_execution_installutil) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [InstallUtil](/tags/#installutil) | [Defense Evasion](/tags/#defense-evasion) |
 | [Silver Sparrow](silver_sparrow) | [Data Staged](/tags/#data-staged) | [Collection](/tags/#collection) |
 | [Sneaky Active Directory Persistence Tricks](sneaky_active_directory_persistence_tricks) | [Security Support Provider](/tags/#security-support-provider), [Boot or Logon Autostart Execution](/tags/#boot-or-logon-autostart-execution) | [Persistence](/tags/#persistence) |
@@ -179,5 +180,6 @@ sidebar:
 | [Windows Registry Abuse](windows_registry_abuse) | [Services Registry Permissions Weakness](/tags/#services-registry-permissions-weakness) | [Persistence](/tags/#persistence) |
 | [Windows Service Abuse](windows_service_abuse) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [Persistence](/tags/#persistence) |
 | [Windows System Binary Proxy Execution MSIExec](windows_system_binary_proxy_execution_msiexec) | [Msiexec](/tags/#msiexec) | [Defense Evasion](/tags/#defense-evasion) |
+| [Winter Vivern](winter_vivern) | [Screen Capture](/tags/#screen-capture) | [Collection](/tags/#collection) |
 | [XMRig](xmrig) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [Persistence](/tags/#persistence) |
 | [sAMAccountName Spoofing and Domain Controller Impersonation](samaccountname_spoofing_and_domain_controller_impersonation) | [Valid Accounts](/tags/#valid-accounts), [Domain Accounts](/tags/#domain-accounts) | [Defense Evasion](/tags/#defense-evasion) |

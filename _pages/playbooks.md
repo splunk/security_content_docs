@@ -55,4 +55,5 @@ sidebar:
 | [Threat Intel Investigate](/playbooks/threat_intel_investigate/)| None | Investigation |
 | [TruSTAR Enrich Indicators](/playbooks/trustar_enrich_indicators/)|[TruSTAR](https://splunkbase.splunk.com/apps/#/search/TruSTAR/product/soar)| Investigation |
 | [UrlScan IO Dynamic Analysis](/playbooks/urlscan_io_dynamic_analysis/)|[urlscan.io](https://splunkbase.splunk.com/apps/#/search/urlscan.io/product/soar)| Investigation |
+| [VirusTotal V3 Dynamic Analysis](/playbooks/virustotal_v3_dynamic_analysis/)|[virustotal v3](https://splunkbase.splunk.com/apps/#/search/virustotal v3/product/soar)| Investigation |
 | [VirusTotal v3 Identifier Reputation Analysis](/playbooks/virustotal_v3_identifier_reputation_analysis/)|[VirusTotal v3](https://splunkbase.splunk.com/apps/#/search/VirusTotal v3/product/soar)| Investigation |

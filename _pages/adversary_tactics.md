@@ -20,6 +20,7 @@ sidebar:
 | [BITS Jobs](/stories/bits_jobs/) | [BITS Jobs](/tags/#bits-jobs), [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [Defense Evasion](/tags/#defense-evasion) |
 | [Baron Samedit CVE-2021-3156](/stories/baron_samedit_cve-2021-3156/) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [BishopFox Sliver Adversary Emulation Framework](/stories/bishopfox_sliver_adversary_emulation_framework/) | [System Services](/tags/#system-services), [Service Execution](/tags/#service-execution) | [Execution](/tags/#execution) |
+| [BlackLotus Campaign](/stories/blacklotus_campaign/) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |
 | [Brute Ratel C4](/stories/brute_ratel_c4/) | [Service Stop](/tags/#service-stop) | [Impact](/tags/#impact) |
 | [CISA AA22-257A](/stories/cisa_aa22-257a/) | [Protocol Tunneling](/tags/#protocol-tunneling), [SSH](/tags/#ssh) | [Command And Control](/tags/#command-and-control) |
 | [CISA AA22-264A](/stories/cisa_aa22-264a/) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |

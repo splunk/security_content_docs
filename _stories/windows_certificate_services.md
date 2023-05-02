@@ -8,6 +8,7 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
+  - Risk
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -17,7 +18,7 @@ tags:
 Adversaries may steal or forge certificates used for authentication to access remote systems or resources. Digital certificates are often used to sign and encrypt messages and/or files. Certificates are also used as authentication material.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk)
 - **Last Updated**: 2023-02-01
 - **Author**: Michael Haag, Splunk
 - **ID**: b92b4ac7-0026-4408-a6b5-c1d20658e124
@@ -31,6 +32,7 @@ The following analytic story focuses on remote and local endpoint certificate th
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
 | [Certutil exe certificate extraction](/endpoint/337a46be-600f-11eb-ae93-0242ac130002/) |  | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Steal or Forge Authentication Certificates Behavior Identified](/endpoint/87ac670e-bbfd-44ca-b566-44e9f835518d/) | [Steal or Forge Authentication Certificates](/tags/#steal-or-forge-authentication-certificates) | [Correlation](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Export Certificate](/endpoint/d8ddfa9b-b724-4df9-9dbe-f34cc0936714/) | [Private Keys](/tags/#private-keys), [Unsecured Credentials](/tags/#unsecured-credentials), [Steal or Forge Authentication Certificates](/tags/#steal-or-forge-authentication-certificates) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Mimikatz Crypto Export File Extensions](/endpoint/3a9a6806-16a8-4cda-8d73-b49d10a05b16/) | [Steal or Forge Authentication Certificates](/tags/#steal-or-forge-authentication-certificates) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows PowerShell Export Certificate](/endpoint/5e38ded4-c964-41f4-8cb6-4a1a53c6929f/) | [Private Keys](/tags/#private-keys), [Unsecured Credentials](/tags/#unsecured-credentials), [Steal or Forge Authentication Certificates](/tags/#steal-or-forge-authentication-certificates) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

@@ -1,5 +1,5 @@
 ---
-title: "Dynamic Identifier Reputation Analysis"
+title: "Dispatch Identifier Reputation Analysis"
 last_modified_at: 2023-01-11
 toc: true
 toc_label: ""
@@ -28,9 +28,9 @@ Detects available indicators and routes them to indicator reputation analysis pl
 This playbook looks for artifacts and then dispatches the community Reputation playbooks. This playbook takes the output of those playbooks and nicely formats them into notes and tags indicators with their results.
 
 
-#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Dynamic_Identifier_Reputation_Analysis.json){: .btn .btn--info}
+#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Dispatch_Identifier_Reputation_Analysis.json){: .btn .btn--info}
 
-[![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/Dynamic_Identifier_Reputation_Analysis.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Dynamic_Identifier_Reputation_Analysis.json)
+[![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/Dispatch_Identifier_Reputation_Analysis.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Dispatch_Identifier_Reputation_Analysis.json)
 
 #### Required field
 
@@ -42,4 +42,4 @@ This playbook looks for artifacts and then dispatches the community Reputation p
 
 
 
-[*source*](https://github.com/splunk/security_content/tree/develop/playbooks/Dynamic_Identifier_Reputation_Analysis.yml) \| *version*: **1**
+[*source*](https://github.com/splunk/security_content/tree/develop/playbooks/Dispatch_Identifier_Reputation_Analysis.yml) \| *version*: **1**

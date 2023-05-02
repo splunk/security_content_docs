@@ -27,6 +27,7 @@ sidebar:
 | [Detect AWS API Activities From Unapproved Accounts](/deprecated/ada0f478-84a8-4641-a3f1-d82362d4bd55/) | [Cloud Accounts](/tags/#cloud-accounts) |  None |
 | [Detect DNS requests to Phishing Sites leveraging EvilGinx2](/deprecated/24dd17b1-e2fb-4c31-878c-d4f226595bfa/) | [Spearphishing via Service](/tags/#spearphishing-via-service) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution), [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
 | [Detect Long DNS TXT Record Response](/deprecated/05437c07-62f5-452e-afdc-04dd44815bb9/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution) |
+| [Detect Mimikatz Using Loaded Images](/deprecated/29e307ba-40af-4ab2-91b2-3c6b392bbba0/) | [LSASS Memory](/tags/#lsass-memory), [OS Credential Dumping](/tags/#os-credential-dumping) |  None |
 | [Detect Mimikatz Via PowerShell And EventCode 4703](/deprecated/98917be2-bfc8-475a-8618-a9bb06575188/) | [LSASS Memory](/tags/#lsass-memory) |  None |
 | [Detect Spike in AWS API Activity](/deprecated/ada0f478-84a8-4641-a3f1-d32362d4bd55/) | [Cloud Accounts](/tags/#cloud-accounts) |  None |
 | [Detect Spike in Network ACL Activity](/deprecated/ada0f478-84a8-4641-a1f1-e32372d4bd53/) | [Disable or Modify Cloud Firewall](/tags/#disable-or-modify-cloud-firewall) |  None |

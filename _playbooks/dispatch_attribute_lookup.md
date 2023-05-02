@@ -1,5 +1,5 @@
 ---
-title: "Dynamic Attribute Lookup"
+title: "Dispatch Attribute Lookup"
 last_modified_at: 2023-03-06
 toc: true
 toc_label: ""
@@ -28,9 +28,9 @@ Detects available entities and routes them to attribute lookup playbooks. The ou
 This playbook looks for artifacts and then dispatches the community Attribute Lookup playbooks. This playbook takes the output of those playbooks and nicely formats them into new artifacts with their results.
 
 
-#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Dynamic_Attribute_Lookup.json){: .btn .btn--info}
+#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Dispatch_Attribute_Lookup.json){: .btn .btn--info}
 
-[![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/Dynamic_Attribute_Lookup.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Dynamic_Attribute_Lookup.json)
+[![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/Dispatch_Attribute_Lookup.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Dispatch_Attribute_Lookup.json)
 
 #### Required field
 
@@ -39,4 +39,4 @@ This playbook looks for artifacts and then dispatches the community Attribute Lo
 
 
 
-[*source*](https://github.com/splunk/security_content/tree/develop/playbooks/Dynamic_Attribute_Lookup.yml) \| *version*: **1**
+[*source*](https://github.com/splunk/security_content/tree/develop/playbooks/Dispatch_Attribute_Lookup.yml) \| *version*: **1**

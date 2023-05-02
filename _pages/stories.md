@@ -23,6 +23,7 @@ sidebar:
 | [Active Directory Kerberos Attacks](active_directory_kerberos_attacks) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
 | [Active Directory Lateral Movement](active_directory_lateral_movement) | [Remote Services](/tags/#remote-services), [Windows Remote Management](/tags/#windows-remote-management) | [Lateral Movement](/tags/#lateral-movement) |
 | [Active Directory Password Spraying](active_directory_password_spraying) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
+| [Active Directory Privilege Escalation](active_directory_privilege_escalation) | [Account Discovery](/tags/#account-discovery), [SMB/Windows Admin Shares](/tags/#smb/windows-admin-shares), [Network Share Discovery](/tags/#network-share-discovery) | [Discovery](/tags/#discovery) |
 | [AgentTesla](agenttesla) | [Spearphishing Attachment](/tags/#spearphishing-attachment), [Phishing](/tags/#phishing) | [Initial Access](/tags/#initial-access) |
 | [Apache Struts Vulnerability](apache_struts_vulnerability) | [System Information Discovery](/tags/#system-information-discovery) | [Discovery](/tags/#discovery) |
 | [Asset Tracking]() | None | None |

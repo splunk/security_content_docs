@@ -25,6 +25,7 @@ sidebar:
 | [DNS record changed](/deprecated/44d3a43e-dcd5-49f7-8356-5209bb369065/) | [DNS](/tags/#dns) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution) |
 | [Detect API activity from users without MFA](/deprecated/4d46e8bd-4072-48e4-92db-0325889ef894/) |  None |  None |
 | [Detect AWS API Activities From Unapproved Accounts](/deprecated/ada0f478-84a8-4641-a3f1-d82362d4bd55/) | [Cloud Accounts](/tags/#cloud-accounts) |  None |
+| [Detect Activity Related to Pass the Hash Attacks](/deprecated/f5939373-8054-40ad-8c64-cec478a22a4b/) | [Use Alternate Authentication Material](/tags/#use-alternate-authentication-material), [Pass the Hash](/tags/#pass-the-hash) |  None |
 | [Detect DNS requests to Phishing Sites leveraging EvilGinx2](/deprecated/24dd17b1-e2fb-4c31-878c-d4f226595bfa/) | [Spearphishing via Service](/tags/#spearphishing-via-service) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution), [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
 | [Detect Long DNS TXT Record Response](/deprecated/05437c07-62f5-452e-afdc-04dd44815bb9/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution) |
 | [Detect Mimikatz Using Loaded Images](/deprecated/29e307ba-40af-4ab2-91b2-3c6b392bbba0/) | [LSASS Memory](/tags/#lsass-memory), [OS Credential Dumping](/tags/#os-credential-dumping) |  None |

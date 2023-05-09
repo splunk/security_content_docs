@@ -19,6 +19,7 @@ sidebar:
 | [Block Indicators](/playbooks/block_indicators/)|[Palo Alto Networks Firewall](https://splunkbase.splunk.com/apps/#/search/Palo Alto Networks Firewall/product/soar), [CarbonBlack Response](https://splunkbase.splunk.com/apps/#/search/CarbonBlack Response/product/soar), [OpenDNS Umbrella](https://splunkbase.splunk.com/apps/#/search/OpenDNS Umbrella/product/soar)| Response |
 | [CrowdStrike OAuth API Device Attribute Lookup](/playbooks/crowdstrike_oauth_api_device_attribute_lookup/)|[CrowdStrike OAuth API](https://splunkbase.splunk.com/apps/#/search/CrowdStrike OAuth API/product/soar)| Investigation |
 | [CrowdStrike OAuth API Dynamic Analysis](/playbooks/crowdstrike_oauth_api_dynamic_analysis/)|[CrowdStrike OAuth API](https://splunkbase.splunk.com/apps/#/search/CrowdStrike OAuth API/product/soar)| Investigation |
+| [CrowdStrike OAuth API Identifier Activity Analysis](/playbooks/crowdstrike_oauth_api_identifier_activity_analysis/)|[CrowdStrike OAuth API](https://splunkbase.splunk.com/apps/#/search/CrowdStrike OAuth API/product/soar)| Investigation |
 | [Crowdstrike Malware Triage](/playbooks/crowdstrike_malware_triage/)|[Crowdstrike OAuth](https://splunkbase.splunk.com/apps/#/search/Crowdstrike OAuth/product/soar)| Response |
 | [Delete Detected Files](/playbooks/delete_detected_files/)|[Windows Remote Management](https://splunkbase.splunk.com/apps/#/search/Windows Remote Management/product/soar)| Response |
 | [Dispatch Attribute Lookup](/playbooks/dispatch_attribute_lookup/)| None | Investigation |
@@ -50,6 +51,7 @@ sidebar:
 | [Risk Notable Review Indicators](/playbooks/risk_notable_review_indicators/)|[None](https://splunkbase.splunk.com/apps/#/search/None/product/soar)| Response |
 | [Risk Notable Verdict](/playbooks/risk_notable_verdict/)|[None](https://splunkbase.splunk.com/apps/#/search/None/product/soar)| Response |
 | [ServiceNow Related Tickets Search](/playbooks/servicenow_related_tickets_search/)|[Splunk](https://splunkbase.splunk.com/apps/#/search/Splunk/product/soar)| Investigation |
+| [Splunk Identifier Activity Analysis](/playbooks/splunk_identifier_activity_analysis/)|[Splunk](https://splunkbase.splunk.com/apps/#/search/Splunk/product/soar)| Investigation |
 | [Splunk Notable Related Tickets Search](/playbooks/splunk_notable_related_tickets_search/)|[Splunk](https://splunkbase.splunk.com/apps/#/search/Splunk/product/soar)| Investigation |
 | [Splunk_Attack_Analyzer_Dynamic_Analysis](/playbooks/splunk_attack_analyzer_dynamic_analysis/)|[Splunk Attack Analyzer API](https://splunkbase.splunk.com/apps/#/search/Splunk Attack Analyzer API/product/soar)| Investigation |
 | [Start Investigation](/playbooks/start_investigation/)| None | Investigation |
@@ -58,3 +60,4 @@ sidebar:
 | [UrlScan IO Dynamic Analysis](/playbooks/urlscan_io_dynamic_analysis/)|[urlscan.io](https://splunkbase.splunk.com/apps/#/search/urlscan.io/product/soar)| Investigation |
 | [VirusTotal V3 Dynamic Analysis](/playbooks/virustotal_v3_dynamic_analysis/)|[virustotal v3](https://splunkbase.splunk.com/apps/#/search/virustotal v3/product/soar)| Investigation |
 | [VirusTotal v3 Identifier Reputation Analysis](/playbooks/virustotal_v3_identifier_reputation_analysis/)|[VirusTotal v3](https://splunkbase.splunk.com/apps/#/search/VirusTotal v3/product/soar)| Investigation |
+| [Windows Defender ATP Identifier Activity Analysis](/playbooks/windows_defender_atp_identifier_activity_analysis/)|[Windows Defender ATP](https://splunkbase.splunk.com/apps/#/search/Windows Defender ATP/product/soar)| Investigation |

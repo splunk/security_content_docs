@@ -10,6 +10,7 @@ sidebar:
 
 | Name    | Technique | Datamodel |
 | --------| --------- |------------|
+| [AWS AMI Atttribute Modification for Exfiltration](/cloud/f2132d74-cf81-4c5e-8799-ab069e67dc9f/) | [Transfer Data to Cloud Account](/tags/#transfer-data-to-cloud-account) |  None |
 | [AWS Concurrent Sessions From Different Ips](/cloud/51c04fdb-2746-465a-b86e-b413a09c9085/) | [Browser Session Hijacking](/tags/#browser-session-hijacking) |  None |
 | [AWS Console Login Failed During MFA Challenge](/cloud/55349868-5583-466f-98ab-d3beb321961e/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation) |  None |
 | [AWS Create Policy Version to allow all resources](/cloud/2a9b80d3-6340-4345-b5ad-212bf3d0dac4/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) |  None |
@@ -27,12 +28,19 @@ sidebar:
 | [AWS Defense Evasion Update Cloudtrail](/cloud/7c921d28-ef48-4f1b-85b3-0af8af7697db/) | [Impair Defenses](/tags/#impair-defenses), [Disable Cloud Logs](/tags/#disable-cloud-logs) |  None |
 | [AWS Detect Users creating keys with encrypt policy without MFA](/cloud/c79c164f-4b21-4847-98f9-cf6a9f49179e/) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) |  None |
 | [AWS Detect Users with KMS keys performing encryption S3](/cloud/884a5f59-eec7-4f4a-948b-dbde18225fdc/) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) |  None |
+| [AWS Disable Bucket Versioning](/cloud/657902a9-987d-4879-a1b2-e7a65512824b/) | [Inhibit System Recovery](/tags/#inhibit-system-recovery) |  None |
+| [AWS EC2 Snapshot Shared Externally](/cloud/2a9b80d3-6340-4345-b5ad-290bf3d222c4/) | [Transfer Data to Cloud Account](/tags/#transfer-data-to-cloud-account) |  None |
 | [AWS ECR Container Scanning Findings High](/cloud/62721bd2-1d82-4623-b6e6-aac170014423/) | [Malicious Image](/tags/#malicious-image), [User Execution](/tags/#user-execution) |  None |
 | [AWS ECR Container Scanning Findings Low Informational Unknown](/cloud/cbc95e44-7c22-443f-88fd-0424478f5589/) | [Malicious Image](/tags/#malicious-image), [User Execution](/tags/#user-execution) |  None |
 | [AWS ECR Container Scanning Findings Medium](/cloud/0b80e2c8-c746-4ddb-89eb-9efd892220cf/) | [Malicious Image](/tags/#malicious-image), [User Execution](/tags/#user-execution) |  None |
 | [AWS ECR Container Upload Outside Business Hours](/cloud/d4c4d4eb-3994-41ca-a25e-a82d64e125bb/) | [Malicious Image](/tags/#malicious-image), [User Execution](/tags/#user-execution) |  None |
 | [AWS ECR Container Upload Unknown User](/cloud/300688e4-365c-4486-a065-7c884462b31d/) | [Malicious Image](/tags/#malicious-image), [User Execution](/tags/#user-execution) |  None |
 | [AWS Excessive Security Scanning](/cloud/1fdd164a-def8-4762-83a9-9ffe24e74d5a/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) |  None |
+| [AWS Exfiltration via Anomalous GetObject API Activity](/cloud/e4384bbf-5835-4831-8d85-694de6ad2cc6/) | [Automated Collection](/tags/#automated-collection) |  None |
+| [AWS Exfiltration via Batch Service](/cloud/04455dd3-ced7-480f-b8e6-5469b99e98e2/) | [Automated Collection](/tags/#automated-collection) |  None |
+| [AWS Exfiltration via Bucket Replication](/cloud/eeb432d6-2212-43b6-9e89-fcd753f7da4c/) | [Transfer Data to Cloud Account](/tags/#transfer-data-to-cloud-account) |  None |
+| [AWS Exfiltration via DataSync Task](/cloud/05c4b09f-ea28-4c7c-a7aa-a246f665c8a2/) | [Automated Collection](/tags/#automated-collection) |  None |
+| [AWS Exfiltration via EC2 Snapshot](/cloud/ac90b339-13fc-4f29-a18c-4abbba1f2171/) | [Transfer Data to Cloud Account](/tags/#transfer-data-to-cloud-account) |  None |
 | [AWS High Number Of Failed Authentications For User](/cloud/e3236f49-daf3-4b70-b808-9290912ac64d/) | [Password Policy Discovery](/tags/#password-policy-discovery) |  None |
 | [AWS High Number Of Failed Authentications From Ip](/cloud/f75b7f1a-b8eb-4975-a214-ff3e0a944757/) | [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying), [Credential Stuffing](/tags/#credential-stuffing) |  None |
 | [AWS IAM AccessDenied Discovery Events](/cloud/3e1f1568-9633-11eb-a69c-acde48001122/) | [Cloud Infrastructure Discovery](/tags/#cloud-infrastructure-discovery) |  None |
@@ -48,6 +56,7 @@ sidebar:
 | [AWS Network Access Control List Deleted](/cloud/ada0f478-84a8-4641-a3f1-d82362d6fd75/) | [Disable or Modify Cloud Firewall](/tags/#disable-or-modify-cloud-firewall), [Impair Defenses](/tags/#impair-defenses) |  None |
 | [AWS New MFA Method Registered For User](/cloud/4e3c26f2-4fb9-4bd7-ab46-1b76ffa2a23b/) | [Modify Authentication Process](/tags/#modify-authentication-process), [Multi-Factor Authentication](/tags/#multi-factor-authentication) |  None |
 | [AWS Password Policy Changes](/cloud/aee4a575-7064-4e60-b511-246f9baf9895/) | [Password Policy Discovery](/tags/#password-policy-discovery) |  None |
+| [AWS S3 Exfiltration Behavior Identified](/cloud/85096389-a443-42df-b89d-200efbb1b560/) | [Transfer Data to Cloud Account](/tags/#transfer-data-to-cloud-account) | [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk) |
 | [AWS SAML Access by Provider User and Principal](/cloud/bbe23980-6019-11eb-ae93-0242ac130002/) | [Valid Accounts](/tags/#valid-accounts) |  None |
 | [AWS SAML Update identity provider](/cloud/2f0604c6-6030-11eb-ae93-0242ac130002/) | [Valid Accounts](/tags/#valid-accounts) |  None |
 | [AWS SetDefaultPolicyVersion](/cloud/2a9b80d3-6340-4345-11ad-212bf3d0dac4/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) |  None |
@@ -114,7 +123,6 @@ sidebar:
 | [Detect Spike in AWS Security Hub Alerts for User](/cloud/2a9b80d3-6220-4345-b5ad-290bf5d0d222/) |  None |  None |
 | [Detect Spike in S3 Bucket deletion](/cloud/e733a326-59d2-446d-b8db-14a17151aa68/) | [Data from Cloud Storage](/tags/#data-from-cloud-storage) |  None |
 | [Detect Spike in blocked Outbound Traffic from your AWS](/cloud/d3fffa37-492f-487b-a35d-c60fcb2acf01/) |  None |  None |
-| [Detect shared ec2 snapshot](/cloud/2a9b80d3-6340-4345-b5ad-290bf3d222c4/) | [Transfer Data to Cloud Account](/tags/#transfer-data-to-cloud-account) |  None |
 | [GCP Authentication Failed During MFA Challenge](/cloud/345f7e1d-a3fe-4158-abd8-e630f9878323/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation) |  None |
 | [GCP Detect gcploit framework](/cloud/a1c5a85e-a162-410c-a5d9-99ff639e5a52/) | [Valid Accounts](/tags/#valid-accounts) | [Email](https://docs.splunk.com/Documentation/CIM/latest/User/Email) |
 | [GCP Kubernetes cluster pod scan detection](/cloud/19b53215-4a16-405b-8087-9e6acf619842/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) |  None |

@@ -30,7 +30,7 @@ sidebar:
 | [Suspicious AWS S3 Activities](/stories/suspicious_aws_s3_activities/) | [Data from Cloud Storage](/tags/#data-from-cloud-storage) | [Collection](/tags/#collection) |
 | [Suspicious AWS Traffic]() | None | None |
 | [Suspicious Cloud Authentication Activities](/stories/suspicious_cloud_authentication_activities/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Resource Development](/tags/#resource-development) |
-| [Suspicious Cloud Instance Activities](/stories/suspicious_cloud_instance_activities/) | [Transfer Data to Cloud Account](/tags/#transfer-data-to-cloud-account) | [Exfiltration](/tags/#exfiltration) |
+| [Suspicious Cloud Instance Activities](/stories/suspicious_cloud_instance_activities/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious Cloud Provisioning Activities](/stories/suspicious_cloud_provisioning_activities/) | [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious Cloud User Activities](/stories/suspicious_cloud_user_activities/) | [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious GCP Storage Activities](/stories/suspicious_gcp_storage_activities/) | [Data from Cloud Storage](/tags/#data-from-cloud-storage) | [Collection](/tags/#collection) |

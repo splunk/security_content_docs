@@ -8,6 +8,7 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
+  - Network_Traffic
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -17,7 +18,7 @@ tags:
 The first in-the-wild UEFI bootkit bypassing UEFI Secure Boot on fully updated UEFI systems is now a reality
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
 - **Last Updated**: 2023-04-14
 - **Author**: Michael Haag, Splunk
 - **ID**: 8eb0e418-a2b6-4327-a387-85c976662c8f
@@ -32,6 +33,7 @@ The number of UEFI vulnerabilities discovered in recent years and the failures i
 | ----------- | ----------- |--------------|
 | [Windows BootLoader Inventory](/endpoint/4f7e3913-4db3-4ccd-afe4-31198982305d/) | [System Firmware](/tags/#system-firmware), [Pre-OS Boot](/tags/#pre-os-boot) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Impair Defenses Disable HVCI](/endpoint/b061dfcc-f0aa-42cc-a6d4-a87f172acb79/) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows WinLogon with Public Network Connection](/endpoint/65615b3a-62ea-4d65-bb9f-6f07c17df4ea/) | [Bootkit](/tags/#bootkit) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

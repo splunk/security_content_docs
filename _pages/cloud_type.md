@@ -70,6 +70,7 @@ sidebar:
 | [Abnormally High Number Of Cloud Security Group API Calls](/cloud/d4dfb7f3-7a37-498a-b5df-f19334e871af/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) | [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change) |
 | [Amazon EKS Kubernetes Pod scan detection](/cloud/dbfca1dd-b8e5-4ba4-be0e-e565e5d62002/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) |  None |
 | [Amazon EKS Kubernetes cluster scan detection](/cloud/294c4686-63dd-4fe6-93a2-ca807626704a/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) |  None |
+| [Azure AD Application Administrator Role Assigned](/cloud/eac4de87-7a56-4538-a21b-277897af6d8d/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) |  None |
 | [Azure AD Authentication Failed During MFA Challenge](/cloud/e62c9c2e-bf51-4719-906c-3074618fcc1c/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation) |  None |
 | [Azure AD Concurrent Sessions From Different Ips](/cloud/a9126f73-9a9b-493d-96ec-0dd06695490d/) | [Browser Session Hijacking](/tags/#browser-session-hijacking) |  None |
 | [Azure AD External Guest User Invited](/cloud/c1fb4edb-cab1-4359-9b40-925ffd797fb5/) | [Cloud Account](/tags/#cloud-account) |  None |
@@ -82,7 +83,11 @@ sidebar:
 | [Azure AD New Custom Domain Added](/cloud/30c47f45-dd6a-4720-9963-0bca6c8686ef/) | [Domain Policy Modification](/tags/#domain-policy-modification), [Domain Trust Modification](/tags/#domain-trust-modification) |  None |
 | [Azure AD New Federated Domain Added](/cloud/a87cd633-076d-4ab2-9047-977751a3c1a0/) | [Domain Policy Modification](/tags/#domain-policy-modification), [Domain Trust Modification](/tags/#domain-trust-modification) |  None |
 | [Azure AD New MFA Method Registered For User](/cloud/2628b087-4189-403f-9044-87403f777a1b/) | [Modify Authentication Process](/tags/#modify-authentication-process), [Multi-Factor Authentication](/tags/#multi-factor-authentication) |  None |
+| [Azure AD PIM Role Assigned](/cloud/fcd6dfeb-191c-46a0-a29c-c306382145ab/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) |  None |
+| [Azure AD PIM Role Assignment Activated](/cloud/952e80d0-e343-439b-83f4-808c3e6fbf2e/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) |  None |
+| [Azure AD Privileged Authentication Administrator Role Assigned](/cloud/a7da845d-6fae-41cf-b823-6c0b8c55814a/) | [Security Account Manager](/tags/#security-account-manager) | [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication) |
 | [Azure AD Privileged Role Assigned](/cloud/a28f0bc3-3400-4a6e-a2da-89b9e95f0d2a/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) |  None |
+| [Azure AD Privileged Role Assigned to Service Principal](/cloud/5dfaa3d3-e2e4-4053-8252-16d9ee528c41/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) |  None |
 | [Azure AD Service Principal Created](/cloud/f8ba49e7-ffd3-4b53-8f61-e73974583c5d/) | [Cloud Account](/tags/#cloud-account) |  None |
 | [Azure AD Service Principal New Client Credentials](/cloud/e3adc0d3-9e4b-4b5d-b662-12cec1adff2a/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Credentials](/tags/#additional-cloud-credentials) |  None |
 | [Azure AD Service Principal Owner Added](/cloud/7ddf2084-6cf3-4a44-be83-474f7b73c701/) | [Account Manipulation](/tags/#account-manipulation) |  None |

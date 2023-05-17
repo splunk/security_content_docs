@@ -19,6 +19,7 @@ sidebar:
 | [AWS User Monitoring](/stories/aws_user_monitoring/) | [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Azure Active Directory Account Takeover](/stories/azure_active_directory_account_takeover/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying) | [Resource Development](/tags/#resource-development) |
 | [Azure Active Directory Persistence](/stories/azure_active_directory_persistence/) | [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
+| [Azure Active Directory Privilege Escalation](/stories/azure_active_directory_privilege_escalation/) | [Account Manipulation](/tags/#account-manipulation) | [Persistence](/tags/#persistence) |
 | [Cloud Cryptomining](/stories/cloud_cryptomining/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |
 | [Cloud Federated Credential Abuse](/stories/cloud_federated_credential_abuse/) | [Image File Execution Options Injection](/tags/#image-file-execution-options-injection), [Event Triggered Execution](/tags/#event-triggered-execution) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Dev Sec Ops](/stories/dev_sec_ops/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Discovery](/tags/#discovery) |

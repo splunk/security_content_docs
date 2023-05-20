@@ -1,5 +1,5 @@
 ---
-title: "Dispatch Related Tickets Search"
+title: "Related Tickets Search Dispatch"
 last_modified_at: 2023-02-28
 toc: true
 toc_label: ""
@@ -28,9 +28,9 @@ Detects available indicators and routes them to dispatch related ticket search p
 This playbook looks for artifacts and then dispatches the community Related Tickets playbooks. This playbook takes the output of those playbooks and nicely formats them into notes and tags indicators with their results.
 
 
-#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Dispatch_Related_Tickets_Search.json){: .btn .btn--info}
+#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Related_Tickets_Search_Dispatch.json){: .btn .btn--info}
 
-[![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/Dispatch_Related_Tickets_Search.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Dispatch_Related_Tickets_Search.json)
+[![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/Related_Tickets_Search_Dispatch.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Related_Tickets_Search_Dispatch.json)
 
 #### Required field
 
@@ -42,4 +42,4 @@ This playbook looks for artifacts and then dispatches the community Related Tick
 
 
 
-[*source*](https://github.com/splunk/security_content/tree/develop/playbooks/Dispatch_Related_Tickets_Search.yml) \| *version*: **1**
+[*source*](https://github.com/splunk/security_content/tree/develop/playbooks/Related_Tickets_Search_Dispatch.yml) \| *version*: **1**

@@ -1,6 +1,6 @@
 ---
 title: "Data Exfiltration"
-last_modified_at: 2020-10-21
+last_modified_at: 2023-05-17
 toc: true
 toc_label: ""
 tags:
@@ -16,17 +16,18 @@ tags:
 
 #### Description
 
-The stealing of data by an adversary.
+Data exfiltration refers to the unauthorized transfer or extraction of sensitive or valuable data from a compromised system or network during a cyber attack. It is a critical phase in many targeted attacks, where adversaries aim to steal confidential information, such as intellectual property, financial records, personal data, or trade secrets.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution), [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk)
-- **Last Updated**: 2020-10-21
-- **Author**: Shannon Davis, Splunk
+- **Last Updated**: 2023-05-17
+- **Author**: Bhavin Patel, Shannon Davis, Splunk
 - **ID**: 66b0fe0c-1351-11eb-adc1-0242ac120002
 
 #### Narrative
 
-Exfiltration comes in many flavors.  Adversaries can collect data over encrypted or non-encrypted channels.  They can utilise Command And Control channels that are already in place to exfiltrate data.  They can use both standard data transfer protocols such as FTP, SCP, etc to exfiltrate data.  Or they can use non-standard protocols such as DNS, ICMP, etc with specially crafted fields to try and circumvent security technologies in place.
+This Analytic Story supports you to detect Tactics, Techniques and Procedures (TTPs) leveraged by adversaries to exfiltrate data from your environments. Exfiltration comes in many flavors and its done differently on every environment. Adversaries can collect data over encrypted or non-encrypted channels.  They can utilise Command And Control channels that are already in place to exfiltrate data.  They can use both standard data transfer protocols such as FTP, SCP, etc to exfiltrate data.  Or they can use non-standard protocols such as DNS, ICMP, etc with specially crafted fields to try and circumvent security technologies in place.\
+Techniques for getting data out of a target network typically include transferring it over their command and control channel or an alternate channel and may also include putting size limits on the transmission. In context of the cloud, this refers to the unauthorized transfer or extraction of sensitive data from cloud-based systems or services. It involves the compromise of cloud infrastructure or accounts to gain access to valuable information stored in the cloud environment. Attackers may employ various techniques, such as exploiting vulnerabilities, stealing login credentials, or using malicious code to exfiltrate data from cloud repositories or services without detection.
 
 #### Detections
 
@@ -58,7 +59,10 @@ Exfiltration comes in many flavors.  Adversaries can collect data over encrypted
 #### Reference
 
 * [https://attack.mitre.org/tactics/TA0010/](https://attack.mitre.org/tactics/TA0010/)
+* [https://bleemb.medium.com/data-exfiltration-with-native-aws-s3-features-c94ae4d13436](https://bleemb.medium.com/data-exfiltration-with-native-aws-s3-features-c94ae4d13436)
+* [https://labs.nettitude.com/blog/how-to-exfiltrate-aws-ec2-data/](https://labs.nettitude.com/blog/how-to-exfiltrate-aws-ec2-data/)
+* [https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-277a](https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-277a)
 
 
 
-[*source*](https://github.com/splunk/security_content/tree/develop/stories/data_exfiltration.yml) \| *version*: **1**
+[*source*](https://github.com/splunk/security_content/tree/develop/stories/data_exfiltration.yml) \| *version*: **2**

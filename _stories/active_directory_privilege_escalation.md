@@ -8,6 +8,7 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
+  - Risk
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -17,7 +18,7 @@ tags:
 Monitor for activities and techniques associated with Privilege Escalation attacks within Active Directory environments.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk)
 - **Last Updated**: 2023-03-20
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: fa34a5d8-df0a-404c-8237-11f99cba1d5f
@@ -32,6 +33,7 @@ The following analytic story groups detection opportunities that seek to identif
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
+| [Active Directory Privilege Escalation Identified](/endpoint/583e8a68-f2f7-45be-8fc9-bf725f0e22fd/) | [Domain Policy Modification](/tags/#domain-policy-modification) | [Correlation](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Kerberos Service Ticket Request Using RC4 Encryption](/endpoint/7d90f334-a482-11ec-908c-acde48001122/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets), [Golden Ticket](/tags/#golden-ticket) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Rubeus Command Line Parameters](/endpoint/cca37478-8377-11ec-b59a-acde48001122/) | [Use Alternate Authentication Material](/tags/#use-alternate-authentication-material), [Pass the Ticket](/tags/#pass-the-ticket), [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets), [Kerberoasting](/tags/#kerberoasting), [AS-REP Roasting](/tags/#as-rep-roasting) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [ServicePrincipalNames Discovery with PowerShell](/endpoint/13243068-2d38-11ec-8908-acde48001122/) | [Kerberoasting](/tags/#kerberoasting) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

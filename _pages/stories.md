@@ -172,6 +172,7 @@ sidebar:
 | [Unusual Processes](unusual_processes) | [Process Injection](/tags/#process-injection), [Create or Modify System Process](/tags/#create-or-modify-system-process), [Parent PID Spoofing](/tags/#parent-pid-spoofing), [Access Token Manipulation](/tags/#access-token-manipulation) | [Defense Evasion](/tags/#defense-evasion) |
 | [Use of Cleartext Protocols]() | None | None |
 | [VMware Server Side Injection and Privilege Escalation](vmware_server_side_injection_and_privilege_escalation) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
+| [Volt Typhoon](volt_typhoon) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [Execution](/tags/#execution) |
 | [WhisperGate](whispergate) | [Process Injection](/tags/#process-injection), [Create or Modify System Process](/tags/#create-or-modify-system-process), [Parent PID Spoofing](/tags/#parent-pid-spoofing), [Access Token Manipulation](/tags/#access-token-manipulation) | [Defense Evasion](/tags/#defense-evasion) |
 | [Windows BootKits](windows_bootkits) | [Pre-OS Boot](/tags/#pre-os-boot), [Registry Run Keys / Startup Folder](/tags/#registry-run-keys-/-startup-folder) | [Defense Evasion](/tags/#defense-evasion) |
 | [Windows Certificate Services](windows_certificate_services) | [Steal or Forge Authentication Certificates](/tags/#steal-or-forge-authentication-certificates) | [Credential Access](/tags/#credential-access) |

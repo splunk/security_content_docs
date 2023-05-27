@@ -16,4 +16,5 @@ sidebar:
 | [Hermetic Wiper](/stories/hermetic_wiper/) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [Sandworm Tools](/stories/sandworm_tools/) | [Steal or Forge Authentication Certificates](/tags/#steal-or-forge-authentication-certificates) | [Credential Access](/tags/#credential-access) |
 | [Swift Slicer](/stories/swift_slicer/) | [Data Destruction](/tags/#data-destruction) | [Impact](/tags/#impact) |
+| [Volt Typhoon](/stories/volt_typhoon/) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [Execution](/tags/#execution) |
 | [WhisperGate](/stories/whispergate/) | [Process Injection](/tags/#process-injection), [Create or Modify System Process](/tags/#create-or-modify-system-process), [Parent PID Spoofing](/tags/#parent-pid-spoofing), [Access Token Manipulation](/tags/#access-token-manipulation) | [Defense Evasion](/tags/#defense-evasion) |

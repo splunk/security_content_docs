@@ -13,6 +13,8 @@ sidebar:
 | [AD LDAP Entity Attribute Lookup](/playbooks/ad_ldap_entity_attribute_lookup/)|[AD LDAP](https://splunkbase.splunk.com/apps/#/search/AD LDAP/product/soar)| Investigation |
 | [AWS Disable User Accounts](/playbooks/aws_disable_user_accounts/)|[AWS IAM](https://splunkbase.splunk.com/apps/#/search/AWS IAM/product/soar)| Response |
 | [AWS Find Inactive Users](/playbooks/aws_find_inactive_users/)|[AWS IAM](https://splunkbase.splunk.com/apps/#/search/AWS IAM/product/soar), [Phantom](https://splunkbase.splunk.com/apps/#/search/Phantom/product/soar)| Investigation |
+| [AWS IAM Account Locking](/playbooks/aws_iam_account_locking/)|[AWS IAM API](https://splunkbase.splunk.com/apps/#/search/AWS IAM API/product/soar)| Investigation |
+| [Active Directory Disable Account Dispatch](/playbooks/active_directory_disable_account_dispatch/)|[microsoft_ad_ldap](https://splunkbase.splunk.com/apps/#/search/microsoft_ad_ldap/product/soar), [azure_ad_graph](https://splunkbase.splunk.com/apps/#/search/azure_ad_graph/product/soar), [aws_iam](https://splunkbase.splunk.com/apps/#/search/aws_iam/product/soar)| Investigation |
 | [Active Directory Reset password](/playbooks/active_directory_reset_password/)|[LDAP](https://splunkbase.splunk.com/apps/#/search/LDAP/product/soar)| Response |
 | [Attribute Lookup Dispatch](/playbooks/attribute_lookup_dispatch/)| None | Investigation |
 | [Automated Enrichment](/playbooks/automated_enrichment/)| None | Investigation |

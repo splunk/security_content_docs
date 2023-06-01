@@ -43,14 +43,21 @@ sidebar:
 | [Splunk Command and Scripting Interpreter Delete Usage](/application/8d3d5d5e-ca43-42be-aa1f-bc64375f6b04/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Splunk_Audit](https://docs.splunk.com/Documentation/CIM/latest/User/SplunkAudit) |
 | [Splunk Command and Scripting Interpreter Risky Commands](/application/1cf58ae1-9177-40b8-a26c-8966040f11ae/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Splunk_Audit](https://docs.splunk.com/Documentation/CIM/latest/User/SplunkAudit) |
 | [Splunk Command and Scripting Interpreter Risky SPL MLTK](/application/19d0146c-2eae-4e53-8d39-1198a78fa9ca/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Splunk_Audit](https://docs.splunk.com/Documentation/CIM/latest/User/SplunkAudit) |
+| [Splunk DOS Via Dump SPL Command](/application/fb0e6823-365f-48ed-b09e-272ac4c1dad6/) | [Application or System Exploitation](/tags/#application-or-system-exploitation) |  None |
 | [Splunk Data exfiltration from Analytics Workspace using sid query](/application/b6d77c6c-f011-4b03-8650-8f10edb7c4a8/) | [Exfiltration Over Web Service](/tags/#exfiltration-over-web-service) |  None |
 | [Splunk Digital Certificates Infrastructure Version](/application/3c162281-7edb-4ebc-b9a4-5087aaf28fa7/) | [Digital Certificates](/tags/#digital-certificates) |  None |
 | [Splunk Digital Certificates Lack of Encryption](/application/386a7ebc-737b-48cf-9ca8-5405459ed508/) | [Digital Certificates](/tags/#digital-certificates) |  None |
 | [Splunk DoS via Malformed S2S Request](/application/fc246e56-953b-40c1-8634-868f9e474cbd/) | [Network Denial of Service](/tags/#network-denial-of-service) |  None |
+| [Splunk Edit User Privilege Escalation](/application/39e1c326-67d7-4c0d-8584-8056354f6593/) | [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) |  None |
 | [Splunk Endpoint Denial of Service DoS Zip Bomb](/application/b237d393-2f57-4531-aad7-ad3c17c8b041/) | [Endpoint Denial of Service](/tags/#endpoint-denial-of-service) |  None |
+| [Splunk HTTP Response Splitting Via Rest SPL Command](/application/e615a0e1-a1b2-4196-9865-8aa646e1708c/) | [HTML Smuggling](/tags/#html-smuggling) |  None |
 | [Splunk Improperly Formatted Parameter Crashes splunkd](/application/08978eca-caff-44c1-84dc-53f17def4e14/) | [Endpoint Denial of Service](/tags/#endpoint-denial-of-service) | [Splunk_Audit](https://docs.splunk.com/Documentation/CIM/latest/User/SplunkAudit) |
+| [Splunk Low Privilege User Can View Hashed Splunk Password](/application/a1be424d-e59c-4583-b6f9-2dcc23be4875/) | [Exploitation for Credential Access](/tags/#exploitation-for-credential-access) |  None |
+| [Splunk Path Traversal In Splunk App For Lookup File Edit](/application/8ed58987-738d-4917-9e44-b8ef6ab948a6/) | [File and Directory Discovery](/tags/#file-and-directory-discovery) |  None |
+| [Splunk Persistent XSS Via URL Validation Bypass W Dashboard](/application/8a43558f-a53c-4ee4-86c1-30b1e8ef3606/) | [Drive-by Compromise](/tags/#drive-by-compromise) |  None |
 | [Splunk Process Injection Forwarder Bundle Downloads](/application/8ea57d78-1aac-45d2-a913-0cd603fb6e9e/) | [Process Injection](/tags/#process-injection) |  None |
 | [Splunk Protocol Impersonation Weak Encryption Configuration](/application/900892bf-70a9-4787-8c99-546dd98ce461/) | [Protocol Impersonation](/tags/#protocol-impersonation) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
+| [Splunk RBAC Bypass On Indexing Preview REST Endpoint](/application/bbe26f95-1655-471d-8abd-3d32fafa86f8/) | [Access Token Manipulation](/tags/#access-token-manipulation) |  None |
 | [Splunk RCE via Splunk Secure Gateway  Splunk Mobile alerts feature](/application/baa41f09-df48-4375-8991-520beea161be/) | [Exploitation of Remote Services](/tags/#exploitation-of-remote-services) |  None |
 | [Splunk Reflected XSS in the templates lists radio](/application/d532d105-c63f-4049-a8c4-e249127ca425/) | [Drive-by Compromise](/tags/#drive-by-compromise) |  None |
 | [Splunk Stored XSS via Data Model objectName field](/application/062bff76-5f9c-496e-a386-cb1adcf69871/) | [Drive-by Compromise](/tags/#drive-by-compromise) |  None |

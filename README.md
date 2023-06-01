@@ -6,7 +6,7 @@ Requires [poetry](https://python-poetry.org/docs/)
 ```
 git clone https://github.com/splunk/security_content.git
 git clone https://github.com/mitre/cti.git
-poetry install && poetry shell
+poetry install && poetry shell 
 ```
 
 # Development

@@ -878,7 +878,6 @@ sidebar:
 | [Windows PowerSploit GPP Discovery](/endpoint/0130a0df-83a1-4647-9011-841e950ff302/) | [Unsecured Credentials](/tags/#unsecured-credentials), [Group Policy Preferences](/tags/#group-policy-preferences) |  None |
 | [Windows PowerSploit GPP Discovery](/endpoint/fdef746e-71fb-41ce-8ab2-b4a5a6b50ca2/) | [Unsecured Credentials](/tags/#unsecured-credentials), [Group Policy Preferences](/tags/#group-policy-preferences) |  None |
 | [Windows PowerView AD Access Control List Enumeration](/endpoint/39405650-c364-4e1e-a740-32a63ef042a6/) | [Domain Accounts](/tags/#domain-accounts), [Permission Groups Discovery](/tags/#permission-groups-discovery) |  None |
-| [Windows PowerView AD Access Control List Enumeration](/endpoint/2b301d6c-0527-4dbd-8d2d-5345bc4be0cf/) | [Domain Accounts](/tags/#domain-accounts), [Permission Groups Discovery](/tags/#permission-groups-discovery) |  None |
 | [Windows PowerView Constrained Delegation Discovery](/endpoint/86dc8176-6e6c-42d6-9684-5444c6557ab3/) | [Remote System Discovery](/tags/#remote-system-discovery) |  None |
 | [Windows PowerView Kerberos Service Ticket Request](/endpoint/970455a1-4ac2-47e1-a9a5-9e75443ddcb9/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets), [Kerberoasting](/tags/#kerberoasting) |  None |
 | [Windows PowerView SPN Discovery](/endpoint/a7093c28-796c-4ebb-9997-e2c18b870837/) | [Steal or Forge Kerberos Tickets](/tags/#steal-or-forge-kerberos-tickets), [Kerberoasting](/tags/#kerberoasting) |  None |

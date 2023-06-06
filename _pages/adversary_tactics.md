@@ -58,6 +58,7 @@ sidebar:
 | [Linux Rootkit](/stories/linux_rootkit/) | [System Information Discovery](/tags/#system-information-discovery), [Rootkit](/tags/#rootkit) | [Discovery](/tags/#discovery) |
 | [Living Off The Land](/stories/living_off_the_land/) | [Trusted Developer Utilities Proxy Execution](/tags/#trusted-developer-utilities-proxy-execution), [MSBuild](/tags/#msbuild) | [Defense Evasion](/tags/#defense-evasion) |
 | [Log4Shell CVE-2021-44228](/stories/log4shell_cve-2021-44228/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
+| [MOVEit Transfer Critical Vulnerability](/stories/moveit_transfer_critical_vulnerability/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
 | [Malicious PowerShell](/stories/malicious_powershell/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Masquerading - Rename System Utilities](/stories/masquerading_-_rename_system_utilities/) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [InstallUtil](/tags/#installutil) | [Defense Evasion](/tags/#defense-evasion) |
 | [MetaSploit](/stories/metasploit/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Execution](/tags/#execution) |

@@ -103,6 +103,7 @@ sidebar:
 | [Local Privilege Escalation With KrbRelayUp](local_privilege_escalation_with_krbrelayup) | [Windows Service](/tags/#windows-service) | [Persistence](/tags/#persistence) |
 | [LockBit Ransomware](lockbit_ransomware) | [Modify Registry](/tags/#modify-registry) | [Defense Evasion](/tags/#defense-evasion) |
 | [Log4Shell CVE-2021-44228](log4shell_cve-2021-44228) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
+| [MOVEit Transfer Critical Vulnerability](moveit_transfer_critical_vulnerability) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
 | [Malicious PowerShell](malicious_powershell) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Masquerading - Rename System Utilities](masquerading_-_rename_system_utilities) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [InstallUtil](/tags/#installutil) | [Defense Evasion](/tags/#defense-evasion) |
 | [MetaSploit](metasploit) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Execution](/tags/#execution) |

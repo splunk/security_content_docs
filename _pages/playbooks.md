@@ -10,6 +10,7 @@ sidebar:
 
 | Name    | SOAR App   | Type        |
 | --------| ---------- | ----------- |
+| [AD LDAP Account Locking](/playbooks/ad_ldap_account_locking/)|[AD LDAP API](https://splunkbase.splunk.com/apps/#/search/AD LDAP API/product/soar)| Investigation |
 | [AD LDAP Entity Attribute Lookup](/playbooks/ad_ldap_entity_attribute_lookup/)|[AD LDAP](https://splunkbase.splunk.com/apps/#/search/AD LDAP/product/soar)| Investigation |
 | [AWS Disable User Accounts](/playbooks/aws_disable_user_accounts/)|[AWS IAM](https://splunkbase.splunk.com/apps/#/search/AWS IAM/product/soar)| Response |
 | [AWS Find Inactive Users](/playbooks/aws_find_inactive_users/)|[AWS IAM](https://splunkbase.splunk.com/apps/#/search/AWS IAM/product/soar), [Phantom](https://splunkbase.splunk.com/apps/#/search/Phantom/product/soar)| Investigation |
@@ -19,6 +20,7 @@ sidebar:
 | [Attribute Lookup Dispatch](/playbooks/attribute_lookup_dispatch/)| None | Investigation |
 | [Automated Enrichment](/playbooks/automated_enrichment/)| None | Investigation |
 | [Azure AD Graph User Attribute Lookup](/playbooks/azure_ad_graph_user_attribute_lookup/)|[Azure AD Graph](https://splunkbase.splunk.com/apps/#/search/Azure AD Graph/product/soar)| Investigation |
+| [Azure AD Locking Account](/playbooks/azure_ad_locking_account/)|[Azure AD Graph API](https://splunkbase.splunk.com/apps/#/search/Azure AD Graph API/product/soar)| Investigation |
 | [Block Indicators](/playbooks/block_indicators/)|[Palo Alto Networks Firewall](https://splunkbase.splunk.com/apps/#/search/Palo Alto Networks Firewall/product/soar), [CarbonBlack Response](https://splunkbase.splunk.com/apps/#/search/CarbonBlack Response/product/soar), [OpenDNS Umbrella](https://splunkbase.splunk.com/apps/#/search/OpenDNS Umbrella/product/soar)| Response |
 | [CrowdStrike OAuth API Device Attribute Lookup](/playbooks/crowdstrike_oauth_api_device_attribute_lookup/)|[CrowdStrike OAuth API](https://splunkbase.splunk.com/apps/#/search/CrowdStrike OAuth API/product/soar)| Investigation |
 | [CrowdStrike OAuth API Dynamic Analysis](/playbooks/crowdstrike_oauth_api_dynamic_analysis/)|[CrowdStrike OAuth API](https://splunkbase.splunk.com/apps/#/search/CrowdStrike OAuth API/product/soar)| Investigation |

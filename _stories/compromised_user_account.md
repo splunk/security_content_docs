@@ -31,6 +31,9 @@ Compromised User Account occurs when cybercriminals gain unauthorized access to 
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
+| [ASL AWS Concurrent Sessions From Different Ips](/cloud/b3424bbe-3204-4469-887b-ec144483a336/) | [Browser Session Hijacking](/tags/#browser-session-hijacking) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [ASL AWS New MFA Method Registered For User](/cloud/33ae0931-2a03-456b-b1d7-b016c5557fbd/) | [Modify Authentication Process](/tags/#modify-authentication-process), [Multi-Factor Authentication](/tags/#multi-factor-authentication) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [ASL AWS Password Policy Changes](/cloud/5ade5937-11a2-4363-ba6b-39a3ee8d5b1a/) | [Password Policy Discovery](/tags/#password-policy-discovery) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [AWS Concurrent Sessions From Different Ips](/cloud/51c04fdb-2746-465a-b86e-b413a09c9085/) | [Browser Session Hijacking](/tags/#browser-session-hijacking) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [AWS Console Login Failed During MFA Challenge](/cloud/55349868-5583-466f-98ab-d3beb321961e/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [AWS High Number Of Failed Authentications For User](/cloud/e3236f49-daf3-4b70-b808-9290912ac64d/) | [Password Policy Discovery](/tags/#password-policy-discovery) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

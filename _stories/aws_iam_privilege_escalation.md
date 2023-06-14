@@ -31,6 +31,9 @@ However, if these IAM policies are misconfigured and have specific combinations 
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
+| [ASL AWS CreateAccessKey](/cloud/ccb3e4af-23d6-407f-9842-a26212816c9e/) | [Valid Accounts](/tags/#valid-accounts) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [ASL AWS IAM Delete Policy](/cloud/609ced68-d420-4ff7-8164-ae98b4b4018c/) | [Account Manipulation](/tags/#account-manipulation) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [ASL AWS Password Policy Changes](/cloud/5ade5937-11a2-4363-ba6b-39a3ee8d5b1a/) | [Password Policy Discovery](/tags/#password-policy-discovery) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [AWS Create Policy Version to allow all resources](/cloud/2a9b80d3-6340-4345-b5ad-212bf3d0dac4/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [AWS CreateAccessKey](/cloud/2a9b80d3-6340-4345-11ad-212bf3d0d111/) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [AWS CreateLoginProfile](/cloud/2a9b80d3-6340-4345-11ad-212bf444d111/) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

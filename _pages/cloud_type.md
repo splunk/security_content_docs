@@ -10,6 +10,16 @@ sidebar:
 
 | Name    | Technique | Datamodel |
 | --------| --------- |------------|
+| [ASL AWS Concurrent Sessions From Different Ips](/cloud/b3424bbe-3204-4469-887b-ec144483a336/) | [Browser Session Hijacking](/tags/#browser-session-hijacking) |  None |
+| [ASL AWS CreateAccessKey](/cloud/ccb3e4af-23d6-407f-9842-a26212816c9e/) | [Valid Accounts](/tags/#valid-accounts) |  None |
+| [ASL AWS Defense Evasion Delete CloudWatch Log Group](/cloud/0f701b38-a0fb-43fd-a83d-d12265f71f33/) | [Impair Defenses](/tags/#impair-defenses), [Disable Cloud Logs](/tags/#disable-cloud-logs) |  None |
+| [ASL AWS Defense Evasion Delete Cloudtrail](/cloud/1f0b47e5-0134-43eb-851c-e3258638945e/) | [Disable Cloud Logs](/tags/#disable-cloud-logs), [Impair Defenses](/tags/#impair-defenses) |  None |
+| [ASL AWS Defense Evasion Impair Security Services](/cloud/5029b681-0462-47b7-82e7-f7e3d37f5a2d/) | [Disable Cloud Logs](/tags/#disable-cloud-logs), [Impair Defenses](/tags/#impair-defenses) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
+| [ASL AWS Excessive Security Scanning](/cloud/ff2bfdbc-65b7-4434-8f08-d55761d1d446/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) |  None |
+| [ASL AWS IAM Delete Policy](/cloud/609ced68-d420-4ff7-8164-ae98b4b4018c/) | [Account Manipulation](/tags/#account-manipulation) |  None |
+| [ASL AWS Multi-Factor Authentication Disabled](/cloud/4d2df5e0-1092-4817-88a8-79c7fa054668/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation), [Modify Authentication Process](/tags/#modify-authentication-process), [Multi-Factor Authentication](/tags/#multi-factor-authentication) |  None |
+| [ASL AWS New MFA Method Registered For User](/cloud/33ae0931-2a03-456b-b1d7-b016c5557fbd/) | [Modify Authentication Process](/tags/#modify-authentication-process), [Multi-Factor Authentication](/tags/#multi-factor-authentication) |  None |
+| [ASL AWS Password Policy Changes](/cloud/5ade5937-11a2-4363-ba6b-39a3ee8d5b1a/) | [Password Policy Discovery](/tags/#password-policy-discovery) |  None |
 | [AWS AMI Atttribute Modification for Exfiltration](/cloud/f2132d74-cf81-4c5e-8799-ab069e67dc9f/) | [Transfer Data to Cloud Account](/tags/#transfer-data-to-cloud-account) |  None |
 | [AWS Concurrent Sessions From Different Ips](/cloud/51c04fdb-2746-465a-b86e-b413a09c9085/) | [Browser Session Hijacking](/tags/#browser-session-hijacking) |  None |
 | [AWS Console Login Failed During MFA Challenge](/cloud/55349868-5583-466f-98ab-d3beb321961e/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation) |  None |

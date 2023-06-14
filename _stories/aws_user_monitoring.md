@@ -32,6 +32,7 @@ The detection searches in this Analytic Story are designed to help you uncover A
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
+| [ASL AWS Excessive Security Scanning](/cloud/ff2bfdbc-65b7-4434-8f08-d55761d1d446/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [AWS Excessive Security Scanning](/cloud/1fdd164a-def8-4762-83a9-9ffe24e74d5a/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect API activity from users without MFA](/deprecated/4d46e8bd-4072-48e4-92db-0325889ef894/) |  | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect AWS API Activities From Unapproved Accounts](/deprecated/ada0f478-84a8-4641-a3f1-d82362d4bd55/) | [Cloud Accounts](/tags/#cloud-accounts) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

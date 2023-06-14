@@ -38,6 +38,8 @@ This Analytic Story focuses on detecting signs that a malicious payload has been
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
 | [Detect Outlook exe writing a zip file](/endpoint/a51bfe1a-94f0-4822-b1e4-16ae10145893/) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect RTLO In File Name](/endpoint/468b7e11-d362-43b8-b6ec-7a2d3b246678/) | [Right-to-Left Override](/tags/#right-to-left-override), [Masquerading](/tags/#masquerading) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect RTLO In Process](/endpoint/22ac27b4-7189-4a4f-9375-b9017c9620d7/) | [Right-to-Left Override](/tags/#right-to-left-override), [Masquerading](/tags/#masquerading) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Excel Spawning PowerShell](/endpoint/42d40a22-9be3-11eb-8f08-acde48001122/) | [Security Account Manager](/tags/#security-account-manager), [OS Credential Dumping](/tags/#os-credential-dumping) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Excel Spawning Windows Script Host](/endpoint/57fe880a-9be3-11eb-9bf3-acde48001122/) | [Security Account Manager](/tags/#security-account-manager), [OS Credential Dumping](/tags/#os-credential-dumping) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Gdrive suspicious file sharing](/cloud/a7131dae-34e3-11ec-a2de-acde48001122/) | [Phishing](/tags/#phishing) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

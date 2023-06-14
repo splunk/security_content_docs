@@ -35,7 +35,6 @@ sidebar:
 | [Okta ThreatInsight Threat Detected](/application/140504ae-5fe2-4d65-b2bc-a211813fbca6/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
 | [Okta Two or More Rejected Okta Pushes](/application/d93f785e-4c2c-4262-b8c7-12b77a13fd39/) | [Brute Force](/tags/#brute-force) |  None |
 | [Okta User Logins From Multiple Cities](/application/7594fa07-9f34-4d01-81cc-d6af6a5db9e8/) | [Valid Accounts](/tags/#valid-accounts), [Default Accounts](/tags/#default-accounts) |  None |
-| [PaperCut NG Suspicious Behavior Debug Log](/application/395163b8-689b-444b-86c7-9fe9ad624734/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) |  None |
 | [Path traversal SPL injection](/application/dfe55688-82ed-4d24-a21b-ed8f0e0fda99/) | [File and Directory Discovery](/tags/#file-and-directory-discovery) |  None |
 | [Persistent XSS in RapidDiag through User Interface Views](/application/ce6e1268-e01c-4df2-a617-0f034ed49a43/) | [Drive-by Compromise](/tags/#drive-by-compromise) |  None |
 | [Splunk Account Discovery Drilldown Dashboard Disclosure](/application/f844c3f6-fd99-43a2-ba24-93e35fe84be6/) | [Account Discovery](/tags/#account-discovery) |  None |

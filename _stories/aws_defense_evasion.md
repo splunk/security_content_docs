@@ -30,6 +30,9 @@ Adversaries employ a variety of techniques in order to avoid detection and opera
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
+| [ASL AWS Defense Evasion Delete CloudWatch Log Group](/cloud/0f701b38-a0fb-43fd-a83d-d12265f71f33/) | [Impair Defenses](/tags/#impair-defenses), [Disable Cloud Logs](/tags/#disable-cloud-logs) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [ASL AWS Defense Evasion Delete Cloudtrail](/cloud/1f0b47e5-0134-43eb-851c-e3258638945e/) | [Disable Cloud Logs](/tags/#disable-cloud-logs), [Impair Defenses](/tags/#impair-defenses) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [ASL AWS Defense Evasion Impair Security Services](/cloud/5029b681-0462-47b7-82e7-f7e3d37f5a2d/) | [Disable Cloud Logs](/tags/#disable-cloud-logs), [Impair Defenses](/tags/#impair-defenses) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [AWS Defense Evasion Delete CloudWatch Log Group](/cloud/d308b0f1-edb7-4a62-a614-af321160710f/) | [Impair Defenses](/tags/#impair-defenses), [Disable Cloud Logs](/tags/#disable-cloud-logs) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [AWS Defense Evasion Delete Cloudtrail](/cloud/82092925-9ca1-4e06-98b8-85a2d3889552/) | [Disable Cloud Logs](/tags/#disable-cloud-logs), [Impair Defenses](/tags/#impair-defenses) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [AWS Defense Evasion Impair Security Services](/cloud/b28c4957-96a6-47e0-a965-6c767aac1458/) | [Disable Cloud Logs](/tags/#disable-cloud-logs), [Impair Defenses](/tags/#impair-defenses) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

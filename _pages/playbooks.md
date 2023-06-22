@@ -29,6 +29,7 @@ sidebar:
 | [Delete Detected Files](/playbooks/delete_detected_files/)|[Windows Remote Management](https://splunkbase.splunk.com/apps/#/search/Windows Remote Management/product/soar)| Response |
 | [Dynamic Analysis Dispatch](/playbooks/dynamic_analysis_dispatch/)|[CrowdStrike OAuth API](https://splunkbase.splunk.com/apps/#/search/CrowdStrike OAuth API/product/soar), [urlscan.io](https://splunkbase.splunk.com/apps/#/search/urlscan.io/product/soar), [VirusTotal_v3](https://splunkbase.splunk.com/apps/#/search/VirusTotal_v3/product/soar), [SAA](https://splunkbase.splunk.com/apps/#/search/SAA/product/soar)| Investigation |
 | [Email Notification for Malware](/playbooks/email_notification_for_malware/)|[VirusTotal](https://splunkbase.splunk.com/apps/#/search/VirusTotal/product/soar), [WildFire](https://splunkbase.splunk.com/apps/#/search/WildFire/product/soar), [CarbonBlack Response](https://splunkbase.splunk.com/apps/#/search/CarbonBlack Response/product/soar), [SMTP](https://splunkbase.splunk.com/apps/#/search/SMTP/product/soar)| Response |
+| [G Suite for GMail Message Identifier Activity Analysis](/playbooks/g_suite_for_gmail_message_identifier_activity_analysis/)|[G Suite for GMail](https://splunkbase.splunk.com/apps/#/search/G Suite for GMail/product/soar)| Investigation |
 | [Hunting](/playbooks/hunting/)|[Splunk](https://splunkbase.splunk.com/apps/#/search/Splunk/product/soar), [Reversing Labs](https://splunkbase.splunk.com/apps/#/search/Reversing Labs/product/soar), [CarbonBlack Response](https://splunkbase.splunk.com/apps/#/search/CarbonBlack Response/product/soar), [Threat Grid](https://splunkbase.splunk.com/apps/#/search/Threat Grid/product/soar), [Falcon Host API](https://splunkbase.splunk.com/apps/#/search/Falcon Host API/product/soar)| Investigation |
 | [Identifier Activity Analysis Dispatch](/playbooks/identifier_activity_analysis_dispatch/)| None | Investigation |
 | [Identifier Reputation Analysis Dispatch](/playbooks/identifier_reputation_analysis_dispatch/)| None | Investigation |
@@ -42,6 +43,7 @@ sidebar:
 | [Log4j Respond](/playbooks/log4j_respond/)| None | Response |
 | [Log4j Splunk Investigation](/playbooks/log4j_splunk_investigation/)|[Splunk](https://splunkbase.splunk.com/apps/#/search/Splunk/product/soar)| Investigation |
 | [Malware Hunt and Contain](/playbooks/malware_hunt_and_contain/)|[LDAP](https://splunkbase.splunk.com/apps/#/search/LDAP/product/soar), [ServiceNow](https://splunkbase.splunk.com/apps/#/search/ServiceNow/product/soar), [CarbonBlack Response](https://splunkbase.splunk.com/apps/#/search/CarbonBlack Response/product/soar), [VirusTotal](https://splunkbase.splunk.com/apps/#/search/VirusTotal/product/soar)| Response |
+| [Panorama Outbound Traffic Filtering](/playbooks/panorama_outbound_traffic_filtering/)|[Panorama](https://splunkbase.splunk.com/apps/#/search/Panorama/product/soar)| Response |
 | [PhishTank URL Reputation Analysis](/playbooks/phishtank_url_reputation_analysis/)|[PhishTank](https://splunkbase.splunk.com/apps/#/search/PhishTank/product/soar)| Investigation |
 | [Ransomware Investigate and Contain](/playbooks/ransomware_investigate_and_contain/)|[Carbon Black Response](https://splunkbase.splunk.com/apps/#/search/Carbon Black Response/product/soar), [LDAP](https://splunkbase.splunk.com/apps/#/search/LDAP/product/soar), [Palo Alto Networks Firewall](https://splunkbase.splunk.com/apps/#/search/Palo Alto Networks Firewall/product/soar), [WildFire](https://splunkbase.splunk.com/apps/#/search/WildFire/product/soar), [Cylance](https://splunkbase.splunk.com/apps/#/search/Cylance/product/soar)| Response |
 | [Related Tickets Search Dispatch](/playbooks/related_tickets_search_dispatch/)| None | Investigation |
@@ -57,12 +59,15 @@ sidebar:
 | [Risk Notable Verdict](/playbooks/risk_notable_verdict/)|[None](https://splunkbase.splunk.com/apps/#/search/None/product/soar)| Response |
 | [ServiceNow Related Tickets Search](/playbooks/servicenow_related_tickets_search/)|[Splunk](https://splunkbase.splunk.com/apps/#/search/Splunk/product/soar)| Investigation |
 | [Splunk Identifier Activity Analysis](/playbooks/splunk_identifier_activity_analysis/)|[Splunk](https://splunkbase.splunk.com/apps/#/search/Splunk/product/soar)| Investigation |
+| [Splunk Message Identifier Activity Analysis](/playbooks/splunk_message_identifier_activity_analysis/)|[Splunk](https://splunkbase.splunk.com/apps/#/search/Splunk/product/soar)| Investigation |
 | [Splunk Notable Related Tickets Search](/playbooks/splunk_notable_related_tickets_search/)|[Splunk](https://splunkbase.splunk.com/apps/#/search/Splunk/product/soar)| Investigation |
 | [Splunk_Attack_Analyzer_Dynamic_Analysis](/playbooks/splunk_attack_analyzer_dynamic_analysis/)|[Splunk Attack Analyzer API](https://splunkbase.splunk.com/apps/#/search/Splunk Attack Analyzer API/product/soar)| Investigation |
 | [Start Investigation](/playbooks/start_investigation/)| None | Investigation |
 | [Threat Intel Investigate](/playbooks/threat_intel_investigate/)| None | Investigation |
 | [TruSTAR Enrich Indicators](/playbooks/trustar_enrich_indicators/)|[TruSTAR](https://splunkbase.splunk.com/apps/#/search/TruSTAR/product/soar)| Investigation |
+| [URL Outbound Traffic Filtering Dispatch](/playbooks/url_outbound_traffic_filtering_dispatch/)| None | Response |
 | [UrlScan IO Dynamic Analysis](/playbooks/urlscan_io_dynamic_analysis/)|[urlscan.io](https://splunkbase.splunk.com/apps/#/search/urlscan.io/product/soar)| Investigation |
 | [VirusTotal V3 Dynamic Analysis](/playbooks/virustotal_v3_dynamic_analysis/)|[virustotal v3](https://splunkbase.splunk.com/apps/#/search/virustotal v3/product/soar)| Investigation |
 | [VirusTotal v3 Identifier Reputation Analysis](/playbooks/virustotal_v3_identifier_reputation_analysis/)|[VirusTotal v3](https://splunkbase.splunk.com/apps/#/search/VirusTotal v3/product/soar)| Investigation |
 | [Windows Defender ATP Identifier Activity Analysis](/playbooks/windows_defender_atp_identifier_activity_analysis/)|[Windows Defender ATP](https://splunkbase.splunk.com/apps/#/search/Windows Defender ATP/product/soar)| Investigation |
+| [ZScaler Outbound Traffic Filtering](/playbooks/zscaler_outbound_traffic_filtering/)|[ZScaler](https://splunkbase.splunk.com/apps/#/search/ZScaler/product/soar)| Response |

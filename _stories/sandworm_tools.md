@@ -45,8 +45,10 @@ The Sandworm group's tools are part of destructive malware operations designed t
 | [Suspicious Copy on System32](/endpoint/ce633e56-25b2-11ec-9e76-acde48001122/) | [Rename System Utilities](/tags/#rename-system-utilities), [Masquerading](/tags/#masquerading) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [WinEvent Windows Task Scheduler Event Action Started](/endpoint/b3632472-310b-11ec-9aab-acde48001122/) | [Scheduled Task](/tags/#scheduled-task) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows DNS Gather Network Info](/endpoint/347e0892-e8f3-4512-afda-dc0e3fa996f3/) | [DNS](/tags/#dns) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows High File Deletion Frequency](/endpoint/45b125c4-866f-11eb-a95a-acde48001122/) | [Data Destruction](/tags/#data-destruction) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Mimikatz Binary Execution](/endpoint/a9e0d6d3-9676-4e26-994d-4e0406bb4467/) | [OS Credential Dumping](/tags/#os-credential-dumping) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Mimikatz Crypto Export File Extensions](/endpoint/3a9a6806-16a8-4cda-8d73-b49d10a05b16/) | [Steal or Forge Authentication Certificates](/tags/#steal-or-forge-authentication-certificates) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows System Shutdown CommandLine](/endpoint/4fee57b8-d825-4bf3-9ea8-bf405cdb614c/) | [System Shutdown/Reboot](/tags/#system-shutdown/reboot) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

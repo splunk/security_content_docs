@@ -51,7 +51,6 @@ sidebar:
 | [GCP Detect high risk permissions by resource and account](/deprecated/2e70ef35-2187-431f-aedc-4503dc9b06ba/) | [Valid Accounts](/tags/#valid-accounts) | [Email](https://docs.splunk.com/Documentation/CIM/latest/User/Email) |
 | [GCP Kubernetes cluster scan detection](/deprecated/db5957ec-0144-4c56-b512-9dccbe7a2d26/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Email](https://docs.splunk.com/Documentation/CIM/latest/User/Email) |
 | [Identify New User Accounts](/deprecated/475b9e27-17e4-46e2-b7e2-648221be3b89/) | [Domain Accounts](/tags/#domain-accounts) |  None |
-| [Kubernetes AWS detect RBAC authorization by account](/deprecated/de7264ed-3ed9-4fef-bb01-6eefc87cefe8/) |  None |  None |
 | [Kubernetes AWS detect most active service accounts by pod](/deprecated/5b30b25d-7d32-42d8-95ca-64dfcd9076e6/) |  None |  None |
 | [Kubernetes AWS detect sensitive role access](/deprecated/b6013a7b-85e0-4a45-b051-10b252d69569/) |  None |  None |
 | [Kubernetes AWS detect service accounts forbidden failure access](/deprecated/a6959c57-fa8f-4277-bb86-7c32fba579d5/) |  None |  None |

@@ -1,6 +1,6 @@
 ---
 title: "ProxyShell ProxyNotShell Behavior Detected"
-excerpt: "Exploit Public-Facing Application"
+excerpt: "Exploit Public-Facing Application, External Remote Services"
 categories:
   - Web
 last_modified_at: 2022-10-03
@@ -8,6 +8,9 @@ toc: true
 toc_label: ""
 tags:
   - Exploit Public-Facing Application
+  - Initial Access
+  - External Remote Services
+  - Persistence
   - Initial Access
   - Splunk Enterprise
   - Splunk Enterprise Security
@@ -43,6 +46,8 @@ The following correlation will identify activity related to Windows Exchange bei
 | ----------- | ----------- |--------------- |
 | [T1190](https://attack.mitre.org/techniques/T1190/) | Exploit Public-Facing Application | Initial Access |
 
+| [T1133](https://attack.mitre.org/techniques/T1133/) | External Remote Services | Persistence, Initial Access |
+
 </div>
 </details>
 
@@ -53,6 +58,7 @@ The following correlation will identify activity related to Windows Exchange bei
 <div markdown="1">
 
 * Delivery
+* Installation
 
 
 </div>
@@ -107,8 +113,8 @@ The following correlation will identify activity related to Windows Exchange bei
 
 #### Macros
 The SPL above uses the following Macros:
-* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
 * [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
 
 > :information_source:
 > **proxyshell_proxynotshell_behavior_detected_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.

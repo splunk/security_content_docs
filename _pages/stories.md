@@ -28,7 +28,7 @@ sidebar:
 | [Apache Struts Vulnerability](apache_struts_vulnerability) | [System Information Discovery](/tags/#system-information-discovery) | [Discovery](/tags/#discovery) |
 | [Asset Tracking]() | None | None |
 | [AsyncRAT](asyncrat) | [Spearphishing Attachment](/tags/#spearphishing-attachment), [Phishing](/tags/#phishing) | [Initial Access](/tags/#initial-access) |
-| [Atlassian Confluence Server and Data Center CVE-2022-26134](atlassian_confluence_server_and_data_center_cve-2022-26134) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
+| [Atlassian Confluence Server and Data Center CVE-2022-26134](atlassian_confluence_server_and_data_center_cve-2022-26134) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
 | [AwfulShred](awfulshred) | [Unix Shell](/tags/#unix-shell), [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Execution](/tags/#execution) |
 | [Azorult](azorult) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |
 | [Azure Active Directory Account Takeover](azure_active_directory_account_takeover) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying) | [Resource Development](/tags/#resource-development) |
@@ -45,7 +45,7 @@ sidebar:
 | [CISA AA22-264A](cisa_aa22-264a) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [CISA AA22-277A](cisa_aa22-277a) | [System Network Configuration Discovery](/tags/#system-network-configuration-discovery), [Internet Connection Discovery](/tags/#internet-connection-discovery) | [Discovery](/tags/#discovery) |
 | [CISA AA22-320A](cisa_aa22-320a) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [Persistence](/tags/#persistence) |
-| [CVE-2022-40684 Fortinet Appliance Auth bypass](cve-2022-40684_fortinet_appliance_auth_bypass) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
+| [CVE-2022-40684 Fortinet Appliance Auth bypass](cve-2022-40684_fortinet_appliance_auth_bypass) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
 | [CVE-2023-21716 Word RTF Heap Corruption](cve-2023-21716_word_rtf_heap_corruption) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
 | [CVE-2023-23397 Outlook Elevation of Privilege](cve-2023-23397_outlook_elevation_of_privilege) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol) | [Exfiltration](/tags/#exfiltration) |
 | [Caddy Wiper](caddy_wiper) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
@@ -76,10 +76,10 @@ sidebar:
 | [Double Zero Destructor](double_zero_destructor) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |
 | [Dynamic DNS](dynamic_dns) | [Exfiltration Over Alternative Protocol](/tags/#exfiltration-over-alternative-protocol) | [Exfiltration](/tags/#exfiltration) |
 | [Emotet Malware  DHS Report TA18-201A ](emotet_malware__dhs_report_ta18-201a_) | [Spearphishing Attachment](/tags/#spearphishing-attachment), [Phishing](/tags/#phishing) | [Initial Access](/tags/#initial-access) |
-| [F5 BIG-IP Vulnerability CVE-2022-1388](f5_big-ip_vulnerability_cve-2022-1388) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
+| [F5 BIG-IP Vulnerability CVE-2022-1388](f5_big-ip_vulnerability_cve-2022-1388) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
 | [F5 TMUI RCE CVE-2020-5902](f5_tmui_rce_cve-2020-5902) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [FIN7](fin7) | [XSL Script Processing](/tags/#xsl-script-processing) | [Defense Evasion](/tags/#defense-evasion) |
-| [Fortinet FortiNAC CVE-2022-39952](fortinet_fortinac_cve-2022-39952) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
+| [Fortinet FortiNAC CVE-2022-39952](fortinet_fortinac_cve-2022-39952) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
 | [GCP Account Takeover](gcp_account_takeover) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying), [Credential Stuffing](/tags/#credential-stuffing) | [Resource Development](/tags/#resource-development) |
 | [GCP Cross Account Activity](gcp_cross_account_activity) | [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [HAFNIUM Group](hafnium_group) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
@@ -91,7 +91,7 @@ sidebar:
 | [Information Sabotage](information_sabotage) | [Indicator Removal](/tags/#indicator-removal), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [Defense Evasion](/tags/#defense-evasion) |
 | [Ingress Tool Transfer](ingress_tool_transfer) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Insider Threat](insider_threat) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
-| [JBoss Vulnerability](jboss_vulnerability) | [System Information Discovery](/tags/#system-information-discovery) | [Discovery](/tags/#discovery) |
+| [JBoss Vulnerability](jboss_vulnerability) | [System Information Discovery](/tags/#system-information-discovery), [External Remote Services](/tags/#external-remote-services) | [Discovery](/tags/#discovery) |
 | [Kubernetes Scanning Activity](kubernetes_scanning_activity) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Discovery](/tags/#discovery) |
 | [Kubernetes Sensitive Object Access Activity]() | None | None |
 | [Linux Living Off The Land](linux_living_off_the_land) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [Command And Control](/tags/#command-and-control) |
@@ -118,7 +118,7 @@ sidebar:
 | [Okta MFA Exhaustion](okta_mfa_exhaustion) | [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
 | [OpenSSL CVE-2022-3602](openssl_cve-2022-3602) | [Encrypted Channel](/tags/#encrypted-channel) | [Command And Control](/tags/#command-and-control) |
 | [Orangeworm Attack Group](orangeworm_attack_group) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [Persistence](/tags/#persistence) |
-| [PaperCut MF NG Vulnerability](papercut_mf_ng_vulnerability) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Execution](/tags/#execution) |
+| [PaperCut MF NG Vulnerability](papercut_mf_ng_vulnerability) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Execution](/tags/#execution) |
 | [PetitPotam NTLM Relay on Active Directory Certificate Services](petitpotam_ntlm_relay_on_active_directory_certificate_services) | [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [Possible Backdoor Activity Associated With MUDCARP Espionage Campaigns](possible_backdoor_activity_associated_with_mudcarp_espionage_campaigns) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Prestige Ransomware](prestige_ransomware) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [Execution](/tags/#execution) |
@@ -137,14 +137,15 @@ sidebar:
 | [Ryuk Ransomware](ryuk_ransomware) | [Windows Command Shell](/tags/#windows-command-shell) | [Execution](/tags/#execution) |
 | [SQL Injection](sql_injection) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [SamSam Ransomware](samsam_ransomware) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) | [Impact](/tags/#impact) |
-| [Sandworm Tools](sandworm_tools) | [Steal or Forge Authentication Certificates](/tags/#steal-or-forge-authentication-certificates) | [Credential Access](/tags/#credential-access) |
+| [Sandworm Tools](sandworm_tools) | [System Shutdown/Reboot](/tags/#system-shutdown/reboot) | [Impact](/tags/#impact) |
+| [Scheduled Tasks](scheduled_tasks) | [Scheduled Task](/tags/#scheduled-task), [Scheduled Task/Job](/tags/#scheduled-task/job) | [Execution](/tags/#execution) |
 | [Signed Binary Proxy Execution InstallUtil](signed_binary_proxy_execution_installutil) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [InstallUtil](/tags/#installutil) | [Defense Evasion](/tags/#defense-evasion) |
 | [Silver Sparrow](silver_sparrow) | [Data Staged](/tags/#data-staged) | [Collection](/tags/#collection) |
 | [Snake Malware](snake_malware) | [Kernel Modules and Extensions](/tags/#kernel-modules-and-extensions), [Service Execution](/tags/#service-execution) | [Persistence](/tags/#persistence) |
 | [Sneaky Active Directory Persistence Tricks](sneaky_active_directory_persistence_tricks) | [Security Support Provider](/tags/#security-support-provider), [Boot or Logon Autostart Execution](/tags/#boot-or-logon-autostart-execution) | [Persistence](/tags/#persistence) |
 | [Spearphishing Attachments](spearphishing_attachments) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
 | [Splunk Vulnerabilities](splunk_vulnerabilities) | [Drive-by Compromise](/tags/#drive-by-compromise) | [Initial Access](/tags/#initial-access) |
-| [Spring4Shell CVE-2022-22965](spring4shell_cve-2022-22965) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
+| [Spring4Shell CVE-2022-22965](spring4shell_cve-2022-22965) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
 | [Suspicious AWS Login Activities](suspicious_aws_login_activities) | [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious AWS S3 Activities](suspicious_aws_s3_activities) | [Data from Cloud Storage](/tags/#data-from-cloud-storage) | [Collection](/tags/#collection) |
 | [Suspicious AWS Traffic]() | None | None |
@@ -166,14 +167,14 @@ sidebar:
 | [Suspicious Windows Registry Activities](suspicious_windows_registry_activities) | [Services Registry Permissions Weakness](/tags/#services-registry-permissions-weakness) | [Persistence](/tags/#persistence) |
 | [Suspicious Zoom Child Processes](suspicious_zoom_child_processes) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Swift Slicer](swift_slicer) | [Data Destruction](/tags/#data-destruction) | [Impact](/tags/#impact) |
-| [Text4Shell CVE-2022-42889](text4shell_cve-2022-42889) | [Web Shell](/tags/#web-shell), [Server Software Component](/tags/#server-software-component), [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Persistence](/tags/#persistence) |
+| [Text4Shell CVE-2022-42889](text4shell_cve-2022-42889) | [Web Shell](/tags/#web-shell), [Server Software Component](/tags/#server-software-component), [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Persistence](/tags/#persistence) |
 | [Trickbot](trickbot) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Execution](/tags/#execution) |
 | [Trusted Developer Utilities Proxy Execution](trusted_developer_utilities_proxy_execution) | [Trusted Developer Utilities Proxy Execution](/tags/#trusted-developer-utilities-proxy-execution) | [Defense Evasion](/tags/#defense-evasion) |
 | [Trusted Developer Utilities Proxy Execution MSBuild](trusted_developer_utilities_proxy_execution_msbuild) | [Trusted Developer Utilities Proxy Execution](/tags/#trusted-developer-utilities-proxy-execution), [MSBuild](/tags/#msbuild) | [Defense Evasion](/tags/#defense-evasion) |
 | [Unusual Processes](unusual_processes) | [Process Injection](/tags/#process-injection), [Create or Modify System Process](/tags/#create-or-modify-system-process), [Parent PID Spoofing](/tags/#parent-pid-spoofing), [Access Token Manipulation](/tags/#access-token-manipulation) | [Defense Evasion](/tags/#defense-evasion) |
 | [Use of Cleartext Protocols]() | None | None |
 | [VMware Aria Operations vRealize CVE-2023-20887](vmware_aria_operations_vrealize_cve-2023-20887) | [External Remote Services](/tags/#external-remote-services), [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [Exploitation of Remote Services](/tags/#exploitation-of-remote-services), [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Persistence](/tags/#persistence) |
-| [VMware Server Side Injection and Privilege Escalation](vmware_server_side_injection_and_privilege_escalation) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
+| [VMware Server Side Injection and Privilege Escalation](vmware_server_side_injection_and_privilege_escalation) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
 | [Volt Typhoon](volt_typhoon) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [Execution](/tags/#execution) |
 | [WhisperGate](whispergate) | [Process Injection](/tags/#process-injection), [Create or Modify System Process](/tags/#create-or-modify-system-process), [Parent PID Spoofing](/tags/#parent-pid-spoofing), [Access Token Manipulation](/tags/#access-token-manipulation) | [Defense Evasion](/tags/#defense-evasion) |
 | [Windows BootKits](windows_bootkits) | [Pre-OS Boot](/tags/#pre-os-boot), [Registry Run Keys / Startup Folder](/tags/#registry-run-keys-/-startup-folder) | [Defense Evasion](/tags/#defense-evasion) |

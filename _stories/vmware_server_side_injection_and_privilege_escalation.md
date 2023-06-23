@@ -30,8 +30,8 @@ On April 6, 2022, VMware published VMSA-2022-0011, which discloses multiple vuln
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [VMware Server Side Template Injection Hunt](/web/5796b570-ad12-44df-b1b5-b7e6ae3aabb0/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [VMware Workspace ONE Freemarker Server-side Template Injection](/web/9e5726fe-8fde-460e-bd74-cddcf6c86113/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [VMware Server Side Template Injection Hunt](/web/5796b570-ad12-44df-b1b5-b7e6ae3aabb0/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [VMware Workspace ONE Freemarker Server-side Template Injection](/web/9e5726fe-8fde-460e-bd74-cddcf6c86113/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

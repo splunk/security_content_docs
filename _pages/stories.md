@@ -25,6 +25,7 @@ sidebar:
 | [Active Directory Password Spraying](active_directory_password_spraying) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
 | [Active Directory Privilege Escalation](active_directory_privilege_escalation) | [Account Discovery](/tags/#account-discovery), [SMB/Windows Admin Shares](/tags/#smb/windows-admin-shares), [Network Share Discovery](/tags/#network-share-discovery) | [Discovery](/tags/#discovery) |
 | [AgentTesla](agenttesla) | [Spearphishing Attachment](/tags/#spearphishing-attachment), [Phishing](/tags/#phishing) | [Initial Access](/tags/#initial-access) |
+| [Amadey](amadey) | [Windows File and Directory Permissions Modification](/tags/#windows-file-and-directory-permissions-modification), [File and Directory Permissions Modification](/tags/#file-and-directory-permissions-modification) | [Defense Evasion](/tags/#defense-evasion) |
 | [Apache Struts Vulnerability](apache_struts_vulnerability) | [System Information Discovery](/tags/#system-information-discovery) | [Discovery](/tags/#discovery) |
 | [Asset Tracking]() | None | None |
 | [AsyncRAT](asyncrat) | [Spearphishing Attachment](/tags/#spearphishing-attachment), [Phishing](/tags/#phishing) | [Initial Access](/tags/#initial-access) |
@@ -82,6 +83,7 @@ sidebar:
 | [Fortinet FortiNAC CVE-2022-39952](fortinet_fortinac_cve-2022-39952) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
 | [GCP Account Takeover](gcp_account_takeover) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying), [Credential Stuffing](/tags/#credential-stuffing) | [Resource Development](/tags/#resource-development) |
 | [GCP Cross Account Activity](gcp_cross_account_activity) | [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
+| [Graceful Wipe Out Attack](graceful_wipe_out_attack) | [Service Stop](/tags/#service-stop) | [Impact](/tags/#impact) |
 | [HAFNIUM Group](hafnium_group) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Hermetic Wiper](hermetic_wiper) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [Hidden Cobra Malware](hidden_cobra_malware) | [SMB/Windows Admin Shares](/tags/#smb/windows-admin-shares), [Remote Services](/tags/#remote-services) | [Lateral Movement](/tags/#lateral-movement) |

@@ -38,6 +38,7 @@ sidebar:
 | [BITS Jobs](bits_jobs) | [BITS Jobs](/tags/#bits-jobs), [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [Defense Evasion](/tags/#defense-evasion) |
 | [Baron Samedit CVE-2021-3156](baron_samedit_cve-2021-3156) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [BishopFox Sliver Adversary Emulation Framework](bishopfox_sliver_adversary_emulation_framework) | [System Services](/tags/#system-services), [Service Execution](/tags/#service-execution) | [Execution](/tags/#execution) |
+| [BlackByte Ransomware](blackbyte_ransomware) | [Windows Service](/tags/#windows-service) | [Persistence](/tags/#persistence) |
 | [BlackLotus Campaign](blacklotus_campaign) | [Bootkit](/tags/#bootkit) | [Persistence](/tags/#persistence) |
 | [BlackMatter Ransomware](blackmatter_ransomware) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) | [Impact](/tags/#impact) |
 | [Brand Monitoring]() | None | None |
@@ -49,6 +50,7 @@ sidebar:
 | [CVE-2022-40684 Fortinet Appliance Auth bypass](cve-2022-40684_fortinet_appliance_auth_bypass) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
 | [CVE-2023-21716 Word RTF Heap Corruption](cve-2023-21716_word_rtf_heap_corruption) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
 | [CVE-2023-23397 Outlook Elevation of Privilege](cve-2023-23397_outlook_elevation_of_privilege) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol) | [Exfiltration](/tags/#exfiltration) |
+| [CVE-2023-36884 Office and Windows HTML RCE Vulnerability](cve-2023-36884_office_and_windows_html_rce_vulnerability) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
 | [Caddy Wiper](caddy_wiper) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [Chaos Ransomware](chaos_ransomware) | [Malicious File](/tags/#malicious-file), [User Execution](/tags/#user-execution) | [Execution](/tags/#execution) |
 | [Clop Ransomware](clop_ransomware) | [System Services](/tags/#system-services), [Service Execution](/tags/#service-execution) | [Execution](/tags/#execution) |

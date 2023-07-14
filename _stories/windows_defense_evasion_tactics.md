@@ -9,6 +9,7 @@ tags:
   - Splunk Cloud
   - Change
   - Endpoint
+  - Risk
   - Web
 ---
 
@@ -19,7 +20,7 @@ tags:
 Detect tactics used by malware to evade defenses on Windows endpoints. A few of these include suspicious `reg.exe` processes, files hidden with `attrib.exe` and disabling user-account control, among many others 
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web)
+- **Datamodel**: [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk), [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web)
 - **Last Updated**: 2018-05-31
 - **Author**: David Dorsey, Splunk
 - **ID**: 56e24a28-5003-4047-b2db-e8f3c4618064
@@ -68,6 +69,7 @@ Defense evasion is a tactic--identified in the MITRE ATT&CK framework--that adve
 | [WSReset UAC Bypass](/endpoint/8b5901bc-da63-11eb-be43-acde48001122/) | [Bypass User Account Control](/tags/#bypass-user-account-control), [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Command and Scripting Interpreter Hunting Path Traversal](/endpoint/d0026380-b3c4-4da0-ac8e-02790063ff6b/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Command and Scripting Interpreter Path Traversal Exec](/endpoint/58fcdeb1-728d-415d-b0d7-3ab18a275ec2/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Common Abused Cmd Shell Risk Behavior](/endpoint/e99fcc4f-c6b0-4443-aa2a-e3c85126ec9a/) | [File and Directory Permissions Modification](/tags/#file-and-directory-permissions-modification), [System Network Connections Discovery](/tags/#system-network-connections-discovery), [System Owner/User Discovery](/tags/#system-owner/user-discovery), [System Shutdown/Reboot](/tags/#system-shutdown/reboot), [System Network Configuration Discovery](/tags/#system-network-configuration-discovery), [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Correlation](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows DISM Remove Defender](/endpoint/8567da9e-47f0-11ec-99a9-acde48001122/) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows DLL Search Order Hijacking Hunt](/endpoint/79c7d0fc-60c7-41be-a616-ccda752efe89/) | [DLL Search Order Hijacking](/tags/#dll-search-order-hijacking), [Hijack Execution Flow](/tags/#hijack-execution-flow) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows DLL Search Order Hijacking Hunt with Sysmon](/endpoint/79c7d1fc-64c7-91be-a616-ccda752efe81/) | [DLL Search Order Hijacking](/tags/#dll-search-order-hijacking), [Hijack Execution Flow](/tags/#hijack-execution-flow) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

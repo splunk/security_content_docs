@@ -8,6 +8,7 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
+  - Risk
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -17,7 +18,7 @@ tags:
 QakBot is a modular banking trojan that has been used primarily by financially-motivated actors since at least 2007. QakBot is continuously maintained and developed and has evolved from an information stealer into a delivery agent for ransomware (ref. MITRE ATT&CK).
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk)
 - **Last Updated**: 2022-11-14
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 0c6169b1-f126-4d86-8e4f-f7891007ebc6
@@ -62,6 +63,7 @@ QakBot notably has made its way on the CISA top malware list for 2021. QakBot fo
 | [Windows App Layer Protocol Qakbot NamedPipe](/endpoint/63a2c15e-9448-43c5-a4a8-9852266aaada/) | [Application Layer Protocol](/tags/#application-layer-protocol) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows App Layer Protocol Wermgr Connect To NamedPipe](/endpoint/2f3a4092-548b-421c-9caa-84918e1787ef/) | [Application Layer Protocol](/tags/#application-layer-protocol) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Command Shell Fetch Env Variables](/endpoint/048839e4-1eaa-43ff-8a22-86d17f6fcc13/) | [Process Injection](/tags/#process-injection) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Common Abused Cmd Shell Risk Behavior](/endpoint/e99fcc4f-c6b0-4443-aa2a-e3c85126ec9a/) | [File and Directory Permissions Modification](/tags/#file-and-directory-permissions-modification), [System Network Connections Discovery](/tags/#system-network-connections-discovery), [System Owner/User Discovery](/tags/#system-owner/user-discovery), [System Shutdown/Reboot](/tags/#system-shutdown/reboot), [System Network Configuration Discovery](/tags/#system-network-configuration-discovery), [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Correlation](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows DLL Search Order Hijacking Hunt with Sysmon](/endpoint/79c7d1fc-64c7-91be-a616-ccda752efe81/) | [DLL Search Order Hijacking](/tags/#dll-search-order-hijacking), [Hijack Execution Flow](/tags/#hijack-execution-flow) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows DLL Side-Loading In Calc](/endpoint/af01f6db-26ac-440e-8d89-2793e303f137/) | [DLL Side-Loading](/tags/#dll-side-loading), [Hijack Execution Flow](/tags/#hijack-execution-flow) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows DLL Side-Loading Process Child Of Calc](/endpoint/295ca9ed-e97b-4520-90f7-dfb6469902e1/) | [DLL Side-Loading](/tags/#dll-side-loading), [Hijack Execution Flow](/tags/#hijack-execution-flow) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
@@ -77,7 +79,7 @@ QakBot notably has made its way on the CISA top malware list for 2021. QakBot fo
 | [Windows Schtasks Create Run As System](/endpoint/41a0e58e-884c-11ec-9976-acde48001122/) | [Scheduled Task](/tags/#scheduled-task), [Scheduled Task/Job](/tags/#scheduled-task/job) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Service Created with Suspicious Service Path](/endpoint/429141be-8311-11eb-adb6-acde48001122/) | [System Services](/tags/#system-services), [Service Execution](/tags/#service-execution) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows System Discovery Using Qwinsta](/endpoint/2e765c1b-144a-49f0-93d0-1df4287cca04/) | [System Owner/User Discovery](/tags/#system-owner/user-discovery) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows System Discovery Using ldap Nslookup](/endpoint/2418780f-7c3e-4c45-b8b4-996ea850cd49/) | [System Owner/User Discovery](/tags/#system-owner/user-discovery) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows System Discovery Using ldap Nslookup](/endpoint/2418780f-7c3e-4c45-b8b4-996ea850cd49/) | [System Owner/User Discovery](/tags/#system-owner/user-discovery) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows WMI Impersonate Token](/endpoint/cf192860-2d94-40db-9a51-c04a2e8a8f8b/) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows WMI Process Call Create](/endpoint/0661c2de-93de-11ec-9833-acde48001122/) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 

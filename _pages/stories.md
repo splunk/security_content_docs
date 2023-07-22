@@ -53,6 +53,7 @@ sidebar:
 | [CVE-2023-36884 Office and Windows HTML RCE Vulnerability](cve-2023-36884_office_and_windows_html_rce_vulnerability) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
 | [Caddy Wiper](caddy_wiper) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [Chaos Ransomware](chaos_ransomware) | [Malicious File](/tags/#malicious-file), [User Execution](/tags/#user-execution) | [Execution](/tags/#execution) |
+| [Citrix Netscaler ADC CVE-2023-3519](citrix_netscaler_adc_cve-2023-3519) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Clop Ransomware](clop_ransomware) | [System Services](/tags/#system-services), [Service Execution](/tags/#service-execution) | [Execution](/tags/#execution) |
 | [Cloud Cryptomining](cloud_cryptomining) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |
 | [Cloud Federated Credential Abuse](cloud_federated_credential_abuse) | [Image File Execution Options Injection](/tags/#image-file-execution-options-injection), [Event Triggered Execution](/tags/#event-triggered-execution) | [Privilege Escalation](/tags/#privilege-escalation) |

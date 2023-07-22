@@ -10,6 +10,7 @@ sidebar:
 
 | Name    | Technique | Datamodel |
 | --------| --------- |------------|
+| [Citrix ADC Exploitation CVE-2023-3519](/web/76ac2dcb-333c-4a77-8ae9-2720cfae47a8/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
 | [Confluence Unauthenticated Remote Code Execution CVE-2022-26134](/web/fcf4bd3f-a79f-4b7a-83bf-2692d60b859c/) | [Server Software Component](/tags/#server-software-component), [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
 | [Detect F5 TMUI RCE CVE-2020-5902](/web/810e4dbc-d46e-11ea-87d0-0242ac130003/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) |  None |
 | [Detect attackers scanning for vulnerable JBoss servers](/web/104658f4-afdc-499e-9719-17243f982681/) | [System Information Discovery](/tags/#system-information-discovery), [External Remote Services](/tags/#external-remote-services) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |

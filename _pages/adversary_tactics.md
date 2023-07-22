@@ -32,6 +32,7 @@ sidebar:
 | [CVE-2023-23397 Outlook Elevation of Privilege](/stories/cve-2023-23397_outlook_elevation_of_privilege/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol) | [Exfiltration](/tags/#exfiltration) |
 | [CVE-2023-36884 Office and Windows HTML RCE Vulnerability](/stories/cve-2023-36884_office_and_windows_html_rce_vulnerability/) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
 | [Caddy Wiper](/stories/caddy_wiper/) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
+| [Citrix Netscaler ADC CVE-2023-3519](/stories/citrix_netscaler_adc_cve-2023-3519/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Cobalt Strike](/stories/cobalt_strike/) | [Masquerading](/tags/#masquerading), [Trusted Developer Utilities Proxy Execution](/tags/#trusted-developer-utilities-proxy-execution), [Rename System Utilities](/tags/#rename-system-utilities), [MSBuild](/tags/#msbuild) | [Defense Evasion](/tags/#defense-evasion) |
 | [Collection and Staging](/stories/collection_and_staging/) | [Masquerading](/tags/#masquerading) | [Defense Evasion](/tags/#defense-evasion) |
 | [Command And Control](/stories/command_and_control/) | [Remote Access Software](/tags/#remote-access-software) | [Command And Control](/tags/#command-and-control) |

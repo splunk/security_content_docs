@@ -54,6 +54,7 @@ sidebar:
 | [IIS Components](/stories/iis_components/) | [Server Software Component](/tags/#server-software-component), [IIS Components](/tags/#iis-components) | [Persistence](/tags/#persistence) |
 | [Ingress Tool Transfer](/stories/ingress_tool_transfer/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Insider Threat](/stories/insider_threat/) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
+| [Ivanti EPMM Remote Unauthenticated Access](/stories/ivanti_epmm_remote_unauthenticated_access/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
 | [Linux Living Off The Land](/stories/linux_living_off_the_land/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [Command And Control](/tags/#command-and-control) |
 | [Linux Persistence Techniques](/stories/linux_persistence_techniques/) | [Sudo and Sudo Caching](/tags/#sudo-and-sudo-caching), [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Linux Post-Exploitation](/stories/linux_post-exploitation/) | [Unix Shell](/tags/#unix-shell) | [Execution](/tags/#execution) |

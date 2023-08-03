@@ -12,7 +12,7 @@ tags:
 
 #### Description
 
-Detects available indicators and routes them to indicator reputation analysis playbooks. The output of the analysis will update any artifacts, tasks, and indicator tags.
+Detects available indicators and routes them to indicator reputation analysis playbooks. The output of the analysis will update any artifacts, tasks, and indicator tags. https://d3fend.mitre.org/technique/d3f:IdentifierReputationAnalysis/
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR

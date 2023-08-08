@@ -13,7 +13,7 @@ tags:
 
 #### Description
 
-Accepts user, to be disabled using AWS IAM connector. This playbook produces a normalized observables output for each user and device.
+Accepts user name that needs to be disabled in AWS IAM Active Directory. Disabling an account involves deleting their login profile which will clear the user&#39;s password. Generates an observable output based on the status of account locking or disabling.
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR

@@ -21,14 +21,14 @@ feature_row:
   - image_path: /static/feature_stories.png
     alt: "fully responsive"
     title: "Analytic Stories"
-    excerpt: "See all **191** use cases, 📦 of detections built to address a threat."
+    excerpt: "See all **192** use cases, 📦 of detections built to address a threat."
     url: "/stories"
     btn_class: "btn--primary"
     btn_label: "Explore"
   - image_path: /static/feature_playbooks.png
     alt: "100% free"
     title: "Playbooks"
-    excerpt: "See all **63** sets of steps 🐾 to automatically respond to a threat."
+    excerpt: "See all **65** sets of steps 🐾 to automatically respond to a threat."
     url: "/playbooks"
     btn_class: "btn--primary"
     btn_label: "Explore"

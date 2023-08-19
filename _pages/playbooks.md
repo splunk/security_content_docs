@@ -18,9 +18,11 @@ sidebar:
 | [AWS IAM Account Locking](/playbooks/aws_iam_account_locking/)|[AWS IAM API](https://splunkbase.splunk.com/apps/#/search/AWS IAM API/product/soar)| Investigation |
 | [AWS IAM Account Unlocking](/playbooks/aws_iam_account_unlocking/)|[AWS IAM](https://splunkbase.splunk.com/apps/#/search/AWS IAM/product/soar)| Response |
 | [Active Directory Disable Account Dispatch](/playbooks/active_directory_disable_account_dispatch/)|[microsoft_ad_ldap](https://splunkbase.splunk.com/apps/#/search/microsoft_ad_ldap/product/soar), [azure_ad_graph](https://splunkbase.splunk.com/apps/#/search/azure_ad_graph/product/soar), [aws_iam](https://splunkbase.splunk.com/apps/#/search/aws_iam/product/soar)| Investigation |
+| [Active Directory Enable Account Dispatch](/playbooks/active_directory_enable_account_dispatch/)|[microsoft_ad_ldap](https://splunkbase.splunk.com/apps/#/search/microsoft_ad_ldap/product/soar), [azure_ad_graph](https://splunkbase.splunk.com/apps/#/search/azure_ad_graph/product/soar), [aws_iam](https://splunkbase.splunk.com/apps/#/search/aws_iam/product/soar)| Response |
 | [Active Directory Reset password](/playbooks/active_directory_reset_password/)|[LDAP](https://splunkbase.splunk.com/apps/#/search/LDAP/product/soar)| Response |
 | [Attribute Lookup Dispatch](/playbooks/attribute_lookup_dispatch/)| None | Investigation |
 | [Automated Enrichment](/playbooks/automated_enrichment/)| None | Investigation |
+| [Azure AD Account Unlocking](/playbooks/azure_ad_account_unlocking/)|[Azure AD Graph](https://splunkbase.splunk.com/apps/#/search/Azure AD Graph/product/soar)| Response |
 | [Azure AD Graph User Attribute Lookup](/playbooks/azure_ad_graph_user_attribute_lookup/)|[Azure AD Graph](https://splunkbase.splunk.com/apps/#/search/Azure AD Graph/product/soar)| Investigation |
 | [Azure AD Locking Account](/playbooks/azure_ad_locking_account/)|[Azure AD Graph API](https://splunkbase.splunk.com/apps/#/search/Azure AD Graph API/product/soar)| Investigation |
 | [Block Indicators](/playbooks/block_indicators/)|[Palo Alto Networks Firewall](https://splunkbase.splunk.com/apps/#/search/Palo Alto Networks Firewall/product/soar), [CarbonBlack Response](https://splunkbase.splunk.com/apps/#/search/CarbonBlack Response/product/soar), [OpenDNS Umbrella](https://splunkbase.splunk.com/apps/#/search/OpenDNS Umbrella/product/soar)| Response |

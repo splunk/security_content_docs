@@ -6,9 +6,8 @@ toc_label: ""
 tags:
   - Investigation
   - Splunk SOAR
-  - microsoft_ad_ldap
-  - azure_ad_graph
-  - aws_iam
+  - AD LDAP
+  - Azure AD Graph
 ---
 
 [Try in Splunk SOAR](https://www.splunk.com/en_us/software/splunk-security-orchestration-and-automation.html){: .btn .btn--success}
@@ -19,7 +18,7 @@ Automatically dispatches input playbooks with the &#39;disable_account&#39; tag.
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [microsoft_ad_ldap](https://splunkbase.splunk.com/apps?keyword=microsoft_ad_ldap&filters=product%3Asoar), [azure_ad_graph](https://splunkbase.splunk.com/apps?keyword=azure_ad_graph&filters=product%3Asoar), [aws_iam](https://splunkbase.splunk.com/apps?keyword=aws_iam&filters=product%3Asoar)
+- **Apps**: [AD LDAP](https://splunkbase.splunk.com/apps?keyword=ad+ldap&filters=product%3Asoar), [Azure AD Graph](https://splunkbase.splunk.com/apps?keyword=azure+ad+graph&filters=product%3Asoar)
 - **Last Updated**: 2023-05-23
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 86320591-1bbd-41ab-8990-602a3968fd99

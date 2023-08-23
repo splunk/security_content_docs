@@ -1,5 +1,5 @@
 ---
-title: azure_ad_graph
+title: Azure AD Graph
 layout: tag
 author_profile: false
 classes: wide
@@ -10,4 +10,6 @@ sidebar:
 
 | Name    | SOAR App   | D3FEND      | Use Case    |
 | --------| ---------- | ----------- | ----------- |
-| [Active Directory Disable Account Dispatch](/playbooks/active_directory_disable_account_dispatch/)| [microsoft_ad_ldap](https://splunkbase.splunk.com/apps?keyword=microsoft_ad_ldap&filters=product%3Asoar), [azure_ad_graph](https://splunkbase.splunk.com/apps?keyword=azure_ad_graph&filters=product%3Asoar), [aws_iam](https://splunkbase.splunk.com/apps?keyword=aws_iam&filters=product%3Asoar)| [Account Locking](https://d3fend.mitre.org/technique/d3f:AccountLocking)| [Phishing](https://research.splunk.com/playbooks/phishing), [Endpoint](https://research.splunk.com/playbooks/endpoint)|
+| [Active Directory Disable Account Dispatch](/playbooks/active_directory_disable_account_dispatch/)| [AD LDAP](https://splunkbase.splunk.com/apps?keyword=ad+ldap&filters=product%3Asoar), [Azure AD Graph](https://splunkbase.splunk.com/apps?keyword=azure+ad+graph&filters=product%3Asoar)| [Account Locking](https://d3fend.mitre.org/technique/d3f:AccountLocking)| [Phishing](https://research.splunk.com/playbooks/phishing), [Endpoint](https://research.splunk.com/playbooks/endpoint)|
+| [Azure AD Graph User Attribute Lookup](/playbooks/azure_ad_graph_user_attribute_lookup/)| [Azure AD Graph](https://splunkbase.splunk.com/apps?keyword=azure+ad+graph&filters=product%3Asoar)| | [Enrichment](https://research.splunk.com/playbooks/enrichment)|
+| [Azure AD Locking Account](/playbooks/azure_ad_locking_account/)| [Azure AD Graph](https://splunkbase.splunk.com/apps?keyword=azure+ad+graph&filters=product%3Asoar)| [Account Locking](https://d3fend.mitre.org/technique/d3f:AccountLocking)| [Phishing](https://research.splunk.com/playbooks/phishing), [Endpoint](https://research.splunk.com/playbooks/endpoint)|

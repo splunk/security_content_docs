@@ -6,7 +6,7 @@ toc_label: ""
 tags:
   - Investigation
   - Splunk SOAR
-  - Azure AD Graph API
+  - Azure AD Graph
 ---
 
 [Try in Splunk SOAR](https://www.splunk.com/en_us/software/splunk-security-orchestration-and-automation.html){: .btn .btn--success}
@@ -17,7 +17,7 @@ Accepts user, to be disabled using Azure AD Graph connector. This playbook produ
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [Azure AD Graph API](https://splunkbase.splunk.com/apps?keyword=azure+ad+graph+api&filters=product%3Asoar)
+- **Apps**: [Azure AD Graph](https://splunkbase.splunk.com/apps?keyword=azure+ad+graph&filters=product%3Asoar)
 - **Last Updated**: 2023-05-08
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: c3c0157d-7da0-46cb-8b97-327ee92f591c

@@ -148,26 +148,16 @@ playbooks:
     children:
       - title: AD LDAP
         url: /playbooks/ad_ldap/
-      - title: AD LDAP API
-        url: /playbooks/ad_ldap_api/
       - title: AWS IAM
         url: /playbooks/aws_iam/
-      - title: AWS IAM API
-        url: /playbooks/aws_iam_api/
       - title: Azure AD Graph
         url: /playbooks/azure_ad_graph/
-      - title: Azure AD Graph API
-        url: /playbooks/azure_ad_graph_api/
       - title: Carbon Black Response
         url: /playbooks/carbon_black_response/
-      - title: CarbonBlack Response
-        url: /playbooks/carbonblack_response/
       - title: Cisco Umbrella
         url: /playbooks/cisco_umbrella/
       - title: CrowdStrike OAuth API
         url: /playbooks/crowdstrike_oauth_api/
-      - title: Crowdstrike OAuth
-        url: /playbooks/crowdstrike_oauth/
       - title: Cylance
         url: /playbooks/cylance/
       - title: Falcon Host API
@@ -176,10 +166,6 @@ playbooks:
         url: /playbooks/g_suite_for_gmail/
       - title: LDAP
         url: /playbooks/ldap/
-      - title: None
-        url: /playbooks/none/
-      - title: OpenDNS Umbrella
-        url: /playbooks/opendns_umbrella/
       - title: Palo Alto Networks Firewall
         url: /playbooks/palo_alto_networks_firewall/
       - title: Panorama
@@ -190,8 +176,6 @@ playbooks:
         url: /playbooks/phishtank/
       - title: Reversing Labs
         url: /playbooks/reversing_labs/
-      - title: SAA
-        url: /playbooks/saa/
       - title: SMTP
         url: /playbooks/smtp/
       - title: SSH
@@ -200,8 +184,8 @@ playbooks:
         url: /playbooks/servicenow/
       - title: Splunk
         url: /playbooks/splunk/
-      - title: Splunk Attack Analyzer API
-        url: /playbooks/splunk_attack_analyzer_api/
+      - title: Splunk Attack Analyzer Connector for Splunk SOAR
+        url: /playbooks/splunk_attack_analyzer_connector_for_splunk_soar/
       - title: Threat Grid
         url: /playbooks/threat_grid/
       - title: TruSTAR
@@ -210,23 +194,13 @@ playbooks:
         url: /playbooks/virustotal/
       - title: VirusTotal v3
         url: /playbooks/virustotal_v3/
-      - title: VirusTotal_v3
-        url: /playbooks/virustotal_v3/
       - title: WildFire
         url: /playbooks/wildfire/
       - title: Windows Defender ATP
         url: /playbooks/windows_defender_atp/
       - title: Windows Remote Management
         url: /playbooks/windows_remote_management/
-      - title: ZScaler
+      - title: Zscaler
         url: /playbooks/zscaler/
-      - title: aws_iam
-        url: /playbooks/aws_iam/
-      - title: azure_ad_graph
-        url: /playbooks/azure_ad_graph/
-      - title: microsoft_ad_ldap
-        url: /playbooks/microsoft_ad_ldap/
       - title: urlscan.io
         url: /playbooks/urlscan.io/
-      - title: virustotal v3
-        url: /playbooks/virustotal_v3/

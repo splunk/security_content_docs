@@ -6,7 +6,6 @@ toc_label: ""
 tags:
   - Investigation
   - Splunk SOAR
-  - None
 ---
 
 [Try in Splunk SOAR](https://www.splunk.com/en_us/software/splunk-security-orchestration-and-automation.html){: .btn .btn--success}
@@ -17,7 +16,7 @@ This playbook checks for the presence of the Risk Investigation workbook and upd
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [None](https://splunkbase.splunk.com/apps?keyword=none&filters=product%3Asoar)
+- **Apps**: 
 - **Last Updated**: 2021-10-22
 - **Author**: Kelby Shelton, Splunk
 - **ID**: rn0edc96-ff2b-48b0-9f6f-03da3783fd63
@@ -27,7 +26,7 @@ This playbook checks for the presence of the Risk Investigation workbook and upd
 
 
 #### How To Implement
-Set this playbook to run in Active mode on the Risk Notable label in Splunk SOAR.
+For detailed implementation see https://docs.splunk.com/Documentation/ESSOC/latest/user/Useplaybookpack
 
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_investigate.json){: .btn .btn--info}

@@ -6,7 +6,7 @@ toc_label: ""
 tags:
   - Response
   - Splunk SOAR
-  - ZScaler
+  - Zscaler
 ---
 
 [Try in Splunk SOAR](https://www.splunk.com/en_us/software/splunk-security-orchestration-and-automation.html){: .btn .btn--success}
@@ -17,7 +17,7 @@ Accepts a URL or list of URLs and block them in ZScaler. Generates a list of obs
 
 - **Type**: Response
 - **Product**: Splunk SOAR
-- **Apps**: [ZScaler](https://splunkbase.splunk.com/apps?keyword=zscaler&filters=product%3Asoar)
+- **Apps**: [Zscaler](https://splunkbase.splunk.com/apps?keyword=zscaler&filters=product%3Asoar)
 - **Last Updated**: 2023-03-31
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: 3e0df448-0546-4b2b-9143-365161cf40f9

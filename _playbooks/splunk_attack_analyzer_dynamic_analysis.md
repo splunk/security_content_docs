@@ -6,7 +6,7 @@ toc_label: ""
 tags:
   - Investigation
   - Splunk SOAR
-  - Splunk Attack Analyzer API
+  - Splunk Attack Analyzer Connector for Splunk SOAR
 ---
 
 [Try in Splunk SOAR](https://www.splunk.com/en_us/software/splunk-security-orchestration-and-automation.html){: .btn .btn--success}
@@ -17,7 +17,7 @@ Accepts url link, domain or vault_id (hash) to be detonated using Splunk Attacke
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [Splunk Attack Analyzer API](https://splunkbase.splunk.com/apps?keyword=splunk+attack+analyzer+api&filters=product%3Asoar)
+- **Apps**: [Splunk Attack Analyzer Connector for Splunk SOAR](https://splunkbase.splunk.com/apps?keyword=splunk+attack+analyzer+connector+for+splunk+soar&filters=product%3Asoar)
 - **Last Updated**: 2023-03-24
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: c77faffe-1339-43b0-b870-86582da9063e

@@ -6,7 +6,7 @@ toc_label: ""
 tags:
   - Investigation
   - Splunk SOAR
-  - virustotal v3
+  - VirusTotal v3
 ---
 
 [Try in Splunk SOAR](https://www.splunk.com/en_us/software/splunk-security-orchestration-and-automation.html){: .btn .btn--success}
@@ -17,7 +17,7 @@ Accepts a url link, domain or vault_id (hash) to be detonated using Virustotal V
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [virustotal v3](https://splunkbase.splunk.com/apps?keyword=virustotal+v3&filters=product%3Asoar)
+- **Apps**: [VirusTotal v3](https://splunkbase.splunk.com/apps?keyword=virustotal+v3&filters=product%3Asoar)
 - **Last Updated**: 2023-03-23
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 388ed434-a498-4d55-8de4-b2657825cb67

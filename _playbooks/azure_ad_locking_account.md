@@ -17,10 +17,13 @@ Accepts user, to be disabled using Azure AD Graph connector. This playbook produ
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [Azure AD Graph API](https://splunkbase.splunk.com/apps/#/search/Azure AD Graph API/product/soar)
+- **Apps**: [Azure AD Graph API](https://splunkbase.splunk.com/apps?keyword=azure+ad+graph+api&filters=product%3Asoar)
 - **Last Updated**: 2023-05-08
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: c3c0157d-7da0-46cb-8b97-327ee92f591c
+- **Use-cases**:
+  - Phishing
+  - Endpoint
 
 #### Associated Detections
 
@@ -28,6 +31,12 @@ Accepts user, to be disabled using Azure AD Graph connector. This playbook produ
 #### How To Implement
 This input playbook requires the Azure AD Graph connector to be configured. It is designed to work in conjunction with the Dynamic Attribute Lookup playbook or other playbooks in the same style.
 
+
+#### [D3FEND](https://d3fend.mitre.org/)
+
+| ID          | Technique   | Definition     | Category       |
+| ----------- | ----------- |--------------- |--------------- |
+| D3-AL | [Account Locking](https://d3fend.mitre.org/technique/d3f:AccountLocking) | The process of temporarily disabling user accounts on a system or domain. | Credential Eviction |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Azure_AD_Locking_Account.json){: .btn .btn--info}
 

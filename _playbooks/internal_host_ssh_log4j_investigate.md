@@ -17,10 +17,11 @@ Investigate an internal unix host using SSH. This pushes a bash script to the en
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [SSH](https://splunkbase.splunk.com/apps/#/search/SSH/product/soar)
+- **Apps**: [SSH](https://splunkbase.splunk.com/apps?keyword=ssh&filters=product%3Asoar)
 - **Last Updated**: 2021-12-14
 - **Author**: Philip Royer, Splunk
 - **ID**: 49b2b88c-8e22-48a6-8808-ace1efcb194b
+- **Use-cases**:
 
 #### Associated Detections
 

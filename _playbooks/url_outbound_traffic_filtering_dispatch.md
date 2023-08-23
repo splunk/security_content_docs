@@ -20,6 +20,9 @@ Accepts a list of URLs and blocks them. Generates a global report and list of ob
 - **Last Updated**: 2023-05-22
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: 83bbe505-4636-4f60-a37b-86f1234d8567
+- **Use-cases**:
+  - Phishing
+  - Endpoint
 
 #### Associated Detections
 
@@ -27,6 +30,12 @@ Accepts a list of URLs and blocks them. Generates a global report and list of ob
 #### How To Implement
 This playbook looks for artifacts and then dispatches the community denylisting playbooks. This playbook takes the output of those playbooks and nicely formats them into notes and tags indicators with their results.
 
+
+#### [D3FEND](https://d3fend.mitre.org/)
+
+| ID          | Technique   | Definition     | Category       |
+| ----------- | ----------- |--------------- |--------------- |
+| D3-OTF | [](https://d3fend.mitre.org/technique/d3f:) |  |  |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/URL_Outbound_Traffic_Filtering_Dispatch.json){: .btn .btn--info}
 

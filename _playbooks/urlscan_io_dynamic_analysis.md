@@ -17,10 +17,14 @@ Accepts a url link, IP, or domain to be detonated using urlscan.io API connector
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [urlscan.io](https://splunkbase.splunk.com/apps/#/search/urlscan.io/product/soar)
+- **Apps**: [urlscan.io](https://splunkbase.splunk.com/apps?keyword=urlscan.io&filters=product%3Asoar)
 - **Last Updated**: 2023-03-23
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: a1173c28-7b33-4a56-9d7f-5dbbca595cb0
+- **Use-cases**:
+  - Enrichment
+  - Phishing
+  - Endpoint
 
 #### Associated Detections
 
@@ -28,6 +32,12 @@ Accepts a url link, IP, or domain to be detonated using urlscan.io API connector
 #### How To Implement
 This input playbook requires the urlscan.io API connector to be configured. It is designed to work in conjunction with the Dynamic Attribute Lookup playbook or other playbooks in the same style.
 
+
+#### [D3FEND](https://d3fend.mitre.org/)
+
+| ID          | Technique   | Definition     | Category       |
+| ----------- | ----------- |--------------- |--------------- |
+| D3-DA | [Dynamic Analysis](https://d3fend.mitre.org/technique/d3f:DynamicAnalysis) | Executing or opening a file in a synthetic &#34;sandbox&#34; environment to determine if the file is a malicious program or if the file exploits another program such as a document reader. | File Analysis |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/UrlScan_IO_Dynamic_Analysis.json){: .btn .btn--info}
 

@@ -17,10 +17,13 @@ Accepts a URL or list of URLs and block them in ZScaler. Generates a list of obs
 
 - **Type**: Response
 - **Product**: Splunk SOAR
-- **Apps**: [ZScaler](https://splunkbase.splunk.com/apps/#/search/ZScaler/product/soar)
+- **Apps**: [ZScaler](https://splunkbase.splunk.com/apps?keyword=zscaler&filters=product%3Asoar)
 - **Last Updated**: 2023-03-31
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: 3e0df448-0546-4b2b-9143-365161cf40f9
+- **Use-cases**:
+  - Phishing
+  - Endpoint
 
 #### Associated Detections
 
@@ -28,6 +31,12 @@ Accepts a URL or list of URLs and block them in ZScaler. Generates a list of obs
 #### How To Implement
 This input playbook requires the ZScaler connector to be configured. It is designed to work in conjunction with the Dynamic URL Outbound Traffic Filtering Analysis playbook or other playbooks in the same style.
 
+
+#### [D3FEND](https://d3fend.mitre.org/)
+
+| ID          | Technique   | Definition     | Category       |
+| ----------- | ----------- |--------------- |--------------- |
+| D3-OTF | [](https://d3fend.mitre.org/technique/d3f:) |  |  |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/ZScaler_Outbound_Traffic_Filtering.json){: .btn .btn--info}
 

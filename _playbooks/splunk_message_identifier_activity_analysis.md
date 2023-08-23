@@ -17,10 +17,12 @@ Accepts an internet message id, and asks Splunk to look for records that have a 
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [Splunk](https://splunkbase.splunk.com/apps/#/search/Splunk/product/soar)
+- **Apps**: [Splunk](https://splunkbase.splunk.com/apps?keyword=splunk&filters=product%3Asoar)
 - **Last Updated**: 2023-05-12
 - **Author**: Lou Stella, Splunk
 - **ID**: 5299b9dc-e8c4-46ba-d942-98dae0fa816d
+- **Use-cases**:
+  - Phishing
 
 #### Associated Detections
 
@@ -28,6 +30,12 @@ Accepts an internet message id, and asks Splunk to look for records that have a 
 #### How To Implement
 This input playbook requires the Splunk connector to be configured. You will also need data populating the Email.All_Email datamodel in the out-of-the-box configuration of this playbook.
 
+
+#### [D3FEND](https://d3fend.mitre.org/)
+
+| ID          | Technique   | Definition     | Category       |
+| ----------- | ----------- |--------------- |--------------- |
+| D3-IAA | [Identifier Activity Analysis](https://d3fend.mitre.org/technique/d3f:IdentifierActivityAnalysis) | Taking known malicious identifiers and determining if they are present in a system. | Identifier Analysis |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Splunk_Message_Identifier_Activity_Analysis.json){: .btn .btn--info}
 

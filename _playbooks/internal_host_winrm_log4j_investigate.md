@@ -17,10 +17,11 @@ Published in response to CVE-2021-44228, this playbook uses WinRM to scan Window
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [Windows Remote Management](https://splunkbase.splunk.com/apps/#/search/Windows Remote Management/product/soar)
+- **Apps**: [Windows Remote Management](https://splunkbase.splunk.com/apps?keyword=windows+remote+management&filters=product%3Asoar)
 - **Last Updated**: 2021-12-14
 - **Author**: Kelby Shelton, Splunk
 - **ID**: 2cf7c9f4-b273-44f6-a27c-e0db668ff05a
+- **Use-cases**:
 
 #### Associated Detections
 

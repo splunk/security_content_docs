@@ -20,10 +20,14 @@ Automatically dispatches input playbooks with the &#39;sandbox&#39; tag. This wi
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [CrowdStrike OAuth API](https://splunkbase.splunk.com/apps/#/search/CrowdStrike OAuth API/product/soar), [urlscan.io](https://splunkbase.splunk.com/apps/#/search/urlscan.io/product/soar), [VirusTotal_v3](https://splunkbase.splunk.com/apps/#/search/VirusTotal_v3/product/soar), [SAA](https://splunkbase.splunk.com/apps/#/search/SAA/product/soar)
+- **Apps**: [CrowdStrike OAuth API](https://splunkbase.splunk.com/apps?keyword=crowdstrike+oauth+api&filters=product%3Asoar), [urlscan.io](https://splunkbase.splunk.com/apps?keyword=urlscan.io&filters=product%3Asoar), [VirusTotal_v3](https://splunkbase.splunk.com/apps?keyword=virustotal_v3&filters=product%3Asoar), [SAA](https://splunkbase.splunk.com/apps?keyword=saa&filters=product%3Asoar)
 - **Last Updated**: 2023-03-30
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: a15da934-1f59-4672-b98c-ec1bbfd80885
+- **Use-cases**:
+  - Enrichment
+  - Phishing
+  - Endpoint
 
 #### Associated Detections
 
@@ -31,6 +35,12 @@ Automatically dispatches input playbooks with the &#39;sandbox&#39; tag. This wi
 #### How To Implement
 This automatic playbook requires &#34;sandbox&#34; tag be present on each input playbook you want to launch.
 
+
+#### [D3FEND](https://d3fend.mitre.org/)
+
+| ID          | Technique   | Definition     | Category       |
+| ----------- | ----------- |--------------- |--------------- |
+| D3-DA | [Dynamic Analysis](https://d3fend.mitre.org/technique/d3f:DynamicAnalysis) | Executing or opening a file in a synthetic &#34;sandbox&#34; environment to determine if the file is a malicious program or if the file exploits another program such as a document reader. | File Analysis |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Dynamic_Analysis_Dispatch.json){: .btn .btn--info}
 

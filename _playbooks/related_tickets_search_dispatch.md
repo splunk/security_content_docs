@@ -20,6 +20,8 @@ Detects available indicators and routes them to dispatch related ticket search p
 - **Last Updated**: 2023-02-28
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: fc0edc96-ab1f-48b9-9b4d-63da61bafe74
+- **Use-cases**:
+  - Enrichment
 
 #### Associated Detections
 

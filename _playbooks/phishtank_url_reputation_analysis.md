@@ -17,10 +17,13 @@ Accepts a URL and does reputation analysis on the objects. Generates a global re
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [PhishTank](https://splunkbase.splunk.com/apps/#/search/PhishTank/product/soar)
+- **Apps**: [PhishTank](https://splunkbase.splunk.com/apps?keyword=phishtank&filters=product%3Asoar)
 - **Last Updated**: 2023-01-11
 - **Author**: Kelby Shelton, Splunk
 - **ID**: fc0eab96-ff1b-45b0-9b4d-63ca4783fd64
+- **Use-cases**:
+  - Enrichment
+  - Phishing
 
 #### Associated Detections
 
@@ -28,6 +31,12 @@ Accepts a URL and does reputation analysis on the objects. Generates a global re
 #### How To Implement
 This input playbook requires the PhishTank connector to be configured. It is designed to work in conjunction with the Dynamic Identifier Reputation Analysis playbook or other playbooks in the same style.
 
+
+#### [D3FEND](https://d3fend.mitre.org/)
+
+| ID          | Technique   | Definition     | Category       |
+| ----------- | ----------- |--------------- |--------------- |
+| D3-IRA | [Identifier Reputation Analysis](https://d3fend.mitre.org/technique/d3f:IdentifierReputationAnalysis) | Analyzing the reputation of an identifier. | Identifier Analysis |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/PhishTank_URL_Reputation_Analysis.json){: .btn .btn--info}
 

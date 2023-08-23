@@ -20,6 +20,7 @@ Published in response to CVE-2021-44228, this playbook is meant to be launched a
 - **Last Updated**: 2021-12-14
 - **Author**: Philip Royer, Splunk
 - **ID**: e609d729-4076-421a-b8f7-9e545d000381
+- **Use-cases**:
 
 #### Associated Detections
 

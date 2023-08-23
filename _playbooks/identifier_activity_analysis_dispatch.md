@@ -20,6 +20,8 @@ Detects available indicators and routes them to related identifier activity anal
 - **Last Updated**: 2023-02-28
 - **Author**: Lou Stella, Splunk
 - **ID**: fc0edc96-ab1f-48b9-1b4d-63da52dbfa74
+- **Use-cases**:
+  - Enrichment
 
 #### Associated Detections
 
@@ -27,6 +29,12 @@ Detects available indicators and routes them to related identifier activity anal
 #### How To Implement
 This playbook looks for artifacts and then dispatches the community Related Tickets playbooks. This playbook takes the output of those playbooks and nicely formats them into notes and tags indicators with their results.
 
+
+#### [D3FEND](https://d3fend.mitre.org/)
+
+| ID          | Technique   | Definition     | Category       |
+| ----------- | ----------- |--------------- |--------------- |
+| D3-IAA | [Identifier Activity Analysis](https://d3fend.mitre.org/technique/d3f:IdentifierActivityAnalysis) | Taking known malicious identifiers and determining if they are present in a system. | Identifier Analysis |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Identifier_Activity_Analysis_Dispatch.json){: .btn .btn--info}
 

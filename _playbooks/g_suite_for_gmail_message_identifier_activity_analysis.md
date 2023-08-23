@@ -17,10 +17,12 @@ Accepts an internet message id, and asks Gmail for a list of mailboxes to search
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [G Suite for GMail](https://splunkbase.splunk.com/apps/#/search/G Suite for GMail/product/soar)
+- **Apps**: [G Suite for GMail](https://splunkbase.splunk.com/apps?keyword=g+suite+for+gmail&filters=product%3Asoar)
 - **Last Updated**: 2023-05-12
 - **Author**: Lou Stella, Splunk
 - **ID**: 5299d6dd-e9c4-4afa-b051-928ace0ff816d
+- **Use-cases**:
+  - Phishing
 
 #### Associated Detections
 
@@ -28,6 +30,12 @@ Accepts an internet message id, and asks Gmail for a list of mailboxes to search
 #### How To Implement
 This input playbook requires the G Suite for GMail connector to be configured. It is designed to work in environments that posess a maximum of 500 mailboxes at this time, due to a limitation in the G Suite for GMail connector.
 
+
+#### [D3FEND](https://d3fend.mitre.org/)
+
+| ID          | Technique   | Definition     | Category       |
+| ----------- | ----------- |--------------- |--------------- |
+| D3-IAA | [Identifier Activity Analysis](https://d3fend.mitre.org/technique/d3f:IdentifierActivityAnalysis) | Taking known malicious identifiers and determining if they are present in a system. | Identifier Analysis |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/G_Suite_for_GMail_Message_Identifier_Acitivity_Analysis.json){: .btn .btn--info}
 

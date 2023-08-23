@@ -17,10 +17,12 @@ Accepts a user or device and looks up the most recent attributes and groups for 
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [Azure AD Graph](https://splunkbase.splunk.com/apps/#/search/Azure AD Graph/product/soar)
+- **Apps**: [Azure AD Graph](https://splunkbase.splunk.com/apps?keyword=azure+ad+graph&filters=product%3Asoar)
 - **Last Updated**: 2023-01-11
 - **Author**: Kelby Shelton, Splunk
 - **ID**: fc0edc96-aa2b-4cb0-7b4d-63da67e71d74
+- **Use-cases**:
+  - Enrichment
 
 #### Associated Detections
 

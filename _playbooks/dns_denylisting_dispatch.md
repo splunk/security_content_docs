@@ -20,6 +20,9 @@ Accepts a list of domains and blocks them. Generates a global report and list of
 - **Last Updated**: 2023-07-14
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: 7fd9a82f-517a-4d86-bf24-4d4158719dc1
+- **Use-cases**:
+  - Phishing
+  - Endpoint
 
 #### Associated Detections
 
@@ -27,6 +30,12 @@ Accepts a list of domains and blocks them. Generates a global report and list of
 #### How To Implement
 This playbook looks for artifacts and then dispatches the community denylisting playbooks. This playbook takes the output of those playbooks and nicely formats them into notes and tags indicators with their results.
 
+
+#### [D3FEND](https://d3fend.mitre.org/)
+
+| ID          | Technique   | Definition     | Category       |
+| ----------- | ----------- |--------------- |--------------- |
+| D3-DNSDL | [DNS Denylisting](https://d3fend.mitre.org/technique/d3f:DNSDenylisting) | Blocking DNS Network Traffic based on criteria such as IP address, domain name, or DNS query type. | Network Isolation |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/DNS_Denylisting_Dispatch.json){: .btn .btn--info}
 

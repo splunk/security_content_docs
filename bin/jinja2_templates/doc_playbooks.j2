@@ -21,10 +21,14 @@ tags:
 
 - **Type**: {{ playbook.type }}
 - **Product**: {{ playbook.tags.product|join(', ') }}
-- **Apps**: {% for app in playbook.app_list %}[{{ app }}](https://splunkbase.splunk.com/apps/#/search/{{ app }}/product/soar){% if not loop.last %}, {% endif %}{%-endfor %}
+- **Apps**: {% for app in playbook.app_list %}[{{ app }}](https://splunkbase.splunk.com/apps?keyword={{ app | lower | replace(" ","+") }}&filters=product%3Asoar){% if not loop.last %}, {% endif %}{%-endfor %}
 - **Last Updated**: {{ playbook.date }}
 - **Author**: {{playbook.author}}
 - **ID**: {{ playbook.id }}
+- **Use-cases**: 
+{%- for use_case in playbook.tags.use_cases %}
+  - {{ use_case }}
+{%- endfor %}
 
 #### Associated Detections
 {% for detection in playbook.tags.detections -%}
@@ -37,6 +41,15 @@ tags:
 
 #### How To Implement
 {{ playbook.how_to_implement}}
+
+{% if playbook.tags.defend_technique_id %}
+#### [D3FEND](https://d3fend.mitre.org/)
+
+| ID          | Technique   | Definition     | Category       |
+| ----------- | ----------- |--------------- |--------------- |
+| {{ playbook.tags.defend_technique_id }} | [{{ playbook.tags.technique }}](https://d3fend.mitre.org/technique/d3f:{{ playbook.tags.technique | replace(" ", "") }}) | {{ playbook.tags.definition }} | {{ playbook.tags.category }} |
+{% endif -%}
+
 
 {% if playbook.tags.vpe_type == "Modern" %}
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/{{ playbook.playbook | replace(" ", "_")}}.json){: .btn .btn--info}

@@ -18,10 +18,11 @@ Find AWS accounts that have not been used for a long time (90 days by default). 
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [AWS IAM](https://splunkbase.splunk.com/apps/#/search/AWS IAM/product/soar), [Phantom](https://splunkbase.splunk.com/apps/#/search/Phantom/product/soar)
+- **Apps**: [AWS IAM](https://splunkbase.splunk.com/apps?keyword=aws+iam&filters=product%3Asoar), [Phantom](https://splunkbase.splunk.com/apps?keyword=phantom&filters=product%3Asoar)
 - **Last Updated**: 2021-11-01
 - **Author**: Philip Royer, Splunk
 - **ID**: fc0edc76-ff2b-48b0-5f6f-63da6423fd63
+- **Use-cases**:
 
 #### Associated Detections
 

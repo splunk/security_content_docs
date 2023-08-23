@@ -17,10 +17,11 @@ This playbook finds related events based on key fields in a risk notable and all
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [None](https://splunkbase.splunk.com/apps/#/search/None/product/soar)
+- **Apps**: [None](https://splunkbase.splunk.com/apps?keyword=none&filters=product%3Asoar)
 - **Last Updated**: 2021-10-22
 - **Author**: Kelby Shelton, Splunk
 - **ID**: rn0edc96-ff2b-48b0-9f6f-53da3783fd63
+- **Use-cases**:
 
 #### Associated Detections
 

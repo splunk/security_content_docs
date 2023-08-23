@@ -17,10 +17,11 @@ Published in response to CVE-2021-44228, this playbook utilizes data already in 
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [Splunk](https://splunkbase.splunk.com/apps/#/search/Splunk/product/soar)
+- **Apps**: [Splunk](https://splunkbase.splunk.com/apps?keyword=splunk&filters=product%3Asoar)
 - **Last Updated**: 2021-12-14
 - **Author**: Lou Stella, Splunk
 - **ID**: fc0adc66-ff2b-48b0-9a6f-63da6783fd63
+- **Use-cases**:
 
 #### Associated Detections
 

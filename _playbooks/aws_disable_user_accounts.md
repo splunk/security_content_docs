@@ -17,10 +17,11 @@ Disable a list of AWS IAM user accounts. After checking the list of accounts aga
 
 - **Type**: Response
 - **Product**: Splunk SOAR
-- **Apps**: [AWS IAM](https://splunkbase.splunk.com/apps/#/search/AWS IAM/product/soar)
+- **Apps**: [AWS IAM](https://splunkbase.splunk.com/apps?keyword=aws+iam&filters=product%3Asoar)
 - **Last Updated**: 2021-11-01
 - **Author**: Philip Royer, Splunk
 - **ID**: fc0edc75-ff2b-48c0-5f6f-63da6423fd63
+- **Use-cases**:
 
 #### Associated Detections
 

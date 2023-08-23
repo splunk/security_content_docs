@@ -17,10 +17,13 @@ Accepts a URL or list of URLs as input. Uses Panorama to block the given URLs in
 
 - **Type**: Response
 - **Product**: Splunk SOAR
-- **Apps**: [Panorama](https://splunkbase.splunk.com/apps/#/search/Panorama/product/soar)
+- **Apps**: [Panorama](https://splunkbase.splunk.com/apps?keyword=panorama&filters=product%3Asoar)
 - **Last Updated**: 2023-05-19
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: 5e3e061f-5206-49ac-88f4-4e818a20b2a9
+- **Use-cases**:
+  - Phishing
+  - Endpoint
 
 #### Associated Detections
 
@@ -28,6 +31,12 @@ Accepts a URL or list of URLs as input. Uses Panorama to block the given URLs in
 #### How To Implement
 This input playbook requires the Panorama connector to be configured. It is designed to work in conjunction with the Dynamic URL Outbound Traffic Filtering Analysis playbook or other playbooks in the same style.
 
+
+#### [D3FEND](https://d3fend.mitre.org/)
+
+| ID          | Technique   | Definition     | Category       |
+| ----------- | ----------- |--------------- |--------------- |
+| D3-OTF | [](https://d3fend.mitre.org/technique/d3f:) |  |  |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Panorama_Outbound_Traffic_Filtering.json){: .btn .btn--info}
 

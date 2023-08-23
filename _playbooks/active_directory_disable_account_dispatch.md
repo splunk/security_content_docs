@@ -19,10 +19,13 @@ Automatically dispatches input playbooks with the &#39;disable_account&#39; tag.
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [microsoft_ad_ldap](https://splunkbase.splunk.com/apps/#/search/microsoft_ad_ldap/product/soar), [azure_ad_graph](https://splunkbase.splunk.com/apps/#/search/azure_ad_graph/product/soar), [aws_iam](https://splunkbase.splunk.com/apps/#/search/aws_iam/product/soar)
+- **Apps**: [microsoft_ad_ldap](https://splunkbase.splunk.com/apps?keyword=microsoft_ad_ldap&filters=product%3Asoar), [azure_ad_graph](https://splunkbase.splunk.com/apps?keyword=azure_ad_graph&filters=product%3Asoar), [aws_iam](https://splunkbase.splunk.com/apps?keyword=aws_iam&filters=product%3Asoar)
 - **Last Updated**: 2023-05-23
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 86320591-1bbd-41ab-8990-602a3968fd99
+- **Use-cases**:
+  - Phishing
+  - Endpoint
 
 #### Associated Detections
 
@@ -30,6 +33,12 @@ Automatically dispatches input playbooks with the &#39;disable_account&#39; tag.
 #### How To Implement
 This automatic playbook requires &#34;disable_account&#34; tag be present on each input playbook you want to launch.
 
+
+#### [D3FEND](https://d3fend.mitre.org/)
+
+| ID          | Technique   | Definition     | Category       |
+| ----------- | ----------- |--------------- |--------------- |
+| D3-AL | [Account Locking](https://d3fend.mitre.org/technique/d3f:AccountLocking) | The process of temporarily disabling user accounts on a system or domain. | Credential Eviction |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Active_Directory_Disable_Account_Dispatch.json){: .btn .btn--info}
 

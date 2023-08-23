@@ -17,10 +17,11 @@ Published in response to CVE-2021-44228, this playbook accepts a list of hosts a
 
 - **Type**: Response
 - **Product**: Splunk SOAR
-- **Apps**: [Windows Remote Management](https://splunkbase.splunk.com/apps/#/search/Windows Remote Management/product/soar)
+- **Apps**: [Windows Remote Management](https://splunkbase.splunk.com/apps?keyword=windows+remote+management&filters=product%3Asoar)
 - **Last Updated**: 2021-12-14
 - **Author**: Kelby Shelton, Splunk
 - **ID**: 32fd9db5-5201-4b2f-b2c2-9299c7b3495d
+- **Use-cases**:
 
 #### Associated Detections
 

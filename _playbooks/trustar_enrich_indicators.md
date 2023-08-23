@@ -17,10 +17,11 @@ Use TruSTAR to gather threat information about indicators in a SOAR event. Tag t
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [TruSTAR](https://splunkbase.splunk.com/apps/#/search/TruSTAR/product/soar)
+- **Apps**: [TruSTAR](https://splunkbase.splunk.com/apps?keyword=trustar&filters=product%3Asoar)
 - **Last Updated**: 2021-11-24
 - **Author**: Philip Royer, Splunk
 - **ID**: fc5adc76-fd2b-48b0-5f6f-63da6423fd63
+- **Use-cases**:
 
 #### Associated Detections
 

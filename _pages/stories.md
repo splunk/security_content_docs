@@ -84,6 +84,7 @@ sidebar:
 | [F5 BIG-IP Vulnerability CVE-2022-1388](f5_big-ip_vulnerability_cve-2022-1388) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
 | [F5 TMUI RCE CVE-2020-5902](f5_tmui_rce_cve-2020-5902) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [FIN7](fin7) | [XSL Script Processing](/tags/#xsl-script-processing) | [Defense Evasion](/tags/#defense-evasion) |
+| [Flax Typhoon](flax_typhoon) | [System Services](/tags/#system-services), [Service Execution](/tags/#service-execution) | [Execution](/tags/#execution) |
 | [Fortinet FortiNAC CVE-2022-39952](fortinet_fortinac_cve-2022-39952) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
 | [GCP Account Takeover](gcp_account_takeover) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying), [Credential Stuffing](/tags/#credential-stuffing) | [Resource Development](/tags/#resource-development) |
 | [GCP Cross Account Activity](gcp_cross_account_activity) | [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |

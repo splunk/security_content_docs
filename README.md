@@ -10,7 +10,7 @@ poetry install && poetry shell
 ```
 
 # Development
-To run a local jekyll install follow these steps
+To run a local jekyll install follow these steps:
 
 1. Install Gems with bundler `bundler install`
 2. You might want to generate a fresh site: `python bin/site_gen.py`

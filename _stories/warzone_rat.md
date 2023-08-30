@@ -14,7 +14,7 @@ tags:
 
 #### Description
 
-This analytic story contains detections that allow security analysts to detect and investigate unusual activities that might related to warzone (ve maria) RAT. This analytic story looks for suspicious process execution, command-line activity, downloads, persistence, defense evasion and more.
+This analytic story contains detections that allow security analysts to detect and investigate unusual activities that might related to warzone (Ave maria) RAT. This analytic story looks for suspicious process execution, command-line activity, downloads, persistence, defense evasion and more.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)

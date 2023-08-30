@@ -659,6 +659,7 @@ sidebar:
 | [WinEvent Scheduled Task Created Within Public Path](/endpoint/5d9c6eee-988c-11eb-8253-acde48001122/) | [Scheduled Task](/tags/#scheduled-task), [Scheduled Task/Job](/tags/#scheduled-task/job) |  None |
 | [WinEvent Scheduled Task Created to Spawn Shell](/endpoint/203ef0ea-9bd8-11eb-8201-acde48001122/) | [Scheduled Task](/tags/#scheduled-task), [Scheduled Task/Job](/tags/#scheduled-task/job) |  None |
 | [WinEvent Windows Task Scheduler Event Action Started](/endpoint/b3632472-310b-11ec-9aab-acde48001122/) | [Scheduled Task](/tags/#scheduled-task) |  None |
+| [WinRAR Spawning Shell Application](/endpoint/d2f36034-37fa-4bd4-8801-26807c15540f/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [WinRM Spawning a Process](/endpoint/a081836a-ba4d-11eb-8593-acde48001122/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Windows AD AdminSDHolder ACL Modified](/endpoint/00d877c3-7b7b-443d-9562-6b231e2abab9/) | [Event Triggered Execution](/tags/#event-triggered-execution) |  None |
 | [Windows AD Cross Domain SID History Addition](/endpoint/41bbb371-28ba-439c-bb5c-d9930c28365d/) | [SID-History Injection](/tags/#sid-history-injection), [Access Token Manipulation](/tags/#access-token-manipulation) |  None |

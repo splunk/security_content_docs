@@ -20,6 +20,7 @@ Handle cases in Splunk SOAR with consistency that only automation can provide. T
 - **Last Updated**: 2021-10-07
 - **Author**: Kelby Shelton, Splunk
 - **ID**: fc5adc76-f3ab-4cb0-5f6f-63bc3493fd46
+- **Use-cases**:
 
 #### Associated Detections
 

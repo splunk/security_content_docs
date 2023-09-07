@@ -17,10 +17,11 @@ Published in response to CVE-2021-44228, this playbook accepts a list of hosts a
 
 - **Type**: Response
 - **Product**: Splunk SOAR
-- **Apps**: [SSH](https://splunkbase.splunk.com/apps/#/search/SSH/product/soar)
+- **Apps**: [SSH](https://splunkbase.splunk.com/apps?keyword=ssh&filters=product%3Asoar)
 - **Last Updated**: 2021-12-14
 - **Author**: Kelby Shelton, Splunk
 - **ID**: 6ea2007c-8ef8-4647-a4a4-7825cfee3866
+- **Use-cases**:
 
 #### Associated Detections
 

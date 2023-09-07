@@ -17,10 +17,12 @@ Accepts a user or device and looks up the most recent attributes and groups for 
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [AD LDAP](https://splunkbase.splunk.com/apps/#/search/AD LDAP/product/soar)
+- **Apps**: [AD LDAP](https://splunkbase.splunk.com/apps?keyword=ad+ldap&filters=product%3Asoar)
 - **Last Updated**: 2023-01-11
 - **Author**: Kelby Shelton, Lou Stella, Splunk
 - **ID**: fc0edc96-aa2b-4cb0-7b4d-63da67d3fe74
+- **Use-cases**:
+  - Enrichment
 
 #### Associated Detections
 

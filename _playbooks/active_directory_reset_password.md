@@ -17,10 +17,11 @@ This playbook resets the password of a potentially compromised user account. Fir
 
 - **Type**: Response
 - **Product**: Splunk SOAR
-- **Apps**: [AD LDAP](https://splunkbase.splunk.com/apps/#/search/AD LDAP/product/soar)
+- **Apps**: [AD LDAP](https://splunkbase.splunk.com/apps?keyword=ad+ldap&filters=product%3Asoar)
 - **Last Updated**: 2020-12-08
 - **Author**: Philip Royer, Splunk
 - **ID**: fc0edc96-ff2b-48b0-9f6f-63da6783fd63
+- **Use-cases**:
 
 #### Associated Detections
 

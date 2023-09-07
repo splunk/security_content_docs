@@ -17,10 +17,12 @@ Accepts a URL, IP, Domain, or File_Hash and does reputation analysis on the obje
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [VirusTotal v3](https://splunkbase.splunk.com/apps/#/search/VirusTotal v3/product/soar)
+- **Apps**: [VirusTotal v3](https://splunkbase.splunk.com/apps?keyword=virustotal+v3&filters=product%3Asoar)
 - **Last Updated**: 2023-01-11
 - **Author**: Kelby Shelton, Lou Stella, Splunk
 - **ID**: fc0edc96-ff2b-48b0-9b4d-63da67d3fe74
+- **Use-cases**:
+  - Enrichment
 
 #### Associated Detections
 
@@ -28,6 +30,12 @@ Accepts a URL, IP, Domain, or File_Hash and does reputation analysis on the obje
 #### How To Implement
 This input playbook requires the VirusTotal v3 connector to be configured. It is designed to work in conjunction with the Dynamic Identifier Reputation Analysis playbook or other playbooks in the same style.
 
+
+#### [D3FEND](https://d3fend.mitre.org/)
+
+| ID          | Technique   | Definition     | Category       |
+| ----------- | ----------- |--------------- |--------------- |
+| D3-IRA | [Identifier Reputation Analysis](https://d3fend.mitre.org/technique/d3f:IdentifierReputationAnalysis) | Analyzing the reputation of an identifier. | Identifier Analysis |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/VirusTotal_v3_Identifier_Reputation_Analysis.json){: .btn .btn--info}
 

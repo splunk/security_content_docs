@@ -17,10 +17,13 @@ Accepts a file hash or domain name, and asks CrowdStrike for a list of device ID
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [CrowdStrike OAuth API](https://splunkbase.splunk.com/apps/#/search/CrowdStrike OAuth API/product/soar)
+- **Apps**: [CrowdStrike OAuth API](https://splunkbase.splunk.com/apps?keyword=crowdstrike+oauth+api&filters=product%3Asoar)
 - **Last Updated**: 2023-03-30
 - **Author**: Lou Stella, Splunk
 - **ID**: 5299d9dc-e9c4-42fa-b051-92ace0ff816d
+- **Use-cases**:
+  - Enrichment
+  - Endpoint
 
 #### Associated Detections
 
@@ -28,6 +31,12 @@ Accepts a file hash or domain name, and asks CrowdStrike for a list of device ID
 #### How To Implement
 This input playbook requires the Crowdstrike OAuth API connector to be configured. It is designed to work in conjunction with the Dynamic Identifier Activity Analysis playbook or other playbooks in the same style.
 
+
+#### [D3FEND](https://d3fend.mitre.org/)
+
+| ID          | Technique   | Definition     | Category       |
+| ----------- | ----------- |--------------- |--------------- |
+| D3-IAA | [Identifier Activity Analysis](https://d3fend.mitre.org/technique/d3f:IdentifierActivityAnalysis) | Taking known malicious identifiers and determining if they are present in a system. | Identifier Analysis |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/CrowdStrike_OAuth_API_Identifier_Activity_Analysis.json){: .btn .btn--info}
 

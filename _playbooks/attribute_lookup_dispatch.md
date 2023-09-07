@@ -20,6 +20,8 @@ Detects available entities and routes them to attribute lookup playbooks. The ou
 - **Last Updated**: 2023-03-06
 - **Author**: Lou Stella, Splunk
 - **ID**: fc0edc96-ff2b-68d0-9a4d-63da6783fd64
+- **Use-cases**:
+  - Enrichment
 
 #### Associated Detections
 

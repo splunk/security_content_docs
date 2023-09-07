@@ -21,10 +21,11 @@ This playbook investigates and contains ransomware detected on endpoints.
 
 - **Type**: Response
 - **Product**: Splunk SOAR
-- **Apps**: [Carbon Black Response](https://splunkbase.splunk.com/apps/#/search/Carbon Black Response/product/soar), [LDAP](https://splunkbase.splunk.com/apps/#/search/LDAP/product/soar), [Palo Alto Networks Firewall](https://splunkbase.splunk.com/apps/#/search/Palo Alto Networks Firewall/product/soar), [WildFire](https://splunkbase.splunk.com/apps/#/search/WildFire/product/soar), [Cylance](https://splunkbase.splunk.com/apps/#/search/Cylance/product/soar)
+- **Apps**: [Carbon Black Response](https://splunkbase.splunk.com/apps?keyword=carbon+black+response&filters=product%3Asoar), [LDAP](https://splunkbase.splunk.com/apps?keyword=ldap&filters=product%3Asoar), [Palo Alto Networks Firewall](https://splunkbase.splunk.com/apps?keyword=palo+alto+networks+firewall&filters=product%3Asoar), [WildFire](https://splunkbase.splunk.com/apps?keyword=wildfire&filters=product%3Asoar), [Cylance](https://splunkbase.splunk.com/apps?keyword=cylance&filters=product%3Asoar)
 - **Last Updated**: 2018-02-04
 - **Author**: Philip Royer, Splunk
 - **ID**: fc0edc96-ff2b-48b0-9f6f-63da3783fd63
+- **Use-cases**:
 
 #### Associated Detections
 
@@ -208,22 +209,7 @@ This playbook investigates and contains ransomware detected on endpoints.
 
 
 
-
-
 * [Conti Common Exec parameter](/endpoint/624919bc-c382-11eb-adcc-acde48001122/)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -20,6 +20,7 @@ This parent playbook collects data and launches appropriate child playbooks to g
 - **Last Updated**: 2021-11-30
 - **Author**: Philip Royer, Splunk
 - **ID**: fc5adc76-fd2b-48b0-5f6f-63bc3493fd46
+- **Use-cases**:
 
 #### Associated Detections
 

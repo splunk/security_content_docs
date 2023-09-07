@@ -19,10 +19,11 @@ This playbook retrieves IP addresses, domains, and file hashes, blocks them on v
 
 - **Type**: Response
 - **Product**: Splunk SOAR
-- **Apps**: [Palo Alto Networks Firewall](https://splunkbase.splunk.com/apps/#/search/Palo Alto Networks Firewall/product/soar), [Carbon Black Response](https://splunkbase.splunk.com/apps/#/search/Carbon Black Response/product/soar), [Cisco Umbrella](https://splunkbase.splunk.com/apps/#/search/Cisco Umbrella/product/soar)
+- **Apps**: [Palo Alto Networks Firewall](https://splunkbase.splunk.com/apps?keyword=palo+alto+networks+firewall&filters=product%3Asoar), [Carbon Black Response](https://splunkbase.splunk.com/apps?keyword=carbon+black+response&filters=product%3Asoar), [Cisco Umbrella](https://splunkbase.splunk.com/apps?keyword=cisco+umbrella&filters=product%3Asoar)
 - **Last Updated**: 2021-01-21
 - **Author**: Philip Royer, Splunk
 - **ID**: fc0edc76-ff2b-48b0-5f6f-63da6783fd63
+- **Use-cases**:
 
 #### Associated Detections
 

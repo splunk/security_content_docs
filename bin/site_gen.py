@@ -259,7 +259,7 @@ def add_splunk_app(detection):
     return detection
 
 
-def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack, sorted_detections, messages, VERBOSE):
+def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack, sorted_detections, sorted_playbooks, messages, VERBOSE):
     manifest_files = []
     for root, dirs, files in walk(REPO_PATH + 'stories'):
         for file in files:
@@ -324,6 +324,24 @@ def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack, so
                 if 'mitre_attacks' in detection:
                         sto_to_mitre_attacks[story] = detection['mitre_attacks']
 
+    playbook_types = list()
+    playbook_use_cases = list()
+    playbook_categories = list()
+    playbook_apps = list()
+    for playbook in sorted_playbooks:
+        playbook_types.append(playbook["type"])
+        if "use_cases" in playbook["tags"]:
+            playbook_use_cases.extend(playbook["tags"]["use_cases"])
+        if "category" in playbook["tags"]:
+            playbook_categories.append(playbook["tags"]["category"])
+        if "app_list" in playbook:
+            playbook_apps.extend(playbook["app_list"])
+
+    playbook_types = list(set(playbook_types))
+    playbook_use_cases = list(set(playbook_use_cases))
+    playbook_categories = list(set(playbook_categories))
+    playbook_apps = list(set(playbook_apps))
+
     # add the enrich objects to the story
     for story in sorted_stories:
         story['detections'] = sto_to_det[story['name']]['detections']
@@ -382,7 +400,16 @@ def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack, so
 
     template = j2_env.get_template('doc_navigation.j2')
     output_path = path.join(OUTPUT_DIR + '/_data/navigation.yml')
-    output = template.render(types=types, tactics=sorted(tactics), datamodels=sorted(datamodels), categories=sorted(category_names))
+    output = template.render(
+        types=types, 
+        tactics=sorted(tactics), 
+        datamodels=sorted(datamodels), 
+        categories=sorted(category_names),
+        playbook_types = sorted(playbook_types),
+        playbook_use_cases = sorted(playbook_use_cases),
+        playbook_categories = sorted(playbook_categories),
+        playbook_apps = sorted(playbook_apps),
+    )
     with open(output_path, 'w', encoding="utf-8") as f:
         f.write(output)
     messages.append("doc_gen.py wrote navigation.yml structure to: {0}".format(output_path))
@@ -577,8 +604,17 @@ def generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detectio
                 manifest_files.append((path.join(root, file)))
 
     playbooks = []
+
+    url = "https://d3fend.mitre.org/api/matrix.json"
+    response = requests.get(url)
+    if response.status_code == 200:
+        defend_data_dict = response.json()
+    else:
+        print(f"Failed to fetch data. HTTP Status Code: {response.status_code}")
+        sys.exit(1)
+
+
     for manifest_file in tqdm(manifest_files):
-        detection_yaml = dict()
         if VERBOSE:
             print("processing manifest {0}".format(manifest_file))
 
@@ -590,6 +626,7 @@ def generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detectio
                 print("Error reading {0}".format(manifest_file))
                 sys.exit(1)
 
+        enrich_mitre_defend(object, defend_data_dict)
         playbooks.append(object)
 
     sorted_playbooks = sorted(playbooks, key=lambda i: i['name'])
@@ -607,6 +644,89 @@ def generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detectio
             f.write(output)
     messages.append("doc_gen.py wrote {0} playbook documentation in markdown to: {1}".format(len(sorted_playbooks),OUTPUT_DIR + '/_playbooks/'))
 
+    # write navigation pages
+    playbook_types = list()
+    playbook_use_cases = list()
+    playbook_categories = list()
+    playbook_apps = list()
+    for playbook in sorted_playbooks:
+        playbook_types.append(playbook["type"])
+        if "use_cases" in playbook["tags"]:
+            playbook_use_cases.extend(playbook["tags"]["use_cases"])
+        if "category" in playbook["tags"]:
+            playbook_categories.append(playbook["tags"]["category"])
+        if "app_list" in playbook:
+            playbook_apps.extend(playbook["app_list"])
+
+    playbook_types = list(set(playbook_types))
+    playbook_use_cases = list(set(playbook_use_cases))
+    playbook_categories = list(set(playbook_categories))
+    playbook_apps = list(set(playbook_apps))
+
+    template = j2_env.get_template('doc_navigation_playbook_pages.j2') 
+    for playbook_type in playbook_types:
+        filtered_playbooks = list()
+        for playbook in sorted_playbooks:
+            if playbook["type"] == playbook_type:
+                filtered_playbooks.append(playbook)
+        
+        output_path = path.join(OUTPUT_DIR + '/_pages/' + playbook_type.lower().replace(" ", "_") + ".md")
+        output = template.render(
+            category=playbook_type,
+            playbooks=filtered_playbooks,
+        )
+        with open(output_path, 'w', encoding="utf-8") as f:
+            f.write(output)
+        messages.append("doc_gen.py wrote _page for: {1} structure to: {0}".format(output_path, playbook_type))
+
+    for use_case in playbook_use_cases:
+        filtered_playbooks = list()
+        for playbook in sorted_playbooks:
+            if "use_cases" in playbook["tags"]:
+                if use_case in playbook["tags"]["use_cases"]:
+                    filtered_playbooks.append(playbook)
+        
+        output_path = path.join(OUTPUT_DIR + '/_pages/' + use_case.lower().replace(" ", "_") + "playbook.md")
+        output = template.render(
+            category=use_case,
+            playbooks=filtered_playbooks,
+        )
+        with open(output_path, 'w', encoding="utf-8") as f:
+            f.write(output)
+        messages.append("doc_gen.py wrote _page for: {1} structure to: {0}".format(output_path, use_case))
+
+    for category in playbook_categories:
+        filtered_playbooks = list()
+        for playbook in sorted_playbooks:
+            if "category" in playbook["tags"]:
+                if playbook["tags"]["category"] == category:
+                    filtered_playbooks.append(playbook)
+        
+        output_path = path.join(OUTPUT_DIR + '/_pages/' + category.lower().replace(" ", "_") + ".md")
+        output = template.render(
+            category=category,
+            playbooks=filtered_playbooks,
+        )
+        with open(output_path, 'w', encoding="utf-8") as f:
+            f.write(output)
+        messages.append("doc_gen.py wrote _page for: {1} structure to: {0}".format(output_path, category))
+
+    for app in playbook_apps:
+        filtered_playbooks = list()
+        for playbook in sorted_playbooks:
+            if "app_list" in playbook:
+                if app in playbook["app_list"]:
+                    filtered_playbooks.append(playbook)
+        
+        output_path = path.join(OUTPUT_DIR + '/_pages/' + app.lower().replace(" ", "_") + ".md")
+        output = template.render(
+            category=app,
+            playbooks=filtered_playbooks,
+        )
+        with open(output_path, 'w', encoding="utf-8") as f:
+            f.write(output)
+        messages.append("doc_gen.py wrote _page for: {1} structure to: {0}".format(output_path, category))
+
     # write markdown detection page
     template = j2_env.get_template('doc_playbooks_page.j2')
     output_path = path.join(OUTPUT_DIR + '/_pages/playbooks.md')
@@ -616,6 +736,18 @@ def generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detectio
     messages.append("doc_gen.py wrote playbooks.md page to: {0}".format(output_path))
 
     return sorted_playbooks, messages
+
+
+def enrich_mitre_defend(playbook, defend_data_dict):
+    if "defend_technique_id" in playbook["tags"]:
+        for tactic in defend_data_dict:
+            for technique in tactic["children"]:
+                for defend_technique in technique["children"]:
+                    if defend_technique["d3f:d3fend-id"] == playbook["tags"]["defend_technique_id"]:
+                        playbook["tags"]["technique"] = defend_technique["rdfs:label"]
+                        playbook["tags"]["definition"] = defend_technique["d3f:definition"]
+                        playbook["tags"]["category"] = technique["rdfs:label"]
+
 
 
 def generate_doc_index(OUTPUT_DIR, TEMPLATE_PATH, sorted_detections, sorted_stories, sorted_playbooks, messages, VERBOSE):
@@ -709,10 +841,10 @@ if __name__ == "__main__":
     messages = []
     print("processing detections")
     sorted_detections, messages = generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, techniques, messages, VERBOSE, SKIP_ENRICHMENT)
-    print("processing stories")
-    sorted_stories, messages = generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, techniques, sorted_detections, messages, VERBOSE)
     print("processing playbooks")
     sorted_playbooks, messages = generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detections, messages, VERBOSE)
+    print("processing stories")
+    sorted_stories, messages = generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, techniques, sorted_detections, sorted_playbooks, messages, VERBOSE)
     messages = generate_doc_index(OUTPUT_DIR, TEMPLATE_PATH, sorted_detections, sorted_stories, sorted_playbooks, messages, VERBOSE)
 
     # print all the messages from generation

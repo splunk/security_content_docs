@@ -24,7 +24,6 @@ sidebar:
 | [Active Directory Lateral Movement](active_directory_lateral_movement) | [Remote Services](/tags/#remote-services), [Windows Remote Management](/tags/#windows-remote-management) | [Lateral Movement](/tags/#lateral-movement) |
 | [Active Directory Password Spraying](active_directory_password_spraying) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
 | [Active Directory Privilege Escalation](active_directory_privilege_escalation) | [Account Discovery](/tags/#account-discovery), [SMB/Windows Admin Shares](/tags/#smb/windows-admin-shares), [Network Share Discovery](/tags/#network-share-discovery) | [Discovery](/tags/#discovery) |
-| [Adobe ColdFusion Arbitrary Code Execution CVE-2023-29298 CVE-2023-26360](adobe_coldfusion_arbitrary_code_execution_cve-2023-29298_cve-2023-26360) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [AgentTesla](agenttesla) | [Spearphishing Attachment](/tags/#spearphishing-attachment), [Phishing](/tags/#phishing) | [Initial Access](/tags/#initial-access) |
 | [Amadey](amadey) | [PowerShell](/tags/#powershell), [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Execution](/tags/#execution) |
 | [Apache Struts Vulnerability](apache_struts_vulnerability) | [System Information Discovery](/tags/#system-information-discovery) | [Discovery](/tags/#discovery) |
@@ -85,7 +84,6 @@ sidebar:
 | [F5 BIG-IP Vulnerability CVE-2022-1388](f5_big-ip_vulnerability_cve-2022-1388) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
 | [F5 TMUI RCE CVE-2020-5902](f5_tmui_rce_cve-2020-5902) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [FIN7](fin7) | [XSL Script Processing](/tags/#xsl-script-processing) | [Defense Evasion](/tags/#defense-evasion) |
-| [Flax Typhoon](flax_typhoon) | [System Services](/tags/#system-services), [Service Execution](/tags/#service-execution) | [Execution](/tags/#execution) |
 | [Fortinet FortiNAC CVE-2022-39952](fortinet_fortinac_cve-2022-39952) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
 | [GCP Account Takeover](gcp_account_takeover) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying), [Credential Stuffing](/tags/#credential-stuffing) | [Resource Development](/tags/#resource-development) |
 | [GCP Cross Account Activity](gcp_cross_account_activity) | [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
@@ -100,9 +98,7 @@ sidebar:
 | [Ingress Tool Transfer](ingress_tool_transfer) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Insider Threat](insider_threat) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
 | [Ivanti EPMM Remote Unauthenticated Access](ivanti_epmm_remote_unauthenticated_access) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
-| [Ivanti Sentry Authentication Bypass CVE-2023-38035](ivanti_sentry_authentication_bypass_cve-2023-38035) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [JBoss Vulnerability](jboss_vulnerability) | [System Information Discovery](/tags/#system-information-discovery), [External Remote Services](/tags/#external-remote-services) | [Discovery](/tags/#discovery) |
-| [Juniper JunOS Remote Code Execution](juniper_junos_remote_code_execution) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [Ingress Tool Transfer](/tags/#ingress-tool-transfer), [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Initial Access](/tags/#initial-access) |
 | [Kubernetes Scanning Activity](kubernetes_scanning_activity) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Discovery](/tags/#discovery) |
 | [Kubernetes Sensitive Object Access Activity]() | None | None |
 | [Linux Living Off The Land](linux_living_off_the_land) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [Command And Control](/tags/#command-and-control) |
@@ -187,16 +183,13 @@ sidebar:
 | [VMware Aria Operations vRealize CVE-2023-20887](vmware_aria_operations_vrealize_cve-2023-20887) | [External Remote Services](/tags/#external-remote-services), [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [Exploitation of Remote Services](/tags/#exploitation-of-remote-services), [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Persistence](/tags/#persistence) |
 | [VMware Server Side Injection and Privilege Escalation](vmware_server_side_injection_and_privilege_escalation) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
 | [Volt Typhoon](volt_typhoon) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [Execution](/tags/#execution) |
-| [Warzone RAT](warzone_rat) | [DLL Side-Loading](/tags/#dll-side-loading) | [Persistence](/tags/#persistence) |
 | [WhisperGate](whispergate) | [Process Injection](/tags/#process-injection), [Create or Modify System Process](/tags/#create-or-modify-system-process), [Parent PID Spoofing](/tags/#parent-pid-spoofing), [Access Token Manipulation](/tags/#access-token-manipulation) | [Defense Evasion](/tags/#defense-evasion) |
-| [WinRAR Spoofing Attack CVE-2023-38831](winrar_spoofing_attack_cve-2023-38831) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [Command And Control](/tags/#command-and-control) |
 | [Windows BootKits](windows_bootkits) | [Pre-OS Boot](/tags/#pre-os-boot), [Registry Run Keys / Startup Folder](/tags/#registry-run-keys-/-startup-folder) | [Defense Evasion](/tags/#defense-evasion) |
 | [Windows Certificate Services](windows_certificate_services) | [Steal or Forge Authentication Certificates](/tags/#steal-or-forge-authentication-certificates) | [Credential Access](/tags/#credential-access) |
 | [Windows DNS SIGRed CVE-2020-1350](windows_dns_sigred_cve-2020-1350) | [Exploitation for Client Execution](/tags/#exploitation-for-client-execution) | [Execution](/tags/#execution) |
 | [Windows Defense Evasion Tactics](windows_defense_evasion_tactics) | [Dynamic-link Library Injection](/tags/#dynamic-link-library-injection), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Process Injection](/tags/#process-injection) | [Defense Evasion](/tags/#defense-evasion) |
 | [Windows Discovery Techniques](windows_discovery_techniques) | [Permission Groups Discovery](/tags/#permission-groups-discovery), [Local Groups](/tags/#local-groups) | [Discovery](/tags/#discovery) |
 | [Windows Drivers](windows_drivers) | [Windows Service](/tags/#windows-service) | [Persistence](/tags/#persistence) |
-| [Windows Error Reporting Service Elevation of Privilege Vulnerability](windows_error_reporting_service_elevation_of_privilege_vulnerability) | [Process Injection](/tags/#process-injection) | [Defense Evasion](/tags/#defense-evasion) |
 | [Windows File Extension and Association Abuse](windows_file_extension_and_association_abuse) | [Change Default File Association](/tags/#change-default-file-association) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Windows Log Manipulation](windows_log_manipulation) | [Indicator Removal](/tags/#indicator-removal), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [Defense Evasion](/tags/#defense-evasion) |
 | [Windows Persistence Techniques](windows_persistence_techniques) | [Services Registry Permissions Weakness](/tags/#services-registry-permissions-weakness) | [Persistence](/tags/#persistence) |

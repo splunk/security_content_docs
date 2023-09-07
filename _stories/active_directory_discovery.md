@@ -8,7 +8,6 @@ tags:
   - Splunk Enterprise Security
   - Splunk Cloud
   - Endpoint
-  - Network_Traffic
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -18,7 +17,7 @@ tags:
 Monitor for activities and techniques associated with Discovery and Reconnaissance within with Active Directory environments.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
+- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
 - **Last Updated**: 2021-08-20
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 8460679c-2b21-463e-b381-b813417c32f2
@@ -114,7 +113,6 @@ Once an attacker obtains an initial foothold in an Active Directory environment,
 | [Windows PowerView AD Access Control List Enumeration](/endpoint/39405650-c364-4e1e-a740-32a63ef042a6/) | [Domain Accounts](/tags/#domain-accounts), [Permission Groups Discovery](/tags/#permission-groups-discovery) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Root Domain linked policies Discovery](/endpoint/80ffaede-1f12-49d5-a86e-b4b599b68b3c/) | [Domain Account](/tags/#domain-account), [Account Discovery](/tags/#account-discovery) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Service Create RemComSvc](/endpoint/0be4b5d6-c449-4084-b945-2392b519c33b/) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [Windows Suspect Process With Authentication Traffic](/endpoint/953322db-128a-4ce9-8e89-56e039e33d98/) | [Account Discovery](/tags/#account-discovery), [Domain Account](/tags/#domain-account), [User Execution](/tags/#user-execution), [Malicious File](/tags/#malicious-file) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Wmic Group Discovery](/endpoint/83317b08-155b-11ec-8e00-acde48001122/) | [Permission Groups Discovery](/tags/#permission-groups-discovery), [Local Groups](/tags/#local-groups) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference

@@ -44,7 +44,25 @@ stories:
 playbooks:
   - title: "Type"
     children:
-      - title: "Response"
-        url: /tags/#response/
-      - title: "Investigation"
-        url: /tags/#investigation/
+    {%- for playbook_type in playbook_types %}
+      - title: {{ playbook_type }}
+        url: /playbooks/{{ playbook_type | lower | replace(" ", "_") }}/
+    {%- endfor %}
+  - title: "Use Case"
+    children:
+    {%- for playbook_use_case in playbook_use_cases %}
+      - title: {{ playbook_use_case }}
+        url: /playbooks/{{ playbook_use_case | lower | replace(" ", "_") }}/
+    {%- endfor %}
+  - title: "D3fend Technique Category"
+    children:
+    {%- for playbook_category in playbook_categories %}
+      - title: {{ playbook_category }}
+        url: /playbooks/{{ playbook_category | lower | replace(" ", "_") }}/
+    {%- endfor %}
+  - title: "Soar App"
+    children:
+    {%- for playbook_app in playbook_apps %}
+      - title: {{ playbook_app }}
+        url: /playbooks/{{ playbook_app | lower | replace(" ", "_") }}/
+    {%- endfor %}

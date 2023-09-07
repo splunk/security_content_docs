@@ -20,6 +20,8 @@ Detects available indicators and routes them to indicator reputation analysis pl
 - **Last Updated**: 2023-01-11
 - **Author**: Kelby Shelton, Splunk
 - **ID**: fc0edc96-ff2b-48b0-9b4d-63da6783fd64
+- **Use-cases**:
+  - Enrichment
 
 #### Associated Detections
 
@@ -27,6 +29,12 @@ Detects available indicators and routes them to indicator reputation analysis pl
 #### How To Implement
 This playbook looks for artifacts and then dispatches the community Reputation playbooks. This playbook takes the output of those playbooks and nicely formats them into notes and tags indicators with their results.
 
+
+#### [D3FEND](https://d3fend.mitre.org/)
+
+| ID          | Technique   | Definition     | Category       |
+| ----------- | ----------- |--------------- |--------------- |
+| D3-IRA | [Identifier Reputation Analysis](https://d3fend.mitre.org/technique/d3f:IdentifierReputationAnalysis) | Analyzing the reputation of an identifier. | Identifier Analysis |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Identifier_Reputation_Analysis_Dispatch.json){: .btn .btn--info}
 

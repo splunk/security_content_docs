@@ -20,6 +20,7 @@ Moves the event status to open and then launches the Dynamic playbooks for Reput
 - **Last Updated**: 2023-03-06
 - **Author**: Kelby Shelton, Patrick Bareiss, Teoderick Contreras, Lou Stella Splunk
 - **ID**: fc0edc96-ff1b-65e0-9a4d-64da6783fd64
+- **Use-cases**:
 
 #### Associated Detections
 

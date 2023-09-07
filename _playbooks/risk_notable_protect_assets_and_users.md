@@ -20,6 +20,7 @@ This playbook attempts to find assets and users from the notable event and match
 - **Last Updated**: 2021-10-22
 - **Author**: Kelby Shelton, Splunk
 - **ID**: rn0edc96-ff2b-48b0-9f6f-93da3783fd63
+- **Use-cases**:
 
 #### Associated Detections
 

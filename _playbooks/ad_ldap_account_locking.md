@@ -17,10 +17,13 @@ Accepts user, to be disabled using Microsoft AD LDAP connector. This playbook pr
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [AD LDAP](https://splunkbase.splunk.com/apps/#/search/AD LDAP/product/soar)
+- **Apps**: [AD LDAP](https://splunkbase.splunk.com/apps?keyword=ad+ldap&filters=product%3Asoar)
 - **Last Updated**: 2023-05-08
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: e6f96caf-610c-4ced-aa2c-ba9b19b89e1f
+- **Use-cases**:
+  - Phishing
+  - Endpoint
 
 #### Associated Detections
 
@@ -28,6 +31,12 @@ Accepts user, to be disabled using Microsoft AD LDAP connector. This playbook pr
 #### How To Implement
 This input playbook requires the Microsoft AD LDAP connector to be configured. It is designed to work in conjunction with the Dynamic Attribute Lookup playbook or other playbooks in the same style.
 
+
+#### [D3FEND](https://d3fend.mitre.org/)
+
+| ID          | Technique   | Definition     | Category       |
+| ----------- | ----------- |--------------- |--------------- |
+| D3-AL | [Account Locking](https://d3fend.mitre.org/technique/d3f:AccountLocking) | The process of temporarily disabling user accounts on a system or domain. | Credential Eviction |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/AD_LDAP_Account_Locking.json){: .btn .btn--info}
 

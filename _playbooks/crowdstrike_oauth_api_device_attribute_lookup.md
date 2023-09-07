@@ -17,10 +17,13 @@ Accepts a user or device and looks up the most recent attributes and groups for 
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [CrowdStrike OAuth API](https://splunkbase.splunk.com/apps/#/search/CrowdStrike OAuth API/product/soar)
+- **Apps**: [CrowdStrike OAuth API](https://splunkbase.splunk.com/apps?keyword=crowdstrike+oauth+api&filters=product%3Asoar)
 - **Last Updated**: 2023-01-11
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: fc0eac01-af2b-4cb0-7b4d-63da67d3fe74
+- **Use-cases**:
+  - Enrichment
+  - Endpoint
 
 #### Associated Detections
 

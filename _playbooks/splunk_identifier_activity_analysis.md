@@ -17,10 +17,12 @@ Accepts a file_hash, domain, IP address, or URL, and asks Splunk for a list of d
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [Splunk](https://splunkbase.splunk.com/apps/#/search/Splunk/product/soar)
+- **Apps**: [Splunk](https://splunkbase.splunk.com/apps?keyword=splunk&filters=product%3Asoar)
 - **Last Updated**: 2023-03-31
 - **Author**: Lou Stella, Splunk
 - **ID**: 5299b9dc-e8c4-46ba-d942-92ace0ff816d
+- **Use-cases**:
+  - Enrichment
 
 #### Associated Detections
 
@@ -28,6 +30,12 @@ Accepts a file_hash, domain, IP address, or URL, and asks Splunk for a list of d
 #### How To Implement
 This input playbook requires the Splunk connector to be configured. It is designed to work in conjunction with the Dynamic Identifier Activity Analysis playbook or other playbooks in the same style.
 
+
+#### [D3FEND](https://d3fend.mitre.org/)
+
+| ID          | Technique   | Definition     | Category       |
+| ----------- | ----------- |--------------- |--------------- |
+| D3-IAA | [Identifier Activity Analysis](https://d3fend.mitre.org/technique/d3f:IdentifierActivityAnalysis) | Taking known malicious identifiers and determining if they are present in a system. | Identifier Analysis |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Splunk_Identifier_Activity_Analysis.json){: .btn .btn--info}
 

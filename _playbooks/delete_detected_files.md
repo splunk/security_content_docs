@@ -17,10 +17,11 @@ This playbook acts upon events where a file has been determined to be malicious 
 
 - **Type**: Response
 - **Product**: Splunk SOAR
-- **Apps**: [Windows Remote Management](https://splunkbase.splunk.com/apps/#/search/Windows Remote Management/product/soar)
+- **Apps**: [Windows Remote Management](https://splunkbase.splunk.com/apps?keyword=windows+remote+management&filters=product%3Asoar)
 - **Last Updated**: 2021-03-29
 - **Author**: Philip Royer, Splunk
 - **ID**: fc0edc96-ff2b-48b0-9a6f-63da6783fd63
+- **Use-cases**:
 
 #### Associated Detections
 
@@ -415,22 +416,7 @@ This playbook acts upon events where a file has been determined to be malicious 
 
 
 
-
-
-
-
 * [Executable File Written in Administrative SMB Share](/endpoint/f63c34fe-a435-11eb-935a-acde48001122/)
-
-
-
-
-
-
-
-
-
-
-
 
 
 

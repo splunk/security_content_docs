@@ -1,0 +1,15 @@
+---
+title: {{ category }}
+layout: tag
+author_profile: false
+classes: wide
+permalink: /playbooks/{{ category | lower | replace(' ', '_') }}/
+sidebar:
+  nav: "playbooks"
+---
+
+| Name    | SOAR App   | D3FEND      | Use Case    |
+| --------| ---------- | ----------- | ----------- |
+{%- for playbook in playbooks %}
+| [{{ playbook.name }}](/playbooks/{{ playbook.name|lower|replace(' ', '_') }}/)| {% if playbook.app_list -%}{% for app in playbook.app_list -%}[{{ app }}](https://splunkbase.splunk.com/apps?keyword={{ app | lower | replace(" ","+") }}&filters=product%3Asoar){% if not loop.last %}, {% endif %}{%- endfor -%}{% endif -%} | {% if playbook.tags.technique -%}[{{ playbook.tags.technique }}](https://d3fend.mitre.org/technique/d3f:{{ playbook.tags.technique | replace(" ", "") }}){% endif -%} | {% if playbook.tags.use_cases -%}{% for use_case in playbook.tags.use_cases -%}[{{ use_case }}](/playbooks/{{ use_case|lower|replace(' ', '_') }}){% if not loop.last %}, {% endif %}{%- endfor -%}{% endif -%} |
+{%- endfor %}

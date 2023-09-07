@@ -21,10 +21,11 @@ The hunting Playbook queries a number of internal security technologies in order
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [Splunk](https://splunkbase.splunk.com/apps/#/search/Splunk/product/soar), [Reversing Labs](https://splunkbase.splunk.com/apps/#/search/Reversing Labs/product/soar), [Carbon Black Response](https://splunkbase.splunk.com/apps/#/search/Carbon Black Response/product/soar), [Threat Grid](https://splunkbase.splunk.com/apps/#/search/Threat Grid/product/soar), [Falcon Host API](https://splunkbase.splunk.com/apps/#/search/Falcon Host API/product/soar)
+- **Apps**: [Splunk](https://splunkbase.splunk.com/apps?keyword=splunk&filters=product%3Asoar), [Reversing Labs](https://splunkbase.splunk.com/apps?keyword=reversing+labs&filters=product%3Asoar), [Carbon Black Response](https://splunkbase.splunk.com/apps?keyword=carbon+black+response&filters=product%3Asoar), [Threat Grid](https://splunkbase.splunk.com/apps?keyword=threat+grid&filters=product%3Asoar), [Falcon Host API](https://splunkbase.splunk.com/apps?keyword=falcon+host+api&filters=product%3Asoar)
 - **Last Updated**: 2021-01-21
 - **Author**: Philip Royer, Splunk
 - **ID**: fb3edc76-ff2b-48b0-5f6f-63da6351ad63
+- **Use-cases**:
 
 #### Associated Detections
 

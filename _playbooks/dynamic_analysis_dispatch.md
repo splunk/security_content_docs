@@ -6,10 +6,6 @@ toc_label: ""
 tags:
   - Investigation
   - Splunk SOAR
-  - CrowdStrike OAuth API
-  - urlscan.io
-  - VirusTotal_v3
-  - SAA
 ---
 
 [Try in Splunk SOAR](https://www.splunk.com/en_us/software/splunk-security-orchestration-and-automation.html){: .btn .btn--success}
@@ -20,7 +16,7 @@ Automatically dispatches input playbooks with the &#39;sandbox&#39; tag. This wi
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [CrowdStrike OAuth API](https://splunkbase.splunk.com/apps/#/search/CrowdStrike OAuth API/product/soar), [urlscan.io](https://splunkbase.splunk.com/apps/#/search/urlscan.io/product/soar), [VirusTotal_v3](https://splunkbase.splunk.com/apps/#/search/VirusTotal_v3/product/soar), [SAA](https://splunkbase.splunk.com/apps/#/search/SAA/product/soar)
+- **Apps**: 
 - **Last Updated**: 2023-03-30
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: a15da934-1f59-4672-b98c-ec1bbfd80885

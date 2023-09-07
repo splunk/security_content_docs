@@ -6,7 +6,6 @@ toc_label: ""
 tags:
   - Investigation
   - Splunk SOAR
-  - None
 ---
 
 [Try in Splunk SOAR](https://www.splunk.com/en_us/software/splunk-security-orchestration-and-automation.html){: .btn .btn--success}
@@ -17,7 +16,7 @@ This playbook finds related events based on key fields in a risk notable and all
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [None](https://splunkbase.splunk.com/apps/#/search/None/product/soar)
+- **Apps**: 
 - **Last Updated**: 2021-10-22
 - **Author**: Kelby Shelton, Splunk
 - **ID**: rn0edc96-ff2b-48b0-9f6f-53da3783fd63
@@ -26,7 +25,7 @@ This playbook finds related events based on key fields in a risk notable and all
 
 
 #### How To Implement
-Combining the list_merge utility within the playbook with the find_related_containers utility allows for fine-tuning of related event criteria. For example, the default filtering criteria uses description, risk_object, and threat_object as the important fields and requires at least three matches before an event is considered related. There are several options to customize the associated criteria, including adding more fields in list_merge, reducing or increasing the minimum match count, or utilizing the wildcard feature of find_related_containers.
+For detailed implementation see https://docs.splunk.com/Documentation/ESSOC/latest/user/Useplaybookpack
 
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_merge_events.json){: .btn .btn--info}

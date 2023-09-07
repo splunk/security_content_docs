@@ -6,7 +6,7 @@ toc_label: ""
 tags:
   - Investigation
   - Splunk SOAR
-  - Splunk
+  - ServiceNow
 ---
 
 [Try in Splunk SOAR](https://www.splunk.com/en_us/software/splunk-security-orchestration-and-automation.html){: .btn .btn--success}
@@ -17,7 +17,7 @@ Accepts a user or device and identifies if related tickets exists in a timeframe
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [Splunk](https://splunkbase.splunk.com/apps/#/search/Splunk/product/soar)
+- **Apps**: [ServiceNow](https://splunkbase.splunk.com/apps/#/search/ServiceNow/product/soar)
 - **Last Updated**: 2023-02-28
 - **Author**: Patrick Bareiss, Splunk
 - **ID**: fc0edc96-ff2b-48b0-9b4d-63da61bafe74

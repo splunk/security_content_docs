@@ -25,7 +25,7 @@ This playbook checks for the presence of the Risk Response workbook and updates 
 
 
 #### How To Implement
-tbd
+For detailed implementation see https://docs.splunk.com/Documentation/ESSOC/latest/user/Useplaybookpack
 
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_mitigate.json){: .btn .btn--info}

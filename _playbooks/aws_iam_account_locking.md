@@ -6,7 +6,7 @@ toc_label: ""
 tags:
   - Investigation
   - Splunk SOAR
-  - AWS IAM API
+  - AWS IAM
 ---
 
 [Try in Splunk SOAR](https://www.splunk.com/en_us/software/splunk-security-orchestration-and-automation.html){: .btn .btn--success}
@@ -17,7 +17,7 @@ Accepts user name that needs to be disabled in AWS IAM Active Directory. Disabli
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [AWS IAM API](https://splunkbase.splunk.com/apps/#/search/AWS IAM API/product/soar)
+- **Apps**: [AWS IAM](https://splunkbase.splunk.com/apps/#/search/AWS IAM/product/soar)
 - **Last Updated**: 2023-05-08
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: f15e4ab7-b057-4225-86ae-c36ab78b50f2

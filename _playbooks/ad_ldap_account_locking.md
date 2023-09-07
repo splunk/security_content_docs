@@ -6,7 +6,7 @@ toc_label: ""
 tags:
   - Investigation
   - Splunk SOAR
-  - AD LDAP API
+  - AD LDAP
 ---
 
 [Try in Splunk SOAR](https://www.splunk.com/en_us/software/splunk-security-orchestration-and-automation.html){: .btn .btn--success}
@@ -17,7 +17,7 @@ Accepts user, to be disabled using Microsoft AD LDAP connector. This playbook pr
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
-- **Apps**: [AD LDAP API](https://splunkbase.splunk.com/apps/#/search/AD LDAP API/product/soar)
+- **Apps**: [AD LDAP](https://splunkbase.splunk.com/apps/#/search/AD LDAP/product/soar)
 - **Last Updated**: 2023-05-08
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: e6f96caf-610c-4ced-aa2c-ba9b19b89e1f

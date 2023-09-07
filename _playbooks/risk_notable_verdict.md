@@ -6,7 +6,6 @@ toc_label: ""
 tags:
   - Response
   - Splunk SOAR
-  - None
 ---
 
 [Try in Splunk SOAR](https://www.splunk.com/en_us/software/splunk-security-orchestration-and-automation.html){: .btn .btn--success}
@@ -17,7 +16,7 @@ This playbook locates available playbooks with the response tag and presents the
 
 - **Type**: Response
 - **Product**: Splunk SOAR
-- **Apps**: [None](https://splunkbase.splunk.com/apps/#/search/None/product/soar)
+- **Apps**: 
 - **Last Updated**: 2021-10-22
 - **Author**: Kelby Shelton, Splunk
 - **ID**: rn0edc96-ff2b-48b0-9f6f-33da3783fd63
@@ -26,7 +25,7 @@ This playbook locates available playbooks with the response tag and presents the
 
 
 #### How To Implement
-tbd
+For detailed implementation see https://docs.splunk.com/Documentation/ESSOC/latest/user/Useplaybookpack
 
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/risk_notable_verdict.json){: .btn .btn--info}

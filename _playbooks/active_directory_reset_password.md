@@ -6,7 +6,7 @@ toc_label: ""
 tags:
   - Response
   - Splunk SOAR
-  - LDAP
+  - AD LDAP
 ---
 
 [Try in Splunk SOAR](https://www.splunk.com/en_us/software/splunk-security-orchestration-and-automation.html){: .btn .btn--success}
@@ -17,7 +17,7 @@ This playbook resets the password of a potentially compromised user account. Fir
 
 - **Type**: Response
 - **Product**: Splunk SOAR
-- **Apps**: [LDAP](https://splunkbase.splunk.com/apps/#/search/LDAP/product/soar)
+- **Apps**: [AD LDAP](https://splunkbase.splunk.com/apps/#/search/AD LDAP/product/soar)
 - **Last Updated**: 2020-12-08
 - **Author**: Philip Royer, Splunk
 - **ID**: fc0edc96-ff2b-48b0-9f6f-63da6783fd63

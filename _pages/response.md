@@ -10,8 +10,12 @@ sidebar:
 
 | Name    | SOAR App   | D3FEND      | Use Case    |
 | --------| ---------- | ----------- | ----------- |
+| [AD LDAP Account Unlocking](/playbooks/ad_ldap_account_unlocking/)| [AD LDAP](https://splunkbase.splunk.com/apps?keyword=ad+ldap&filters=product%3Asoar)| | |
 | [AWS Disable User Accounts](/playbooks/aws_disable_user_accounts/)| [AWS IAM](https://splunkbase.splunk.com/apps?keyword=aws+iam&filters=product%3Asoar)| | |
+| [AWS IAM Account Unlocking](/playbooks/aws_iam_account_unlocking/)| [AWS IAM](https://splunkbase.splunk.com/apps?keyword=aws+iam&filters=product%3Asoar)| | |
+| [Active Directory Enable Account Dispatch](/playbooks/active_directory_enable_account_dispatch/)| [microsoft_ad_ldap](https://splunkbase.splunk.com/apps?keyword=microsoft_ad_ldap&filters=product%3Asoar), [azure_ad_graph](https://splunkbase.splunk.com/apps?keyword=azure_ad_graph&filters=product%3Asoar), [aws_iam](https://splunkbase.splunk.com/apps?keyword=aws_iam&filters=product%3Asoar)| | |
 | [Active Directory Reset password](/playbooks/active_directory_reset_password/)| [AD LDAP](https://splunkbase.splunk.com/apps?keyword=ad+ldap&filters=product%3Asoar)| | |
+| [Azure AD Account Unlocking](/playbooks/azure_ad_account_unlocking/)| [Azure AD Graph](https://splunkbase.splunk.com/apps?keyword=azure+ad+graph&filters=product%3Asoar)| | |
 | [Block Indicators](/playbooks/block_indicators/)| [Palo Alto Networks Firewall](https://splunkbase.splunk.com/apps?keyword=palo+alto+networks+firewall&filters=product%3Asoar), [Carbon Black Response](https://splunkbase.splunk.com/apps?keyword=carbon+black+response&filters=product%3Asoar), [Cisco Umbrella](https://splunkbase.splunk.com/apps?keyword=cisco+umbrella&filters=product%3Asoar)| | |
 | [Cisco Umbrella DNS Denylisting](/playbooks/cisco_umbrella_dns_denylisting/)| [Cisco Umbrella](https://splunkbase.splunk.com/apps?keyword=cisco+umbrella&filters=product%3Asoar)| [DNS Denylisting](https://d3fend.mitre.org/technique/d3f:DNSDenylisting)| [Phishing](/playbooks/phishing), [Endpoint](/playbooks/endpoint)|
 | [Crowdstrike Malware Triage](/playbooks/crowdstrike_malware_triage/)| [CrowdStrike OAuth API](https://splunkbase.splunk.com/apps?keyword=crowdstrike+oauth+api&filters=product%3Asoar)| | |

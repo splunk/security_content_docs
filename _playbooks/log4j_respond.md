@@ -217,7 +217,29 @@ Published in response to CVE-2021-44228, this playbook is meant to be launched a
 
 
 
+
+
 * [Curl Download and Bash Execution](/endpoint/900bc324-59f3-11ec-9fb4-acde48001122/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3428,7 +3450,50 @@ Published in response to CVE-2021-44228, this playbook is meant to be launched a
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 * [Linux Java Spawning Shell](/endpoint/7b09db8a-5c20-11ec-9945-acde48001122/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7813,7 +7878,38 @@ Published in response to CVE-2021-44228, this playbook is meant to be launched a
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 * [Outbound Network Connection from Java Using Default Ports](/endpoint/d2c14d28-5c47-11ec-9892-acde48001122/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -10550,6 +10646,21 @@ Published in response to CVE-2021-44228, this playbook is meant to be launched a
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 * [Log4Shell JNDI Payload Injection with Outbound Connection](/web/69afee44-5c91-11ec-bf1f-497c9a704a72/)
 
 
@@ -11583,7 +11694,31 @@ Published in response to CVE-2021-44228, this playbook is meant to be launched a
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 * [Detect Outbound LDAP Traffic](/network/5e06e262-d7cd-4216-b2f8-27b437e18458/)
+
+
+
+
+
+
+
+
+
+
+
 
 
 

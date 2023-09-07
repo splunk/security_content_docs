@@ -202,5 +202,11 @@ playbooks:
         url: /playbooks/windows_remote_management/
       - title: Zscaler
         url: /playbooks/zscaler/
+      - title: aws_iam
+        url: /playbooks/aws_iam/
+      - title: azure_ad_graph
+        url: /playbooks/azure_ad_graph/
+      - title: microsoft_ad_ldap
+        url: /playbooks/microsoft_ad_ldap/
       - title: urlscan.io
         url: /playbooks/urlscan.io/

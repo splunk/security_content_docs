@@ -217,8 +217,6 @@ Published in response to CVE-2021-44228, this playbook and its sub-playbooks can
 
 
 
-
-
 * [Curl Download and Bash Execution](/endpoint/900bc324-59f3-11ec-9fb4-acde48001122/)
 
 

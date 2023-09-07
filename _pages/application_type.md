@@ -43,6 +43,7 @@ sidebar:
 | [Splunk Command and Scripting Interpreter Risky Commands](/application/1cf58ae1-9177-40b8-a26c-8966040f11ae/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Splunk_Audit](https://docs.splunk.com/Documentation/CIM/latest/User/SplunkAudit) |
 | [Splunk Command and Scripting Interpreter Risky SPL MLTK](/application/19d0146c-2eae-4e53-8d39-1198a78fa9ca/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Splunk_Audit](https://docs.splunk.com/Documentation/CIM/latest/User/SplunkAudit) |
 | [Splunk DOS Via Dump SPL Command](/application/fb0e6823-365f-48ed-b09e-272ac4c1dad6/) | [Application or System Exploitation](/tags/#application-or-system-exploitation) |  None |
+| [Splunk DOS via printf search function](/application/78b48d08-075c-4eac-bd07-e364c3780867/) | [Application or System Exploitation](/tags/#application-or-system-exploitation) |  None |
 | [Splunk Data exfiltration from Analytics Workspace using sid query](/application/b6d77c6c-f011-4b03-8650-8f10edb7c4a8/) | [Exfiltration Over Web Service](/tags/#exfiltration-over-web-service) |  None |
 | [Splunk Digital Certificates Infrastructure Version](/application/3c162281-7edb-4ebc-b9a4-5087aaf28fa7/) | [Digital Certificates](/tags/#digital-certificates) |  None |
 | [Splunk Digital Certificates Lack of Encryption](/application/386a7ebc-737b-48cf-9ca8-5405459ed508/) | [Digital Certificates](/tags/#digital-certificates) |  None |

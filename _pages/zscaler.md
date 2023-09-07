@@ -10,4 +10,4 @@ sidebar:
 
 | Name    | SOAR App   | D3FEND      | Use Case    |
 | --------| ---------- | ----------- | ----------- |
-| [ZScaler Outbound Traffic Filtering](/playbooks/zscaler_outbound_traffic_filtering/)| [Zscaler](https://splunkbase.splunk.com/apps?keyword=zscaler&filters=product%3Asoar)| | [Phishing](https://research.splunk.com/playbooks/phishing), [Endpoint](https://research.splunk.com/playbooks/endpoint)|
+| [ZScaler Outbound Traffic Filtering](/playbooks/zscaler_outbound_traffic_filtering/)| [Zscaler](https://splunkbase.splunk.com/apps?keyword=zscaler&filters=product%3Asoar)| | [Phishing](/playbooks/phishing), [Endpoint](/playbooks/endpoint)|

@@ -28,7 +28,7 @@ Accepts a user or device and identifies if related tickets exists in a timeframe
 
 
 #### How To Implement
-This input playbook requires the ServiceNow connector to be configured. It is designed to work in conjunction with the Dynamic Related Tickets Seach playbook or other playbooks in the same style.
+This input playbook requires the ServiceNow connector to be configured. It is designed to work in conjunction with the Dynamic Related Tickets Search playbook or other playbooks in the same style.
 
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/ServiceNow_Related_Tickets_Search.json){: .btn .btn--info}

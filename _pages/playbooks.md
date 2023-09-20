@@ -45,6 +45,7 @@ sidebar:
 | [Internal Host WinRM Investigate](/playbooks/internal_host_winrm_investigate/)| [Windows Remote Management](https://splunkbase.splunk.com/apps?keyword=windows+remote+management&filters=product%3Asoar)| | |
 | [Internal Host WinRM Log4j Investigate](/playbooks/internal_host_winrm_log4j_investigate/)| [Windows Remote Management](https://splunkbase.splunk.com/apps?keyword=windows+remote+management&filters=product%3Asoar)| | |
 | [Internal Host WinRM Response](/playbooks/internal_host_winrm_response/)| [Windows Remote Management](https://splunkbase.splunk.com/apps?keyword=windows+remote+management&filters=product%3Asoar)| | |
+| [Jira Related Tickets Search](/playbooks/jira_related_tickets_search/)| [Jira](https://splunkbase.splunk.com/apps?keyword=jira&filters=product%3Asoar)| | |
 | [Log4j Investigate](/playbooks/log4j_investigate/)| | | |
 | [Log4j Respond](/playbooks/log4j_respond/)| | | |
 | [Log4j Splunk Investigation](/playbooks/log4j_splunk_investigation/)| [Splunk](https://splunkbase.splunk.com/apps?keyword=splunk&filters=product%3Asoar)| | |

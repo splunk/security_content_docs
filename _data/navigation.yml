@@ -164,6 +164,8 @@ playbooks:
         url: /playbooks/falcon_host_api/
       - title: G Suite for GMail
         url: /playbooks/g_suite_for_gmail/
+      - title: Jira
+        url: /playbooks/jira/
       - title: LDAP
         url: /playbooks/ldap/
       - title: Palo Alto Networks Firewall

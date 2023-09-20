@@ -12,7 +12,7 @@ tags:
 
 #### Description
 
-Moves the event status to open and then launches the Dynamic playbooks for Reputation Analysis, Attribute Lookup, and Related Tickets.
+Moves the event status to open and then launches the Dispatch playbooks for Reputation Analysis, Attribute Lookup, and Related Tickets.
 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
@@ -26,7 +26,7 @@ Moves the event status to open and then launches the Dynamic playbooks for Reput
 
 
 #### How To Implement
-This playbook relies on local versions of the Dynamic Identifier Reputation Analysis, Dynamic Attributed Lookup, and Dynamic Related Tickets Search playbooks, as well as compatible input playbooks for those.
+1. Ensure you have a reputation analysis playbook (e.g. VirusTotal v3), an attribute lookup playbook (e.g. Azure AD), and a related ticket search playbook (e.g. ServiceNow).\n2. Download local versions of Identifier Reputation Analysis Dispatch, Attribute Lookup Dispatch, and Related Tickets Search Dispatch playbooks.
 
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Automated_Enrichment.json){: .btn .btn--info}
@@ -40,4 +40,4 @@ This playbook relies on local versions of the Dynamic Identifier Reputation Anal
 
 
 
-[*source*](https://github.com/splunk/security_content/tree/develop/playbooks/Automated_Enrichment.yml) \| *version*: **1**
+[*source*](https://github.com/splunk/security_content/tree/develop/playbooks/Automated_Enrichment.yml) \| *version*: **2**

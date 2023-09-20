@@ -31,6 +31,7 @@ sidebar:
 | [Internal Host SSH Log4j Investigate](/playbooks/internal_host_ssh_log4j_investigate/)| [SSH](https://splunkbase.splunk.com/apps?keyword=ssh&filters=product%3Asoar)| | |
 | [Internal Host WinRM Investigate](/playbooks/internal_host_winrm_investigate/)| [Windows Remote Management](https://splunkbase.splunk.com/apps?keyword=windows+remote+management&filters=product%3Asoar)| | |
 | [Internal Host WinRM Log4j Investigate](/playbooks/internal_host_winrm_log4j_investigate/)| [Windows Remote Management](https://splunkbase.splunk.com/apps?keyword=windows+remote+management&filters=product%3Asoar)| | |
+| [Jira Related Tickets Search](/playbooks/jira_related_tickets_search/)| [Jira](https://splunkbase.splunk.com/apps?keyword=jira&filters=product%3Asoar)| | |
 | [Log4j Investigate](/playbooks/log4j_investigate/)| | | |
 | [Log4j Splunk Investigation](/playbooks/log4j_splunk_investigation/)| [Splunk](https://splunkbase.splunk.com/apps?keyword=splunk&filters=product%3Asoar)| | |
 | [PhishTank URL Reputation Analysis](/playbooks/phishtank_url_reputation_analysis/)| [PhishTank](https://splunkbase.splunk.com/apps?keyword=phishtank&filters=product%3Asoar)| [Identifier Reputation Analysis](https://d3fend.mitre.org/technique/d3f:IdentifierReputationAnalysis)| [Enrichment](/playbooks/enrichment), [Phishing](/playbooks/phishing)|

@@ -9,19 +9,19 @@ header:
   actions:
     - label: "Download"
       url: "https://splunkbase.splunk.com/app/3449/"
-excerpt: "Get the latest **FREE** Enterprise Security Content Update (ESCU) App with **1435** analytics. 🚀 [See what is new](https://github.com/splunk/security_content/releases/latest)!"
+excerpt: "Get the latest **FREE** Enterprise Security Content Update (ESCU) App with **1449** analytics. 🚀 [See what is new](https://github.com/splunk/security_content/releases/latest)!"
 feature_row:
   - image_path: /static/feature_detection.png
     alt: "customizable"
     title: "Detections"
-    excerpt: "See all **1435** Splunk Analytics built to find evil 😈."
+    excerpt: "See all **1449** Splunk Analytics built to find evil 😈."
     url: "/detections"
     btn_class: "btn--primary"
     btn_label: "Explore"
   - image_path: /static/feature_stories.png
     alt: "fully responsive"
     title: "Analytic Stories"
-    excerpt: "See all **199** use cases, 📦 of detections built to address a threat."
+    excerpt: "See all **202** use cases, 📦 of detections built to address a threat."
     url: "/stories"
     btn_class: "btn--primary"
     btn_label: "Explore"
@@ -60,3 +60,4 @@ If you have questions or need support, you can:
 
 ## Contribute Content 🥰
 If you want to help the rest of the security community by sharing your own detections, see our [contributor guide](https://github.com/splunk/security_content/wiki/Contributing-to-the-Project) for more information on how to get involved!
+

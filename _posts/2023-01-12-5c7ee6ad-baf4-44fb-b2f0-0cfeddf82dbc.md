@@ -138,6 +138,7 @@ Administrators may allow creation of script or exe in this path.
 
 #### Associated Analytic Story
 * [Chaos Ransomware](/stories/chaos_ransomware)
+* [NjRAT](/stories/njrat)
 
 
 

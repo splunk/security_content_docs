@@ -60,4 +60,3 @@ If you have questions or need support, you can:
 
 ## Contribute Content 🥰
 If you want to help the rest of the security community by sharing your own detections, see our [contributor guide](https://github.com/splunk/security_content/wiki/Contributing-to-the-Project) for more information on how to get involved!
-

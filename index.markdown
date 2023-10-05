@@ -9,19 +9,19 @@ header:
   actions:
     - label: "Download"
       url: "https://splunkbase.splunk.com/app/3449/"
-excerpt: "Get the latest **FREE** Enterprise Security Content Update (ESCU) App with **1449** analytics. 🚀 [See what is new](https://github.com/splunk/security_content/releases/latest)!"
+excerpt: "Get the latest **FREE** Enterprise Security Content Update (ESCU) App with **1450** analytics. 🚀 [See what is new](https://github.com/splunk/security_content/releases/latest)!"
 feature_row:
   - image_path: /static/feature_detection.png
     alt: "customizable"
     title: "Detections"
-    excerpt: "See all **1449** Splunk Analytics built to find evil 😈."
+    excerpt: "See all **1450** Splunk Analytics built to find evil 😈."
     url: "/detections"
     btn_class: "btn--primary"
     btn_label: "Explore"
   - image_path: /static/feature_stories.png
     alt: "fully responsive"
     title: "Analytic Stories"
-    excerpt: "See all **202** use cases, 📦 of detections built to address a threat."
+    excerpt: "See all **203** use cases, 📦 of detections built to address a threat."
     url: "/stories"
     btn_class: "btn--primary"
     btn_label: "Explore"
@@ -56,6 +56,7 @@ If you have questions or need support, you can:
 * Join the [#security-research](https://splunk-usergroups.slack.com/archives/C1S5BEF38) room in the [Splunk Slack channel](http://splunk-usergroups.slack.com)
 * Post a question to [Splunk Answers](http://answers.splunk.com)
 * If you are a Splunk Enterprise customer with a valid support entitlement contract and have a Splunk-related question, you can also open a support case on the https://www.splunk.com/ support portal
+
 
 ## Contribute Content 🥰
 If you want to help the rest of the security community by sharing your own detections, see our [contributor guide](https://github.com/splunk/security_content/wiki/Contributing-to-the-Project) for more information on how to get involved!

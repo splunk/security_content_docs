@@ -1,5 +1,5 @@
 ---
-title: "Splunk_Attack_Analyzer_Dynamic_Analysis"
+title: "Splunk Attack Analyzer Dynamic Analysis"
 last_modified_at: 2023-03-24
 toc: true
 toc_label: ""

@@ -35,6 +35,8 @@ APT28, also known as Fancy Bear, blends stealth and expertise in its cyber opera
 | [CertUtil With Decode Argument](/endpoint/bfe94226-8c10-11eb-a4b3-acde48001122/) | [Deobfuscate/Decode Files or Information](/tags/#deobfuscate/decode-files-or-information) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Headless Browser Mockbin or Mocky Request](/endpoint/94fc85a1-e55b-4265-95e1-4b66730e05c0/) | [Hidden Window](/tags/#hidden-window) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Headless Browser Usage](/endpoint/869ba261-c272-47d7-affe-5c0aa85c93d6/) | [Hidden Window](/tags/#hidden-window) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows CertUtil Decode File](/endpoint/b06983f4-8f72-11ec-ab50-acde48001122/) | [Deobfuscate/Decode Files or Information](/tags/#deobfuscate/decode-files-or-information) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows CertUtil URLCache Download](/endpoint/8cb1ad38-8f6d-11ec-87a3-acde48001122/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Curl Download to Suspicious Path](/endpoint/c32f091e-30db-11ec-8738-acde48001122/) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference

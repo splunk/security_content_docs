@@ -19,7 +19,7 @@ This playbook handles locating indicators marked for blocking and determining if
 - **Apps**: 
 - **Last Updated**: 2021-10-22
 - **Author**: Kelby Shelton, Splunk
-- **ID**: rn0edc96-ff2b-48b0-9f6f-83da3783fd63
+- **ID**: 000edc96-ff2b-48b0-9f6f-83da3783fd63
 - **Use-cases**:
 
 #### Associated Detections

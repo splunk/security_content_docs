@@ -19,7 +19,7 @@ This playbook checks for the presence of the Risk Response workbook and updates 
 - **Apps**: 
 - **Last Updated**: 2021-10-22
 - **Author**: Kelby Shelton, Splunk
-- **ID**: rn0edc96-ff2b-48b0-9f6f-63da3783fd63
+- **ID**: 050edc96-ff2b-48b0-9f6f-63da3783fd63
 - **Use-cases**:
 
 #### Associated Detections

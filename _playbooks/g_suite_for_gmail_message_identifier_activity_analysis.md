@@ -20,7 +20,7 @@ Accepts an internet message id, and asks Gmail for a list of mailboxes to search
 - **Apps**: [G Suite for GMail](https://splunkbase.splunk.com/apps?keyword=g+suite+for+gmail&filters=product%3Asoar)
 - **Last Updated**: 2023-05-12
 - **Author**: Lou Stella, Splunk
-- **ID**: 5299d6dd-e9c4-4afa-b051-928ace0ff816d
+- **ID**: 5299d6dd-e9c4-4afa-b051-928ace0ff816
 - **Use-cases**:
   - Phishing
 

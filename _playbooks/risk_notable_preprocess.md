@@ -21,7 +21,7 @@ tags:
 - **Apps**: [Splunk](https://splunkbase.splunk.com/apps?keyword=splunk&filters=product%3Asoar)
 - **Last Updated**: 2021-10-22
 - **Author**: Kelby Shelton, Splunk
-- **ID**: rn0edc96-ff2b-48b0-9f6f-13da3783fd63
+- **ID**: 060edc96-ff2b-48b0-9f6f-13da3783fd63
 - **Use-cases**:
 
 #### Associated Detections

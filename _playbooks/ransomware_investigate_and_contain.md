@@ -212,7 +212,16 @@ This playbook investigates and contains ransomware detected on endpoints.
 
 
 
+
+
 * [Conti Common Exec parameter](/endpoint/624919bc-c382-11eb-adcc-acde48001122/)
+
+
+
+
+
+
+
 
 
 

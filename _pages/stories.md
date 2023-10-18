@@ -55,6 +55,7 @@ sidebar:
 | [CVE-2023-36884 Office and Windows HTML RCE Vulnerability](cve-2023-36884_office_and_windows_html_rce_vulnerability) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
 | [Caddy Wiper](caddy_wiper) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [Chaos Ransomware](chaos_ransomware) | [Malicious File](/tags/#malicious-file), [User Execution](/tags/#user-execution) | [Execution](/tags/#execution) |
+| [Cisco IOS XE Software Web Management User Interface vulnerability](cisco_ios_xe_software_web_management_user_interface_vulnerability) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Citrix Netscaler ADC CVE-2023-3519](citrix_netscaler_adc_cve-2023-3519) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Citrix ShareFile RCE CVE-2023-24489](citrix_sharefile_rce_cve-2023-24489) | [Server Software Component](/tags/#server-software-component), [Web Shell](/tags/#web-shell) | [Persistence](/tags/#persistence) |
 | [Clop Ransomware](clop_ransomware) | [System Services](/tags/#system-services), [Service Execution](/tags/#service-execution) | [Execution](/tags/#execution) |
@@ -123,6 +124,7 @@ sidebar:
 | [MetaSploit](metasploit) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Execution](/tags/#execution) |
 | [Meterpreter](meterpreter) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Execution](/tags/#execution) |
 | [Microsoft MSHTML Remote Code Execution CVE-2021-40444](microsoft_mshtml_remote_code_execution_cve-2021-40444) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Rundll32](/tags/#rundll32) | [Defense Evasion](/tags/#defense-evasion) |
+| [Microsoft SharePoint Server Elevation of Privilege CVE-2023-29357](microsoft_sharepoint_server_elevation_of_privilege_cve-2023-29357) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Microsoft Support Diagnostic Tool Vulnerability CVE-2022-30190](microsoft_support_diagnostic_tool_vulnerability_cve-2022-30190) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
 | [Monitor for Updates]() | None | None |
 | [NOBELIUM Group](nobelium_group) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Mshta](/tags/#mshta) | [Defense Evasion](/tags/#defense-evasion) |
@@ -161,6 +163,7 @@ sidebar:
 | [Spearphishing Attachments](spearphishing_attachments) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
 | [Splunk Vulnerabilities](splunk_vulnerabilities) | [Drive-by Compromise](/tags/#drive-by-compromise) | [Initial Access](/tags/#initial-access) |
 | [Spring4Shell CVE-2022-22965](spring4shell_cve-2022-22965) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
+| [Subvert Trust Controls SIP and Trust Provider Hijacking](subvert_trust_controls_sip_and_trust_provider_hijacking) | [SIP and Trust Provider Hijacking](/tags/#sip-and-trust-provider-hijacking) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious AWS Login Activities](suspicious_aws_login_activities) | [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious AWS S3 Activities](suspicious_aws_s3_activities) | [Data from Cloud Storage](/tags/#data-from-cloud-storage) | [Collection](/tags/#collection) |
 | [Suspicious AWS Traffic]() | None | None |

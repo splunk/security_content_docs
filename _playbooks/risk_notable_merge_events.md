@@ -19,7 +19,7 @@ This playbook finds related events based on key fields in a risk notable and all
 - **Apps**: 
 - **Last Updated**: 2021-10-22
 - **Author**: Kelby Shelton, Splunk
-- **ID**: rn0edc96-ff2b-48b0-9f6f-53da3783fd63
+- **ID**: 040edc96-ff2b-48b0-9f6f-53da3783fd63
 - **Use-cases**:
 
 #### Associated Detections

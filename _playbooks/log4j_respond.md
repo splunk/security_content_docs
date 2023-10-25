@@ -222,7 +222,9 @@ Published in response to CVE-2021-44228, this playbook is meant to be launched a
 
 
 
+
 * [Curl Download and Bash Execution](/endpoint/900bc324-59f3-11ec-9fb4-acde48001122/)
+
 
 
 
@@ -3535,7 +3537,9 @@ Published in response to CVE-2021-44228, this playbook is meant to be launched a
 
 
 
+
 * [Linux Java Spawning Shell](/endpoint/7b09db8a-5c20-11ec-9945-acde48001122/)
+
 
 
 
@@ -6374,7 +6378,9 @@ Published in response to CVE-2021-44228, this playbook is meant to be launched a
 
 
 
+
 * [Java Class File download by Java User Agent](/endpoint/8281ce42-5c50-11ec-82d2-acde48001122/)
+
 
 
 
@@ -9431,6 +9437,7 @@ Published in response to CVE-2021-44228, this playbook is meant to be launched a
 
 
 
+
 * [Log4Shell JNDI Payload Injection Attempt](/web/c184f12e-5c90-11ec-bf1f-497c9a704a72/)
 
 
@@ -10893,7 +10900,9 @@ Published in response to CVE-2021-44228, this playbook is meant to be launched a
 
 
 
+
 * [Log4Shell JNDI Payload Injection with Outbound Connection](/web/69afee44-5c91-11ec-bf1f-497c9a704a72/)
+
 
 
 

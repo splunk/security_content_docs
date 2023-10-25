@@ -56,6 +56,7 @@ sidebar:
 | [Caddy Wiper](caddy_wiper) | [Disk Structure Wipe](/tags/#disk-structure-wipe), [Disk Wipe](/tags/#disk-wipe) | [Impact](/tags/#impact) |
 | [Chaos Ransomware](chaos_ransomware) | [Malicious File](/tags/#malicious-file), [User Execution](/tags/#user-execution) | [Execution](/tags/#execution) |
 | [Cisco IOS XE Software Web Management User Interface vulnerability](cisco_ios_xe_software_web_management_user_interface_vulnerability) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
+| [Citrix NetScaler ADC and NetScaler Gateway CVE-2023-4966](citrix_netscaler_adc_and_netscaler_gateway_cve-2023-4966) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Citrix Netscaler ADC CVE-2023-3519](citrix_netscaler_adc_cve-2023-3519) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Citrix ShareFile RCE CVE-2023-24489](citrix_sharefile_rce_cve-2023-24489) | [Server Software Component](/tags/#server-software-component), [Web Shell](/tags/#web-shell) | [Persistence](/tags/#persistence) |
 | [Clop Ransomware](clop_ransomware) | [System Services](/tags/#system-services), [Service Execution](/tags/#service-execution) | [Execution](/tags/#execution) |

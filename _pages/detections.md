@@ -11,7 +11,7 @@ sidebar:
 | Name    | Technique | Type       |
 | --------| --------- |------------|
 | [3CX Supply Chain Attack Network Indicators](/endpoint/791b727c-deec-4fbe-a732-756131b3c5a1/) | [Compromise Software Supply Chain](/tags/#compromise-software-supply-chain) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
-| [7zip CommandLine To SMB Share Path](/endpoint/01d29b48-ff6f-11eb-b81e-acde48001122/) | [Archive via Utility](/tags/#archive-via-utility), [Archive Collected Data](/tags/#archive-collected-data) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [7zip CommandLine To SMB Share Path](/endpoint/01d29b48-ff6f-11eb-b81e-acde48001123/) | [Archive via Utility](/tags/#archive-via-utility), [Archive Collected Data](/tags/#archive-collected-data) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [ASL AWS Concurrent Sessions From Different Ips](/cloud/b3424bbe-3204-4469-887b-ec144483a336/) | [Browser Session Hijacking](/tags/#browser-session-hijacking) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [ASL AWS CreateAccessKey](/cloud/ccb3e4af-23d6-407f-9842-a26212816c9e/) | [Valid Accounts](/tags/#valid-accounts) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [ASL AWS Defense Evasion Delete CloudWatch Log Group](/cloud/0f701b38-a0fb-43fd-a83d-d12265f71f33/) | [Impair Defenses](/tags/#impair-defenses), [Disable Cloud Logs](/tags/#disable-cloud-logs) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

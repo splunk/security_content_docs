@@ -32,7 +32,7 @@ Ransomware is an ever-present risk to the enterprise, wherein an infected host e
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [7zip CommandLine To SMB Share Path](/endpoint/01d29b48-ff6f-11eb-b81e-acde48001122/) | [Archive via Utility](/tags/#archive-via-utility), [Archive Collected Data](/tags/#archive-collected-data) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [7zip CommandLine To SMB Share Path](/endpoint/01d29b48-ff6f-11eb-b81e-acde48001123/) | [Archive via Utility](/tags/#archive-via-utility), [Archive Collected Data](/tags/#archive-collected-data) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Allow File And Printing Sharing In Firewall](/endpoint/ce27646e-d411-11eb-8a00-acde48001122/) | [Disable or Modify Cloud Firewall](/tags/#disable-or-modify-cloud-firewall), [Impair Defenses](/tags/#impair-defenses) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Allow Network Discovery In Firewall](/endpoint/ccd6a38c-d40b-11eb-85a5-acde48001122/) | [Disable or Modify Cloud Firewall](/tags/#disable-or-modify-cloud-firewall), [Impair Defenses](/tags/#impair-defenses) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Allow Operation with Consent Admin](/endpoint/7de17d7a-c9d8-11eb-a812-acde48001122/) | [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

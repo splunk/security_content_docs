@@ -15,7 +15,6 @@ tags:
 
 &#34;This playbook prepares a risk notable for investigation by performing the following tasks: 1. Ensures that a risk notable links back to the original notable event with a card pinned to the HUD. 2. Posts a link to this container in the comment field of Splunk ES. 3. Updates the container name, description, and severity to reflect the data in the notable artifact.&#34;
 
-
 - **Type**: Investigation
 - **Product**: Splunk SOAR
 - **Apps**: [Splunk](https://splunkbase.splunk.com/apps?keyword=splunk&filters=product%3Asoar)

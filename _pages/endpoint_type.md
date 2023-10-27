@@ -11,7 +11,7 @@ sidebar:
 | Name    | Technique | Datamodel |
 | --------| --------- |------------|
 | [3CX Supply Chain Attack Network Indicators](/endpoint/791b727c-deec-4fbe-a732-756131b3c5a1/) | [Compromise Software Supply Chain](/tags/#compromise-software-supply-chain) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution) |
-| [7zip CommandLine To SMB Share Path](/endpoint/01d29b48-ff6f-11eb-b81e-acde48001122/) | [Archive via Utility](/tags/#archive-via-utility), [Archive Collected Data](/tags/#archive-collected-data) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
+| [7zip CommandLine To SMB Share Path](/endpoint/01d29b48-ff6f-11eb-b81e-acde48001123/) | [Archive via Utility](/tags/#archive-via-utility), [Archive Collected Data](/tags/#archive-collected-data) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Access LSASS Memory for Dump Creation](/endpoint/fb4c31b0-13e8-4155-8aa5-24de4b8d6717/) | [LSASS Memory](/tags/#lsass-memory), [OS Credential Dumping](/tags/#os-credential-dumping) |  None |
 | [Account Discovery With Net App](/endpoint/339805ce-ac30-11eb-b87d-acde48001122/) | [Domain Account](/tags/#domain-account), [Account Discovery](/tags/#account-discovery) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Active Directory Lateral Movement Identified](/endpoint/6aa6f9dd-adfe-45a8-8f74-c4c7a0d7d037/) | [Exploitation of Remote Services](/tags/#exploitation-of-remote-services) | [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk) |

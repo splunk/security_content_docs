@@ -11,7 +11,7 @@ sidebar:
 | Name        | Technique   | Tactic       |
 | ----------- | ----------- |--------------|
 | [AWS Cross Account Activity](/stories/aws_cross_account_activity/) | [Use Alternate Authentication Material](/tags/#use-alternate-authentication-material) | [Defense Evasion](/tags/#defense-evasion) |
-| [AWS Defense Evasion](/stories/aws_defense_evasion/) | [Impair Defenses](/tags/#impair-defenses), [Disable Cloud Logs](/tags/#disable-cloud-logs) | [Defense Evasion](/tags/#defense-evasion) |
+| [AWS Defense Evasion](/stories/aws_defense_evasion/) | [Impair Defenses](/tags/#impair-defenses), [Disable or Modify Cloud Logs](/tags/#disable-or-modify-cloud-logs) | [Defense Evasion](/tags/#defense-evasion) |
 | [AWS IAM Privilege Escalation](/stories/aws_iam_privilege_escalation/) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) | [Persistence](/tags/#persistence) |
 | [AWS Identity and Access Management Account Takeover](/stories/aws_identity_and_access_management_account_takeover/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Resource Development](/tags/#resource-development) |
 | [AWS Network ACL Activity](/stories/aws_network_acl_activity/) | [Disable or Modify Cloud Firewall](/tags/#disable-or-modify-cloud-firewall) | [Defense Evasion](/tags/#defense-evasion) |

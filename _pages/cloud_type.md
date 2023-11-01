@@ -12,9 +12,9 @@ sidebar:
 | --------| --------- |------------|
 | [ASL AWS Concurrent Sessions From Different Ips](/cloud/b3424bbe-3204-4469-887b-ec144483a336/) | [Browser Session Hijacking](/tags/#browser-session-hijacking) |  None |
 | [ASL AWS CreateAccessKey](/cloud/ccb3e4af-23d6-407f-9842-a26212816c9e/) | [Valid Accounts](/tags/#valid-accounts) |  None |
-| [ASL AWS Defense Evasion Delete CloudWatch Log Group](/cloud/0f701b38-a0fb-43fd-a83d-d12265f71f33/) | [Impair Defenses](/tags/#impair-defenses), [Disable Cloud Logs](/tags/#disable-cloud-logs) |  None |
-| [ASL AWS Defense Evasion Delete Cloudtrail](/cloud/1f0b47e5-0134-43eb-851c-e3258638945e/) | [Disable Cloud Logs](/tags/#disable-cloud-logs), [Impair Defenses](/tags/#impair-defenses) |  None |
-| [ASL AWS Defense Evasion Impair Security Services](/cloud/5029b681-0462-47b7-82e7-f7e3d37f5a2d/) | [Disable Cloud Logs](/tags/#disable-cloud-logs), [Impair Defenses](/tags/#impair-defenses) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
+| [ASL AWS Defense Evasion Delete CloudWatch Log Group](/cloud/0f701b38-a0fb-43fd-a83d-d12265f71f33/) | [Impair Defenses](/tags/#impair-defenses), [Disable or Modify Cloud Logs](/tags/#disable-or-modify-cloud-logs) |  None |
+| [ASL AWS Defense Evasion Delete Cloudtrail](/cloud/1f0b47e5-0134-43eb-851c-e3258638945e/) | [Disable or Modify Cloud Logs](/tags/#disable-or-modify-cloud-logs), [Impair Defenses](/tags/#impair-defenses) |  None |
+| [ASL AWS Defense Evasion Impair Security Services](/cloud/5029b681-0462-47b7-82e7-f7e3d37f5a2d/) | [Disable or Modify Cloud Logs](/tags/#disable-or-modify-cloud-logs), [Impair Defenses](/tags/#impair-defenses) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
 | [ASL AWS Excessive Security Scanning](/cloud/ff2bfdbc-65b7-4434-8f08-d55761d1d446/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) |  None |
 | [ASL AWS IAM Delete Policy](/cloud/609ced68-d420-4ff7-8164-ae98b4b4018c/) | [Account Manipulation](/tags/#account-manipulation) |  None |
 | [ASL AWS Multi-Factor Authentication Disabled](/cloud/4d2df5e0-1092-4817-88a8-79c7fa054668/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation), [Modify Authentication Process](/tags/#modify-authentication-process), [Multi-Factor Authentication](/tags/#multi-factor-authentication) |  None |
@@ -30,12 +30,12 @@ sidebar:
 | [AWS Credential Access GetPasswordData](/cloud/4d347c4a-306e-41db-8d10-b46baf71b3e2/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Brute Force](/tags/#brute-force), [Password Guessing](/tags/#password-guessing) |  None |
 | [AWS Credential Access RDS Password reset](/cloud/6153c5ea-ed30-4878-81e6-21ecdb198189/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Brute Force](/tags/#brute-force) |  None |
 | [AWS Cross Account Activity From Previously Unseen Account](/cloud/21193641-cb96-4a2c-a707-d9b9a7f7792b/) |  None | [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication) |
-| [AWS Defense Evasion Delete CloudWatch Log Group](/cloud/d308b0f1-edb7-4a62-a614-af321160710f/) | [Impair Defenses](/tags/#impair-defenses), [Disable Cloud Logs](/tags/#disable-cloud-logs) |  None |
-| [AWS Defense Evasion Delete Cloudtrail](/cloud/82092925-9ca1-4e06-98b8-85a2d3889552/) | [Disable Cloud Logs](/tags/#disable-cloud-logs), [Impair Defenses](/tags/#impair-defenses) |  None |
-| [AWS Defense Evasion Impair Security Services](/cloud/b28c4957-96a6-47e0-a965-6c767aac1458/) | [Disable Cloud Logs](/tags/#disable-cloud-logs), [Impair Defenses](/tags/#impair-defenses) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
-| [AWS Defense Evasion PutBucketLifecycle](/cloud/ce1c0e2b-9303-4903-818b-0d9002fc6ea4/) | [Disable Cloud Logs](/tags/#disable-cloud-logs), [Impair Defenses](/tags/#impair-defenses) |  None |
-| [AWS Defense Evasion Stop Logging Cloudtrail](/cloud/8a2f3ca2-4eb5-4389-a549-14063882e537/) | [Disable Cloud Logs](/tags/#disable-cloud-logs), [Impair Defenses](/tags/#impair-defenses) |  None |
-| [AWS Defense Evasion Update Cloudtrail](/cloud/7c921d28-ef48-4f1b-85b3-0af8af7697db/) | [Impair Defenses](/tags/#impair-defenses), [Disable Cloud Logs](/tags/#disable-cloud-logs) |  None |
+| [AWS Defense Evasion Delete CloudWatch Log Group](/cloud/d308b0f1-edb7-4a62-a614-af321160710f/) | [Impair Defenses](/tags/#impair-defenses), [Disable or Modify Cloud Logs](/tags/#disable-or-modify-cloud-logs) |  None |
+| [AWS Defense Evasion Delete Cloudtrail](/cloud/82092925-9ca1-4e06-98b8-85a2d3889552/) | [Disable or Modify Cloud Logs](/tags/#disable-or-modify-cloud-logs), [Impair Defenses](/tags/#impair-defenses) |  None |
+| [AWS Defense Evasion Impair Security Services](/cloud/b28c4957-96a6-47e0-a965-6c767aac1458/) | [Disable or Modify Cloud Logs](/tags/#disable-or-modify-cloud-logs), [Impair Defenses](/tags/#impair-defenses) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
+| [AWS Defense Evasion PutBucketLifecycle](/cloud/ce1c0e2b-9303-4903-818b-0d9002fc6ea4/) | [Disable or Modify Cloud Logs](/tags/#disable-or-modify-cloud-logs), [Impair Defenses](/tags/#impair-defenses) |  None |
+| [AWS Defense Evasion Stop Logging Cloudtrail](/cloud/8a2f3ca2-4eb5-4389-a549-14063882e537/) | [Disable or Modify Cloud Logs](/tags/#disable-or-modify-cloud-logs), [Impair Defenses](/tags/#impair-defenses) |  None |
+| [AWS Defense Evasion Update Cloudtrail](/cloud/7c921d28-ef48-4f1b-85b3-0af8af7697db/) | [Impair Defenses](/tags/#impair-defenses), [Disable or Modify Cloud Logs](/tags/#disable-or-modify-cloud-logs) |  None |
 | [AWS Detect Users creating keys with encrypt policy without MFA](/cloud/c79c164f-4b21-4847-98f9-cf6a9f49179e/) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) |  None |
 | [AWS Detect Users with KMS keys performing encryption S3](/cloud/884a5f59-eec7-4f4a-948b-dbde18225fdc/) | [Data Encrypted for Impact](/tags/#data-encrypted-for-impact) |  None |
 | [AWS Disable Bucket Versioning](/cloud/657902a9-987d-4879-a1b2-e7a65512824b/) | [Inhibit System Recovery](/tags/#inhibit-system-recovery) |  None |

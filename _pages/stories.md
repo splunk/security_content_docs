@@ -139,6 +139,7 @@ sidebar:
 | [Orangeworm Attack Group](orangeworm_attack_group) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [Persistence](/tags/#persistence) |
 | [PaperCut MF NG Vulnerability](papercut_mf_ng_vulnerability) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Execution](/tags/#execution) |
 | [PetitPotam NTLM Relay on Active Directory Certificate Services](petitpotam_ntlm_relay_on_active_directory_certificate_services) | [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
+| [PlugX](plugx) | [Service Stop](/tags/#service-stop) | [Impact](/tags/#impact) |
 | [Possible Backdoor Activity Associated With MUDCARP Espionage Campaigns](possible_backdoor_activity_associated_with_mudcarp_espionage_campaigns) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Prestige Ransomware](prestige_ransomware) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [Execution](/tags/#execution) |
 | [PrintNightmare CVE-2021-34527](printnightmare_cve-2021-34527) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Rundll32](/tags/#rundll32) | [Defense Evasion](/tags/#defense-evasion) |

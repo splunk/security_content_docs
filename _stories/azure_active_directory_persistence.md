@@ -7,6 +7,7 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
+  - Authentication
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -16,7 +17,7 @@ tags:
 Monitor for activities and techniques associated with the execution of Persistence techniques against Azure Active Directory tenants.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+- **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication)
 - **Last Updated**: 2022-08-17
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: dca983db-6334-4a0d-be32-80611ca1396c
@@ -33,12 +34,14 @@ Azure Active Directory (Azure AD) is Microsofts enterprise cloud-based identity 
 | [Azure AD Global Administrator Role Assigned](/cloud/825fed20-309d-4fd1-8aaf-cd49c1bb093c/) | [Additional Cloud Roles](/tags/#additional-cloud-roles) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Azure AD New Custom Domain Added](/cloud/30c47f45-dd6a-4720-9963-0bca6c8686ef/) | [Domain Policy Modification](/tags/#domain-policy-modification), [Domain Trust Modification](/tags/#domain-trust-modification) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Azure AD New Federated Domain Added](/cloud/a87cd633-076d-4ab2-9047-977751a3c1a0/) | [Domain Policy Modification](/tags/#domain-policy-modification), [Domain Trust Modification](/tags/#domain-trust-modification) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Azure AD New MFA Method Registered](/cloud/0488e814-eb81-42c3-9f1f-b2244973e3a3/) | [Account Manipulation](/tags/#account-manipulation), [Device Registration](/tags/#device-registration) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Azure AD PIM Role Assigned](/cloud/fcd6dfeb-191c-46a0-a29c-c306382145ab/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Azure AD PIM Role Assignment Activated](/cloud/952e80d0-e343-439b-83f4-808c3e6fbf2e/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Azure AD Privileged Role Assigned](/cloud/a28f0bc3-3400-4a6e-a2da-89b9e95f0d2a/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Azure AD Service Principal Created](/cloud/f8ba49e7-ffd3-4b53-8f61-e73974583c5d/) | [Cloud Account](/tags/#cloud-account) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Azure AD Service Principal New Client Credentials](/cloud/e3adc0d3-9e4b-4b5d-b662-12cec1adff2a/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Credentials](/tags/#additional-cloud-credentials) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Azure AD Service Principal Owner Added](/cloud/7ddf2084-6cf3-4a44-be83-474f7b73c701/) | [Account Manipulation](/tags/#account-manipulation) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Azure AD Tenant Wide Admin Consent Granted](/cloud/dc02c0ee-6ac0-4c7f-87ba-8ce43a4e4418/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Azure AD User Enabled And Password Reset](/cloud/1347b9e8-2daa-4a6f-be73-b421d3d9e268/) | [Account Manipulation](/tags/#account-manipulation) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Azure AD User ImmutableId Attribute Updated](/cloud/0c0badad-4536-4a84-a561-5ff760f3c00e/) | [Account Manipulation](/tags/#account-manipulation) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Azure Automation Account Created](/cloud/860902fd-2e76-46b3-b050-ba548dab576c/) | [Create Account](/tags/#create-account), [Cloud Account](/tags/#cloud-account) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

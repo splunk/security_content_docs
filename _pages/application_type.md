@@ -39,6 +39,7 @@ sidebar:
 | [Persistent XSS in RapidDiag through User Interface Views](/application/ce6e1268-e01c-4df2-a617-0f034ed49a43/) | [Drive-by Compromise](/tags/#drive-by-compromise) |  None |
 | [Splunk Absolute Path Traversal Using runshellscript](/application/356bd3fe-f59b-4f64-baa1-51495411b7ad/) | [File and Directory Discovery](/tags/#file-and-directory-discovery) |  None |
 | [Splunk Account Discovery Drilldown Dashboard Disclosure](/application/f844c3f6-fd99-43a2-ba24-93e35fe84be6/) | [Account Discovery](/tags/#account-discovery) |  None |
+| [Splunk App for Lookup File Editing RCE via User XSLT](/application/a053e6a6-2146-483a-9798-2d43652f3299/) | [Exploitation of Remote Services](/tags/#exploitation-of-remote-services) |  None |
 | [Splunk Code Injection via custom dashboard leading to RCE](/application/b06b41d7-9570-4985-8137-0784f582a1b3/) | [Exploitation of Remote Services](/tags/#exploitation-of-remote-services) |  None |
 | [Splunk Command and Scripting Interpreter Delete Usage](/application/8d3d5d5e-ca43-42be-aa1f-bc64375f6b04/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Splunk_Audit](https://docs.splunk.com/Documentation/CIM/latest/User/SplunkAudit) |
 | [Splunk Command and Scripting Interpreter Risky Commands](/application/1cf58ae1-9177-40b8-a26c-8966040f11ae/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Splunk_Audit](https://docs.splunk.com/Documentation/CIM/latest/User/SplunkAudit) |
@@ -67,6 +68,7 @@ sidebar:
 | [Splunk Stored XSS via Data Model objectName field](/application/062bff76-5f9c-496e-a386-cb1adcf69871/) | [Drive-by Compromise](/tags/#drive-by-compromise) |  None |
 | [Splunk Unauthenticated Log Injection Web Service Log](/application/de3908dc-1298-446d-84b9-fa81d37e959b/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) |  None |
 | [Splunk User Enumeration Attempt](/application/25625cb4-1c4d-4463-b0f9-7cb462699cde/) | [Valid Accounts](/tags/#valid-accounts) |  None |
+| [Splunk XSS in Highlighted JSON Events](/application/1030bc63-0b37-4ac9-9ae0-9361c955a3cc/) | [Drive-by Compromise](/tags/#drive-by-compromise) |  None |
 | [Splunk XSS in Monitoring Console](/application/b11accac-6fa3-4103-8a1a-7210f1a67087/) | [Drive-by Compromise](/tags/#drive-by-compromise) |  None |
 | [Splunk XSS in Save table dialog header in search page](/application/a974d1ee-ddca-4837-b6ad-d55a8a239c20/) | [Drive-by Compromise](/tags/#drive-by-compromise) |  None |
 | [Splunk XSS via View](/application/9ac2bfea-a234-4a18-9d37-6d747e85c2e4/) | [Drive-by Compromise](/tags/#drive-by-compromise) |  None |

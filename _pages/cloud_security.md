@@ -22,7 +22,7 @@ sidebar:
 | [Azure Active Directory Privilege Escalation](/stories/azure_active_directory_privilege_escalation/) | [Account Manipulation](/tags/#account-manipulation) | [Persistence](/tags/#persistence) |
 | [Cloud Cryptomining](/stories/cloud_cryptomining/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |
 | [Cloud Federated Credential Abuse](/stories/cloud_federated_credential_abuse/) | [Image File Execution Options Injection](/tags/#image-file-execution-options-injection), [Event Triggered Execution](/tags/#event-triggered-execution) | [Privilege Escalation](/tags/#privilege-escalation) |
-| [Dev Sec Ops](/stories/dev_sec_ops/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Discovery](/tags/#discovery) |
+| [Dev Sec Ops](/stories/dev_sec_ops/) | [Malicious Image](/tags/#malicious-image), [User Execution](/tags/#user-execution) | [Execution](/tags/#execution) |
 | [GCP Cross Account Activity](/stories/gcp_cross_account_activity/) | [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Kubernetes Scanning Activity](/stories/kubernetes_scanning_activity/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Discovery](/tags/#discovery) |
 | [Kubernetes Sensitive Object Access Activity]() | None | None |

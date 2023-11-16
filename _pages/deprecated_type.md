@@ -21,6 +21,8 @@ sidebar:
 | [Abnormally High AWS Instances Terminated by User - MLTK](/deprecated/1c02b86a-cd85-473e-a50b-014a9ac8fe3e/) | [Cloud Accounts](/tags/#cloud-accounts) |  None |
 | [Clients Connecting to Multiple DNS Servers](/deprecated/74ec6f18-604b-4202-a567-86b2066be3ce/) | [Exfiltration Over Unencrypted Non-C2 Protocol](/tags/#exfiltration-over-unencrypted-non-c2-protocol) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution) |
 | [Cloud Network Access Control List Deleted](/deprecated/021abc51-1862-41dd-ad43-43c739c0a983/) |  None |  None |
+| [Correlation by Repository and Risk](/deprecated/8da9fdd9-6a1b-4ae0-8a34-8c25e6be9687/) | [Malicious Image](/tags/#malicious-image), [User Execution](/tags/#user-execution) |  None |
+| [Correlation by User and Risk](/deprecated/610e12dc-b6fa-4541-825e-4a0b3b6f6773/) | [Malicious Image](/tags/#malicious-image), [User Execution](/tags/#user-execution) |  None |
 | [DNS Query Requests Resolved by Unauthorized DNS Servers](/deprecated/1a67f15a-f4ff-4170-84e9-08cf6f75d6f6/) | [DNS](/tags/#dns) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution) |
 | [DNS record changed](/deprecated/44d3a43e-dcd5-49f7-8356-5209bb369065/) | [DNS](/tags/#dns) | [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution) |
 | [Detect API activity from users without MFA](/deprecated/4d46e8bd-4072-48e4-92db-0325889ef894/) |  None |  None |

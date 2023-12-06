@@ -26,7 +26,8 @@ sidebar:
 | [GCP Cross Account Activity](/stories/gcp_cross_account_activity/) | [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Kubernetes Scanning Activity](/stories/kubernetes_scanning_activity/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Discovery](/tags/#discovery) |
 | [Kubernetes Sensitive Object Access Activity]() | None | None |
-| [Office 365 Detections](/stories/office_365_detections/) | [Email Forwarding Rule](/tags/#email-forwarding-rule), [Email Collection](/tags/#email-collection) | [Collection](/tags/#collection) |
+| [Office 365 Account Takeover](/stories/office_365_account_takeover/) | [Steal Application Access Token](/tags/#steal-application-access-token) | [Credential Access](/tags/#credential-access) |
+| [Office 365 Persistence Mechanisms](/stories/office_365_persistence_mechanisms/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) | [Persistence](/tags/#persistence) |
 | [Suspicious AWS Login Activities](/stories/suspicious_aws_login_activities/) | [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious AWS S3 Activities](/stories/suspicious_aws_s3_activities/) | [Data from Cloud Storage](/tags/#data-from-cloud-storage) | [Collection](/tags/#collection) |
 | [Suspicious AWS Traffic]() | None | None |

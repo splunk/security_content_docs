@@ -16,3 +16,4 @@ sidebar:
 | [Router and Infrastructure Security](/stories/router_and_infrastructure_security/) | [Hardware Additions](/tags/#hardware-additions), [Automated Exfiltration](/tags/#automated-exfiltration), [Network Denial of Service](/tags/#network-denial-of-service), [Traffic Duplication](/tags/#traffic-duplication) | [Initial Access](/tags/#initial-access) |
 | [Splunk Vulnerabilities](/stories/splunk_vulnerabilities/) | [Drive-by Compromise](/tags/#drive-by-compromise) | [Initial Access](/tags/#initial-access) |
 | [Use of Cleartext Protocols]() | None | None |
+| [Windows Attack Surface Reduction](/stories/windows_attack_surface_reduction/) | [Spearphishing Attachment](/tags/#spearphishing-attachment), [Spearphishing Link](/tags/#spearphishing-link), [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Initial Access](/tags/#initial-access) |

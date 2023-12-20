@@ -66,7 +66,7 @@ sidebar:
 | [ColdRoot MacOS RAT]() | None | None |
 | [Collection and Staging](collection_and_staging) | [Masquerading](/tags/#masquerading) | [Defense Evasion](/tags/#defense-evasion) |
 | [Command And Control](command_and_control) | [Remote Access Software](/tags/#remote-access-software) | [Command And Control](/tags/#command-and-control) |
-| [Compromised User Account](compromised_user_account) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Resource Development](/tags/#resource-development) |
+| [Compromised User Account](compromised_user_account) | [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation), [Multi-Factor Authentication](/tags/#multi-factor-authentication), [Device Registration](/tags/#device-registration) | [Credential Access](/tags/#credential-access) |
 | [Credential Dumping](credential_dumping) | [NTDS](/tags/#ntds), [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [CyclopsBLink](cyclopsblink) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |
 | [DHS Report TA18-074A](dhs_report_ta18-074a) | [Modify Registry](/tags/#modify-registry) | [Defense Evasion](/tags/#defense-evasion) |
@@ -111,6 +111,7 @@ sidebar:
 | [JetBrains TeamCity Unauthenticated RCE](jetbrains_teamcity_unauthenticated_rce) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Juniper JunOS Remote Code Execution](juniper_junos_remote_code_execution) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [Ingress Tool Transfer](/tags/#ingress-tool-transfer), [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Initial Access](/tags/#initial-access) |
 | [Kubernetes Scanning Activity](kubernetes_scanning_activity) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Discovery](/tags/#discovery) |
+| [Kubernetes Security](kubernetes_security) | [User Execution](/tags/#user-execution) | [Execution](/tags/#execution) |
 | [Kubernetes Sensitive Object Access Activity]() | None | None |
 | [Linux Living Off The Land](linux_living_off_the_land) | [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [Command And Control](/tags/#command-and-control) |
 | [Linux Persistence Techniques](linux_persistence_techniques) | [Sudo and Sudo Caching](/tags/#sudo-and-sudo-caching), [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [Privilege Escalation](/tags/#privilege-escalation) |
@@ -155,6 +156,7 @@ sidebar:
 | [Remcos](remcos) | [Process Injection](/tags/#process-injection), [Create or Modify System Process](/tags/#create-or-modify-system-process), [Parent PID Spoofing](/tags/#parent-pid-spoofing), [Access Token Manipulation](/tags/#access-token-manipulation) | [Defense Evasion](/tags/#defense-evasion) |
 | [Reverse Network Proxy](reverse_network_proxy) | [Protocol Tunneling](/tags/#protocol-tunneling), [Proxy](/tags/#proxy), [Web Service](/tags/#web-service) | [Command And Control](/tags/#command-and-control) |
 | [Revil Ransomware](revil_ransomware) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [CMSTP](/tags/#cmstp) | [Defense Evasion](/tags/#defense-evasion) |
+| [Rhysida Ransomware](rhysida_ransomware) | [Remote System Discovery](/tags/#remote-system-discovery) | [Discovery](/tags/#discovery) |
 | [Router and Infrastructure Security](router_and_infrastructure_security) | [Hardware Additions](/tags/#hardware-additions), [Automated Exfiltration](/tags/#automated-exfiltration), [Network Denial of Service](/tags/#network-denial-of-service), [Traffic Duplication](/tags/#traffic-duplication) | [Initial Access](/tags/#initial-access) |
 | [Ryuk Ransomware](ryuk_ransomware) | [Windows Command Shell](/tags/#windows-command-shell) | [Execution](/tags/#execution) |
 | [SQL Injection](sql_injection) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |

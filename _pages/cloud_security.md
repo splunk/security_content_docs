@@ -25,6 +25,7 @@ sidebar:
 | [Dev Sec Ops](/stories/dev_sec_ops/) | [Malicious Image](/tags/#malicious-image), [User Execution](/tags/#user-execution) | [Execution](/tags/#execution) |
 | [GCP Cross Account Activity](/stories/gcp_cross_account_activity/) | [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Kubernetes Scanning Activity](/stories/kubernetes_scanning_activity/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Discovery](/tags/#discovery) |
+| [Kubernetes Security](/stories/kubernetes_security/) | [User Execution](/tags/#user-execution) | [Execution](/tags/#execution) |
 | [Kubernetes Sensitive Object Access Activity]() | None | None |
 | [Office 365 Account Takeover](/stories/office_365_account_takeover/) | [Steal Application Access Token](/tags/#steal-application-access-token) | [Credential Access](/tags/#credential-access) |
 | [Office 365 Persistence Mechanisms](/stories/office_365_persistence_mechanisms/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) | [Persistence](/tags/#persistence) |

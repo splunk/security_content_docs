@@ -42,7 +42,7 @@ sidebar:
 | [Cobalt Strike](/stories/cobalt_strike/) | [Masquerading](/tags/#masquerading), [Trusted Developer Utilities Proxy Execution](/tags/#trusted-developer-utilities-proxy-execution), [Rename System Utilities](/tags/#rename-system-utilities), [MSBuild](/tags/#msbuild) | [Defense Evasion](/tags/#defense-evasion) |
 | [Collection and Staging](/stories/collection_and_staging/) | [Masquerading](/tags/#masquerading) | [Defense Evasion](/tags/#defense-evasion) |
 | [Command And Control](/stories/command_and_control/) | [Remote Access Software](/tags/#remote-access-software) | [Command And Control](/tags/#command-and-control) |
-| [Compromised User Account](/stories/compromised_user_account/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Resource Development](/tags/#resource-development) |
+| [Compromised User Account](/stories/compromised_user_account/) | [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation), [Multi-Factor Authentication](/tags/#multi-factor-authentication), [Device Registration](/tags/#device-registration) | [Credential Access](/tags/#credential-access) |
 | [Credential Dumping](/stories/credential_dumping/) | [NTDS](/tags/#ntds), [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [DNS Hijacking](/stories/dns_hijacking/) | [Domain Generation Algorithms](/tags/#domain-generation-algorithms) | [Command And Control](/tags/#command-and-control) |
 | [DarkGate Malware](/stories/darkgate_malware/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Execution](/tags/#execution) |

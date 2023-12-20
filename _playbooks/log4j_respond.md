@@ -2616,7 +2616,44 @@ Published in response to CVE-2021-44228, this playbook is meant to be launched a
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 * [Wget Download and Bash Execution](/endpoint/35682718-5a85-11ec-b8f7-acde48001122/)
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5835,6 +5872,24 @@ Published in response to CVE-2021-44228, this playbook is meant to be launched a
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 * [Windows Java Spawning Shells](/endpoint/28c81306-5c47-11ec-bfea-acde48001122/)
 
 
@@ -6622,7 +6677,31 @@ Published in response to CVE-2021-44228, this playbook is meant to be launched a
 
 
 
+
+
+
 * [Java Class File download by Java User Agent](/endpoint/8281ce42-5c50-11ec-82d2-acde48001122/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -9797,7 +9876,35 @@ Published in response to CVE-2021-44228, this playbook is meant to be launched a
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 * [Log4Shell JNDI Payload Injection Attempt](/web/c184f12e-5c90-11ec-bf1f-497c9a704a72/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -12451,7 +12558,26 @@ Published in response to CVE-2021-44228, this playbook is meant to be launched a
 
 
 
+
+
+
+
+
 * [Detect Outbound LDAP Traffic](/network/5e06e262-d7cd-4216-b2f8-27b437e18458/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

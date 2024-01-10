@@ -18,6 +18,7 @@ sidebar:
 | [AWS Network ACL Activity](aws_network_acl_activity) | [Disable or Modify Cloud Firewall](/tags/#disable-or-modify-cloud-firewall) | [Defense Evasion](/tags/#defense-evasion) |
 | [AWS Security Hub Alerts]() | None | None |
 | [AWS User Monitoring](aws_user_monitoring) | [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
+| [Abnormal Kubernetes Behavior using Splunk Infrastructure Monitoring](abnormal_kubernetes_behavior_using_splunk_infrastructure_monitoring) | [User Execution](/tags/#user-execution) | [Execution](/tags/#execution) |
 | [AcidRain](acidrain) | [Data Destruction](/tags/#data-destruction), [File Deletion](/tags/#file-deletion), [Indicator Removal](/tags/#indicator-removal) | [Impact](/tags/#impact) |
 | [Active Directory Discovery](active_directory_discovery) | [Permission Groups Discovery](/tags/#permission-groups-discovery), [Local Groups](/tags/#local-groups) | [Discovery](/tags/#discovery) |
 | [Active Directory Kerberos Attacks](active_directory_kerberos_attacks) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
@@ -48,6 +49,7 @@ sidebar:
 | [CISA AA22-264A](cisa_aa22-264a) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [CISA AA22-277A](cisa_aa22-277a) | [System Network Configuration Discovery](/tags/#system-network-configuration-discovery), [Internet Connection Discovery](/tags/#internet-connection-discovery) | [Discovery](/tags/#discovery) |
 | [CISA AA22-320A](cisa_aa22-320a) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [Persistence](/tags/#persistence) |
+| [CISA AA23-347A](cisa_aa23-347a) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [Execution](/tags/#execution) |
 | [CVE-2022-40684 Fortinet Appliance Auth bypass](cve-2022-40684_fortinet_appliance_auth_bypass) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
 | [CVE-2023-21716 Word RTF Heap Corruption](cve-2023-21716_word_rtf_heap_corruption) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
 | [CVE-2023-22515 Privilege Escalation Vulnerability Confluence Data Center and Server](cve-2023-22515_privilege_escalation_vulnerability_confluence_data_center_and_server) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
@@ -156,7 +158,7 @@ sidebar:
 | [Remcos](remcos) | [Process Injection](/tags/#process-injection), [Create or Modify System Process](/tags/#create-or-modify-system-process), [Parent PID Spoofing](/tags/#parent-pid-spoofing), [Access Token Manipulation](/tags/#access-token-manipulation) | [Defense Evasion](/tags/#defense-evasion) |
 | [Reverse Network Proxy](reverse_network_proxy) | [Protocol Tunneling](/tags/#protocol-tunneling), [Proxy](/tags/#proxy), [Web Service](/tags/#web-service) | [Command And Control](/tags/#command-and-control) |
 | [Revil Ransomware](revil_ransomware) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [CMSTP](/tags/#cmstp) | [Defense Evasion](/tags/#defense-evasion) |
-| [Rhysida Ransomware](rhysida_ransomware) | [Remote System Discovery](/tags/#remote-system-discovery) | [Discovery](/tags/#discovery) |
+| [Rhysida Ransomware](rhysida_ransomware) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Rundll32](/tags/#rundll32) | [Defense Evasion](/tags/#defense-evasion) |
 | [Router and Infrastructure Security](router_and_infrastructure_security) | [Hardware Additions](/tags/#hardware-additions), [Automated Exfiltration](/tags/#automated-exfiltration), [Network Denial of Service](/tags/#network-denial-of-service), [Traffic Duplication](/tags/#traffic-duplication) | [Initial Access](/tags/#initial-access) |
 | [Ryuk Ransomware](ryuk_ransomware) | [Windows Command Shell](/tags/#windows-command-shell) | [Execution](/tags/#execution) |
 | [SQL Injection](sql_injection) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
@@ -210,7 +212,7 @@ sidebar:
 | [Windows BootKits](windows_bootkits) | [Pre-OS Boot](/tags/#pre-os-boot), [Registry Run Keys / Startup Folder](/tags/#registry-run-keys-/-startup-folder) | [Defense Evasion](/tags/#defense-evasion) |
 | [Windows Certificate Services](windows_certificate_services) | [Steal or Forge Authentication Certificates](/tags/#steal-or-forge-authentication-certificates) | [Credential Access](/tags/#credential-access) |
 | [Windows DNS SIGRed CVE-2020-1350](windows_dns_sigred_cve-2020-1350) | [Exploitation for Client Execution](/tags/#exploitation-for-client-execution) | [Execution](/tags/#execution) |
-| [Windows Defense Evasion Tactics](windows_defense_evasion_tactics) | [Dynamic-link Library Injection](/tags/#dynamic-link-library-injection), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Process Injection](/tags/#process-injection) | [Defense Evasion](/tags/#defense-evasion) |
+| [Windows Defense Evasion Tactics](windows_defense_evasion_tactics) | [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism), [Bypass User Account Control](/tags/#bypass-user-account-control) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Windows Discovery Techniques](windows_discovery_techniques) | [Permission Groups Discovery](/tags/#permission-groups-discovery), [Local Groups](/tags/#local-groups) | [Discovery](/tags/#discovery) |
 | [Windows Drivers](windows_drivers) | [Windows Service](/tags/#windows-service) | [Persistence](/tags/#persistence) |
 | [Windows Error Reporting Service Elevation of Privilege Vulnerability](windows_error_reporting_service_elevation_of_privilege_vulnerability) | [Process Injection](/tags/#process-injection) | [Defense Evasion](/tags/#defense-evasion) |

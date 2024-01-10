@@ -55,6 +55,8 @@ sidebar:
 | [Splunk Digital Certificates Lack of Encryption](/application/386a7ebc-737b-48cf-9ca8-5405459ed508/) | [Digital Certificates](/tags/#digital-certificates) |  None |
 | [Splunk DoS Using Malformed SAML Request](/application/8e8a86d5-f323-4567-95be-8e817e2baee6/) | [Network Denial of Service](/tags/#network-denial-of-service) |  None |
 | [Splunk DoS via Malformed S2S Request](/application/fc246e56-953b-40c1-8634-868f9e474cbd/) | [Network Denial of Service](/tags/#network-denial-of-service) |  None |
+| [Splunk ES DoS Investigations Manager via Investigation Creation](/application/7f6a07bd-82ef-46b8-8eba-802278abd00e/) | [Endpoint Denial of Service](/tags/#endpoint-denial-of-service) |  None |
+| [Splunk ES DoS Through Investigation Attachments](/application/bb85b25e-2d6b-4e39-bd27-50db42edcb8f/) | [Endpoint Denial of Service](/tags/#endpoint-denial-of-service) |  None |
 | [Splunk Edit User Privilege Escalation](/application/39e1c326-67d7-4c0d-8584-8056354f6593/) | [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) |  None |
 | [Splunk Endpoint Denial of Service DoS Zip Bomb](/application/b237d393-2f57-4531-aad7-ad3c17c8b041/) | [Endpoint Denial of Service](/tags/#endpoint-denial-of-service) |  None |
 | [Splunk HTTP Response Splitting Via Rest SPL Command](/application/e615a0e1-a1b2-4196-9865-8aa646e1708c/) | [HTML Smuggling](/tags/#html-smuggling) |  None |

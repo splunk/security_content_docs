@@ -17,6 +17,7 @@ sidebar:
 | [AWS Network ACL Activity](/stories/aws_network_acl_activity/) | [Disable or Modify Cloud Firewall](/tags/#disable-or-modify-cloud-firewall) | [Defense Evasion](/tags/#defense-evasion) |
 | [AWS Security Hub Alerts]() | None | None |
 | [AWS User Monitoring](/stories/aws_user_monitoring/) | [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
+| [Abnormal Kubernetes Behavior using Splunk Infrastructure Monitoring](/stories/abnormal_kubernetes_behavior_using_splunk_infrastructure_monitoring/) | [User Execution](/tags/#user-execution) | [Execution](/tags/#execution) |
 | [Azure Active Directory Account Takeover](/stories/azure_active_directory_account_takeover/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying) | [Resource Development](/tags/#resource-development) |
 | [Azure Active Directory Persistence](/stories/azure_active_directory_persistence/) | [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Azure Active Directory Privilege Escalation](/stories/azure_active_directory_privilege_escalation/) | [Account Manipulation](/tags/#account-manipulation) | [Persistence](/tags/#persistence) |

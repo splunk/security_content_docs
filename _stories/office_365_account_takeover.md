@@ -15,17 +15,17 @@ tags:
 
 #### Description
 
-Office 365 (O365) is Microsoft's cloud-based suite of productivity tools, encompassing email, collaboration platforms, and office applications, all integrated with Azure Active Directory for identity and access management. Given the centralized storage of sensitive organizational data within O365 and its widespread adoption, it has become a focal point for cybersecurity efforts. The platform's complexity, combined with its ubiquity, makes it both a valuable asset and a prime target for potential threats. As O365's importance grows, it increasingly becomes a target for attackers seeking to exploit organizational data and systems. The "Office 365 Account Takeover" analytic story focuses on the initial techniques attackers employ to breach or compromise these identities. Recognizing these early indicators is pivotal, forming the frontline of defense against unauthorized access and potential security incidents.
+Monitor for activities and anomalies indicative of initial access techniques within Office 365 environments.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication), [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk)
 - **Last Updated**: 2023-10-17
-- **Author**: Mauricio Velazco, Splunk
+- **Author**: Mauricio Velazco, Patrick Bareiss, Splunk
 - **ID**: 7dcea963-af44-4db7-a5b9-fd2b543d9bc9
 
 #### Narrative
 
-Monitor for activities and anomalies indicative of initial access techniques within Office 365 environments.
+Office 365 (O365) is Microsoft's cloud-based suite of productivity tools, encompassing email, collaboration platforms, and office applications, all integrated with Azure Active Directory for identity and access management. O365's centralized storage of sensitive data and widespread adoption make it a key asset, yet also a prime target for security threats. The "Office 365 Account Takeover" analytic story focuses on the initial techniques attackers employ to breach or compromise these identities. Initial access, in this context, consists of techniques that use various entry vectors to gain their initial foothold . Identifying these early indicators is crucial for establishing the first line of defense against unauthorized access and potential security incidents within O365 environments.
 
 #### Detections
 
@@ -33,6 +33,7 @@ Monitor for activities and anomalies indicative of initial access techniques wit
 | ----------- | ----------- |--------------|
 | [High Number of Login Failures from a single source](/cloud/7f398cfb-918d-41f4-8db8-2e2474e02222/) | [Password Guessing](/tags/#password-guessing), [Brute Force](/tags/#brute-force) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [O365 Block User Consent For Risky Apps Disabled](/cloud/12a23592-e3da-4344-8545-205d3290647c/) | [Impair Defenses](/tags/#impair-defenses) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [O365 Concurrent Sessions From Different Ips](/cloud/58e034de-1f87-4812-9dc3-a4f68c7db930/) | [Browser Session Hijacking](/tags/#browser-session-hijacking) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [O365 Excessive Authentication Failures Alert](/cloud/d441364c-349c-453b-b55f-12eccab67cf9/) | [Brute Force](/tags/#brute-force) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [O365 Excessive SSO logon errors](/cloud/8158ccc4-6038-11eb-ae93-0242ac130002/) | [Modify Authentication Process](/tags/#modify-authentication-process) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [O365 File Permissioned Application Consent Granted by User](/cloud/6c382336-22b8-4023-9b80-1689e799f21f/) | [Steal Application Access Token](/tags/#steal-application-access-token) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

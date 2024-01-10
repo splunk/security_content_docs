@@ -15,17 +15,17 @@ tags:
 
 #### Description
 
-Office 365 (O365) is Microsoft's cloud-based suite of productivity tools, encompassing email, collaboration platforms, and office applications, all integrated with Azure Active Directory for identity and access management. Given the centralized storage of sensitive organizational data within O365 and its widespread adoption, it has become a focal point for cybersecurity efforts. The platform's complexity, combined with its ubiquity, makes it both a valuable asset and a prime target for potential threats. The "Office 365 Persistence Mechanisms" analytic story delves into the tactics and techniques attackers employ to maintain prolonged unauthorized access within the O365 environment. Persistence in this context refers to methods used by adversaries to keep their foothold after an initial compromise. This can involve actions like modifying mailbox rules, establishing covert forwarding rules, manipulating application permissions. Recognizing these indicators is crucial, as persistent threats can lead to long-term data exfiltration, further system compromises, and a range of other malicious activities. Monitoring for signs of persistence ensures that organizations can detect and respond to these stealthy threats, safeguarding their O365 assets and data.
+Monitor for activities and anomalies indicative of potential persistence techniques within Office 365 environments.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication), [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change)
 - **Last Updated**: 2023-10-17
-- **Author**: Mauricio Velazco, Splunk
+- **Author**: Mauricio Velazco, Patrick Bareiss, Splunk
 - **ID**: d230a106-0475-4605-a8d8-abaf4c31ced7
 
 #### Narrative
 
-Monitor for activities and anomalies indicative of potential persistence techniques within Office 365 environments.
+Office 365 (O365) is Microsoft's cloud-based suite of productivity tools, encompassing email, collaboration platforms, and office applications, all integrated with Azure Active Directory for identity and access management. O365's centralized storage of sensitive data and widespread adoption make it a key asset, yet also a prime target for security threats. The "Office 365 Persistence Mechanisms" analytic story delves into the tactics and techniques attackers employ to maintain prolonged unauthorized access within the O365 environment. Persistence in this context refers to methods used by adversaries to keep their foothold after an initial compromise. This can involve actions like modifying mailbox rules, establishing covert forwarding rules, manipulating application permissions. By monitoring signs of persistence, organizations can effectively detect and respond to stealthy threats, thereby protecting their O365 assets and data.
 
 #### Detections
 

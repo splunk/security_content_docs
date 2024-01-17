@@ -10,6 +10,7 @@ sidebar:
 
 | Name    | Technique | Datamodel |
 | --------| --------- |------------|
+| [Access to Vulnerable Ivanti Connect Secure Bookmark Endpoint](/web/15838756-f425-43fa-9d88-a7f88063e81a/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
 | [Adobe ColdFusion Access Control Bypass](/web/d6821c0b-fcdc-4c95-a77f-e10752fae41a/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
 | [Adobe ColdFusion Unauthenticated Arbitrary File Read](/web/695aceae-21db-4e7f-93ac-a52e39d02b93/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
 | [Cisco IOS XE Implant Access](/web/07c36cda-6567-43c3-bc1a-89dff61e2cd9/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
@@ -27,6 +28,8 @@ sidebar:
 | [F5 TMUI Authentication Bypass](/web/88bf127c-613e-4579-99e4-c4d4b02f3840/) |  None | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
 | [Fortinet Appliance Auth bypass](/web/a83122f2-fa09-4868-a230-544dbc54bc1c/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
 | [Hunting for Log4Shell](/web/158b68fa-5d1a-11ec-aac8-acde48001122/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
+| [Ivanti Connect Secure Command Injection Attempts](/web/1f32a7e0-a060-4545-b7de-73fcf9ad536e/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
+| [Ivanti Connect Secure System Information Access via Auth Bypass](/web/d51c13dd-a232-4c83-a2bb-72ab36233c5d/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
 | [Ivanti EPMM Remote Unauthenticated API Access CVE-2023-35078](/web/66b9c9ba-7fb2-4e80-a3a2-496e5e078167/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
 | [Ivanti EPMM Remote Unauthenticated API Access CVE-2023-35082](/web/e03edeba-4942-470c-a664-27253f3ad351/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
 | [Ivanti Sentry Authentication Bypass](/web/b8e0d1cf-e6a8-4d46-a5ae-aebe18ead8f8/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |

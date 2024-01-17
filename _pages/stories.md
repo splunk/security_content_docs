@@ -107,6 +107,7 @@ sidebar:
 | [Information Sabotage](information_sabotage) | [Indicator Removal](/tags/#indicator-removal), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [Defense Evasion](/tags/#defense-evasion) |
 | [Ingress Tool Transfer](ingress_tool_transfer) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Insider Threat](insider_threat) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
+| [Ivanti Connect Secure VPN Vulnerabilities](ivanti_connect_secure_vpn_vulnerabilities) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Ivanti EPMM Remote Unauthenticated Access](ivanti_epmm_remote_unauthenticated_access) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
 | [Ivanti Sentry Authentication Bypass CVE-2023-38035](ivanti_sentry_authentication_bypass_cve-2023-38035) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [JBoss Vulnerability](jboss_vulnerability) | [System Information Discovery](/tags/#system-information-discovery), [External Remote Services](/tags/#external-remote-services) | [Discovery](/tags/#discovery) |

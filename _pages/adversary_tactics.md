@@ -65,6 +65,7 @@ sidebar:
 | [IIS Components](/stories/iis_components/) | [Server Software Component](/tags/#server-software-component), [IIS Components](/tags/#iis-components) | [Persistence](/tags/#persistence) |
 | [Ingress Tool Transfer](/stories/ingress_tool_transfer/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Insider Threat](/stories/insider_threat/) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
+| [Ivanti Connect Secure VPN Vulnerabilities](/stories/ivanti_connect_secure_vpn_vulnerabilities/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Ivanti EPMM Remote Unauthenticated Access](/stories/ivanti_epmm_remote_unauthenticated_access/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Initial Access](/tags/#initial-access) |
 | [Ivanti Sentry Authentication Bypass CVE-2023-38035](/stories/ivanti_sentry_authentication_bypass_cve-2023-38035/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [JetBrains TeamCity Unauthenticated RCE](/stories/jetbrains_teamcity_unauthenticated_rce/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |

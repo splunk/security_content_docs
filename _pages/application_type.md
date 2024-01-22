@@ -59,6 +59,8 @@ sidebar:
 | [Splunk ES DoS Through Investigation Attachments](/application/bb85b25e-2d6b-4e39-bd27-50db42edcb8f/) | [Endpoint Denial of Service](/tags/#endpoint-denial-of-service) |  None |
 | [Splunk Edit User Privilege Escalation](/application/39e1c326-67d7-4c0d-8584-8056354f6593/) | [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) |  None |
 | [Splunk Endpoint Denial of Service DoS Zip Bomb](/application/b237d393-2f57-4531-aad7-ad3c17c8b041/) | [Endpoint Denial of Service](/tags/#endpoint-denial-of-service) |  None |
+| [Splunk Enterprise KV Store Incorrect Authorization](/application/8f0e8380-a835-4f2b-b749-9ce119364df0/) | [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) |  None |
+| [Splunk Enterprise Windows Deserialization File Partition](/application/947d4d2e-1b64-41fc-b32a-736ddb88ce97/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) |  None |
 | [Splunk HTTP Response Splitting Via Rest SPL Command](/application/e615a0e1-a1b2-4196-9865-8aa646e1708c/) | [HTML Smuggling](/tags/#html-smuggling) |  None |
 | [Splunk Improperly Formatted Parameter Crashes splunkd](/application/08978eca-caff-44c1-84dc-53f17def4e14/) | [Endpoint Denial of Service](/tags/#endpoint-denial-of-service) | [Splunk_Audit](https://docs.splunk.com/Documentation/CIM/latest/User/SplunkAudit) |
 | [Splunk Low Privilege User Can View Hashed Splunk Password](/application/a1be424d-e59c-4583-b6f9-2dcc23be4875/) | [Exploitation for Credential Access](/tags/#exploitation-for-credential-access) |  None |

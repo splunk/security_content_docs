@@ -1,6 +1,6 @@
 ---
 title: "Splunk Vulnerabilities"
-last_modified_at: 2023-11-16
+last_modified_at: 2024-01-22
 toc: true
 toc_label: ""
 tags:
@@ -19,8 +19,8 @@ Keeping your Splunk Enterprise deployment up to date is critical and will help y
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Splunk_Audit](https://docs.splunk.com/Documentation/CIM/latest/User/SplunkAudit), [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web)
-- **Last Updated**: 2023-11-16
-- **Author**: Lou Stella, Splunk
+- **Last Updated**: 2024-01-22
+- **Author**: Lou Stella,Rod Soto, Eric McGinnis, Splunk
 - **ID**: 5354df00-dce2-48ac-9a64-8adb48006828
 
 #### Narrative
@@ -54,6 +54,8 @@ This analytic story includes detections that focus on attacker behavior targeted
 | [Splunk Edit User Privilege Escalation](/application/39e1c326-67d7-4c0d-8584-8056354f6593/) | [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Splunk Endpoint Denial of Service DoS Zip Bomb](/application/b237d393-2f57-4531-aad7-ad3c17c8b041/) | [Endpoint Denial of Service](/tags/#endpoint-denial-of-service) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Splunk Enterprise Information Disclosure](/deprecated/f6a26b7b-7e80-4963-a9a8-d836e7534ebd/) |  | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Splunk Enterprise KV Store Incorrect Authorization](/application/8f0e8380-a835-4f2b-b749-9ce119364df0/) | [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Splunk Enterprise Windows Deserialization File Partition](/application/947d4d2e-1b64-41fc-b32a-736ddb88ce97/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Splunk HTTP Response Splitting Via Rest SPL Command](/application/e615a0e1-a1b2-4196-9865-8aa646e1708c/) | [HTML Smuggling](/tags/#html-smuggling) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Splunk Identified SSL TLS Certificates](/network/620fbb89-86fd-4e2e-925f-738374277586/) | [Network Sniffing](/tags/#network-sniffing) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Splunk Improperly Formatted Parameter Crashes splunkd](/application/08978eca-caff-44c1-84dc-53f17def4e14/) | [Endpoint Denial of Service](/tags/#endpoint-denial-of-service) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

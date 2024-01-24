@@ -9,19 +9,19 @@ header:
   actions:
     - label: "Download"
       url: "https://splunkbase.splunk.com/app/3449/"
-excerpt: "Get the latest **FREE** Enterprise Security Content Update (ESCU) App with **1566** analytics. 🚀 [See what is new](https://github.com/splunk/security_content/releases/latest)!"
+excerpt: "Get the latest **FREE** Enterprise Security Content Update (ESCU) App with **1567** analytics. 🚀 [See what is new](https://github.com/splunk/security_content/releases/latest)!"
 feature_row:
   - image_path: /static/feature_detection.png
     alt: "customizable"
     title: "Detections"
-    excerpt: "See all **1566** Splunk Analytics built to find evil 😈."
+    excerpt: "See all **1567** Splunk Analytics built to find evil 😈."
     url: "/detections"
     btn_class: "btn--primary"
     btn_label: "Explore"
   - image_path: /static/feature_stories.png
     alt: "fully responsive"
     title: "Analytic Stories"
-    excerpt: "See all **218** use cases, 📦 of detections built to address a threat."
+    excerpt: "See all **219** use cases, 📦 of detections built to address a threat."
     url: "/stories"
     btn_class: "btn--primary"
     btn_label: "Explore"

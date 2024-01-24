@@ -44,6 +44,7 @@ sidebar:
 | [Collection and Staging](/stories/collection_and_staging/) | [Masquerading](/tags/#masquerading) | [Defense Evasion](/tags/#defense-evasion) |
 | [Command And Control](/stories/command_and_control/) | [Remote Access Software](/tags/#remote-access-software) | [Command And Control](/tags/#command-and-control) |
 | [Compromised User Account](/stories/compromised_user_account/) | [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation), [Multi-Factor Authentication](/tags/#multi-factor-authentication), [Device Registration](/tags/#device-registration) | [Credential Access](/tags/#credential-access) |
+| [Confluence Data Center and Confluence Server Vulnerabilities](/stories/confluence_data_center_and_confluence_server_vulnerabilities/) | [Server Software Component](/tags/#server-software-component), [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Persistence](/tags/#persistence) |
 | [Credential Dumping](/stories/credential_dumping/) | [NTDS](/tags/#ntds), [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [DNS Hijacking](/stories/dns_hijacking/) | [Domain Generation Algorithms](/tags/#domain-generation-algorithms) | [Command And Control](/tags/#command-and-control) |
 | [DarkGate Malware](/stories/darkgate_malware/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Execution](/tags/#execution) |

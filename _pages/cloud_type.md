@@ -173,21 +173,34 @@ sidebar:
 | [Kubernetes Abuse of Secret by Unusual User Agent](/cloud/096ab390-05ca-462c-884e-343acd5b9240/) | [Container API](/tags/#container-api) |  None |
 | [Kubernetes Abuse of Secret by Unusual User Group](/cloud/b6f45bbc-4ea9-4068-b3bc-0477f6997ae2/) | [Container API](/tags/#container-api) |  None |
 | [Kubernetes Abuse of Secret by Unusual User Name](/cloud/df6e9cae-5257-4a34-8f3a-df49fa0f5c46/) | [Container API](/tags/#container-api) |  None |
-| [Kubernetes Access Scanning](/cloud/f5edd22d-0f3b-4c70-bcfe-5bf41150f10c/) | [Network Service Discovery](/tags/#network-service-discovery) |  None |
+| [Kubernetes Access Scanning](/cloud/2f4abe6d-5991-464d-8216-f90f42999764/) | [Network Service Discovery](/tags/#network-service-discovery) |  None |
+| [Kubernetes Anomalous Inbound Network Activity from Process](/cloud/10442d8b-0701-4c25-911d-d67b906e713c/) | [User Execution](/tags/#user-execution) |  None |
 | [Kubernetes Anomalous Inbound Outbound Network IO](/cloud/4f3b0c97-657e-4547-a89a-9a50c656e3cd/) | [User Execution](/tags/#user-execution) |  None |
 | [Kubernetes Anomalous Inbound to Outbound Network IO Ratio](/cloud/9d8f6e3f-39df-46d8-a9d4-96173edc501f/) | [User Execution](/tags/#user-execution) |  None |
+| [Kubernetes Anomalous Outbound Network Activity from Process](/cloud/dd6afee6-e0a3-4028-a089-f47dd2842c22/) | [User Execution](/tags/#user-execution) |  None |
+| [Kubernetes Anomalous Traffic on Network Edge](/cloud/886c7e51-2ea1-425d-8705-faaca5a64cc6/) | [User Execution](/tags/#user-execution) |  None |
+| [Kubernetes Create or Update Privileged Pod](/cloud/9af5c1b9-8243-4225-ac29-b261e43f12bb/) | [User Execution](/tags/#user-execution) |  None |
+| [Kubernetes Cron Job Creation](/cloud/5984dbe8-572f-47d7-9251-3dff6c3f0c0d/) | [Container Orchestration Job](/tags/#container-orchestration-job) |  None |
+| [Kubernetes DaemonSet Deployed](/cloud/bf39c3a3-b191-4d42-8738-9d9797bd0c3a/) | [User Execution](/tags/#user-execution) |  None |
+| [Kubernetes Falco Shell Spawned](/cloud/d2feef92-d54a-4a19-8306-b47c6ceba5b2/) | [User Execution](/tags/#user-execution) |  None |
 | [Kubernetes Nginx Ingress LFI](/cloud/0f83244b-425b-4528-83db-7a88c5f66e48/) | [Exploitation for Credential Access](/tags/#exploitation-for-credential-access) |  None |
 | [Kubernetes Nginx Ingress RFI](/cloud/fc5531ae-62fd-4de6-9c36-b4afdae8ca95/) | [Exploitation for Credential Access](/tags/#exploitation-for-credential-access) |  None |
+| [Kubernetes Node Port Creation](/cloud/d7fc865e-b8a1-4029-a960-cf4403b821b6/) | [User Execution](/tags/#user-execution) |  None |
+| [Kubernetes Pod Created in Default Namespace](/cloud/3d6b1a81-367b-42d5-a925-6ef90b6b9f1e/) | [User Execution](/tags/#user-execution) |  None |
+| [Kubernetes Pod With Host Network Attachment](/cloud/cce357cf-43a4-494a-814b-67cea90fe990/) | [User Execution](/tags/#user-execution) |  None |
 | [Kubernetes Previously Unseen Container Image Name](/cloud/fea515a4-b1d8-4cd6-80d6-e0d71397b891/) | [User Execution](/tags/#user-execution) |  None |
 | [Kubernetes Previously Unseen Process](/cloud/c8119b2f-d7f7-40be-940a-1c582870e8e2/) | [User Execution](/tags/#user-execution) |  None |
 | [Kubernetes Process Running From New Path](/cloud/454076fb-0e9e-4adf-b93a-da132621c5e6/) | [User Execution](/tags/#user-execution) |  None |
 | [Kubernetes Process with Anomalous Resource Utilisation](/cloud/25ca9594-7a0d-4a95-a5e5-3228d7398ec8/) | [User Execution](/tags/#user-execution) |  None |
 | [Kubernetes Process with Resource Ratio Anomalies](/cloud/0d42b295-0f1f-4183-b75e-377975f47c65/) | [User Execution](/tags/#user-execution) |  None |
 | [Kubernetes Scanner Image Pulling](/cloud/4890cd6b-0112-4974-a272-c5c153aee551/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) |  None |
+| [Kubernetes Scanning by Unauthenticated IP Address](/cloud/f5edd22d-0f3b-4c70-bcfe-5bf41150f10c/) | [Network Service Discovery](/tags/#network-service-discovery) |  None |
 | [Kubernetes Shell Running on Worker Node](/cloud/efebf0c4-dcf4-496f-85a2-5ab7ad8fa876/) | [User Execution](/tags/#user-execution) |  None |
 | [Kubernetes Shell Running on Worker Node with CPU Activity](/cloud/cc1448e3-cc7a-4518-bc9f-2fa48f61a22b/) | [User Execution](/tags/#user-execution) |  None |
 | [Kubernetes Suspicious Image Pulling](/cloud/4d3a17b3-0a6d-4ae0-9421-46623a69c122/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) |  None |
 | [Kubernetes Unauthorized Access](/cloud/9b5f1832-e8b9-453f-93df-07a3d6a72a45/) | [User Execution](/tags/#user-execution) |  None |
+| [Kubernetes newly seen TCP edge](/cloud/13f081d6-7052-428a-bbb0-892c79ca7c65/) | [User Execution](/tags/#user-execution) |  None |
+| [Kubernetes newly seen UDP edge](/cloud/49b7daca-4e3c-4899-ba15-9a175e056fa9/) | [User Execution](/tags/#user-execution) |  None |
 | [O365 Add App Role Assignment Grant User](/cloud/b2c81cc6-6040-11eb-ae93-0242ac130002/) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) |  None |
 | [O365 Added Service Principal](/cloud/1668812a-6047-11eb-ae93-0242ac130002/) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) |  None |
 | [O365 Advanced Audit Disabled](/cloud/49862dd4-9cb2-4c48-a542-8c8a588d9361/) | [Impair Defenses](/tags/#impair-defenses), [Disable or Modify Cloud Logs](/tags/#disable-or-modify-cloud-logs) | [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change) |

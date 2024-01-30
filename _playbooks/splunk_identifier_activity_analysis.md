@@ -19,7 +19,7 @@ Accepts a file_hash, domain, IP address, or URL, and asks Splunk for a list of d
 - **Product**: Splunk SOAR
 - **Apps**: [Splunk](https://splunkbase.splunk.com/apps?keyword=splunk&filters=product%3Asoar)
 - **Last Updated**: 2023-03-31
-- **Author**: Lou Stella, Splunk
+- **Author**: Lou Stella, Splunk; Kelby Shelton, Splunk
 - **ID**: 5299b9dc-e8c4-46ba-d942-92ace0ff816d
 - **Use-cases**:
   - Enrichment

@@ -1,6 +1,6 @@
 ---
 title: "Splunk Message Identifier Activity Analysis"
-last_modified_at: 2023-05-12
+last_modified_at: 2023-01-26
 toc: true
 toc_label: ""
 tags:
@@ -18,8 +18,8 @@ Accepts an internet message id, and asks Splunk to look for records that have a 
 - **Type**: Investigation
 - **Product**: Splunk SOAR
 - **Apps**: [Splunk](https://splunkbase.splunk.com/apps?keyword=splunk&filters=product%3Asoar)
-- **Last Updated**: 2023-05-12
-- **Author**: Lou Stella, Splunk
+- **Last Updated**: 2023-01-26
+- **Author**: Lou Stella, Splunk; Kelby Shelton, Splunk
 - **ID**: 5299b9dc-e8c4-46ba-d942-98dae0fa816d
 - **Use-cases**:
   - Phishing

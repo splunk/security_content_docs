@@ -63,6 +63,7 @@ sidebar:
 | [Splunk Enterprise Windows Deserialization File Partition](/application/947d4d2e-1b64-41fc-b32a-736ddb88ce97/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) |  None |
 | [Splunk HTTP Response Splitting Via Rest SPL Command](/application/e615a0e1-a1b2-4196-9865-8aa646e1708c/) | [HTML Smuggling](/tags/#html-smuggling) |  None |
 | [Splunk Improperly Formatted Parameter Crashes splunkd](/application/08978eca-caff-44c1-84dc-53f17def4e14/) | [Endpoint Denial of Service](/tags/#endpoint-denial-of-service) | [Splunk_Audit](https://docs.splunk.com/Documentation/CIM/latest/User/SplunkAudit) |
+| [Splunk Information Disclosure in Splunk Add-on Builder](/application/b7b82980-4a3e-412e-8661-4531d8758735/) | [System Information Discovery](/tags/#system-information-discovery) |  None |
 | [Splunk Low Privilege User Can View Hashed Splunk Password](/application/a1be424d-e59c-4583-b6f9-2dcc23be4875/) | [Exploitation for Credential Access](/tags/#exploitation-for-credential-access) |  None |
 | [Splunk Path Traversal In Splunk App For Lookup File Edit](/application/8ed58987-738d-4917-9e44-b8ef6ab948a6/) | [File and Directory Discovery](/tags/#file-and-directory-discovery) |  None |
 | [Splunk Persistent XSS Via URL Validation Bypass W Dashboard](/application/8a43558f-a53c-4ee4-86c1-30b1e8ef3606/) | [Drive-by Compromise](/tags/#drive-by-compromise) |  None |

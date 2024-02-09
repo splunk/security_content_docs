@@ -214,4 +214,4 @@ Alternatively you can replay a dataset into a [Splunk Attack Range](https://gith
 {% endfor %}
 
 
-[*source*](https://github.com/splunk/security_content/tree/develop/detections/{% if detection.experimental is sameas true -%}experimental/{%- endif -%}{{detection.kind}}/{{ detection.name | lower | replace (" ", "_") }}.yml) \| *version*: **{{detection.version}}**
+[*source*](https://github.com/splunk/security_content/tree/develop/detections/{{detection.kind}}/{{ detection.name | lower | replace (" ", "_") }}.yml) \| *version*: **{{detection.version}}**

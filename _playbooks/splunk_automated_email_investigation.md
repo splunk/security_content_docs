@@ -1,6 +1,6 @@
 ---
 title: "Splunk Automated Email Investigation"
-last_modified_at: 2023-03-24
+last_modified_at: 2023-12-23
 toc: true
 toc_label: ""
 tags:
@@ -17,8 +17,8 @@ Leverages Splunk technologies to determine if a .eml or .msg file in the vault i
 - **Type**: Investigation
 - **Product**: Splunk SOAR
 - **Apps**: 
-- **Last Updated**: 2023-03-24
-- **Author**: Teoderick Contreras, Splunk; Kelby Shelton, Splunk
+- **Last Updated**: 2023-12-23
+- **Author**: Kelby Shelton, Splunk
 - **ID**: c69e3310-a819-4d16-a615-348fa8d88b0b
 - **Use-cases**:
   - Phishing
@@ -36,9 +36,9 @@ Ensure the four input playbooks are loaded onto the system. The input playbooks 
 | ----------- | ----------- |--------------- |--------------- |
 | D3-DA | [Dynamic Analysis](https://d3fend.mitre.org/technique/d3f:DynamicAnalysis) | Executing or opening a file in a synthetic &#34;sandbox&#34; environment to determine if the file is a malicious program or if the file exploits another program such as a document reader. | File Analysis |
 
-#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Splunk_Attack_Analyzer_Dynamic_Analysis.json){: .btn .btn--info}
+#### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Splunk_Automated_Email_Investigation.json){: .btn .btn--info}
 
-[![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/Splunk_Attack_Analyzer_Dynamic_Analysis.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Splunk_Attack_Analyzer_Dynamic_Analysis.json)
+[![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/Splunk_Automated_Email_Investigation.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Splunk_Automated_Email_Investigation.json)
 
 #### Required field
 
@@ -47,4 +47,4 @@ Ensure the four input playbooks are loaded onto the system. The input playbooks 
 
 
 
-[*source*](https://github.com/splunk/security_content/tree/develop/playbooks/Splunk_Attack_Analyzer_Dynamic_Analysis.yml) \| *version*: **1**
+[*source*](https://github.com/splunk/security_content/tree/develop/playbooks/Splunk_Automated_Email_Investigation.yml) \| *version*: **1**

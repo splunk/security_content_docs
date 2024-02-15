@@ -80,12 +80,14 @@ sidebar:
 | [Abnormally High Number Of Cloud Security Group API Calls](/cloud/d4dfb7f3-7a37-498a-b5df-f19334e871af/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) | [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change) |
 | [Amazon EKS Kubernetes Pod scan detection](/cloud/dbfca1dd-b8e5-4ba4-be0e-e565e5d62002/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) |  None |
 | [Amazon EKS Kubernetes cluster scan detection](/cloud/294c4686-63dd-4fe6-93a2-ca807626704a/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) |  None |
+| [Azure AD Admin Consent Bypassed by Service Principal](/cloud/9d4fea43-9182-4c5a-ada8-13701fd5615d/) | [Additional Cloud Roles](/tags/#additional-cloud-roles) |  None |
 | [Azure AD Application Administrator Role Assigned](/cloud/eac4de87-7a56-4538-a21b-277897af6d8d/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) |  None |
 | [Azure AD Authentication Failed During MFA Challenge](/cloud/e62c9c2e-bf51-4719-906c-3074618fcc1c/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation) |  None |
 | [Azure AD Block User Consent For Risky Apps Disabled](/cloud/875de3d7-09bc-4916-8c0a-0929f4ced3d8/) | [Impair Defenses](/tags/#impair-defenses) | [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk) |
 | [Azure AD Concurrent Sessions From Different Ips](/cloud/a9126f73-9a9b-493d-96ec-0dd06695490d/) | [Browser Session Hijacking](/tags/#browser-session-hijacking) |  None |
 | [Azure AD Device Code Authentication](/cloud/d68d8732-6f7e-4ee5-a6eb-737f2b990b91/) | [Steal Application Access Token](/tags/#steal-application-access-token), [Phishing](/tags/#phishing), [Spearphishing Link](/tags/#spearphishing-link) |  None |
 | [Azure AD External Guest User Invited](/cloud/c1fb4edb-cab1-4359-9b40-925ffd797fb5/) | [Cloud Account](/tags/#cloud-account) |  None |
+| [Azure AD FullAccessAsApp Permission Assigned](/cloud/ae286126-f2ad-421c-b240-4ea83bd1c43a/) | [Additional Email Delegate Permissions](/tags/#additional-email-delegate-permissions), [Additional Cloud Roles](/tags/#additional-cloud-roles) |  None |
 | [Azure AD Global Administrator Role Assigned](/cloud/825fed20-309d-4fd1-8aaf-cd49c1bb093c/) | [Additional Cloud Roles](/tags/#additional-cloud-roles) |  None |
 | [Azure AD High Number Of Failed Authentications For User](/cloud/630b1694-210a-48ee-a450-6f79e7679f2c/) | [Brute Force](/tags/#brute-force), [Password Guessing](/tags/#password-guessing) |  None |
 | [Azure AD High Number Of Failed Authentications From Ip](/cloud/e5ab41bf-745d-4f72-a393-2611151afd8e/) | [Brute Force](/tags/#brute-force), [Password Guessing](/tags/#password-guessing), [Password Spraying](/tags/#password-spraying) |  None |
@@ -94,6 +96,8 @@ sidebar:
 | [Azure AD Multiple AppIDs and UserAgents Authentication Spike](/cloud/5d8bb1f0-f65a-4b4e-af2e-fcdb88276314/) | [Valid Accounts](/tags/#valid-accounts) | [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication) |
 | [Azure AD Multiple Denied MFA Requests For User](/cloud/d0895c20-de71-4fd2-b56c-3fcdb888eba1/) | [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation) |  None |
 | [Azure AD Multiple Failed MFA Requests For User](/cloud/264ea131-ab1f-41b8-90e0-33ad1a1888ea/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation), [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) |  None |
+| [Azure AD Multiple Service Principals Created by SP](/cloud/66cb378f-234d-4fe1-bb4c-e7878ff6b017/) | [Cloud Account](/tags/#cloud-account) |  None |
+| [Azure AD Multiple Service Principals Created by User](/cloud/32880707-f512-414e-bd7f-204c0c85b758/) | [Cloud Account](/tags/#cloud-account) |  None |
 | [Azure AD Multiple Users Failing To Authenticate From Ip](/cloud/94481a6a-8f59-4c86-957f-55a71e3612a6/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying), [Credential Stuffing](/tags/#credential-stuffing) |  None |
 | [Azure AD New Custom Domain Added](/cloud/30c47f45-dd6a-4720-9963-0bca6c8686ef/) | [Domain Policy Modification](/tags/#domain-policy-modification), [Domain Trust Modification](/tags/#domain-trust-modification) |  None |
 | [Azure AD New Federated Domain Added](/cloud/a87cd633-076d-4ab2-9047-977751a3c1a0/) | [Domain Policy Modification](/tags/#domain-policy-modification), [Domain Trust Modification](/tags/#domain-trust-modification) |  None |
@@ -103,8 +107,10 @@ sidebar:
 | [Azure AD PIM Role Assigned](/cloud/fcd6dfeb-191c-46a0-a29c-c306382145ab/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) |  None |
 | [Azure AD PIM Role Assignment Activated](/cloud/952e80d0-e343-439b-83f4-808c3e6fbf2e/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) |  None |
 | [Azure AD Privileged Authentication Administrator Role Assigned](/cloud/a7da845d-6fae-41cf-b823-6c0b8c55814a/) | [Security Account Manager](/tags/#security-account-manager) | [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication) |
+| [Azure AD Privileged Graph API Permission Assigned](/cloud/5521f8c5-1aa3-473c-9eb7-853701924a06/) | [Security Account Manager](/tags/#security-account-manager) |  None |
 | [Azure AD Privileged Role Assigned](/cloud/a28f0bc3-3400-4a6e-a2da-89b9e95f0d2a/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) |  None |
 | [Azure AD Privileged Role Assigned to Service Principal](/cloud/5dfaa3d3-e2e4-4053-8252-16d9ee528c41/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) |  None |
+| [Azure AD Service Principal Authentication](/cloud/5a2ec401-60bb-474e-b936-1e66e7aa4060/) | [Cloud Accounts](/tags/#cloud-accounts) |  None |
 | [Azure AD Service Principal Created](/cloud/f8ba49e7-ffd3-4b53-8f61-e73974583c5d/) | [Cloud Account](/tags/#cloud-account) |  None |
 | [Azure AD Service Principal New Client Credentials](/cloud/e3adc0d3-9e4b-4b5d-b662-12cec1adff2a/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Credentials](/tags/#additional-cloud-credentials) |  None |
 | [Azure AD Service Principal Owner Added](/cloud/7ddf2084-6cf3-4a44-be83-474f7b73c701/) | [Account Manipulation](/tags/#account-manipulation) |  None |
@@ -203,6 +209,7 @@ sidebar:
 | [Kubernetes newly seen UDP edge](/cloud/49b7daca-4e3c-4899-ba15-9a175e056fa9/) | [User Execution](/tags/#user-execution) |  None |
 | [O365 Add App Role Assignment Grant User](/cloud/b2c81cc6-6040-11eb-ae93-0242ac130002/) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) |  None |
 | [O365 Added Service Principal](/cloud/1668812a-6047-11eb-ae93-0242ac130002/) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) |  None |
+| [O365 Admin Consent Bypassed by Service Principal](/cloud/8a1b22eb-50ce-4e26-a691-97ff52349569/) | [Security Account Manager](/tags/#security-account-manager) |  None |
 | [O365 Advanced Audit Disabled](/cloud/49862dd4-9cb2-4c48-a542-8c8a588d9361/) | [Impair Defenses](/tags/#impair-defenses), [Disable or Modify Cloud Logs](/tags/#disable-or-modify-cloud-logs) | [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change) |
 | [O365 Application Registration Owner Added](/cloud/c068d53f-6aaa-4558-8011-3734df878266/) | [Account Manipulation](/tags/#account-manipulation) |  None |
 | [O365 ApplicationImpersonation Role Assigned](/cloud/49cdce75-f814-4d56-a7a4-c64ec3a481f2/) | [Account Manipulation](/tags/#account-manipulation), [Additional Email Delegate Permissions](/tags/#additional-email-delegate-permissions) |  None |
@@ -213,6 +220,7 @@ sidebar:
 | [O365 Excessive Authentication Failures Alert](/cloud/d441364c-349c-453b-b55f-12eccab67cf9/) | [Brute Force](/tags/#brute-force) | [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication) |
 | [O365 Excessive SSO logon errors](/cloud/8158ccc4-6038-11eb-ae93-0242ac130002/) | [Modify Authentication Process](/tags/#modify-authentication-process) |  None |
 | [O365 File Permissioned Application Consent Granted by User](/cloud/6c382336-22b8-4023-9b80-1689e799f21f/) | [Steal Application Access Token](/tags/#steal-application-access-token) |  None |
+| [O365 FullAccessAsApp Permission Assigned](/cloud/01a510b3-a6ac-4d50-8812-7e8a3cde3d79/) | [Additional Email Delegate Permissions](/tags/#additional-email-delegate-permissions), [Additional Cloud Roles](/tags/#additional-cloud-roles) |  None |
 | [O365 High Number Of Failed Authentications for User](/cloud/31641378-2fa9-42b1-948e-25e281cb98f7/) | [Brute Force](/tags/#brute-force), [Password Guessing](/tags/#password-guessing) |  None |
 | [O365 High Privilege Role Granted](/cloud/e78a1037-4548-4072-bb1b-ad99ae416426/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) |  None |
 | [O365 Mail Permissioned Application Consent Granted by User](/cloud/fddad083-cdf5-419d-83c6-baa85e329595/) | [Steal Application Access Token](/tags/#steal-application-access-token) |  None |
@@ -221,10 +229,16 @@ sidebar:
 | [O365 Multi-Source Failed Authentications Spike](/cloud/ea4e2c41-dbfb-4f5f-a7b6-9ac1b7f104aa/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying), [Credential Stuffing](/tags/#credential-stuffing) |  None |
 | [O365 Multiple AppIDs and UserAgents Authentication Spike](/cloud/66adc486-224d-45c1-8e4d-9e7eeaba988f/) | [Valid Accounts](/tags/#valid-accounts) |  None |
 | [O365 Multiple Failed MFA Requests For User](/cloud/fd22124e-dbac-4744-a8ce-be10d8ec3e26/) | [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation) |  None |
+| [O365 Multiple Mailboxes Accessed via API](/cloud/7cd853e9-d370-412f-965d-a2bcff2a2908/) | [Remote Email Collection](/tags/#remote-email-collection) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
+| [O365 Multiple Service Principals Created by SP](/cloud/ef4c3f20-d1ad-4ad1-a3f4-d5f391c005fe/) | [Cloud Account](/tags/#cloud-account) |  None |
+| [O365 Multiple Service Principals Created by User](/cloud/a34e65d0-54de-4b02-9db8-5a04522067f6/) | [Cloud Account](/tags/#cloud-account) |  None |
 | [O365 Multiple Users Failing To Authenticate From Ip](/cloud/8d486e2e-3235-4cfe-ac35-0d042e24ecb4/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying), [Credential Stuffing](/tags/#credential-stuffing) |  None |
 | [O365 New Federated Domain Added](/cloud/e155876a-6048-11eb-ae93-0242ac130002/) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) |  None |
 | [O365 New MFA Method Registered](/cloud/4e12db1f-f7c7-486d-8152-a221cad6ac2b/) | [Account Manipulation](/tags/#account-manipulation), [Device Registration](/tags/#device-registration) | [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication) |
+| [O365 OAuth App Mailbox Access via EWS](/cloud/e600cf1a-0bef-4426-b42e-00176d610a4d/) | [Remote Email Collection](/tags/#remote-email-collection) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
+| [O365 OAuth App Mailbox Access via Graph API](/cloud/9db0d5b0-4058-4cb7-baaf-77d8143539a2/) | [Remote Email Collection](/tags/#remote-email-collection) |  None |
 | [O365 PST export alert](/cloud/5f694cc4-a678-4a60-9410-bffca1b647dc/) | [Email Collection](/tags/#email-collection) |  None |
+| [O365 Privileged Graph API Permission Assigned](/cloud/868f3131-d5e1-4bf1-af5b-9b0fbaaaedbb/) | [Security Account Manager](/tags/#security-account-manager) |  None |
 | [O365 Service Principal New Client Credentials](/cloud/a1b229e9-d962-4222-8c62-905a8a010453/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Credentials](/tags/#additional-cloud-credentials) |  None |
 | [O365 Suspicious Admin Email Forwarding](/cloud/7f398cfb-918d-41f4-8db8-2e2474e02c28/) | [Email Forwarding Rule](/tags/#email-forwarding-rule), [Email Collection](/tags/#email-collection) |  None |
 | [O365 Suspicious Rights Delegation](/cloud/b25d2973-303e-47c8-bacd-52b61604c6a7/) | [Remote Email Collection](/tags/#remote-email-collection), [Email Collection](/tags/#email-collection), [Additional Email Delegate Permissions](/tags/#additional-email-delegate-permissions), [Account Manipulation](/tags/#account-manipulation) |  None |

@@ -89,6 +89,7 @@ sidebar:
 | [Microsoft Support Diagnostic Tool Vulnerability CVE-2022-30190](/stories/microsoft_support_diagnostic_tool_vulnerability_cve-2022-30190/) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
 | [NOBELIUM Group](/stories/nobelium_group/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Mshta](/tags/#mshta) | [Defense Evasion](/tags/#defense-evasion) |
 | [Office 365 Account Takeover](/stories/office_365_account_takeover/) | [Steal Application Access Token](/tags/#steal-application-access-token) | [Credential Access](/tags/#credential-access) |
+| [Office 365 Collection Techniques](/stories/office_365_collection_techniques/) | [Email Forwarding Rule](/tags/#email-forwarding-rule), [Email Collection](/tags/#email-collection) | [Collection](/tags/#collection) |
 | [Office 365 Persistence Mechanisms](/stories/office_365_persistence_mechanisms/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) | [Persistence](/tags/#persistence) |
 | [Okta MFA Exhaustion](/stories/okta_mfa_exhaustion/) | [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
 | [OpenSSL CVE-2022-3602](/stories/openssl_cve-2022-3602/) | [Encrypted Channel](/tags/#encrypted-channel) | [Command And Control](/tags/#command-and-control) |
@@ -143,5 +144,5 @@ sidebar:
 | [Windows Log Manipulation](/stories/windows_log_manipulation/) | [Indicator Removal](/tags/#indicator-removal), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [Defense Evasion](/tags/#defense-evasion) |
 | [Windows Persistence Techniques](/stories/windows_persistence_techniques/) | [Services Registry Permissions Weakness](/tags/#services-registry-permissions-weakness) | [Persistence](/tags/#persistence) |
 | [Windows Post-Exploitation](/stories/windows_post-exploitation/) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [Execution](/tags/#execution) |
-| [Windows Privilege Escalation](/stories/windows_privilege_escalation/) | [Malicious File](/tags/#malicious-file) | [Execution](/tags/#execution) |
+| [Windows Privilege Escalation](/stories/windows_privilege_escalation/) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation), [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism), [Access Token Manipulation](/tags/#access-token-manipulation) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Windows System Binary Proxy Execution MSIExec](/stories/windows_system_binary_proxy_execution_msiexec/) | [Msiexec](/tags/#msiexec) | [Defense Evasion](/tags/#defense-evasion) |

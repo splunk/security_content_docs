@@ -33,6 +33,7 @@ The following analytic story groups detection opportunities that seek to identif
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
+| [Azure AD Admin Consent Bypassed by Service Principal](/cloud/9d4fea43-9182-4c5a-ada8-13701fd5615d/) | [Additional Cloud Roles](/tags/#additional-cloud-roles) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Azure AD Application Administrator Role Assigned](/cloud/eac4de87-7a56-4538-a21b-277897af6d8d/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Azure AD Global Administrator Role Assigned](/cloud/825fed20-309d-4fd1-8aaf-cd49c1bb093c/) | [Additional Cloud Roles](/tags/#additional-cloud-roles) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Azure AD PIM Role Assigned](/cloud/fcd6dfeb-191c-46a0-a29c-c306382145ab/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

@@ -141,12 +141,14 @@ sidebar:
 | [Network Discovery](network_discovery) | [System Network Configuration Discovery](/tags/#system-network-configuration-discovery) | [Discovery](/tags/#discovery) |
 | [NjRAT](njrat) | [Process Injection](/tags/#process-injection), [Create or Modify System Process](/tags/#create-or-modify-system-process), [Parent PID Spoofing](/tags/#parent-pid-spoofing), [Access Token Manipulation](/tags/#access-token-manipulation) | [Defense Evasion](/tags/#defense-evasion) |
 | [Office 365 Account Takeover](office_365_account_takeover) | [Steal Application Access Token](/tags/#steal-application-access-token) | [Credential Access](/tags/#credential-access) |
+| [Office 365 Collection Techniques](office_365_collection_techniques) | [Email Forwarding Rule](/tags/#email-forwarding-rule), [Email Collection](/tags/#email-collection) | [Collection](/tags/#collection) |
 | [Office 365 Persistence Mechanisms](office_365_persistence_mechanisms) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) | [Persistence](/tags/#persistence) |
 | [Okta MFA Exhaustion](okta_mfa_exhaustion) | [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
 | [OpenSSL CVE-2022-3602](openssl_cve-2022-3602) | [Encrypted Channel](/tags/#encrypted-channel) | [Command And Control](/tags/#command-and-control) |
 | [Orangeworm Attack Group](orangeworm_attack_group) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [Persistence](/tags/#persistence) |
 | [PaperCut MF NG Vulnerability](papercut_mf_ng_vulnerability) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Execution](/tags/#execution) |
 | [PetitPotam NTLM Relay on Active Directory Certificate Services](petitpotam_ntlm_relay_on_active_directory_certificate_services) | [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
+| [Phemedrone Stealer](phemedrone_stealer) | [IP Addresses](/tags/#ip-addresses), [Gather Victim Network Information](/tags/#gather-victim-network-information) | [Reconnaissance](/tags/#reconnaissance) |
 | [PlugX](plugx) | [Service Stop](/tags/#service-stop) | [Impact](/tags/#impact) |
 | [Possible Backdoor Activity Associated With MUDCARP Espionage Campaigns](possible_backdoor_activity_associated_with_mudcarp_espionage_campaigns) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |
 | [Prestige Ransomware](prestige_ransomware) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [Execution](/tags/#execution) |
@@ -223,7 +225,7 @@ sidebar:
 | [Windows Log Manipulation](windows_log_manipulation) | [Indicator Removal](/tags/#indicator-removal), [Clear Windows Event Logs](/tags/#clear-windows-event-logs) | [Defense Evasion](/tags/#defense-evasion) |
 | [Windows Persistence Techniques](windows_persistence_techniques) | [Services Registry Permissions Weakness](/tags/#services-registry-permissions-weakness) | [Persistence](/tags/#persistence) |
 | [Windows Post-Exploitation](windows_post-exploitation) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [Execution](/tags/#execution) |
-| [Windows Privilege Escalation](windows_privilege_escalation) | [Malicious File](/tags/#malicious-file) | [Execution](/tags/#execution) |
+| [Windows Privilege Escalation](windows_privilege_escalation) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation), [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism), [Access Token Manipulation](/tags/#access-token-manipulation) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Windows Registry Abuse](windows_registry_abuse) | [Services Registry Permissions Weakness](/tags/#services-registry-permissions-weakness) | [Persistence](/tags/#persistence) |
 | [Windows Service Abuse](windows_service_abuse) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [Persistence](/tags/#persistence) |
 | [Windows System Binary Proxy Execution MSIExec](windows_system_binary_proxy_execution_msiexec) | [Msiexec](/tags/#msiexec) | [Defense Evasion](/tags/#defense-evasion) |

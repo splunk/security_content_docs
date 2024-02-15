@@ -32,6 +32,7 @@ Ivanti Connect Secure and Ivanti Policy Secure gateways face a severe security c
 | ----------- | ----------- |--------------|
 | [Access to Vulnerable Ivanti Connect Secure Bookmark Endpoint](/web/15838756-f425-43fa-9d88-a7f88063e81a/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Ivanti Connect Secure Command Injection Attempts](/web/1f32a7e0-a060-4545-b7de-73fcf9ad536e/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Ivanti Connect Secure SSRF in SAML Component](/web/8e6ca490-7af3-4299-9a24-39fb69759925/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Ivanti Connect Secure System Information Access via Auth Bypass](/web/d51c13dd-a232-4c83-a2bb-72ab36233c5d/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference

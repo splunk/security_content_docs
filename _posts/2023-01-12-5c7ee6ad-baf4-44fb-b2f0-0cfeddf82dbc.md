@@ -110,8 +110,8 @@ This analytic will identify suspicious creation of URL shortcut link files. This
 
 #### Macros
 The SPL above uses the following Macros:
-* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
 * [security_content_summariesonly](https://github.com/splunk/security_content/blob/develop/macros/security_content_summariesonly.yml)
+* [security_content_ctime](https://github.com/splunk/security_content/blob/develop/macros/security_content_ctime.yml)
 
 > :information_source:
 > **windows_user_execution_malicious_url_shortcut_file_filter** is a empty macro by default. It allows the user to filter out any results (false positives) without editing the SPL.
@@ -139,6 +139,7 @@ Administrators may allow creation of script or exe in this path.
 #### Associated Analytic Story
 * [Chaos Ransomware](/stories/chaos_ransomware)
 * [NjRAT](/stories/njrat)
+* [Snake Keylogger](/stories/snake_keylogger)
 
 
 

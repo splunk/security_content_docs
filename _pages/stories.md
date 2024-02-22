@@ -70,6 +70,7 @@ sidebar:
 | [Command And Control](command_and_control) | [Remote Access Software](/tags/#remote-access-software) | [Command And Control](/tags/#command-and-control) |
 | [Compromised User Account](compromised_user_account) | [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation), [Multi-Factor Authentication](/tags/#multi-factor-authentication), [Device Registration](/tags/#device-registration) | [Credential Access](/tags/#credential-access) |
 | [Confluence Data Center and Confluence Server Vulnerabilities](confluence_data_center_and_confluence_server_vulnerabilities) | [Server Software Component](/tags/#server-software-component), [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Persistence](/tags/#persistence) |
+| [ConnectWise ScreenConnect Vulnerabilities](connectwise_screenconnect_vulnerabilities) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Credential Dumping](credential_dumping) | [NTDS](/tags/#ntds), [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [CyclopsBLink](cyclopsblink) | [Disable or Modify System Firewall](/tags/#disable-or-modify-system-firewall), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |
 | [DHS Report TA18-074A](dhs_report_ta18-074a) | [Modify Registry](/tags/#modify-registry) | [Defense Evasion](/tags/#defense-evasion) |
@@ -172,6 +173,7 @@ sidebar:
 | [Scheduled Tasks](scheduled_tasks) | [Scheduled Task](/tags/#scheduled-task), [Scheduled Task/Job](/tags/#scheduled-task/job) | [Execution](/tags/#execution) |
 | [Signed Binary Proxy Execution InstallUtil](signed_binary_proxy_execution_installutil) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [InstallUtil](/tags/#installutil) | [Defense Evasion](/tags/#defense-evasion) |
 | [Silver Sparrow](silver_sparrow) | [Data Staged](/tags/#data-staged) | [Collection](/tags/#collection) |
+| [Snake Keylogger](snake_keylogger) | [Malicious File](/tags/#malicious-file), [User Execution](/tags/#user-execution) | [Execution](/tags/#execution) |
 | [Snake Malware](snake_malware) | [Kernel Modules and Extensions](/tags/#kernel-modules-and-extensions), [Service Execution](/tags/#service-execution) | [Persistence](/tags/#persistence) |
 | [Sneaky Active Directory Persistence Tricks](sneaky_active_directory_persistence_tricks) | [Security Support Provider](/tags/#security-support-provider), [Boot or Logon Autostart Execution](/tags/#boot-or-logon-autostart-execution) | [Persistence](/tags/#persistence) |
 | [Spearphishing Attachments](spearphishing_attachments) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
@@ -230,5 +232,6 @@ sidebar:
 | [Windows Service Abuse](windows_service_abuse) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [Persistence](/tags/#persistence) |
 | [Windows System Binary Proxy Execution MSIExec](windows_system_binary_proxy_execution_msiexec) | [Msiexec](/tags/#msiexec) | [Defense Evasion](/tags/#defense-evasion) |
 | [Winter Vivern](winter_vivern) | [Screen Capture](/tags/#screen-capture) | [Collection](/tags/#collection) |
+| [WordPress Vulnerabilities](wordpress_vulnerabilities) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [XMRig](xmrig) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [Persistence](/tags/#persistence) |
 | [sAMAccountName Spoofing and Domain Controller Impersonation](samaccountname_spoofing_and_domain_controller_impersonation) | [Valid Accounts](/tags/#valid-accounts), [Domain Accounts](/tags/#domain-accounts) | [Defense Evasion](/tags/#defense-evasion) |

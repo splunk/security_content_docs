@@ -45,6 +45,7 @@ sidebar:
 | [Command And Control](/stories/command_and_control/) | [Remote Access Software](/tags/#remote-access-software) | [Command And Control](/tags/#command-and-control) |
 | [Compromised User Account](/stories/compromised_user_account/) | [Multi-Factor Authentication Request Generation](/tags/#multi-factor-authentication-request-generation), [Multi-Factor Authentication](/tags/#multi-factor-authentication), [Device Registration](/tags/#device-registration) | [Credential Access](/tags/#credential-access) |
 | [Confluence Data Center and Confluence Server Vulnerabilities](/stories/confluence_data_center_and_confluence_server_vulnerabilities/) | [Server Software Component](/tags/#server-software-component), [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Persistence](/tags/#persistence) |
+| [ConnectWise ScreenConnect Vulnerabilities](/stories/connectwise_screenconnect_vulnerabilities/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Credential Dumping](/stories/credential_dumping/) | [NTDS](/tags/#ntds), [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [DNS Hijacking](/stories/dns_hijacking/) | [Domain Generation Algorithms](/tags/#domain-generation-algorithms) | [Command And Control](/tags/#command-and-control) |
 | [DarkGate Malware](/stories/darkgate_malware/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Execution](/tags/#execution) |
@@ -105,6 +106,7 @@ sidebar:
 | [Scheduled Tasks](/stories/scheduled_tasks/) | [Scheduled Task](/tags/#scheduled-task), [Scheduled Task/Job](/tags/#scheduled-task/job) | [Execution](/tags/#execution) |
 | [Signed Binary Proxy Execution InstallUtil](/stories/signed_binary_proxy_execution_installutil/) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [InstallUtil](/tags/#installutil) | [Defense Evasion](/tags/#defense-evasion) |
 | [Silver Sparrow](/stories/silver_sparrow/) | [Data Staged](/tags/#data-staged) | [Collection](/tags/#collection) |
+| [Snake Keylogger](/stories/snake_keylogger/) | [Malicious File](/tags/#malicious-file), [User Execution](/tags/#user-execution) | [Execution](/tags/#execution) |
 | [Snake Malware](/stories/snake_malware/) | [Kernel Modules and Extensions](/tags/#kernel-modules-and-extensions), [Service Execution](/tags/#service-execution) | [Persistence](/tags/#persistence) |
 | [Sneaky Active Directory Persistence Tricks](/stories/sneaky_active_directory_persistence_tricks/) | [Security Support Provider](/tags/#security-support-provider), [Boot or Logon Autostart Execution](/tags/#boot-or-logon-autostart-execution) | [Persistence](/tags/#persistence) |
 | [Spearphishing Attachments](/stories/spearphishing_attachments/) | [Phishing](/tags/#phishing), [Spearphishing Attachment](/tags/#spearphishing-attachment) | [Initial Access](/tags/#initial-access) |
@@ -146,3 +148,4 @@ sidebar:
 | [Windows Post-Exploitation](/stories/windows_post-exploitation/) | [Windows Management Instrumentation](/tags/#windows-management-instrumentation) | [Execution](/tags/#execution) |
 | [Windows Privilege Escalation](/stories/windows_privilege_escalation/) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation), [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism), [Access Token Manipulation](/tags/#access-token-manipulation) | [Privilege Escalation](/tags/#privilege-escalation) |
 | [Windows System Binary Proxy Execution MSIExec](/stories/windows_system_binary_proxy_execution_msiexec/) | [Msiexec](/tags/#msiexec) | [Defense Evasion](/tags/#defense-evasion) |
+| [WordPress Vulnerabilities](/stories/wordpress_vulnerabilities/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |

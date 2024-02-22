@@ -17,6 +17,7 @@ sidebar:
 | [Living Off The Land](/stories/living_off_the_land/) | [Trusted Developer Utilities Proxy Execution](/tags/#trusted-developer-utilities-proxy-execution), [MSBuild](/tags/#msbuild) | [Defense Evasion](/tags/#defense-evasion) |
 | [Local Privilege Escalation With KrbRelayUp](/stories/local_privilege_escalation_with_krbrelayup/) | [Windows Service](/tags/#windows-service) | [Persistence](/tags/#persistence) |
 | [Office 365 Persistence Mechanisms](/stories/office_365_persistence_mechanisms/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) | [Persistence](/tags/#persistence) |
+| [Snake Keylogger](/stories/snake_keylogger/) | [Malicious File](/tags/#malicious-file), [User Execution](/tags/#user-execution) | [Execution](/tags/#execution) |
 | [Snake Malware](/stories/snake_malware/) | [Kernel Modules and Extensions](/tags/#kernel-modules-and-extensions), [Service Execution](/tags/#service-execution) | [Persistence](/tags/#persistence) |
 | [Sneaky Active Directory Persistence Tricks](/stories/sneaky_active_directory_persistence_tricks/) | [Security Support Provider](/tags/#security-support-provider), [Boot or Logon Autostart Execution](/tags/#boot-or-logon-autostart-execution) | [Persistence](/tags/#persistence) |
 | [sAMAccountName Spoofing and Domain Controller Impersonation](/stories/samaccountname_spoofing_and_domain_controller_impersonation/) | [Valid Accounts](/tags/#valid-accounts), [Domain Accounts](/tags/#domain-accounts) | [Defense Evasion](/tags/#defense-evasion) |

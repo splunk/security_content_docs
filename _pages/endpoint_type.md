@@ -64,6 +64,8 @@ sidebar:
 | [Cobalt Strike Named Pipes](/endpoint/5876d429-0240-4709-8b93-ea8330b411b5/) | [Process Injection](/tags/#process-injection) |  None |
 | [Common Ransomware Extensions](/endpoint/a9e5c5db-db11-43ca-86a8-c852d1b2c0ec/) | [Data Destruction](/tags/#data-destruction) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Common Ransomware Notes](/endpoint/ada0f478-84a8-4641-a3f1-d82362d6bd71/) | [Data Destruction](/tags/#data-destruction) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
+| [ConnectWise ScreenConnect Path Traversal](/endpoint/56a3ac65-e747-41f7-b014-dff7423c1dda/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
+| [ConnectWise ScreenConnect Path Traversal Windows SACL](/endpoint/4e127857-1fc9-4c95-9d69-ba24c91d52d7/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) |  None |
 | [Conti Common Exec parameter](/endpoint/624919bc-c382-11eb-adcc-acde48001122/) | [User Execution](/tags/#user-execution) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Control Loading from World Writable Directory](/endpoint/10423ac4-10c9-11ec-8dc4-acde48001122/) | [System Binary Proxy Execution](/tags/#system-binary-proxy-execution), [Control Panel](/tags/#control-panel) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Create Remote Thread In Shell Application](/endpoint/10399c1e-f51e-11eb-b920-acde48001122/) | [Process Injection](/tags/#process-injection) |  None |
@@ -948,6 +950,7 @@ sidebar:
 | [Windows NirSoft AdvancedRun](/endpoint/bb4f3090-7ae4-11ec-897f-acde48001122/) | [Tool](/tags/#tool) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Windows NirSoft Utilities](/endpoint/5b2f4596-7d4c-11ec-88a7-acde48001122/) | [Tool](/tags/#tool) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Windows Njrat Fileless Storage via Registry](/endpoint/a5fffbbd-271f-4980-94ed-4fbf17f0af1c/) | [Fileless Storage](/tags/#fileless-storage), [Obfuscated Files or Information](/tags/#obfuscated-files-or-information) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
+| [Windows Non Discord App Access Discord LevelDB](/endpoint/1166360c-d495-45ac-87a6-8948aac1fa07/) | [Query Registry](/tags/#query-registry) |  None |
 | [Windows Non-System Account Targeting Lsass](/endpoint/b1ce9a72-73cf-11ec-981b-acde48001122/) | [LSASS Memory](/tags/#lsass-memory), [OS Credential Dumping](/tags/#os-credential-dumping) |  None |
 | [Windows OS Credential Dumping with Ntdsutil Export NTDS](/endpoint/dad9ddec-a72a-47be-87b6-a0f7ba98ed6e/) | [NTDS](/tags/#ntds), [OS Credential Dumping](/tags/#os-credential-dumping) |  None |
 | [Windows OS Credential Dumping with Procdump](/endpoint/e102e297-dbe6-4a19-b319-5c08f4c19a06/) | [LSASS Memory](/tags/#lsass-memory), [OS Credential Dumping](/tags/#os-credential-dumping) |  None |
@@ -1109,8 +1112,10 @@ sidebar:
 | [Windows System User Privilege Discovery](/endpoint/8c9a06bc-9939-4425-9bb9-be2371f7fb7e/) | [System Owner/User Discovery](/tags/#system-owner/user-discovery) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Windows Terminating Lsass Process](/endpoint/7ab3c319-a4e7-4211-9e8c-40a049d0dba6/) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) |  None |
 | [Windows Time Based Evasion](/endpoint/34502357-deb1-499a-8261-ffe144abf561/) | [Virtualization/Sandbox Evasion](/tags/#virtualization/sandbox-evasion), [Time Based Evasion](/tags/#time-based-evasion) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
+| [Windows Time Based Evasion via Choice Exec](/endpoint/d5f54b38-10bf-4b3a-b6fc-85949862ed50/) | [Time Based Evasion](/tags/#time-based-evasion), [Virtualization/Sandbox Evasion](/tags/#virtualization/sandbox-evasion) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Windows UAC Bypass Suspicious Child Process](/endpoint/453a6b0f-b0ea-48fa-9cf4-20537ffdd22c/) | [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism), [Bypass User Account Control](/tags/#bypass-user-account-control) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
 | [Windows UAC Bypass Suspicious Escalation Behavior](/endpoint/00d050d3-a5b4-4565-a6a5-a31f69681dc3/) | [Abuse Elevation Control Mechanism](/tags/#abuse-elevation-control-mechanism), [Bypass User Account Control](/tags/#bypass-user-account-control) | [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint) |
+| [Windows Unsecured Outlook Credentials Access In Registry](/endpoint/36334123-077d-47a2-b70c-6c7b3cc85049/) | [Unsecured Credentials](/tags/#unsecured-credentials) |  None |
 | [Windows Unsigned DLL Side-Loading](/endpoint/5a83ce44-8e0f-4786-a775-8249a525c879/) | [DLL Side-Loading](/tags/#dll-side-loading) |  None |
 | [Windows Unusual Count Of Disabled Users Failed Auth Using Kerberos](/endpoint/f65aa026-b811-42ab-b4b9-d9088137648f/) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) |  None |
 | [Windows Unusual Count Of Invalid Users Fail To Auth Using Kerberos](/endpoint/f122cb2e-d773-4f11-8399-62a3572d8dd7/) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) |  None |

@@ -34,6 +34,7 @@ The following analytic story includes content for recently disclosed CWE-288 Aut
 | [ConnectWise ScreenConnect Authentication Bypass](/web/d3f7a803-e802-448b-8eb2-e796b223bfff/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [ConnectWise ScreenConnect Path Traversal](/endpoint/56a3ac65-e747-41f7-b014-dff7423c1dda/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [ConnectWise ScreenConnect Path Traversal Windows SACL](/endpoint/4e127857-1fc9-4c95-9d69-ba24c91d52d7/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Nginx ConnectWise ScreenConnect Authentication Bypass](/web/b3f7a803-e802-448b-8eb2-e796b223bccc/) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

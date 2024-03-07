@@ -35,7 +35,7 @@ sidebar:
 | [AwfulShred](awfulshred) | [Unix Shell](/tags/#unix-shell), [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Execution](/tags/#execution) |
 | [Azorult](azorult) | [Disable or Modify Tools](/tags/#disable-or-modify-tools), [Impair Defenses](/tags/#impair-defenses) | [Defense Evasion](/tags/#defense-evasion) |
 | [Azure Active Directory Account Takeover](azure_active_directory_account_takeover) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying) | [Resource Development](/tags/#resource-development) |
-| [Azure Active Directory Persistence](azure_active_directory_persistence) | [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
+| [Azure Active Directory Persistence](azure_active_directory_persistence) | [Account Manipulation](/tags/#account-manipulation), [Valid Accounts](/tags/#valid-accounts) | [Persistence](/tags/#persistence) |
 | [Azure Active Directory Privilege Escalation](azure_active_directory_privilege_escalation) | [Account Manipulation](/tags/#account-manipulation) | [Persistence](/tags/#persistence) |
 | [BITS Jobs](bits_jobs) | [BITS Jobs](/tags/#bits-jobs), [Ingress Tool Transfer](/tags/#ingress-tool-transfer) | [Defense Evasion](/tags/#defense-evasion) |
 | [Baron Samedit CVE-2021-3156](baron_samedit_cve-2021-3156) | [Exploitation for Privilege Escalation](/tags/#exploitation-for-privilege-escalation) | [Privilege Escalation](/tags/#privilege-escalation) |
@@ -115,6 +115,7 @@ sidebar:
 | [JBoss Vulnerability](jboss_vulnerability) | [System Information Discovery](/tags/#system-information-discovery), [External Remote Services](/tags/#external-remote-services) | [Discovery](/tags/#discovery) |
 | [Jenkins Server Vulnerabilities](jenkins_server_vulnerabilities) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [JetBrains TeamCity Unauthenticated RCE](jetbrains_teamcity_unauthenticated_rce) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
+| [JetBrains TeamCity Vulnerabilities](jetbrains_teamcity_vulnerabilities) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application) | [Initial Access](/tags/#initial-access) |
 | [Juniper JunOS Remote Code Execution](juniper_junos_remote_code_execution) | [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [Ingress Tool Transfer](/tags/#ingress-tool-transfer), [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Initial Access](/tags/#initial-access) |
 | [Kubernetes Scanning Activity](kubernetes_scanning_activity) | [Cloud Service Discovery](/tags/#cloud-service-discovery) | [Discovery](/tags/#discovery) |
 | [Kubernetes Security](kubernetes_security) | [User Execution](/tags/#user-execution) | [Execution](/tags/#execution) |
@@ -186,7 +187,7 @@ sidebar:
 | [Suspicious Cloud Authentication Activities](suspicious_cloud_authentication_activities) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Resource Development](/tags/#resource-development) |
 | [Suspicious Cloud Instance Activities](suspicious_cloud_instance_activities) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious Cloud Provisioning Activities](suspicious_cloud_provisioning_activities) | [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
-| [Suspicious Cloud User Activities](suspicious_cloud_user_activities) | [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
+| [Suspicious Cloud User Activities](suspicious_cloud_user_activities) | [Modify Cloud Compute Configurations](/tags/#modify-cloud-compute-configurations) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious Command-Line Executions](suspicious_command-line_executions) | [Masquerading](/tags/#masquerading), [Rename System Utilities](/tags/#rename-system-utilities) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious Compiled HTML Activity](suspicious_compiled_html_activity) | [Compiled HTML File](/tags/#compiled-html-file), [System Binary Proxy Execution](/tags/#system-binary-proxy-execution) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious DNS Traffic](suspicious_dns_traffic) | [Exfiltration Over Alternative Protocol](/tags/#exfiltration-over-alternative-protocol) | [Exfiltration](/tags/#exfiltration) |

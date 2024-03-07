@@ -37,6 +37,7 @@ In addition to compromising the security of your data, when bad actors leverage 
 | [Abnormally High Number Of Cloud Infrastructure API Calls](/cloud/0840ddf1-8c89-46ff-b730-c8d6722478c0/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Abnormally High Number Of Cloud Security Group API Calls](/cloud/d4dfb7f3-7a37-498a-b5df-f19334e871af/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Cloud API Calls From Previously Unseen User Roles](/cloud/2181ad1f-1e73-4d0c-9780-e8880482a08f/) | [Valid Accounts](/tags/#valid-accounts) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Cloud Security Groups Modifications by User](/cloud/cfe7cca7-2746-4bdf-b712-b01ed819b9de/) | [Modify Cloud Compute Configurations](/tags/#modify-cloud-compute-configurations) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

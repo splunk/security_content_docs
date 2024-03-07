@@ -34,6 +34,7 @@ sidebar:
 | [Jira Related Tickets Search](/playbooks/jira_related_tickets_search/)| [Jira](https://splunkbase.splunk.com/apps?keyword=jira&filters=product%3Asoar)| | |
 | [Log4j Investigate](/playbooks/log4j_investigate/)| | | |
 | [Log4j Splunk Investigation](/playbooks/log4j_splunk_investigation/)| [Splunk](https://splunkbase.splunk.com/apps?keyword=splunk&filters=product%3Asoar)| | |
+| [MS Graph for Office 365 Message Identifier Activity Analysis](/playbooks/ms_graph_for_office_365_message_identifier_activity_analysis/)| [MS Graph for Office 365](https://splunkbase.splunk.com/apps?keyword=ms+graph+for+office+365&filters=product%3Asoar)| [Identifier Activity Analysis](https://d3fend.mitre.org/technique/d3f:IdentifierActivityAnalysis)| [Phishing](/playbooks/phishing)|
 | [PhishTank URL Reputation Analysis](/playbooks/phishtank_url_reputation_analysis/)| [PhishTank](https://splunkbase.splunk.com/apps?keyword=phishtank&filters=product%3Asoar)| [Identifier Reputation Analysis](https://d3fend.mitre.org/technique/d3f:IdentifierReputationAnalysis)| [Enrichment](/playbooks/enrichment), [Phishing](/playbooks/phishing)|
 | [Related Tickets Search Dispatch](/playbooks/related_tickets_search_dispatch/)| | | [Enrichment](/playbooks/enrichment)|
 | [Risk Notable Enrich](/playbooks/risk_notable_enrich/)| | | |

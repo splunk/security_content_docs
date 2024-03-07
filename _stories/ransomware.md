@@ -9,7 +9,9 @@ tags:
   - Splunk Cloud
   - Change
   - Endpoint
+  - Network_Resolution
   - Network_Traffic
+  - Web
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -19,7 +21,7 @@ tags:
 Leverage searches that allow you to detect and investigate unusual activities that might relate to ransomware--spikes in SMB traffic, suspicious wevtutil usage, the presence of common ransomware extensions, and system processes run from unexpected locations, and many others.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
+- **Datamodel**: [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic), [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web)
 - **Last Updated**: 2020-02-04
 - **Author**: David Dorsey, Splunk
 - **ID**: cf309d0d-d4aa-4fbb-963d-1e79febd3756
@@ -51,6 +53,12 @@ Ransomware is an ever-present risk to the enterprise, wherein an infected host e
 | [Deleting Shadow Copies](/endpoint/b89919ed-ee5f-492c-b139-95dbb162039e/) | [Inhibit System Recovery](/tags/#inhibit-system-recovery) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect RClone Command-Line Usage](/endpoint/32e0baea-b3f1-11eb-a2ce-acde48001122/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect RClone Command-Line Usage](/endpoint/e8b74268-5454-11ec-a799-acde48001122/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Remote Access Software Usage DNS](/network/a16b797d-e309-41bd-8ba0-5067dae2e4be/) | [Remote Access Software](/tags/#remote-access-software) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Remote Access Software Usage File](/endpoint/3bf5541a-6a45-4fdc-b01d-59b899fff961/) | [Remote Access Software](/tags/#remote-access-software) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Remote Access Software Usage FileInfo](/endpoint/ccad96d7-a48c-4f13-8b9c-9f6a31cba454/) | [Remote Access Software](/tags/#remote-access-software) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Remote Access Software Usage Process](/endpoint/ffd5e001-2e34-48f4-97a2-26dc4bb08178/) | [Remote Access Software](/tags/#remote-access-software) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Remote Access Software Usage Traffic](/network/885ea672-07ee-475a-879e-60d28aa5dd42/) | [Remote Access Software](/tags/#remote-access-software) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Remote Access Software Usage URL](/web/9296f515-073c-43a5-88ec-eda5a4626654/) | [Remote Access Software](/tags/#remote-access-software) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect Renamed RClone](/endpoint/6dca1124-b3ec-11eb-9328-acde48001122/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect SharpHound Command-Line Arguments](/endpoint/a0bdd2f6-c2ff-11eb-b918-acde48001122/) | [Domain Account](/tags/#domain-account), [Local Groups](/tags/#local-groups), [Domain Trust Discovery](/tags/#domain-trust-discovery), [Local Account](/tags/#local-account), [Account Discovery](/tags/#account-discovery), [Domain Groups](/tags/#domain-groups), [Permission Groups Discovery](/tags/#permission-groups-discovery) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect SharpHound File Modifications](/endpoint/42b4b438-beed-11eb-ba1d-acde48001122/) | [Domain Account](/tags/#domain-account), [Local Groups](/tags/#local-groups), [Domain Trust Discovery](/tags/#domain-trust-discovery), [Local Account](/tags/#local-account), [Account Discovery](/tags/#account-discovery), [Domain Groups](/tags/#domain-groups), [Permission Groups Discovery](/tags/#permission-groups-discovery) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

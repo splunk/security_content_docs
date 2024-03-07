@@ -10,6 +10,9 @@ tags:
   - Splunk Behavioral Analytics
   - Authentication
   - Endpoint
+  - Network_Resolution
+  - Network_Traffic
+  - Web
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -19,7 +22,7 @@ tags:
 Monitor for activities and techniques associated with insider threats and specifically focusing on malicious insiders operating with in a corporate environment.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud, Splunk Behavioral Analytics
-- **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
+- **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Network_Resolution](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkResolution), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic), [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web)
 - **Last Updated**: 2022-05-19
 - **Author**: Jose Hernandez, Splunk
 - **ID**: c633df29-a950-4c4c-a0f8-02be6730797c
@@ -37,6 +40,12 @@ Insider Threats are best defined by CISA: "Insider threat incidents are possible
 | [Detect Prohibited Browsers Spawning cmd exe](/endpoint/c10a18cb-fa70-4dfa-a944-25026e1b0c94/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect Prohibited Office Applications Spawning cmd exe](/endpoint/c10a18cb-fd70-44fb-a8f4-25026a0b0c94/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Detect RClone Command-Line Usage](/endpoint/e8b74268-5454-11ec-a799-acde48001122/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Remote Access Software Usage DNS](/network/a16b797d-e309-41bd-8ba0-5067dae2e4be/) | [Remote Access Software](/tags/#remote-access-software) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Remote Access Software Usage File](/endpoint/3bf5541a-6a45-4fdc-b01d-59b899fff961/) | [Remote Access Software](/tags/#remote-access-software) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Remote Access Software Usage FileInfo](/endpoint/ccad96d7-a48c-4f13-8b9c-9f6a31cba454/) | [Remote Access Software](/tags/#remote-access-software) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Remote Access Software Usage Process](/endpoint/ffd5e001-2e34-48f4-97a2-26dc4bb08178/) | [Remote Access Software](/tags/#remote-access-software) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Remote Access Software Usage Traffic](/network/885ea672-07ee-475a-879e-60d28aa5dd42/) | [Remote Access Software](/tags/#remote-access-software) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Remote Access Software Usage URL](/web/9296f515-073c-43a5-88ec-eda5a4626654/) | [Remote Access Software](/tags/#remote-access-software) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Fsutil Zeroing File](/endpoint/f792cdc9-43ee-4429-a3c0-ffce4fed1a85/) | [Indicator Removal](/tags/#indicator-removal) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Grant Permission Using Cacls Utility](/endpoint/c6da561a-cd29-11eb-ae65-acde48001122/) | [File and Directory Permissions Modification](/tags/#file-and-directory-permissions-modification) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Gsuite Drive Share In External Email](/cloud/f6ee02d6-fea0-11eb-b2c2-acde48001122/) | [Exfiltration to Cloud Storage](/tags/#exfiltration-to-cloud-storage), [Exfiltration Over Web Service](/tags/#exfiltration-over-web-service) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

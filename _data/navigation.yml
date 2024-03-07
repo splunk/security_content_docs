@@ -168,6 +168,8 @@ playbooks:
         url: /playbooks/jira/
       - title: LDAP
         url: /playbooks/ldap/
+      - title: MS Graph for Office 365
+        url: /playbooks/ms_graph_for_office_365/
       - title: Palo Alto Networks Firewall
         url: /playbooks/palo_alto_networks_firewall/
       - title: Panorama

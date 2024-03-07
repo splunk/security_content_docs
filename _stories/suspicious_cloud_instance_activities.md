@@ -32,7 +32,7 @@ Monitoring your cloud infrastructure logs allows you enable governance, complian
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
-| [AWS AMI Atttribute Modification for Exfiltration](/cloud/f2132d74-cf81-4c5e-8799-ab069e67dc9f/) | [Transfer Data to Cloud Account](/tags/#transfer-data-to-cloud-account) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [AWS AMI Attribute Modification for Exfiltration](/cloud/f2132d74-cf81-4c5e-8799-ab069e67dc9f/) | [Transfer Data to Cloud Account](/tags/#transfer-data-to-cloud-account) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [AWS EC2 Snapshot Shared Externally](/cloud/2a9b80d3-6340-4345-b5ad-290bf3d222c4/) | [Transfer Data to Cloud Account](/tags/#transfer-data-to-cloud-account) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [AWS Exfiltration via EC2 Snapshot](/cloud/ac90b339-13fc-4f29-a18c-4abbba1f2171/) | [Transfer Data to Cloud Account](/tags/#transfer-data-to-cloud-account) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [AWS S3 Exfiltration Behavior Identified](/cloud/85096389-a443-42df-b89d-200efbb1b560/) | [Transfer Data to Cloud Account](/tags/#transfer-data-to-cloud-account) | [Correlation](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

@@ -51,6 +51,9 @@ Azure Active Directory (Azure AD) is Microsofts enterprise cloud-based identity 
 | [Azure Automation Account Created](/cloud/860902fd-2e76-46b3-b050-ba548dab576c/) | [Create Account](/tags/#create-account), [Cloud Account](/tags/#cloud-account) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Azure Automation Runbook Created](/cloud/178d696d-6dc6-4ee8-9d25-93fee34eaf5b/) | [Create Account](/tags/#create-account), [Cloud Account](/tags/#cloud-account) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Azure Runbook Webhook Created](/cloud/e98944a9-92e4-443c-81b8-a322e33ce75a/) | [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Multiple Account Passwords Changed](/endpoint/faefb681-14be-4f0d-9cac-0bc0160c7280/) | [Account Manipulation](/tags/#account-manipulation), [Valid Accounts](/tags/#valid-accounts) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Multiple Accounts Deleted](/endpoint/49c0d4d6-c55d-4d3a-b3d5-7709fafed70d/) | [Account Manipulation](/tags/#account-manipulation), [Valid Accounts](/tags/#valid-accounts) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Multiple Accounts Disabled](/endpoint/5d93894e-befa-4429-abde-7fc541020b7b/) | [Account Manipulation](/tags/#account-manipulation), [Valid Accounts](/tags/#valid-accounts) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 
 #### Reference
 

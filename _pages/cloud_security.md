@@ -19,7 +19,7 @@ sidebar:
 | [AWS User Monitoring](/stories/aws_user_monitoring/) | [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Abnormal Kubernetes Behavior using Splunk Infrastructure Monitoring](/stories/abnormal_kubernetes_behavior_using_splunk_infrastructure_monitoring/) | [User Execution](/tags/#user-execution) | [Execution](/tags/#execution) |
 | [Azure Active Directory Account Takeover](/stories/azure_active_directory_account_takeover/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Brute Force](/tags/#brute-force), [Password Spraying](/tags/#password-spraying) | [Resource Development](/tags/#resource-development) |
-| [Azure Active Directory Persistence](/stories/azure_active_directory_persistence/) | [Valid Accounts](/tags/#valid-accounts), [Cloud Accounts](/tags/#cloud-accounts) | [Defense Evasion](/tags/#defense-evasion) |
+| [Azure Active Directory Persistence](/stories/azure_active_directory_persistence/) | [Account Manipulation](/tags/#account-manipulation), [Valid Accounts](/tags/#valid-accounts) | [Persistence](/tags/#persistence) |
 | [Azure Active Directory Privilege Escalation](/stories/azure_active_directory_privilege_escalation/) | [Account Manipulation](/tags/#account-manipulation) | [Persistence](/tags/#persistence) |
 | [Cloud Cryptomining](/stories/cloud_cryptomining/) | [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Defense Evasion](/tags/#defense-evasion) |
 | [Cloud Federated Credential Abuse](/stories/cloud_federated_credential_abuse/) | [Image File Execution Options Injection](/tags/#image-file-execution-options-injection), [Event Triggered Execution](/tags/#event-triggered-execution) | [Privilege Escalation](/tags/#privilege-escalation) |
@@ -37,5 +37,5 @@ sidebar:
 | [Suspicious Cloud Authentication Activities](/stories/suspicious_cloud_authentication_activities/) | [Compromise Accounts](/tags/#compromise-accounts), [Cloud Accounts](/tags/#cloud-accounts), [Unused/Unsupported Cloud Regions](/tags/#unused/unsupported-cloud-regions) | [Resource Development](/tags/#resource-development) |
 | [Suspicious Cloud Instance Activities](/stories/suspicious_cloud_instance_activities/) | [Cloud Accounts](/tags/#cloud-accounts), [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious Cloud Provisioning Activities](/stories/suspicious_cloud_provisioning_activities/) | [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
-| [Suspicious Cloud User Activities](/stories/suspicious_cloud_user_activities/) | [Valid Accounts](/tags/#valid-accounts) | [Defense Evasion](/tags/#defense-evasion) |
+| [Suspicious Cloud User Activities](/stories/suspicious_cloud_user_activities/) | [Modify Cloud Compute Configurations](/tags/#modify-cloud-compute-configurations) | [Defense Evasion](/tags/#defense-evasion) |
 | [Suspicious GCP Storage Activities](/stories/suspicious_gcp_storage_activities/) | [Data from Cloud Storage](/tags/#data-from-cloud-storage) | [Collection](/tags/#collection) |

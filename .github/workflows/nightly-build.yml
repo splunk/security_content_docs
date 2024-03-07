@@ -43,9 +43,9 @@ jobs:
           path: 'cti'
 
 
-      - name: run site_gen.py
+      - name: run site_gen.py 
         run: |
-          poetry run python bin/site_gen.py
+          poetry run python bin/site_gen.py --skip_enrichment=True
 
       - name: update github with new site
         run: |

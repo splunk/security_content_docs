@@ -747,7 +747,12 @@ def enrich_mitre_defend(playbook, defend_data_dict):
                         playbook["tags"]["technique"] = defend_technique["rdfs:label"]
                         playbook["tags"]["definition"] = defend_technique["d3f:definition"]
                         playbook["tags"]["category"] = technique["rdfs:label"]
-
+                    if 'children' in defend_technique:
+                        for sub_defend_technique in defend_technique["children"]:
+                            if sub_defend_technique["d3f:d3fend-id"] == playbook["tags"]["defend_technique_id"]:
+                                playbook["tags"]["technique"] = sub_defend_technique["rdfs:label"]
+                                playbook["tags"]["definition"] = sub_defend_technique["d3f:definition"]
+                                playbook["tags"]["category"] = defend_technique["rdfs:label"]
 
 
 def generate_doc_index(OUTPUT_DIR, TEMPLATE_PATH, sorted_detections, sorted_stories, sorted_playbooks, messages, VERBOSE):

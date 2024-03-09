@@ -748,18 +748,11 @@ def enrich_mitre_defend(playbook, defend_data_dict):
                     for defend_technique in technique["children"]:
                         if defend_technique["d3f:d3fend-id"] == id:
                             defend_enriched_list.append({"id": id, "technique": defend_technique["rdfs:label"], "definition": defend_technique["d3f:definition"], "category": technique["rdfs:label"]})
-                            #playbook["tags"]["defend_technique_id"][id]["technique"] = defend_technique["rdfs:label"]
-                            #playbook["tags"]["defend_technique_id"][id]["definition"] = defend_technique["d3f:definition"]
-                            #playbook["tags"]["defend_technique_id"][id]["category"] = technique["rdfs:label"]
-
                         elif 'children' in defend_technique:
                             for sub_defend_technique in defend_technique["children"]:
                                 if sub_defend_technique["d3f:d3fend-id"] == id:
                                     defend_enriched_list.append({"id": id, "technique": sub_defend_technique["rdfs:label"], "definition": defend_technique["d3f:definition"],"category": technique["rdfs:label"]})
-                                    #playbook["tags"]["defend_technique_id"][id]["technique"] = sub_defend_technique["rdfs:label"]
-                                    #playbook["tags"]["defend_technique_id"][id]["definition"] = sub_defend_technique["d3f:definition"]
-                                    #playbook["tags"]["defend_technique_id"][id]["category"] = technique["rdfs:label"]
-        
+     
     playbook["tags"]["defend_enriched"] = defend_enriched_list
 
 def generate_doc_index(OUTPUT_DIR, TEMPLATE_PATH, sorted_detections, sorted_stories, sorted_playbooks, messages, VERBOSE):

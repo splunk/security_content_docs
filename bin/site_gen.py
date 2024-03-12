@@ -332,8 +332,9 @@ def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack, so
         playbook_types.append(playbook["type"])
         if "use_cases" in playbook["tags"]:
             playbook_use_cases.extend(playbook["tags"]["use_cases"])
-        if "category" in playbook["tags"]:
-            playbook_categories.append(playbook["tags"]["category"])
+        if "defend_enriched" in playbook["tags"]:
+            for item in range(0, len(playbook["tags"]["defend_enriched"])):
+                playbook_categories.append(playbook["tags"]["defend_enriched"][item].get('category'))
         if "app_list" in playbook:
             playbook_apps.extend(playbook["app_list"])
 
@@ -653,8 +654,9 @@ def generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detectio
         playbook_types.append(playbook["type"])
         if "use_cases" in playbook["tags"]:
             playbook_use_cases.extend(playbook["tags"]["use_cases"])
-        if "category" in playbook["tags"]:
-            playbook_categories.append(playbook["tags"]["category"])
+        if "defend_enriched" in playbook["tags"]:
+            for item in range(0, len(playbook["tags"]["defend_enriched"])):
+                playbook_categories.append(playbook["tags"]["defend_enriched"][item].get('category'))
         if "app_list" in playbook:
             playbook_apps.extend(playbook["app_list"])
 
@@ -698,9 +700,10 @@ def generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detectio
     for category in playbook_categories:
         filtered_playbooks = list()
         for playbook in sorted_playbooks:
-            if "category" in playbook["tags"]:
-                if playbook["tags"]["category"] == category:
-                    filtered_playbooks.append(playbook)
+            if "defend_enriched" in playbook["tags"]:
+                for item in range(0, len(playbook["tags"]["defend_enriched"])):
+                    if playbook["tags"]["defend_enriched"][item].get('category') == category:
+                        filtered_playbooks.append(playbook)
         
         output_path = path.join(OUTPUT_DIR + '/_pages/' + category.lower().replace(" ", "_") + ".md")
         output = template.render(

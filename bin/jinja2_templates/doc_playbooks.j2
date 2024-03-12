@@ -48,7 +48,8 @@ tags:
 | ID          | Technique   | Definition     | Category       |
 | ----------- | ----------- | -------------- | -------------- |
 {%- for tag in playbook.tags.defend_enriched %}
-| {{ tag.id }} | [{{ tag.technique }}](https://d3fend.mitre.org/technique/d3f:{{ tag.technique | replace(" ", "") }}) | {{ tag.definition }} | {{ tag.category }} |{% endfor -%}
+| {{ tag.id }} | [{{ tag.technique }}](https://d3fend.mitre.org/technique/d3f:{{ tag.technique | replace(" ", "") }}) | {{ tag.definition }} | {{ tag.category }} |
+{% endfor -%}
 {% endif -%}
 
 

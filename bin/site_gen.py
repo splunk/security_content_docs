@@ -171,6 +171,7 @@ def parse_splunkbase_response(response_dict):
 
 def add_macros(detection, REPO_PATH): 
     # process macro yamls
+    # this should be factored out so we can do it once per run rather than once per func call
     manifest_files = []
     for root, dirs, files in walk(REPO_PATH + 'macros'):
         for file in files:
@@ -222,6 +223,7 @@ def add_macros(detection, REPO_PATH):
 
 def add_lookups(detection, REPO_PATH):
     # process lookup yamls
+    # This should be factored out so we can process it once per run rather than once per call
     manifest_files = []
     for root, dirs, files in walk(REPO_PATH + 'lookups'):
         for file in files:

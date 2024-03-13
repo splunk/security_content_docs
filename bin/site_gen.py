@@ -169,30 +169,9 @@ def parse_splunkbase_response(response_dict):
     return url, results
         
 
-def add_macros(detection, REPO_PATH): 
+def add_macros(detection, REPO_PATH, macros): 
     # process macro yamls
-    # this should be factored out so we can do it once per run rather than once per func call
-    manifest_files = []
-    for root, dirs, files in walk(REPO_PATH + 'macros'):
-        for file in files:
-            if file.endswith(".yml"):
-                manifest_files.append((path.join(root, file)))
-
-    macros = []
-    for manifest_file in manifest_files:
-        macro_yaml = dict()
-        with open(manifest_file, 'r') as stream:
-            try:
-                object = list(yaml.safe_load_all(stream))[0]
-            except yaml.YAMLError as exc:
-                print(exc)
-                print("Error reading {0}".format(manifest_file))
-                sys.exit(1)
-        macro_yaml = object
-
-
-        macros.append(macro_yaml)
-
+    
     # match those in the detection
     macros_found = re.findall(r'`([^\s]+)`', detection['search'])
     macros_filtered = set()
@@ -221,26 +200,8 @@ def add_macros(detection, REPO_PATH):
     return detection
 
 
-def add_lookups(detection, REPO_PATH):
+def add_lookups(detection, REPO_PATH, lookups):
     # process lookup yamls
-    # This should be factored out so we can process it once per run rather than once per call
-    manifest_files = []
-    for root, dirs, files in walk(REPO_PATH + 'lookups'):
-        for file in files:
-            if file.endswith(".yml"):
-                manifest_files.append((path.join(root, file)))
-
-    lookups = []
-    for manifest_file in manifest_files:
-        lookup_yaml = dict()
-        with open(manifest_file, 'r') as stream:
-            try:
-                object = list(yaml.safe_load_all(stream))[0]
-            except yaml.YAMLError as exc:
-                print(exc)
-                print("Error reading {0}".format(manifest_file))
-                sys.exit(1)
-        lookups.append(object)
 
     lookups_found = re.findall(r'lookup (?:update=true)?(?:append=t)?\s*([^\s]*)', detection['search'])
     detection['lookups'] = []
@@ -484,7 +445,49 @@ def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack, so
 
 
 def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack, messages, VERBOSE, SKIP_ENRICHMENT):
+
+    # Load lookups once
+    lookup_manifest_files = []
+    for root, dirs, files in walk(REPO_PATH + 'lookups'):
+        for file in files:
+            if file.endswith(".yml"):
+                lookup_manifest_files.append((path.join(root, file)))
+
+    lookups = []
+    for lookup_manifest_file in lookup_manifest_files:
+        lookup_yaml = dict()
+        with open(lookup_manifest_file, 'r') as stream:
+            try:
+                object = list(yaml.safe_load_all(stream))[0]
+            except yaml.YAMLError as exc:
+                print(exc)
+                print("Error reading {0}".format(manifest_file))
+                sys.exit(1)
+        lookups.append(object)
+
+    macro_manifest_files = []
+    for root, dirs, files in walk(REPO_PATH + 'macros'):
+        for file in files:
+            if file.endswith(".yml"):
+                macro_manifest_files.append((path.join(root, file)))
+
+    # Load Macros once
+    macros = []
+    for macro_manifest_file in macro_manifest_files:
+        macro_yaml = dict()
+        with open(macro_manifest_file, 'r') as stream:
+            try:
+                object = list(yaml.safe_load_all(stream))[0]
+            except yaml.YAMLError as exc:
+                print(exc)
+                print("Error reading {0}".format(manifest_file))
+                sys.exit(1)
+        macro_yaml = object
+
+
+        macros.append(macro_yaml)
     
+    # Load detections
     manifest_files = []
     for t in types:
         for root, dirs, files in walk(REPO_PATH + 'detections/' + t):
@@ -520,10 +523,10 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack,
             detection_yaml['experimental'] = True
 
         # add macros
-        detection_yaml = add_macros(detection_yaml, REPO_PATH)
+        detection_yaml = add_macros(detection_yaml, REPO_PATH, macros)
 
         # add lookups
-        detection_yaml = add_lookups(detection_yaml, REPO_PATH)
+        detection_yaml = add_lookups(detection_yaml, REPO_PATH, lookups)
 
         detection_yaml = enrich_datamodel(detection_yaml)
 

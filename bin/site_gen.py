@@ -237,7 +237,7 @@ def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack, so
 
         with open(manifest_file, 'r') as stream:
             try:
-                object = list(yaml.safe_load_all(stream))[0]
+                object = list(yaml.load_all(stream=stream, Loader=yaml.CLoader))[0]
             except yaml.YAMLError as exc:
                 print(exc)
                 print("Error reading {0}".format(manifest_file))
@@ -458,7 +458,7 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack,
         lookup_yaml = dict()
         with open(lookup_manifest_file, 'r') as stream:
             try:
-                object = list(yaml.safe_load_all(stream))[0]
+                object = list(yaml.load_all(stream=stream, Loader=yaml.CLoader))[0]
             except yaml.YAMLError as exc:
                 print(exc)
                 print("Error reading {0}".format(manifest_file))
@@ -477,7 +477,7 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack,
         macro_yaml = dict()
         with open(macro_manifest_file, 'r') as stream:
             try:
-                object = list(yaml.safe_load_all(stream))[0]
+                object = list(yaml.load_all(stream=stream, Loader=yaml.CLoader))[0]
             except yaml.YAMLError as exc:
                 print(exc)
                 print("Error reading {0}".format(manifest_file))
@@ -508,7 +508,7 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack,
 
         with open(manifest_file, 'r') as stream:
             try:
-                object = list(yaml.safe_load_all(stream))[0]
+                object = list(yaml.load_all(stream=stream, Loader=yaml.CLoader))[0]
             except yaml.YAMLError as exc:
                 print(exc)
                 print("Error reading {0}".format(manifest_file))
@@ -626,7 +626,7 @@ def generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detectio
 
         with open(manifest_file, 'r') as stream:
             try:
-                object = list(yaml.safe_load_all(stream))[0]
+                object = list(yaml.load_all(stream=stream, Loader=yaml.CLoader))[0]
             except yaml.YAMLError as exc:
                 print(exc)
                 print("Error reading {0}".format(manifest_file))

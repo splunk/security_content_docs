@@ -173,12 +173,16 @@ def add_macros(detection, REPO_PATH, macros):
     # process macro yamls
     
     # match those in the detection
-    macros_found = re.findall(r'`([^\s]+)`', detection['search'])
+
+    macros_to_ignore = set(["_filter", "drop_dm_object_name", "get_asset", "get_risk_severity", "cim_corporate_web_domain-search", "prohibited_processes"])
+
+    text_field = re.sub(r'```.*```', ' ', detection['search'])
+    macros_found = re.findall(r'`([^\s]+)`', text_field)
     macros_filtered = set()
     detection['macros'] = []
 
     for macro in macros_found:
-        if not '_filter' in macro and not 'drop_dm_object_name' in macro:
+        if macro not in macros_to_ignore:
             start = macro.find('(')
             if start != -1:
                 macros_filtered.add(macro[:start])

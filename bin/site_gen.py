@@ -200,6 +200,7 @@ def add_macros(detection, REPO_PATH, macros):
     macro['definition'] = 'search *'
     macro['description'] = 'Update this macro to limit the output results to filter out false positives.'
     detection['macros'].append(macro)
+    detection['macros'] = sorted(detection['macros'], key= lambda i: i['name'])
 
     return detection
 
@@ -214,6 +215,8 @@ def add_lookups(detection, REPO_PATH, lookups):
             if lookup['name'] == lookup_name:
                 detection['lookups'].append(lookup)
 
+
+    detection['lookups'] = sorted(detection['lookups'], key= lambda i: i['name'])
     return detection
 
 def add_splunk_app(detection):

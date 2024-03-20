@@ -34,8 +34,8 @@ This input playbook requires the G Suite for GMail connector to be configured. I
 #### [D3FEND](https://d3fend.mitre.org/)
 
 | ID          | Technique   | Definition     | Category       |
-| ----------- | ----------- |--------------- |--------------- |
-| D3-ER | [](https://d3fend.mitre.org/technique/d3f:) |  |  |
+| ----------- | ----------- | -------------- | -------------- |
+| D3-ER | [Email Removal](https://d3fend.mitre.org/technique/d3f:EmailRemoval) | The file removal technique deletes malicious artifacts or programs from a computer system. | File Eviction |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/G_Suite_for_Gmail_Message_Eviction.json){: .btn .btn--info}
 

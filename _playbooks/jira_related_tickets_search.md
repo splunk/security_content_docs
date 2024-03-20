@@ -30,6 +30,12 @@ Accepts a user or device and identifies if related tickets exists in a timeframe
 This input playbook requires the Jira connector to be configured. It is designed to work in conjunction with the Dynamic Related Tickets Search playbook or other playbooks in the same style.
 
 
+#### [D3FEND](https://d3fend.mitre.org/)
+
+| ID          | Technique   | Definition     | Category       |
+| ----------- | ----------- | -------------- | -------------- |
+| D3-IRA | [Identifier Reputation Analysis](https://d3fend.mitre.org/technique/d3f:IdentifierReputationAnalysis) | Analyzing the reputation of an identifier. | Identifier Analysis |
+
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Jira_Related_Tickets_Search.json){: .btn .btn--info}
 
 [![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/Jira_Related_Tickets_Search.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Jira_Related_Tickets_Search.json)

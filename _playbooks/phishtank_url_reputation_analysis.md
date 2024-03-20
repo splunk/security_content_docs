@@ -35,7 +35,7 @@ This input playbook requires the PhishTank connector to be configured. It is des
 #### [D3FEND](https://d3fend.mitre.org/)
 
 | ID          | Technique   | Definition     | Category       |
-| ----------- | ----------- |--------------- |--------------- |
+| ----------- | ----------- | -------------- | -------------- |
 | D3-IRA | [Identifier Reputation Analysis](https://d3fend.mitre.org/technique/d3f:IdentifierReputationAnalysis) | Analyzing the reputation of an identifier. | Identifier Analysis |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/PhishTank_URL_Reputation_Analysis.json){: .btn .btn--info}

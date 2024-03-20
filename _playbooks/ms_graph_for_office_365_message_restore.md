@@ -34,8 +34,8 @@ This input playbook requires the MS Graph for Office 365 connector to be configu
 #### [D3FEND](https://d3fend.mitre.org/)
 
 | ID          | Technique   | Definition     | Category       |
-| ----------- | ----------- |--------------- |--------------- |
-| D3-RE | [](https://d3fend.mitre.org/technique/d3f:) |  |  |
+| ----------- | ----------- | -------------- | -------------- |
+| D3-RE | [Restore Email](https://d3fend.mitre.org/technique/d3f:RestoreEmail) | Restoring a file for an entity to access. | Restore Object |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/MS_Graph_for_Office_365_Message_Restore.json){: .btn .btn--info}
 

@@ -1,6 +1,6 @@
 ---
-title: "CyclopsBLink"
-last_modified_at: 2022-04-07
+title: "Cyclops Blink"
+last_modified_at: 2024-03-14
 toc: true
 toc_label: ""
 tags:
@@ -18,7 +18,7 @@ Leverage searches that allow you to detect and investigate unusual activities th
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint)
-- **Last Updated**: 2022-04-07
+- **Last Updated**: 2024-03-14
 - **Author**: Teoderick Contreras, Splunk
 - **ID**: 7c75b1c8-dfff-46f1-8250-e58df91b6fd9
 
@@ -41,4 +41,4 @@ Adversaries may use this technique to maximize the impact on the target organiza
 
 
 
-[*source*](https://github.com/splunk/security_content/tree/develop/stories/cyclopsblink.yml) \| *version*: **1**
+[*source*](https://github.com/splunk/security_content/tree/develop/stories/cyclops_blink.yml) \| *version*: **2**

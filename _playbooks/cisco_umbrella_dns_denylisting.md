@@ -35,7 +35,7 @@ This input playbook requires the Cisco Umbrella connector to be configured. It i
 #### [D3FEND](https://d3fend.mitre.org/)
 
 | ID          | Technique   | Definition     | Category       |
-| ----------- | ----------- |--------------- |--------------- |
+| ----------- | ----------- | -------------- | -------------- |
 | D3-DNSDL | [DNS Denylisting](https://d3fend.mitre.org/technique/d3f:DNSDenylisting) | Blocking DNS Network Traffic based on criteria such as IP address, domain name, or DNS query type. | Network Isolation |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Cisco_Umbrella_DNS_Denylisting.json){: .btn .btn--info}

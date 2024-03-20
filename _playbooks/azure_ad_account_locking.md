@@ -35,7 +35,7 @@ This input playbook requires the Azure AD Graph connector to be configured. It i
 #### [D3FEND](https://d3fend.mitre.org/)
 
 | ID          | Technique   | Definition     | Category       |
-| ----------- | ----------- |--------------- |--------------- |
+| ----------- | ----------- | -------------- | -------------- |
 | D3-AL | [Account Locking](https://d3fend.mitre.org/technique/d3f:AccountLocking) | The process of temporarily disabling user accounts on a system or domain. | Credential Eviction |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Azure_AD_Account_Locking.json){: .btn .btn--info}

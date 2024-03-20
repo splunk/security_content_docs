@@ -35,7 +35,7 @@ This input playbook requires the AWS IAM connector to be configured. It is desig
 #### [D3FEND](https://d3fend.mitre.org/)
 
 | ID          | Technique   | Definition     | Category       |
-| ----------- | ----------- |--------------- |--------------- |
+| ----------- | ----------- | -------------- | -------------- |
 | D3-AL | [Account Locking](https://d3fend.mitre.org/technique/d3f:AccountLocking) | The process of temporarily disabling user accounts on a system or domain. | Credential Eviction |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/AWS_IAM_Account_Locking.json){: .btn .btn--info}

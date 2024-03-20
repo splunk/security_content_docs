@@ -30,6 +30,12 @@ Accepts user, to be enabled using AWS IAM connector. Enabling an account involve
 This input playbook requires the AWS IAM connector to be configured.
 
 
+#### [D3FEND](https://d3fend.mitre.org/)
+
+| ID          | Technique   | Definition     | Category       |
+| ----------- | ----------- | -------------- | -------------- |
+| D3-RUAA | [Restore User Account Access](https://d3fend.mitre.org/technique/d3f:RestoreUserAccountAccess) | Restoring a user account&#39;s access to resources. | Restore Access |
+
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/AWS_IAM_Account_Unlocking.json){: .btn .btn--info}
 
 [![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/AWS_IAM_Account_Unlocking.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/AWS_IAM_Account_Unlocking.json)

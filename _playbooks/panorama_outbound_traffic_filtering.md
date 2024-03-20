@@ -35,8 +35,8 @@ This input playbook requires the Panorama connector to be configured. It is desi
 #### [D3FEND](https://d3fend.mitre.org/)
 
 | ID          | Technique   | Definition     | Category       |
-| ----------- | ----------- |--------------- |--------------- |
-| D3-OTF | [](https://d3fend.mitre.org/technique/d3f:) |  |  |
+| ----------- | ----------- | -------------- | -------------- |
+| D3-OTF | [Outbound Traffic Filtering](https://d3fend.mitre.org/technique/d3f:OutboundTrafficFiltering) | Restricting network traffic originating from any location. | Network Isolation |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/Panorama_Outbound_Traffic_Filtering.json){: .btn .btn--info}
 

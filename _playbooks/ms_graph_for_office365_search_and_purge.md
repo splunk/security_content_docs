@@ -34,8 +34,10 @@ This input playbook requires the MS Graph for Office365 connector to be configur
 #### [D3FEND](https://d3fend.mitre.org/)
 
 | ID          | Technique   | Definition     | Category       |
-| ----------- | ----------- |--------------- |--------------- |
-| [&#39;D3-ER&#39;, &#39;D3-IAA&#39;] | [](https://d3fend.mitre.org/technique/d3f:) |  |  |
+| ----------- | ----------- | -------------- | -------------- |
+| D3-ER | [Email Removal](https://d3fend.mitre.org/technique/d3f:EmailRemoval) | The file removal technique deletes malicious artifacts or programs from a computer system. | File Eviction |
+
+| D3-IAA | [Identifier Activity Analysis](https://d3fend.mitre.org/technique/d3f:IdentifierActivityAnalysis) | Taking known malicious identifiers and determining if they are present in a system. | Identifier Analysis |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/MS_Graph_for_Office_365_Search_and_Purge.json){: .btn .btn--info}
 

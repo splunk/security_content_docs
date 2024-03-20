@@ -34,8 +34,16 @@ This input playbook requires the VirusTotal v3 connector to be configured. It is
 #### [D3FEND](https://d3fend.mitre.org/)
 
 | ID          | Technique   | Definition     | Category       |
-| ----------- | ----------- |--------------- |--------------- |
+| ----------- | ----------- | -------------- | -------------- |
 | D3-IRA | [Identifier Reputation Analysis](https://d3fend.mitre.org/technique/d3f:IdentifierReputationAnalysis) | Analyzing the reputation of an identifier. | Identifier Analysis |
+
+| D3-URA | [URL Reputation Analysis](https://d3fend.mitre.org/technique/d3f:URLReputationAnalysis) | Analyzing the reputation of an identifier. | Identifier Analysis |
+
+| D3-DNRA | [Domain Name Reputation Analysis](https://d3fend.mitre.org/technique/d3f:DomainNameReputationAnalysis) | Analyzing the reputation of an identifier. | Identifier Analysis |
+
+| D3-IPRA | [IP Reputation Analysis](https://d3fend.mitre.org/technique/d3f:IPReputationAnalysis) | Analyzing the reputation of an identifier. | Identifier Analysis |
+
+| D3-FHRA | [File Hash Reputation Analysis](https://d3fend.mitre.org/technique/d3f:FileHashReputationAnalysis) | Analyzing the reputation of an identifier. | Identifier Analysis |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/VirusTotal_v3_Identifier_Reputation_Analysis.json){: .btn .btn--info}
 

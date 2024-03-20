@@ -1,6 +1,6 @@
 ---
 title: "Sneaky Active Directory Persistence Tricks"
-last_modified_at: 2022-08-29
+last_modified_at: 2024-03-14
 toc: true
 toc_label: ""
 tags:
@@ -21,7 +21,7 @@ Monitor for activities and techniques associated with Windows Active Directory p
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
 - **Datamodel**: [Authentication](https://docs.splunk.com/Documentation/CIM/latest/User/Authentication), [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic)
-- **Last Updated**: 2022-08-29
+- **Last Updated**: 2024-03-14
 - **Author**: Dean Luxton, Mauricio Velazco, Splunk
 - **ID**: f676c4c1-c769-4ecb-9611-5fd85b497c56
 
@@ -73,4 +73,4 @@ This analytic story groups detection opportunities for most of the techniques de
 
 
 
-[*source*](https://github.com/splunk/security_content/tree/develop/stories/sneaky_active_directory_persistence_tricks.yml) \| *version*: **1**
+[*source*](https://github.com/splunk/security_content/tree/develop/stories/sneaky_active_directory_persistence_tricks.yml) \| *version*: **2**

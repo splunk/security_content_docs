@@ -140,10 +140,18 @@ playbooks:
         url: /playbooks/credential_eviction/
       - title: File Analysis
         url: /playbooks/file_analysis/
+      - title: File Eviction
+        url: /playbooks/file_eviction/
       - title: Identifier Analysis
         url: /playbooks/identifier_analysis/
+      - title: Message Analysis
+        url: /playbooks/message_analysis/
       - title: Network Isolation
         url: /playbooks/network_isolation/
+      - title: Restore Access
+        url: /playbooks/restore_access/
+      - title: Restore Object
+        url: /playbooks/restore_object/
   - title: "Soar App"
     children:
       - title: AD LDAP

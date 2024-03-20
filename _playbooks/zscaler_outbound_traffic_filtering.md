@@ -32,12 +32,6 @@ Accepts a URL or list of URLs and block them in ZScaler. Generates a list of obs
 This input playbook requires the ZScaler connector to be configured. It is designed to work in conjunction with the Dynamic URL Outbound Traffic Filtering Analysis playbook or other playbooks in the same style.
 
 
-#### [D3FEND](https://d3fend.mitre.org/)
-
-| ID          | Technique   | Definition     | Category       |
-| ----------- | ----------- |--------------- |--------------- |
-| D3-OTF | [](https://d3fend.mitre.org/technique/d3f:) |  |  |
-
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/ZScaler_Outbound_Traffic_Filtering.json){: .btn .btn--info}
 
 [![explore](https://raw.githubusercontent.com/splunk/security_content/develop/playbooks/ZScaler_Outbound_Traffic_Filtering.png){:height="500px" width="500px"}](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/ZScaler_Outbound_Traffic_Filtering.json)

@@ -34,7 +34,7 @@ This playbook looks for artifacts and then dispatches the community denylisting 
 #### [D3FEND](https://d3fend.mitre.org/)
 
 | ID          | Technique   | Definition     | Category       |
-| ----------- | ----------- |--------------- |--------------- |
+| ----------- | ----------- | -------------- | -------------- |
 | D3-DNSDL | [DNS Denylisting](https://d3fend.mitre.org/technique/d3f:DNSDenylisting) | Blocking DNS Network Traffic based on criteria such as IP address, domain name, or DNS query type. | Network Isolation |
 
 #### [Explore Playbook](https://splunk.github.io/soar-playbook-viewer/?playbook=https://raw.githubusercontent.com/phantomcyber/playbooks/latest/DNS_Denylisting_Dispatch.json){: .btn .btn--info}

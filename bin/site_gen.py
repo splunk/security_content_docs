@@ -25,7 +25,7 @@ ATTACK_TACTICS_KILLCHAIN_MAPPING = {
     "Privilege Escalation": "Exploitation",
     "Defense Evasion": "Exploitation",
     "Credential Access": "Exploitation",
-    "Discovery": "Exploitation", 
+    "Discovery": "Exploitation",
     "Lateral Movement": "Exploitation",
     "Collection": "Exploitation",
     "Command and Control": "Command and Control",
@@ -38,7 +38,7 @@ def get_cve_enrichment_new(cve_id):
     cve_enriched = dict()
     cve_enriched['id'] = cve_id
 
-    try: 
+    try:
         cve = CVESearch(CVESSEARCH_API_URL)
         result = cve.id(cve_id)
         if result is None:
@@ -88,19 +88,19 @@ def get_mitre_enrichment_new(attack, mitre_attack_id):
 def enrich_datamodel(detection):
     detection["datamodel"] = []
     data_models = [
-        "Authentication", 
-        "Change", 
-        "Change_Analysis", 
-        "Email", 
-        "Endpoint", 
-        "Network_Resolution", 
-        "Network_Sessions", 
-        "Network_Traffic", 
-        "Risk", 
-        "Splunk_Audit", 
-        "UEBA", 
-        "Updates", 
-        "Vulnerabilities", 
+        "Authentication",
+        "Change",
+        "Change_Analysis",
+        "Email",
+        "Endpoint",
+        "Network_Resolution",
+        "Network_Sessions",
+        "Network_Traffic",
+        "Risk",
+        "Splunk_Audit",
+        "UEBA",
+        "Updates",
+        "Vulnerabilities",
         "Web"
     ]
     for data_model in data_models:
@@ -132,7 +132,7 @@ def enrich_kill_chain(detection):
         detection["tags"]["kill_chain_phases"] = list(dict.fromkeys(kill_chain_phases))
     return detection
 
-def enrich_splunk_app(splunk_ta):   
+def enrich_splunk_app(splunk_ta):
     appurl = SPLUNKBASE_API_URL + splunk_ta
     splunk_app_enriched = dict()
     try:
@@ -144,7 +144,7 @@ def enrich_splunk_app(splunk_ta):
         for i in results:
             if i['@name'] == 'appName':
                 splunk_app_enriched['name'] = i['#text']
-        # grab out the splunkbase url  
+        # grab out the splunkbase url
         if 'entriesbyid' in url:
             response = requests.get(url)
             response_dict = xmltodict.parse(response.content)
@@ -167,38 +167,22 @@ def parse_splunkbase_response(response_dict):
         url = response_dict['feed']['entry']['link']['@href']
         results = response_dict['feed']['entry']['content']['s:dict']['s:key']
     return url, results
-        
 
-def add_macros(detection, REPO_PATH): 
+
+def add_macros(detection, REPO_PATH, macros):
     # process macro yamls
-    manifest_files = []
-    for root, dirs, files in walk(REPO_PATH + 'macros'):
-        for file in files:
-            if file.endswith(".yml"):
-                manifest_files.append((path.join(root, file)))
-
-    macros = []
-    for manifest_file in manifest_files:
-        macro_yaml = dict()
-        with open(manifest_file, 'r') as stream:
-            try:
-                object = list(yaml.safe_load_all(stream))[0]
-            except yaml.YAMLError as exc:
-                print(exc)
-                print("Error reading {0}".format(manifest_file))
-                sys.exit(1)
-        macro_yaml = object
-
-
-        macros.append(macro_yaml)
 
     # match those in the detection
-    macros_found = re.findall(r'`([^\s]+)`', detection['search'])
+
+    macros_to_ignore = set(["_filter", "drop_dm_object_name", "get_asset", "get_risk_severity", "cim_corporate_web_domain-search", "prohibited_processes"])
+
+    text_field = re.sub(r'```.*```', ' ', detection['search'])
+    macros_found = re.findall(r'`([^\s]+)`', text_field)
     macros_filtered = set()
     detection['macros'] = []
 
     for macro in macros_found:
-        if not '_filter' in macro and not 'drop_dm_object_name' in macro:
+        if macro not in macros_to_ignore:
             start = macro.find('(')
             if start != -1:
                 macros_filtered.add(macro[:start])
@@ -216,29 +200,13 @@ def add_macros(detection, REPO_PATH):
     macro['definition'] = 'search *'
     macro['description'] = 'Update this macro to limit the output results to filter out false positives.'
     detection['macros'].append(macro)
+    detection['macros'] = sorted(detection['macros'], key= lambda i: i['name'])
 
     return detection
 
 
-def add_lookups(detection, REPO_PATH):
+def add_lookups(detection, REPO_PATH, lookups):
     # process lookup yamls
-    manifest_files = []
-    for root, dirs, files in walk(REPO_PATH + 'lookups'):
-        for file in files:
-            if file.endswith(".yml"):
-                manifest_files.append((path.join(root, file)))
-
-    lookups = []
-    for manifest_file in manifest_files:
-        lookup_yaml = dict()
-        with open(manifest_file, 'r') as stream:
-            try:
-                object = list(yaml.safe_load_all(stream))[0]
-            except yaml.YAMLError as exc:
-                print(exc)
-                print("Error reading {0}".format(manifest_file))
-                sys.exit(1)
-        lookups.append(object)
 
     lookups_found = re.findall(r'lookup (?:update=true)?(?:append=t)?\s*([^\s]*)', detection['search'])
     detection['lookups'] = []
@@ -247,6 +215,8 @@ def add_lookups(detection, REPO_PATH):
             if lookup['name'] == lookup_name:
                 detection['lookups'].append(lookup)
 
+
+    detection['lookups'] = sorted(detection['lookups'], key= lambda i: i['name'])
     return detection
 
 def add_splunk_app(detection):
@@ -274,7 +244,7 @@ def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack, so
 
         with open(manifest_file, 'r') as stream:
             try:
-                object = list(yaml.safe_load_all(stream))[0]
+                object = list(yaml.load_all(stream=stream, Loader=yaml.CSafeLoader))[0]
             except yaml.YAMLError as exc:
                 print(exc)
                 print("Error reading {0}".format(manifest_file))
@@ -332,8 +302,9 @@ def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack, so
         playbook_types.append(playbook["type"])
         if "use_cases" in playbook["tags"]:
             playbook_use_cases.extend(playbook["tags"]["use_cases"])
-        if "category" in playbook["tags"]:
-            playbook_categories.append(playbook["tags"]["category"])
+        if "defend_enriched" in playbook["tags"]:
+            for item in range(0, len(playbook["tags"]["defend_enriched"])):
+                playbook_categories.append(playbook["tags"]["defend_enriched"][item].get('category'))
         if "app_list" in playbook:
             playbook_apps.extend(playbook["app_list"])
 
@@ -355,12 +326,12 @@ def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack, so
             story['kill_chain_phases'] = sorted(sto_to_kill_chain_phases[story['name']])
 
     # sort stories into categories
-    # grab all the categories first 
+    # grab all the categories first
     categories = []
     category_names = set()
     for story in sorted_stories:
         if 'category' in story['tags']:
-            for category in story['tags']['category']:    
+            for category in story['tags']['category']:
                 category_names.add(category)
 
     # build an category object with stories to populate
@@ -375,7 +346,7 @@ def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack, so
     for story in sorted_stories:
         for category in categories:
             if 'category' in story['tags']:
-                for c in story['tags']['category']:    
+                for c in story['tags']['category']:
                     if category['name'] == c:
                         category['stories'].append(story)
 
@@ -401,9 +372,9 @@ def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack, so
     template = j2_env.get_template('doc_navigation.j2')
     output_path = path.join(OUTPUT_DIR + '/_data/navigation.yml')
     output = template.render(
-        types=types, 
-        tactics=sorted(tactics), 
-        datamodels=sorted(datamodels), 
+        types=types,
+        tactics=sorted(tactics),
+        datamodels=sorted(datamodels),
         categories=sorted(category_names),
         playbook_types = sorted(playbook_types),
         playbook_use_cases = sorted(playbook_use_cases),
@@ -441,7 +412,7 @@ def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack, so
         f.write(output)
     messages.append("doc_gen.py wrote _page for: {1} structure to: {0}".format(output_path, 'types.md'))
 
-    # for types 
+    # for types
     template = j2_env.get_template('doc_navigation_type_pages.j2')
     for type in types:
         output_path = path.join(OUTPUT_DIR + '/_pages/' + type.lower() + "_type.md")
@@ -481,7 +452,49 @@ def generate_doc_stories(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack, so
 
 
 def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack, messages, VERBOSE, SKIP_ENRICHMENT):
-    
+
+    # Load lookups once
+    lookup_manifest_files = []
+    for root, dirs, files in walk(REPO_PATH + 'lookups'):
+        for file in files:
+            if file.endswith(".yml"):
+                lookup_manifest_files.append((path.join(root, file)))
+
+    lookups = []
+    for lookup_manifest_file in lookup_manifest_files:
+        lookup_yaml = dict()
+        with open(lookup_manifest_file, 'r') as stream:
+            try:
+                object = list(yaml.load_all(stream=stream, Loader=yaml.CSafeLoader))[0]
+            except yaml.YAMLError as exc:
+                print(exc)
+                print("Error reading {0}".format(lookup_manifest_file))
+                sys.exit(1)
+        lookups.append(object)
+
+    macro_manifest_files = []
+    for root, dirs, files in walk(REPO_PATH + 'macros'):
+        for file in files:
+            if file.endswith(".yml"):
+                macro_manifest_files.append((path.join(root, file)))
+
+    # Load Macros once
+    macros = []
+    for macro_manifest_file in macro_manifest_files:
+        macro_yaml = dict()
+        with open(macro_manifest_file, 'r') as stream:
+            try:
+                object = list(yaml.load_all(stream=stream, Loader=yaml.CSafeLoader))[0]
+            except yaml.YAMLError as exc:
+                print(exc)
+                print("Error reading {0}".format(macro_manifest_file))
+                sys.exit(1)
+        macro_yaml = object
+
+
+        macros.append(macro_yaml)
+
+    # Load detections
     manifest_files = []
     for t in types:
         for root, dirs, files in walk(REPO_PATH + 'detections/' + t):
@@ -492,7 +505,7 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack,
         for root, dirs, files in walk(REPO_PATH + 'ssa_detections/' + t):
             for file in files:
                 if file.endswith(".yml"):
-                    manifest_files.append((path.join(root, file)))        
+                    manifest_files.append((path.join(root, file)))
 
     detections = []
     for manifest_file in tqdm(manifest_files):
@@ -502,7 +515,7 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack,
 
         with open(manifest_file, 'r') as stream:
             try:
-                object = list(yaml.safe_load_all(stream))[0]
+                object = list(yaml.load_all(stream=stream, Loader=yaml.CSafeLoader))[0]
             except yaml.YAMLError as exc:
                 print(exc)
                 print("Error reading {0}".format(manifest_file))
@@ -517,16 +530,16 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack,
             detection_yaml['experimental'] = True
 
         # add macros
-        detection_yaml = add_macros(detection_yaml, REPO_PATH)
+        detection_yaml = add_macros(detection_yaml, REPO_PATH, macros)
 
         # add lookups
-        detection_yaml = add_lookups(detection_yaml, REPO_PATH)
+        detection_yaml = add_lookups(detection_yaml, REPO_PATH, lookups)
 
         detection_yaml = enrich_datamodel(detection_yaml)
 
         detection_yaml = enrich_cis(detection_yaml)
         detection_yaml = enrich_nist(detection_yaml)
-        
+
 
         # enrich the mitre object
         mitre_attacks = []
@@ -560,7 +573,7 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack,
         # check if is experimental, add the flag
         # if detection_yaml["status"] == "experimental":
         #     detection_yaml['experimental'] = True
-    
+
         # check if is deprecated, add the flag
         if "deprecated" == manifest_file.split('/')[2]:
             detection_yaml['deprecated'] = True
@@ -577,7 +590,7 @@ def generate_doc_detections(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, types, attack,
                              trim_blocks=False, autoescape=True)
 
     # write markdown
-    template = j2_env.get_template('doc_detections.j2') 
+    template = j2_env.get_template('doc_detections.j2')
     for detection in sorted_detections:
         file_name = detection['date'] + "-" + detection['id'].lower() + '.md'
         output_path = path.join(OUTPUT_DIR + '/_posts/' + file_name)
@@ -620,7 +633,7 @@ def generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detectio
 
         with open(manifest_file, 'r') as stream:
             try:
-                object = list(yaml.safe_load_all(stream))[0]
+                object = list(yaml.load_all(stream=stream, Loader=yaml.CSafeLoader))[0]
             except yaml.YAMLError as exc:
                 print(exc)
                 print("Error reading {0}".format(manifest_file))
@@ -653,8 +666,9 @@ def generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detectio
         playbook_types.append(playbook["type"])
         if "use_cases" in playbook["tags"]:
             playbook_use_cases.extend(playbook["tags"]["use_cases"])
-        if "category" in playbook["tags"]:
-            playbook_categories.append(playbook["tags"]["category"])
+        if "defend_enriched" in playbook["tags"]:
+            for item in range(0, len(playbook["tags"]["defend_enriched"])):
+                playbook_categories.append(playbook["tags"]["defend_enriched"][item].get('category'))
         if "app_list" in playbook:
             playbook_apps.extend(playbook["app_list"])
 
@@ -663,13 +677,13 @@ def generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detectio
     playbook_categories = list(set(playbook_categories))
     playbook_apps = list(set(playbook_apps))
 
-    template = j2_env.get_template('doc_navigation_playbook_pages.j2') 
+    template = j2_env.get_template('doc_navigation_playbook_pages.j2')
     for playbook_type in playbook_types:
         filtered_playbooks = list()
         for playbook in sorted_playbooks:
             if playbook["type"] == playbook_type:
                 filtered_playbooks.append(playbook)
-        
+
         output_path = path.join(OUTPUT_DIR + '/_pages/' + playbook_type.lower().replace(" ", "_") + ".md")
         output = template.render(
             category=playbook_type,
@@ -685,7 +699,7 @@ def generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detectio
             if "use_cases" in playbook["tags"]:
                 if use_case in playbook["tags"]["use_cases"]:
                     filtered_playbooks.append(playbook)
-        
+
         output_path = path.join(OUTPUT_DIR + '/_pages/' + use_case.lower().replace(" ", "_") + "playbook.md")
         output = template.render(
             category=use_case,
@@ -698,10 +712,11 @@ def generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detectio
     for category in playbook_categories:
         filtered_playbooks = list()
         for playbook in sorted_playbooks:
-            if "category" in playbook["tags"]:
-                if playbook["tags"]["category"] == category:
-                    filtered_playbooks.append(playbook)
-        
+            if "defend_enriched" in playbook["tags"]:
+                for item in range(0, len(playbook["tags"]["defend_enriched"])):
+                    if playbook["tags"]["defend_enriched"][item].get('category') == category:
+                        filtered_playbooks.append(playbook)
+
         output_path = path.join(OUTPUT_DIR + '/_pages/' + category.lower().replace(" ", "_") + ".md")
         output = template.render(
             category=category,
@@ -717,7 +732,7 @@ def generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detectio
             if "app_list" in playbook:
                 if app in playbook["app_list"]:
                     filtered_playbooks.append(playbook)
-        
+
         output_path = path.join(OUTPUT_DIR + '/_pages/' + app.lower().replace(" ", "_") + ".md")
         output = template.render(
             category=app,
@@ -725,7 +740,7 @@ def generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detectio
         )
         with open(output_path, 'w', encoding="utf-8") as f:
             f.write(output)
-        messages.append("doc_gen.py wrote _page for: {1} structure to: {0}".format(output_path, category))
+        messages.append("doc_gen.py wrote _page for: {1} structure to: {0}".format(output_path, app))
 
     # write markdown detection page
     template = j2_env.get_template('doc_playbooks_page.j2')
@@ -739,16 +754,21 @@ def generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detectio
 
 
 def enrich_mitre_defend(playbook, defend_data_dict):
+
+    defend_enriched_list = []
     if "defend_technique_id" in playbook["tags"]:
-        for tactic in defend_data_dict:
-            for technique in tactic["children"]:
-                for defend_technique in technique["children"]:
-                    if defend_technique["d3f:d3fend-id"] == playbook["tags"]["defend_technique_id"]:
-                        playbook["tags"]["technique"] = defend_technique["rdfs:label"]
-                        playbook["tags"]["definition"] = defend_technique["d3f:definition"]
-                        playbook["tags"]["category"] = technique["rdfs:label"]
+        for id in playbook["tags"]["defend_technique_id"]:
+            for tactic in defend_data_dict:
+                for technique in tactic["children"]:
+                    for defend_technique in technique["children"]:
+                        if defend_technique["d3f:d3fend-id"] == id:
+                            defend_enriched_list.append({"id": id, "technique": defend_technique["rdfs:label"], "definition": defend_technique["d3f:definition"], "category": technique["rdfs:label"]})
+                        elif 'children' in defend_technique:
+                            for sub_defend_technique in defend_technique["children"]:
+                                if sub_defend_technique["d3f:d3fend-id"] == id:
+                                    defend_enriched_list.append({"id": id, "technique": sub_defend_technique["rdfs:label"], "definition": defend_technique["d3f:definition"],"category": technique["rdfs:label"]})
 
-
+    playbook["tags"]["defend_enriched"] = defend_enriched_list
 
 def generate_doc_index(OUTPUT_DIR, TEMPLATE_PATH, sorted_detections, sorted_stories, sorted_playbooks, messages, VERBOSE):
 
@@ -767,7 +787,7 @@ def generate_doc_index(OUTPUT_DIR, TEMPLATE_PATH, sorted_detections, sorted_stor
 
 
 def wipe_old_folders(OUTPUT_DIR, VERBOSE):
-    
+
     if VERBOSE:
         print("wiping the {0}/_posts/* folder".format(OUTPUT_DIR))
 

@@ -45,7 +45,7 @@ jobs:
 
       - name: run site_gen.py 
         run: |
-          poetry run python bin/site_gen.py --skip_enrichment=True
+          poetry run python bin/site_gen.py
 
       - name: update github with new site
         run: |

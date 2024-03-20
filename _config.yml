@@ -74,6 +74,10 @@ exclude:
   - security_content
   - vendor
   - cti
+  - pyproject.toml
+  - poetry.lock
+  - LICENSE
+  - README.md
 
 # Plugins (previously gems:)
 plugins:

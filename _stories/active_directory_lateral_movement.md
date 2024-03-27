@@ -7,6 +7,7 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
+  - Change
   - Endpoint
   - Network_Traffic
   - Risk
@@ -19,7 +20,7 @@ tags:
 Detect and investigate tactics, techniques, and procedures around how attackers move laterally within an Active Directory environment. Since lateral movement is often a necessary step in a breach, it is important for cyber defenders to deploy detection coverage.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic), [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk)
+- **Datamodel**: [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change), [Endpoint](https://docs.splunk.com/Documentation/CIM/latest/User/Endpoint), [Network_Traffic](https://docs.splunk.com/Documentation/CIM/latest/User/NetworkTraffic), [Risk](https://docs.splunk.com/Documentation/CIM/latest/User/Risk)
 - **Last Updated**: 2021-12-09
 - **Author**: David Dorsey, Mauricio Velazco Splunk
 - **ID**: 399d65dc-1f08-499b-a259-aad9051f38ad
@@ -66,6 +67,7 @@ If there is evidence of lateral movement, it is imperative for analysts to colle
 | [Schtasks scheduling job on remote system](/endpoint/1297fb80-f42a-4b4a-9c8a-88c066237cf6/) | [Scheduled Task](/tags/#scheduled-task), [Scheduled Task/Job](/tags/#scheduled-task/job) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Services LOLBAS Execution Process Spawn](/endpoint/ba9e1954-4c04-11ec-8b74-3e22fbd008af/) | [Create or Modify System Process](/tags/#create-or-modify-system-process), [Windows Service](/tags/#windows-service) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Short Lived Scheduled Task](/endpoint/6fa31414-546e-11ec-adfa-acde48001122/) | [Scheduled Task](/tags/#scheduled-task) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Short Lived Windows Accounts](/endpoint/b25f6f62-0782-43c1-b403-083231ffd97d/) | [Local Account](/tags/#local-account), [Create Account](/tags/#create-account) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Svchost LOLBAS Execution Process Spawn](/endpoint/09e5c72a-4c0d-11ec-aa29-3e22fbd008af/) | [Scheduled Task/Job](/tags/#scheduled-task/job), [Scheduled Task](/tags/#scheduled-task) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Unusual Number of Computer Service Tickets Requested](/endpoint/ac3b81c0-52f4-11ec-ac44-acde48001122/) | [Valid Accounts](/tags/#valid-accounts) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Unusual Number of Remote Endpoint Authentication Events](/endpoint/acb5dc74-5324-11ec-a36d-acde48001122/) | [Valid Accounts](/tags/#valid-accounts) | [Hunting](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

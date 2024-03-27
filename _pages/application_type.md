@@ -44,6 +44,7 @@ sidebar:
 | [Splunk Absolute Path Traversal Using runshellscript](/application/356bd3fe-f59b-4f64-baa1-51495411b7ad/) | [File and Directory Discovery](/tags/#file-and-directory-discovery) |  None |
 | [Splunk Account Discovery Drilldown Dashboard Disclosure](/application/f844c3f6-fd99-43a2-ba24-93e35fe84be6/) | [Account Discovery](/tags/#account-discovery) |  None |
 | [Splunk App for Lookup File Editing RCE via User XSLT](/application/a053e6a6-2146-483a-9798-2d43652f3299/) | [Exploitation of Remote Services](/tags/#exploitation-of-remote-services) |  None |
+| [Splunk Authentication Token Exposure in Debug Log](/application/9a67e749-d291-40dd-8376-d422e7ecf8b5/) | [Log Enumeration](/tags/#log-enumeration) | [Web](https://docs.splunk.com/Documentation/CIM/latest/User/Web) |
 | [Splunk Code Injection via custom dashboard leading to RCE](/application/b06b41d7-9570-4985-8137-0784f582a1b3/) | [Exploitation of Remote Services](/tags/#exploitation-of-remote-services) |  None |
 | [Splunk Command and Scripting Interpreter Delete Usage](/application/8d3d5d5e-ca43-42be-aa1f-bc64375f6b04/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Splunk_Audit](https://docs.splunk.com/Documentation/CIM/latest/User/SplunkAudit) |
 | [Splunk Command and Scripting Interpreter Risky Commands](/application/1cf58ae1-9177-40b8-a26c-8966040f11ae/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter) | [Splunk_Audit](https://docs.splunk.com/Documentation/CIM/latest/User/SplunkAudit) |

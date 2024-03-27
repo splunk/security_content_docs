@@ -7,6 +7,7 @@ tags:
   - Splunk Enterprise
   - Splunk Enterprise Security
   - Splunk Cloud
+  - Change
 ---
 
 [Try in Splunk Security Cloud](https://www.splunk.com/en_us/cyber-security.html){: .btn .btn--success}
@@ -16,7 +17,7 @@ tags:
 Monitor for activities and techniques associated with Password Spraying attacks within Active Directory environments.
 
 - **Product**: Splunk Enterprise, Splunk Enterprise Security, Splunk Cloud
-- **Datamodel**: 
+- **Datamodel**: [Change](https://docs.splunk.com/Documentation/CIM/latest/User/Change)
 - **Last Updated**: 2021-04-07
 - **Author**: Mauricio Velazco, Splunk
 - **ID**: 3de109da-97d2-11eb-8b6a-acde48001122
@@ -31,6 +32,9 @@ Specifically, this Analytic Story is focused on detecting possible Password Spra
 
 | Name        | Technique   | Type         |
 | ----------- | ----------- |--------------|
+| [Detect Excessive Account Lockouts From Endpoint](/endpoint/c026e3dd-7e18-4abb-8f41-929e836efe74/) | [Valid Accounts](/tags/#valid-accounts), [Domain Accounts](/tags/#domain-accounts) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Detect Excessive User Account Lockouts](/endpoint/95a7f9a5-6096-437e-a19e-86f42ac609bd/) | [Valid Accounts](/tags/#valid-accounts), [Local Accounts](/tags/#local-accounts) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
+| [Windows Create Local Account](/endpoint/3fb2e8e3-7bc0-4567-9722-c5ab9f8595eb/) | [Local Account](/tags/#local-account), [Create Account](/tags/#create-account) | [Anomaly](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Multiple Disabled Users Failed To Authenticate Wth Kerberos](/endpoint/98f22d82-9d62-11eb-9fcf-acde48001122/) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Multiple Invalid Users Fail To Authenticate Using Kerberos](/endpoint/001266a6-9d5b-11eb-829b-acde48001122/) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |
 | [Windows Multiple Invalid Users Failed To Authenticate Using NTLM](/endpoint/57ad5a64-9df7-11eb-a290-acde48001122/) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [TTP](https://github.com/splunk/security_content/wiki/Detection-Analytic-Types) |

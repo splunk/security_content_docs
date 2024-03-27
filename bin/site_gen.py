@@ -13,6 +13,7 @@ from stix2 import FileSystemSource
 from stix2 import Filter
 from pycvesearch import CVESearch
 from tqdm import tqdm
+from functools import cache
 
 CVESSEARCH_API_URL = 'https://cve.circl.lu'
 SPLUNKBASE_API_URL = "https://apps.splunk.com/api/apps/entriesbyid/"
@@ -34,6 +35,7 @@ ATTACK_TACTICS_KILLCHAIN_MAPPING = {
     "Impact": "Actions On Objectives"
 }
 
+@cache
 def get_cve_enrichment_new(cve_id):
     cve_enriched = dict()
     cve_enriched['id'] = cve_id
@@ -684,6 +686,9 @@ def generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detectio
             if playbook["type"] == playbook_type:
                 filtered_playbooks.append(playbook)
 
+        dedup_filtered_playbooks = []
+        [ dedup_filtered_playbooks.append(x) for x in filtered_playbooks if x not in dedup_filtered_playbooks ]
+        filtered_playbooks = sorted(dedup_filtered_playbooks, key=lambda i: i['name'])
         output_path = path.join(OUTPUT_DIR + '/_pages/' + playbook_type.lower().replace(" ", "_") + ".md")
         output = template.render(
             category=playbook_type,
@@ -700,6 +705,9 @@ def generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detectio
                 if use_case in playbook["tags"]["use_cases"]:
                     filtered_playbooks.append(playbook)
 
+        dedup_filtered_playbooks = []
+        [ dedup_filtered_playbooks.append(x) for x in filtered_playbooks if x not in dedup_filtered_playbooks ]
+        filtered_playbooks = sorted(dedup_filtered_playbooks, key=lambda i: i['name'])
         output_path = path.join(OUTPUT_DIR + '/_pages/' + use_case.lower().replace(" ", "_") + "playbook.md")
         output = template.render(
             category=use_case,
@@ -717,6 +725,9 @@ def generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detectio
                     if playbook["tags"]["defend_enriched"][item].get('category') == category:
                         filtered_playbooks.append(playbook)
 
+        dedup_filtered_playbooks = []
+        [ dedup_filtered_playbooks.append(x) for x in filtered_playbooks if x not in dedup_filtered_playbooks ]
+        filtered_playbooks = sorted(dedup_filtered_playbooks, key=lambda i: i['name'])
         output_path = path.join(OUTPUT_DIR + '/_pages/' + category.lower().replace(" ", "_") + ".md")
         output = template.render(
             category=category,
@@ -733,6 +744,9 @@ def generate_doc_playbooks(REPO_PATH, OUTPUT_DIR, TEMPLATE_PATH, sorted_detectio
                 if app in playbook["app_list"]:
                     filtered_playbooks.append(playbook)
 
+        dedup_filtered_playbooks = []
+        [ dedup_filtered_playbooks.append(x) for x in filtered_playbooks if x not in dedup_filtered_playbooks ]
+        filtered_playbooks = sorted(dedup_filtered_playbooks, key=lambda i: i['name'])
         output_path = path.join(OUTPUT_DIR + '/_pages/' + app.lower().replace(" ", "_") + ".md")
         output = template.render(
             category=app,

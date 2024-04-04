@@ -11,6 +11,7 @@ sidebar:
 | Name        | Technique   | Tactic       |
 | ----------- | ----------- |--------------|
 | [3CX Supply Chain Attack](/stories/3cx_supply_chain_attack/) | [Compromise Software Supply Chain](/tags/#compromise-software-supply-chain) | [Initial Access](/tags/#initial-access) |
+| [APT29 Diplomatic Deceptions with WINELOADER](/stories/apt29_diplomatic_deceptions_with_wineloader/) | [DLL Side-Loading](/tags/#dll-side-loading) | [Persistence](/tags/#persistence) |
 | [Active Directory Discovery](/stories/active_directory_discovery/) | [Permission Groups Discovery](/tags/#permission-groups-discovery), [Local Groups](/tags/#local-groups) | [Discovery](/tags/#discovery) |
 | [Active Directory Kerberos Attacks](/stories/active_directory_kerberos_attacks/) | [Password Spraying](/tags/#password-spraying), [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
 | [Active Directory Lateral Movement](/stories/active_directory_lateral_movement/) | [Remote Services](/tags/#remote-services), [Windows Remote Management](/tags/#windows-remote-management) | [Lateral Movement](/tags/#lateral-movement) |
@@ -95,6 +96,7 @@ sidebar:
 | [Office 365 Persistence Mechanisms](/stories/office_365_persistence_mechanisms/) | [Account Manipulation](/tags/#account-manipulation), [Additional Cloud Roles](/tags/#additional-cloud-roles) | [Persistence](/tags/#persistence) |
 | [Okta MFA Exhaustion](/stories/okta_mfa_exhaustion/) | [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
 | [OpenSSL CVE-2022-3602](/stories/openssl_cve-2022-3602/) | [Encrypted Channel](/tags/#encrypted-channel) | [Command And Control](/tags/#command-and-control) |
+| [Outlook RCE CVE-2024-21378](/stories/outlook_rce_cve-2024-21378/) | [Phishing](/tags/#phishing) | [Initial Access](/tags/#initial-access) |
 | [PaperCut MF NG Vulnerability](/stories/papercut_mf_ng_vulnerability/) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Execution](/tags/#execution) |
 | [PetitPotam NTLM Relay on Active Directory Certificate Services](/stories/petitpotam_ntlm_relay_on_active_directory_certificate_services/) | [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [Possible Backdoor Activity Associated With MUDCARP Espionage Campaigns](/stories/possible_backdoor_activity_associated_with_mudcarp_espionage_campaigns/) | [Automated Exfiltration](/tags/#automated-exfiltration) | [Exfiltration](/tags/#exfiltration) |

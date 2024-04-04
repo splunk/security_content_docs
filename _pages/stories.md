@@ -11,6 +11,7 @@ sidebar:
 | Name    |   Technique |     Tactic   |
 | ----------- | ----------- |--------------|
 | [3CX Supply Chain Attack](3cx_supply_chain_attack) | [Compromise Software Supply Chain](/tags/#compromise-software-supply-chain) | [Initial Access](/tags/#initial-access) |
+| [APT29 Diplomatic Deceptions with WINELOADER](apt29_diplomatic_deceptions_with_wineloader) | [DLL Side-Loading](/tags/#dll-side-loading) | [Persistence](/tags/#persistence) |
 | [AWS Cross Account Activity](aws_cross_account_activity) | [Use Alternate Authentication Material](/tags/#use-alternate-authentication-material) | [Defense Evasion](/tags/#defense-evasion) |
 | [AWS Defense Evasion](aws_defense_evasion) | [Impair Defenses](/tags/#impair-defenses), [Disable or Modify Cloud Logs](/tags/#disable-or-modify-cloud-logs) | [Defense Evasion](/tags/#defense-evasion) |
 | [AWS IAM Privilege Escalation](aws_iam_privilege_escalation) | [Cloud Account](/tags/#cloud-account), [Create Account](/tags/#create-account) | [Persistence](/tags/#persistence) |
@@ -148,6 +149,7 @@ sidebar:
 | [Okta MFA Exhaustion](okta_mfa_exhaustion) | [Brute Force](/tags/#brute-force) | [Credential Access](/tags/#credential-access) |
 | [OpenSSL CVE-2022-3602](openssl_cve-2022-3602) | [Encrypted Channel](/tags/#encrypted-channel) | [Command And Control](/tags/#command-and-control) |
 | [Orangeworm Attack Group](orangeworm_attack_group) | [Windows Service](/tags/#windows-service), [Create or Modify System Process](/tags/#create-or-modify-system-process) | [Persistence](/tags/#persistence) |
+| [Outlook RCE CVE-2024-21378](outlook_rce_cve-2024-21378) | [Phishing](/tags/#phishing) | [Initial Access](/tags/#initial-access) |
 | [PaperCut MF NG Vulnerability](papercut_mf_ng_vulnerability) | [Command and Scripting Interpreter](/tags/#command-and-scripting-interpreter), [Exploit Public-Facing Application](/tags/#exploit-public-facing-application), [External Remote Services](/tags/#external-remote-services) | [Execution](/tags/#execution) |
 | [PetitPotam NTLM Relay on Active Directory Certificate Services](petitpotam_ntlm_relay_on_active_directory_certificate_services) | [OS Credential Dumping](/tags/#os-credential-dumping) | [Credential Access](/tags/#credential-access) |
 | [Phemedrone Stealer](phemedrone_stealer) | [IP Addresses](/tags/#ip-addresses), [Gather Victim Network Information](/tags/#gather-victim-network-information) | [Reconnaissance](/tags/#reconnaissance) |

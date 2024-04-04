@@ -186,7 +186,7 @@ sidebar:
 | [Kubernetes Anomalous Inbound to Outbound Network IO Ratio](/cloud/9d8f6e3f-39df-46d8-a9d4-96173edc501f/) | [User Execution](/tags/#user-execution) |  None |
 | [Kubernetes Anomalous Outbound Network Activity from Process](/cloud/dd6afee6-e0a3-4028-a089-f47dd2842c22/) | [User Execution](/tags/#user-execution) |  None |
 | [Kubernetes Anomalous Traffic on Network Edge](/cloud/886c7e51-2ea1-425d-8705-faaca5a64cc6/) | [User Execution](/tags/#user-execution) |  None |
-| [Kubernetes Create or Update Privileged Pod](/cloud/9af5c1b9-8243-4225-ac29-b261e43f12bb/) | [User Execution](/tags/#user-execution) |  None |
+| [Kubernetes Create or Update Privileged Pod](/cloud/3c6bd734-334d-4818-ae7c-5234313fc5da/) | [User Execution](/tags/#user-execution) |  None |
 | [Kubernetes Cron Job Creation](/cloud/5984dbe8-572f-47d7-9251-3dff6c3f0c0d/) | [Container Orchestration Job](/tags/#container-orchestration-job) |  None |
 | [Kubernetes DaemonSet Deployed](/cloud/bf39c3a3-b191-4d42-8738-9d9797bd0c3a/) | [User Execution](/tags/#user-execution) |  None |
 | [Kubernetes Falco Shell Spawned](/cloud/d2feef92-d54a-4a19-8306-b47c6ceba5b2/) | [User Execution](/tags/#user-execution) |  None |
@@ -201,7 +201,7 @@ sidebar:
 | [Kubernetes Process with Anomalous Resource Utilisation](/cloud/25ca9594-7a0d-4a95-a5e5-3228d7398ec8/) | [User Execution](/tags/#user-execution) |  None |
 | [Kubernetes Process with Resource Ratio Anomalies](/cloud/0d42b295-0f1f-4183-b75e-377975f47c65/) | [User Execution](/tags/#user-execution) |  None |
 | [Kubernetes Scanner Image Pulling](/cloud/4890cd6b-0112-4974-a272-c5c153aee551/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) |  None |
-| [Kubernetes Scanning by Unauthenticated IP Address](/cloud/f5edd22d-0f3b-4c70-bcfe-5bf41150f10c/) | [Network Service Discovery](/tags/#network-service-discovery) |  None |
+| [Kubernetes Scanning by Unauthenticated IP Address](/cloud/f9cadf4e-df22-4f4e-a08f-9d3344c2165d/) | [Network Service Discovery](/tags/#network-service-discovery) |  None |
 | [Kubernetes Shell Running on Worker Node](/cloud/efebf0c4-dcf4-496f-85a2-5ab7ad8fa876/) | [User Execution](/tags/#user-execution) |  None |
 | [Kubernetes Shell Running on Worker Node with CPU Activity](/cloud/cc1448e3-cc7a-4518-bc9f-2fa48f61a22b/) | [User Execution](/tags/#user-execution) |  None |
 | [Kubernetes Suspicious Image Pulling](/cloud/4d3a17b3-0a6d-4ae0-9421-46623a69c122/) | [Cloud Service Discovery](/tags/#cloud-service-discovery) |  None |

@@ -1,6 +1,9 @@
-# Site Generation Tool
+# Archived project
+This repo was archived on April, 9th, 2024. It is no longer in use.
 
-## Installing 
+## Site Generation Tool
+
+### Installing 
 Requires [poetry](https://python-poetry.org/docs/)
 
 ```
@@ -9,7 +12,7 @@ git clone https://github.com/mitre/cti.git
 poetry install && poetry shell
 ```
 
-# Development
+## Development
 To run a local jekyll install follow these steps:
 
 1. Install Gems with bundler `bundler install`
